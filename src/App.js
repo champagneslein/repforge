@@ -5,7 +5,7 @@ import React, { useState, useRef } from "react";
 // ─────────────────────────────────────────────
 const companies = [
   { id:1,  name:"Nexaflow",         industry:"SaaS",           size:"Enterprise", employees:42, domain:"nexaflow.io",         description:"Cloud workflow automation for enterprise ops teams",        location:"Dublin" },
-  { id:2,  name:"CloudPulse",       industry:"SaaS",           size:"Mid-Market", employees:25, domain:"cloudpulse.io",       description:"Real-time analytics and monitoring SaaS",                  location:"London" },
+  { id:2,  name:"CloudPulse",       industry:"SaaS",           size:"Mhid-Market", employees:25, domain:"cloudpulse.io",       description:"Real-time analytics and monitoring SaaS",                  location:"London" },
   { id:3,  name:"Stackly",          industry:"SaaS",           size:"SMB",        employees:14, domain:"stackly.dev",         description:"Developer productivity and code review tooling",           location:"Dublin" },
   { id:4,  name:"Velodata",         industry:"SaaS",           size:"Mid-Market", employees:28, domain:"velodata.com",        description:"Data pipeline and ETL automation platform",                location:"London" },
   { id:5,  name:"ShieldOps",        industry:"Cyber Security", size:"Enterprise", employees:45, domain:"shieldops.io",        description:"Enterprise endpoint security and threat detection",        location:"Dublin" },
@@ -333,7 +333,7 @@ export default function App() {
   const [callModal, setCallModal] = useState(null);       // emp being called
   const [callPhase, setCallPhase] = useState("idle");     // idle | dialing | outcome
   const [callOutcome, setCallOutcome] = useState(null);   // connected | voicemail | no-answer | gatekeeper
-  const [callLine, setCallLine] = useState("");  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");  const [showSettings, setShowSettings] = useState(!localStorage.getItem("repforge_openai_key"));  const [aiVoiceLoading, setAiVoiceLoading] = useState(false);  const [aiEmailLoading, setAiEmailLoading] = useState({});  const audioRef = useRef(null);  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");  const [showSettings, setShowSettings] = useState(!localStorage.getItem("repforge_openai_key"));  const [aiVoiceLoading, setAiVoiceLoading] = useState(false);  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");           // what the prospect says
+  const [callLine, setCallLine] = useState("");  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");  const [showSettings, setShowSettings] = useState(!localStorage.getItem("repforge_openai_key"));  const [aiVoiceLoading, setAiVoiceLoading] = useState(false);  const [aiEmailLoading, setAiEmailLoading] = useState({});  const audioRef = useRef(null);  // what the prospect says
 
   const industries = ["All","SaaS","Cyber Security","Manufacturing","Fintech","Energy","Healthcare","Retail Tech","Construction"];
   const allEmps = Object.values(allEmployees).flat();
