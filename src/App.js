@@ -152,7 +152,7 @@ const allEmployees = {
     {id:1605,first:"Ruairi",last:"O'Neill",title:"Sales Manager",seniority:"manager",bio:"Sales manager at FinAxis Group.",personality:"Sales manager. Quota and compliance balance. Responds to pipeline",posts:[]},
     {id:1606,first:"Nessa",last:"Higgins",title:"Regulatory Analyst",seniority:"mid",bio:"Regulatory analysis at FinAxis Group.",personality:"Regulatory analyst. Standards-focused. Helpful peer voice",posts:[]},
     {id:1607,first:"Conall",last:"Carey",title:"SDR",seniority:"junior",bio:"SDR at FinAxis Group.",personality:"Junior SDR. Learning RegTech. Eager and responsive",posts:["Breaking into RegTech sales. Fascinating space."]},
-  ],h
+  ],
   17:[{id:1701,first:"Dara",last:"O'Brien",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at GreenLeaf Energy. Renewable energy developer and advocate.",personality:"Renewable energy founder. Mission-driven, practical. Responds to project metrics",posts:["The energy transition is not coming. It's here. The question is how fast.","Just signed our largest solar PPA to date. Proud of the team."]},
     {id:1702,first:"Sorcha",last:"Teehan",title:"Head of Operations",seniority:"director",bio:"Operations at GreenLeaf Energy.",personality:"Operations director. Project execution focused",posts:[]},
     {id:1703,first:"Pauric",last:"Spillane",title:"Project Manager",seniority:"manager",bio:"Project management at GreenLeaf Energy.",personality:"Project manager. Delivery-focused. Engages on project methodology",posts:["Phase 1 of the Galway wind project is complete. On time, on budget. That's how we do it."]},
