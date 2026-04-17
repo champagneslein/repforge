@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 // ─────────────────────────────────────────────
 // COMPANY + EMPLOYEE DATA
@@ -152,7 +152,7 @@ const allEmployees = {
     {id:1605,first:"Ruairi",last:"O'Neill",title:"Sales Manager",seniority:"manager",bio:"Sales manager at FinAxis Group.",personality:"Sales manager. Quota and compliance balance. Responds to pipeline",posts:[]},
     {id:1606,first:"Nessa",last:"Higgins",title:"Regulatory Analyst",seniority:"mid",bio:"Regulatory analysis at FinAxis Group.",personality:"Regulatory analyst. Standards-focused. Helpful peer voice",posts:[]},
     {id:1607,first:"Conall",last:"Carey",title:"SDR",seniority:"junior",bio:"SDR at FinAxis Group.",personality:"Junior SDR. Learning RegTech. Eager and responsive",posts:["Breaking into RegTech sales. Fascinating space."]},
-  ],
+  ],h
   17:[{id:1701,first:"Dara",last:"O'Brien",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at GreenLeaf Energy. Renewable energy developer and advocate.",personality:"Renewable energy founder. Mission-driven, practical. Responds to project metrics",posts:["The energy transition is not coming. It's here. The question is how fast.","Just signed our largest solar PPA to date. Proud of the team."]},
     {id:1702,first:"Sorcha",last:"Teehan",title:"Head of Operations",seniority:"director",bio:"Operations at GreenLeaf Energy.",personality:"Operations director. Project execution focused",posts:[]},
     {id:1703,first:"Pauric",last:"Spillane",title:"Project Manager",seniority:"manager",bio:"Project management at GreenLeaf Energy.",personality:"Project manager. Delivery-focused. Engages on project methodology",posts:["Phase 1 of the Galway wind project is complete. On time, on budget. That's how we do it."]},
@@ -333,7 +333,7 @@ export default function App() {
   const [callModal, setCallModal] = useState(null);       // emp being called
   const [callPhase, setCallPhase] = useState("idle");     // idle | dialing | outcome
   const [callOutcome, setCallOutcome] = useState(null);   // connected | voicemail | no-answer | gatekeeper
-  const [callLine, setCallLine] = useState("");           // what the prospect says
+  const [callLine, setCallLine] = useState("");  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");  const [showSettings, setShowSettings] = useState(!localStorage.getItem("repforge_openai_key"));  const [aiVoiceLoading, setAiVoiceLoading] = useState(false);  const [aiEmailLoading, setAiEmailLoading] = useState({});  const audioRef = useRef(null);  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");  const [showSettings, setShowSettings] = useState(!localStorage.getItem("repforge_openai_key"));  const [aiVoiceLoading, setAiVoiceLoading] = useState(false);  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");           // what the prospect says
 
   const industries = ["All","SaaS","Cyber Security","Manufacturing","Fintech","Energy","Healthcare","Retail Tech","Construction"];
   const allEmps = Object.values(allEmployees).flat();
@@ -537,7 +537,7 @@ export default function App() {
         <div className="flex items-center gap-3">
           <div className="text-sm text-gray-500">Day <span className="font-bold text-gray-800">{simDay}</span><span className="text-gray-400"> / {SIM_LENGTH}</span></div>
           {!simComplete ? (
-            <button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1">⏩ Advance Day</button>
+            <button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1">⏩ Advance Day</button>              <button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-medium text-xs flex items-center gap-1 transition-colors ${apiKey ? "bg-emerald-700 text-white hover:bg-emerald-600" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}>
           ) : (
             <button onClick={() => setTab("score")} className="bg-[#1A3A2A] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1">🏆 View Final Score</button>
           )}
@@ -721,7 +721,7 @@ export default function App() {
                         </div>
                       ))}
                       {state[selEmp.id]?.emailStatus==="sent" && (
-                        <div className="text-center py-2 text-xs text-yellow-600">⏳ Email sent — reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.</div>
+                        <div className="text-center py-2 text-xs text-yellow-600">⏳ Email sent — reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.                      {apiKey && state[selEmp.id]?.willReplyEmail && (                        <button onClick={async () => {                          const company = getCompanyForEmp(selEmp.id);                          const thread = state[selEmp.id]?.emailThread || [];                          const lastSent = [...thread].reverse().find(m => m.from === "rep");                          if (!lastSent) return;                          const reply = await generateAiEmailReply(selEmp, company, lastSent.subject || "Your email", lastSent.body);                          if (reply) {                            setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));                          }                        }} disabled={aiEmailLoading[selEmp.id]} className="ml-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white text-xs px-3 py-1 rounded-full transition-colors">                          {aiEmailLoading[selEmp.id] ? "🤖 Writing..." : "🤖 AI Reply Now"}                        </button>                      {apiKey && state[selEmp.id]?.willReplyEmail && (                        <button onClick={async () => {                          const company = getCompanyForEmp(selEmp.id);                          const thread = state[selEmp.id]?.emailThread || [];                          const lastSent = [...thread].reverse().find(m => m.from === "rep");                          if (!lastSent) return;                          const reply = await generateAiEmailReply(selEmp, company, lastSent.subject || "Your email", lastSent.body);                          if (reply) {                            setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));                          }                        }} disabled={aiEmailLoading[selEmp.id]} className="ml-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white text-xs px-3 py-1 rounded-full transition-colors">                      {apiKey && state[selEmp.id]?.willReplyEmail && (                        <button onClick={async () => {                          const company = getCompanyForEmp(selEmp.id);                          const thread = state[selEmp.id]?.emailThread || [];                          const lastSent = [...thread].reverse().find(m => m.from === "rep");                          if (!lastSent) return;                          const reply = await generateAiEmailReply(selEmp, company, lastSent.subject || "Your email", lastSent.body);                          if (reply) {                            setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));                      {apiKey && state[selEmp.id]?.willReplyEmail && (                        <button onClick={async () => {                          const company = getCompanyForEmp(selEmp.id);                          const thread = state[selEmp.id]?.emailThread || [];                          const lastSent = [...thread].reverse().find(m => m.from === "rep");                          if (!lastSent) return;                          const reply = await generateAiEmailReply(selEmp, company, lastSent.subject || "Your email", lastSent.body);                      {apiKey && state[selEmp.id]?.willReplyEmail && (                        <button onClick={async () => {                          const company = getCompanyForEmp(selEmp.id);                          const thread = state[selEmp.id]?.emailThread || [];                          const lastSent = [...thread].reverse().find(m => m.from === "rep");                      {apiKey && state[selEmp.id]?.willReplyEmail && (                        <button onClick={async () => {                          const company = getCompanyForEmp(selEmp.id);                      {apiKey && state[selEmp.id]?.willReplyEmail && (</div>
                       )}
                     </div>
                   </div>
@@ -1143,7 +1143,7 @@ export default function App() {
       )}
 
       {/* ══════════════════════════════════════════ */}
-      {/* CALL MODAL                                 */}
+      {/* SETTINGS MODAL */}        {showSettings && (                                 */}
       {/* ══════════════════════════════════════════ */}
       {callModal && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
@@ -1174,7 +1174,7 @@ export default function App() {
                   <div className="text-emerald-400 text-sm font-semibold mb-2">✅ Connected</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-gray-400 text-xs mb-1">{callModal.first} says:</div>
-                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>
+                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? "🔄 Generating..." : "🔊 Hear AI Voice"}
                   </div>
                 </div>
               )}
@@ -1183,7 +1183,7 @@ export default function App() {
                   <div className="text-orange-400 text-sm font-semibold mb-2">🚧 Gatekeeper</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-gray-400 text-xs mb-1">Reception says:</div>
-                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>
+                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? "🔄 Generating..." : "🔊 Hear AI Voice"}                      </button>                    {apiKey && callLine && (
                   </div>
                 </div>
               )}
@@ -1192,7 +1192,7 @@ export default function App() {
                   <div className="text-yellow-400 text-sm font-semibold mb-2">📨 Voicemail</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-gray-400 text-xs mb-1">Voicemail:</div>
-                    <div className="text-white text-sm leading-relaxed italic">"{callLine}"</div>
+                    <div className="text-white text-sm leading-relaxed italic">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">
                   </div>
                 </div>
               )}
