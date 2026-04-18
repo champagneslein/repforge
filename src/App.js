@@ -1187,7 +1187,7 @@ export default function App() {
                   <div className="text-emerald-400 text-sm font-semibold mb-2">✅ Connected</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-gray-400 text-xs mb-1">{callModal.first} says:</div>
-                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? "🔄 Generating..." : "🔊 Hear AI Voice"}
+                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? "🔄 Generating..." : "🔊 Hear AI Voice"}</button>)}
                   </div>
                 </div>
               )}
