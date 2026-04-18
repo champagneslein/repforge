@@ -721,7 +721,7 @@ export default function App() {
                         </div>
                       ))}
                       {state[selEmp.id]?.emailStatus==="sent" && (
-                        <div className="text-center py-2 text-xs text-yellow-600">⏳ Email sent — reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.</div>
+                        <div className="text-center py-2 text-xs text-yellow-600">⏳ Email sent — reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.</div>)}
               {apiKey && state[selEmp.id]?.willReplyEmail && (
                 <button onClick={async () => {
                   const company = getCompanyForEmp(selEmp.id);
@@ -736,7 +736,6 @@ export default function App() {
                   {aiEmailLoading[selEmp.id] ? "🤖 Writing..." : "🤖 AI Reply Now"}
                 </button>
               )}
-                      )}
                     </div>
                   </div>
                   {/* Call Log */}
