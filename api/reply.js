@@ -57,7 +57,7 @@ CRITICAL RULES:
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'claude-haiku-3-5-20251001',
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 250,
         system: systemPrompt,
         messages: [{ role: 'user', content: userMessage }]
@@ -79,4 +79,4 @@ CRITICAL RULES:
     console.error('Handler error:', e);
     return res.status(500).json({ reply: null, error: e.message });
   }
-}
+        }
