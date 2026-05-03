@@ -341,6 +341,13 @@ function initState() {
 // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
 // MAIN APP
 // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+
+async function supaSignUp(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/signup',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
+async function supaSignIn(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
+async function supaSignOut(tok){await fetch(SUPABASE_URL+'/auth/v1/logout',{method:'POST',headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY}});}
+async function fetchProduct(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/user_products?user_id=eq.'+uid+'&limit=1',{headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY}});const d=await r.json();return d[0]||null;}
+async function upsertProduct(tok,uid,form){await fetch(SUPABASE_URL+'/rest/v1/user_products',{method:'POST',headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify({user_id:uid,product_name:form.name,product_description:form.desc,icp:form.icp,value_props:form.vps.split('\n').filter(Boolean),objections:form.objs.split('\n').filter(Boolean)})});}
+
 export default function App() {
   const [tab, setTab] = useState("crm");
   const [simDay, setSimDay] = useState(1);
@@ -349,6 +356,29 @@ export default function App() {
   const [selCompany, setSelCompany] = useState(null);
   const [intelData, setIntelData] = React.useState({});
   const [expandedIntel, setExpandedIntel] = React.useState(null);
+  const [user,setUser]=React.useState(()=>{try{return JSON.parse(localStorage.getItem('rp_sess')||'{}').user||null;}catch{return null;}});
+  const [authTok,setAuthTok]=React.useState(()=>{try{return JSON.parse(localStorage.getItem('rp_sess')||'{}').access_token||null;}catch{return null;}});
+  const [authView,setAuthView]=React.useState('login');
+  const [authEmail,setAuthEmail]=React.useState('');
+  const [authPwd,setAuthPwd]=React.useState('');
+  const [authErr,setAuthErr]=React.useState('');
+  const [authBusy,setAuthBusy]=React.useState(false);
+  const [product,setProduct]=React.useState(null);
+  const [showProdSetup,setShowProdSetup]=React.useState(false);
+  const [prodForm,setProdForm]=React.useState({name:'',desc:'',icp:'',vps:'',objs:''});
+  const [prodSaving,setProdSaving]=React.useState(false);
+
+  React.useEffect(()=>{
+    try{const s=JSON.parse(localStorage.getItem('rp_sess')||'{}');
+      if(s.access_token&&s.user){fetchProduct(s.access_token,s.user.id).then(p=>{if(p){setProduct(p);setProdForm({name:p.product_name||'',desc:p.product_description||'',icp:p.icp||'',vps:(p.value_props||[]).join('\n'),objs:(p.objections||[]).join('\n')});}else setShowProdSetup(true);});}
+    }catch(e){}
+  },[]);
+
+  const handleLogin=async()=>{setAuthErr('');setAuthBusy(true);const res=await supaSignIn(authEmail,authPwd);if(res.error){setAuthErr(res.error.message||'Login failed');setAuthBusy(false);return;}localStorage.setItem('rp_sess',JSON.stringify({access_token:res.access_token,user:res.user}));setUser(res.user);setAuthTok(res.access_token);const p=await fetchProduct(res.access_token,res.user.id);if(p){setProduct(p);setProdForm({name:p.product_name||'',desc:p.product_description||'',icp:p.icp||'',vps:(p.value_props||[]).join('\n'),objs:(p.objections||[]).join('\n')});}else setShowProdSetup(true);setAuthBusy(false);};
+  const handleSignup=async()=>{setAuthErr('');setAuthBusy(true);const r1=await supaSignUp(authEmail,authPwd);if(r1.error){setAuthErr(r1.error.message||'Signup failed');setAuthBusy(false);return;}const r2=await supaSignIn(authEmail,authPwd);if(r2.error){setAuthErr('Account created! Please log in.');setAuthView('login');setAuthBusy(false);return;}localStorage.setItem('rp_sess',JSON.stringify({access_token:r2.access_token,user:r2.user}));setUser(r2.user);setAuthTok(r2.access_token);setShowProdSetup(true);setAuthBusy(false);};
+  const handleLogout=async()=>{if(authTok)await supaSignOut(authTok);localStorage.removeItem('rp_sess');setUser(null);setAuthTok(null);setProduct(null);};
+  const handleSaveProd=async()=>{if(!prodForm.name.trim())return;setProdSaving(true);await upsertProduct(authTok,user.id,prodForm);const p=await fetchProduct(authTok,user.id);setProduct(p);setShowProdSetup(false);setProdSaving(false);};
+
   const [selEmp, setSelEmp] = useState(null);
   const [filterInd, setFilterInd] = useState("All");
   const [emailCompose, setEmailCompose] = useState(null);
@@ -405,7 +435,7 @@ export default function App() {
     const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + ' ' + (guides[emp.seniority] || guides.manager) + ' This is a live cold call. Keep ALL responses to 1-3 short sentences. Sound like a real busy professional. Never be immediately enthusiastic about a product.';
     try {
       await vapi.start({
-        model: { provider: 'openai', model: 'gpt-3.5-turbo', messages: [{ role: 'system', content: sysPrompt }] },
+        model: { provider: 'openai', model: 'gpt-3.5-turbo', messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') }] },
         voice: selectVoice(emp.first),
         firstMessage: emp.first + ' speaking.',
       });
@@ -638,6 +668,40 @@ function sendEmail(emp, company, subject, body) {
   // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
   return (
     <div className="min-h-screen bg-[#F7F4EE]">
+      {!user&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'#1A3A2A',zIndex:99999,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
+        <div style={{background:'white',borderRadius:'14px',padding:'40px 44px',width:'380px',maxWidth:'90vw',boxShadow:'0 20px 60px rgba(0,0,0,0.3)'}}>
+          <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'6px'}}><span style={{fontSize:'24px'}}>🔨</span><h1 style={{margin:0,fontSize:'22px',fontWeight:'800',color:'#1A3A2A'}}>RepForge</h1></div>
+          <p style={{margin:'0 0 22px',color:'#64748b',fontSize:'13px'}}>AI-powered sales training platform</p>
+          <div style={{display:'flex',marginBottom:'18px',borderRadius:'8px',border:'1px solid #e2e8f0',overflow:'hidden'}}>
+            <button onClick={()=>setAuthView('login')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='login'?'#1A3A2A':'white',color:authView==='login'?'white':'#94a3b8',fontSize:'13px'}}>Log In</button>
+            <button onClick={()=>setAuthView('signup')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='signup'?'#1A3A2A':'white',color:authView==='signup'?'white':'#94a3b8',fontSize:'13px'}}>Sign Up</button>
+          </div>
+          <input value={authEmail} onChange={e=>setAuthEmail(e.target.value)} placeholder="Email address" style={{width:'100%',padding:'11px 14px',marginBottom:'10px',border:'1px solid #e2e8f0',borderRadius:'8px',fontSize:'14px',boxSizing:'border-box'}} type="email" autoFocus />
+          <input value={authPwd} onChange={e=>setAuthPwd(e.target.value)} placeholder="Password" style={{width:'100%',padding:'11px 14px',marginBottom:'16px',border:'1px solid #e2e8f0',borderRadius:'8px',fontSize:'14px',boxSizing:'border-box'}} type="password" onKeyDown={e=>{if(e.key==='Enter')authView==='login'?handleLogin():handleSignup();}} />
+          {authErr&&<div style={{color:'#dc2626',fontSize:'13px',marginBottom:'14px',padding:'9px 12px',background:'#fef2f2',borderRadius:'6px',border:'1px solid #fecaca'}}>{authErr}</div>}
+          <button onClick={authView==='login'?handleLogin:handleSignup} disabled={authBusy} style={{width:'100%',padding:'12px',background:'#1A3A2A',color:'white',border:'none',borderRadius:'8px',fontSize:'14px',fontWeight:'700',cursor:authBusy?'not-allowed':'pointer',opacity:authBusy?0.65:1}}>
+            {authBusy?'...':(authView==='login'?'Log In':'Create Account')}
+          </button>
+        </div>
+      </div>)}
+      {showProdSetup&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
+        <div style={{background:'white',borderRadius:'14px',padding:'32px 36px',width:'500px',maxWidth:'92vw',maxHeight:'85vh',overflowY:'auto',boxShadow:'0 24px 60px rgba(0,0,0,0.25)'}}>
+          <h2 style={{margin:'0 0 6px',fontSize:'19px',fontWeight:'800',color:'#1A3A2A'}}>What are you selling?</h2>
+          <p style={{margin:'0 0 22px',color:'#64748b',fontSize:'13px'}}>The AI personas will know your product and respond to your pitch.</p>
+          {[{l:'Product Name *',k:'name',ph:'e.g. Acme CRM',m:false},{l:'Elevator Pitch',k:'desc',ph:'What problem does it solve and for who?',m:true},{l:'Ideal Customer Profile',k:'icp',ph:'e.g. B2B SaaS, 50-500 employees, VP Sales',m:false},{l:'Value Props (one per line)',k:'vps',ph:'Saves 5hrs/week\nReduces churn 20%',m:true},{l:'Common Objections (one per line)',k:'objs',ph:'Too expensive\nWe already have a solution',m:true}].map(({l,k,ph,m})=>(
+            <div key={k} style={{marginBottom:'15px'}}>
+              <label style={{display:'block',fontSize:'11px',fontWeight:'700',color:'#374151',marginBottom:'5px',letterSpacing:'0.05em'}}>{l.toUpperCase()}</label>
+              {m?<textarea value={prodForm[k]} onChange={e=>setProdForm({...prodForm,[k]:e.target.value})} placeholder={ph} style={{width:'100%',padding:'9px 12px',border:'1px solid #e2e8f0',borderRadius:'8px',fontSize:'13px',boxSizing:'border-box',minHeight:'62px',resize:'vertical',fontFamily:'inherit'}}/>:<input value={prodForm[k]} onChange={e=>setProdForm({...prodForm,[k]:e.target.value})} placeholder={ph} style={{width:'100%',padding:'9px 12px',border:'1px solid #e2e8f0',borderRadius:'8px',fontSize:'13px',boxSizing:'border-box'}}/>}
+            </div>
+          ))}
+          <div style={{display:'flex',gap:'10px',justifyContent:'flex-end',marginTop:'22px'}}>
+            {product&&<button onClick={()=>setShowProdSetup(false)} style={{padding:'10px 18px',border:'1px solid #e2e8f0',borderRadius:'8px',cursor:'pointer',fontSize:'13px',fontWeight:'600',color:'#64748b'}}>Cancel</button>}
+            <button onClick={handleSaveProd} disabled={prodSaving||!prodForm.name.trim()} style={{padding:'10px 24px',background:'#1A3A2A',color:'white',border:'none',borderRadius:'8px',cursor:(prodSaving||!prodForm.name.trim())?'not-allowed':'pointer',fontSize:'13px',fontWeight:'700',opacity:(prodSaving||!prodForm.name.trim())?0.6:1}}>
+              {prodSaving?'Saving...':'Save & Start Selling'}
+            </button>
+          </div>
+        </div>
+      </div>)}
       {/* TOP NAV */}
       <div className="bg-[#EDEAE2] border-b border-[#D4CFC4] px-6 py-3 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center gap-6">
@@ -659,7 +723,7 @@ function sendEmail(emp, company, subject, body) {
           ) : (
             <button onClick={() => setTab("score")} className="bg-[#1A3A2A] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ View Final Score</button>
           )}
-          <div className="text-xs text-[#1A3A2A] bg-[#DDD9D0] px-2 py-1 rounded">Jamie Doyle ÃÂÃÂÃÂÃÂ· Trainee AE</div>
+          <button onClick={()=>setShowProdSetup(true)} style={{fontSize:'11px',padding:'4px 10px',background:product?'#1A3A2A':'#dc2626',color:'white',border:'none',borderRadius:'6px',cursor:'pointer',fontWeight:'600',whiteSpace:'nowrap'}}>{product?'📦 '+product.product_name.substring(0,18):'⚠️ Setup Product'}</button><button onClick={handleLogout} style={{fontSize:'11px',padding:'4px 10px',background:'#f1f5f9',color:'#475569',border:'1px solid #e2e8f0',borderRadius:'6px',cursor:'pointer',whiteSpace:'nowrap'}}>{user?user.email.split('@')[0]+' · Logout':'Logout'}</button>
         </div>
       </div>
 
