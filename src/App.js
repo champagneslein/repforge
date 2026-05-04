@@ -440,7 +440,7 @@ export default function App() {
   const [activeCallId, setActiveCallId] = useState(null);
   const [callStatus, setCallStatus] = useState('idle');
   const industries = ["All","SaaS","Cyber Security","Manufacturing","Fintech","Energy","Healthcare","Retail Tech","Construction"];
-  const allEmps = Object.values(allEmployees).flat();
+  const allEmps = Object.entries(allEmployees).flatMap(([cId,emps])=>emps.map(e=>({...e,cId:parseInt(cId),cName:(companies.find(c=>c.id===parseInt(cId))||{name:''}).name})));
 
   function getVapiInstance() {
     if (!vapiRef.current) {
@@ -719,21 +719,21 @@ function sendEmail(emp, company, subject, body) {
 
   // Generate persona messages randomly
   React.useEffect(()=>{
-    if(!authTok||!user?.id||!personas.length)return;
+    if(!authTok||!user?.id||!allEmps.length)return;
     fetchPersonaMessages(authTok,user?.id).then(d=>{if(Array.isArray(d))setPersonaMessages(d);}).catch(()=>{});
     const iv=setInterval(async()=>{
-      const emp=personas[Math.floor(Math.random()*personas.length)];
+      const emp=allEmps[Math.floor(Math.random()*allEmps.length)];
       if(!emp)return;
-      const co=companies.find(c=>c.id===emp.company_id)||{name:'Acme Corp'};
+      const co=companies.find(c=>c.id===emp.cId)||{name:'Acme Corp'};
       const idx=Math.floor(Math.random()*5);
-      const msg=genPersonaMsg(emp.first_name+' '+emp.last_name,co.name,productName||'your product',idx);
+      const msg=genPersonaMsg(emp.first+' '+emp.last,co.name,(product?.name||'RepForge')||'your product',idx);
       try{
-        const saved=await savePersonaMsg(authTok,user?.id,emp.id,emp.first_name+' '+emp.last_name,co.name,msg.subject,msg.body,msg.type,msg.wantsCall,msg.callType);
+        const saved=await savePersonaMsg(authTok,user?.id,emp.id,emp.first+' '+emp.last,co.name,msg.subject,msg.body,msg.type,msg.wantsCall,msg.callType);
         if(saved&&saved.id)setPersonaMessages(prev=>[saved,...prev]);
       }catch(e){}
     },45000+Math.floor(Math.random()*75000));
     return()=>clearInterval(iv);
-  },[authTok,user?.id,personas.length,productName]);
+  },[authTok,user?.id,allEmps.length,(product?.name||'RepForge')]);
 
   // Session countdown timer
   React.useEffect(()=>{
@@ -758,10 +758,10 @@ function sendEmail(emp, company, subject, body) {
 
   const handleBookCall=async()=>{
     if(!bookingPersona||!bookingDateTime)return;
-    const co=companies.find(c=>c.id===bookingPersona.company_id)||{id:'',name:'Unknown'};
+    const co=companies.find(c=>c.id===bookingPersona.cId)||{id:'',name:'Unknown'};
     const dd=generateDiscoveryData();
     try{
-      const saved=await bookCall(authTok,user?.id,bookingPersona.id,bookingPersona.first_name+' '+bookingPersona.last_name,co.id,co.name,new Date(bookingDateTime).toISOString(),bookingCallType,dd,null);
+      const saved=await bookCall(authTok,user?.id,bookingPersona.id,bookingPersona.first+' '+bookingPersona.last,co.id,co.name,new Date(bookingDateTime).toISOString(),bookingCallType,dd,null);
       if(saved&&saved.id)setScheduledCalls(prev=>[...prev,saved]);
     }catch(e){}
     setShowBookingModal(false);
@@ -789,7 +789,7 @@ function sendEmail(emp, company, subject, body) {
   };
 
   const handleMsgBooking=(msg)=>{
-    const emp=personas.find(p=>p.id===msg.persona_id);
+    const emp=allEmps.find(p=>p.id===msg.persona_id);
     if(emp)handleOpenBooking(emp,msg.call_type||'discovery');
     setExpandedMsg(null);
   };
@@ -814,7 +814,7 @@ function sendEmail(emp, company, subject, body) {
       {showProdSetup&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'white',borderRadius:'14px',padding:'32px 36px',width:'500px',maxWidth:'92vw',maxHeight:'85vh',overflowY:'auto',boxShadow:'0 24px 60px rgba(0,0,0,0.25)'}}>
           <h2 style={{margin:'0 0 6px',fontSize:'19px',fontWeight:'800',color:'#1A3A2A'}}>What are you selling?</h2>
-          <p style={{margin:'0 0 22px',color:'#64748b',fontSize:'13px'}}>The AI personas will know your product and respond to your pitch.</p>
+          <p style={{margin:'0 0 22px',color:'#64748b',fontSize:'13px'}}>The AI allEmps will know your product and respond to your pitch.</p>
           {[{l:'Product Name *',k:'name',ph:'e.g. Acme CRM',m:false},{l:'Elevator Pitch',k:'desc',ph:'What problem does it solve and for who?',m:true},{l:'Ideal Customer Profile',k:'icp',ph:'e.g. B2B SaaS, 50-500 employees, VP Sales',m:false},{l:'Value Props (one per line)',k:'vps',ph:'Saves 5hrs/week\nReduces churn 20%',m:true},{l:'Common Objections (one per line)',k:'objs',ph:'Too expensive\nWe already have a solution',m:true}].map(({l,k,ph,m})=>(
             <div key={k} style={{marginBottom:'15px'}}>
               <label style={{display:'block',fontSize:'11px',fontWeight:'700',color:'#374151',marginBottom:'5px',letterSpacing:'0.05em'}}>{l.toUpperCase()}</label>
@@ -891,7 +891,7 @@ function sendEmail(emp, company, subject, body) {
     <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.6)',zIndex:1000,display:'flex',alignItems:'center',justifyContent:'center'}}>
       <div style={{background:'#1e293b',borderRadius:12,padding:28,width:400,border:'1px solid #334155'}}>
         <h3 style={{color:'#f1f5f9',margin:'0 0 16px',fontSize:18}}>Book {bookingCallType==='demo'?'Demo':'Discovery'} Call</h3>
-        <p style={{color:'#94a3b8',margin:'0 0 16px',fontSize:14}}>with <strong style={{color:'#e2e8f0'}}>{bookingPersona.first_name} {bookingPersona.last_name}</strong></p>
+        <p style={{color:'#94a3b8',margin:'0 0 16px',fontSize:14}}>with <strong style={{color:'#e2e8f0'}}>{bookingPersona.first} {bookingPersona.last}</strong></p>
         <div style={{marginBottom:14}}>
           <label style={{display:'block',color:'#94a3b8',fontSize:12,marginBottom:6}}>CALL TYPE</label>
           <div style={{display:'flex',gap:8}}>
@@ -1022,7 +1022,7 @@ function sendEmail(emp, company, subject, body) {
       <div style={{color:'#f1f5f9',fontWeight:700,marginBottom:6,fontSize:14}}>📅 Prospect wants to schedule</div>
       <div style={{color:'#94a3b8',fontSize:13,marginBottom:12}}>{midCallBooking.persona_name} mentioned booking a follow-up.</div>
       <div style={{display:'flex',gap:8}}>
-        <button onClick={()=>{handleOpenBooking(personas.find(p=>p.id===midCallBooking.persona_id),midCallBooking.call_type);setMidCallBooking(null);}} style={{flex:1,padding:'7px 0',borderRadius:8,border:'none',background:'#6366f1',color:'#fff',cursor:'pointer',fontWeight:600,fontSize:13}}>Book Now</button>
+        <button onClick={()=>{handleOpenBooking(allEmps.find(p=>p.id===midCallBooking.persona_id),midCallBooking.call_type);setMidCallBooking(null);}} style={{flex:1,padding:'7px 0',borderRadius:8,border:'none',background:'#6366f1',color:'#fff',cursor:'pointer',fontWeight:600,fontSize:13}}>Book Now</button>
         <button onClick={()=>setMidCallBooking(null)} style={{padding:'7px 12px',borderRadius:8,border:'1px solid #334155',background:'transparent',color:'#64748b',cursor:'pointer',fontSize:13}}>Dismiss</button>
       </div>
     </div>
@@ -1077,7 +1077,7 @@ function sendEmail(emp, company, subject, body) {
                   const replied = emps.filter(e => state[e.id]?.emailStatus==="replied" || state[e.id]?.linkedinStatus==="connected").length;
                   const contacted = emps.filter(e => state[e.id]?.emailStatus!=="none" || state[e.id]?.calls>0 || state[e.id]?.linkedinStatus!=="none").length;
                   return (
-                    <div key={c.id} onClick={() => { setSelCompany(c); fetchSupa('personas?company_id=eq.' + c.id + '&select=id,first_name,last_name,pain_points,goals,challenges,buying_role,budget_authority').then(d => { if(d){ const m={}; d.forEach(p=>{m[p.id]=p;}); setIntelData(m); setExpandedIntel(null); } }); setCrmView("company"); }} className="bg-white rounded-xl border border-[#D4CFC4] p-4 cursor-pointer hover:border-[#1A3A2A] hover:shadow-md transition-all group">
+                    <div key={c.id} onClick={() => { setSelCompany(c); fetchSupa('allEmps?company_id=eq.' + c.id + '&select=id,first_name,last_name,pain_points,goals,challenges,buying_role,budget_authority').then(d => { if(d){ const m={}; d.forEach(p=>{m[p.id]=p;}); setIntelData(m); setExpandedIntel(null); } }); setCrmView("company"); }} className="bg-white rounded-xl border border-[#D4CFC4] p-4 cursor-pointer hover:border-[#1A3A2A] hover:shadow-md transition-all group">
                       <div className="flex items-start justify-between mb-3">
                         <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm ${getAvatarColor(c.id)}`}>{c.name.slice(0,2).toUpperCase()}</div>
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sizeColors[c.size]}`}>{c.size}</span>
@@ -1159,7 +1159,7 @@ function sendEmail(emp, company, subject, body) {
                               <button onClick={() => initiateCall(emp)} className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Call</button>
                               <button onClick={() => { setEmailCompose({emp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Email</button>
                               <button onClick={() => { setPlProfile(emp); setTab("prolink"); setPlView("profile"); }} className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Profile</button>
-                              <button onClick={() => activeCallId === emp.id ? endCall() : handleStartCallWithDeal(emp, selCompany)} disabled={activeCallId !== null && activeCallId !== emp.id} style={{marginLeft:'6px',padding:'4px 12px',borderRadius:'6px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:'600',background:activeCallId===emp.id?(callStatus==='active'?'#ef4444':'#f97316'):'#7c3aed',color:'white',opacity:activeCallId!==null&&activeCallId!==emp.id?0.4:1}}>{activeCallId === emp.id ? (callStatus === 'connecting' ? 'Ã°ÂÂÂ Connecting...' : 'Ã°ÂÂÂ´ End Call') : 'Ã°ÂÂÂÃ¯Â¸Â AI Call'}</button><button onClick={()=>handleOpenBooking(personas.find(p=>p.id===emp.id),'discovery')} style={{marginLeft:6,padding:'4px 10px',borderRadius:6,border:'none',background:'#334155',color:'#818cf8',cursor:'pointer',fontSize:11,fontWeight:600}}>📅 Book</button>
+                              <button onClick={() => activeCallId === emp.id ? endCall() : handleStartCallWithDeal(emp, selCompany)} disabled={activeCallId !== null && activeCallId !== emp.id} style={{marginLeft:'6px',padding:'4px 12px',borderRadius:'6px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:'600',background:activeCallId===emp.id?(callStatus==='active'?'#ef4444':'#f97316'):'#7c3aed',color:'white',opacity:activeCallId!==null&&activeCallId!==emp.id?0.4:1}}>{activeCallId === emp.id ? (callStatus === 'connecting' ? 'Ã°ÂÂÂ Connecting...' : 'Ã°ÂÂÂ´ End Call') : 'Ã°ÂÂÂÃ¯Â¸Â AI Call'}</button><button onClick={()=>handleOpenBooking(allEmps.find(p=>p.id===emp.id),'discovery')} style={{marginLeft:6,padding:'4px 10px',borderRadius:6,border:'none',background:'#334155',color:'#818cf8',cursor:'pointer',fontSize:11,fontWeight:600}}>📅 Book</button>
                               <button onClick={() => setExpandedIntel(expandedIntel === emp.id ? null : emp.id)} style={{marginLeft:'6px',padding:'4px 10px',borderRadius:'6px',border:'1px solid #e2e8f0',cursor:'pointer',fontSize:'12px',fontWeight:'600',background:expandedIntel===emp.id?'#eff6ff':'#f8fafc',color:'#3b82f6'}}>ð Intel</button>
                             </div>
                           {expandedIntel === emp.id && intelData[emp.id] && (
@@ -1802,8 +1802,8 @@ function sendEmail(emp, company, subject, body) {
     <div style={{padding:32,maxWidth:900,margin:'0 auto'}}>
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24}}>
         <h2 style={{color:'#f1f5f9',margin:0,fontSize:22,fontWeight:700}}>📅 Scheduled Calls</h2>
-        {personas.length>0&&(
-          <button onClick={()=>{const emp=personas[0];handleOpenBooking(emp,'discovery');}} style={{padding:'9px 18px',borderRadius:9,border:'none',background:'#6366f1',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:14}}>+ Book Call</button>
+        {allEmps.length>0&&(
+          <button onClick={()=>{const emp=allEmps[0];handleOpenBooking(emp,'discovery');}} style={{padding:'9px 18px',borderRadius:9,border:'none',background:'#6366f1',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:14}}>+ Book Call</button>
         )}
       </div>
       {scheduledCalls.length===0?(
