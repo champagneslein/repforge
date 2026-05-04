@@ -403,6 +403,8 @@ export default function App() {
   const [sessionActive,setSessionActive]=React.useState(false);
   const [midCallBooking,setMidCallBooking]=React.useState(null);
   const [expandedMsg,setExpandedMsg]=React.useState(null);
+const [demoObjections,setDemoObjections]=React.useState([]);
+const [handledObjections,setHandledObjections]=React.useState(new Set());
 
   React.useEffect(()=>{
     try{const s=JSON.parse(localStorage.getItem('rp_sess')||'{}');
@@ -769,7 +771,9 @@ function sendEmail(emp, company, subject, body) {
 
   const handleJoinCall=async(sc)=>{
     const dd=sc.discovery_data||generateDiscoveryData();
-    window._discoveryBlock=`\n\n## MEDDIC Context (Hidden from Prospect)\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nDecision Process: ${dd.decision_process}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n`;
+    window._discoveryBlock=sc.call_type==='demo'
+      ?`\n\n## Demo Call Context (Hidden from Prospect)\nYou already had a discovery call. You understand the problem. You are now watching a product demo. Stay in character as ${sc.persona_name} from ${sc.company_name}.\n\nMEDDIC Summary:\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n\n## Your Demo Behavior\nYou are a skeptical but genuinely interested prospect. During the demo MUST:\n- Raise 3-4 pointed objections (pricing, implementation time, comparison to ${dd.competition})\n- Ask at least one feature question tied to your pain: ${dd.pain}\n- If impressed follow with "but what about..."\n- Towards the end ask about next steps only if convinced\n- Do NOT ask basic discovery questions`
+      :`\n\n## MEDDIC Context (Hidden from Prospect)\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nDecision Process: ${dd.decision_process}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n`;
     setActiveSession({...sc,discovery_data:dd});
     setSessionTimer(1800);
     setSessionActive(true);
@@ -793,6 +797,26 @@ function sendEmail(emp, company, subject, body) {
     if(emp)handleOpenBooking(emp,msg.call_type||'discovery');
     setExpandedMsg(null);
   };
+function generateDemoObjections(dd,pName,cName){
+  const comp=dd&&dd.competition?dd.competition:'your current solution';
+  const pain=dd&&dd.pain?dd.pain:'your main challenge';
+  const budget=dd&&dd.budget?dd.budget:'your budget';
+  const timeline=dd&&dd.timeline?dd.timeline:'your timeline';
+  return[
+    {id:1,cat:'Competitor',icon:'⚔️',text:`How does this compare to ${comp}? We've used them for years.`},
+    {id:2,cat:'Pricing',icon:'💰',text:`This seems expensive. How does it fit ${budget}?`},
+    {id:3,cat:'Feature',icon:'🔍',text:`Walk me through how this solves ${pain}.`},
+    {id:4,cat:'Timeline',icon:'⏱️',text:`How long is implementation? We need this in ${timeline}.`},
+    {id:5,cat:'Risk',icon:'⚠️',text:`What if we start and it doesn't work? What's the exit clause?`},
+  ];
+}
+React.useEffect(()=>{
+  if(!sessionActive||!activeSession||activeSession.call_type!=='demo'){setDemoObjections([]);setHandledObjections(new Set());return;}
+  const objs=generateDemoObjections(activeSession.discovery_data,activeSession.persona_name,activeSession.company_name);
+  const timers=objs.map((obj,i)=>setTimeout(()=>setDemoObjections(prev=>prev.find(o=>o.id===obj.id)?prev:[...prev,obj]),(90+i*120+Math.random()*60)*1000));
+  return()=>timers.forEach(clearTimeout);
+},[sessionActive,activeSession&&activeSession.id]);
+
   return (
     <div className="min-h-screen bg-[#F7F4EE]">
       {!user&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'#1A3A2A',zIndex:99999,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
@@ -931,59 +955,36 @@ function sendEmail(emp, company, subject, body) {
       {activeSession.call_type==='demo'?(
         /* DEMO: fake video UI */
         <div style={{flex:1,display:'flex',gap:0,overflow:'hidden'}}>
-          <div style={{flex:1,display:'flex',flexDirection:'column',background:'#0a0f1e',padding:20,gap:16}}>
-            {/* Main screen share area */}
+          <div style={{flex:1,display:'flex',flexDirection:'column',background:'#0a0f1e',padding:20,gap:12,overflow:'hidden'}}>
             <div style={{flex:1,background:'#111827',borderRadius:12,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>
-              <div style={{textAlign:'center'}}>
-                <div style={{fontSize:48,marginBottom:12}}>🖥️</div>
-                <div style={{color:'#475569',fontSize:14}}>Screen share area</div>
-                <div style={{color:'#334155',fontSize:12,marginTop:4}}>Present your demo here</div>
-              </div>
+              <div style={{textAlign:'center'}}><div style={{fontSize:48,marginBottom:12}}>🖥️</div><div style={{color:'#475569',fontSize:14}}>Screen share area</div><div style={{color:'#334155',fontSize:12,marginTop:4}}>Present your demo here</div></div>
               <div style={{position:'absolute',bottom:12,left:12,background:'rgba(0,0,0,0.7)',padding:'4px 10px',borderRadius:6,color:'#94a3b8',fontSize:11}}>Your Screen</div>
             </div>
-            {/* Video tiles row */}
             <div style={{display:'flex',gap:12,height:120}}>
-              {/* Persona tile */}
-              <div style={{flex:1,background:'#1a2236',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>
-                <div style={{width:52,height:52,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:22,color:'#fff',fontWeight:700}}>
-                  {(activeSession.persona_name||'?').split(' ').map(n=>n[0]).join('').slice(0,2)}
-                </div>
-                <div style={{position:'absolute',bottom:6,left:8,color:'#94a3b8',fontSize:11}}>{activeSession.persona_name}</div>
-                <div style={{position:'absolute',top:6,right:8,width:8,height:8,borderRadius:'50%',background:'#22c55e'}}/>
+              <div style={{flex:1,background:'#1a2236',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:6,position:'relative'}}>
+                <div style={{width:44,height:44,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontWeight:700,fontSize:18}}>{activeSession.persona_name?activeSession.persona_name.split(' ').map(n=>n[0]).join('').slice(0,2):'?'}</div>
+                <span style={{color:'#94a3b8',fontSize:11}}>{activeSession.persona_name}</span>
+                <div style={{position:'absolute',bottom:6,right:6,background:'#22c55e',width:8,height:8,borderRadius:'50%'}}/>
               </div>
-              {/* Rep (you) tile */}
-              <div style={{flex:1,background:'#111827',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',position:'relative'}}>
-                <div style={{color:'#475569',fontSize:13}}>📷 Camera off</div>
-                <div style={{position:'absolute',bottom:6,left:8,color:'#64748b',fontSize:11}}>You</div>
+              <div style={{flex:1,background:'#0f1929',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:6}}>
+                <div style={{fontSize:28}}>👤</div><span style={{color:'#94a3b8',fontSize:11}}>You</span>
+              </div>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <button onClick={handleCloseSession} style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#ef4444',color:'#fff',fontSize:18,cursor:'pointer'}}>📵</button>
               </div>
             </div>
           </div>
-          {/* Right panel: MEDDIC + transcript */}
-          <div style={{width:300,background:'#0f172a',borderLeft:'1px solid #1e293b',display:'flex',flexDirection:'column',overflow:'hidden'}}>
-            <div style={{padding:'14px 16px',borderBottom:'1px solid #1e293b'}}>
-              <div style={{color:'#64748b',fontSize:11,fontWeight:700,letterSpacing:1}}>MEDDIC CONTEXT</div>
+          <div style={{width:280,background:'#0d1526',borderLeft:'1px solid #1e293b',display:'flex',flexDirection:'column',overflow:'hidden'}}>
+            <div style={{padding:'14px 16px',borderBottom:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+              <span style={{color:'#f1f5f9',fontWeight:700,fontSize:13}}>⚔️ Objection Tracker</span>
+              <span style={{background:handledObjections.size===demoObjections.length&&demoObjections.length>0?'#22c55e':'#334155',color:'#fff',fontSize:11,padding:'2px 8px',borderRadius:10,fontWeight:600}}>{handledObjections.size}/{demoObjections.length} handled</span>
             </div>
-            <div style={{flex:1,overflowY:'auto',padding:16}}>
-              {activeSession.discovery_data&&Object.entries({Budget:activeSession.discovery_data.budget,Authority:activeSession.discovery_data.authority,Timeline:activeSession.discovery_data.timeline,'Decision Process':activeSession.discovery_data.decision_process,Pain:activeSession.discovery_data.pain,Competition:activeSession.discovery_data.competition}).map(([k,v])=>(
-                <div key={k} style={{marginBottom:12}}>
-                  <div style={{color:'#475569',fontSize:10,fontWeight:700,letterSpacing:0.5,marginBottom:2}}>{k.toUpperCase()}</div>
-                  <div style={{color:'#94a3b8',fontSize:13}}>{v}</div>
-                </div>
-              ))}
-              {activeSession.discovery_data&&<div style={{marginTop:16,padding:'10px 12px',background:'#1e293b',borderRadius:8}}>
-                <div style={{color:'#475569',fontSize:10,fontWeight:700,marginBottom:4}}>INTEREST SCORE</div>
-                <div style={{fontSize:22,fontWeight:700,color:'#22c55e'}}>{activeSession.discovery_data.interest}<span style={{fontSize:13,color:'#475569'}}>/8</span></div>
-              </div>}
+            <div style={{flex:1,overflowY:'auto',padding:12,display:'flex',flexDirection:'column',gap:8}}>
+              {demoObjections.length===0?(<div style={{textAlign:'center',color:'#475569',fontSize:12,marginTop:40}}><div style={{fontSize:28,marginBottom:8}}>⏳</div><div>Objections will surface</div><div>as the demo progresses…</div></div>):demoObjections.map(obj=>(<div key={obj.id} style={{background:handledObjections.has(obj.id)?'rgba(34,197,94,0.08)':'rgba(239,68,68,0.08)',border:`1px solid ${handledObjections.has(obj.id)?'#166534':'#7f1d1d'}`,borderRadius:8,padding:'8px 10px'}}><div style={{display:'flex',alignItems:'flex-start',gap:6,marginBottom:6}}><span style={{fontSize:14}}>{obj.icon}</span><div style={{flex:1}}><span style={{background:handledObjections.has(obj.id)?'#166534':'#7f1d1d',color:'#fff',fontSize:9,padding:'1px 5px',borderRadius:3,fontWeight:700}}>{obj.cat}</span><p style={{color:'#cbd5e1',fontSize:12,margin:'4px 0 0',lineHeight:1.4}}>{obj.text}</p></div></div>{!handledObjections.has(obj.id)?(<button onClick={()=>setHandledObjections(prev=>{const s=new Set(prev);s.add(obj.id);return s;})} style={{width:'100%',padding:'4px',borderRadius:5,border:'1px solid #22c55e',background:'rgba(34,197,94,0.1)',color:'#22c55e',fontSize:11,cursor:'pointer',fontWeight:600}}>✓ Mark Handled</button>):(<div style={{textAlign:'center',color:'#22c55e',fontSize:11,fontWeight:600}}>✓ Handled</div>)}</div>))}
             </div>
-            {/* Call controls */}
-            <div style={{padding:16,borderTop:'1px solid #1e293b',display:'flex',justifyContent:'center',gap:12}}>
-              <button style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:18,cursor:'pointer'}}>🎤</button>
-              <button style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:18,cursor:'pointer'}}>📷</button>
-              <button onClick={handleCloseSession} style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#ef4444',color:'#fff',fontSize:18,cursor:'pointer'}}>📵</button>
-            </div>
+            {demoObjections.length>0&&(<div style={{padding:'10px 16px',borderTop:'1px solid #1e293b',background:'#0a0f1e'}}><div style={{display:'flex',justifyContent:'space-between',marginBottom:4}}><span style={{color:'#94a3b8',fontSize:11}}>Demo Score</span><span style={{color:handledObjections.size/Math.max(demoObjections.length,1)>=0.8?'#22c55e':handledObjections.size/Math.max(demoObjections.length,1)>=0.5?'#f59e0b':'#ef4444',fontSize:11,fontWeight:700}}>{Math.round(handledObjections.size/Math.max(demoObjections.length,1)*100)}%</span></div><div style={{height:4,background:'#1e293b',borderRadius:2,overflow:'hidden'}}><div style={{height:'100%',width:`${Math.round(handledObjections.size/Math.max(demoObjections.length,1)*100)}%`,background:handledObjections.size/Math.max(demoObjections.length,1)>=0.8?'#22c55e':handledObjections.size/Math.max(demoObjections.length,1)>=0.5?'#f59e0b':'#ef4444',borderRadius:2,transition:'width 0.4s'}}/></div></div>)}
           </div>
-        </div>
-      ):(
+        </div>):(
         /* DISCOVERY: audio UI */
         <div style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:32}}>
           <div style={{width:120,height:120,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:48,color:'#fff',fontWeight:700,boxShadow:'0 0 40px rgba(99,102,241,0.4)'}}>
