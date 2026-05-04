@@ -27,9 +27,9 @@ async function fetchSupabase(endpoint, filter = '') {
                                                                                     }
                                                                                     }
 
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // COMPANY + EMPLOYEE DATA
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 const companies = [
   { id:1,  name:"Nexaflow",         industry:"SaaS",           size:"Enterprise", employees:42, domain:"nexaflow.io",         description:"Cloud workflow automation for enterprise ops teams",        location:"Dublin" },
   { id:2,  name:"CloudPulse",       industry:"SaaS",           size:"Mhid-Market", employees:25, domain:"cloudpulse.io",       description:"Real-time analytics and monitoring SaaS",                  location:"London" },
@@ -54,39 +54,39 @@ const companies = [
 ];
 
 const allEmployees = {
-  1:[{id:101,first:"Conor",last:"Murphy",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Serial entrepreneur. Previously exited two SaaS companies. Board member at three Dublin startups.",personality:"Dismissive of generic pitches. Responds only to sharp, outcome-focused messaging after multiple touches. Time is their scarcest resource",posts:["Proud to announce Nexaflow just crossed 500 enterprise customers ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ","Leadership lesson: hire people smarter than you, then get out of their way.","Great panel at SaaS Ireland yesterday on AI in operations. The future is closer than you think."]},
+  1:[{id:101,first:"Conor",last:"Murphy",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Serial entrepreneur. Previously exited two SaaS companies. Board member at three Dublin startups.",personality:"Dismissive of generic pitches. Responds only to sharp, outcome-focused messaging after multiple touches. Time is their scarcest resource",posts:["Proud to announce Nexaflow just crossed 500 enterprise customers ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ","Leadership lesson: hire people smarter than you, then get out of their way.","Great panel at SaaS Ireland yesterday on AI in operations. The future is closer than you think."]},
     {id:102,first:"Rachel",last:"O'Brien",title:"CTO",seniority:"c-suite",bio:"Engineering leader with 15 years in cloud infrastructure. Previously Staff Engineer at AWS.",personality:"Data-driven and technical. Wants proof, not promises. Will ask hard questions if you get through",posts:["We just migrated our entire infrastructure to Kubernetes. 6 months of work. Worth every minute.","Hot take: most SaaS companies over-engineer their MVP. Ship fast, iterate faster."]},
-    {id:103,first:"David",last:"Flynn",title:"VP Sales",seniority:"vp",bio:"Sales leader. 10 years in enterprise SaaS. Love building teams from scratch and scaling revenue.",personality:"Seen every sales tactic. Responds to reps who understand pipeline pain. Needs 3-4 touches before engaging",posts:["Hiring 3 AEs in Dublin right now. DM me if you know anyone strong.","The best salespeople I've hired all had one thing in common: genuine curiosity about the customer's problem.","Q1 closed strong. Team absolutely smashed it ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂª"]},
-    {id:104,first:"Siobhan",last:"Kelly",title:"VP Marketing",seniority:"vp",bio:"Brand and demand gen leader. Previously HubSpot EMEA. Passionate about category creation.",personality:"Brand-conscious, ROI-focused. Replies to well-crafted emails. Prefers async over calls",posts:["Content is still king. But distribution is the kingdom.","Just back from SaaStr. The AI narrative is everywhere ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ the companies winning are the ones with real ROI stories."]},
+    {id:103,first:"David",last:"Flynn",title:"VP Sales",seniority:"vp",bio:"Sales leader. 10 years in enterprise SaaS. Love building teams from scratch and scaling revenue.",personality:"Seen every sales tactic. Responds to reps who understand pipeline pain. Needs 3-4 touches before engaging",posts:["Hiring 3 AEs in Dublin right now. DM me if you know anyone strong.","The best salespeople I've hired all had one thing in common: genuine curiosity about the customer's problem.","Q1 closed strong. Team absolutely smashed it ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂª"]},
+    {id:104,first:"Siobhan",last:"Kelly",title:"VP Marketing",seniority:"vp",bio:"Brand and demand gen leader. Previously HubSpot EMEA. Passionate about category creation.",personality:"Brand-conscious, ROI-focused. Replies to well-crafted emails. Prefers async over calls",posts:["Content is still king. But distribution is the kingdom.","Just back from SaaStr. The AI narrative is everywhere ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ the companies winning are the ones with real ROI stories."]},
     {id:105,first:"Mark",last:"Doyle",title:"Head of Product",seniority:"director",bio:"Product leader focused on workflow automation. Ex-Intercom. Obsessed with reducing friction.",personality:"Pragmatic problem-solver. Will engage if you speak to their specific challenge. Needs 2-3 attempts",posts:["Shipped three new features this week. User feedback has been incredible.","Product managers: your job is to say no. Nicely, but firmly."]},
-    {id:106,first:"Aoife",last:"Walsh",title:"Sales Manager",seniority:"manager",bio:"Building and coaching the Nexaflow sales team. 5 years in B2B SaaS sales.",personality:"Keen to solve team problems quickly. Responds well to empathy and concrete demos. Usually picks up after 1-2 calls",posts:["Ran a great cold call training session with the team today. Practice makes permanent.","New quarter, new goals. Let's go team! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¯"]},
-    {id:107,first:"Liam",last:"Burke",title:"Enterprise AE",seniority:"mid",bio:"Enterprise AE at Nexaflow. Helping large ops teams eliminate manual work.",personality:"Not a decision maker but a helpful gatekeeper. Will forward to manager if the pitch is relevant",posts:["Just closed my biggest deal to date. Onwards! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:106,first:"Aoife",last:"Walsh",title:"Sales Manager",seniority:"manager",bio:"Building and coaching the Nexaflow sales team. 5 years in B2B SaaS sales.",personality:"Keen to solve team problems quickly. Responds well to empathy and concrete demos. Usually picks up after 1-2 calls",posts:["Ran a great cold call training session with the team today. Practice makes permanent.","New quarter, new goals. Let's go team! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯"]},
+    {id:107,first:"Liam",last:"Burke",title:"Enterprise AE",seniority:"mid",bio:"Enterprise AE at Nexaflow. Helping large ops teams eliminate manual work.",personality:"Not a decision maker but a helpful gatekeeper. Will forward to manager if the pitch is relevant",posts:["Just closed my biggest deal to date. Onwards! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
     {id:108,first:"Emma",last:"Byrne",title:"Customer Success Manager",seniority:"mid",bio:"Making sure Nexaflow customers get value from day one.",personality:"Focused on customer outcomes. Responds well to product improvements that drive retention",posts:["QBR season is here. Love seeing customers light up when we show them their ROI data."]},
-    {id:109,first:"Sean",last:"Farrell",title:"SDR",seniority:"junior",bio:"SDR at Nexaflow. Learning the ropes and loving it.",personality:"Eager and responsive. Will pass you up immediately. Friendly and enthusiastic",posts:["Week 3 on the job. Already booked my first meeting. Buzzing! ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¡"]},
-    {id:110,first:"Niamh",last:"Clarke",title:"Marketing Coordinator",seniority:"junior",bio:"Marketing team at Nexaflow. Events, content, socials.",personality:"Enthusiastic team player. Not involved in purchases but engaged with content. Easy to reach",posts:["Our booth at TechConnect was a massive success! Thanks to everyone who stopped by ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:109,first:"Sean",last:"Farrell",title:"SDR",seniority:"junior",bio:"SDR at Nexaflow. Learning the ropes and loving it.",personality:"Eager and responsive. Will pass you up immediately. Friendly and enthusiastic",posts:["Week 3 on the job. Already booked my first meeting. Buzzing! ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡"]},
+    {id:110,first:"Niamh",last:"Clarke",title:"Marketing Coordinator",seniority:"junior",bio:"Marketing team at Nexaflow. Events, content, socials.",personality:"Enthusiastic team player. Not involved in purchases but engaged with content. Easy to reach",posts:["Our booth at TechConnect was a massive success! Thanks to everyone who stopped by ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
   ],
   2:[{id:201,first:"James",last:"Sheridan",title:"CEO & Founder",seniority:"c-suite",bio:"Founded CloudPulse after 8 years at Datadog. Building the next generation of ops analytics.",personality:"Founder energy. Approachable but laser-focused on traction. Responds to metrics and momentum",posts:["Thrilled to announce our Series A. Thank you to every customer who believed in us early.","Rule for founders: never be too busy to talk to a customer."]},
     {id:202,first:"Laura",last:"Nolan",title:"Head of Sales",seniority:"director",bio:"Sales leader at CloudPulse. Previously Salesforce and Zendesk.",personality:"Sales veteran. Respects solid methodology. Will take a call if you reference their industry",posts:["Hiring AEs in London. If you can tell me what a good discovery question looks like, you're halfway there.","The best cold email I got this week had three lines and one question. Hired that SDR."]},
     {id:203,first:"Ronan",last:"Higgins",title:"Head of Engineering",seniority:"director",bio:"Engineering at CloudPulse. Prev Google SRE. Obsessed with reliability.",personality:"Engineering-first. Cares about reliability, not hype. Engage with technical depth",posts:["99.99% uptime last quarter. The team deserves all the credit."]},
     {id:204,first:"Clare",last:"Brennan",title:"Sales Manager",seniority:"manager",bio:"Running CloudPulse's mid-market sales motion. Love a clean pipeline.",personality:"Pipeline obsessive. Direct, no-nonsense. Responds to reps who respect her time",posts:["Pipeline review day. Time to separate the real deals from the wishful thinking.","Favourite part of the job: coaching a rep through a tough objection live on a call."]},
-    {id:205,first:"Patrick",last:"Duggan",title:"Account Executive",seniority:"mid",bio:"AE at CloudPulse. Helping ops teams see their data clearly.",personality:"Motivated closer. Responsive to managers and peer reps. Eager to help",posts:["Closed 2 deals this week. Good problems to have on a Friday! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:205,first:"Patrick",last:"Duggan",title:"Account Executive",seniority:"mid",bio:"AE at CloudPulse. Helping ops teams see their data clearly.",personality:"Motivated closer. Responsive to managers and peer reps. Eager to help",posts:["Closed 2 deals this week. Good problems to have on a Friday! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
     {id:206,first:"Aoibhe",last:"Ryan",title:"Marketing Manager",seniority:"manager",bio:"Demand gen and brand at CloudPulse.",personality:"Marketing practitioner. Responds to data-backed pitches. Prefers structured outreach",posts:["Webinar next Tuesday on real-time ops analytics. Register now!"]},
-    {id:207,first:"Cian",last:"McCarthy",title:"SDR",seniority:"junior",bio:"SDR at CloudPulse. Dialing and smiling.",personality:"Hungry SDR. Responds to coaching and peer insight. Very receptive",posts:["100 calls this week. 4 meetings booked. Progress! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
-    {id:208,first:"Fiona",last:"O'Sullivan",title:"Operations Coordinator",seniority:"junior",bio:"Ops team at CloudPulse. Keeping things running smoothly.",personality:"Team-oriented. Helpful and responsive. Will pass along info to decision makers",posts:["Team offsite was a blast! Great people here ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:207,first:"Cian",last:"McCarthy",title:"SDR",seniority:"junior",bio:"SDR at CloudPulse. Dialing and smiling.",personality:"Hungry SDR. Responds to coaching and peer insight. Very receptive",posts:["100 calls this week. 4 meetings booked. Progress! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:208,first:"Fiona",last:"O'Sullivan",title:"Operations Coordinator",seniority:"junior",bio:"Ops team at CloudPulse. Keeping things running smoothly.",personality:"Team-oriented. Helpful and responsive. Will pass along info to decision makers",posts:["Team offsite was a blast! Great people here ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
   ],
   3:[{id:301,first:"Tom",last:"Keane",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Building Stackly to fix developer productivity. Ex-GitHub. YC W22.",personality:"YC founder mindset. Moves fast, makes decisions quick. Responds to novel approaches",posts:["Just hit 10k developers on the platform. Wild.","The best product feedback comes from watching someone use your product in silence."]},
     {id:302,first:"Sarah",last:"Power",title:"CTO & Co-Founder",seniority:"c-suite",bio:"CTO at Stackly. MIT grad. Code review obsessive.",personality:"Technical perfectionist. Skeptical of over-engineered solutions. Engage on architecture",posts:["Shipped our new AI-assisted review engine today. Weeks of work. Couldn't be prouder of the team."]},
     {id:303,first:"Jack",last:"Lennon",title:"Head of Growth",seniority:"director",bio:"Growth at Stackly. PLG motion, community, partnerships.",personality:"PLG expert. Understands viral loops. Responds to growth mechanics, not features",posts:["PLG tip: your best salespeople are your existing users. Enable them."]},
-    {id:304,first:"Megan",last:"Lawlor",title:"Lead Developer",seniority:"mid",bio:"Fullstack developer at Stackly. TypeScript nerd.",personality:"Developer-focused. Values simplicity and good DX. Helpful peer voice",posts:["Finally fixed that bug that's been haunting me for 3 weeks. Sleep tonight ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:304,first:"Megan",last:"Lawlor",title:"Lead Developer",seniority:"mid",bio:"Fullstack developer at Stackly. TypeScript nerd.",personality:"Developer-focused. Values simplicity and good DX. Helpful peer voice",posts:["Finally fixed that bug that's been haunting me for 3 weeks. Sleep tonight ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
     {id:305,first:"Kevin",last:"Brady",title:"Sales Rep",seniority:"junior",bio:"First sales hire at Stackly. Learning fast.",personality:"First-time sales rep. Eager, learning fast. Very responsive and coachable",posts:["First week done. This team moves fast. Love it!"]},
   ],
   4:[{id:401,first:"Brian",last:"Cassidy",title:"CEO",seniority:"c-suite",bio:"CEO at Velodata. Data infrastructure background. Ex-Palantir.",personality:"Data infrastructure veteran. Wants integration depth. Responds to technical fit discussions",posts:["Data pipelines shouldn't be a competitive advantage. They should be table stakes. That's what we're building.","Grateful for the team we've assembled. Hire slow."]},
-    {id:402,first:"Karen",last:"Moran",title:"VP Engineering",seniority:"vp",bio:"Engineering leader at Velodata. 12 years in data infrastructure.",personality:"Architecture-driven. Needs to understand your data model. Very technical gatekeeper",posts:["Modern data stack deep dive ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ happy to share our architecture if useful. Drop a comment."]},
-    {id:403,first:"Declan",last:"Phelan",title:"Director of Sales",seniority:"director",bio:"Sales at Velodata. Former Snowflake. Love a complex technical sale.",personality:"Complex deal expert. Enjoys the long sales cycle. Responds to consultative approach",posts:["Technical sales tip: understand the data flow before you understand the budget.","Closed a 7-figure deal today. Long cycle, worth it. Team effort. ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:402,first:"Karen",last:"Moran",title:"VP Engineering",seniority:"vp",bio:"Engineering leader at Velodata. 12 years in data infrastructure.",personality:"Architecture-driven. Needs to understand your data model. Very technical gatekeeper",posts:["Modern data stack deep dive ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ happy to share our architecture if useful. Drop a comment."]},
+    {id:403,first:"Declan",last:"Phelan",title:"Director of Sales",seniority:"director",bio:"Sales at Velodata. Former Snowflake. Love a complex technical sale.",personality:"Complex deal expert. Enjoys the long sales cycle. Responds to consultative approach",posts:["Technical sales tip: understand the data flow before you understand the budget.","Closed a 7-figure deal today. Long cycle, worth it. Team effort. ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
     {id:404,first:"Aisling",last:"Tobin",title:"Product Manager",seniority:"manager",bio:"PM at Velodata. Connector-obsessed.",personality:"Connector-obsessed. Practical PM. Responds to feature requests from customers",posts:["We just added Salesforce + dbt connectors. Customers have been asking for months."]},
     {id:405,first:"Fergal",last:"O'Dwyer",title:"Account Executive",seniority:"mid",bio:"AE at Velodata. Selling data pipelines to data teams.",personality:"Mid-level AE. Strong peer voice. Will engage easily",posts:["Nothing like a customer saying 'this just works' to make your week."]},
     {id:406,first:"Ruth",last:"Hennessy",title:"Data Analyst",seniority:"mid",bio:"Data analyst at Velodata. Numbers tell stories.",personality:"Numbers-focused analyst. Helpful for building cases. Can champion internally",posts:[]},
-    {id:407,first:"Cathal",last:"Dunne",title:"SDR",seniority:"junior",bio:"SDR at Velodata. Learning technical sales.",personality:"Learning technical sales. Responds well to demos and 1:1 support",posts:["Booked my first enterprise meeting today! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:407,first:"Cathal",last:"Dunne",title:"SDR",seniority:"junior",bio:"SDR at Velodata. Learning technical sales.",personality:"Learning technical sales. Responds well to demos and 1:1 support",posts:["Booked my first enterprise meeting today! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
   ],
   5:[{id:501,first:"Gerard",last:"Connolly",title:"CEO",seniority:"c-suite",bio:"CEO at ShieldOps. 20 years in cybersecurity. Former CISO turned founder.",personality:"Security veteran, founder energy. Visionary but practical. Responds to industry insight",posts:["The threat landscape has fundamentally changed. Endpoint protection alone is no longer enough.","Thrilled to welcome three new enterprise customers this quarter. The pipeline is strong."]},
     {id:502,first:"Denise",last:"Hanlon",title:"CISO",seniority:"c-suite",bio:"CISO at ShieldOps. Former Head of Security at AIB. Board advisor to two fintech firms.",personality:"CISO authority. Board-savvy. Responds to executive positioning and risk framing",posts:["Ransomware attacks up 40% YoY. If you don't have an incident response plan, you're already behind.","Speaking at CyberDublin next month on zero-trust implementation. Register if you're attending."]},
@@ -95,14 +95,14 @@ const allEmployees = {
     {id:505,first:"Niall",last:"Regan",title:"Security Architect",seniority:"manager",bio:"Security architecture and design at ShieldOps.",personality:"Security architect. Philosophy-driven. Engages deeply on approach, not product",posts:["Zero trust isn't a product. It's a philosophy. Fight me."]},
     {id:506,first:"Eimear",last:"Daly",title:"Threat Intelligence Lead",seniority:"manager",bio:"Threat intel and analysis at ShieldOps.",personality:"Threat intel specialist. Current events knowledge. Engages on risk narratives",posts:["New threat actor targeting Irish financial institutions. Briefing clients now."]},
     {id:507,first:"Shane",last:"Cunningham",title:"SOC Manager",seniority:"manager",bio:"Managing the ShieldOps SOC team.",personality:"SOC manager. Overworked, coffee-dependent. Responds to relief, not complexity",posts:["24/7 SOC life. Coffee is not optional."]},
-    {id:508,first:"Ciara",last:"Fitzpatrick",title:"Compliance Manager",seniority:"manager",bio:"Compliance and regulatory at ShieldOps. GDPR, NIS2, DORA.",personality:"Compliance specialist. Regulatory lens. Engages on frameworks and standards",posts:["DORA deadline approaching. Financial firms ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ are you ready?"]},
+    {id:508,first:"Ciara",last:"Fitzpatrick",title:"Compliance Manager",seniority:"manager",bio:"Compliance and regulatory at ShieldOps. GDPR, NIS2, DORA.",personality:"Compliance specialist. Regulatory lens. Engages on frameworks and standards",posts:["DORA deadline approaching. Financial firms ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ are you ready?"]},
     {id:509,first:"Alan",last:"Delaney",title:"Penetration Tester",seniority:"mid",bio:"Ethical hacker at ShieldOps. Breaking things so customers don't have to.",personality:"Ethical hacker mindset. Technical depth required. Responds to advanced concepts",posts:["Just completed a red team engagement. Can't share details obviously. But wow."]},
-    {id:510,first:"Orla",last:"Quinn",title:"Security Analyst",seniority:"junior",bio:"Junior security analyst at ShieldOps. Always learning.",personality:"Junior analyst, learning. Eager, responsive. Will loop in managers",posts:["Passed my CEH exam! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:510,first:"Orla",last:"Quinn",title:"Security Analyst",seniority:"junior",bio:"Junior security analyst at ShieldOps. Always learning.",personality:"Junior analyst, learning. Eager, responsive. Will loop in managers",posts:["Passed my CEH exam! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
   ],
   6:[{id:601,first:"Brendan",last:"Forde",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at CipherEdge. Identity obsessive. Ex-Okta.",personality:"Identity obsessive, founder. Visionary and technical. Responds to strategic fit",posts:["Identity is the new perimeter. We've been saying this for three years. The market is finally listening."]},
     {id:602,first:"Yvonne",last:"Stapleton",title:"Head of Security",seniority:"director",bio:"Security engineering at CipherEdge.",personality:"Security engineer. Deep technical. Wants whitepaper depth. Engineering peer conversation",posts:["Our zero-trust framework white paper is live. Link in comments."]},
     {id:603,first:"Colm",last:"Sheridan",title:"Sales Director",seniority:"director",bio:"Sales at CipherEdge. 10 years in identity and access management.",personality:"Identity sales expert. Strategic framing required. Responds to business impact",posts:["Every CISO I've spoken to this month has mentioned identity as their top priority. We're in the right place at the right time."]},
-    {id:604,first:"Sinead",last:"Whelan",title:"Identity & Access Manager",seniority:"manager",bio:"IAM specialist at CipherEdge.",personality:"IAM specialist. Standards and best practice driven. Engages on technical implementation",posts:["MFA fatigue is a real attack vector. Here's how to mitigate it: ÃÂÃÂ°ÃÂÃÂÃÂÃÂ§ÃÂÃÂµ"]},
+    {id:604,first:"Sinead",last:"Whelan",title:"Identity & Access Manager",seniority:"manager",bio:"IAM specialist at CipherEdge.",personality:"IAM specialist. Standards and best practice driven. Engages on technical implementation",posts:["MFA fatigue is a real attack vector. Here's how to mitigate it: ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂµ"]},
     {id:605,first:"Darragh",last:"Murphy",title:"AE",seniority:"mid",bio:"Account Executive at CipherEdge.",personality:"Enterprise AE. Responsive to manager guidance. Mid-level peer voice",posts:[]},
     {id:606,first:"Leah",last:"O'Connor",title:"SDR",seniority:"junior",bio:"SDR at CipherEdge. Learning the security space.",personality:"Junior SDR. Learning security. Very responsive and eager to connect",posts:["Great team, great product. Excited to be here!"]},
   ],
@@ -115,7 +115,7 @@ const allEmployees = {
     {id:802,first:"Maeve",last:"Donovan",title:"CISO",seniority:"c-suite",bio:"CISO at Fortivex. Board-level security advisor.",personality:"Board-level CISO. Executive presence. Needs strategic business framing",posts:["Board members: cybersecurity is not an IT issue. It's a business risk issue. Time to treat it that way."]},
     {id:803,first:"Ronan",last:"Foley",title:"VP Sales EMEA",seniority:"vp",bio:"VP Sales EMEA at Fortivex.",personality:"Enterprise EMEA VP. Quota-driven. Responds to pipeline opportunity",posts:["EMEA pipeline looking very healthy heading into H2. Team is firing on all cylinders."]},
     {id:804,first:"Grainne",last:"Lawless",title:"Director, SOC Automation",seniority:"director",bio:"SOC automation specialist at Fortivex.",personality:"SOC automation expert. Operational mindset. Engages on process improvement",posts:["Automation doesn't replace analysts. It frees them to do the work that actually matters."]},
-    {id:805,first:"Barry",last:"Malone",title:"Enterprise Sales Manager",seniority:"manager",bio:"Enterprise sales at Fortivex.",personality:"Enterprise sales manager. Long cycle expert. Responds to structured deals",posts:["Closed a 3-year enterprise deal today. Longest sales cycle I've ever run. Worth it. ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:805,first:"Barry",last:"Malone",title:"Enterprise Sales Manager",seniority:"manager",bio:"Enterprise sales at Fortivex.",personality:"Enterprise sales manager. Long cycle expert. Responds to structured deals",posts:["Closed a 3-year enterprise deal today. Longest sales cycle I've ever run. Worth it. ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
     {id:806,first:"Cliona",last:"Healy",title:"SOC Analyst",seniority:"mid",bio:"SOC analyst at Fortivex.",personality:"SOC analyst practitioner. Helpful peer. Will champion good tools",posts:[]},
     {id:807,first:"Fergus",last:"Dolan",title:"SDR",seniority:"junior",bio:"SDR at Fortivex. Breaking into the security sales world.",personality:"Junior SDR. Breaking into security. Eager and responsive",posts:["Cold calling CISOs is not for the faint-hearted. But I'm learning fast."]},
   ],
@@ -126,9 +126,9 @@ const allEmployees = {
     {id:905,first:"Donal",last:"Hartigan",title:"Director of Procurement",seniority:"director",bio:"Procurement at IronCore. 150+ supplier relationships.",personality:"Procurement lead. Risk and vendor management. Engages on supplier benefits",posts:["Supplier diversity isn't just ethical. It's strategic risk management."]},
     {id:906,first:"Teresa",last:"Coughlan",title:"Supply Chain Manager",seniority:"manager",bio:"Supply chain at IronCore.",personality:"Supply chain coordinator. Process-focused. Helpful internal voice",posts:[]},
     {id:907,first:"Paddy",last:"Sheehan",title:"Operations Manager",seniority:"manager",bio:"Operations at IronCore.",personality:"Operations manager. Lean philosophy. Responds to waste elimination",posts:["Great lean workshop with the team today. Waste elimination never stops."]},
-    {id:908,first:"Louise",last:"Tracey",title:"Quality Control Manager",seniority:"manager",bio:"QC at IronCore. Zero defects is the goal.",personality:"Quality obsessive. Zero-defect mentality. Engages on quality metrics",posts:["ISO 9001 audit passed with zero non-conformances. Team effort! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:908,first:"Louise",last:"Tracey",title:"Quality Control Manager",seniority:"manager",bio:"QC at IronCore. Zero defects is the goal.",personality:"Quality obsessive. Zero-defect mentality. Engages on quality metrics",posts:["ISO 9001 audit passed with zero non-conformances. Team effort! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
     {id:909,first:"Kevin",last:"Dunford",title:"Production Supervisor",seniority:"mid",bio:"Production supervisor at IronCore.",personality:"Production supervisor. Hands-on. Practical, results-focused",posts:[]},
-    {id:910,first:"Denise",last:"Gleeson",title:"EHS Coordinator",seniority:"junior",bio:"EHS at IronCore. Safety first, always.",personality:"EHS coordinator. Safety-first culture. Responsive to team",posts:["1000 days without a lost-time incident! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:910,first:"Denise",last:"Gleeson",title:"EHS Coordinator",seniority:"junior",bio:"EHS at IronCore. Safety first, always.",personality:"EHS coordinator. Safety-first culture. Responsive to team",posts:["1000 days without a lost-time incident! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
   ],
   10:[{id:1001,first:"Seamus",last:"Fitzgibbon",title:"MD & Owner",seniority:"c-suite",bio:"Owner and MD of PrecisionWorks. Family business, third generation.",personality:"Family business owner. Long-term mindset. Responds to stability and growth",posts:["40 years of precision engineering. Still learning every day.","Cork manufacturing is alive and well. Proud to be part of it."]},
     {id:1002,first:"Mary",last:"Quigley",title:"Operations Director",seniority:"director",bio:"Operations at PrecisionWorks.",personality:"Operations director. Equipment and capability focused. Engages on manufacturing",posts:["New CNC equipment installed this week. Massive upgrade in our capability."]},
@@ -144,7 +144,7 @@ const allEmployees = {
   ],
   12:[{id:1201,first:"Robert",last:"Kearney",title:"CEO",seniority:"c-suite",bio:"CEO at FluxTech. Advanced materials pioneer.",personality:"Materials pioneer, CEO. Innovation-focused. Responds to advanced tech",posts:["Composite materials are reshaping aerospace, automotive, and construction. We're at the centre of it."]},
     {id:1202,first:"Helen",last:"Dempsey",title:"VP Operations",seniority:"vp",bio:"VP Ops at FluxTech. Scaling manufacturing excellence.",personality:"Operations VP. Scaling expert. Engages on manufacturing excellence",posts:["Operational resilience is the competitive advantage nobody talks about enough."]},
-    {id:1203,first:"Ciaran",last:"Moynihan",title:"R&D Director",seniority:"director",bio:"R&D lead at FluxTech. Material science nerd.",personality:"R&D director. Patent-driven. Technical depth required",posts:["New patent filed this week. Can't say more yet. Watch this space ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ"]},
+    {id:1203,first:"Ciaran",last:"Moynihan",title:"R&D Director",seniority:"director",bio:"R&D lead at FluxTech. Material science nerd.",personality:"R&D director. Patent-driven. Technical depth required",posts:["New patent filed this week. Can't say more yet. Watch this space ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"]},
     {id:1204,first:"Noreen",last:"Fahy",title:"Procurement Manager",seniority:"manager",bio:"Procurement at FluxTech.",personality:"Procurement manager. Supplier and materials focus",posts:[]},
     {id:1205,first:"Alan",last:"Staunton",title:"Process Engineer",seniority:"mid",bio:"Process engineering at FluxTech.",personality:"Process engineer. Operational improvement mindset",posts:[]},
     {id:1206,first:"Roisin",last:"Neary",title:"Quality Technician",seniority:"junior",bio:"Quality assurance at FluxTech.",personality:"Quality technician. Quality systems focused. Helpful peer",posts:[]},
@@ -156,7 +156,7 @@ const allEmployees = {
     {id:1305,first:"Dermot",last:"Farley",title:"Head of Compliance",seniority:"director",bio:"Compliance at CapitalBridge. MiFID II, EMIR, DORA.",personality:"Compliance director. Regulatory framework. Engages on standards and governance",posts:["DORA compliance is not optional. It's time to treat it with the urgency it deserves."]},
     {id:1306,first:"Lorna",last:"Fagan",title:"Head of Partnerships",seniority:"director",bio:"Partnerships and BD at CapitalBridge.",personality:"Partnerships head. Business development focused. Strategic relationship play",posts:["Three new partnerships announced this quarter. Exciting times ahead."]},
     {id:1307,first:"Tim",last:"Galligan",title:"Risk Manager",seniority:"manager",bio:"Risk management at CapitalBridge.",personality:"Risk manager. Risk-averse perspective. Engages on mitigation",posts:[]},
-    {id:1308,first:"Elaine",last:"Maguire",title:"Sales Manager",seniority:"manager",bio:"Sales management at CapitalBridge.",personality:"Sales manager, fintech. Quota-focused. Responds to pipeline",posts:["Great team, great quarter. Onwards to Q3! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¯"]},
+    {id:1308,first:"Elaine",last:"Maguire",title:"Sales Manager",seniority:"manager",bio:"Sales management at CapitalBridge.",personality:"Sales manager, fintech. Quota-focused. Responds to pipeline",posts:["Great team, great quarter. Onwards to Q3! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯"]},
     {id:1309,first:"Ross",last:"Kiernan",title:"Financial Analyst",seniority:"mid",bio:"Financial analysis at CapitalBridge.",personality:"Financial analyst. Numbers-focused. Helpful internal analyst",posts:[]},
     {id:1310,first:"Amy",last:"Doherty",title:"SDR",seniority:"junior",bio:"SDR at CapitalBridge. Learning financial services sales.",personality:"Junior SDR. Learning fintech. Eager and responsive",posts:["Week one in fintech sales. Steep learning curve. Loving it."]},
   ],
@@ -165,7 +165,7 @@ const allEmployees = {
     {id:1403,first:"Colm",last:"Nash",title:"Head of Sales",seniority:"director",bio:"Sales at Moneta Labs.",personality:"Sales director. Fintech relationship expert. Responds to partnership fit",posts:["Fintech sales is a relationship business. Full stop."]},
     {id:1404,first:"Roisin",last:"Smyth",title:"Compliance Lead",seniority:"manager",bio:"Compliance at Moneta Labs.",personality:"Compliance lead. Regulatory focus. Engages on governance",posts:[]},
     {id:1405,first:"Darragh",last:"Cullinane",title:"AE",seniority:"mid",bio:"Account Executive at Moneta Labs.",personality:"AE, mid-level. Responsive peer voice",posts:[]},
-    {id:1406,first:"Grace",last:"Langan",title:"Marketing Executive",seniority:"junior",bio:"Marketing at Moneta Labs.",personality:"Junior marketing exec. Brand-focused. Responsive and eager",posts:["Our new brand is live! Check it out ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ¨"]},
+    {id:1406,first:"Grace",last:"Langan",title:"Marketing Executive",seniority:"junior",bio:"Marketing at Moneta Labs.",personality:"Junior marketing exec. Brand-focused. Responsive and eager",posts:["Our new brand is live! Check it out ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¨"]},
   ],
   15:[{id:1501,first:"Ken",last:"Morrissey",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at PayStream. Fintech operator. Payment reconciliation obsessive.",personality:"Founder, fintech. Reconciliation expert. Responds to specific SMB pain",posts:["Every finance team I speak to has the same problem: too much time on reconciliation, not enough on analysis. We fix that."]},
     {id:1502,first:"Jackie",last:"Naughton",title:"Head of Finance",seniority:"director",bio:"Finance lead at PayStream.",personality:"Finance leader. Numbers obsessive. Engages on metrics",posts:[]},
@@ -173,7 +173,7 @@ const allEmployees = {
     {id:1504,first:"Laura",last:"Slattery",title:"Customer Success Rep",seniority:"junior",bio:"CS at PayStream.",personality:"Junior CS rep. Helpful and responsive",posts:[]},
   ],
   16:[{id:1601,first:"Richard",last:"Hackett",title:"CEO",seniority:"c-suite",bio:"CEO at FinAxis Group. 20 years in financial regulation and risk.",personality:"Regulatory veteran, CEO. Risk framework mindset. Responds to compliance advantage",posts:["Regulatory complexity is accelerating. The firms that will win are the ones that turn compliance into a competitive advantage."]},
-    {id:1602,first:"Fiona",last:"Quigley",title:"Chief Compliance Officer",seniority:"c-suite",bio:"CCO at FinAxis Group. Board-level regulatory advisor.",personality:"Board-level CCO. Executive authority. Strategic regulatory positioning required",posts:["DORA, NIS2, Basel IV ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ the regulatory pipeline is full. Start now."]},
+    {id:1602,first:"Fiona",last:"Quigley",title:"Chief Compliance Officer",seniority:"c-suite",bio:"CCO at FinAxis Group. Board-level regulatory advisor.",personality:"Board-level CCO. Executive authority. Strategic regulatory positioning required",posts:["DORA, NIS2, Basel IV ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ the regulatory pipeline is full. Start now."]},
     {id:1603,first:"Eoin",last:"Sexton",title:"VP Sales EMEA",seniority:"vp",bio:"VP Sales EMEA at FinAxis Group.",personality:"VP Sales EMEA. RegTech expert. Responds to timing and momentum",posts:["RegTech is having its moment. We've been ready for years."]},
     {id:1604,first:"Grainne",last:"Cronin",title:"Head of Risk",seniority:"director",bio:"Risk management at FinAxis Group.",personality:"Risk director. Model risk focus. Engages on quantitative rigor",posts:["Model risk is the next frontier. Most firms are woefully underprepared."]},
     {id:1605,first:"Ruairi",last:"O'Neill",title:"Sales Manager",seniority:"manager",bio:"Sales manager at FinAxis Group.",personality:"Sales manager. Quota and compliance balance. Responds to pipeline",posts:[]},
@@ -197,28 +197,28 @@ const allEmployees = {
     {id:1904,first:"Tara",last:"Gannon",title:"Head of Partnerships",seniority:"director",bio:"Partnerships and alliances at RetailEdge.",personality:"Partnerships head. Ecosystem play. Engages on integration",posts:["Just announced our Shopify Plus partnership. Big news for our customers."]},
     {id:1905,first:"Barry",last:"Jennings",title:"Enterprise Sales Manager",seniority:"manager",bio:"Enterprise sales at RetailEdge.",personality:"Enterprise sales manager. Long retail cycles. Responds to consultative approach",posts:[]},
     {id:1906,first:"Lisa",last:"Donoghue",title:"AE",seniority:"mid",bio:"Account Executive at RetailEdge.",personality:"AE, mid-level. Responsive peer",posts:[]},
-    {id:1907,first:"Oisin",last:"Magee",title:"SDR",seniority:"junior",bio:"SDR at RetailEdge.",personality:"Junior SDR. Learning retail. Eager and responsive",posts:["First meeting booked with a top-10 UK retailer. Yes! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¯"]},
+    {id:1907,first:"Oisin",last:"Magee",title:"SDR",seniority:"junior",bio:"SDR at RetailEdge.",personality:"Junior SDR. Learning retail. Eager and responsive",posts:["First meeting booked with a top-10 UK retailer. Yes! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯"]},
   ],
   20:[{id:2001,first:"Mick",last:"Harrington",title:"MD & Founder",seniority:"c-suite",bio:"Founder at BuildRight. 20 years in construction, last 5 in construction tech.",personality:"Construction founder. Industry digitization focus. Responds to site reality",posts:["Construction is the last major industry to be digitised. We're changing that.","Great to see Irish construction tech getting recognition at Build Digital Summit."]},
     {id:2002,first:"Brid",last:"Fallon",title:"Operations Director",seniority:"director",bio:"Operations at BuildRight.",personality:"Operations director. Construction operations. Practical process focus",posts:[]},
-    {id:2003,first:"SeÃÂÃÂÃÂÃÂ¡n",last:"Power",title:"Head of Projects",seniority:"director",bio:"Project management at BuildRight.",personality:"Project management head. Digital delivery expert. Responds to efficiency gains",posts:["Digital project management has cut our delays by 30%. The data doesn't lie."]},
+    {id:2003,first:"SeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡n",last:"Power",title:"Head of Projects",seniority:"director",bio:"Project management at BuildRight.",personality:"Project management head. Digital delivery expert. Responds to efficiency gains",posts:["Digital project management has cut our delays by 30%. The data doesn't lie."]},
     {id:2004,first:"Joan",last:"Kerrigan",title:"Compliance Manager",seniority:"manager",bio:"Compliance and health & safety at BuildRight.",personality:"Compliance manager. H&S obsessed. Engages on safety impact",posts:["H&S compliance in construction is life and death. We take it seriously."]},
     {id:2005,first:"Liam",last:"Cronin",title:"Project Manager",seniority:"mid",bio:"Project manager at BuildRight.",personality:"Project manager. Site-focused. Practical, responsive",posts:[]},
     {id:2006,first:"Aoibhinn",last:"Sheehan",title:"Site Coordinator",seniority:"junior",bio:"Site coordination at BuildRight.",personality:"Site coordinator. Ground-level voice. Helpful and engaged",posts:[]},
   ],
 };
 
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // EMAIL DELAY BY SENIORITY (simulation days)
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 const emailDelay = { "c-suite": 5, "vp": 3, "director": 2, "manager": 1, "mid": 0, "junior": 0 };
 const emailResponseChance = { "c-suite": 0.45, "vp": 0.65, "director": 0.80, "mid": 0.95, "junior": 0.98 };
 const linkedinDelay = { "c-suite": 7, "vp": 4, "director": 3, "manager": 2, "mid": 1, "junior": 0 };
 const linkedinAcceptChance = { "c-suite": 0.35, "vp": 0.55, "director": 0.70, "manager": 0.80, "mid": 0.90, "junior": 0.95 };
 
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // ATTEMPT THRESHOLDS BY SENIORITY
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // How many call ATTEMPTS before there's a real chance of connecting
 const minCallsToConnect = { "c-suite": 4, "vp": 3, "director": 2, "manager": 1, "mid": 0, "junior": 0 };
 // How many emails must be sent before they'll reply
@@ -229,44 +229,44 @@ const attemptsNeededLabel = { "c-suite": "4-5 touches needed", "vp": "3-4 touche
 
 const emailReplies = {
   "c-suite": ["I don't usually respond to cold outreach but this is relevant. What does implementation look like?", "Forwarded to our Head of Enablement. They'll be in touch if there's a fit.", "Interesting. Send me the ROI case in one page. No decks.", "We might have a need for this in Q3. My EA will reach out if so."],
-  "vp": ["This is timely ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ we just hired a new cohort. Can you send more detail on the scoring methodology?", "I've seen tools like this before. What makes yours different? Be specific.", "Looks relevant. What's the commercial model?", "Happy to take a 20-minute call. What does your calendar look like Thursday?"],
-  "director": ["Thanks ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ this is actually something we've been discussing internally. Can you send a one-pager?", "Relevant timing ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ we're onboarding 4 new AEs next month. Happy to jump on a call.", "I've shared this with my Sales Manager. They'll follow up.", "This looks interesting. What does a typical pilot look like?"],
+  "vp": ["This is timely ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ we just hired a new cohort. Can you send more detail on the scoring methodology?", "I've seen tools like this before. What makes yours different? Be specific.", "Looks relevant. What's the commercial model?", "Happy to take a 20-minute call. What does your calendar look like Thursday?"],
+  "director": ["Thanks ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ this is actually something we've been discussing internally. Can you send a one-pager?", "Relevant timing ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ we're onboarding 4 new AEs next month. Happy to jump on a call.", "I've shared this with my Sales Manager. They'll follow up.", "This looks interesting. What does a typical pilot look like?"],
   "manager": ["This is exactly the problem I've been trying to solve. Can we jump on a call this week?", "We just had two new reps struggle in their first month. Very timely. When are you free?", "Love the concept. Send me a demo link and I'll take a look today.", "My team would benefit from this. Let me loop in my VP."],
-  "mid": ["Thanks ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ I've forwarded this to my manager. They're the right person to speak to.", "Hi! Not really my area but I've passed this on to the sales manager."],
-  "junior": ["Hi! This looks cool ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ I've forwarded it to my manager. They'll be the right person to chat to ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ", "Hey! Passed this to the right person internally ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ they'll reach out if there's interest!"],
+  "mid": ["Thanks ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ I've forwarded this to my manager. They're the right person to speak to.", "Hi! Not really my area but I've passed this on to the sales manager."],
+  "junior": ["Hi! This looks cool ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ I've forwarded it to my manager. They'll be the right person to chat to ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ", "Hey! Passed this to the right person internally ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ they'll reach out if there's interest!"],
 };
 
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // PROLINK MESSAGE REPLIES BY SENIORITY
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 const linkedinMessageReplies = {
   "c-suite": ["Thanks for connecting. What's on your mind?", "Happy to connect. What are you working on?"],
   "vp": ["Good to connect! What can I help with?", "Thanks for the connection. What's this about?"],
-  "director": ["Thanks for connecting! Always happy to chat sales tech.", "Good to connect ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ what are you building?"],
+  "director": ["Thanks for connecting! Always happy to chat sales tech.", "Good to connect ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ what are you building?"],
   "manager": ["Hi! Great to connect. What's the product about?", "Hey! Thanks for reaching out. Tell me more?"],
-  "mid": ["Hi! Nice to connect ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ What do you do?", "Hey, good to connect! What brings you my way?"],
-  "junior": ["Hi!! Great to connect! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ", "Hey, welcome to ProLink! What do you do?"],
+  "mid": ["Hi! Nice to connect ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ What do you do?", "Hey, good to connect! What brings you my way?"],
+  "junior": ["Hi!! Great to connect! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ", "Hey, welcome to ProLink! What do you do?"],
 };
 
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // CALL MECHANIC
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 const callConnectChance = { "c-suite": 0.18, "vp": 0.28, "director": 0.40, "manager": 0.55, "mid": 0.70, "junior": 0.82 };
 const callConnectedLines = {
-  "c-suite": ["I have two minutes. Make it count.", "Who is this? I'm between meetings.", "You've got sixty seconds ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ what's the pitch?", "I'm literally walking into a boardroom. Email me."],
-  "vp": ["I'm heading into a call ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ can you send me an email first?", "Sure, I can talk for a few minutes. What's this about?", "I saw your email actually. Tell me more.", "Good timing. I've got five minutes."],
-  "director": ["Hi! Yes, what can I do for you?", "Good timing ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ I was just thinking about this space.", "Sure, I have a few minutes.", "Hi! Glad you called actually."],
+  "c-suite": ["I have two minutes. Make it count.", "Who is this? I'm between meetings.", "You've got sixty seconds ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ what's the pitch?", "I'm literally walking into a boardroom. Email me."],
+  "vp": ["I'm heading into a call ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ can you send me an email first?", "Sure, I can talk for a few minutes. What's this about?", "I saw your email actually. Tell me more.", "Good timing. I've got five minutes."],
+  "director": ["Hi! Yes, what can I do for you?", "Good timing ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ I was just thinking about this space.", "Sure, I have a few minutes.", "Hi! Glad you called actually."],
   "manager": ["Hey! Great timing, I've been thinking about this exact problem.", "Hi! Yes, happy to chat. What do you have?", "Oh interesting! Tell me more.", "Hi! We literally just had a team meeting about this."],
-  "mid": ["Hi! Let me grab my manager ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ they're the right person for this.", "Sure, but I'm not the decision maker here. Let me transfer you.", "Hi! I can chat but you'd really need to speak to my boss."],
+  "mid": ["Hi! Let me grab my manager ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ they're the right person for this.", "Sure, but I'm not the decision maker here. Let me transfer you.", "Hi! I can chat but you'd really need to speak to my boss."],
   "junior": ["Hi! Oh wow, sure! Let me get someone who can help you!", "Hey! I'll pass you to my manager right now!", "Hi! I'm not sure I'm the right person but happy to listen!"],
 };
 const callVoicemailLines = {
   "c-suite": ["You've reached the voicemail of [name]. Leave a message after the tone.", "Hi, I'm not available right now. Please leave a brief message."],
-  "vp": ["You've reached [name]. I'm either on a call or out of office. Leave a message and I'll get back to you.", "Hi, this is [name]. Can't take your call right now ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ leave a message."],
-  "director": ["Hi, [name] here. I'm not available ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ please leave your name and number.", "You've reached [name]'s voicemail. Leave a message and I'll call you back."],
+  "vp": ["You've reached [name]. I'm either on a call or out of office. Leave a message and I'll get back to you.", "Hi, this is [name]. Can't take your call right now ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ leave a message."],
+  "director": ["Hi, [name] here. I'm not available ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ please leave your name and number.", "You've reached [name]'s voicemail. Leave a message and I'll call you back."],
   "manager": ["Hey, it's [name]! Can't get to the phone. Leave a message and I'll call you back!", "Hi! This is [name]. I'll call you back as soon as I can."],
-  "mid": ["Hey, it's [name]! Leave me a message and I'll get back to you!", "Hi, [name] here ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ well, not exactly. Leave a message!"],
-  "junior": ["Hey, it's [name]! I'll call you back super soon! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ", "Hi! [name] here ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ can't take your call right now but leave a message!"],
+  "mid": ["Hey, it's [name]! Leave me a message and I'll get back to you!", "Hi, [name] here ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ well, not exactly. Leave a message!"],
+  "junior": ["Hey, it's [name]! I'll call you back super soon! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ", "Hi! [name] here ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ can't take your call right now but leave a message!"],
 };
 const callGatekeeperLines = [
   "Hi, this is reception. Can I ask who's calling and what it's regarding?",
@@ -275,30 +275,30 @@ const callGatekeeperLines = [
   "Thanks for calling. Are you expected?",
 ];
 
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // MEETING MECHANIC
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 const meetingAcceptChance = { "c-suite": 0.55, "vp": 0.65, "director": 0.75, "manager": 0.85, "mid": 0.35, "junior": 0.25 };
 const meetingBookedReplies = {
-  "c-suite": ["Let's do it. 30 minutes next Tuesday ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ my EA will send an invite.", "I've got 20 minutes Thursday at 3pm. Confirmed."],
-  "vp": ["Booked ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Thursday works. Looking forward to it.", "Happy to. I'll send a calendar invite for next week."],
-  "director": ["Sure ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ let's put something in the diary. Tuesday at 11am?", "Happy to chat. I'll send a slot over for next week."],
-  "manager": ["Absolutely ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ this week works. How's Wednesday at 2pm?", "Yes! Let's do it. I'll send a calendar link now."],
-  "mid": ["I'll check with my manager first but I'm happy to be on the call.", "I'd need to loop in my boss ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ can you send the invite to them too?"],
-  "junior": ["I'll forward this to my manager ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ they'll be the right person!", "I need to check with the team but I think this could work!"],
+  "c-suite": ["Let's do it. 30 minutes next Tuesday ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ my EA will send an invite.", "I've got 20 minutes Thursday at 3pm. Confirmed."],
+  "vp": ["Booked ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Thursday works. Looking forward to it.", "Happy to. I'll send a calendar invite for next week."],
+  "director": ["Sure ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ let's put something in the diary. Tuesday at 11am?", "Happy to chat. I'll send a slot over for next week."],
+  "manager": ["Absolutely ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ this week works. How's Wednesday at 2pm?", "Yes! Let's do it. I'll send a calendar link now."],
+  "mid": ["I'll check with my manager first but I'm happy to be on the call.", "I'd need to loop in my boss ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ can you send the invite to them too?"],
+  "junior": ["I'll forward this to my manager ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ they'll be the right person!", "I need to check with the team but I think this could work!"],
 };
 const meetingDeclinedReplies = {
   "c-suite": ["Not the right time for us. Will keep you in mind for Q3.", "We're heads down this quarter. Come back in six months."],
-  "vp": ["We've already invested in a solution here. Thanks though.", "Budget is locked for the year ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ not one for us right now."],
+  "vp": ["We've already invested in a solution here. Thanks though.", "Budget is locked for the year ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ not one for us right now."],
   "director": ["We'd need more internal alignment before a call. Thanks for reaching out.", "Not quite the right fit for the team at the moment."],
-  "manager": ["Good timing but we're mid-project. Come back in 6 weeks?", "I'd need sign-off from above ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ this isn't purely my call."],
+  "manager": ["Good timing but we're mid-project. Come back in 6 weeks?", "I'd need sign-off from above ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ this isn't purely my call."],
   "mid": ["I've passed your details on but we're not looking at this currently.", "Thanks but I think we're covered on this."],
-  "junior": ["I'll pass it along but I don't think we're in the market right now!", "Thanks ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ I'll let the team know but I think we're good!"],
+  "junior": ["I'll pass it along but I don't think we're in the market right now!", "Thanks ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ I'll let the team know but I think we're good!"],
 };
 
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // HELPERS
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 const sizeColors = { "Enterprise":"bg-purple-100 text-purple-700","Mid-Market":"bg-blue-100 text-blue-700","SMB":"bg-green-100 text-green-700" };
 const industryColors = { "SaaS":"bg-sky-100 text-sky-700","Cyber Security":"bg-red-100 text-red-700","Manufacturing":"bg-orange-100 text-orange-700","Fintech":"bg-yellow-100 text-yellow-600","Energy":"bg-green-100 text-green-700","Healthcare":"bg-pink-100 text-pink-700","Retail Tech":"bg-indigo-100 text-indigo-700","Construction":"bg-amber-100 text-amber-700" };
 const seniorityColors = { "c-suite":"bg-red-100 text-red-700","vp":"bg-orange-100 text-orange-700","director":"bg-yellow-100 text-yellow-600","manager":"bg-blue-100 text-blue-700","mid":"bg-gray-100 text-gray-600","junior":"bg-green-100 text-green-700" };
@@ -338,9 +338,9 @@ function initState() {
   return state;
 }
 
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 // MAIN APP
-// ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+// ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 
 async function supaSignUp(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/signup',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
 async function supaSignIn(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
@@ -353,6 +353,16 @@ async function saveCallLog(tok,uid,dealId,personaId,log){await fetch(SUPABASE_UR
 async function fetchAllDeals(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/deals?user_id=eq.'+uid+'&order=updated_at.desc',{headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY}});return r.json();}
 async function moveDealStage(tok,dealId,stage){await fetch(SUPABASE_URL+'/rest/v1/deals?id=eq.'+dealId,{method:'PATCH',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({stage,updated_at:new Date().toISOString()})});}
 function scoreColor(s){return s>=8?'#16a34a':s>=5?'#d97706':'#dc2626';}
+
+async function bookCall(tok,uid,pId,pName,cId,cName,scheduledAt,callType,discoveryData,dealId){const r=await fetch(SUPABASE_URL+'/rest/v1/scheduled_calls',{method:'POST',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json',Prefer:'return=representation'},body:JSON.stringify({user_id:uid,persona_id:pId,persona_name:pName,company_id:cId,company_name:cName,scheduled_at:scheduledAt,call_type:callType,discovery_data:discoveryData,deal_id:dealId||null,booked_by:'rep'})});const d=await r.json();return Array.isArray(d)?d[0]:d;}
+async function fetchScheduledCalls(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/scheduled_calls?user_id=eq.'+uid+'&order=scheduled_at.asc',{headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY}});return r.json();}
+async function updateCallStatus(tok,callId,status){await fetch(SUPABASE_URL+'/rest/v1/scheduled_calls?id=eq.'+callId,{method:'PATCH',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({status})});}
+async function fetchPersonaMessages(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/persona_messages?user_id=eq.'+uid+'&order=created_at.desc',{headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY}});return r.json();}
+async function markMsgRead(tok,msgId){await fetch(SUPABASE_URL+'/rest/v1/persona_messages?id=eq.'+msgId,{method:'PATCH',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({is_read:true})});}
+async function savePersonaMsg(tok,uid,pId,pName,cName,subj,bdy,msgType,wantsCall,callType){await fetch(SUPABASE_URL+'/rest/v1/persona_messages',{method:'POST',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({user_id:uid,persona_id:pId,persona_name:pName,company_name:cName,subject:subj,body:bdy,msg_type:msgType,wants_call:wantsCall,call_type:callType})});}
+function generateDiscoveryData(){const p=a=>a[Math.floor(Math.random()*a.length)];return{budget:p(['$25K-$50K','$50K-$100K','$100K-$250K','$250K-$500K','Over $500K']),authority:p(['Economic Buyer','Champion','Technical Evaluator','Gatekeeper','End User']),timeline:p(['End of Q2','End of Q3','End of Q4','H1 next year','No fixed deadline']),decision_process:p(['Sole decision maker','Needs VP sign-off','3-vendor shortlist + IT review','Committee decision','Board approval required']),pain:p(['Manual reporting costs the team 10+ hrs a week','Our current tool breaks at critical moments','Outgrew legacy system and it cannot scale','We lose deals because our process is too slow','No single source of truth across teams']),competition:p(['Unhappy with current vendor on pricing','Running everything in spreadsheets','Using an outdated on-prem system','Evaluating two other vendors alongside you','No current solution - building from scratch']),interest:Math.floor(Math.random()*4)+5};}
+function genPersonaMsg(pName,cName,product,idx){const msgs=[{subject:'Quick question about '+product,bdy:'Hi,\n\nI came across '+product+' and it looks interesting for what we are solving at '+cName+'. Could you send more detail on pricing and what onboarding looks like?\n\nLooking forward to hearing from you,\n'+pName,msg_type:'info_request',wants_call:false,call_type:'discovery'},{subject:'Interested in a demo of '+product,bdy:'Hi,\n\nI have been evaluating solutions and '+product+' keeps coming up. I would love to see a 30-minute demo - specifically how it handles our core use case.\n\nAre you available this week or next?\n\nBest,\n'+pName,msg_type:'demo_request',wants_call:true,call_type:'demo'},{subject:'Can we set up a discovery call?',bdy:'Hi,\n\nWe are evaluating vendors at '+cName+' and I want to understand if '+product+' could be a fit before we go deeper. Could we find 30 minutes for a discovery call?\n\nThanks,\n'+pName,msg_type:'call_request',wants_call:true,call_type:'discovery'},{subject:product+' evaluation - a few questions',bdy:'Hi,\n\nMy team flagged '+product+' as worth exploring. I am the technical evaluator at '+cName+'. What does your integration story look like and do you have case studies from similar companies?\n\n'+pName,msg_type:'info_request',wants_call:false,call_type:'discovery'},{subject:'Revisiting '+product,bdy:'Hi,\n\nWe looked at '+product+' a while back but timing was not right. We are in a better position now and wanted to reconnect. Would you be open to a quick discovery call?\n\nBest,\n'+pName,msg_type:'call_request',wants_call:true,call_type:'discovery'}];const m=msgs[idx%msgs.length];return{...m,body:m.bdy,persona_name:pName,company_name:cName};}
+
 
 export default function App() {
   const [tab, setTab] = useState("crm");
@@ -380,6 +390,19 @@ export default function App() {
   const [postCallNotes,setPostCallNotes]=React.useState('');
   const [postCallScore,setPostCallScore]=React.useState(5);
   const [postCallObjs,setPostCallObjs]=React.useState('');
+
+  const [scheduledCalls,setScheduledCalls]=React.useState([]);
+  const [personaMessages,setPersonaMessages]=React.useState([]);
+  const [showBookingModal,setShowBookingModal]=React.useState(false);
+  const [bookingPersona,setBookingPersona]=React.useState(null);
+  const [bookingCallType,setBookingCallType]=React.useState('discovery');
+  const [bookingDateTime,setBookingDateTime]=React.useState('');
+  const [showCallSession,setShowCallSession]=React.useState(false);
+  const [activeSession,setActiveSession]=React.useState(null);
+  const [sessionTimer,setSessionTimer]=React.useState(1800);
+  const [sessionActive,setSessionActive]=React.useState(false);
+  const [midCallBooking,setMidCallBooking]=React.useState(null);
+  const [expandedMsg,setExpandedMsg]=React.useState(null);
 
   React.useEffect(()=>{
     try{const s=JSON.parse(localStorage.getItem('rp_sess')||'{}');
@@ -456,7 +479,7 @@ export default function App() {
   const dealHistory=callLogs&&callLogs.length>0?'\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'+callLogs.map((log,i)=>{const daysAgo=Math.round((Date.now()-new Date(log.called_at).getTime())/86400000);return 'Call '+(callLogs.length-i)+' ('+daysAgo+' days ago): '+(log.ai_summary||log.rep_notes||'No summary.')+(log.objections&&log.objections.length?' Objections: '+log.objections.join(', ')+'.':'');}).join('\n')+'\nYour current interest: '+(callLogs[0]?.interest_score_after||5)+'/10.':'';
   try {
       await vapi.start({
-        model: { provider: 'openai', model: 'gpt-3.5-turbo', messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory }] },
+        model: { provider: 'openai', model: 'gpt-3.5-turbo', messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
         voice: selectVoice(emp.first),
         firstMessage: emp.first + ' speaking.',
       });
@@ -643,7 +666,7 @@ function sendEmail(emp, company, subject, body) {
     setState(prev => ({ ...prev, [emp.id]: { ...prev[emp.id], linkedinMsgs: newMsgs } }));
   }
 
-  // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ INBOX DATA ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+  // ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ INBOX DATA ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
   const inbox = allEmps.filter(e => state[e.id]?.emailStatus === "replied").map(e => ({ emp:e, company:getCompanyForEmp(e.id), thread:state[e.id].emailThread }));
   const sent = allEmps.filter(e => ["sent","replied"].includes(state[e.id]?.emailStatus)).map(e => ({ emp:e, company:getCompanyForEmp(e.id), thread:state[e.id].emailThread }));
   const pending = allEmps.filter(e => state[e.id]?.emailStatus === "sent").length;
@@ -670,7 +693,7 @@ function sendEmail(emp, company, subject, body) {
     return { grade:"F", label:"Below Target", color:"text-red-700", bg:"bg-red-50 border-red-200" };
   }
 
-  // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ FEED POSTS ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+  // ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ FEED POSTS ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
   const feedPosts = allEmps.flatMap(emp => {
     const company = getCompanyForEmp(emp.id);
     return emp.posts.map((post, i) => ({ emp, company, post, id: emp.id * 100 + i }));
@@ -684,14 +707,97 @@ function sendEmail(emp, company, subject, body) {
     </button>
   );
 
-  // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+  // ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
   // RENDER
-  // ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ
+  // ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
+
+  // Fetch scheduled calls
+  React.useEffect(()=>{
+    if(!token||!userId)return;
+    fetchScheduledCalls(token,userId).then(d=>{if(Array.isArray(d))setScheduledCalls(d);}).catch(()=>{});
+  },[token,userId]);
+
+  // Generate persona messages randomly
+  React.useEffect(()=>{
+    if(!token||!userId||!personas.length)return;
+    fetchPersonaMessages(token,userId).then(d=>{if(Array.isArray(d))setPersonaMessages(d);}).catch(()=>{});
+    const iv=setInterval(async()=>{
+      const emp=personas[Math.floor(Math.random()*personas.length)];
+      if(!emp)return;
+      const co=companies.find(c=>c.id===emp.company_id)||{name:'Acme Corp'};
+      const idx=Math.floor(Math.random()*5);
+      const msg=genPersonaMsg(emp.first_name+' '+emp.last_name,co.name,productName||'your product',idx);
+      try{
+        const saved=await savePersonaMsg(token,userId,emp.id,emp.first_name+' '+emp.last_name,co.name,msg.subject,msg.body,msg.type,msg.wantsCall,msg.callType);
+        if(saved&&saved.id)setPersonaMessages(prev=>[saved,...prev]);
+      }catch(e){}
+    },45000+Math.floor(Math.random()*75000));
+    return()=>clearInterval(iv);
+  },[token,userId,personas.length,productName]);
+
+  // Session countdown timer
+  React.useEffect(()=>{
+    if(!sessionActive)return;
+    const iv=setInterval(()=>{
+      setSessionTimer(t=>{
+        if(t<=1){clearInterval(iv);setSessionActive(false);setShowCallSession(false);setActiveSession(null);setSessionTimer(1800);if(vi){try{vi.stop();}catch(e){}}return 0;}
+        return t-1;
+      });
+    },1000);
+    return()=>clearInterval(iv);
+  },[sessionActive]);
+
+  const handleOpenBooking=(persona,callType)=>{
+    setBookingPersona(persona);
+    setBookingCallType(callType||'discovery');
+    const dt=new Date(Date.now()+86400000);
+    dt.setHours(10,0,0,0);
+    setBookingDateTime(dt.toISOString().slice(0,16));
+    setShowBookingModal(true);
+  };
+
+  const handleBookCall=async()=>{
+    if(!bookingPersona||!bookingDateTime)return;
+    const co=companies.find(c=>c.id===bookingPersona.company_id)||{id:'',name:'Unknown'};
+    const dd=generateDiscoveryData();
+    try{
+      const saved=await bookCall(token,userId,bookingPersona.id,bookingPersona.first_name+' '+bookingPersona.last_name,co.id,co.name,new Date(bookingDateTime).toISOString(),bookingCallType,dd,null);
+      if(saved&&saved.id)setScheduledCalls(prev=>[...prev,saved]);
+    }catch(e){}
+    setShowBookingModal(false);
+  };
+
+  const handleJoinCall=async(sc)=>{
+    const dd=sc.discovery_data||generateDiscoveryData();
+    window._discoveryBlock=`\n\n## MEDDIC Context (Hidden from Prospect)\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nDecision Process: ${dd.decision_process}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n`;
+    setActiveSession({...sc,discovery_data:dd});
+    setSessionTimer(1800);
+    setSessionActive(true);
+    setShowCallSession(true);
+    if(sc&&sc.id)await updateCallStatus(token,sc.id,'active');
+    setScheduledCalls(prev=>prev.map(c=>c.id===sc.id?{...c,status:'active'}:c));
+  };
+
+  const handleCloseSession=async()=>{
+    setSessionActive(false);
+    setShowCallSession(false);
+    if(activeSession&&activeSession.id)await updateCallStatus(token,activeSession.id,'completed');
+    setScheduledCalls(prev=>prev.map(c=>c.id===activeSession?.id?{...c,status:'completed'}:c));
+    setActiveSession(null);
+    setSessionTimer(1800);
+    if(vi){try{vi.stop();}catch(e){}}
+  };
+
+  const handleMsgBooking=(msg)=>{
+    const emp=personas.find(p=>p.id===msg.persona_id);
+    if(emp)handleOpenBooking(emp,msg.call_type||'discovery');
+    setExpandedMsg(null);
+  };
   return (
     <div className="min-h-screen bg-[#F7F4EE]">
       {!user&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'#1A3A2A',zIndex:99999,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'white',borderRadius:'14px',padding:'40px 44px',width:'380px',maxWidth:'90vw',boxShadow:'0 20px 60px rgba(0,0,0,0.3)'}}>
-          <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'6px'}}><span style={{fontSize:'24px'}}>🔨</span><h1 style={{margin:0,fontSize:'22px',fontWeight:'800',color:'#1A3A2A'}}>RepForge</h1></div>
+          <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'6px'}}><span style={{fontSize:'24px'}}>ð¨</span><h1 style={{margin:0,fontSize:'22px',fontWeight:'800',color:'#1A3A2A'}}>RepForge</h1></div>
           <p style={{margin:'0 0 22px',color:'#64748b',fontSize:'13px'}}>AI-powered sales training platform</p>
           <div style={{display:'flex',marginBottom:'18px',borderRadius:'8px',border:'1px solid #e2e8f0',overflow:'hidden'}}>
             <button onClick={()=>setAuthView('login')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='login'?'#1A3A2A':'white',color:authView==='login'?'white':'#94a3b8',fontSize:'13px'}}>Log In</button>
@@ -727,13 +833,13 @@ function sendEmail(emp, company, subject, body) {
       {showPostCall&&(
         <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.7)',zIndex:9996,display:'flex',alignItems:'center',justifyContent:'center'}}>
           <div style={{background:'#fff',borderRadius:12,padding:28,width:500,maxWidth:'95vw',maxHeight:'90vh',overflowY:'auto'}}>
-            <div style={{fontSize:17,fontWeight:700,color:'#1A3A2A',marginBottom:4}}>📋 Call Summary</div>
-            <div style={{fontSize:12,color:'#888',marginBottom:16}}>Auto-generated — edit and save to pipeline</div>
+            <div style={{fontSize:17,fontWeight:700,color:'#1A3A2A',marginBottom:4}}>ð Call Summary</div>
+            <div style={{fontSize:12,color:'#888',marginBottom:16}}>Auto-generated â edit and save to pipeline</div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#374151',marginBottom:4}}>Summary</div><textarea value={postCallSummary} onChange={e=>setPostCallSummary(e.target.value)} rows={3} style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#374151',marginBottom:4}}>Your Notes</div><textarea value={postCallNotes} onChange={e=>setPostCallNotes(e.target.value)} rows={2} placeholder="What went well? Follow-ups?" style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#374151',marginBottom:4}}>Objections (one per line)</div><textarea value={postCallObjs} onChange={e=>setPostCallObjs(e.target.value)} rows={2} style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:18}}><div style={{fontSize:12,fontWeight:600,color:'#374151',marginBottom:6}}>Prospect Interest: <span style={{color:scoreColor(postCallScore),fontWeight:700}}>{postCallScore}/10</span></div><input type="range" min={1} max={10} value={postCallScore} onChange={e=>setPostCallScore(Number(e.target.value))} style={{width:'100%'}}/></div>
-            <div style={{display:'flex',gap:10}}><button onClick={handlePostCallSave} style={{flex:1,background:'#1A3A2A',color:'#fff',border:'none',borderRadius:8,padding:'10px 0',fontWeight:600,fontSize:14,cursor:'pointer'}}>💾 Save to Pipeline</button><button onClick={()=>setShowPostCall(false)} style={{flex:1,background:'#f3f4f6',color:'#374151',border:'none',borderRadius:8,padding:'10px 0',fontSize:14,cursor:'pointer'}}>Skip</button></div>
+            <div style={{display:'flex',gap:10}}><button onClick={handlePostCallSave} style={{flex:1,background:'#1A3A2A',color:'#fff',border:'none',borderRadius:8,padding:'10px 0',fontWeight:600,fontSize:14,cursor:'pointer'}}>ð¾ Save to Pipeline</button><button onClick={()=>setShowPostCall(false)} style={{flex:1,background:'#f3f4f6',color:'#374151',border:'none',borderRadius:8,padding:'10px 0',fontSize:14,cursor:'pointer'}}>Skip</button></div>
           </div>
         </div>
       )}
@@ -741,8 +847,8 @@ function sendEmail(emp, company, subject, body) {
         <div style={{position:'fixed',inset:0,background:'#F7F4EE',zIndex:9990,overflowY:'auto'}}>
           <div style={{padding:'20px 28px',maxWidth:1300,margin:'0 auto'}}>
             <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24}}>
-              <div><div style={{fontSize:22,fontWeight:800,color:'#1A3A2A'}}>🗂 Deal Pipeline</div><div style={{fontSize:13,color:'#666',marginTop:2}}>{deals.length} deal{deals.length!==1?'s':''} tracked</div></div>
-              <button onClick={()=>{setShowPipeline(false);setTab('crm');}} style={{background:'#1A3A2A',color:'#fff',border:'none',borderRadius:8,padding:'8px 20px',fontWeight:600,fontSize:14,cursor:'pointer'}}>✕ Close</button>
+              <div><div style={{fontSize:22,fontWeight:800,color:'#1A3A2A'}}>ð Deal Pipeline</div><div style={{fontSize:13,color:'#666',marginTop:2}}>{deals.length} deal{deals.length!==1?'s':''} tracked</div></div>
+              <button onClick={()=>{setShowPipeline(false);setTab('crm');}} style={{background:'#1A3A2A',color:'#fff',border:'none',borderRadius:8,padding:'8px 20px',fontWeight:600,fontSize:14,cursor:'pointer'}}>â Close</button>
             </div>
             <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:12}}>
               {['Prospecting','Discovery','Demo','Proposal','Closed Won'].map(stage=>{
@@ -767,8 +873,8 @@ function sendEmail(emp, company, subject, body) {
                             <span style={{fontSize:11,color:scoreColor(sc),fontWeight:600}}>{sc}/10 interest</span>
                           </div>
                           <div style={{display:'flex',gap:4}}>
-                            {ci>0&&<button onClick={()=>handleMoveDeal(deal.id,all[ci-1])} style={{fontSize:10,padding:'3px 7px',background:'#f9fafb',border:'1px solid #e5e7eb',borderRadius:4,cursor:'pointer',color:'#6b7280'}}>← Back</button>}
-                            {ci<4&&<button onClick={()=>handleMoveDeal(deal.id,all[ci+1])} style={{fontSize:10,padding:'3px 8px',background:brd[stage],border:'none',borderRadius:4,cursor:'pointer',color:'#fff',fontWeight:600}}>Advance →</button>}
+                            {ci>0&&<button onClick={()=>handleMoveDeal(deal.id,all[ci-1])} style={{fontSize:10,padding:'3px 7px',background:'#f9fafb',border:'1px solid #e5e7eb',borderRadius:4,cursor:'pointer',color:'#6b7280'}}>â Back</button>}
+                            {ci<4&&<button onClick={()=>handleMoveDeal(deal.id,all[ci+1])} style={{fontSize:10,padding:'3px 8px',background:brd[stage],border:'none',borderRadius:4,cursor:'pointer',color:'#fff',fontWeight:600}}>Advance â</button>}
                           </div>
                         </div>
                       );
@@ -780,7 +886,148 @@ function sendEmail(emp, company, subject, body) {
             </div>
           </div>
         </div>
-      )}{/* TOP NAV */}
+      )}
+  {showBookingModal&&bookingPersona&&(
+    <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.6)',zIndex:1000,display:'flex',alignItems:'center',justifyContent:'center'}}>
+      <div style={{background:'#1e293b',borderRadius:12,padding:28,width:400,border:'1px solid #334155'}}>
+        <h3 style={{color:'#f1f5f9',margin:'0 0 16px',fontSize:18}}>Book {bookingCallType==='demo'?'Demo':'Discovery'} Call</h3>
+        <p style={{color:'#94a3b8',margin:'0 0 16px',fontSize:14}}>with <strong style={{color:'#e2e8f0'}}>{bookingPersona.first_name} {bookingPersona.last_name}</strong></p>
+        <div style={{marginBottom:14}}>
+          <label style={{display:'block',color:'#94a3b8',fontSize:12,marginBottom:6}}>CALL TYPE</label>
+          <div style={{display:'flex',gap:8}}>
+            {['discovery','demo'].map(t=>(
+              <button key={t} onClick={()=>setBookingCallType(t)} style={{flex:1,padding:'8px 0',borderRadius:8,border:'none',cursor:'pointer',fontWeight:600,fontSize:13,background:bookingCallType===t?'#6366f1':'#334155',color:bookingCallType===t?'#fff':'#94a3b8'}}>{t==='demo'?'Demo Call':'Discovery Call'}</button>
+            ))}
+          </div>
+        </div>
+        <div style={{marginBottom:20}}>
+          <label style={{display:'block',color:'#94a3b8',fontSize:12,marginBottom:6}}>DATE & TIME</label>
+          <input type="datetime-local" value={bookingDateTime} onChange={e=>setBookingDateTime(e.target.value)} style={{width:'100%',padding:'8px 10px',borderRadius:8,border:'1px solid #475569',background:'#0f172a',color:'#f1f5f9',fontSize:14,boxSizing:'border-box'}}/>
+        </div>
+        <div style={{display:'flex',gap:10}}>
+          <button onClick={()=>setShowBookingModal(false)} style={{flex:1,padding:'10px 0',borderRadius:8,border:'1px solid #475569',background:'transparent',color:'#94a3b8',cursor:'pointer',fontWeight:600}}>Cancel</button>
+          <button onClick={handleBookCall} style={{flex:1,padding:'10px 0',borderRadius:8,border:'none',background:'#6366f1',color:'#fff',cursor:'pointer',fontWeight:700,fontSize:14}}>Confirm Booking</button>
+        </div>
+      </div>
+    </div>
+  )}
+      
+  {showCallSession&&activeSession&&(
+    <div style={{position:'fixed',inset:0,background:'#0a0f1e',zIndex:999,display:'flex',flexDirection:'column'}}>
+      {/* Header */}
+      <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'16px 24px',borderBottom:'1px solid #1e293b',background:'#0f172a'}}>
+        <div style={{display:'flex',alignItems:'center',gap:12}}>
+          <div style={{width:10,height:10,borderRadius:'50%',background:'#22c55e',boxShadow:'0 0 8px #22c55e'}}/>
+          <span style={{color:'#f1f5f9',fontWeight:700,fontSize:16}}>{activeSession.call_type==='demo'?'Demo':'Discovery'} Call — {activeSession.persona_name}</span>
+          <span style={{background:'#1e293b',color:'#94a3b8',padding:'2px 10px',borderRadius:20,fontSize:12}}>{activeSession.company_name}</span>
+        </div>
+        <div style={{display:'flex',alignItems:'center',gap:16}}>
+          <span style={{fontFamily:'monospace',fontSize:20,fontWeight:700,color:sessionTimer<300?'#ef4444':sessionTimer<600?'#f59e0b':'#22c55e'}}>
+            {String(Math.floor(sessionTimer/60)).padStart(2,'0')}:{String(sessionTimer%60).padStart(2,'0')}
+          </span>
+          <button onClick={handleCloseSession} style={{padding:'6px 16px',borderRadius:8,border:'1px solid #ef4444',background:'rgba(239,68,68,0.1)',color:'#ef4444',cursor:'pointer',fontWeight:600,fontSize:13}}>End Call</button>
+        </div>
+      </div>
+      {activeSession.call_type==='demo'?(
+        /* DEMO: fake video UI */
+        <div style={{flex:1,display:'flex',gap:0,overflow:'hidden'}}>
+          <div style={{flex:1,display:'flex',flexDirection:'column',background:'#0a0f1e',padding:20,gap:16}}>
+            {/* Main screen share area */}
+            <div style={{flex:1,background:'#111827',borderRadius:12,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>
+              <div style={{textAlign:'center'}}>
+                <div style={{fontSize:48,marginBottom:12}}>🖥️</div>
+                <div style={{color:'#475569',fontSize:14}}>Screen share area</div>
+                <div style={{color:'#334155',fontSize:12,marginTop:4}}>Present your demo here</div>
+              </div>
+              <div style={{position:'absolute',bottom:12,left:12,background:'rgba(0,0,0,0.7)',padding:'4px 10px',borderRadius:6,color:'#94a3b8',fontSize:11}}>Your Screen</div>
+            </div>
+            {/* Video tiles row */}
+            <div style={{display:'flex',gap:12,height:120}}>
+              {/* Persona tile */}
+              <div style={{flex:1,background:'#1a2236',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>
+                <div style={{width:52,height:52,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:22,color:'#fff',fontWeight:700}}>
+                  {(activeSession.persona_name||'?').split(' ').map(n=>n[0]).join('').slice(0,2)}
+                </div>
+                <div style={{position:'absolute',bottom:6,left:8,color:'#94a3b8',fontSize:11}}>{activeSession.persona_name}</div>
+                <div style={{position:'absolute',top:6,right:8,width:8,height:8,borderRadius:'50%',background:'#22c55e'}}/>
+              </div>
+              {/* Rep (you) tile */}
+              <div style={{flex:1,background:'#111827',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',position:'relative'}}>
+                <div style={{color:'#475569',fontSize:13}}>📷 Camera off</div>
+                <div style={{position:'absolute',bottom:6,left:8,color:'#64748b',fontSize:11}}>You</div>
+              </div>
+            </div>
+          </div>
+          {/* Right panel: MEDDIC + transcript */}
+          <div style={{width:300,background:'#0f172a',borderLeft:'1px solid #1e293b',display:'flex',flexDirection:'column',overflow:'hidden'}}>
+            <div style={{padding:'14px 16px',borderBottom:'1px solid #1e293b'}}>
+              <div style={{color:'#64748b',fontSize:11,fontWeight:700,letterSpacing:1}}>MEDDIC CONTEXT</div>
+            </div>
+            <div style={{flex:1,overflowY:'auto',padding:16}}>
+              {activeSession.discovery_data&&Object.entries({Budget:activeSession.discovery_data.budget,Authority:activeSession.discovery_data.authority,Timeline:activeSession.discovery_data.timeline,'Decision Process':activeSession.discovery_data.decision_process,Pain:activeSession.discovery_data.pain,Competition:activeSession.discovery_data.competition}).map(([k,v])=>(
+                <div key={k} style={{marginBottom:12}}>
+                  <div style={{color:'#475569',fontSize:10,fontWeight:700,letterSpacing:0.5,marginBottom:2}}>{k.toUpperCase()}</div>
+                  <div style={{color:'#94a3b8',fontSize:13}}>{v}</div>
+                </div>
+              ))}
+              {activeSession.discovery_data&&<div style={{marginTop:16,padding:'10px 12px',background:'#1e293b',borderRadius:8}}>
+                <div style={{color:'#475569',fontSize:10,fontWeight:700,marginBottom:4}}>INTEREST SCORE</div>
+                <div style={{fontSize:22,fontWeight:700,color:'#22c55e'}}>{activeSession.discovery_data.interest}<span style={{fontSize:13,color:'#475569'}}>/8</span></div>
+              </div>}
+            </div>
+            {/* Call controls */}
+            <div style={{padding:16,borderTop:'1px solid #1e293b',display:'flex',justifyContent:'center',gap:12}}>
+              <button style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:18,cursor:'pointer'}}>🎤</button>
+              <button style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:18,cursor:'pointer'}}>📷</button>
+              <button onClick={handleCloseSession} style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#ef4444',color:'#fff',fontSize:18,cursor:'pointer'}}>📵</button>
+            </div>
+          </div>
+        </div>
+      ):(
+        /* DISCOVERY: audio UI */
+        <div style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:32}}>
+          <div style={{width:120,height:120,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:48,color:'#fff',fontWeight:700,boxShadow:'0 0 40px rgba(99,102,241,0.4)'}}>
+            {(activeSession.persona_name||'?').split(' ').map(n=>n[0]).join('').slice(0,2)}
+          </div>
+          <div style={{textAlign:'center'}}>
+            <div style={{color:'#f1f5f9',fontSize:24,fontWeight:700}}>{activeSession.persona_name}</div>
+            <div style={{color:'#64748b',fontSize:14,marginTop:4}}>{activeSession.company_name}</div>
+            <div style={{color:'#22c55e',fontSize:13,marginTop:8,display:'flex',alignItems:'center',gap:6,justifyContent:'center'}}>
+              <div style={{width:8,height:8,borderRadius:'50%',background:'#22c55e',animation:'pulse 1.5s infinite'}}/>
+              Discovery Call in Progress
+            </div>
+          </div>
+          {/* MEDDIC grid */}
+          {activeSession.discovery_data&&(
+            <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12,maxWidth:600,width:'100%'}}>
+              {Object.entries({Budget:activeSession.discovery_data.budget,Authority:activeSession.discovery_data.authority,Timeline:activeSession.discovery_data.timeline,Pain:activeSession.discovery_data.pain,Competition:activeSession.discovery_data.competition,'Score':activeSession.discovery_data.interest+'/8'}).map(([k,v])=>(
+                <div key={k} style={{background:'#1e293b',borderRadius:10,padding:'12px 14px',border:'1px solid #334155'}}>
+                  <div style={{color:'#475569',fontSize:10,fontWeight:700,letterSpacing:0.5,marginBottom:4}}>{k.toUpperCase()}</div>
+                  <div style={{color:'#94a3b8',fontSize:13,fontWeight:500}}>{v}</div>
+                </div>
+              ))}
+            </div>
+          )}
+          <div style={{display:'flex',gap:16}}>
+            <button style={{width:56,height:56,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:22,cursor:'pointer'}}>🎤</button>
+            <button onClick={handleCloseSession} style={{width:56,height:56,borderRadius:'50%',border:'none',background:'#ef4444',color:'#fff',fontSize:22,cursor:'pointer'}}>📵</button>
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+      
+  {midCallBooking&&(
+    <div style={{position:'fixed',bottom:24,right:24,zIndex:1001,background:'#1e293b',border:'1px solid #6366f1',borderRadius:12,padding:'16px 20px',maxWidth:320,boxShadow:'0 8px 32px rgba(0,0,0,0.5)'}}>
+      <div style={{color:'#f1f5f9',fontWeight:700,marginBottom:6,fontSize:14}}>📅 Prospect wants to schedule</div>
+      <div style={{color:'#94a3b8',fontSize:13,marginBottom:12}}>{midCallBooking.persona_name} mentioned booking a follow-up.</div>
+      <div style={{display:'flex',gap:8}}>
+        <button onClick={()=>{handleOpenBooking(personas.find(p=>p.id===midCallBooking.persona_id),midCallBooking.call_type);setMidCallBooking(null);}} style={{flex:1,padding:'7px 0',borderRadius:8,border:'none',background:'#6366f1',color:'#fff',cursor:'pointer',fontWeight:600,fontSize:13}}>Book Now</button>
+        <button onClick={()=>setMidCallBooking(null)} style={{padding:'7px 12px',borderRadius:8,border:'1px solid #334155',background:'transparent',color:'#64748b',cursor:'pointer',fontSize:13}}>Dismiss</button>
+      </div>
+    </div>
+  )}
+      {/* TOP NAV */}
       <div className="bg-[#EDEAE2] border-b border-[#D4CFC4] px-6 py-3 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center gap-6">
           <div>
@@ -788,27 +1035,29 @@ function sendEmail(emp, company, subject, body) {
             <span className="ml-2 text-gray-400 text-xs">Sales Training Sandbox</span>
           </div>
           <div className="flex items-center gap-1">
-            {navBtn("crm","CRM","ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¢",0)}
-            {navBtn("email","Email","ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ",inbox.length)}
-            {navBtn("prolink","ProLink","ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ",pendingConnections)}
-            {navBtn("score","Scorecard","ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ",meetingsBooked>0?meetingsBooked:0)}
-{navBtn("pipeline","Pipeline","🗂",deals.length)}
+            {navBtn("crm","CRM","ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢",0)}
+            {navBtn("email","Email","ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",inbox.length)}
+            {navBtn("prolink","ProLink","ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",pendingConnections)}
+            {navBtn("score","Scorecard","ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",meetingsBooked>0?meetingsBooked:0)}
+{navBtn("pipeline","Pipeline","ð",deals.length)}
+            {navBtn("scheduled","Calls","📅",scheduledCalls.filter(c=>c.status==='upcoming').length)}
+            {navBtn("inbox","Inbox","📬",personaMessages.filter(m=>!m.is_read).length)}
                     </div>
         </div>
         <div className="flex items-center gap-3">
           <div className="text-sm text-gray-500">Day <span className="font-bold text-gray-800">{simDay}</span><span className="text-gray-400"> / {SIM_LENGTH}</span></div>
           {!simComplete ? (
-            <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ© Advance Day</button>              <button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-medium text-xs flex items-center gap-1 transition-colors ${apiKey ? "bg-emerald-700 text-white hover:bg-emerald-600" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}>ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂ¸ÃÂÃÂ {apiKey ? "AI On" : "Add AI Key"}</button></>
+            <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ© Advance Day</button>              <button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-medium text-xs flex items-center gap-1 transition-colors ${apiKey ? "bg-emerald-700 text-white hover:bg-emerald-600" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}>ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂ¸ÃÂÃÂÃÂÃÂ {apiKey ? "AI On" : "Add AI Key"}</button></>
           ) : (
-            <button onClick={() => setTab("score")} className="bg-[#1A3A2A] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ View Final Score</button>
+            <button onClick={() => setTab("score")} className="bg-[#1A3A2A] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ View Final Score</button>
           )}
-          <button onClick={()=>setShowProdSetup(true)} style={{fontSize:'11px',padding:'4px 10px',background:product?'#1A3A2A':'#dc2626',color:'white',border:'none',borderRadius:'6px',cursor:'pointer',fontWeight:'600',whiteSpace:'nowrap'}}>{product?'📦 '+product.product_name.substring(0,18):'⚠️ Setup Product'}</button><button onClick={handleLogout} style={{fontSize:'11px',padding:'4px 10px',background:'#f1f5f9',color:'#475569',border:'1px solid #e2e8f0',borderRadius:'6px',cursor:'pointer',whiteSpace:'nowrap'}}>{user?user.email.split('@')[0]+' · Logout':'Logout'}</button>
+          <button onClick={()=>setShowProdSetup(true)} style={{fontSize:'11px',padding:'4px 10px',background:product?'#1A3A2A':'#dc2626',color:'white',border:'none',borderRadius:'6px',cursor:'pointer',fontWeight:'600',whiteSpace:'nowrap'}}>{product?'ð¦ '+product.product_name.substring(0,18):'â ï¸ Setup Product'}</button><button onClick={handleLogout} style={{fontSize:'11px',padding:'4px 10px',background:'#f1f5f9',color:'#475569',border:'1px solid #e2e8f0',borderRadius:'6px',cursor:'pointer',whiteSpace:'nowrap'}}>{user?user.email.split('@')[0]+' Â· Logout':'Logout'}</button>
         </div>
       </div>
 
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {/* CRM TAB                                    */}
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {tab === "crm" && (
         <div className="p-6">
           {/* Accounts grid */}
@@ -857,7 +1106,7 @@ function sendEmail(emp, company, subject, body) {
           {crmView === "company" && selCompany && (
             <>
               <div className="flex items-center gap-2 mb-5 text-sm">
-                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); }} className="text-[#1A3A2A] hover:underline font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Accounts</button>
+                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); }} className="text-[#1A3A2A] hover:underline font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Accounts</button>
                 <span className="text-gray-300">/</span>
                 <span className="font-semibold text-gray-700">{selCompany.name}</span>
               </div>
@@ -870,7 +1119,7 @@ function sendEmail(emp, company, subject, body) {
                     <div className="flex gap-2 mt-1.5">
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${industryColors[selCompany.industry]||""}`}>{selCompany.industry}</span>
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sizeColors[selCompany.size]}`}>{selCompany.size}</span>
-                      <span className="text-gray-400 text-xs">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ {selCompany.location}</span>
+                      <span className="text-gray-400 text-xs">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ {selCompany.location}</span>
                     </div>
                   </div>
                 </div>
@@ -896,30 +1145,30 @@ function sendEmail(emp, company, subject, body) {
                           <td className="px-4 py-3 text-gray-400 text-xs">{getEmail(emp, selCompany)}</td>
                           <td className="px-4 py-3">
                             {cs.emailStatus==="none" && <span className="text-xs text-gray-400">Not contacted</span>}
-                            {cs.emailStatus==="sent" && <span className="text-xs text-yellow-600 font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ³ Awaiting reply</span>}
-                            {cs.emailStatus==="replied" && <span className="text-xs text-green-600 font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Replied</span>}
+                            {cs.emailStatus==="sent" && <span className="text-xs text-yellow-600 font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³ Awaiting reply</span>}
+                            {cs.emailStatus==="replied" && <span className="text-xs text-green-600 font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Replied</span>}
                           </td>
                           <td className="px-4 py-3">
                             {cs.linkedinStatus==="none" && <span className="text-xs text-gray-400">Not connected</span>}
-                            {cs.linkedinStatus==="pending" && <span className="text-xs text-yellow-600 font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ³ Pending</span>}
-                            {cs.linkedinStatus==="connected" && <span className="text-xs text-blue-600 font-medium">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Connected</span>}
+                            {cs.linkedinStatus==="pending" && <span className="text-xs text-yellow-600 font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³ Pending</span>}
+                            {cs.linkedinStatus==="connected" && <span className="text-xs text-blue-600 font-medium">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Connected</span>}
                             {cs.linkedinStatus==="ignored" && <span className="text-xs text-red-400">Ignored</span>}
                           </td>
                           <td className="px-4 py-3" onClick={e=>e.stopPropagation()}>
                             <div className="flex gap-1.5">
-                              <button onClick={() => initiateCall(emp)} className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Call</button>
-                              <button onClick={() => { setEmailCompose({emp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Email</button>
-                              <button onClick={() => { setPlProfile(emp); setTab("prolink"); setPlView("profile"); }} className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Profile</button>
-                              <button onClick={() => activeCallId === emp.id ? endCall() : handleStartCallWithDeal(emp, selCompany)} disabled={activeCallId !== null && activeCallId !== emp.id} style={{marginLeft:'6px',padding:'4px 12px',borderRadius:'6px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:'600',background:activeCallId===emp.id?(callStatus==='active'?'#ef4444':'#f97316'):'#7c3aed',color:'white',opacity:activeCallId!==null&&activeCallId!==emp.id?0.4:1}}>{activeCallId === emp.id ? (callStatus === 'connecting' ? 'ð Connecting...' : 'ð´ End Call') : 'ðï¸ AI Call'}</button>
-                              <button onClick={() => setExpandedIntel(expandedIntel === emp.id ? null : emp.id)} style={{marginLeft:'6px',padding:'4px 10px',borderRadius:'6px',border:'1px solid #e2e8f0',cursor:'pointer',fontSize:'12px',fontWeight:'600',background:expandedIntel===emp.id?'#eff6ff':'#f8fafc',color:'#3b82f6'}}>🔍 Intel</button>
+                              <button onClick={() => initiateCall(emp)} className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Call</button>
+                              <button onClick={() => { setEmailCompose({emp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Email</button>
+                              <button onClick={() => { setPlProfile(emp); setTab("prolink"); setPlView("profile"); }} className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Profile</button>
+                              <button onClick={() => activeCallId === emp.id ? endCall() : handleStartCallWithDeal(emp, selCompany)} disabled={activeCallId !== null && activeCallId !== emp.id} style={{marginLeft:'6px',padding:'4px 12px',borderRadius:'6px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:'600',background:activeCallId===emp.id?(callStatus==='active'?'#ef4444':'#f97316'):'#7c3aed',color:'white',opacity:activeCallId!==null&&activeCallId!==emp.id?0.4:1}}>{activeCallId === emp.id ? (callStatus === 'connecting' ? 'Ã°ÂÂÂ Connecting...' : 'Ã°ÂÂÂ´ End Call') : 'Ã°ÂÂÂÃ¯Â¸Â AI Call'}</button><button onClick={()=>handleOpenBooking(personas.find(p=>p.id===emp.id),'discovery')} style={{marginLeft:6,padding:'4px 10px',borderRadius:6,border:'none',background:'#334155',color:'#818cf8',cursor:'pointer',fontSize:11,fontWeight:600}}>📅 Book</button>
+                              <button onClick={() => setExpandedIntel(expandedIntel === emp.id ? null : emp.id)} style={{marginLeft:'6px',padding:'4px 10px',borderRadius:'6px',border:'1px solid #e2e8f0',cursor:'pointer',fontSize:'12px',fontWeight:'600',background:expandedIntel===emp.id?'#eff6ff':'#f8fafc',color:'#3b82f6'}}>ð Intel</button>
                             </div>
                           {expandedIntel === emp.id && intelData[emp.id] && (
                             <div style={{marginTop:'8px',padding:'14px 16px',background:'#f8fafc',border:'1px solid #e2e8f0',borderRadius:'8px',fontSize:'13px',lineHeight:'1.5'}}>
                               <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'14px'}}>
-                                <div><div style={{color:'#dc2626',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>⚠ Pain Points</div><ul style={{margin:0,paddingLeft:'16px',color:'#374151'}}>{(intelData[emp.id].pain_points||[]).map((p,i)=><li key={i}>{p}</li>)}</ul></div>
-                                <div><div style={{color:'#16a34a',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>🎯 Goals</div><ul style={{margin:0,paddingLeft:'16px',color:'#374151'}}>{(intelData[emp.id].goals||[]).map((g,i)=><li key={i}>{g}</li>)}</ul></div>
-                                <div><div style={{color:'#7c3aed',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>🧩 Challenges</div><ul style={{margin:0,paddingLeft:'16px',color:'#374151'}}>{(intelData[emp.id].challenges||[]).map((ch,i)=><li key={i}>{ch}</li>)}</ul></div>
-                                <div><div style={{color:'#0369a1',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>💼 Buying Role</div><p style={{margin:'4px 0 0',color:'#374151'}}>{(intelData[emp.id].buying_role||'').replace(/_/g,' ').replace(/\b\w/g,x=>x.toUpperCase())} {intelData[emp.id].budget_authority?'✅':'❌'} Budget Auth</p></div>
+                                <div><div style={{color:'#dc2626',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>â  Pain Points</div><ul style={{margin:0,paddingLeft:'16px',color:'#374151'}}>{(intelData[emp.id].pain_points||[]).map((p,i)=><li key={i}>{p}</li>)}</ul></div>
+                                <div><div style={{color:'#16a34a',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>ð¯ Goals</div><ul style={{margin:0,paddingLeft:'16px',color:'#374151'}}>{(intelData[emp.id].goals||[]).map((g,i)=><li key={i}>{g}</li>)}</ul></div>
+                                <div><div style={{color:'#7c3aed',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>ð§© Challenges</div><ul style={{margin:0,paddingLeft:'16px',color:'#374151'}}>{(intelData[emp.id].challenges||[]).map((ch,i)=><li key={i}>{ch}</li>)}</ul></div>
+                                <div><div style={{color:'#0369a1',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>ð¼ Buying Role</div><p style={{margin:'4px 0 0',color:'#374151'}}>{(intelData[emp.id].buying_role||'').replace(/_/g,' ').replace(/\b\w/g,x=>x.toUpperCase())} {intelData[emp.id].budget_authority?'â':'â'} Budget Auth</p></div>
                               </div>
                             </div>
                           )}
@@ -937,7 +1186,7 @@ function sendEmail(emp, company, subject, body) {
           {crmView === "employee" && selEmp && selCompany && (
             <>
               <div className="flex items-center gap-2 mb-5 text-sm">
-                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); setSelEmp(null); }} className="text-[#1A3A2A] hover:underline font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Accounts</button>
+                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); setSelEmp(null); }} className="text-[#1A3A2A] hover:underline font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Accounts</button>
                 <span className="text-gray-300">/</span>
                 <button onClick={() => { setCrmView("company"); setSelEmp(null); }} className="text-[#1A3A2A] hover:underline font-medium">{selCompany.name}</button>
                 <span className="text-gray-300">/</span>
@@ -954,29 +1203,29 @@ function sendEmail(emp, company, subject, body) {
                     <div className="text-xs text-gray-500 mt-1">
                       {state[selEmp.id] && (
                         <span className="ml-2 text-gray-400">
-                          ÃÂÃÂÃÂÃÂ· {state[selEmp.id].emailCount || 0} email{(state[selEmp.id].emailCount||0)!==1?'s':''} ÃÂÃÂÃÂÃÂ· {state[selEmp.id].calls || 0} call{(state[selEmp.id].calls||0)!==1?'s':''}
+                          ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {state[selEmp.id].emailCount || 0} email{(state[selEmp.id].emailCount||0)!==1?'s':''} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {state[selEmp.id].calls || 0} call{(state[selEmp.id].calls||0)!==1?'s':''}
                         </span>
                       )}
                     </div>
                     <div className="mt-3 space-y-1 text-xs text-gray-500 text-left border-t border-gray-100 pt-3">
-                      <div>ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ {getPhone(selEmp)}</div>
-                      <div>ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ {getEmail(selEmp, selCompany)}</div>
-                      {(state[selEmp.id]?.calls||0) > 0 && <div className="text-[#1A3A2A] font-medium pt-1">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ {state[selEmp.id].calls} call{state[selEmp.id].calls>1?"s":""} logged</div>}
+                      <div>ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ {getPhone(selEmp)}</div>
+                      <div>ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ {getEmail(selEmp, selCompany)}</div>
+                      {(state[selEmp.id]?.calls||0) > 0 && <div className="text-[#1A3A2A] font-medium pt-1">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ {state[selEmp.id].calls} call{state[selEmp.id].calls>1?"s":""} logged</div>}
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <button onClick={() => initiateCall(selEmp)} className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg py-2 text-sm font-medium">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Call {selEmp.first}</button>
-                    <button onClick={() => { setEmailCompose({emp:selEmp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white rounded-lg py-2 text-sm font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Email {selEmp.first}</button>
-                    <button onClick={() => { setPlProfile(selEmp); setTab("prolink"); setPlView("profile"); }} className="bg-[#2A5A3A] hover:bg-[#1A3A2A] text-white rounded-lg py-2 text-sm font-medium">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ View ProLink Profile</button>
-                    {/* Meeting request button ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ unlocks once they've replied or you're connected */}
+                    <button onClick={() => initiateCall(selEmp)} className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg py-2 text-sm font-medium">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Call {selEmp.first}</button>
+                    <button onClick={() => { setEmailCompose({emp:selEmp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white rounded-lg py-2 text-sm font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Email {selEmp.first}</button>
+                    <button onClick={() => { setPlProfile(selEmp); setTab("prolink"); setPlView("profile"); }} className="bg-[#2A5A3A] hover:bg-[#1A3A2A] text-white rounded-lg py-2 text-sm font-medium">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ View ProLink Profile</button>
+                    {/* Meeting request button ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ unlocks once they've replied or you're connected */}
                     {(state[selEmp.id]?.emailStatus === "replied" || state[selEmp.id]?.linkedinStatus === "connected") && state[selEmp.id]?.meetingStatus === "none" && (
-                      <button onClick={() => requestMeeting(selEmp)} className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg py-2 text-sm font-medium">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Request Meeting</button>
+                      <button onClick={() => requestMeeting(selEmp)} className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg py-2 text-sm font-medium">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Request Meeting</button>
                     )}
                     {state[selEmp.id]?.meetingStatus === "booked" && (
-                      <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg py-2 text-sm font-medium text-center">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Meeting Booked!</div>
+                      <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg py-2 text-sm font-medium text-center">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Meeting Booked!</div>
                     )}
                     {state[selEmp.id]?.meetingStatus === "declined" && (
-                      <div className="bg-red-50 border border-red-200 text-red-600 rounded-lg py-2 text-sm font-medium text-center">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Meeting Declined</div>
+                      <div className="bg-red-50 border border-red-200 text-red-600 rounded-lg py-2 text-sm font-medium text-center">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Meeting Declined</div>
                     )}
                   </div>
                 </div>
@@ -988,13 +1237,13 @@ function sendEmail(emp, company, subject, body) {
                         <div className="text-center py-8 text-gray-400 text-sm">No emails sent yet. Email {selEmp.first} to start the conversation.</div>
                       ) : state[selEmp.id].emailThread.map((msg,i) => (
                         <div key={i} className={`p-3 rounded-lg text-xs leading-relaxed ${msg.from==="rep" ? "bg-[#EDF5EE] border border-[#B8D4BB] ml-8" : "bg-[#F2EFE8] border border-[#D4CFC4] mr-8"}`}>
-                          <div className={`font-semibold mb-1 ${msg.from==="rep" ? "text-[#1A3A2A]" : "text-gray-800"}`}>{msg.from==="rep" ? "You" : `${selEmp.first} ${selEmp.last}`} ÃÂÃÂÃÂÃÂ· Day {msg.day}</div>
+                          <div className={`font-semibold mb-1 ${msg.from==="rep" ? "text-[#1A3A2A]" : "text-gray-800"}`}>{msg.from==="rep" ? "You" : `${selEmp.first} ${selEmp.last}`} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· Day {msg.day}</div>
                           {msg.subject && <div className="font-medium text-gray-700 mb-0.5">Re: {msg.subject}</div>}
                           {msg.body}
                         </div>
                       ))}
                       {state[selEmp.id]?.emailStatus==="sent" && (
-                        <div className="text-center py-2 text-xs text-yellow-600">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ³ Email sent ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.</div>)}
+                        <div className="text-center py-2 text-xs text-yellow-600">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³ Email sent ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.</div>)}
               {apiKey && state[selEmp.id]?.willReplyEmail && (
                 <button onClick={async () => {
                   const company = getCompanyForEmp(selEmp.id);
@@ -1006,7 +1255,7 @@ function sendEmail(emp, company, subject, body) {
                     setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));
                   }
                 }} disabled={aiEmailLoading[selEmp.id]} className="ml-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white text-xs px-3 py-1 rounded-full transition-colors">
-                  {aiEmailLoading[selEmp.id] ? "ÃÂÃÂ°ÃÂÃÂÃÂÃÂ¤ÃÂÃÂ Writing..." : "ÃÂÃÂ°ÃÂÃÂÃÂÃÂ¤ÃÂÃÂ AI Reply Now"}
+                  {aiEmailLoading[selEmp.id] ? "ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¤ÃÂÃÂÃÂÃÂ Writing..." : "ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¤ÃÂÃÂÃÂÃÂ AI Reply Now"}
                 </button>
               )}
                     </div>
@@ -1014,7 +1263,7 @@ function sendEmail(emp, company, subject, body) {
                   {/* Call Log */}
                   {(state[selEmp.id]?.callLog||[]).length > 0 && (
                     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mt-4">
-                      <div className="px-4 py-3 border-b border-gray-100 font-semibold text-gray-700 text-sm">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Call Log ({state[selEmp.id].callLog.length})</div>
+                      <div className="px-4 py-3 border-b border-gray-100 font-semibold text-gray-700 text-sm">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Call Log ({state[selEmp.id].callLog.length})</div>
                       <div className="divide-y divide-gray-50">
                         {state[selEmp.id].callLog.map((log, i) => (
                           <div key={i} className="px-4 py-3 flex items-start gap-3">
@@ -1022,7 +1271,7 @@ function sendEmail(emp, company, subject, body) {
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-0.5">
                                 <span className="text-xs font-semibold text-gray-700 capitalize">{log.outcome === "no-answer" ? "No Answer" : log.outcome}</span>
-                                <span className="text-xs text-gray-400">ÃÂÃÂÃÂÃÂ· Day {log.day}</span>
+                                <span className="text-xs text-gray-400">ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· Day {log.day}</span>
                               </div>
                               {log.note && <div className="text-xs text-gray-500 italic">"{log.note}"</div>}
                             </div>
@@ -1038,9 +1287,9 @@ function sendEmail(emp, company, subject, body) {
         </div>
       )}
 
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {/* EMAIL TAB                                  */}
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {tab === "email" && (
         <div className="flex h-screen">
           <div className="w-56 bg-[#EDEAE2] border-r border-[#D4CFC4] p-4">
@@ -1057,7 +1306,7 @@ function sendEmail(emp, company, subject, body) {
                 <h2 className="font-bold text-gray-900 mb-4">Inbox ({inbox.length})</h2>
                 {inbox.length === 0 ? (
                   <div className="text-center py-16 text-gray-400">
-                    <div className="text-4xl mb-3">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¬</div>
+                    <div className="text-4xl mb-3">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¬</div>
                     <div>No replies yet. Send emails and advance the simulation day to receive responses.</div>
                     <div className="text-xs mt-2">Senior contacts take longer to reply. Some may not reply at all.</div>
                   </div>
@@ -1067,13 +1316,13 @@ function sendEmail(emp, company, subject, body) {
                       <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
-                          <div><span className="font-semibold text-gray-800">{emp.first} {emp.last}</span><span className="text-gray-400 text-xs ml-2">{emp.title} ÃÂÃÂÃÂÃÂ· {company?.name}</span></div>
-                          <span className="text-xs text-green-600 font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Replied</span>
+                          <div><span className="font-semibold text-gray-800">{emp.first} {emp.last}</span><span className="text-gray-400 text-xs ml-2">{emp.title} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.name}</span></div>
+                          <span className="text-xs text-green-600 font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Replied</span>
                         </div>
                         <div className="mt-2 space-y-1.5">
                           {thread.map((msg,i) => (
                             <div key={i} className={`p-2.5 rounded-lg text-xs leading-relaxed ${msg.from==="rep" ? "bg-[#EDF5EE] border border-[#B8D4BB] ml-6" : "bg-[#F2EFE8] border border-[#D4CFC4] mr-6"}`}>
-                              <div className={`font-semibold mb-0.5 ${msg.from==="rep" ? "text-[#1A3A2A]" : "text-gray-800"}`}>{msg.from==="rep" ? "You" : emp.first} ÃÂÃÂÃÂÃÂ· Day {msg.day}</div>
+                              <div className={`font-semibold mb-0.5 ${msg.from==="rep" ? "text-[#1A3A2A]" : "text-gray-800"}`}>{msg.from==="rep" ? "You" : emp.first} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· Day {msg.day}</div>
                               {msg.body}
                             </div>
                           ))}
@@ -1087,17 +1336,17 @@ function sendEmail(emp, company, subject, body) {
             {plView === "sent" && (
               <>
                 <h2 className="font-bold text-gray-900 mb-4">Sent ({sent.length})</h2>
-                {sent.length === 0 ? <div className="text-center py-16 text-gray-400"><div className="text-4xl mb-3">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¤</div><div>No emails sent yet.</div></div>
+                {sent.length === 0 ? <div className="text-center py-16 text-gray-400"><div className="text-4xl mb-3">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¤</div><div>No emails sent yet.</div></div>
                 : sent.map(({emp, company, thread}) => (
                   <div key={emp.id} className="bg-white rounded-xl border border-gray-200 p-4 mb-3">
                     <div className="flex items-center gap-3">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                       <div className="flex-1">
-                        <div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last} <span className="text-gray-400 font-normal">ÃÂÃÂÃÂÃÂ· {company?.name}</span></div>
+                        <div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last} <span className="text-gray-400 font-normal">ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.name}</span></div>
                         <div className="text-gray-500 text-xs">{thread[0]?.body?.slice(0,80)}...</div>
                       </div>
                       <div>
-                        {state[emp.id]?.emailStatus==="replied" ? <span className="text-xs text-green-600 font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Replied</span> : <span className="text-xs text-yellow-600">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ³ Awaiting</span>}
+                        {state[emp.id]?.emailStatus==="replied" ? <span className="text-xs text-green-600 font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Replied</span> : <span className="text-xs text-yellow-600">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³ Awaiting</span>}
                       </div>
                     </div>
                   </div>
@@ -1108,7 +1357,7 @@ function sendEmail(emp, company, subject, body) {
               <>
                 <h2 className="font-bold text-gray-900 mb-4">Awaiting Reply ({pending})</h2>
                 <div className="bg-yellow-50 border border-yellow-100 rounded-lg p-3 text-xs text-yellow-800 mb-4">
-                  ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ© Hit <strong>Advance Day</strong> in the top bar to progress the simulation and trigger replies. Senior contacts take longer ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ a C-suite contact may take 5+ days to respond.
+                  ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ© Hit <strong>Advance Day</strong> in the top bar to progress the simulation and trigger replies. Senior contacts take longer ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ a C-suite contact may take 5+ days to respond.
                 </div>
                 {allEmps.filter(e => state[e.id]?.emailStatus==="sent").map(emp => {
                   const company = getCompanyForEmp(emp.id);
@@ -1117,8 +1366,8 @@ function sendEmail(emp, company, subject, body) {
                     <div key={emp.id} className="bg-white rounded-xl border border-gray-200 p-3 mb-2 flex items-center gap-3">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                       <div className="flex-1">
-                        <div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last} <span className="text-gray-400 font-normal">ÃÂÃÂÃÂÃÂ· {company?.name}</span></div>
-                        <div className="text-gray-400 text-xs">{seniorityLabels[emp.seniority]} ÃÂÃÂÃÂÃÂ· Sent Day {cs.emailThread[0]?.day}</div>
+                        <div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last} <span className="text-gray-400 font-normal">ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.name}</span></div>
+                        <div className="text-gray-400 text-xs">{seniorityLabels[emp.seniority]} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· Sent Day {cs.emailThread[0]?.day}</div>
                       </div>
                       <div className="text-xs text-yellow-600">Expected ~Day {cs.emailReplyDay || "?"}</div>
                     </div>
@@ -1130,9 +1379,9 @@ function sendEmail(emp, company, subject, body) {
         </div>
       )}
 
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {/* PROLINK TAB                                */}
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {tab === "prolink" && (
         <div className="flex min-h-screen">
           {/* ProLink sidebar */}
@@ -1141,7 +1390,7 @@ function sendEmail(emp, company, subject, body) {
               <div className="font-bold text-[#1A3A2A] text-lg">ProLink</div>
               <div className="text-[#4A6A4A] text-xs">Professional Network</div>
             </div>
-            {[{id:"feed",icon:"ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ ",label:"Home Feed"},{id:"network",icon:"ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¥",label:`Network ${pendingConnections>0?"("+pendingConnections+" pending)":""}`},{id:"search",icon:"ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ",label:"Search People"},{id:"messages",icon:"ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¬",label:`Messages ${connections.length>0?"("+connections.length+")":""}` }].map(v => (
+            {[{id:"feed",icon:"ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ ",label:"Home Feed"},{id:"network",icon:"ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¥",label:`Network ${pendingConnections>0?"("+pendingConnections+" pending)":""}`},{id:"search",icon:"ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",label:"Search People"},{id:"messages",icon:"ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¬",label:`Messages ${connections.length>0?"("+connections.length+")":""}` }].map(v => (
               <button key={v.id} onClick={() => setPlView(v.id)} className={`text-left px-3 py-2 rounded-lg text-sm transition-colors ${plView===v.id ? "bg-[#EDF5EE] text-[#1A3A2A] font-medium" : "text-[#3A5A3A] hover:bg-[#DDD9D0]"}`}>{v.icon} {v.label}</button>
             ))}
           </div>
@@ -1166,20 +1415,20 @@ function sendEmail(emp, company, subject, body) {
                           <div className="flex items-center justify-between">
                             <div>
                               <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="font-semibold text-gray-900 hover:text-blue-600 hover:underline text-sm">{emp.first} {emp.last}</button>
-                              <div className="text-gray-500 text-xs">{emp.title} ÃÂÃÂÃÂÃÂ· {company?.name}</div>
+                              <div className="text-gray-500 text-xs">{emp.title} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.name}</div>
                             </div>
                             <div>
                               {cs.linkedinStatus === "none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#1A3A2A] border border-[#1A3A2A] text-xs px-3 py-1 rounded-full hover:bg-[#EDF5EE] transition-colors">+ Connect</button>}
                               {cs.linkedinStatus === "pending" && <span className="text-yellow-600 text-xs px-3 py-1 rounded-full border border-yellow-200 bg-yellow-50">Pending</span>}
-                              {cs.linkedinStatus === "connected" && <span className="text-green-600 text-xs px-3 py-1 rounded-full border border-green-200 bg-green-50">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Connected</span>}
-                              {cs.linkedinStatus === "ignored" && <span className="text-gray-400 text-xs">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</span>}
+                              {cs.linkedinStatus === "connected" && <span className="text-green-600 text-xs px-3 py-1 rounded-full border border-green-200 bg-green-50">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Connected</span>}
+                              {cs.linkedinStatus === "ignored" && <span className="text-gray-400 text-xs">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ</span>}
                             </div>
                           </div>
                         </div>
                       </div>
                       <p className="text-gray-700 text-sm leading-relaxed mb-3">{post}</p>
                       <div className="flex gap-4 pt-2 border-t border-gray-100">
-                        {["ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Like","ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¬ Comment","ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Repost"].map(a => (
+                        {["ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Like","ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¬ Comment","ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Repost"].map(a => (
                           <button key={a} className="text-gray-500 text-xs hover:text-[#1A3A2A] transition-colors">{a}</button>
                         ))}
                       </div>
@@ -1195,28 +1444,28 @@ function sendEmail(emp, company, subject, body) {
                 <h2 className="font-bold text-gray-900 mb-4">Your Network</h2>
                 {pendingConnections > 0 && (
                   <div className="mb-5">
-                    <div className="font-semibold text-gray-700 text-sm mb-3">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ³ Pending Requests ({pendingConnections})</div>
-                    <div className="bg-amber-50 border border-amber-100 rounded-lg p-3 text-xs text-amber-700 mb-3">Hit <strong>Advance Day</strong> to simulate time passing ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ senior contacts take longer to accept.</div>
+                    <div className="font-semibold text-gray-700 text-sm mb-3">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³ Pending Requests ({pendingConnections})</div>
+                    <div className="bg-amber-50 border border-amber-100 rounded-lg p-3 text-xs text-amber-700 mb-3">Hit <strong>Advance Day</strong> to simulate time passing ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ senior contacts take longer to accept.</div>
                     {allEmps.filter(e => state[e.id]?.linkedinStatus==="pending").map(emp => {
                       const company = getCompanyForEmp(emp.id);
                       return (
                         <div key={emp.id} className="bg-white rounded-xl border border-gray-200 p-3 mb-2 flex items-center gap-3">
                           <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
-                          <div className="flex-1"><div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last}</div><div className="text-gray-400 text-xs">{emp.title} ÃÂÃÂÃÂÃÂ· {company?.name}</div></div>
-                          <span className="text-yellow-600 text-xs">Pending ÃÂÃÂÃÂÃÂ· Expected Day {state[emp.id].linkedinReplyDay}</span>
+                          <div className="flex-1"><div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last}</div><div className="text-gray-400 text-xs">{emp.title} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.name}</div></div>
+                          <span className="text-yellow-600 text-xs">Pending ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· Expected Day {state[emp.id].linkedinReplyDay}</span>
                         </div>
                       );
                     })}
                   </div>
                 )}
-                <div className="font-semibold text-gray-700 text-sm mb-3">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Connections ({connections.length})</div>
+                <div className="font-semibold text-gray-700 text-sm mb-3">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Connections ({connections.length})</div>
                 {connections.length === 0 ? <div className="text-center py-8 text-gray-400 text-sm">No connections yet. Search for people or connect from the feed.</div>
                 : connections.map(emp => {
                   const company = getCompanyForEmp(emp.id);
                   return (
                     <div key={emp.id} className="bg-white rounded-xl border border-gray-200 p-3 mb-2 flex items-center gap-3">
                       <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
-                      <div className="flex-1"><div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last}</div><div className="text-gray-400 text-xs">{emp.title} ÃÂÃÂÃÂÃÂ· {company?.name}</div></div>
+                      <div className="flex-1"><div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last}</div><div className="text-gray-400 text-xs">{emp.title} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.name}</div></div>
                       <button onClick={() => { setPlMsgEmp(emp); setPlView("messages"); }} className="text-[#1A3A2A] text-xs border border-[#B8D4BB] px-3 py-1 rounded-full hover:bg-[#EDF5EE]">Message</button>
                     </div>
                   );
@@ -1242,13 +1491,13 @@ function sendEmail(emp, company, subject, body) {
                         <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs flex-shrink-0 ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                         <div className="flex-1">
                           <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="font-medium text-gray-800 text-sm hover:text-blue-600 hover:underline">{emp.first} {emp.last}</button>
-                          <div className="text-gray-400 text-xs">{emp.title} ÃÂÃÂÃÂÃÂ· {company?.name} ÃÂÃÂÃÂÃÂ· {company?.location}</div>
+                          <div className="text-gray-400 text-xs">{emp.title} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.name} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.location}</div>
                         </div>
                         <div className="flex gap-1.5">
                           {cs.linkedinStatus==="none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#1A3A2A] border border-[#1A3A2A] text-xs px-2.5 py-1 rounded-full hover:bg-[#EDF5EE]">+ Connect</button>}
                           {cs.linkedinStatus==="pending" && <span className="text-yellow-700 text-xs px-2.5 py-1 rounded-full border border-yellow-200 bg-yellow-50">Pending</span>}
                           {cs.linkedinStatus==="connected" && <button onClick={() => { setPlMsgEmp(emp); setPlView("messages"); }} className="text-[#1A3A2A] text-xs border border-[#B8D4BB] px-2.5 py-1 rounded-full bg-[#EDF5EE]">Message</button>}
-                          {cs.linkedinStatus==="ignored" && <span className="text-gray-400 text-xs">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</span>}
+                          {cs.linkedinStatus==="ignored" && <span className="text-gray-400 text-xs">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ</span>}
                           <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="text-[#3A5A3A] text-xs border border-[#D4CFC4] px-2.5 py-1 rounded-full hover:bg-[#EDEAE2]">View</button>
                         </div>
                       </div>
@@ -1264,7 +1513,7 @@ function sendEmail(emp, company, subject, body) {
               const cs = state[plProfile.id];
               return (
                 <div>
-                  <button onClick={() => setPlView("feed")} className="text-blue-500 text-sm hover:underline mb-4 block">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Back to Feed</button>
+                  <button onClick={() => setPlView("feed")} className="text-blue-500 text-sm hover:underline mb-4 block">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Back to Feed</button>
                   <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-4">
                     <div className="h-20 bg-gradient-to-r from-[#1A3A2A] to-[#2A5A3A]"></div>
                     <div className="px-5 pb-5">
@@ -1273,9 +1522,9 @@ function sendEmail(emp, company, subject, body) {
                         <div>
                           <div className="font-bold text-gray-900 text-xl">{plProfile.first} {plProfile.last}</div>
                           <div className="text-gray-600">{plProfile.title}</div>
-                          <div className="text-gray-500 text-sm">{company?.name} ÃÂÃÂÃÂÃÂ· {company?.location}</div>
-                          <div className="text-gray-400 text-xs mt-1">{company?.industry} ÃÂÃÂÃÂÃÂ· {company?.size}</div>
-                          <div className="text-gray-400 text-xs mt-1 font-mono">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ {getPhone(plProfile)}</div>
+                          <div className="text-gray-500 text-sm">{company?.name} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.location}</div>
+                          <div className="text-gray-400 text-xs mt-1">{company?.industry} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.size}</div>
+                          <div className="text-gray-400 text-xs mt-1 font-mono">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ {getPhone(plProfile)}</div>
                         </div>
                         <div className="flex gap-2 mt-1">
                           {cs.linkedinStatus==="none" && <button onClick={() => sendLinkedinConnect(plProfile)} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white text-sm px-4 py-1.5 rounded-full transition-colors">+ Connect</button>}
@@ -1306,7 +1555,7 @@ function sendEmail(emp, company, subject, body) {
               <div>
                 <h2 className="font-bold text-gray-900 mb-4">Messages</h2>
                 {connections.length === 0 ? (
-                  <div className="text-center py-12 text-gray-400"><div className="text-4xl mb-3">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¬</div><div>No connections yet. Connect with people to message them.</div></div>
+                  <div className="text-center py-12 text-gray-400"><div className="text-4xl mb-3">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¬</div><div>No connections yet. Connect with people to message them.</div></div>
                 ) : (
                   <div className="flex gap-4 h-96">
                     <div className="w-48 border border-gray-200 rounded-xl overflow-hidden bg-white">
@@ -1349,15 +1598,15 @@ function sendEmail(emp, company, subject, body) {
         </div>
       )}
 
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {/* SCORECARD TAB                              */}
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {tab === "score" && (() => {
         const g = calcGrade();
         const emailReplyRate = emailsSent > 0 ? Math.round((emailsReplied / emailsSent) * 100) : 0;
         const stats = [
-          { label: "Meetings Booked", value: `${meetingsBooked} / ${MEETING_GOAL}`, sub: meetingsBooked >= MEETING_GOAL ? "Goal reached! ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ" : `${MEETING_GOAL - meetingsBooked} more to hit target`, highlight: meetingsBooked >= MEETING_GOAL },
-          { label: "Emails Sent", value: emailsSent, sub: `${emailsReplied} replied ÃÂÃÂÃÂÃÂ· ${emailReplyRate}% reply rate`, highlight: false },
+          { label: "Meetings Booked", value: `${meetingsBooked} / ${MEETING_GOAL}`, sub: meetingsBooked >= MEETING_GOAL ? "Goal reached! ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ" : `${MEETING_GOAL - meetingsBooked} more to hit target`, highlight: meetingsBooked >= MEETING_GOAL },
+          { label: "Emails Sent", value: emailsSent, sub: `${emailsReplied} replied ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· ${emailReplyRate}% reply rate`, highlight: false },
           { label: "ProLink Connections", value: connections.length, sub: `${pendingConnections} still pending`, highlight: false },
           { label: "Accounts Touched", value: `${accountsTouched} / 20`, sub: "Accounts with at least 1 touchpoint", highlight: false },
           { label: "Simulation Day", value: `${Math.min(simDay, SIM_LENGTH)} / ${SIM_LENGTH}`, sub: simComplete ? "Simulation complete" : `${SIM_LENGTH - simDay} days remaining`, highlight: simComplete },
@@ -1391,7 +1640,7 @@ function sendEmail(emp, company, subject, body) {
             </div>
             {/* Meeting list */}
             <div className="bg-white rounded-xl border border-[#D4CFC4] overflow-hidden">
-              <div className="px-4 py-3 border-b border-[#D4CFC4] font-semibold text-gray-800 text-sm">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Meetings Booked ({meetingsBooked})</div>
+              <div className="px-4 py-3 border-b border-[#D4CFC4] font-semibold text-gray-800 text-sm">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Meetings Booked ({meetingsBooked})</div>
               {meetingsBooked === 0 ? (
                 <div className="text-center py-8 text-gray-400 text-sm">No meetings booked yet. Get a prospect to reply, then hit Request Meeting.</div>
               ) : allEmps.filter(e => state[e.id]?.meetingStatus === "booked").map(emp => {
@@ -1401,10 +1650,10 @@ function sendEmail(emp, company, subject, body) {
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                     <div className="flex-1">
                       <div className="font-medium text-gray-900 text-sm">{emp.first} {emp.last}</div>
-                      <div className="text-gray-400 text-xs">{emp.title} ÃÂÃÂÃÂÃÂ· {company?.name}</div>
+                      <div className="text-gray-400 text-xs">{emp.title} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.name}</div>
                     </div>
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${seniorityColors[emp.seniority]}`}>{seniorityLabels[emp.seniority]}</span>
-                    <span className="text-green-600 text-xs font-medium">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Booked</span>
+                    <span className="text-green-600 text-xs font-medium">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Booked</span>
                   </div>
                 );
               })}
@@ -1417,7 +1666,7 @@ function sendEmail(emp, company, subject, body) {
       {simComplete && tab !== "score" && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 text-center">
-            <div className="text-5xl mb-3">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ</div>
+            <div className="text-5xl mb-3">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ</div>
             <h2 className="text-2xl font-black text-gray-900 mb-1">Simulation Complete</h2>
             <p className="text-gray-500 text-sm mb-5">30 days done. Time to see how you performed.</p>
             <div className="flex gap-3 justify-center">
@@ -1428,9 +1677,9 @@ function sendEmail(emp, company, subject, body) {
         </div>
       )}
 
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {/* SETTINGS MODAL */}
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {callModal && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
           <div className="bg-[#1A2A20] rounded-3xl shadow-2xl w-80 overflow-hidden">
@@ -1457,16 +1706,16 @@ function sendEmail(emp, company, subject, body) {
               )}
               {callPhase === "outcome" && callOutcome === "connected" && (
                 <div>
-                  <div className="text-emerald-400 text-sm font-semibold mb-2">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Connected</div>
+                  <div className="text-emerald-400 text-sm font-semibold mb-2">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Connected</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-gray-400 text-xs mb-1">{callModal.first} says:</div>
-                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? "ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Generating..." : "ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Hear AI Voice"}</button>)}
+                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? "ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Generating..." : "ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Hear AI Voice"}</button>)}
                   </div>
                 </div>
               )}
               {callPhase === "outcome" && callOutcome === "gatekeeper" && (
                 <div>
-                  <div className="text-orange-400 text-sm font-semibold mb-2">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ§ Gatekeeper</div>
+                  <div className="text-orange-400 text-sm font-semibold mb-2">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ Gatekeeper</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-gray-400 text-xs mb-1">Reception says:</div>
                     <div className="text-white text-sm leading-relaxed">"{callLine}"</div>
@@ -1475,16 +1724,16 @@ function sendEmail(emp, company, subject, body) {
               )}
               {callPhase === "outcome" && callOutcome === "voicemail" && (
                 <div>
-                  <div className="text-yellow-400 text-sm font-semibold mb-2">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¨ Voicemail</div>
+                  <div className="text-yellow-400 text-sm font-semibold mb-2">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¨ Voicemail</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-gray-400 text-xs mb-1">Voicemail:</div>
-                    <div className="text-white text-sm leading-relaxed italic">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">{aiVoiceLoading ? "ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Generating..." : "ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Hear AI Voice"}</button>)}
+                    <div className="text-white text-sm leading-relaxed italic">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">{aiVoiceLoading ? "ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Generating..." : "ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Hear AI Voice"}</button>)}
                   </div>
                 </div>
               )}
               {callPhase === "outcome" && callOutcome === "no-answer" && (
                 <div>
-                  <div className="text-gray-400 text-sm font-semibold mb-2">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂµ No Answer</div>
+                  <div className="text-gray-400 text-sm font-semibold mb-2">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµ No Answer</div>
                   <div className="text-gray-500 text-xs">The call rang out. Try again later or send a follow-up email.</div>
                 </div>
               )}
@@ -1493,13 +1742,13 @@ function sendEmail(emp, company, subject, body) {
             {/* Actions */}
             <div className="px-6 pb-8 flex justify-center gap-6">
               {callPhase === "dialing" && (
-                <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂµ</button>
+                <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµ</button>
               )}
               {callPhase === "outcome" && (
                 <>
-                  <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂµ</button>
+                  <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµ</button>
                   {(callOutcome === "connected" || callOutcome === "voicemail") && (
-                    <button onClick={() => { endCall(); setEmailCompose({emp:callModal, company:getCompanyForEmp(callModal.id)}); setEmailDraft({subject:"Following up on our call", body:""}); }} className="w-14 h-14 rounded-full bg-[#1A3A2A] hover:bg-[#2A5A3A] border border-emerald-700 flex items-center justify-center text-2xl transition-colors">ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ</button>
+                    <button onClick={() => { endCall(); setEmailCompose({emp:callModal, company:getCompanyForEmp(callModal.id)}); setEmailDraft({subject:"Following up on our call", body:""}); }} className="w-14 h-14 rounded-full bg-[#1A3A2A] hover:bg-[#2A5A3A] border border-emerald-700 flex items-center justify-center text-2xl transition-colors">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ</button>
                   )}
                 </>
               )}
@@ -1509,15 +1758,15 @@ function sendEmail(emp, company, subject, body) {
         </div>
       )}
 
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {/* EMAIL COMPOSE MODAL                        */}
-      {/* ÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂ */}
+      {/* ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ */}
       {emailCompose && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-end z-50 p-4">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md">
             <div className="px-4 py-3 bg-[#1A3A2A] rounded-t-2xl flex items-center justify-between">
               <span className="text-white text-sm font-medium">New Email</span>
-              <button onClick={() => setEmailCompose(null)} className="text-gray-400 hover:text-white text-lg">ÃÂÃÂÃÂÃÂ</button>
+              <button onClick={() => setEmailCompose(null)} className="text-gray-400 hover:text-white text-lg">ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ</button>
             </div>
             <div className="p-4">
               {emailCompose.emp ? (
@@ -1532,11 +1781,11 @@ function sendEmail(emp, company, subject, body) {
               <textarea value={emailDraft.body} onChange={e => setEmailDraft(d => ({...d, body:e.target.value}))} placeholder={emailCompose.emp ? `Write your email to ${emailCompose.emp.first}...\n\nTip: ${emailCompose.emp?.seniority==="c-suite"||emailCompose.emp?.seniority==="vp" ? "Keep it to 3 lines for senior buyers. Lead with their pain, not your product." : "Be specific about why you're reaching out to them specifically."}` : "Write your email..."} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm min-h-32 resize-none focus:outline-none focus:border-[#1A3A2A] mb-3"/>
               {emailCompose.emp && (
                 <div className="text-xs text-gray-400 mb-3">
-                  {emailCompose.emp.seniority === "c-suite" && "ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ÃÂÃÂ¯ÃÂÃÂ¸ÃÂÃÂ C-Suite: Takes ~5 days to respond. May not respond at all."}
-                  {emailCompose.emp.seniority === "vp" && "ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ VP level: Usually responds within 3 days if the email earns it."}
-                  {emailCompose.emp.seniority === "director" && "ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ Director: Usually responds within 2 days."}
-                  {emailCompose.emp.seniority === "manager" && "ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Manager: Likely to respond within 1 day."}
-                  {(emailCompose.emp.seniority === "mid" || emailCompose.emp.seniority === "junior") && "ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Will respond quickly ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ but may redirect you upward."}
+                  {emailCompose.emp.seniority === "c-suite" && "ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ ÃÂÃÂÃÂÃÂ¯ÃÂÃÂÃÂÃÂ¸ÃÂÃÂÃÂÃÂ C-Suite: Takes ~5 days to respond. May not respond at all."}
+                  {emailCompose.emp.seniority === "vp" && "ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ VP level: Usually responds within 3 days if the email earns it."}
+                  {emailCompose.emp.seniority === "director" && "ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Director: Usually responds within 2 days."}
+                  {emailCompose.emp.seniority === "manager" && "ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Manager: Likely to respond within 1 day."}
+                  {(emailCompose.emp.seniority === "mid" || emailCompose.emp.seniority === "junior") && "ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Will respond quickly ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ but may redirect you upward."}
                 </div>
               )}
               <div className="flex justify-end gap-2">
@@ -1548,5 +1797,104 @@ function sendEmail(emp, company, subject, body) {
         </div>
       )}
     </div>
+      
+  {tab==='scheduled'&&(
+    <div style={{padding:32,maxWidth:900,margin:'0 auto'}}>
+      <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24}}>
+        <h2 style={{color:'#f1f5f9',margin:0,fontSize:22,fontWeight:700}}>📅 Scheduled Calls</h2>
+        {personas.length>0&&(
+          <button onClick={()=>{const emp=personas[0];handleOpenBooking(emp,'discovery');}} style={{padding:'9px 18px',borderRadius:9,border:'none',background:'#6366f1',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:14}}>+ Book Call</button>
+        )}
+      </div>
+      {scheduledCalls.length===0?(
+        <div style={{textAlign:'center',padding:'60px 0',color:'#475569'}}>
+          <div style={{fontSize:48,marginBottom:12}}>📅</div>
+          <div style={{fontSize:16,fontWeight:600,marginBottom:8,color:'#64748b'}}>No calls scheduled yet</div>
+          <div style={{fontSize:13}}>Book a discovery or demo call with a prospect to get started.</div>
+        </div>
+      ):(
+        <div style={{display:'flex',flexDirection:'column',gap:12}}>
+          {scheduledCalls.map(sc=>{
+            const d=new Date(sc.scheduled_at);
+            const past=d<new Date();
+            return(
+              <div key={sc.id} style={{background:'#1e293b',borderRadius:12,padding:'18px 22px',border:'1px solid #334155',display:'flex',alignItems:'center',justifyContent:'space-between',opacity:sc.status==='completed'?0.6:1}}>
+                <div style={{display:'flex',alignItems:'center',gap:16}}>
+                  <div style={{width:44,height:44,borderRadius:'50%',background:sc.call_type==='demo'?'linear-gradient(135deg,#0ea5e9,#6366f1)':'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:20}}>
+                    {sc.call_type==='demo'?'🖥️':'🎙️'}
+                  </div>
+                  <div>
+                    <div style={{color:'#f1f5f9',fontWeight:700,fontSize:15}}>{sc.persona_name}</div>
+                    <div style={{color:'#64748b',fontSize:13}}>{sc.company_name} · {sc.call_type==='demo'?'Demo':'Discovery'}</div>
+                  </div>
+                </div>
+                <div style={{textAlign:'right',display:'flex',alignItems:'center',gap:16}}>
+                  <div>
+                    <div style={{color:'#e2e8f0',fontSize:14,fontWeight:600}}>{d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</div>
+                    <div style={{color:'#64748b',fontSize:13}}>{d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}</div>
+                  </div>
+                  <span style={{padding:'3px 10px',borderRadius:20,fontSize:11,fontWeight:700,background:sc.status==='completed'?'#1e293b':sc.status==='active'?'rgba(34,197,94,0.15)':'rgba(99,102,241,0.15)',color:sc.status==='completed'?'#475569':sc.status==='active'?'#22c55e':'#818cf8',border:'1px solid '+(sc.status==='completed'?'#334155':sc.status==='active'?'#22c55e':'#6366f1')}}>{sc.status}</span>
+                  {sc.status==='upcoming'&&(
+                    <button onClick={()=>handleJoinCall(sc)} style={{padding:'8px 16px',borderRadius:8,border:'none',background:'#22c55e',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:13}}>Join</button>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  )}
+      
+  {tab==='inbox'&&(
+    <div style={{padding:32,maxWidth:900,margin:'0 auto'}}>
+      <h2 style={{color:'#f1f5f9',margin:'0 0 24px',fontSize:22,fontWeight:700}}>📬 Prospect Inbox</h2>
+      {personaMessages.length===0?(
+        <div style={{textAlign:'center',padding:'60px 0',color:'#475569'}}>
+          <div style={{fontSize:48,marginBottom:12}}>📬</div>
+          <div style={{fontSize:16,fontWeight:600,marginBottom:8,color:'#64748b'}}>No messages yet</div>
+          <div style={{fontSize:13}}>Prospects will reach out soon with questions and call requests.</div>
+        </div>
+      ):(
+        <div style={{display:'flex',flexDirection:'column',gap:8}}>
+          {personaMessages.map(msg=>(
+            <div key={msg.id}>
+              <div onClick={async()=>{
+                if(!msg.is_read){
+                  await markMsgRead(token,msg.id);
+                  setPersonaMessages(prev=>prev.map(m=>m.id===msg.id?{...m,is_read:true}:m));
+                }
+                setExpandedMsg(expandedMsg===msg.id?null:msg.id);
+              }} style={{background:'#1e293b',borderRadius:expandedMsg===msg.id?'12px 12px 0 0':'12px',padding:'14px 18px',border:'1px solid '+(msg.is_read?'#334155':'#6366f1'),cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'space-between',transition:'all 0.15s'}}>
+                <div style={{display:'flex',alignItems:'center',gap:12}}>
+                  {!msg.is_read&&<div style={{width:8,height:8,borderRadius:'50%',background:'#6366f1',flexShrink:0}}/>}
+                  <div style={{width:36,height:36,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:14,color:'#fff',fontWeight:700,flexShrink:0}}>
+                    {(msg.persona_name||'?').split(' ').map(n=>n[0]).join('').slice(0,2)}
+                  </div>
+                  <div>
+                    <div style={{color:msg.is_read?'#94a3b8':'#f1f5f9',fontWeight:msg.is_read?400:700,fontSize:14}}>{msg.persona_name} <span style={{color:'#475569',fontWeight:400}}>· {msg.company_name}</span></div>
+                    <div style={{color:'#64748b',fontSize:12,marginTop:2}}>{msg.subject}</div>
+                  </div>
+                </div>
+                <div style={{display:'flex',alignItems:'center',gap:10}}>
+                  <span style={{padding:'2px 8px',borderRadius:20,fontSize:11,background:msg.msg_type==='call_request'?'rgba(34,197,94,0.15)':msg.msg_type==='demo_request'?'rgba(14,165,233,0.15)':'rgba(99,102,241,0.15)',color:msg.msg_type==='call_request'?'#22c55e':msg.msg_type==='demo_request'?'#38bdf8':'#818cf8',border:'1px solid '+(msg.msg_type==='call_request'?'#22c55e':msg.msg_type==='demo_request'?'#0ea5e9':'#6366f1')}}>{msg.msg_type.replace('_',' ')}</span>
+                  <span style={{color:'#475569',fontSize:11}}>{new Date(msg.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric'})}</span>
+                  <span style={{color:'#475569',fontSize:16}}>{expandedMsg===msg.id?'▲':'▼'}</span>
+                </div>
+              </div>
+              {expandedMsg===msg.id&&(
+                <div style={{background:'#162032',border:'1px solid #334155',borderTop:'none',borderRadius:'0 0 12px 12px',padding:'16px 18px'}}>
+                  <p style={{color:'#94a3b8',fontSize:14,lineHeight:1.7,margin:'0 0 16px',whiteSpace:'pre-wrap'}}>{msg.body}</p>
+                  {msg.wants_call&&(
+                    <button onClick={()=>handleMsgBooking(msg)} style={{padding:'9px 20px',borderRadius:9,border:'none',background:'#6366f1',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:14}}>📅 Book {msg.call_type==='demo'?'Demo':'Discovery'} Call</button>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )}
   );
 }
