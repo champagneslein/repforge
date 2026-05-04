@@ -1796,7 +1796,7 @@ function sendEmail(emp, company, subject, body) {
           </div>
         </div>
       )}
-    </div>
+    
       
   {tab==='scheduled'&&(
     <div style={{padding:32,maxWidth:900,margin:'0 auto'}}>
@@ -1896,5 +1896,6 @@ function sendEmail(emp, company, subject, body) {
       )}
     </div>
   )}
+  </div>
   );
 }
