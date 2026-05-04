@@ -343,7 +343,7 @@ function initState() {
 // ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 
 async function supaSignUp(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/signup',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
-async function supaSignIn(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
+async function supaSignIn(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/authTok?grant_type=password',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
 async function supaSignOut(tok){await fetch(SUPABASE_URL+'/auth/v1/logout',{method:'POST',headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY}});}
 async function fetchProduct(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/user_products?user_id=eq.'+uid+'&limit=1',{headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY}});const d=await r.json();return d[0]||null;}
 async function upsertProduct(tok,uid,form){await fetch(SUPABASE_URL+'/rest/v1/user_products',{method:'POST',headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify({user_id:uid,product_name:form.name,product_description:form.desc,icp:form.icp,value_props:form.vps.split('\n').filter(Boolean),objections:form.objs.split('\n').filter(Boolean)})});}
@@ -713,14 +713,14 @@ function sendEmail(emp, company, subject, body) {
 
   // Fetch scheduled calls
   React.useEffect(()=>{
-    if(!token||!userId)return;
-    fetchScheduledCalls(token,userId).then(d=>{if(Array.isArray(d))setScheduledCalls(d);}).catch(()=>{});
-  },[token,userId]);
+    if(!authTok||!user?.id)return;
+    fetchScheduledCalls(authTok,user?.id).then(d=>{if(Array.isArray(d))setScheduledCalls(d);}).catch(()=>{});
+  },[authTok,user?.id]);
 
   // Generate persona messages randomly
   React.useEffect(()=>{
-    if(!token||!userId||!personas.length)return;
-    fetchPersonaMessages(token,userId).then(d=>{if(Array.isArray(d))setPersonaMessages(d);}).catch(()=>{});
+    if(!authTok||!user?.id||!personas.length)return;
+    fetchPersonaMessages(authTok,user?.id).then(d=>{if(Array.isArray(d))setPersonaMessages(d);}).catch(()=>{});
     const iv=setInterval(async()=>{
       const emp=personas[Math.floor(Math.random()*personas.length)];
       if(!emp)return;
@@ -728,12 +728,12 @@ function sendEmail(emp, company, subject, body) {
       const idx=Math.floor(Math.random()*5);
       const msg=genPersonaMsg(emp.first_name+' '+emp.last_name,co.name,productName||'your product',idx);
       try{
-        const saved=await savePersonaMsg(token,userId,emp.id,emp.first_name+' '+emp.last_name,co.name,msg.subject,msg.body,msg.type,msg.wantsCall,msg.callType);
+        const saved=await savePersonaMsg(authTok,user?.id,emp.id,emp.first_name+' '+emp.last_name,co.name,msg.subject,msg.body,msg.type,msg.wantsCall,msg.callType);
         if(saved&&saved.id)setPersonaMessages(prev=>[saved,...prev]);
       }catch(e){}
     },45000+Math.floor(Math.random()*75000));
     return()=>clearInterval(iv);
-  },[token,userId,personas.length,productName]);
+  },[authTok,user?.id,personas.length,productName]);
 
   // Session countdown timer
   React.useEffect(()=>{
@@ -761,7 +761,7 @@ function sendEmail(emp, company, subject, body) {
     const co=companies.find(c=>c.id===bookingPersona.company_id)||{id:'',name:'Unknown'};
     const dd=generateDiscoveryData();
     try{
-      const saved=await bookCall(token,userId,bookingPersona.id,bookingPersona.first_name+' '+bookingPersona.last_name,co.id,co.name,new Date(bookingDateTime).toISOString(),bookingCallType,dd,null);
+      const saved=await bookCall(authTok,user?.id,bookingPersona.id,bookingPersona.first_name+' '+bookingPersona.last_name,co.id,co.name,new Date(bookingDateTime).toISOString(),bookingCallType,dd,null);
       if(saved&&saved.id)setScheduledCalls(prev=>[...prev,saved]);
     }catch(e){}
     setShowBookingModal(false);
@@ -774,14 +774,14 @@ function sendEmail(emp, company, subject, body) {
     setSessionTimer(1800);
     setSessionActive(true);
     setShowCallSession(true);
-    if(sc&&sc.id)await updateCallStatus(token,sc.id,'active');
+    if(sc&&sc.id)await updateCallStatus(authTok,sc.id,'active');
     setScheduledCalls(prev=>prev.map(c=>c.id===sc.id?{...c,status:'active'}:c));
   };
 
   const handleCloseSession=async()=>{
     setSessionActive(false);
     setShowCallSession(false);
-    if(activeSession&&activeSession.id)await updateCallStatus(token,activeSession.id,'completed');
+    if(activeSession&&activeSession.id)await updateCallStatus(authTok,activeSession.id,'completed');
     setScheduledCalls(prev=>prev.map(c=>c.id===activeSession?.id?{...c,status:'completed'}:c));
     setActiveSession(null);
     setSessionTimer(1800);
@@ -1861,7 +1861,7 @@ function sendEmail(emp, company, subject, body) {
             <div key={msg.id}>
               <div onClick={async()=>{
                 if(!msg.is_read){
-                  await markMsgRead(token,msg.id);
+                  await markMsgRead(authTok,msg.id);
                   setPersonaMessages(prev=>prev.map(m=>m.id===msg.id?{...m,is_read:true}:m));
                 }
                 setExpandedMsg(expandedMsg===msg.id?null:msg.id);
