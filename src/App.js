@@ -837,7 +837,7 @@ React.useEffect(()=>{
       </div>)}
       {showProdSetup&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'white',borderRadius:'14px',padding:'32px 36px',width:'500px',maxWidth:'92vw',maxHeight:'85vh',overflowY:'auto',boxShadow:'0 24px 60px rgba(0,0,0,0.25)'}}>
-          <h2 style={{margin:'0 0 6px',fontSize:'19px',fontWeight:'800',color:'#1A3A2A'}}>What are you selling?</h2>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:6}}><h2 style={{margin:0,fontSize:'19px',fontWeight:'800',color:'#1A3A2A'}}>What are you selling?</h2><button onClick={()=>setShowProdSetup(false)} style={{background:'none',border:'none',fontSize:22,cursor:'pointer',color:'#9ca3af',lineHeight:1,padding:0,marginTop:-2}}>&times;</button></div>
           <p style={{margin:'0 0 22px',color:'#64748b',fontSize:'13px'}}>The AI allEmps will know your product and respond to your pitch.</p>
           {[{l:'Product Name *',k:'name',ph:'e.g. Acme CRM',m:false},{l:'Elevator Pitch',k:'desc',ph:'What problem does it solve and for who?',m:true},{l:'Ideal Customer Profile',k:'icp',ph:'e.g. B2B SaaS, 50-500 employees, VP Sales',m:false},{l:'Value Props (one per line)',k:'vps',ph:'Saves 5hrs/week\nReduces churn 20%',m:true},{l:'Common Objections (one per line)',k:'objs',ph:'Too expensive\nWe already have a solution',m:true}].map(({l,k,ph,m})=>(
             <div key={k} style={{marginBottom:'15px'}}>
