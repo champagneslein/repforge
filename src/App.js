@@ -817,6 +817,54 @@ React.useEffect(()=>{
   return()=>timers.forEach(clearTimeout);
 },[sessionActive,activeSession&&activeSession.id]);
 
+// ── ProLink enrichment helpers ──
+function getPersonaPhoto(id){return 'https://i.pravatar.cc/150?u=rpf'+id;}
+function getPersonaConnections(id){const b=[412,867,1203,543,2100,789,1567,334,901,1456];return b[id%b.length]+(id*7)%200;}
+function getPersonaPainPoints(emp,company){
+  const byRole={
+    'c-suite':['Scaling '+company.name+' profitably while protecting culture','Board pressure on ARR growth without over-hiring','Competitive differentiation in a saturated '+company.industry+' market','Finding the right enterprise GTM motion'],
+    'vp':['Hitting '+( emp.title.includes('Sales')?'quota':'OKRs')+' with a lean team','Justifying new tool spend against tight budgets','Aligning cross-functional teams on priorities','Replacing legacy workflows with modern tooling'],
+    'manager':['Managing team performance with limited visibility','Reducing manual reporting overhead','Getting leadership buy-in for process changes','Ramping new hires faster'],
+    'ic':['Too much time on admin vs. actual work','Lack of clear direction from senior leadership','Tools that don't integrate with existing stack','Too many context switches between platforms']
+  };
+  return (byRole[emp.seniority]||byRole['ic']).slice(0,3);
+}
+function getPersonaGoals(emp,company){
+  const s=emp.seniority;
+  return s==='c-suite'
+    ?['Position '+company.name+' as category leader in '+company.industry,'Reach next funding milestone or profitability target','Expand into two new verticals this year']
+    :s==='vp'
+    ?['Hit '+( emp.title.includes('Sales')?'revenue':'delivery')+' targets for the fiscal year','Build a repeatable, scalable team process','Reduce dependency on manual tooling by Q3']
+    :['Ship key deliverables on time with quality','Improve cross-team communication','Grow into a senior '+emp.title.replace('Junior ','').replace('Associate ','')];
+}
+function getPersonaPosts(emp,company){
+  const sen=emp.seniority,ind=company.industry,cn=company.name,title=emp.title,id=emp.id;
+  const rng=(n)=>((id*7+n*13)%100)/100;
+  const likeBase=sen==='c-suite'?350:sen==='vp'?160:sen==='manager'?70:35;
+  const comBase=sen==='c-suite'?32:sen==='vp'?16:sen==='manager'?8:4;
+  const tags={'SaaS':['#SaaS','#B2BSales','#ProductLed','#GrowthHacking'],'Cyber Security':['#CyberSecurity','#ZeroTrust','#InfoSec','#ThreatIntel'],'Manufacturing':['#Industry40','#SmartFactory','#IoT','#Automation'],'FinTech':['#FinTech','#OpenBanking','#RegTech','#Payments'],'CleanTech':['#CleanTech','#Sustainability','#NetZero','#GreenEnergy'],'HealthTech':['#HealthTech','#DigitalHealth','#PatientFirst','#MedTech'],'RetailTech':['#RetailTech','#Omnichannel','#CommerceAI','#CX'],'PropTech':['#PropTech','#ConTech','#SmartBuilding','#Construction']};
+  const t=tags[ind]||['#Tech','#Innovation','#Leadership'];
+  const timings=['1d','2d','3d','5d','1w','2w'];
+  return [
+    {text:sen==='c-suite'?'Three years ago '+cn+' had 12 customers. Today we serve over '+(Math.floor(rng(1)*400)+100)+' enterprise teams across Europe.\n\nThe thing nobody tells you about scaling a '+ind+' company: the hardest part isn't product. It's people and process. Every time.\n\nWe're hiring senior ICs. DM me if you know someone.':sen==='vp'?'Spent Q2 rebuilding how our team approaches '+(title.includes('Sales')?'pipeline management and forecasting':'cross-functional delivery and prioritisation')+'.
+
+Biggest lesson: slow down to speed up. Teams that skip alignment always pay for it in rework and morale.
+
+'+cn+' is in a really strong position heading into H2.':'Just wrapped a very productive sprint at '+cn+'.
+
+The team is shipping faster than ever — and the quality bar keeps rising. Proud to be part of this one.',
+     likes:Math.floor(likeBase*(0.8+rng(2)*0.5)),comments:Math.floor(comBase*(0.8+rng(3)*0.5)),timeAgo:timings[id%3],tags:[t[0],t[1]],hasImage:false},
+    {text:sen==='c-suite'?'Hot take: most '+ind+' companies are solving the wrong problem.\n\nEveryone is chasing feature parity. The winners are obsessing over workflow and time-to-value.\n\nWe saw this pattern two years ago at '+cn+' and made a hard pivot. Best decision we ever made.\n\nWhat's your take?':sen==='vp'?'Controversial opinion: the biggest bottleneck in most '+ind+' orgs isn't headcount.\n\nIt's tooling debt.\n\nWe spent 6 months at '+cn+' ripping out systems that were slowing us down. The ROI showed up in 90 days flat.':'If you're in '+ind+' and not paying attention to how AI is changing '+(title.includes('Sales')||title.includes('Marketing')?'go-to-market':'operations')+', you're already behind.\n\nSome notes from a workshop I attended this week — thread below.',
+     likes:Math.floor(likeBase*(0.6+rng(4)*0.8)),comments:Math.floor(comBase*(0.6+rng(5)*0.7)),timeAgo:timings[(id+1)%4+1],tags:[t[2]],hasImage:id%5===0},
+    {text:sen==='c-suite'||sen==='vp'?'We just made a call that made us uncomfortable.\n\nWe said no to a €'+(Math.floor(rng(6)*400)+150)+'k deal because the customer wasn't the right fit for where '+cn+' is going.\n\nEarly stage you take every deal. Later stage you realise bad-fit customers cost more than they're worth. Churn, support load, culture damage.\n\nBuilding for the long game.':'Looking for recommendations — what tools is your team using for '+(title.includes('Eng')||title.includes('CTO')?'CI/CD and code quality monitoring':title.includes('Sales')?'sales engagement and pipeline visibility':'project management and async communication')+' in 2025?\n\nWe're evaluating options at '+cn+' right now. Drop a comment 👇',
+     likes:Math.floor(likeBase*(0.9+rng(7)*0.4)),comments:Math.floor(comBase*(1.2+rng(8)*0.8)),timeAgo:timings[(id+2)%5],tags:[t[id%t.length]],hasImage:false},
+    {text:'Reflecting on what's actually hard about working in '+ind+' right now:\n\n1. '+(sen==='c-suite'?'Finding people who think commercially AND technically':'Getting visibility into what leadership actually cares about')+'\n2. '+(title.includes('Sales')?'Keeping pipeline quality high under quota pressure':'Shipping fast without accumulating tech/process debt')+'\n3. '+(company.employees>30?'Maintaining culture as the team grows':'Doing more with less')+'\n\nNone of this is new. All of it is harder in '+new Date().getFullYear()+'.',
+     likes:Math.floor(likeBase*(1.0+rng(9)*0.4)),comments:Math.floor(comBase*(0.9+rng(10)*0.5)),timeAgo:timings[(id+3)%timings.length],tags:[t[0],t[t.length-1]],hasImage:false},
+    {text:sen==='c-suite'?'I still interview every senior hire personally.\n\nNot to check qualifications — the team handles that.\n\nI'm looking for one thing: do they make the people around them better?\n\nThe best people I've ever worked with always do. The ones who didn't make the team stronger didn't last.\n\n#Leadership':'End of quarter reflection at '+cn+':\n\nWins: '+(title.includes('Sales')?'pipeline coverage strong, team at 94% of target':'shipped 3 major features, zero Sev-1s in production')+'\nNeeds work: documentation, async comms, onboarding speed\n\nEvery quarter we get a bit better. That's the job.',
+     likes:Math.floor(likeBase*(1.1+rng(11)*0.3)),comments:Math.floor(comBase*(0.8+rng(12)*0.4)),timeAgo:timings[(id+4)%timings.length],tags:[],hasImage:id%7===0},
+  ];
+}
+
   return (
     <div className="min-h-screen bg-[#F7F4EE]">
       {!user&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'#1A3A2A',zIndex:99999,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
@@ -1159,7 +1207,7 @@ React.useEffect(()=>{
                       return (
                         <tr key={emp.id} className="border-b border-[#EDE9E0] hover:bg-[#EDF5EE] cursor-pointer" onClick={() => { setSelEmp(emp); setCrmView("employee"); }}>
                           <td className="px-4 py-3"><div className="flex items-center gap-2">
-                            <div className={`w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
+                            <div className="relative w-8 h-8 flex-shrink-0"><img src={getPersonaPhoto(emp.id)} alt="" className="w-8 h-8 rounded-full object-cover absolute inset-0" onError={e=>{e.target.style.display="none";}} /><div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div></div>
                             <span className="font-medium text-gray-800 text-sm">{emp.first} {emp.last}</span>
                           </div></td>
                           <td className="px-4 py-3 text-gray-600 text-sm">{emp.title}</td>
@@ -1540,7 +1588,15 @@ React.useEffect(()=>{
                   <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-4">
                     <div className="h-20 bg-gradient-to-r from-[#1A3A2A] to-[#2A5A3A]"></div>
                     <div className="px-5 pb-5">
-                      <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl -mt-8 mb-2 border-4 border-white ${getAvatarColor(plProfile.id)}`}>{getInitials(plProfile)}</div>
+                      <div className="relative -mt-10 mb-2">
+                        <img src={getPersonaPhoto(plProfile.id)} alt="" className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md" onError={e=>{e.target.style.display="none";e.target.nextSibling.style.display="flex";}} />
+                        <div className={`w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white ${getAvatarColor(plProfile.id)}`} style={{display:"none"}}>{getInitials(plProfile)}</div>
+                      </div>
+                      <div className="flex items-center gap-3 mb-1 text-xs text-gray-500">
+                        <span>🔗 <strong className="text-blue-600">{getPersonaConnections(plProfile.id).toLocaleString()}</strong> connections</span>
+                        <span>·</span>
+                        <span>📍 {(companies.find(c=>c.id===getCompanyForEmp(plProfile.id))||{location:"Dublin"}).location}</span>
+                      </div>
                       <div className="flex items-start justify-between">
                         <div>
                           <div className="font-bold text-gray-900 text-xl">{plProfile.first} {plProfile.last}</div>
@@ -1560,15 +1616,43 @@ React.useEffect(()=>{
                       {plProfile.bio && <div className="mt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-3">{plProfile.bio}</div>}
                     </div>
                   </div>
-                  {plProfile.posts?.length > 0 && (
+                  {/* About */}
+                  {(()=>{const _pp=getPersonaPainPoints(plProfile,company);const _goals=getPersonaGoals(plProfile,company);return(
+                    <div className="bg-white rounded-xl border border-gray-200 p-4 mb-3">
+                      <div className="font-bold text-gray-800 mb-2 text-sm">About</div>
+                      <p className="text-xs text-gray-600 mb-3 leading-relaxed">{plProfile.title} at {company?company.name:`this company`}. Driving {company?company.industry:`tech`} results through strategic initiatives.</p>
+                      <div className="mb-2"><div className="text-xs font-semibold text-gray-700 mb-1">🎯 Goals</div>{_goals.map((g,gi)=><div key={gi} className="text-xs text-gray-600 mb-1 flex gap-1"><span className="text-green-500 flex-shrink-0">✓</span>{g}</div>)}</div>
+                      <div><div className="text-xs font-semibold text-gray-700 mb-1">⚠️ Pain Points</div>{_pp.map((pp,pi)=><div key={pi} className="text-xs text-gray-600 mb-1 flex gap-1"><span className="text-red-400 flex-shrink-0">!</span>{pp}</div>)}</div>
+                    </div>);})()}
+                  {/* Activity */}
+                  {(()=>{const _posts=getPersonaPosts(plProfile,company);return(
                     <div>
-                      <div className="font-semibold text-gray-700 mb-3">Recent Activity</div>
-                      {plProfile.posts.map((post, i) => (
-                        <div key={i} className="bg-white rounded-xl border border-gray-200 p-4 mb-3 text-sm text-gray-700 leading-relaxed">{post}</div>
+                      <div className="font-semibold text-gray-700 mb-3 text-sm">Recent Activity</div>
+                      {_posts.length===0&&<div className="text-center py-8 text-gray-400 text-sm">No recent activity.</div>}
+                      {_posts.map((post,pi)=>(
+                        <div key={pi} className="bg-white rounded-xl border border-gray-200 mb-3 overflow-hidden">
+                          <div className="p-3">
+                            <div className="flex items-start gap-2 mb-2">
+                              <img src={getPersonaPhoto(plProfile.id)} className="w-8 h-8 rounded-full object-cover flex-shrink-0" onError={e=>{e.target.style.display='none';}} alt=""/>
+                              <div className="flex-1 min-w-0">
+                                <div className="text-xs font-bold text-gray-900">{plProfile.first} {plProfile.last}</div>
+                                <div className="text-xs text-gray-500 truncate">{plProfile.title} · {company?company.name:''}</div>
+                                <div className="text-xs text-gray-400">{post.timeAgo} · 🌐</div>
+                              </div>
+                            </div>
+                            <p className="text-xs text-gray-700 leading-relaxed mb-2">{post.text}</p>
+                            {post.hasImage&&<div className="rounded-lg bg-gradient-to-br from-indigo-50 to-blue-100 h-20 flex items-center justify-center mb-2 text-3xl">{['📊','📈','🚀','💡','🤝'][pi%5]}</div>}
+                            {post.tags&&post.tags.length>0&&<div className="flex flex-wrap gap-1 mb-2">{post.tags.map((t,ti)=><span key={ti} className="text-xs text-blue-600">{t} </span>)}</div>}
+                            <div className="text-xs text-gray-400 border-t border-gray-100 pt-1.5">👍 {post.likes.toLocaleString()} · 💬 {post.comments}</div>
+                          </div>
+                          <div className="border-t border-gray-100 flex">
+                            {['👍 Like','💬 Comment','🔁 Repost','📤 Send'].map((a,ai)=>(
+                              <button key={ai} className="flex-1 py-1.5 text-xs text-gray-500 hover:bg-gray-50 font-medium">{a}</button>
+                            ))}
+                          </div>
+                        </div>
                       ))}
-                    </div>
-                  )}
-                  {plProfile.posts?.length === 0 && <div className="text-center py-8 text-gray-400 text-sm">No recent activity.</div>}
+                    </div>);})()}
                 </div>
               );
             })()}
