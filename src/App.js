@@ -825,7 +825,7 @@ function getPersonaPainPoints(emp,company){
     'c-suite':['Scaling '+company.name+' profitably while protecting culture','Board pressure on ARR growth without over-hiring','Competitive differentiation in a saturated '+company.industry+' market','Finding the right enterprise GTM motion'],
     'vp':['Hitting '+( emp.title.includes('Sales')?'quota':'OKRs')+' with a lean team','Justifying new tool spend against tight budgets','Aligning cross-functional teams on priorities','Replacing legacy workflows with modern tooling'],
     'manager':['Managing team performance with limited visibility','Reducing manual reporting overhead','Getting leadership buy-in for process changes','Ramping new hires faster'],
-    'ic':['Too much time on admin vs. actual work','Lack of clear direction from senior leadership','Tools that don't integrate with existing stack','Too many context switches between platforms']
+    'ic':['Too much time on admin vs. actual work','Lack of clear direction from senior leadership',"Tools that don't integrate with existing stack",'Too many context switches between platforms']
   };
   return (byRole[emp.seniority]||byRole['ic']).slice(0,3);
 }
