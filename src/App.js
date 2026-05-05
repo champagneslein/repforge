@@ -1096,7 +1096,7 @@ React.useEffect(()=>{
                   const replied = emps.filter(e => state[e.id]?.emailStatus==="replied" || state[e.id]?.linkedinStatus==="connected").length;
                   const contacted = emps.filter(e => state[e.id]?.emailStatus!=="none" || state[e.id]?.calls>0 || state[e.id]?.linkedinStatus!=="none").length;
                   return (
-                    <div key={c.id} onClick={() => { setSelCompany(c); fetchSupa('allEmps?company_id=eq.' + c.id + '&select=id,first_name,last_name,pain_points,goals,challenges,buying_role,budget_authority').then(d => { if(d){ const m={}; d.forEach(p=>{m[p.id]=p;}); setIntelData(m); setExpandedIntel(null); } }); setCrmView("company"); }} className="bg-white rounded-xl border border-[#D4CFC4] p-4 cursor-pointer hover:border-[#1A3A2A] hover:shadow-md transition-all group">
+                    <div key={c.id} onClick={() => { setSelCompany(c); fetchSupabase('allEmps?company_id=eq.' + c.id + '&select=id,first_name,last_name,pain_points,goals,challenges,buying_role,budget_authority').then(d => { if(d){ const m={}; d.forEach(p=>{m[p.id]=p;}); setIntelData(m); setExpandedIntel(null); } }); setCrmView("company"); }} className="bg-white rounded-xl border border-[#D4CFC4] p-4 cursor-pointer hover:border-[#1A3A2A] hover:shadow-md transition-all group">
                       <div className="flex items-start justify-between mb-3">
                         <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm ${getAvatarColor(c.id)}`}>{c.name.slice(0,2).toUpperCase()}</div>
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sizeColors[c.size]}`}>{c.size}</span>
