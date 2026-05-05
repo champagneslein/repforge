@@ -846,13 +846,13 @@ function getPersonaPosts(emp,company){
   const t=tags[ind]||['#Tech','#Innovation','#Leadership'];
   const timings=['1d','2d','3d','5d','1w','2w'];
   return [
-    {text:sen==='c-suite'?'Three years ago '+cn+' had 12 customers. Today we serve over '+(Math.floor(rng(1)*400)+100)+' enterprise teams across Europe.\n\nThe thing nobody tells you about scaling a '+ind+' company: the hardest part isn\'t product. It\'s people and process. Every time.\n\nWe\'re hiring senior ICs. DM me if you know someone.':sen==='vp'?'Spent Q2 rebuilding how our team approaches '+(title.includes('Sales')?'pipeline management and forecasting':'cross-functional delivery and prioritisation')+'.'
+    {text:sen==='c-suite'?'Three years ago '+cn+' had 12 customers. Today we serve over '+(Math.floor(rng(1)*400)+100)+' enterprise teams across Europe.\n\nThe thing nobody tells you about scaling a '+ind+' company: the hardest part isn\'t product. It\'s people and process. Every time.\n\nWe\'re hiring senior ICs. DM me if you know someone.':sen==='vp'?'Spent Q2 rebuilding how our team approaches '+(title.includes('Sales')?'pipeline management and forecasting':'cross-functional delivery and prioritisation')+'..\nBiggest lesson: slow down to speed up. Teams that skip alignment always pay for it in rework and morale.\n'+cn+' is in a really strong position heading into H2.':'Just wrapped a very productive sprint at '+cn+'.\nThe team is shipping faster than ever — and the quality bar keeps rising. Proud to be part of this one.',
 
-Biggest lesson: slow down to speed up. Teams that skip alignment always pay for it in rework and morale.
 
-'+cn+' is in a really strong position heading into H2.':'Just wrapped a very productive sprint at '+cn+'.
 
-The team is shipping faster than ever — and the quality bar keeps rising. Proud to be part of this one.',
+
+
+
      likes:Math.floor(likeBase*(0.8+rng(2)*0.5)),comments:Math.floor(comBase*(0.8+rng(3)*0.5)),timeAgo:timings[id%3],tags:[t[0],t[1]],hasImage:false},
     {text:sen==='c-suite'?'Hot take: most '+ind+' companies are solving the wrong problem.\n\nEveryone is chasing feature parity. The winners are obsessing over workflow and time-to-value.\n\nWe saw this pattern two years ago at '+cn+' and made a hard pivot. Best decision we ever made.\n\nWhat\'s your take?':sen==='vp'?'Controversial opinion: the biggest bottleneck in most '+ind+' orgs isn\'t headcount.\n\nIt\'s tooling debt.\n\nWe spent 6 months at '+cn+' ripping out systems that were slowing us down. The ROI showed up in 90 days flat.':'If you\'re in '+ind+' and not paying attention to how AI is changing '+(title.includes('Sales')||title.includes('Marketing')?'go-to-market':'operations')+', you\'re already behind.\n\nSome notes from a workshop I attended this week — thread below.',
      likes:Math.floor(likeBase*(0.6+rng(4)*0.8)),comments:Math.floor(comBase*(0.6+rng(5)*0.7)),timeAgo:timings[(id+1)%4+1],tags:[t[2]],hasImage:id%5===0},
