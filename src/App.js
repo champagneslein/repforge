@@ -846,7 +846,7 @@ function getPersonaPosts(emp,company){
   const t=tags[ind]||['#Tech','#Innovation','#Leadership'];
   const timings=['1d','2d','3d','5d','1w','2w'];
   return [
-    {text:sen==='c-suite'?'Three years ago '+cn+' had 12 customers. Today we serve over '+(Math.floor(rng(1)*400)+100)+' enterprise teams across Europe.\n\nThe thing nobody tells you about scaling a '+ind+' company: the hardest part isn\'t product. It\'s people and process. Every time.\n\nWe\'re hiring senior ICs. DM me if you know someone.':sen==='vp'?'Spent Q2 rebuilding how our team approaches '+(title.includes('Sales')?'pipeline management and forecasting':'cross-functional delivery and prioritisation')+'.
+    {text:sen==='c-suite'?'Three years ago '+cn+' had 12 customers. Today we serve over '+(Math.floor(rng(1)*400)+100)+' enterprise teams across Europe.\n\nThe thing nobody tells you about scaling a '+ind+' company: the hardest part isn\'t product. It\'s people and process. Every time.\n\nWe\'re hiring senior ICs. DM me if you know someone.':sen==='vp'?'Spent Q2 rebuilding how our team approaches '+(title.includes('Sales')?'pipeline management and forecasting':'cross-functional delivery and prioritisation')+'.'
 
 Biggest lesson: slow down to speed up. Teams that skip alignment always pay for it in rework and morale.
 
