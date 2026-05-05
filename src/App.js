@@ -31,26 +31,26 @@ async function fetchSupabase(endpoint, filter = '') {
 // COMPANY + EMPLOYEE DATA
 // ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ
 const companies = [
-  { id:1,  name:"Nexaflow",         industry:"SaaS",           size:"Enterprise", employees:42, domain:"nexaflow.io",         description:"Cloud workflow automation for enterprise ops teams",        location:"Dublin" },
-  { id:2,  name:"CloudPulse",       industry:"SaaS",           size:"Mhid-Market", employees:25, domain:"cloudpulse.io",       description:"Real-time analytics and monitoring SaaS",                  location:"London" },
-  { id:3,  name:"Stackly",          industry:"SaaS",           size:"SMB",        employees:14, domain:"stackly.dev",         description:"Developer productivity and code review tooling",           location:"Dublin" },
-  { id:4,  name:"Velodata",         industry:"SaaS",           size:"Mid-Market", employees:28, domain:"velodata.com",        description:"Data pipeline and ETL automation platform",                location:"London" },
-  { id:5,  name:"ShieldOps",        industry:"Cyber Security", size:"Enterprise", employees:45, domain:"shieldops.io",        description:"Enterprise endpoint security and threat detection",        location:"Dublin" },
-  { id:6,  name:"CipherEdge",       industry:"Cyber Security", size:"Mid-Market", employees:22, domain:"cipheredge.io",       description:"Zero-trust network access and identity management",        location:"London" },
-  { id:7,  name:"ThreatNest",       industry:"Cyber Security", size:"SMB",        employees:16, domain:"threatnest.com",      description:"SMB-focused threat intelligence and monitoring",           location:"Dublin" },
-  { id:8,  name:"Fortivex",         industry:"Cyber Security", size:"Enterprise", employees:50, domain:"fortivex.com",        description:"Security operations centre automation",                   location:"London" },
-  { id:9,  name:"IronCore Systems", industry:"Manufacturing",  size:"Enterprise", employees:48, domain:"ironcoresystems.com", description:"Industrial IoT and smart factory solutions",              location:"Dublin" },
-  { id:10, name:"PrecisionWorks",   industry:"Manufacturing",  size:"Mid-Market", employees:30, domain:"precisionworks.ie",   description:"Precision component manufacturing and supply chain",       location:"Cork" },
-  { id:11, name:"NovaMach",         industry:"Manufacturing",  size:"SMB",        employees:15, domain:"novamach.ie",         description:"Custom machinery and tooling manufacturer",               location:"Galway" },
-  { id:12, name:"FluxTech",         industry:"Manufacturing",  size:"Mid-Market", employees:35, domain:"fluxtech-ind.com",    description:"Advanced materials and composite manufacturing",           location:"Dublin" },
-  { id:13, name:"CapitalBridge",    industry:"Fintech",        size:"Enterprise", employees:44, domain:"capitalbridge.io",    description:"Institutional trading and capital markets platform",       location:"Dublin" },
-  { id:14, name:"Moneta Labs",      industry:"Fintech",        size:"Mid-Market", employees:20, domain:"monetalabs.io",       description:"Embedded finance and banking-as-a-service",               location:"London" },
-  { id:15, name:"PayStream",        industry:"Fintech",        size:"SMB",        employees:18, domain:"paystream.io",        description:"Payment reconciliation automation",                       location:"Dublin" },
-  { id:16, name:"FinAxis Group",    industry:"Fintech",        size:"Enterprise", employees:50, domain:"finaxis-group.com",   description:"Risk management and regulatory compliance platform",       location:"London" },
-  { id:17, name:"GreenLeaf Energy", industry:"Energy",         size:"Mid-Market", employees:24, domain:"greenleaf-energy.com",description:"Renewable energy project development",                    location:"Dublin" },
-  { id:18, name:"MedPoint Health",  industry:"Healthcare",     size:"SMB",        employees:17, domain:"medpointhealth.ie",   description:"Digital health records and practice management SaaS",     location:"Dublin" },
-  { id:19, name:"RetailEdge",       industry:"Retail Tech",    size:"Enterprise", employees:38, domain:"retailedge.com",      description:"Omnichannel retail operations and inventory platform",     location:"London" },
-  { id:20, name:"BuildRight",       industry:"Construction",   size:"Mid-Market", employees:22, domain:"buildright.io",       description:"Construction project management and compliance SaaS",     location:"Dublin" },
+  { id:1,  name:"Nexaflow",         industry:"SaaS",           size:"Enterprise", employees:42, domain:"nexaflow.io",         description:"Cloud workflow automation for enterprise ops teams",        location:"Dublin",         dealValue:75000  },
+  { id:2,  name:"CloudPulse",       industry:"SaaS",           size:"Mid-Market", employees:25, domain:"cloudpulse.io",       description:"Real-time analytics and monitoring SaaS",                  location:"London",         dealValue:35000  },
+  { id:3,  name:"Stackly",          industry:"SaaS",           size:"SMB",        employees:14, domain:"stackly.dev",         description:"Developer productivity and code review tooling",           location:"Dublin",         dealValue:20000  },
+  { id:4,  name:"Velodata",         industry:"SaaS",           size:"Mid-Market", employees:28, domain:"velodata.com",        description:"Data pipeline and ETL automation platform",                location:"London",         dealValue:40000  },
+  { id:5,  name:"ShieldOps",        industry:"Cyber Security", size:"Enterprise", employees:45, domain:"shieldops.io",        description:"Next-gen endpoint security and threat response",           location:"Dublin",         dealValue:80000  },
+  { id:6,  name:"CipherEdge",       industry:"Cyber Security", size:"Mid-Market", employees:22, domain:"cipheredge.com",      description:"Zero-trust network access and SASE platform",             location:"London",         dealValue:30000  },
+  { id:7,  name:"ThreatNest",       industry:"Cyber Security", size:"SMB",        employees:16, domain:"threatnest.io",       description:"SMB-focused vulnerability scanning and alerts",            location:"Dublin",         dealValue:25000  },
+  { id:8,  name:"Fortivex",         industry:"Cyber Security", size:"Enterprise", employees:50, domain:"fortivex.com",        description:"Enterprise SOC-as-a-service and SIEM platform",           location:"London",         dealValue:100000 },
+  { id:9,  name:"IronCore Systems", industry:"Manufacturing",  size:"Enterprise", employees:48, domain:"ironcore.systems",    description:"Industrial IoT and smart factory automation",              location:"Dublin",         dealValue:90000  },
+  { id:10, name:"PrecisionWorks",   industry:"Manufacturing",  size:"Mid-Market", employees:30, domain:"precisionworks.ie",   description:"CNC machining and precision components for aerospace",     location:"Cork",           dealValue:45000  },
+  { id:11, name:"NovaMach",         industry:"Manufacturing",  size:"SMB",        employees:15, domain:"novamach.ie",         description:"Custom fabrication and tooling for local industry",        location:"Limerick",       dealValue:22000  },
+  { id:12, name:"FluxTech",         industry:"Manufacturing",  size:"Mid-Market", employees:35, domain:"fluxtech.ie",         description:"Electronics manufacturing and PCB assembly",               location:"Galway",         dealValue:55000  },
+  { id:13, name:"CapitalBridge",    industry:"FinTech",        size:"Enterprise", employees:44, domain:"capitalbridge.io",    description:"Institutional trading and capital markets infrastructure",  location:"Dublin",         dealValue:85000  },
+  { id:14, name:"Moneta Labs",      industry:"FinTech",        size:"Mid-Market", employees:20, domain:"monetalabs.io",       description:"Embedded finance and BaaS APIs for fintechs",             location:"London",         dealValue:28000  },
+  { id:15, name:"PayStream",        industry:"FinTech",        size:"SMB",        employees:18, domain:"paystream.io",        description:"Payment orchestration for SMB e-commerce",                location:"Dublin",         dealValue:28000  },
+  { id:16, name:"FinAxis Group",    industry:"FinTech",        size:"Enterprise", employees:50, domain:"finaxis.io",          description:"Risk analytics and regulatory reporting for banks",        location:"London",         dealValue:95000  },
+  { id:17, name:"GreenLeaf Energy", industry:"CleanTech",      size:"Mid-Market", employees:24, domain:"greenleaf.energy",    description:"Renewable energy management and carbon tracking SaaS",     location:"Cork",           dealValue:32000  },
+  { id:18, name:"MedPoint Health",  industry:"HealthTech",     size:"SMB",        employees:17, domain:"medpoint.health",     description:"Digital health records and patient engagement platform",   location:"Dublin",         dealValue:20000  },
+  { id:19, name:"RetailEdge",       industry:"RetailTech",     size:"Enterprise", employees:38, domain:"retailedge.io",       description:"Omnichannel retail operations and inventory intelligence",  location:"London",         dealValue:65000  },
+  { id:20, name:"BuildRight",       industry:"PropTech",       size:"Mid-Market", employees:22, domain:"buildright.ie",       description:"Construction project management and compliance SaaS",      location:"Dublin",         dealValue:30000  },
 ];
 
 const allEmployees = {
@@ -874,6 +874,23 @@ React.useEffect(()=>{
               <div><div style={{fontSize:22,fontWeight:800,color:'#1A3A2A'}}>ð Deal Pipeline</div><div style={{fontSize:13,color:'#666',marginTop:2}}>{deals.length} deal{deals.length!==1?'s':''} tracked</div></div>
               <button onClick={()=>{setShowPipeline(false);setTab('crm');}} style={{background:'#1A3A2A',color:'#fff',border:'none',borderRadius:8,padding:'8px 20px',fontWeight:600,fontSize:14,cursor:'pointer'}}>â Close</button>
             </div>
+            <div style={{marginBottom:12,background:'#f0fdf4',borderRadius:8,padding:'12px 16px',border:'1px solid #bbf7d0'}}>
+              {(()=>{
+                const closedDeals=deals.filter(d=>d.stage==='Closed Won');
+                const closedVal=closedDeals.reduce((sum,d)=>{const co=companies.find(c=>c.name===d.company_name);return sum+(co?co.dealValue:0);},0);
+                const pct=Math.min(100,Math.round(closedVal/10000));
+                return(<>
+                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:6}}>
+                    <span style={{fontSize:13,fontWeight:700,color:'#1A3A2A'}}>💰 Quota Attainment</span>
+                    <span style={{fontSize:13,fontWeight:700,color:'#16a34a'}}>${closedVal.toLocaleString()} <span style={{fontWeight:400,color:'#6b7280'}}>/ $1,000,000</span></span>
+                  </div>
+                  <div style={{height:8,background:'#dcfce7',borderRadius:4,overflow:'hidden'}}>
+                    <div style={{height:'100%',width:pct+'%',background:'linear-gradient(90deg,#16a34a,#22c55e)',borderRadius:4,transition:'width 0.5s'}}></div>
+                  </div>
+                  <div style={{fontSize:11,color:'#6b7280',marginTop:4}}>{closedDeals.length} deals closed · {100-pct}% remaining to target</div>
+                </>);
+              })()}
+            </div>
             <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:12}}>
               {['Prospecting','Discovery','Demo','Proposal','Closed Won'].map(stage=>{
                 const sd=deals.filter(d=>d.stage===stage);
@@ -891,7 +908,8 @@ React.useEffect(()=>{
                       return(
                         <div key={deal.id} style={{background:'#fff',borderRadius:8,padding:'10px 12px',marginBottom:8,boxShadow:'0 1px 3px rgba(0,0,0,0.08)'}}>
                           <div style={{fontSize:13,fontWeight:700,color:'#1A3A2A'}}>{deal.persona_name}</div>
-                          <div style={{fontSize:11,color:'#6b7280',marginBottom:6}}>{deal.company_name}</div>
+                          <div style={{fontSize:11,color:'#6b7280',marginBottom:3}}>{deal.company_name}</div>
+                          <div style={{fontSize:11,fontWeight:700,color:'#16a34a',marginBottom:6,letterSpacing:'-0.2px'}}>💰 ${(companies.find(c=>c.name===deal.company_name)||{dealValue:0}).dealValue.toLocaleString()}</div>
                           <div style={{display:'flex',alignItems:'center',gap:4,marginBottom:8}}>
                             <div style={{width:7,height:7,borderRadius:'50%',background:scoreColor(sc),flexShrink:0}}/>
                             <span style={{fontSize:11,color:scoreColor(sc),fontWeight:600}}>{sc}/10 interest</span>
@@ -1088,6 +1106,10 @@ React.useEffect(()=>{
                       <div className="flex items-center gap-2 mb-3">
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${industryColors[c.industry]||"bg-gray-100 text-gray-600"}`}>{c.industry}</span>
                         <span className="text-gray-400 text-xs">{c.location}</span>
+                      </div>
+                                            <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs font-semibold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">💰 ${(c.dealValue||0).toLocaleString()}</span>
+                        <span className="text-xs text-gray-400">{c.size} target</span>
                       </div>
                       <div className="border-t border-gray-100 pt-2">
                         <div className="flex justify-between text-xs text-gray-500 mb-1">
