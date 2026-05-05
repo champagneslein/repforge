@@ -1584,75 +1584,100 @@ The team is shipping faster than ever — and the quality bar keeps rising. Prou
               const cs = state[plProfile.id];
               return (
                 <div>
-                  <button onClick={() => setPlView("feed")} className="text-blue-500 text-sm hover:underline mb-4 block">ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Back to Feed</button>
-                  <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-4">
-                    <div className="h-20 bg-gradient-to-r from-[#1A3A2A] to-[#2A5A3A]"></div>
+                  <button onClick={()=>setPlView("feed")} className="flex items-center gap-1.5 text-sm font-semibold mb-4 transition-colors" style={{color:'#0A66C2'}}>
+                    <span>← Back to Feed</span>
+                  </button>
+
+                  <div className="bg-white rounded-2xl overflow-hidden mb-3" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.08)'}}>
+                    <div className="h-24" style={{background:'linear-gradient(135deg,#0A66C2 0%,#004182 50%,#6B46C1 100%)'}}></div>
                     <div className="px-5 pb-5">
-                      <div className="relative -mt-10 mb-2">
-                        <img src={getPersonaPhoto(plProfile.id)} alt="" className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md" onError={e=>{e.target.style.display="none";e.target.nextSibling.style.display="flex";}} />
-                        <div className={`w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white ${getAvatarColor(plProfile.id)}`} style={{display:"none"}}>{getInitials(plProfile)}</div>
+                      <div className="flex justify-between items-end -mt-10 mb-3">
+                        <div className="relative">
+                          <img src={getPersonaPhoto(plProfile.id)} alt="" className="w-20 h-20 rounded-full object-cover border-4 border-white" style={{boxShadow:'0 2px 8px rgba(0,0,0,0.15)'}} onError={e=>{e.target.style.display='none';e.target.nextSibling.style.display='flex';}}/>
+                          <div className={'w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white '+getAvatarColor(plProfile.id)} style={{display:'none'}}>{getInitials(plProfile)}</div>
+                        </div>
+                        <div className="flex gap-2 pb-1">
+                          <button className="px-4 py-1.5 rounded-full text-sm font-semibold" style={{background:'#0A66C2',color:'#fff',border:'none',cursor:'pointer'}}>+ Connect</button>
+                          <button onClick={()=>{setPlMsgEmp(plProfile);setPlView('messages');}} className="px-4 py-1.5 rounded-full text-sm font-semibold" style={{color:'#0A66C2',border:'1.5px solid #0A66C2',background:'transparent',cursor:'pointer'}}>Message</button>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-3 mb-1 text-xs text-gray-500">
-                        <span>🔗 <strong className="text-blue-600">{getPersonaConnections(plProfile.id).toLocaleString()}</strong> connections</span>
+                      <h2 className="text-lg font-bold text-gray-900 leading-tight mb-0.5">{plProfile.first} {plProfile.last}</h2>
+                      <p className="text-sm text-gray-600 leading-snug mb-1">{plProfile.title}</p>
+                      <p className="text-sm text-gray-800 font-medium mb-2">{company?company.name:''}{company&&<span className="text-gray-400 font-normal"> · {company.industry}</span>}</p>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-500 mb-3">
+                        <span className="font-semibold" style={{color:'#0A66C2'}}>{getPersonaConnections(plProfile.id).toLocaleString()} connections</span>
                         <span>·</span>
-                        <span>📍 {(companies.find(c=>c.id===getCompanyForEmp(plProfile.id))||{location:"Dublin"}).location}</span>
+                        <span>📍 {(companies.find(c=>c.id===getCompanyForEmp(plProfile.id))||{location:'Dublin'}).location}</span>
+                        {company&&<><span>·</span><span>{company.size}</span></>}
                       </div>
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <div className="font-bold text-gray-900 text-xl">{plProfile.first} {plProfile.last}</div>
-                          <div className="text-gray-600">{plProfile.title}</div>
-                          <div className="text-gray-500 text-sm">{company?.name} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.location}</div>
-                          <div className="text-gray-400 text-xs mt-1">{company?.industry} ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ· {company?.size}</div>
-                          <div className="text-gray-400 text-xs mt-1 font-mono">ÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ {getPhone(plProfile)}</div>
-                        </div>
-                        <div className="flex gap-2 mt-1">
-                          {cs.linkedinStatus==="none" && <button onClick={() => sendLinkedinConnect(plProfile)} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white text-sm px-4 py-1.5 rounded-full transition-colors">+ Connect</button>}
-                          {cs.linkedinStatus==="pending" && <span className="text-yellow-600 text-sm border border-yellow-200 px-4 py-1.5 rounded-full bg-yellow-50">Request Sent</span>}
-                          {cs.linkedinStatus==="connected" && <button onClick={() => { setPlMsgEmp(plProfile); setPlView("messages"); }} className="bg-white border border-[#1A3A2A] text-[#1A3A2A] text-sm px-4 py-1.5 rounded-full hover:bg-[#EDF5EE]">Message</button>}
-                          {cs.linkedinStatus==="ignored" && <span className="text-gray-400 text-sm">Request not accepted</span>}
-                          <button onClick={() => { setEmailCompose({emp:plProfile, company}); setEmailDraft({subject:"",body:""}); setTab("email"); }} className="bg-white border border-[#D4CFC4] text-[#1A3A2A] text-sm px-4 py-1.5 rounded-full hover:bg-[#F2EFE8]">Email</button>
-                        </div>
-                      </div>
-                      {plProfile.bio && <div className="mt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-3">{plProfile.bio}</div>}
+                      {company&&<span className="inline-block px-3 py-1 rounded-full text-xs font-semibold" style={{background:'#EBF5FB',color:'#0A66C2',border:'1px solid #BFDBFE'}}>{company.industry}</span>}
                     </div>
                   </div>
-                  {/* About */}
+
                   {(()=>{const _pp=getPersonaPainPoints(plProfile,company);const _goals=getPersonaGoals(plProfile,company);return(
-                    <div className="bg-white rounded-xl border border-gray-200 p-4 mb-3">
-                      <div className="font-bold text-gray-800 mb-2 text-sm">About</div>
-                      <p className="text-xs text-gray-600 mb-3 leading-relaxed">{plProfile.title} at {company?company.name:`this company`}. Driving {company?company.industry:`tech`} results through strategic initiatives.</p>
-                      <div className="mb-2"><div className="text-xs font-semibold text-gray-700 mb-1">🎯 Goals</div>{_goals.map((g,gi)=><div key={gi} className="text-xs text-gray-600 mb-1 flex gap-1"><span className="text-green-500 flex-shrink-0">✓</span>{g}</div>)}</div>
-                      <div><div className="text-xs font-semibold text-gray-700 mb-1">⚠️ Pain Points</div>{_pp.map((pp,pi)=><div key={pi} className="text-xs text-gray-600 mb-1 flex gap-1"><span className="text-red-400 flex-shrink-0">!</span>{pp}</div>)}</div>
-                    </div>);})()}
-                  {/* Activity */}
-                  {(()=>{const _posts=getPersonaPosts(plProfile,company);return(
-                    <div>
-                      <div className="font-semibold text-gray-700 mb-3 text-sm">Recent Activity</div>
-                      {_posts.length===0&&<div className="text-center py-8 text-gray-400 text-sm">No recent activity.</div>}
-                      {_posts.map((post,pi)=>(
-                        <div key={pi} className="bg-white rounded-xl border border-gray-200 mb-3 overflow-hidden">
-                          <div className="p-3">
-                            <div className="flex items-start gap-2 mb-2">
-                              <img src={getPersonaPhoto(plProfile.id)} className="w-8 h-8 rounded-full object-cover flex-shrink-0" onError={e=>{e.target.style.display='none';}} alt=""/>
-                              <div className="flex-1 min-w-0">
-                                <div className="text-xs font-bold text-gray-900">{plProfile.first} {plProfile.last}</div>
-                                <div className="text-xs text-gray-500 truncate">{plProfile.title} · {company?company.name:''}</div>
-                                <div className="text-xs text-gray-400">{post.timeAgo} · 🌐</div>
-                              </div>
-                            </div>
-                            <p className="text-xs text-gray-700 leading-relaxed mb-2">{post.text}</p>
-                            {post.hasImage&&<div className="rounded-lg bg-gradient-to-br from-indigo-50 to-blue-100 h-20 flex items-center justify-center mb-2 text-3xl">{['📊','📈','🚀','💡','🤝'][pi%5]}</div>}
-                            {post.tags&&post.tags.length>0&&<div className="flex flex-wrap gap-1 mb-2">{post.tags.map((t,ti)=><span key={ti} className="text-xs text-blue-600">{t} </span>)}</div>}
-                            <div className="text-xs text-gray-400 border-t border-gray-100 pt-1.5">👍 {post.likes.toLocaleString()} · 💬 {post.comments}</div>
-                          </div>
-                          <div className="border-t border-gray-100 flex">
-                            {['👍 Like','💬 Comment','🔁 Repost','📤 Send'].map((a,ai)=>(
-                              <button key={ai} className="flex-1 py-1.5 text-xs text-gray-500 hover:bg-gray-50 font-medium">{a}</button>
-                            ))}
-                          </div>
+                  <div className="bg-white rounded-2xl p-4 mb-3" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08),0 2px 8px rgba(0,0,0,0.06)'}}>
+                    <h3 className="text-sm font-bold text-gray-900 mb-2">About</h3>
+                    <p className="text-xs text-gray-600 leading-relaxed mb-4">{plProfile.first} is a {plProfile.title} at {company?company.name:'this company'}, focused on driving measurable {company?company.industry:'tech'} outcomes through cross-functional leadership and execution.</p>
+                    <div className="h-px bg-gray-100 mb-3"></div>
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Goals</p>
+                    <div className="flex flex-col gap-2 mb-4">
+                      {_goals.map((g,gi)=>(
+                        <div key={gi} className="flex items-start gap-2.5">
+                          <span className="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style={{background:'#16a34a',minWidth:'16px'}}>
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3.5 6L6.5 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          </span>
+                          <span className="text-xs text-gray-700 leading-relaxed">{g}</span>
                         </div>
                       ))}
-                    </div>);})()}
+                    </div>
+                    <div className="h-px bg-gray-100 mb-3"></div>
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Challenges</p>
+                    <div className="flex flex-col gap-2">
+                      {_pp.map((p,pi)=>(
+                        <div key={pi} className="flex items-start gap-2.5">
+                          <span className="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center mt-0.5" style={{background:'#d97706',minWidth:'16px'}}>
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M4 2V5M4 6V6.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                          </span>
+                          <span className="text-xs text-gray-600 leading-relaxed">{p}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  );})()}
+
+                  {(()=>{const _posts=getPersonaPosts(plProfile,company);return(
+                  <div>
+                    <p className="text-sm font-bold text-gray-900 mb-3">Activity</p>
+                    {_posts.length===0&&<div className="bg-white rounded-2xl p-8 text-center text-gray-400 text-sm" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08)'}}>No recent activity yet.</div>}
+                    {_posts.map((post,pi)=>(
+                      <div key={pi} className="bg-white rounded-2xl mb-3 overflow-hidden" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.06)'}}>
+                        <div className="p-4">
+                          <div className="flex items-start gap-3 mb-3">
+                            <img src={getPersonaPhoto(plProfile.id)} className="w-9 h-9 rounded-full object-cover flex-shrink-0" style={{border:'1px solid rgba(0,0,0,0.08)'}} onError={e=>{e.target.style.display='none';}} alt=""/>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-sm font-bold text-gray-900 leading-tight">{plProfile.first} {plProfile.last}</p>
+                              <p className="text-xs text-gray-500 leading-tight truncate">{plProfile.title} · {company?company.name:''}</p>
+                              <p className="text-xs text-gray-400 leading-tight">{post.timeAgo} · 🌐</p>
+                            </div>
+                            <button className="flex-shrink-0 text-xs font-bold px-3 py-1 rounded-full" style={{color:'#0A66C2',border:'1.5px solid #0A66C2',background:'transparent',cursor:'pointer',whiteSpace:'nowrap'}}>+ Follow</button>
+                          </div>
+                          <p className="text-sm text-gray-800 leading-relaxed mb-3">{post.text}</p>
+                          {post.hasImage&&<div className="rounded-xl mb-3 flex items-center justify-center text-4xl" style={{height:'120px',background:'linear-gradient(135deg,#EFF6FF,#EDE9FE)'}}>{['📊','📈','🚀','💡','🤝'][pi%5]}</div>}
+                          {post.tags&&post.tags.length>0&&<div className="flex flex-wrap gap-2 mb-3">{post.tags.map((t,ti)=><span key={ti} className="text-xs font-semibold" style={{color:'#0A66C2'}}>{t}</span>)}</div>}
+                          <div className="flex items-center text-xs text-gray-500 pt-2.5 border-t border-gray-100">
+                            <span className="flex items-center gap-1.5"><span className="inline-flex items-center justify-center w-4 h-4 rounded-full text-white" style={{background:'#0A66C2',fontSize:'9px'}}>👍</span><span>{post.likes.toLocaleString()} likes</span></span>
+                            <span className="ml-auto">{post.comments} comments</span>
+                          </div>
+                        </div>
+                        <div className="flex border-t border-gray-100">
+                          {[['👍','Like'],['💬','Comment'],['🔁','Repost'],['📤','Send']].map(([icon,label],ai)=>(
+                            <button key={ai} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-semibold text-gray-500 hover:bg-gray-50 transition-colors">{icon} {label}</button>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  );})()}
                 </div>
               );
             })()}
