@@ -696,10 +696,42 @@ function sendEmail(emp, company, subject, body) {
   }
 
   // ─── FEED POSTS ───────────────────────────────
-  const feedPosts = allEmps.flatMap(emp => {
-    const company = getCompanyForEmp(emp.id);
-    return emp.posts.map((post, i) => ({ emp, company, post, id: emp.id * 100 + i }));
-  }).sort((a,b) => (b.emp.id % 7) - (a.emp.id % 7));
+  // ── EXTRA BUYING SIGNAL / CHALLENGE POSTS ──────────────────────────────
+  const EXTRA_FEED_POSTS = [
+    { empId:101, type:'signal', text:"We're actively evaluating workflow automation platforms for Q3. Our current stack can't handle the volume since we crossed 500 customers. Open to recommendations from anyone who's gone through a similar eval.", time:'2h', likes:34, comments:8 },
+    { empId:201, type:'signal', text:"Honest question: how are other SaaS companies handling data pipeline complexity at scale? We're starting to hit serious limits with our current tooling. DMs welcome.", time:'4h', likes:27, comments:11 },
+    { empId:301, type:'challenge', text:"Biggest challenge right now: we've doubled headcount in 6 months but our internal tooling hasn't kept up. Starting to look at what enterprises use to manage this kind of growth.", time:'5h', likes:41, comments:15 },
+    { empId:104, type:'signal', text:"Quarter review coming up and I'm building a shortlist of analytics platforms. ROI visibility is #1 criteria. What's everyone using in 2025?", time:'6h', likes:19, comments:7 },
+    { empId:202, type:'signal', text:"Our sales team is growing fast and we're outgrowing our current CRM. Looking at alternatives — needs to integrate with our stack and scale to 30+ reps.", time:'8h', likes:22, comments:9 },
+    { empId:102, type:'signal', text:"Making a decision on infra tooling next month. If you've deployed at Series B scale in the last 18 months I'd love to chat. What did you go with and why?", time:'12h', likes:31, comments:14 },
+    { empId:302, type:'challenge', text:"Nobody talks about the hidden cost of switching vendors: it's not just the software, it's the 6-week migration. We're in the middle of one now. Painful doesn't cover it.", time:'14h', likes:55, comments:22 },
+    { empId:501, type:'signal', text:"Kicking off a vendor review for automated threat detection. Any security leaders who've evaluated this space recently? Would appreciate a candid conversation.", time:'16h', likes:29, comments:10 },
+    { empId:105, type:'insight', text:"Unpopular opinion: most B2B demos show you the happy path. Push for a live session with your own messy data. You'll learn 10x more in 20 minutes.", time:'18h', likes:87, comments:31 },
+    { empId:203, type:'milestone', text:"Just closed our Series A. Incredible team effort. Now the real work begins — rebuilding our engineering org from scratch. We're hiring across the board.", time:'1d', likes:124, comments:47 },
+    { empId:303, type:'challenge', text:"Sales motion breaks when your ICP shifts. We built our playbook for SMB but 40% of pipeline is now mid-market. Rebuilding everything in real time while still hitting quota.", time:'1d', likes:63, comments:24 },
+    { empId:401, type:'challenge', text:"Compliance is becoming a bottleneck. GDPR + SOC2 is eating 20% of engineering bandwidth. Actively looking at tools that automate more of this without sacrificing coverage.", time:'1d', likes:38, comments:13 },
+    { empId:502, type:'challenge', text:"Hardest part of security leadership: convincing the board to invest before an incident. By then it's too late. Any CISOs who've cracked this communication problem?", time:'2d', likes:74, comments:28 },
+    { empId:106, type:'insight', text:"The best cold email I got this quarter had zero fluff. Just: 'We help [company type] do [specific thing] in [timeframe]. Worth 20 min?' That's it. Booked the meeting.", time:'2d', likes:146, comments:52 },
+    { empId:601, type:'signal', text:"Starting to think seriously about intelligent ops tooling for manufacturing. A category that barely existed 2 years ago. Anyone deep in this space? Would love to connect.", time:'2d', likes:18, comments:6 },
+  ];
+
+  const feedPosts = [
+    ...allEmps.flatMap(emp => {
+      const company = getCompanyForEmp(emp.id);
+      return emp.posts.map((post, i) => {
+        const lc = post.toLowerCase();
+        const type = ['evaluat','looking for','struggling','challenge','recommend','need a','replac','vendor','consider','explore','switch','outgrow','manual','bottleneck','budget'].some(k=>lc.includes(k)) ? 'signal'
+          : ['proud','excited','thrilled','announce','crossed','achieved','launched','celebrated','milestone'].some(k=>lc.includes(k)) ? 'milestone'
+          : 'insight';
+        return { emp, company, post: { text: post, type, time: `${(emp.id*3+i*7)%47+1}h`, likes: (emp.id*7+i*11)%87+3, comments: (emp.id+i*5)%18+1 }, id: emp.id * 100 + i };
+      });
+    }),
+    ...EXTRA_FEED_POSTS.map((ep,i) => {
+      const emp = allEmps.find(e => e.id === ep.empId);
+      const company = emp ? getCompanyForEmp(ep.empId) : null;
+      return emp ? { emp, company, post: { text: ep.text, type: ep.type, time: ep.time, likes: ep.likes, comments: ep.comments }, id: ep.empId * 100 + 90 + i } : null;
+    }).filter(Boolean)
+  ].sort((a,b) => (b.emp.id % 7) - (a.emp.id % 7));
 
   const navBtn = (id, label, icon, badge) => (
     <button key={id} onClick={() => setTab(id)}
@@ -1481,12 +1513,12 @@ function getPersonaPosts(emp,company){
                   return (
                     <div key={id} className="bg-white rounded-xl border border-gray-200 p-4">
                       <div className="flex items-start gap-3 mb-3">
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
+                        <img src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${encodeURIComponent(emp.first+emp.last)}&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&radius=50`} alt={`${emp.first} ${emp.last}`} className="w-10 h-10 rounded-full flex-shrink-0 ring-2 ring-white shadow-sm" />
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
                             <div>
                               <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="font-semibold text-gray-900 hover:text-blue-600 hover:underline text-sm">{emp.first} {emp.last}</button>
-                              <div className="text-gray-500 text-xs">{emp.title} · {company?.name}</div>
+                              <div className="text-gray-500 text-xs">{emp.title} · {company?.name} <span className="text-gray-400">· {post.time}</span></div>
                             </div>
                             <div>
                               {cs.linkedinStatus === "none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#4F46E5] border border-[#4F46E5] text-xs px-3 py-1 rounded-full hover:bg-[#EDF5EE] transition-colors">+ Connect</button>}
@@ -1497,7 +1529,13 @@ function getPersonaPosts(emp,company){
                           </div>
                         </div>
                       </div>
-                      <p className="text-gray-700 text-sm leading-relaxed mb-3">{post}</p>
+                      <div>
+                        {post.type === 'signal' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-amber-50 text-amber-700 border border-amber-200">📊 Buying Signal</span>}
+                        {post.type === 'challenge' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-rose-50 text-rose-700 border border-rose-200">⚠️ Challenge</span>}
+                        {post.type === 'milestone' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-emerald-50 text-emerald-700 border border-emerald-200">🏆 Milestone</span>}
+                        <p className="text-gray-700 text-sm leading-relaxed mb-2">{post.text}</p>
+                        <p className="text-gray-400 text-xs mb-3">{post.likes} likes · {post.comments} comments</p>
+                      </div>
                       <div className="flex gap-4 pt-2 border-t border-gray-100">
                         {["👍 Like","💬 Comment","🔄 Repost"].map(a => (
                           <button key={a} className="text-gray-500 text-xs hover:text-[#4F46E5] transition-colors">{a}</button>
