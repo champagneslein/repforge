@@ -470,20 +470,20 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     setCallStatus('connecting');
     const vapi = getVapiInstance();
     const guides = {
-      'c-suite': 'You are a C-suite exec on a cold call. Very brief. Only engage if pitch is immediately strategic.',
-      'vp': 'You are a VP. One sharp qualifying question then decide quickly.',
-      'director': 'You are a Director. Reasonably open. Ask one or two practical questions.',
-      'manager': 'You are a Manager. Accessible but busy. Engage practically with the pitch.',
-      'junior': 'You are junior staff. Friendly and curious but purchasing decisions go to your manager.',
+      'c-suite': 'You are a C-suite executive. You have maybe 30 seconds before your next commitment. You speak in clipped, direct sentences. You are deeply skeptical of cold calls and rarely take them — something about this pitch caught your eye but you are not sold. Say things like Get to the point or How does this move the needle for us. If the pitch is vague or not immediately strategic, you cut the call short without apology.',
+      'vp': 'You are a VP. You are time-pressed but you do evaluate new vendors on a quarterly cadence. Ask one sharp qualifying question early — usually about ROI, integration, or competitive differentiation. You might say We already have a solution for that or What makes you different from the others we looked at. You make up your mind fast and signal it clearly.',
+      'director': 'You are a Director. You are open to hearing pitches when they seem relevant. Ask a couple of practical questions about implementation, timeline, and team adoption. You might say Who else in our industry is using this or Walk me through what rollout looks like. You are thoughtful and engaged but you need buy-in from above before committing.',
+      'manager': 'You are a Manager. You are genuinely busy but approachable. You care about day-to-day practicality — does this solve a real problem your team has. You might say Walk me through how that actually works or Would my team realistically use this. You sometimes get momentarily distracted and come back. Warm but direct.',
+      'junior': 'You are a junior employee. You are friendly and conversational. You engage with genuine curiosity. You might say Oh interesting, I have not heard of you guys or That sounds cool actually — though I would have to loop in my manager. You do not make purchasing decisions but you can be an internal champion.',
     };
-    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + ' ' + (guides[emp.seniority] || guides.manager) + ' This is a live cold call. Keep ALL responses to 1-3 short sentences. Sound like a real busy professional. Never be immediately enthusiastic about a product.';
+    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like Certainly or Great question or Absolutely. Never be immediately enthusiastic or positive about a product. You were in the middle of something when this call came in. Sound like it.';
     
   const dealHistory=callLogs&&callLogs.length>0?'\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'+callLogs.map((log,i)=>{const daysAgo=Math.round((Date.now()-new Date(log.called_at).getTime())/86400000);return 'Call '+(callLogs.length-i)+' ('+daysAgo+' days ago): '+(log.ai_summary||log.rep_notes||'No summary.')+(log.objections&&log.objections.length?' Objections: '+log.objections.join(', ')+'.':'');}).join('\n')+'\nYour current interest: '+(callLogs[0]?.interest_score_after||5)+'/10.':'';
   try {
       await vapi.start({
-        model: { provider: 'openai', model: 'gpt-3.5-turbo', messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
+        model: { provider: 'openai', model: 'gpt-4o-mini', messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
         voice: selectVoice(emp.first),
-        firstMessage: emp.first + ' speaking.',
+        firstMessage: emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.',
       });
     } catch(e) { setActiveCallId(null); setCallStatus('idle'); }
   }
