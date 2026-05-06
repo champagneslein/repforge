@@ -703,7 +703,7 @@ function sendEmail(emp, company, subject, body) {
 
   const navBtn = (id, label, icon, badge) => (
     <button key={id} onClick={() => setTab(id)}
-      className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${tab===id ? "bg-[#1A3A2A] text-white" : "text-[#1A3A2A] hover:bg-[#DDD9D0]"}`}>
+      className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${tab===id ? "bg-[#4F46E5] text-white" : "text-[#374151] hover:bg-[#EEF0FF]"}`}>
       <span>{icon}</span>{label}
       {badge > 0 && <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">{badge}</span>}
     </button>
@@ -866,26 +866,26 @@ function getPersonaPosts(emp,company){
 }
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE]">
-      {!user&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'#1A3A2A',zIndex:99999,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
+    <div className="min-h-screen bg-[#F0F2F5]">
+      {!user&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(15,15,25,0.97)',zIndex:99999,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'white',borderRadius:'14px',padding:'40px 44px',width:'380px',maxWidth:'90vw',boxShadow:'0 20px 60px rgba(0,0,0,0.3)'}}>
-          <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'6px'}}><span style={{fontSize:'24px'}}>🔨</span><h1 style={{margin:0,fontSize:'22px',fontWeight:'800',color:'#1A3A2A'}}>RepForge</h1></div>
+          <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'6px'}}><span style={{fontSize:'24px'}}>🔨</span><h1 style={{margin:0,fontSize:'22px',fontWeight:'800',color:'#4F46E5'}}>RepForge</h1></div>
           <p style={{margin:'0 0 22px',color:'#64748b',fontSize:'13px'}}>AI-powered sales training platform</p>
           <div style={{display:'flex',marginBottom:'18px',borderRadius:'8px',border:'1px solid #e2e8f0',overflow:'hidden'}}>
-            <button onClick={()=>setAuthView('login')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='login'?'#1A3A2A':'white',color:authView==='login'?'white':'#94a3b8',fontSize:'13px'}}>Log In</button>
-            <button onClick={()=>setAuthView('signup')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='signup'?'#1A3A2A':'white',color:authView==='signup'?'white':'#94a3b8',fontSize:'13px'}}>Sign Up</button>
+            <button onClick={()=>setAuthView('login')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='login'?'#4F46E5':'white',color:authView==='login'?'white':'#94a3b8',fontSize:'13px'}}>Log In</button>
+            <button onClick={()=>setAuthView('signup')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='signup'?'#4F46E5':'white',color:authView==='signup'?'white':'#94a3b8',fontSize:'13px'}}>Sign Up</button>
           </div>
           <input value={authEmail} onChange={e=>setAuthEmail(e.target.value)} placeholder="Email address" style={{width:'100%',padding:'11px 14px',marginBottom:'10px',border:'1px solid #e2e8f0',borderRadius:'8px',fontSize:'14px',boxSizing:'border-box'}} type="email" autoFocus />
           <input value={authPwd} onChange={e=>setAuthPwd(e.target.value)} placeholder="Password" style={{width:'100%',padding:'11px 14px',marginBottom:'16px',border:'1px solid #e2e8f0',borderRadius:'8px',fontSize:'14px',boxSizing:'border-box'}} type="password" onKeyDown={e=>{if(e.key==='Enter')authView==='login'?handleLogin():handleSignup();}} />
           {authErr&&<div style={{color:'#dc2626',fontSize:'13px',marginBottom:'14px',padding:'9px 12px',background:'#fef2f2',borderRadius:'6px',border:'1px solid #fecaca'}}>{authErr}</div>}
-          <button onClick={authView==='login'?handleLogin:handleSignup} disabled={authBusy} style={{width:'100%',padding:'12px',background:'#1A3A2A',color:'white',border:'none',borderRadius:'8px',fontSize:'14px',fontWeight:'700',cursor:authBusy?'not-allowed':'pointer',opacity:authBusy?0.65:1}}>
+          <button onClick={authView==='login'?handleLogin:handleSignup} disabled={authBusy} style={{width:'100%',padding:'12px',background:'#4F46E5',color:'white',border:'none',borderRadius:'8px',fontSize:'14px',fontWeight:'700',cursor:authBusy?'not-allowed':'pointer',opacity:authBusy?0.65:1}}>
             {authBusy?'...':(authView==='login'?'Log In':'Create Account')}
           </button>
         </div>
       </div>)}
       {showProdSetup&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'white',borderRadius:'14px',padding:'32px 36px',width:'500px',maxWidth:'92vw',maxHeight:'85vh',overflowY:'auto',boxShadow:'0 24px 60px rgba(0,0,0,0.25)'}}>
-          <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:6}}><h2 style={{margin:0,fontSize:'19px',fontWeight:'800',color:'#1A3A2A'}}>What are you selling?</h2><button onClick={()=>setShowProdSetup(false)} style={{background:'none',border:'none',fontSize:22,cursor:'pointer',color:'#9ca3af',lineHeight:1,padding:0,marginTop:-2}}>&times;</button></div>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:6}}><h2 style={{margin:0,fontSize:'19px',fontWeight:'800',color:'#4F46E5'}}>What are you selling?</h2><button onClick={()=>setShowProdSetup(false)} style={{background:'none',border:'none',fontSize:22,cursor:'pointer',color:'#9ca3af',lineHeight:1,padding:0,marginTop:-2}}>&times;</button></div>
           <p style={{margin:'0 0 22px',color:'#64748b',fontSize:'13px'}}>The AI allEmps will know your product and respond to your pitch.</p>
           {[{l:'Product Name *',k:'name',ph:'e.g. Acme CRM',m:false},{l:'Elevator Pitch',k:'desc',ph:'What problem does it solve and for who?',m:true},{l:'Ideal Customer Profile',k:'icp',ph:'e.g. B2B SaaS, 50-500 employees, VP Sales',m:false},{l:'Value Props (one per line)',k:'vps',ph:'Saves 5hrs/week\nReduces churn 20%',m:true},{l:'Common Objections (one per line)',k:'objs',ph:'Too expensive\nWe already have a solution',m:true}].map(({l,k,ph,m})=>(
             <div key={k} style={{marginBottom:'15px'}}>
@@ -895,7 +895,7 @@ function getPersonaPosts(emp,company){
           ))}
           <div style={{display:'flex',gap:'10px',justifyContent:'flex-end',marginTop:'22px'}}>
             {product&&<button onClick={()=>setShowProdSetup(false)} style={{padding:'10px 18px',border:'1px solid #e2e8f0',borderRadius:'8px',cursor:'pointer',fontSize:'13px',fontWeight:'600',color:'#64748b'}}>Cancel</button>}
-            <button onClick={handleSaveProd} disabled={prodSaving||!prodForm.name.trim()} style={{padding:'10px 24px',background:'#1A3A2A',color:'white',border:'none',borderRadius:'8px',cursor:(prodSaving||!prodForm.name.trim())?'not-allowed':'pointer',fontSize:'13px',fontWeight:'700',opacity:(prodSaving||!prodForm.name.trim())?0.6:1}}>
+            <button onClick={handleSaveProd} disabled={prodSaving||!prodForm.name.trim()} style={{padding:'10px 24px',background:'#4F46E5',color:'white',border:'none',borderRadius:'8px',cursor:(prodSaving||!prodForm.name.trim())?'not-allowed':'pointer',fontSize:'13px',fontWeight:'700',opacity:(prodSaving||!prodForm.name.trim())?0.6:1}}>
               {prodSaving?'Saving...':'Save & Start Selling'}
             </button>
           </div>
@@ -905,22 +905,22 @@ function getPersonaPosts(emp,company){
       {showPostCall&&(
         <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.7)',zIndex:9996,display:'flex',alignItems:'center',justifyContent:'center'}}>
           <div style={{background:'#fff',borderRadius:12,padding:28,width:500,maxWidth:'95vw',maxHeight:'90vh',overflowY:'auto'}}>
-            <div style={{fontSize:17,fontWeight:700,color:'#1A3A2A',marginBottom:4}}>📋 Call Summary</div>
+            <div style={{fontSize:17,fontWeight:700,color:'#4F46E5',marginBottom:4}}>📋 Call Summary</div>
             <div style={{fontSize:12,color:'#888',marginBottom:16}}>Auto-generated — edit and save to pipeline</div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#374151',marginBottom:4}}>Summary</div><textarea value={postCallSummary} onChange={e=>setPostCallSummary(e.target.value)} rows={3} style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#374151',marginBottom:4}}>Your Notes</div><textarea value={postCallNotes} onChange={e=>setPostCallNotes(e.target.value)} rows={2} placeholder="What went well? Follow-ups?" style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#374151',marginBottom:4}}>Objections (one per line)</div><textarea value={postCallObjs} onChange={e=>setPostCallObjs(e.target.value)} rows={2} style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:18}}><div style={{fontSize:12,fontWeight:600,color:'#374151',marginBottom:6}}>Prospect Interest: <span style={{color:scoreColor(postCallScore),fontWeight:700}}>{postCallScore}/10</span></div><input type="range" min={1} max={10} value={postCallScore} onChange={e=>setPostCallScore(Number(e.target.value))} style={{width:'100%'}}/></div>
-            <div style={{display:'flex',gap:10}}><button onClick={handlePostCallSave} style={{flex:1,background:'#1A3A2A',color:'#fff',border:'none',borderRadius:8,padding:'10px 0',fontWeight:600,fontSize:14,cursor:'pointer'}}>💾 Save to Pipeline</button><button onClick={()=>setShowPostCall(false)} style={{flex:1,background:'#f3f4f6',color:'#374151',border:'none',borderRadius:8,padding:'10px 0',fontSize:14,cursor:'pointer'}}>Skip</button></div>
+            <div style={{display:'flex',gap:10}}><button onClick={handlePostCallSave} style={{flex:1,background:'#4F46E5',color:'#fff',border:'none',borderRadius:8,padding:'10px 0',fontWeight:600,fontSize:14,cursor:'pointer'}}>💾 Save to Pipeline</button><button onClick={()=>setShowPostCall(false)} style={{flex:1,background:'#f3f4f6',color:'#374151',border:'none',borderRadius:8,padding:'10px 0',fontSize:14,cursor:'pointer'}}>Skip</button></div>
           </div>
         </div>
       )}
       {showPipeline&&(
-        <div style={{position:'fixed',inset:0,background:'#F7F4EE',zIndex:9990,overflowY:'auto'}}>
+        <div style={{position:'fixed',inset:0,background:'#F0F2F5',zIndex:9990,overflowY:'auto'}}>
           <div style={{padding:'20px 28px',maxWidth:1300,margin:'0 auto'}}>
             <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24}}>
-              <div><div style={{fontSize:22,fontWeight:800,color:'#1A3A2A'}}>🗂 Deal Pipeline</div><div style={{fontSize:13,color:'#666',marginTop:2}}>{deals.length} deal{deals.length!==1?'s':''} tracked</div></div>
-              <button onClick={()=>{setShowPipeline(false);setTab('crm');}} style={{background:'#1A3A2A',color:'#fff',border:'none',borderRadius:8,padding:'8px 20px',fontWeight:600,fontSize:14,cursor:'pointer'}}>✕ Close</button>
+              <div><div style={{fontSize:22,fontWeight:800,color:'#4F46E5'}}>🗂 Deal Pipeline</div><div style={{fontSize:13,color:'#666',marginTop:2}}>{deals.length} deal{deals.length!==1?'s':''} tracked</div></div>
+              <button onClick={()=>{setShowPipeline(false);setTab('crm');}} style={{background:'#4F46E5',color:'#fff',border:'none',borderRadius:8,padding:'8px 20px',fontWeight:600,fontSize:14,cursor:'pointer'}}>✕ Close</button>
             </div>
             <div style={{marginBottom:12,background:'#f0fdf4',borderRadius:8,padding:'12px 16px',border:'1px solid #bbf7d0'}}>
               {(()=>{
@@ -929,10 +929,10 @@ function getPersonaPosts(emp,company){
                 const pct=Math.min(100,Math.round(closedVal/10000));
                 return(<>
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:6}}>
-                    <span style={{fontSize:13,fontWeight:700,color:'#1A3A2A'}}>💰 Quota Attainment</span>
+                    <span style={{fontSize:13,fontWeight:700,color:'#4F46E5'}}>💰 Quota Attainment</span>
                     <span style={{fontSize:13,fontWeight:700,color:'#16a34a'}}>${closedVal.toLocaleString()} <span style={{fontWeight:400,color:'#6b7280'}}>/ $1,000,000</span></span>
                   </div>
-                  <div style={{height:8,background:'#dcfce7',borderRadius:4,overflow:'hidden'}}>
+                  <div style={{height:8,background:'#F0FDF4',borderRadius:4,overflow:'hidden'}}>
                     <div style={{height:'100%',width:pct+'%',background:'linear-gradient(90deg,#16a34a,#22c55e)',borderRadius:4,transition:'width 0.5s'}}></div>
                   </div>
                   <div style={{fontSize:11,color:'#6b7280',marginTop:4}}>{closedDeals.length} deals closed · {100-pct}% remaining to target</div>
@@ -942,7 +942,7 @@ function getPersonaPosts(emp,company){
             <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:12}}>
               {['Prospecting','Discovery','Demo','Proposal','Closed Won'].map(stage=>{
                 const sd=deals.filter(d=>d.stage===stage);
-                const col={'Prospecting':'#dcfce7','Discovery':'#dbeafe','Demo':'#fef3c7','Proposal':'#f3e8ff','Closed Won':'#d1fae5'};
+                const col={'Prospecting':'#F0FDF4','Discovery':'#F5F3FF','Demo':'#fef3c7','Proposal':'#ECFDF5','Closed Won':'#EEF2FF'};
                 const brd={'Prospecting':'#16a34a','Discovery':'#2563eb','Demo':'#d97706','Proposal':'#7c3aed','Closed Won':'#065f46'};
                 const all=['Prospecting','Discovery','Demo','Proposal','Closed Won'];
                 return(
@@ -955,7 +955,7 @@ function getPersonaPosts(emp,company){
                       const ci=all.indexOf(deal.stage);const sc=deal.interest_score||5;
                       return(
                         <div key={deal.id} style={{background:'#fff',borderRadius:8,padding:'10px 12px',marginBottom:8,boxShadow:'0 1px 3px rgba(0,0,0,0.08)'}}>
-                          <div style={{fontSize:13,fontWeight:700,color:'#1A3A2A'}}>{deal.persona_name}</div>
+                          <div style={{fontSize:13,fontWeight:700,color:'#4F46E5'}}>{deal.persona_name}</div>
                           <div style={{fontSize:11,color:'#6b7280',marginBottom:3}}>{deal.company_name}</div>
                           <div style={{fontSize:11,fontWeight:700,color:'#16a34a',marginBottom:6,letterSpacing:'-0.2px'}}>💰 ${(companies.find(c=>c.name===deal.company_name)||{dealValue:0}).dealValue.toLocaleString()}</div>
                           <div style={{display:'flex',alignItems:'center',gap:4,marginBottom:8}}>
@@ -1003,16 +1003,16 @@ function getPersonaPosts(emp,company){
   )}
       
   {showCallSession&&activeSession&&(
-    <div style={{position:'fixed',inset:0,background:'#0a0f1e',zIndex:999,display:'flex',flexDirection:'column'}}>
+    <div style={{position:'fixed',inset:0,background:'#0F172A',zIndex:999,display:'flex',flexDirection:'column'}}>
       {/* Header */}
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'16px 24px',borderBottom:'1px solid #1e293b',background:'#0f172a'}}>
         <div style={{display:'flex',alignItems:'center',gap:12}}>
-          <div style={{width:10,height:10,borderRadius:'50%',background:'#22c55e',boxShadow:'0 0 8px #22c55e'}}/>
+          <div style={{width:10,height:10,borderRadius:'50%',background:'#16a34a',boxShadow:'0 0 8px #22c55e'}}/>
           <span style={{color:'#f1f5f9',fontWeight:700,fontSize:16}}>{activeSession.call_type==='demo'?'Demo':'Discovery'} Call — {activeSession.persona_name}</span>
           <span style={{background:'#1e293b',color:'#94a3b8',padding:'2px 10px',borderRadius:20,fontSize:12}}>{activeSession.company_name}</span>
         </div>
         <div style={{display:'flex',alignItems:'center',gap:16}}>
-          <span style={{fontFamily:'monospace',fontSize:20,fontWeight:700,color:sessionTimer<300?'#ef4444':sessionTimer<600?'#f59e0b':'#22c55e'}}>
+          <span style={{fontFamily:'monospace',fontSize:20,fontWeight:700,color:sessionTimer<300?'#ef4444':sessionTimer<600?'#F97316':'#16a34a'}}>
             {String(Math.floor(sessionTimer/60)).padStart(2,'0')}:{String(sessionTimer%60).padStart(2,'0')}
           </span>
           <button onClick={handleCloseSession} style={{padding:'6px 16px',borderRadius:8,border:'1px solid #ef4444',background:'rgba(239,68,68,0.1)',color:'#ef4444',cursor:'pointer',fontWeight:600,fontSize:13}}>End Call</button>
@@ -1021,7 +1021,7 @@ function getPersonaPosts(emp,company){
       {activeSession.call_type==='demo'?(
         /* DEMO: fake video UI */
         <div style={{flex:1,display:'flex',gap:0,overflow:'hidden'}}>
-          <div style={{flex:1,display:'flex',flexDirection:'column',background:'#0a0f1e',padding:20,gap:12,overflow:'hidden'}}>
+          <div style={{flex:1,display:'flex',flexDirection:'column',background:'#0F172A',padding:20,gap:12,overflow:'hidden'}}>
             <div style={{flex:1,background:'#111827',borderRadius:12,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>
               <div style={{textAlign:'center'}}><div style={{fontSize:48,marginBottom:12}}>🖥️</div><div style={{color:'#475569',fontSize:14}}>Screen share area</div><div style={{color:'#334155',fontSize:12,marginTop:4}}>Present your demo here</div></div>
               <div style={{position:'absolute',bottom:12,left:12,background:'rgba(0,0,0,0.7)',padding:'4px 10px',borderRadius:6,color:'#94a3b8',fontSize:11}}>Your Screen</div>
@@ -1030,7 +1030,7 @@ function getPersonaPosts(emp,company){
               <div style={{flex:1,background:'#1a2236',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:6,position:'relative'}}>
                 <div style={{width:44,height:44,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontWeight:700,fontSize:18}}>{activeSession.persona_name?activeSession.persona_name.split(' ').map(n=>n[0]).join('').slice(0,2):'?'}</div>
                 <span style={{color:'#94a3b8',fontSize:11}}>{activeSession.persona_name}</span>
-                <div style={{position:'absolute',bottom:6,right:6,background:'#22c55e',width:8,height:8,borderRadius:'50%'}}/>
+                <div style={{position:'absolute',bottom:6,right:6,background:'#16a34a',width:8,height:8,borderRadius:'50%'}}/>
               </div>
               <div style={{flex:1,background:'#0f1929',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:6}}>
                 <div style={{fontSize:28}}>👤</div><span style={{color:'#94a3b8',fontSize:11}}>You</span>
@@ -1043,12 +1043,12 @@ function getPersonaPosts(emp,company){
           <div style={{width:280,background:'#0d1526',borderLeft:'1px solid #1e293b',display:'flex',flexDirection:'column',overflow:'hidden'}}>
             <div style={{padding:'14px 16px',borderBottom:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
               <span style={{color:'#f1f5f9',fontWeight:700,fontSize:13}}>⚔️ Objection Tracker</span>
-              <span style={{background:handledObjections.size===demoObjections.length&&demoObjections.length>0?'#22c55e':'#334155',color:'#fff',fontSize:11,padding:'2px 8px',borderRadius:10,fontWeight:600}}>{handledObjections.size}/{demoObjections.length} handled</span>
+              <span style={{background:handledObjections.size===demoObjections.length&&demoObjections.length>0?'#16a34a':'#334155',color:'#fff',fontSize:11,padding:'2px 8px',borderRadius:10,fontWeight:600}}>{handledObjections.size}/{demoObjections.length} handled</span>
             </div>
             <div style={{flex:1,overflowY:'auto',padding:12,display:'flex',flexDirection:'column',gap:8}}>
-              {demoObjections.length===0?(<div style={{textAlign:'center',color:'#475569',fontSize:12,marginTop:40}}><div style={{fontSize:28,marginBottom:8}}>⏳</div><div>Objections will surface</div><div>as the demo progresses…</div></div>):demoObjections.map(obj=>(<div key={obj.id} style={{background:handledObjections.has(obj.id)?'rgba(34,197,94,0.08)':'rgba(239,68,68,0.08)',border:`1px solid ${handledObjections.has(obj.id)?'#166534':'#7f1d1d'}`,borderRadius:8,padding:'8px 10px'}}><div style={{display:'flex',alignItems:'flex-start',gap:6,marginBottom:6}}><span style={{fontSize:14}}>{obj.icon}</span><div style={{flex:1}}><span style={{background:handledObjections.has(obj.id)?'#166534':'#7f1d1d',color:'#fff',fontSize:9,padding:'1px 5px',borderRadius:3,fontWeight:700}}>{obj.cat}</span><p style={{color:'#cbd5e1',fontSize:12,margin:'4px 0 0',lineHeight:1.4}}>{obj.text}</p></div></div>{!handledObjections.has(obj.id)?(<button onClick={()=>setHandledObjections(prev=>{const s=new Set(prev);s.add(obj.id);return s;})} style={{width:'100%',padding:'4px',borderRadius:5,border:'1px solid #22c55e',background:'rgba(34,197,94,0.1)',color:'#22c55e',fontSize:11,cursor:'pointer',fontWeight:600}}>✓ Mark Handled</button>):(<div style={{textAlign:'center',color:'#22c55e',fontSize:11,fontWeight:600}}>✓ Handled</div>)}</div>))}
+              {demoObjections.length===0?(<div style={{textAlign:'center',color:'#475569',fontSize:12,marginTop:40}}><div style={{fontSize:28,marginBottom:8}}>⏳</div><div>Objections will surface</div><div>as the demo progresses…</div></div>):demoObjections.map(obj=>(<div key={obj.id} style={{background:handledObjections.has(obj.id)?'rgba(34,197,94,0.08)':'rgba(239,68,68,0.08)',border:`1px solid ${handledObjections.has(obj.id)?'#166534':'#7f1d1d'}`,borderRadius:8,padding:'8px 10px'}}><div style={{display:'flex',alignItems:'flex-start',gap:6,marginBottom:6}}><span style={{fontSize:14}}>{obj.icon}</span><div style={{flex:1}}><span style={{background:handledObjections.has(obj.id)?'#166534':'#7f1d1d',color:'#fff',fontSize:9,padding:'1px 5px',borderRadius:3,fontWeight:700}}>{obj.cat}</span><p style={{color:'#cbd5e1',fontSize:12,margin:'4px 0 0',lineHeight:1.4}}>{obj.text}</p></div></div>{!handledObjections.has(obj.id)?(<button onClick={()=>setHandledObjections(prev=>{const s=new Set(prev);s.add(obj.id);return s;})} style={{width:'100%',padding:'4px',borderRadius:5,border:'1px solid #22c55e',background:'rgba(34,197,94,0.1)',color:'#16a34a',fontSize:11,cursor:'pointer',fontWeight:600}}>✓ Mark Handled</button>):(<div style={{textAlign:'center',color:'#16a34a',fontSize:11,fontWeight:600}}>✓ Handled</div>)}</div>))}
             </div>
-            {demoObjections.length>0&&(<div style={{padding:'10px 16px',borderTop:'1px solid #1e293b',background:'#0a0f1e'}}><div style={{display:'flex',justifyContent:'space-between',marginBottom:4}}><span style={{color:'#94a3b8',fontSize:11}}>Demo Score</span><span style={{color:handledObjections.size/Math.max(demoObjections.length,1)>=0.8?'#22c55e':handledObjections.size/Math.max(demoObjections.length,1)>=0.5?'#f59e0b':'#ef4444',fontSize:11,fontWeight:700}}>{Math.round(handledObjections.size/Math.max(demoObjections.length,1)*100)}%</span></div><div style={{height:4,background:'#1e293b',borderRadius:2,overflow:'hidden'}}><div style={{height:'100%',width:`${Math.round(handledObjections.size/Math.max(demoObjections.length,1)*100)}%`,background:handledObjections.size/Math.max(demoObjections.length,1)>=0.8?'#22c55e':handledObjections.size/Math.max(demoObjections.length,1)>=0.5?'#f59e0b':'#ef4444',borderRadius:2,transition:'width 0.4s'}}/></div></div>)}
+            {demoObjections.length>0&&(<div style={{padding:'10px 16px',borderTop:'1px solid #1e293b',background:'#0F172A'}}><div style={{display:'flex',justifyContent:'space-between',marginBottom:4}}><span style={{color:'#94a3b8',fontSize:11}}>Demo Score</span><span style={{color:handledObjections.size/Math.max(demoObjections.length,1)>=0.8?'#16a34a':handledObjections.size/Math.max(demoObjections.length,1)>=0.5?'#F97316':'#ef4444',fontSize:11,fontWeight:700}}>{Math.round(handledObjections.size/Math.max(demoObjections.length,1)*100)}%</span></div><div style={{height:4,background:'#1e293b',borderRadius:2,overflow:'hidden'}}><div style={{height:'100%',width:`${Math.round(handledObjections.size/Math.max(demoObjections.length,1)*100)}%`,background:handledObjections.size/Math.max(demoObjections.length,1)>=0.8?'#16a34a':handledObjections.size/Math.max(demoObjections.length,1)>=0.5?'#F97316':'#ef4444',borderRadius:2,transition:'width 0.4s'}}/></div></div>)}
           </div>
         </div>):(
         /* DISCOVERY: audio UI */
@@ -1059,8 +1059,8 @@ function getPersonaPosts(emp,company){
           <div style={{textAlign:'center'}}>
             <div style={{color:'#f1f5f9',fontSize:24,fontWeight:700}}>{activeSession.persona_name}</div>
             <div style={{color:'#64748b',fontSize:14,marginTop:4}}>{activeSession.company_name}</div>
-            <div style={{color:'#22c55e',fontSize:13,marginTop:8,display:'flex',alignItems:'center',gap:6,justifyContent:'center'}}>
-              <div style={{width:8,height:8,borderRadius:'50%',background:'#22c55e',animation:'pulse 1.5s infinite'}}/>
+            <div style={{color:'#16a34a',fontSize:13,marginTop:8,display:'flex',alignItems:'center',gap:6,justifyContent:'center'}}>
+              <div style={{width:8,height:8,borderRadius:'50%',background:'#16a34a',animation:'pulse 1.5s infinite'}}/>
               Discovery Call in Progress
             </div>
           </div>
@@ -1095,11 +1095,11 @@ function getPersonaPosts(emp,company){
     </div>
   )}
       {/* TOP NAV */}
-      <div className="bg-[#EDEAE2] border-b border-[#D4CFC4] px-6 py-3 flex items-center justify-between sticky top-0 z-40">
+      <div className="bg-white border-b border-[#E2E5EA] px-6 py-2.5 flex items-center justify-between sticky top-0 z-40 shadow-sm">
         <div className="flex items-center gap-6">
           <div>
-            <span className="font-bold text-gray-900 text-lg tracking-tight">RepForge</span>
-            <span className="ml-2 text-gray-400 text-xs">Sales Training Sandbox</span>
+            <span className="font-bold text-gray-900 text-xl tracking-tight">RepForge</span>
+            <span className="ml-2 px-2 py-0.5 bg-[#EEF2FF] text-[#4F46E5] text-xs font-medium rounded-full">Sales Training Platform</span>
           </div>
           <div className="flex items-center gap-1">
             {navBtn("crm","CRM","🏢",0)}
@@ -1116,9 +1116,9 @@ function getPersonaPosts(emp,company){
           {!simComplete ? (
             <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1">⏩ Advance Day</button>              <button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-medium text-xs flex items-center gap-1 transition-colors ${apiKey ? "bg-emerald-700 text-white hover:bg-emerald-600" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}>⚙️ {apiKey ? "AI On" : "Add AI Key"}</button></>
           ) : (
-            <button onClick={() => setTab("score")} className="bg-[#1A3A2A] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1">🏆 View Final Score</button>
+            <button onClick={() => setTab("score")} className="bg-[#4F46E5] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1">🏆 View Final Score</button>
           )}
-          <button onClick={()=>setShowProdSetup(true)} style={{fontSize:'11px',padding:'4px 10px',background:product?'#1A3A2A':'#dc2626',color:'white',border:'none',borderRadius:'6px',cursor:'pointer',fontWeight:'600',whiteSpace:'nowrap'}}>{product?'📦 '+product.product_name.substring(0,18):'⚠️ Setup Product'}</button><button onClick={handleLogout} style={{fontSize:'11px',padding:'4px 10px',background:'#f1f5f9',color:'#475569',border:'1px solid #e2e8f0',borderRadius:'6px',cursor:'pointer',whiteSpace:'nowrap'}}>{user?user.email.split('@')[0]+' · Logout':'Logout'}</button>
+          <button onClick={()=>setShowProdSetup(true)} style={{fontSize:'11px',padding:'4px 10px',background:product?'#4F46E5':'#dc2626',color:'white',border:'none',borderRadius:'6px',cursor:'pointer',fontWeight:'600',whiteSpace:'nowrap'}}>{product?'📦 '+product.product_name.substring(0,18):'⚠️ Setup Product'}</button><button onClick={handleLogout} style={{fontSize:'11px',padding:'4px 10px',background:'#f1f5f9',color:'#475569',border:'1px solid #e2e8f0',borderRadius:'6px',cursor:'pointer',whiteSpace:'nowrap'}}>{user?user.email.split('@')[0]+' · Logout':'Logout'}</button>
         </div>
       </div>
 
@@ -1134,7 +1134,7 @@ function getPersonaPosts(emp,company){
                 <div><h1 className="text-lg font-bold text-gray-900">Target Accounts</h1><p className="text-gray-500 text-sm">20 accounts. Click to begin prospecting.</p></div>
                 <div className="flex gap-1.5 flex-wrap">
                   {industries.map(ind => (
-                    <button key={ind} onClick={() => setFilterInd(ind)} className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${filterInd===ind ? "bg-[#1A3A2A] text-white" : "bg-[#E4E1D8] text-[#1A3A2A] hover:bg-[#D4D0C6]"}`}>{ind}</button>
+                    <button key={ind} onClick={() => setFilterInd(ind)} className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${filterInd===ind ? "bg-[#4F46E5] text-white" : "bg-[#E4E1D8] text-[#4F46E5] hover:bg-[#D4D0C6]"}`}>{ind}</button>
                   ))}
                 </div>
               </div>
@@ -1144,12 +1144,12 @@ function getPersonaPosts(emp,company){
                   const replied = emps.filter(e => state[e.id]?.emailStatus==="replied" || state[e.id]?.linkedinStatus==="connected").length;
                   const contacted = emps.filter(e => state[e.id]?.emailStatus!=="none" || state[e.id]?.calls>0 || state[e.id]?.linkedinStatus!=="none").length;
                   return (
-                    <div key={c.id} onClick={() => { setSelCompany(c); fetchSupabase('allEmps?company_id=eq.' + c.id + '&select=id,first_name,last_name,pain_points,goals,challenges,buying_role,budget_authority').then(d => { if(d){ const m={}; d.forEach(p=>{m[p.id]=p;}); setIntelData(m); setExpandedIntel(null); } }); setCrmView("company"); }} className="bg-white rounded-xl border border-[#D4CFC4] p-4 cursor-pointer hover:border-[#1A3A2A] hover:shadow-md transition-all group">
+                    <div key={c.id} onClick={() => { setSelCompany(c); fetchSupabase('allEmps?company_id=eq.' + c.id + '&select=id,first_name,last_name,pain_points,goals,challenges,buying_role,budget_authority').then(d => { if(d){ const m={}; d.forEach(p=>{m[p.id]=p;}); setIntelData(m); setExpandedIntel(null); } }); setCrmView("company"); }} className="bg-white rounded-xl border border-[#E2E5EA] p-4 cursor-pointer hover:border-[#4F46E5] hover:shadow-md transition-all group">
                       <div className="flex items-start justify-between mb-3">
                         <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm ${getAvatarColor(c.id)}`}>{c.name.slice(0,2).toUpperCase()}</div>
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sizeColors[c.size]}`}>{c.size}</span>
                       </div>
-                      <div className="font-bold text-gray-900 group-hover:text-[#1A3A2A] mb-0.5">{c.name}</div>
+                      <div className="font-bold text-gray-900 group-hover:text-[#4F46E5] mb-0.5">{c.name}</div>
                       <div className="text-gray-500 text-xs mb-2 line-clamp-2">{c.description}</div>
                       <div className="flex items-center gap-2 mb-3">
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${industryColors[c.industry]||"bg-gray-100 text-gray-600"}`}>{c.industry}</span>
@@ -1164,7 +1164,7 @@ function getPersonaPosts(emp,company){
                           <span>{emps.length} contacts</span>
                           <span className={replied>0?"text-green-600 font-medium":""}>{replied} responded</span>
                         </div>
-                        <div className="bg-[#E4E1D8] rounded-full h-1"><div className="bg-[#1A3A2A] h-1 rounded-full" style={{width:`${emps.length>0?(contacted/emps.length)*100:0}%`}}></div></div>
+                        <div className="bg-[#E4E1D8] rounded-full h-1"><div className="bg-[#4F46E5] h-1 rounded-full" style={{width:`${emps.length>0?(contacted/emps.length)*100:0}%`}}></div></div>
                       </div>
                     </div>
                   );
@@ -1177,11 +1177,11 @@ function getPersonaPosts(emp,company){
           {crmView === "company" && selCompany && (
             <>
               <div className="flex items-center gap-2 mb-5 text-sm">
-                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); }} className="text-[#1A3A2A] hover:underline font-medium">← Accounts</button>
+                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); }} className="text-[#4F46E5] hover:underline font-medium">← Accounts</button>
                 <span className="text-gray-300">/</span>
                 <span className="font-semibold text-gray-700">{selCompany.name}</span>
               </div>
-              <div className="bg-white rounded-xl border border-[#D4CFC4] p-5 mb-4">
+              <div className="bg-white rounded-xl border border-[#E2E5EA] p-5 mb-4">
                 <div className="flex items-center gap-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg ${getAvatarColor(selCompany.id)}`}>{selCompany.name.slice(0,2).toUpperCase()}</div>
                   <div>
@@ -1195,9 +1195,9 @@ function getPersonaPosts(emp,company){
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl border border-[#D4CFC4] overflow-hidden">
+              <div className="bg-white rounded-xl border border-[#E2E5EA] overflow-hidden">
                 <table className="w-full">
-                  <thead><tr className="bg-[#EDEAE2] border-b border-[#D4CFC4] text-xs font-medium text-[#1A3A2A] uppercase tracking-wide">
+                  <thead><tr className="bg-[#FFFFFF] border-b border-[#E2E5EA] text-xs font-medium text-[#4F46E5] uppercase tracking-wide">
                     <th className="text-left px-4 py-2.5">Name</th><th className="text-left px-4 py-2.5">Title</th><th className="text-left px-4 py-2.5">Seniority</th>
                     <th className="text-left px-4 py-2.5">Phone</th><th className="text-left px-4 py-2.5">Email</th><th className="text-left px-4 py-2.5">Email Status</th><th className="text-left px-4 py-2.5">ProLink</th><th className="px-4 py-2.5">Actions</th>
                   </tr></thead>
@@ -1205,7 +1205,7 @@ function getPersonaPosts(emp,company){
                     {(allEmployees[selCompany.id]||[]).map(emp => {
                       const cs = state[emp.id];
                       return (
-                        <tr key={emp.id} className="border-b border-[#EDE9E0] hover:bg-[#EDF5EE] cursor-pointer" onClick={() => { setSelEmp(emp); setCrmView("employee"); }}>
+                        <tr key={emp.id} className="border-b border-[#EEEEF4] hover:bg-[#EDF5EE] cursor-pointer" onClick={() => { setSelEmp(emp); setCrmView("employee"); }}>
                           <td className="px-4 py-3"><div className="flex items-center gap-2">
                             <div className="relative w-8 h-8 flex-shrink-0"><img src={getPersonaPhoto(emp.id)} alt="" className="w-8 h-8 rounded-full object-cover absolute inset-0" onError={e=>{e.target.style.display="none";}} /><div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div></div>
                             <span className="font-medium text-gray-800 text-sm">{emp.first} {emp.last}</span>
@@ -1228,10 +1228,10 @@ function getPersonaPosts(emp,company){
                           <td className="px-4 py-3" onClick={e=>e.stopPropagation()}>
                             <div className="flex gap-1.5">
                               <button onClick={() => initiateCall(emp)} className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">📞 Call</button>
-                              <button onClick={() => { setEmailCompose({emp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white text-xs px-3 py-1.5 rounded-lg font-medium">✉ Email</button>
+                              <button onClick={() => { setEmailCompose({emp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#4F46E5] hover:bg-[#2A5A3A] text-white text-xs px-3 py-1.5 rounded-lg font-medium">✉ Email</button>
                               <button onClick={() => { setPlProfile(emp); setTab("prolink"); setPlView("profile"); }} className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">👔 Profile</button>
                               <button onClick={() => activeCallId === emp.id ? endCall() : handleStartCallWithDeal(emp, selCompany)} disabled={activeCallId !== null && activeCallId !== emp.id} style={{marginLeft:'6px',padding:'4px 12px',borderRadius:'6px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:'600',background:activeCallId===emp.id?(callStatus==='active'?'#ef4444':'#f97316'):'#7c3aed',color:'white',opacity:activeCallId!==null&&activeCallId!==emp.id?0.4:1}}>{activeCallId === emp.id ? (callStatus === 'connecting' ? '📞 Connecting...' : '🔴 End Call') : '🎙️ AI Call'}</button><button onClick={()=>handleOpenBooking(allEmps.find(p=>p.id===emp.id),'discovery')} style={{marginLeft:6,padding:'4px 10px',borderRadius:6,border:'none',background:'#334155',color:'#818cf8',cursor:'pointer',fontSize:11,fontWeight:600}}>📅 Book</button>
-                              <button onClick={() => setExpandedIntel(expandedIntel === emp.id ? null : emp.id)} style={{marginLeft:'6px',padding:'4px 10px',borderRadius:'6px',border:'1px solid #e2e8f0',cursor:'pointer',fontSize:'12px',fontWeight:'600',background:expandedIntel===emp.id?'#eff6ff':'#f8fafc',color:'#3b82f6'}}>🔍 Intel</button>
+                              <button onClick={() => setExpandedIntel(expandedIntel === emp.id ? null : emp.id)} style={{marginLeft:'6px',padding:'4px 10px',borderRadius:'6px',border:'1px solid #e2e8f0',cursor:'pointer',fontSize:'12px',fontWeight:'600',background:expandedIntel===emp.id?'#eff6ff':'#f8fafc',color:'#7C3AED'}}>🔍 Intel</button>
                             </div>
                           {expandedIntel === emp.id && intelData[emp.id] && (
                             <div style={{marginTop:'8px',padding:'14px 16px',background:'#f8fafc',border:'1px solid #e2e8f0',borderRadius:'8px',fontSize:'13px',lineHeight:'1.5'}}>
@@ -1257,9 +1257,9 @@ function getPersonaPosts(emp,company){
           {crmView === "employee" && selEmp && selCompany && (
             <>
               <div className="flex items-center gap-2 mb-5 text-sm">
-                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); setSelEmp(null); }} className="text-[#1A3A2A] hover:underline font-medium">← Accounts</button>
+                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); setSelEmp(null); }} className="text-[#4F46E5] hover:underline font-medium">← Accounts</button>
                 <span className="text-gray-300">/</span>
-                <button onClick={() => { setCrmView("company"); setSelEmp(null); }} className="text-[#1A3A2A] hover:underline font-medium">{selCompany.name}</button>
+                <button onClick={() => { setCrmView("company"); setSelEmp(null); }} className="text-[#4F46E5] hover:underline font-medium">{selCompany.name}</button>
                 <span className="text-gray-300">/</span>
                 <span className="font-semibold text-gray-700">{selEmp.first} {selEmp.last}</span>
               </div>
@@ -1281,13 +1281,13 @@ function getPersonaPosts(emp,company){
                     <div className="mt-3 space-y-1 text-xs text-gray-500 text-left border-t border-gray-100 pt-3">
                       <div>📞 {getPhone(selEmp)}</div>
                       <div>✉ {getEmail(selEmp, selCompany)}</div>
-                      {(state[selEmp.id]?.calls||0) > 0 && <div className="text-[#1A3A2A] font-medium pt-1">☎ {state[selEmp.id].calls} call{state[selEmp.id].calls>1?"s":""} logged</div>}
+                      {(state[selEmp.id]?.calls||0) > 0 && <div className="text-[#4F46E5] font-medium pt-1">☎ {state[selEmp.id].calls} call{state[selEmp.id].calls>1?"s":""} logged</div>}
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <button onClick={() => initiateCall(selEmp)} className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg py-2 text-sm font-medium">📞 Call {selEmp.first}</button>
-                    <button onClick={() => { setEmailCompose({emp:selEmp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white rounded-lg py-2 text-sm font-medium">✉ Email {selEmp.first}</button>
-                    <button onClick={() => { setPlProfile(selEmp); setTab("prolink"); setPlView("profile"); }} className="bg-[#2A5A3A] hover:bg-[#1A3A2A] text-white rounded-lg py-2 text-sm font-medium">👔 View ProLink Profile</button>
+                    <button onClick={() => { setEmailCompose({emp:selEmp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#4F46E5] hover:bg-[#2A5A3A] text-white rounded-lg py-2 text-sm font-medium">✉ Email {selEmp.first}</button>
+                    <button onClick={() => { setPlProfile(selEmp); setTab("prolink"); setPlView("profile"); }} className="bg-[#2A5A3A] hover:bg-[#4F46E5] text-white rounded-lg py-2 text-sm font-medium">👔 View ProLink Profile</button>
                     {/* Meeting request button — unlocks once they've replied or you're connected */}
                     {(state[selEmp.id]?.emailStatus === "replied" || state[selEmp.id]?.linkedinStatus === "connected") && state[selEmp.id]?.meetingStatus === "none" && (
                       <button onClick={() => requestMeeting(selEmp)} className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg py-2 text-sm font-medium">📅 Request Meeting</button>
@@ -1307,8 +1307,8 @@ function getPersonaPosts(emp,company){
                       {state[selEmp.id]?.emailThread.length === 0 ? (
                         <div className="text-center py-8 text-gray-400 text-sm">No emails sent yet. Email {selEmp.first} to start the conversation.</div>
                       ) : state[selEmp.id].emailThread.map((msg,i) => (
-                        <div key={i} className={`p-3 rounded-lg text-xs leading-relaxed ${msg.from==="rep" ? "bg-[#EDF5EE] border border-[#B8D4BB] ml-8" : "bg-[#F2EFE8] border border-[#D4CFC4] mr-8"}`}>
-                          <div className={`font-semibold mb-1 ${msg.from==="rep" ? "text-[#1A3A2A]" : "text-gray-800"}`}>{msg.from==="rep" ? "You" : `${selEmp.first} ${selEmp.last}`} · Day {msg.day}</div>
+                        <div key={i} className={`p-3 rounded-lg text-xs leading-relaxed ${msg.from==="rep" ? "bg-[#EDF5EE] border border-[#B8D4BB] ml-8" : "bg-[#F2EFE8] border border-[#E2E5EA] mr-8"}`}>
+                          <div className={`font-semibold mb-1 ${msg.from==="rep" ? "text-[#4F46E5]" : "text-gray-800"}`}>{msg.from==="rep" ? "You" : `${selEmp.first} ${selEmp.last}`} · Day {msg.day}</div>
                           {msg.subject && <div className="font-medium text-gray-700 mb-0.5">Re: {msg.subject}</div>}
                           {msg.body}
                         </div>
@@ -1363,11 +1363,11 @@ function getPersonaPosts(emp,company){
       {/* ══════════════════════════════════════════ */}
       {tab === "email" && (
         <div className="flex h-screen">
-          <div className="w-56 bg-[#EDEAE2] border-r border-[#D4CFC4] p-4">
-            <button onClick={() => setEmailCompose({emp:null, company:null})} className="w-full bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white rounded-lg py-2 text-sm font-medium mb-4">+ Compose</button>
+          <div className="w-56 bg-[#FFFFFF] border-r border-[#E2E5EA] p-4">
+            <button onClick={() => setEmailCompose({emp:null, company:null})} className="w-full bg-[#4F46E5] hover:bg-[#2A5A3A] text-white rounded-lg py-2 text-sm font-medium mb-4">+ Compose</button>
             {[{id:"inbox",label:"Inbox",count:inbox.length},{id:"sent",label:"Sent",count:sent.length},{id:"pending",label:"Awaiting Reply",count:pending}].map(f => (
-              <button key={f.id} onClick={() => setPlView(f.id)} className={`w-full text-left px-3 py-2 rounded-lg text-sm flex justify-between items-center mb-0.5 ${plView===f.id ? "bg-[#EDF5EE] text-[#1A3A2A] font-medium" : "text-[#3A5A3A] hover:bg-[#DDD9D0]"}`}>
-                {f.label} {f.count > 0 && <span className={`text-xs px-1.5 py-0.5 rounded-full ${plView===f.id ? "bg-[#C8DEC8] text-[#1A3A2A]" : "bg-[#D4CFC4] text-[#3A5A3A]"}`}>{f.count}</span>}
+              <button key={f.id} onClick={() => setPlView(f.id)} className={`w-full text-left px-3 py-2 rounded-lg text-sm flex justify-between items-center mb-0.5 ${plView===f.id ? "bg-[#EDF5EE] text-[#4F46E5] font-medium" : "text-[#3A5A3A] hover:bg-[#EEF0FF]"}`}>
+                {f.label} {f.count > 0 && <span className={`text-xs px-1.5 py-0.5 rounded-full ${plView===f.id ? "bg-[#C8DEC8] text-[#4F46E5]" : "bg-[#E2E5EA] text-[#3A5A3A]"}`}>{f.count}</span>}
               </button>
             ))}
           </div>
@@ -1392,8 +1392,8 @@ function getPersonaPosts(emp,company){
                         </div>
                         <div className="mt-2 space-y-1.5">
                           {thread.map((msg,i) => (
-                            <div key={i} className={`p-2.5 rounded-lg text-xs leading-relaxed ${msg.from==="rep" ? "bg-[#EDF5EE] border border-[#B8D4BB] ml-6" : "bg-[#F2EFE8] border border-[#D4CFC4] mr-6"}`}>
-                              <div className={`font-semibold mb-0.5 ${msg.from==="rep" ? "text-[#1A3A2A]" : "text-gray-800"}`}>{msg.from==="rep" ? "You" : emp.first} · Day {msg.day}</div>
+                            <div key={i} className={`p-2.5 rounded-lg text-xs leading-relaxed ${msg.from==="rep" ? "bg-[#EDF5EE] border border-[#B8D4BB] ml-6" : "bg-[#F2EFE8] border border-[#E2E5EA] mr-6"}`}>
+                              <div className={`font-semibold mb-0.5 ${msg.from==="rep" ? "text-[#4F46E5]" : "text-gray-800"}`}>{msg.from==="rep" ? "You" : emp.first} · Day {msg.day}</div>
                               {msg.body}
                             </div>
                           ))}
@@ -1456,13 +1456,13 @@ function getPersonaPosts(emp,company){
       {tab === "prolink" && (
         <div className="flex min-h-screen">
           {/* ProLink sidebar */}
-          <div className="w-56 bg-[#EDEAE2] border-r border-[#D4CFC4] p-4 flex flex-col gap-1">
+          <div className="w-56 bg-[#FFFFFF] border-r border-[#E2E5EA] p-4 flex flex-col gap-1">
             <div className="px-3 py-2 mb-2">
-              <div className="font-bold text-[#1A3A2A] text-lg">ProLink</div>
+              <div className="font-bold text-[#4F46E5] text-lg">ProLink</div>
               <div className="text-[#4A6A4A] text-xs">Professional Network</div>
             </div>
             {[{id:"feed",icon:"🏠",label:"Home Feed"},{id:"network",icon:"👥",label:`Network ${pendingConnections>0?"("+pendingConnections+" pending)":""}`},{id:"search",icon:"🔍",label:"Search People"},{id:"messages",icon:"💬",label:`Messages ${connections.length>0?"("+connections.length+")":""}` }].map(v => (
-              <button key={v.id} onClick={() => setPlView(v.id)} className={`text-left px-3 py-2 rounded-lg text-sm transition-colors ${plView===v.id ? "bg-[#EDF5EE] text-[#1A3A2A] font-medium" : "text-[#3A5A3A] hover:bg-[#DDD9D0]"}`}>{v.icon} {v.label}</button>
+              <button key={v.id} onClick={() => setPlView(v.id)} className={`text-left px-3 py-2 rounded-lg text-sm transition-colors ${plView===v.id ? "bg-[#EDF5EE] text-[#4F46E5] font-medium" : "text-[#3A5A3A] hover:bg-[#EEF0FF]"}`}>{v.icon} {v.label}</button>
             ))}
           </div>
 
@@ -1473,8 +1473,8 @@ function getPersonaPosts(emp,company){
             {plView === "feed" && (
               <div className="space-y-4">
                 <div className="bg-white rounded-xl border border-gray-200 p-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#1A3A2A] flex items-center justify-center text-white font-bold text-sm">JD</div>
-                  <div className="flex-1 bg-[#EDEAE2] rounded-full px-4 py-2 text-[#7A8A7A] text-sm cursor-text">Share something with your network...</div>
+                  <div className="w-10 h-10 rounded-full bg-[#4F46E5] flex items-center justify-center text-white font-bold text-sm">JD</div>
+                  <div className="flex-1 bg-[#FFFFFF] rounded-full px-4 py-2 text-[#7A8A7A] text-sm cursor-text">Share something with your network...</div>
                 </div>
                 {feedPosts.map(({emp, company, post, id}) => {
                   const cs = state[emp.id];
@@ -1489,7 +1489,7 @@ function getPersonaPosts(emp,company){
                               <div className="text-gray-500 text-xs">{emp.title} · {company?.name}</div>
                             </div>
                             <div>
-                              {cs.linkedinStatus === "none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#1A3A2A] border border-[#1A3A2A] text-xs px-3 py-1 rounded-full hover:bg-[#EDF5EE] transition-colors">+ Connect</button>}
+                              {cs.linkedinStatus === "none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#4F46E5] border border-[#4F46E5] text-xs px-3 py-1 rounded-full hover:bg-[#EDF5EE] transition-colors">+ Connect</button>}
                               {cs.linkedinStatus === "pending" && <span className="text-yellow-600 text-xs px-3 py-1 rounded-full border border-yellow-200 bg-yellow-50">Pending</span>}
                               {cs.linkedinStatus === "connected" && <span className="text-green-600 text-xs px-3 py-1 rounded-full border border-green-200 bg-green-50">✓ Connected</span>}
                               {cs.linkedinStatus === "ignored" && <span className="text-gray-400 text-xs">—</span>}
@@ -1500,7 +1500,7 @@ function getPersonaPosts(emp,company){
                       <p className="text-gray-700 text-sm leading-relaxed mb-3">{post}</p>
                       <div className="flex gap-4 pt-2 border-t border-gray-100">
                         {["👍 Like","💬 Comment","🔄 Repost"].map(a => (
-                          <button key={a} className="text-gray-500 text-xs hover:text-[#1A3A2A] transition-colors">{a}</button>
+                          <button key={a} className="text-gray-500 text-xs hover:text-[#4F46E5] transition-colors">{a}</button>
                         ))}
                       </div>
                     </div>
@@ -1537,7 +1537,7 @@ function getPersonaPosts(emp,company){
                     <div key={emp.id} className="bg-white rounded-xl border border-gray-200 p-3 mb-2 flex items-center gap-3">
                       <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                       <div className="flex-1"><div className="font-medium text-gray-800 text-sm">{emp.first} {emp.last}</div><div className="text-gray-400 text-xs">{emp.title} · {company?.name}</div></div>
-                      <button onClick={() => { setPlMsgEmp(emp); setPlView("messages"); }} className="text-[#1A3A2A] text-xs border border-[#B8D4BB] px-3 py-1 rounded-full hover:bg-[#EDF5EE]">Message</button>
+                      <button onClick={() => { setPlMsgEmp(emp); setPlView("messages"); }} className="text-[#4F46E5] text-xs border border-[#B8D4BB] px-3 py-1 rounded-full hover:bg-[#EDF5EE]">Message</button>
                     </div>
                   );
                 })}
@@ -1548,7 +1548,7 @@ function getPersonaPosts(emp,company){
             {plView === "search" && (
               <div>
                 <h2 className="font-bold text-gray-900 mb-4">Search People</h2>
-                <input value={plSearch} onChange={e => setPlSearch(e.target.value)} placeholder="Search by name, title or company..." className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm mb-4 focus:outline-none focus:border-[#1A3A2A]"/>
+                <input value={plSearch} onChange={e => setPlSearch(e.target.value)} placeholder="Search by name, title or company..." className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm mb-4 focus:outline-none focus:border-[#4F46E5]"/>
                 <div className="space-y-2">
                   {allEmps.filter(e => {
                     const c = getCompanyForEmp(e.id);
@@ -1565,11 +1565,11 @@ function getPersonaPosts(emp,company){
                           <div className="text-gray-400 text-xs">{emp.title} · {company?.name} · {company?.location}</div>
                         </div>
                         <div className="flex gap-1.5">
-                          {cs.linkedinStatus==="none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#1A3A2A] border border-[#1A3A2A] text-xs px-2.5 py-1 rounded-full hover:bg-[#EDF5EE]">+ Connect</button>}
+                          {cs.linkedinStatus==="none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#4F46E5] border border-[#4F46E5] text-xs px-2.5 py-1 rounded-full hover:bg-[#EDF5EE]">+ Connect</button>}
                           {cs.linkedinStatus==="pending" && <span className="text-yellow-700 text-xs px-2.5 py-1 rounded-full border border-yellow-200 bg-yellow-50">Pending</span>}
-                          {cs.linkedinStatus==="connected" && <button onClick={() => { setPlMsgEmp(emp); setPlView("messages"); }} className="text-[#1A3A2A] text-xs border border-[#B8D4BB] px-2.5 py-1 rounded-full bg-[#EDF5EE]">Message</button>}
+                          {cs.linkedinStatus==="connected" && <button onClick={() => { setPlMsgEmp(emp); setPlView("messages"); }} className="text-[#4F46E5] text-xs border border-[#B8D4BB] px-2.5 py-1 rounded-full bg-[#EDF5EE]">Message</button>}
                           {cs.linkedinStatus==="ignored" && <span className="text-gray-400 text-xs">—</span>}
-                          <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="text-[#3A5A3A] text-xs border border-[#D4CFC4] px-2.5 py-1 rounded-full hover:bg-[#EDEAE2]">View</button>
+                          <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="text-[#3A5A3A] text-xs border border-[#E2E5EA] px-2.5 py-1 rounded-full hover:bg-[#FFFFFF]">View</button>
                         </div>
                       </div>
                     );
@@ -1712,12 +1712,12 @@ function getPersonaPosts(emp,company){
                           <div className="flex-1 p-3 space-y-2 overflow-y-auto">
                             {state[plMsgEmp.id]?.linkedinMsgs.length === 0 && <div className="text-center text-gray-400 text-xs mt-4">Send your first message to {plMsgEmp.first}</div>}
                             {state[plMsgEmp.id]?.linkedinMsgs.map((msg, i) => (
-                              <div key={i} className={`p-2 rounded-lg text-xs max-w-xs leading-relaxed ${msg.from==="rep" ? "bg-[#1A3A2A] text-white ml-auto text-right" : "bg-[#EDEAE2] text-gray-800"}`}>{msg.text}</div>
+                              <div key={i} className={`p-2 rounded-lg text-xs max-w-xs leading-relaxed ${msg.from==="rep" ? "bg-[#4F46E5] text-white ml-auto text-right" : "bg-[#FFFFFF] text-gray-800"}`}>{msg.text}</div>
                             ))}
                           </div>
                           <div className="p-3 border-t border-gray-100 flex gap-2">
-                            <input value={plMsgDraft} onChange={e => setPlMsgDraft(e.target.value)} onKeyDown={e => { if(e.key==="Enter" && plMsgDraft.trim()) { sendLinkedinMsg(plMsgEmp, plMsgDraft); setPlMsgDraft(""); }}} placeholder={`Message ${plMsgEmp.first}...`} className="flex-1 border border-gray-200 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-[#1A3A2A]"/>
-                            <button onClick={() => { if(plMsgDraft.trim()) { sendLinkedinMsg(plMsgEmp, plMsgDraft); setPlMsgDraft(""); }}} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white text-xs px-3 py-1.5 rounded-lg">Send</button>
+                            <input value={plMsgDraft} onChange={e => setPlMsgDraft(e.target.value)} onKeyDown={e => { if(e.key==="Enter" && plMsgDraft.trim()) { sendLinkedinMsg(plMsgEmp, plMsgDraft); setPlMsgDraft(""); }}} placeholder={`Message ${plMsgEmp.first}...`} className="flex-1 border border-gray-200 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-[#4F46E5]"/>
+                            <button onClick={() => { if(plMsgDraft.trim()) { sendLinkedinMsg(plMsgEmp, plMsgDraft); setPlMsgDraft(""); }}} className="bg-[#4F46E5] hover:bg-[#2A5A3A] text-white text-xs px-3 py-1.5 rounded-lg">Send</button>
                           </div>
                         </>
                       )}
@@ -1763,22 +1763,22 @@ function getPersonaPosts(emp,company){
             {/* Stats grid */}
             <div className="grid grid-cols-3 gap-4 mb-6">
               {stats.map((s, i) => (
-                <div key={i} className={`bg-white rounded-xl border p-4 ${s.highlight ? "border-[#1A3A2A]" : "border-[#D4CFC4]"}`}>
+                <div key={i} className={`bg-white rounded-xl border p-4 ${s.highlight ? "border-[#4F46E5]" : "border-[#E2E5EA]"}`}>
                   <div className="text-xs text-[#4A6A4A] font-medium uppercase tracking-wide mb-1">{s.label}</div>
-                  <div className={`text-3xl font-black mb-1 ${s.highlight ? "text-[#1A3A2A]" : "text-gray-900"}`}>{s.value}</div>
+                  <div className={`text-3xl font-black mb-1 ${s.highlight ? "text-[#4F46E5]" : "text-gray-900"}`}>{s.value}</div>
                   <div className="text-xs text-gray-400">{s.sub}</div>
                 </div>
               ))}
             </div>
             {/* Meeting list */}
-            <div className="bg-white rounded-xl border border-[#D4CFC4] overflow-hidden">
-              <div className="px-4 py-3 border-b border-[#D4CFC4] font-semibold text-gray-800 text-sm">📅 Meetings Booked ({meetingsBooked})</div>
+            <div className="bg-white rounded-xl border border-[#E2E5EA] overflow-hidden">
+              <div className="px-4 py-3 border-b border-[#E2E5EA] font-semibold text-gray-800 text-sm">📅 Meetings Booked ({meetingsBooked})</div>
               {meetingsBooked === 0 ? (
                 <div className="text-center py-8 text-gray-400 text-sm">No meetings booked yet. Get a prospect to reply, then hit Request Meeting.</div>
               ) : allEmps.filter(e => state[e.id]?.meetingStatus === "booked").map(emp => {
                 const company = getCompanyForEmp(emp.id);
                 return (
-                  <div key={emp.id} className="px-4 py-3 border-b border-[#EDE9E0] flex items-center gap-3 last:border-0">
+                  <div key={emp.id} className="px-4 py-3 border-b border-[#EEEEF4] flex items-center gap-3 last:border-0">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                     <div className="flex-1">
                       <div className="font-medium text-gray-900 text-sm">{emp.first} {emp.last}</div>
@@ -1802,8 +1802,8 @@ function getPersonaPosts(emp,company){
             <h2 className="text-2xl font-black text-gray-900 mb-1">Simulation Complete</h2>
             <p className="text-gray-500 text-sm mb-5">30 days done. Time to see how you performed.</p>
             <div className="flex gap-3 justify-center">
-              <button onClick={() => setTab("score")} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white px-6 py-2.5 rounded-xl font-semibold text-sm">View My Scorecard</button>
-              <button onClick={() => { setState(initState()); setSimDay(1); setTab("crm"); setCrmView("accounts"); }} className="border border-[#D4CFC4] text-gray-600 hover:bg-[#F2EFE8] px-6 py-2.5 rounded-xl font-semibold text-sm">Restart Simulation</button>
+              <button onClick={() => setTab("score")} className="bg-[#4F46E5] hover:bg-[#2A5A3A] text-white px-6 py-2.5 rounded-xl font-semibold text-sm">View My Scorecard</button>
+              <button onClick={() => { setState(initState()); setSimDay(1); setTab("crm"); setCrmView("accounts"); }} className="border border-[#E2E5EA] text-gray-600 hover:bg-[#F2EFE8] px-6 py-2.5 rounded-xl font-semibold text-sm">Restart Simulation</button>
             </div>
           </div>
         </div>
@@ -1880,7 +1880,7 @@ function getPersonaPosts(emp,company){
                 <>
                   <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">📵</button>
                   {(callOutcome === "connected" || callOutcome === "voicemail") && (
-                    <button onClick={() => { endCall(); setEmailCompose({emp:callModal, company:getCompanyForEmp(callModal.id)}); setEmailDraft({subject:"Following up on our call", body:""}); }} className="w-14 h-14 rounded-full bg-[#1A3A2A] hover:bg-[#2A5A3A] border border-emerald-700 flex items-center justify-center text-2xl transition-colors">✉</button>
+                    <button onClick={() => { endCall(); setEmailCompose({emp:callModal, company:getCompanyForEmp(callModal.id)}); setEmailDraft({subject:"Following up on our call", body:""}); }} className="w-14 h-14 rounded-full bg-[#4F46E5] hover:bg-[#2A5A3A] border border-emerald-700 flex items-center justify-center text-2xl transition-colors">✉</button>
                   )}
                 </>
               )}
@@ -1896,7 +1896,7 @@ function getPersonaPosts(emp,company){
       {emailCompose && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-end z-50 p-4">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md">
-            <div className="px-4 py-3 bg-[#1A3A2A] rounded-t-2xl flex items-center justify-between">
+            <div className="px-4 py-3 bg-[#4F46E5] rounded-t-2xl flex items-center justify-between">
               <span className="text-white text-sm font-medium">New Email</span>
               <button onClick={() => setEmailCompose(null)} className="text-gray-400 hover:text-white text-lg">×</button>
             </div>
@@ -1907,10 +1907,10 @@ function getPersonaPosts(emp,company){
                   <span className="text-gray-400 text-xs ml-2">&lt;{getEmail(emailCompose.emp, emailCompose.company)}&gt;</span>
                 </div>
               ) : (
-                <input placeholder="To: email address..." className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-2 focus:outline-none focus:border-[#1A3A2A]"/>
+                <input placeholder="To: email address..." className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-2 focus:outline-none focus:border-[#4F46E5]"/>
               )}
-              <input value={emailDraft.subject} onChange={e => setEmailDraft(d => ({...d, subject:e.target.value}))} placeholder="Subject line..." className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-2 focus:outline-none focus:border-[#1A3A2A]"/>
-              <textarea value={emailDraft.body} onChange={e => setEmailDraft(d => ({...d, body:e.target.value}))} placeholder={emailCompose.emp ? `Write your email to ${emailCompose.emp.first}...\n\nTip: ${emailCompose.emp?.seniority==="c-suite"||emailCompose.emp?.seniority==="vp" ? "Keep it to 3 lines for senior buyers. Lead with their pain, not your product." : "Be specific about why you're reaching out to them specifically."}` : "Write your email..."} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm min-h-32 resize-none focus:outline-none focus:border-[#1A3A2A] mb-3"/>
+              <input value={emailDraft.subject} onChange={e => setEmailDraft(d => ({...d, subject:e.target.value}))} placeholder="Subject line..." className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-2 focus:outline-none focus:border-[#4F46E5]"/>
+              <textarea value={emailDraft.body} onChange={e => setEmailDraft(d => ({...d, body:e.target.value}))} placeholder={emailCompose.emp ? `Write your email to ${emailCompose.emp.first}...\n\nTip: ${emailCompose.emp?.seniority==="c-suite"||emailCompose.emp?.seniority==="vp" ? "Keep it to 3 lines for senior buyers. Lead with their pain, not your product." : "Be specific about why you're reaching out to them specifically."}` : "Write your email..."} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm min-h-32 resize-none focus:outline-none focus:border-[#4F46E5] mb-3"/>
               {emailCompose.emp && (
                 <div className="text-xs text-gray-400 mb-3">
                   {emailCompose.emp.seniority === "c-suite" && "⚠️ C-Suite: Takes ~5 days to respond. May not respond at all."}
@@ -1922,7 +1922,7 @@ function getPersonaPosts(emp,company){
               )}
               <div className="flex justify-end gap-2">
                 <button onClick={() => setEmailCompose(null)} className="px-4 py-1.5 text-sm text-gray-600 hover:text-gray-800">Cancel</button>
-                <button onClick={() => { if(emailCompose.emp && emailDraft.body.trim()) { sendEmail(emailCompose.emp, emailCompose.company, emailDraft.subject, emailDraft.body); setEmailCompose(null); }}} className="bg-[#1A3A2A] hover:bg-[#2A5A3A] text-white px-4 py-1.5 rounded-lg text-sm font-medium">Send</button>
+                <button onClick={() => { if(emailCompose.emp && emailDraft.body.trim()) { sendEmail(emailCompose.emp, emailCompose.company, emailDraft.subject, emailDraft.body); setEmailCompose(null); }}} className="bg-[#4F46E5] hover:bg-[#2A5A3A] text-white px-4 py-1.5 rounded-lg text-sm font-medium">Send</button>
               </div>
             </div>
           </div>
@@ -1965,9 +1965,9 @@ function getPersonaPosts(emp,company){
                     <div style={{color:'#e2e8f0',fontSize:14,fontWeight:600}}>{d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</div>
                     <div style={{color:'#64748b',fontSize:13}}>{d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}</div>
                   </div>
-                  <span style={{padding:'3px 10px',borderRadius:20,fontSize:11,fontWeight:700,background:sc.status==='completed'?'#1e293b':sc.status==='active'?'rgba(34,197,94,0.15)':'rgba(99,102,241,0.15)',color:sc.status==='completed'?'#475569':sc.status==='active'?'#22c55e':'#818cf8',border:'1px solid '+(sc.status==='completed'?'#334155':sc.status==='active'?'#22c55e':'#6366f1')}}>{sc.status}</span>
+                  <span style={{padding:'3px 10px',borderRadius:20,fontSize:11,fontWeight:700,background:sc.status==='completed'?'#1e293b':sc.status==='active'?'rgba(34,197,94,0.15)':'rgba(99,102,241,0.15)',color:sc.status==='completed'?'#475569':sc.status==='active'?'#16a34a':'#818cf8',border:'1px solid '+(sc.status==='completed'?'#334155':sc.status==='active'?'#16a34a':'#6366f1')}}>{sc.status}</span>
                   {sc.status==='upcoming'&&(
-                    <button onClick={()=>handleJoinCall(sc)} style={{padding:'8px 16px',borderRadius:8,border:'none',background:'#22c55e',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:13}}>Join</button>
+                    <button onClick={()=>handleJoinCall(sc)} style={{padding:'8px 16px',borderRadius:8,border:'none',background:'#16a34a',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:13}}>Join</button>
                   )}
                 </div>
               </div>
@@ -2009,7 +2009,7 @@ function getPersonaPosts(emp,company){
                   </div>
                 </div>
                 <div style={{display:'flex',alignItems:'center',gap:10}}>
-                  <span style={{padding:'2px 8px',borderRadius:20,fontSize:11,background:msg.msg_type==='call_request'?'rgba(34,197,94,0.15)':msg.msg_type==='demo_request'?'rgba(14,165,233,0.15)':'rgba(99,102,241,0.15)',color:msg.msg_type==='call_request'?'#22c55e':msg.msg_type==='demo_request'?'#38bdf8':'#818cf8',border:'1px solid '+(msg.msg_type==='call_request'?'#22c55e':msg.msg_type==='demo_request'?'#0ea5e9':'#6366f1')}}>{msg.msg_type.replace('_',' ')}</span>
+                  <span style={{padding:'2px 8px',borderRadius:20,fontSize:11,background:msg.msg_type==='call_request'?'rgba(34,197,94,0.15)':msg.msg_type==='demo_request'?'rgba(14,165,233,0.15)':'rgba(99,102,241,0.15)',color:msg.msg_type==='call_request'?'#16a34a':msg.msg_type==='demo_request'?'#38bdf8':'#818cf8',border:'1px solid '+(msg.msg_type==='call_request'?'#16a34a':msg.msg_type==='demo_request'?'#0ea5e9':'#6366f1')}}>{msg.msg_type.replace('_',' ')}</span>
                   <span style={{color:'#475569',fontSize:11}}>{new Date(msg.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric'})}</span>
                   <span style={{color:'#475569',fontSize:16}}>{expandedMsg===msg.id?'▲':'▼'}</span>
                 </div>
