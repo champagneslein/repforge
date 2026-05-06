@@ -495,7 +495,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
       await vapi.start({
         model: { provider: 'openai', model: 'gpt-4o-mini', temperature: 0.9, maxTokens: 80, messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
         voice: selectVoice(emp.first, emp.seniority),
-        silenceTimeoutSeconds: 8,
+        silenceTimeoutSeconds: 10,
         firstMessage: emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.',
       });
     } catch(e) { setActiveCallId(null); setCallStatus('idle'); }
