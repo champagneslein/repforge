@@ -455,14 +455,26 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     return vapiRef.current;
   }
 
-  function selectVoice(firstName) {
-    const irish = new Set(['aoife','cian','fiona','siobhan','niamh','eoin','seamus','padraig','brigid','caoimhe','conor','declan','emer','grainne','kieran','muireann','nuala','oisin','roisin','saoirse','tadhg','sean','brendan','fintan','ciara','orla','deirdre','maeve','colm','ronan','darragh','eimear','sinead']);
-    const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','ciara','orla','deirdre','maeve','eimear','sinead','sarah','emma','jennifer','jessica','ashley','amanda','melissa','rachel','lauren','megan','hannah','anna','samantha','katherine','lisa','angela','helen']);
-    const fn = (firstName || '').toLowerCase();
+  function selectVoice(firstName, seniority) {
+    const irish = new Set(['aoife','cian','fiona','siobhan','niamh','eoin','seamus','padraig','brigid','caoimhe','conor','declan','emer','grainne','kieran','muireann','nuala','oisin','roisin','saoirse','tadhg','sean','brendan','fintan','ciara','orla','liam','niall','colm','maeve','donal','cathal','aisling','sorcha','feargal','catriona']);
+    const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','ciara','orla','maeve','aisling','sorcha','catriona','sarah','emily','emma','jessica','ashley','amanda','rachel','laura','megan','hannah','stephanie','lisa','jennifer','samantha','kate','anna','claire','amy','kelly','heather','melissa','nicole','angela','grace','tara','molly','chloe','maria','diana','julia','natalie','leah','brooke','alexis','sydney','paige','amber','shelby','kayla','madison','victoria','isabella','elizabeth','abigail','scarlett','olivia','sofia','avery','ella','violet','luna','nora','hazel','maya','ellie','lily','aria','layla','riley','zoey','stella','aurora','savannah','willow','addison','eleanor','isla','everly','piper','ivy','lillian','alice','alexa','paisley']);
+    const fn = firstName.toLowerCase();
+    // C-suite/VP: deeper, more authoritative voice
+    if (seniority === 'c-suite') {
+      if (irish.has(fn) && !female.has(fn)) return { provider: 'openai', voiceId: 'onyx', speed: 0.88 };
+      if (female.has(fn)) return { provider: 'openai', voiceId: 'nova', speed: 0.9 };
+      return { provider: 'openai', voiceId: 'onyx', speed: 0.88 };
+    }
+    if (seniority === 'vp') {
+      if (female.has(fn)) return { provider: 'openai', voiceId: 'shimmer', speed: 0.92 };
+      return { provider: 'openai', voiceId: 'fable', speed: 0.92 };
+    }
+    // Irish names
     if (irish.has(fn) && !female.has(fn)) return { provider: 'deepgram', voiceId: 'angus' };
-    if (irish.has(fn) && female.has(fn)) return { provider: 'openai', voiceId: 'shimmer' };
-    if (!irish.has(fn) && female.has(fn)) return { provider: 'openai', voiceId: 'nova' };
-    return { provider: 'openai', voiceId: 'onyx' };
+    if (irish.has(fn) && female.has(fn)) return { provider: 'openai', voiceId: 'shimmer', speed: 0.93 };
+    // Non-Irish
+    if (female.has(fn)) return { provider: 'openai', voiceId: 'nova', speed: 0.93 };
+    return { provider: 'openai', voiceId: 'echo', speed: 0.93 };
   }
 
   async function startCall(emp, company, callLogs=[]) {
@@ -476,13 +488,14 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
       'manager': 'You are a Manager. You are genuinely busy but approachable. You care about day-to-day practicality — does this solve a real problem your team has. You might say Walk me through how that actually works or Would my team realistically use this. You sometimes get momentarily distracted and come back. Warm but direct.',
       'junior': 'You are a junior employee. You are friendly and conversational. You engage with genuine curiosity. You might say Oh interesting, I have not heard of you guys or That sounds cool actually — though I would have to loop in my manager. You do not make purchasing decisions but you can be an internal champion.',
     };
-    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like Certainly or Great question or Absolutely. Never be immediately enthusiastic or positive about a product. You were in the middle of something when this call came in. Sound like it.';
+    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like Certainly or Great question or Absolutely. Never be immediately enthusiastic or positive about a product. You were in the middle of something when this call came in. Sound like it.';
     
   const dealHistory=callLogs&&callLogs.length>0?'\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'+callLogs.map((log,i)=>{const daysAgo=Math.round((Date.now()-new Date(log.called_at).getTime())/86400000);return 'Call '+(callLogs.length-i)+' ('+daysAgo+' days ago): '+(log.ai_summary||log.rep_notes||'No summary.')+(log.objections&&log.objections.length?' Objections: '+log.objections.join(', ')+'.':'');}).join('\n')+'\nYour current interest: '+(callLogs[0]?.interest_score_after||5)+'/10.':'';
   try {
       await vapi.start({
-        model: { provider: 'openai', model: 'gpt-4o-mini', messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
-        voice: selectVoice(emp.first),
+        model: { provider: 'openai', model: 'gpt-4o-mini', temperature: 0.9, maxTokens: 80, messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
+        voice: selectVoice(emp.first, emp.seniority),
+        silenceTimeoutSeconds: 8,
         firstMessage: emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.',
       });
     } catch(e) { setActiveCallId(null); setCallStatus('idle'); }
