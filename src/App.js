@@ -498,7 +498,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
         silenceTimeoutSeconds: 10,
         firstMessage: emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.',
       });
-    } catch(e) { setActiveCallId(null); setCallStatus('idle'); }
+    } catch(e) { console.error('[RepForge] Call failed:', e); setActiveCallId(null); setCallStatus('idle'); }
   }
 
   function endCall() {
@@ -2079,6 +2079,36 @@ function getPersonaPosts(emp,company){
       )}
     </div>
   )}
+      {showSettings && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50" onClick={() => setShowSettings(false)}>
+          <div className="bg-[#0D1B2E] border border-[#1E3A5F] rounded-xl p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-bold text-[#D4E5FF]">Settings</h2>
+              <button onClick={() => setShowSettings(false)} className="text-[#4A6B8A] hover:text-[#D4E5FF] text-xl leading-none">x</button>
+            </div>
+            <p className="text-xs text-[#4A6B8A] mb-4">Your OpenAI key is used to power the AI personas. It is stored locally in your browser only.</p>
+            <div className="mb-5">
+              <label className="block text-xs font-semibold text-[#7A9CC4] uppercase tracking-wider mb-2">OpenAI API Key</label>
+              <input
+                type="password"
+                className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-lg px-3 py-2 text-sm text-[#D4E5FF] placeholder-[#4A6B8A] focus:outline-none focus:border-[#0EA5E9]"
+                placeholder="sk-..."
+                defaultValue={apiKey}
+                id="settings-api-key-input"
+              />
+            </div>
+            <div className="flex gap-2 justify-end">
+              <button onClick={() => setShowSettings(false)} className="px-4 py-2 rounded-lg text-sm text-[#7A9CC4] hover:text-[#D4E5FF] transition-colors">Cancel</button>
+              <button onClick={() => {
+                const val = document.getElementById('settings-api-key-input').value.trim();
+                localStorage.setItem('repforge_openai_key', val);
+                setApiKey(val);
+                setShowSettings(false);
+              }} className="px-4 py-2 rounded-lg text-sm bg-[#0EA5E9] text-white hover:bg-[#0284C7] font-medium transition-colors">Save</button>
+            </div>
+          </div>
+        </div>
+      )}
   </div>
   );
 }
