@@ -1143,7 +1143,7 @@ function getPersonaPosts(emp,company){
       <div className="bg-[#070C18]/95 border-b border-[#1B3154] px-6 py-2.5 flex items-center justify-between sticky top-0 z-40 shadow-sm backdrop-blur-md">
         <div className="flex items-center gap-6">
           <div>
-            <span className="font-bold text-[#EEF4FF] text-xl tracking-tight">RepForge</span>
+            <span className="font-bold text-[#F8FAFC] text-xl tracking-tight">RepForge</span>
             <span className="ml-2 px-2 py-0.5 bg-[#0EA5E9]/10 text-[#38BDF8] text-xs font-medium rounded-full border border-[#0EA5E9]/20 tracking-wide">Sales Training Platform</span>
           </div>
           <div className="flex items-center gap-1">
@@ -1176,7 +1176,7 @@ function getPersonaPosts(emp,company){
           {crmView === "accounts" && (
             <>
               <div className="flex items-center justify-between mb-5">
-                <div><h1 className="text-lg font-bold text-[#EEF4FF]">Target Accounts</h1><p className="text-[#7A9CC4] text-sm">20 accounts. Click to begin prospecting.</p></div>
+                <div><h1 className="text-lg font-bold text-[#F8FAFC]">Target Accounts</h1><p className="text-[#7A9CC4] text-sm">20 accounts. Click to begin prospecting.</p></div>
                 <div className="flex gap-1.5 flex-wrap">
                   {industries.map(ind => (
                     <button key={ind} onClick={() => setFilterInd(ind)} className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${filterInd===ind ? "bg-[#0EA5E9] text-white" : "bg-[#E4E1D8] text-[#38BDF8] hover:bg-[#D4D0C6]"}`}>{ind}</button>
@@ -1194,7 +1194,7 @@ function getPersonaPosts(emp,company){
                         <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm ${getAvatarColor(c.id)}`}>{c.name.slice(0,2).toUpperCase()}</div>
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sizeColors[c.size]}`}>{c.size}</span>
                       </div>
-                      <div className="font-bold text-[#EEF4FF] group-hover:text-[#38BDF8] mb-0.5">{c.name}</div>
+                      <div className="font-bold text-[#F8FAFC] group-hover:text-[#38BDF8] mb-0.5">{c.name}</div>
                       <div className="text-[#7A9CC4] text-xs mb-2 line-clamp-2">{c.description}</div>
                       <div className="flex items-center gap-2 mb-3">
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${industryColors[c.industry]||"bg-gray-100 text-[#7A9CC4]"}`}>{c.industry}</span>
@@ -1230,7 +1230,7 @@ function getPersonaPosts(emp,company){
                 <div className="flex items-center gap-4">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg ${getAvatarColor(selCompany.id)}`}>{selCompany.name.slice(0,2).toUpperCase()}</div>
                   <div>
-                    <div className="font-bold text-xl text-[#EEF4FF]">{selCompany.name}</div>
+                    <div className="font-bold text-xl text-[#F8FAFC]">{selCompany.name}</div>
                     <div className="text-[#7A9CC4] text-sm">{selCompany.description}</div>
                     <div className="flex gap-2 mt-1.5">
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${industryColors[selCompany.industry]||""}`}>{selCompany.industry}</span>
@@ -1312,7 +1312,7 @@ function getPersonaPosts(emp,company){
                 <div className="w-64 flex-shrink-0 space-y-4">
                   <div className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-4 text-center">
                     <div className={`w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-2 ${getAvatarColor(selEmp.id)}`}>{getInitials(selEmp)}</div>
-                    <div className="font-bold text-[#EEF4FF]">{selEmp.first} {selEmp.last}</div>
+                    <div className="font-bold text-[#F8FAFC]">{selEmp.first} {selEmp.last}</div>
                     <div className="text-[#7A9CC4] text-sm">{selEmp.title}</div>
                     <div className="text-[#4A6B8A] text-xs">{selCompany.name}</div>
                     <span className={`mt-2 inline-block text-xs px-2 py-0.5 rounded-full font-medium ${seniorityColors[selEmp.seniority]}`}>{seniorityLabels[selEmp.seniority]}</span>
@@ -1419,7 +1419,7 @@ function getPersonaPosts(emp,company){
           <div className="flex-1 p-6 overflow-auto">
             {(plView==="inbox" || !plView) && (
               <>
-                <h2 className="font-bold text-[#EEF4FF] mb-4">Inbox ({inbox.length})</h2>
+                <h2 className="font-bold text-[#F8FAFC] mb-4">Inbox ({inbox.length})</h2>
                 {inbox.length === 0 ? (
                   <div className="text-center py-16 text-[#4A6B8A]">
                     <div className="text-4xl mb-3">📬</div>
@@ -1451,7 +1451,7 @@ function getPersonaPosts(emp,company){
             )}
             {plView === "sent" && (
               <>
-                <h2 className="font-bold text-[#EEF4FF] mb-4">Sent ({sent.length})</h2>
+                <h2 className="font-bold text-[#F8FAFC] mb-4">Sent ({sent.length})</h2>
                 {sent.length === 0 ? <div className="text-center py-16 text-[#4A6B8A]"><div className="text-4xl mb-3">📤</div><div>No emails sent yet.</div></div>
                 : sent.map(({emp, company, thread}) => (
                   <div key={emp.id} className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-4 mb-3">
@@ -1471,7 +1471,7 @@ function getPersonaPosts(emp,company){
             )}
             {plView === "pending" && (
               <>
-                <h2 className="font-bold text-[#EEF4FF] mb-4">Awaiting Reply ({pending})</h2>
+                <h2 className="font-bold text-[#F8FAFC] mb-4">Awaiting Reply ({pending})</h2>
                 <div className="bg-[#1A1200] border border-[#3D2D00] rounded-lg p-3 text-xs text-[#FDE68A] mb-4">
                   ⏩ Hit <strong>Advance Day</strong> in the top bar to progress the simulation and trigger replies. Senior contacts take longer — a C-suite contact may take 5+ days to respond.
                 </div>
@@ -1530,7 +1530,7 @@ function getPersonaPosts(emp,company){
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
                             <div>
-                              <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="font-semibold text-[#EEF4FF] hover:text-blue-600 hover:underline text-sm">{emp.first} {emp.last}</button>
+                              <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="font-semibold text-[#F8FAFC] hover:text-blue-600 hover:underline text-sm">{emp.first} {emp.last}</button>
                               <div className="text-[#7A9CC4] text-xs">{emp.title} · {company?.name} <span className="text-[#4A6B8A]">· {post.time}</span></div>
                             </div>
                             <div>
@@ -1563,7 +1563,7 @@ function getPersonaPosts(emp,company){
             {/* NETWORK */}
             {plView === "network" && (
               <div>
-                <h2 className="font-bold text-[#EEF4FF] mb-4">Your Network</h2>
+                <h2 className="font-bold text-[#F8FAFC] mb-4">Your Network</h2>
                 {pendingConnections > 0 && (
                   <div className="mb-5">
                     <div className="font-semibold text-[#A8BFDB] text-sm mb-3">⏳ Pending Requests ({pendingConnections})</div>
@@ -1598,7 +1598,7 @@ function getPersonaPosts(emp,company){
             {/* SEARCH */}
             {plView === "search" && (
               <div>
-                <h2 className="font-bold text-[#EEF4FF] mb-4">Search People</h2>
+                <h2 className="font-bold text-[#F8FAFC] mb-4">Search People</h2>
                 <input value={plSearch} onChange={e => setPlSearch(e.target.value)} placeholder="Search by name, title or company..." className="w-full border border-[#1B3154] rounded-xl px-4 py-2.5 text-sm mb-4 focus:outline-none focus:border-[#0EA5E9]"/>
                 <div className="space-y-2">
                   {allEmps.filter(e => {
@@ -1652,7 +1652,7 @@ function getPersonaPosts(emp,company){
                           <button onClick={()=>{setPlMsgEmp(plProfile);setPlView('messages');}} className="px-4 py-1.5 rounded-full text-sm font-semibold" style={{color:'#0A66C2',border:'1.5px solid #0A66C2',background:'transparent',cursor:'pointer'}}>Message</button>
                         </div>
                       </div>
-                      <h2 className="text-lg font-bold text-[#EEF4FF] leading-tight mb-0.5">{plProfile.first} {plProfile.last}</h2>
+                      <h2 className="text-lg font-bold text-[#F8FAFC] leading-tight mb-0.5">{plProfile.first} {plProfile.last}</h2>
                       <p className="text-sm text-[#7A9CC4] hover:text-[#38BDF8] leading-snug mb-1">{plProfile.title}</p>
                       <p className="text-sm text-[#D4E5FF] font-medium mb-2">{company?company.name:''}{company&&<span className="text-[#4A6B8A] font-normal"> · {company.industry}</span>}</p>
                       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#7A9CC4] mb-3">
@@ -1667,7 +1667,7 @@ function getPersonaPosts(emp,company){
 
                   {(()=>{const _pp=getPersonaPainPoints(plProfile,company);const _goals=getPersonaGoals(plProfile,company);return(
                   <div className="bg-[#0D1525] rounded-2xl p-4 mb-3" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08),0 2px 8px rgba(0,0,0,0.06)'}}>
-                    <h3 className="text-sm font-bold text-[#EEF4FF] mb-2">About</h3>
+                    <h3 className="text-sm font-bold text-[#F8FAFC] mb-2">About</h3>
                     <p className="text-xs text-[#7A9CC4] leading-relaxed mb-4">{plProfile.first} is a {plProfile.title} at {company?company.name:'this company'}, focused on driving measurable {company?company.industry:'tech'} outcomes through cross-functional leadership and execution.</p>
                     <div className="h-px bg-gray-100 mb-3"></div>
                     <p className="text-xs font-bold text-[#7A9CC4] uppercase tracking-wider mb-2">Goals</p>
@@ -1698,7 +1698,7 @@ function getPersonaPosts(emp,company){
 
                   {(()=>{const _posts=getPersonaPosts(plProfile,company);return(
                   <div>
-                    <p className="text-sm font-bold text-[#EEF4FF] mb-3">Activity</p>
+                    <p className="text-sm font-bold text-[#F8FAFC] mb-3">Activity</p>
                     {_posts.length===0&&<div className="bg-[#0D1525] rounded-2xl p-8 text-center text-[#4A6B8A] text-sm" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08)'}}>No recent activity yet.</div>}
                     {_posts.map((post,pi)=>(
                       <div key={pi} className="bg-[#0D1525] rounded-2xl mb-3 overflow-hidden" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.06)'}}>
@@ -1706,7 +1706,7 @@ function getPersonaPosts(emp,company){
                           <div className="flex items-start gap-3 mb-3">
                             <img src={getPersonaPhoto(plProfile.id)} className="w-9 h-9 rounded-full object-cover flex-shrink-0" style={{border:'1px solid rgba(0,0,0,0.08)'}} onError={e=>{e.target.style.display='none';}} alt=""/>
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm font-bold text-[#EEF4FF] leading-tight">{plProfile.first} {plProfile.last}</p>
+                              <p className="text-sm font-bold text-[#F8FAFC] leading-tight">{plProfile.first} {plProfile.last}</p>
                               <p className="text-xs text-[#7A9CC4] leading-tight truncate">{plProfile.title} · {company?company.name:''}</p>
                               <p className="text-xs text-[#4A6B8A] leading-tight">{post.timeAgo} · 🌐</p>
                             </div>
@@ -1736,7 +1736,7 @@ function getPersonaPosts(emp,company){
             {/* MESSAGES */}
             {plView === "messages" && (
               <div>
-                <h2 className="font-bold text-[#EEF4FF] mb-4">Messages</h2>
+                <h2 className="font-bold text-[#F8FAFC] mb-4">Messages</h2>
                 {connections.length === 0 ? (
                   <div className="text-center py-12 text-[#4A6B8A]"><div className="text-4xl mb-3">💬</div><div>No connections yet. Connect with people to message them.</div></div>
                 ) : (
@@ -1797,7 +1797,7 @@ function getPersonaPosts(emp,company){
         ];
         return (
           <div className="p-6 max-w-3xl mx-auto">
-            <h1 className="text-2xl font-bold text-[#EEF4FF] mb-1">Your Scorecard</h1>
+            <h1 className="text-2xl font-bold text-[#F8FAFC] mb-1">Your Scorecard</h1>
             <p className="text-[#4A6A4A] text-sm mb-6">Track your performance across the 30-day simulation.</p>
             {/* Grade card */}
             <div className={`rounded-2xl border-2 p-6 mb-6 flex items-center gap-6 ${g.bg}`}>
@@ -1816,7 +1816,7 @@ function getPersonaPosts(emp,company){
               {stats.map((s, i) => (
                 <div key={i} className={`bg-[#0D1525] rounded-xl border p-4 ${s.highlight ? "border-[#0EA5E9]" : "border-[#1B3154]"}`}>
                   <div className="text-xs text-[#4A6A4A] font-medium uppercase tracking-wide mb-1">{s.label}</div>
-                  <div className={`text-3xl font-black mb-1 ${s.highlight ? "text-[#38BDF8]" : "text-[#EEF4FF]"}`}>{s.value}</div>
+                  <div className={`text-3xl font-black mb-1 ${s.highlight ? "text-[#38BDF8]" : "text-[#F8FAFC]"}`}>{s.value}</div>
                   <div className="text-xs text-[#4A6B8A]">{s.sub}</div>
                 </div>
               ))}
@@ -1832,7 +1832,7 @@ function getPersonaPosts(emp,company){
                   <div key={emp.id} className="px-4 py-3 border-b border-[#EEEEF4] flex items-center gap-3 last:border-0">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                     <div className="flex-1">
-                      <div className="font-medium text-[#EEF4FF] text-sm">{emp.first} {emp.last}</div>
+                      <div className="font-medium text-[#F8FAFC] text-sm">{emp.first} {emp.last}</div>
                       <div className="text-[#4A6B8A] text-xs">{emp.title} · {company?.name}</div>
                     </div>
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${seniorityColors[emp.seniority]}`}>{seniorityLabels[emp.seniority]}</span>
@@ -1850,7 +1850,7 @@ function getPersonaPosts(emp,company){
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="bg-[#0D1525] rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 text-center">
             <div className="text-5xl mb-3">🏁</div>
-            <h2 className="text-2xl font-black text-[#EEF4FF] mb-1">Simulation Complete</h2>
+            <h2 className="text-2xl font-black text-[#F8FAFC] mb-1">Simulation Complete</h2>
             <p className="text-[#7A9CC4] text-sm mb-5">30 days done. Time to see how you performed.</p>
             <div className="flex gap-3 justify-center">
               <button onClick={() => setTab("score")} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white px-6 py-2.5 rounded-xl font-semibold text-sm">View My Scorecard</button>
