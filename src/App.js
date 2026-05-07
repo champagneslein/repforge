@@ -456,44 +456,45 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   }
 
   function selectVoice(firstName, seniority) {
-    const irish = new Set(['aoife','cian','fiona','siobhan','niamh','eoin','seamus','padraig','brigid','caoimhe','conor','declan','emer','grainne','kieran','muireann','nuala','oisin','roisin','saoirse','tadhg','sean','brendan','fintan','ciara','orla','liam','niall','colm','maeve','donal','cathal','aisling','sorcha','feargal','catriona']);
-    const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','ciara','orla','maeve','aisling','sorcha','catriona','sarah','emily','emma','jessica','ashley','amanda','rachel','laura','megan','hannah','stephanie','lisa','jennifer','samantha','kate','anna','claire','amy','kelly','heather','melissa','nicole','angela','grace','tara','molly','chloe','maria','diana','julia','natalie','leah','brooke','alexis','sydney','paige','amber','shelby','kayla','madison','victoria','isabella','elizabeth','abigail','scarlett','olivia','sofia','avery','ella','violet','luna','nora','hazel','maya','ellie','lily','aria','layla','riley','zoey','stella','aurora','savannah','willow','addison','eleanor','isla','everly','piper','ivy','lillian','alice','alexa','paisley']);
     const fn = firstName.toLowerCase();
-    // C-suite/VP: deeper, more authoritative voice
+    const irish = new Set(['aoife','cian','fiona','siobhan','niamh','eoin','seamus','padraig','brigid','caoimhe','conor','declan','emer','grainne','kieran','muireann','nuala','oisin','roisin','saoirse','tadhg','sean','brendan','fintan','colm','liam','ciaran','rory','cathal','lorcan']);
+    const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','emma','sarah','sophie','claire','rachel','laura','kate','anne','mary','lisa','helen','jane','julia','alice','olivia','grace','emily','charlotte','amy','hannah','leah','ava']);
+    const isIrish = irish.has(fn);
+    const isFemale = female.has(fn);
     if (seniority === 'c-suite') {
-      if (irish.has(fn) && !female.has(fn)) return { provider: 'openai', voiceId: 'onyx', speed: 0.88 };
-      if (female.has(fn)) return { provider: 'openai', voiceId: 'nova', speed: 0.9 };
-      return { provider: 'openai', voiceId: 'onyx', speed: 0.88 };
+      if (isIrish && !isFemale) return { provider: 'deepgram', voiceId: 'aura-angus-en' };
+      if (isFemale) return { provider: 'deepgram', voiceId: 'aura-athena-en' };
+      return { provider: 'deepgram', voiceId: 'aura-zeus-en' };
     }
     if (seniority === 'vp') {
-      if (female.has(fn)) return { provider: 'openai', voiceId: 'shimmer', speed: 0.92 };
-      return { provider: 'openai', voiceId: 'fable', speed: 0.92 };
+      if (isFemale) return { provider: 'deepgram', voiceId: 'aura-asteria-en' };
+      if (isIrish) return { provider: 'deepgram', voiceId: 'aura-angus-en' };
+      return { provider: 'deepgram', voiceId: 'aura-orion-en' };
     }
-    // Irish names
-    if (irish.has(fn) && !female.has(fn)) return { provider: 'deepgram', voiceId: 'angus' };
-    if (irish.has(fn) && female.has(fn)) return { provider: 'openai', voiceId: 'shimmer', speed: 0.93 };
-    // Non-Irish
-    if (female.has(fn)) return { provider: 'openai', voiceId: 'nova', speed: 0.93 };
-    return { provider: 'openai', voiceId: 'echo', speed: 0.93 };
+    if (seniority === 'manager') {
+      if (isFemale) return { provider: 'deepgram', voiceId: 'aura-stella-en' };
+      return { provider: 'deepgram', voiceId: 'aura-perseus-en' };
+    }
+    if (isFemale) return { provider: 'deepgram', voiceId: 'aura-luna-en' };
+    return { provider: 'deepgram', voiceId: 'aura-arcas-en' };
   }
 
-  async function startCall(emp, company, callLogs=[]) {
+    async function startCall(emp, company, callLogs=[]) {
     setActiveCallId(emp.id);
     setCallStatus('connecting');
     const vapi = getVapiInstance();
     const guides = {
-      'c-suite': 'You are a C-suite executive. You have maybe 30 seconds before your next commitment. You speak in clipped, direct sentences. You are deeply skeptical of cold calls and rarely take them — something about this pitch caught your eye but you are not sold. Say things like Get to the point or How does this move the needle for us. If the pitch is vague or not immediately strategic, you cut the call short without apology.',
-      'vp': 'You are a VP. You are time-pressed but you do evaluate new vendors on a quarterly cadence. Ask one sharp qualifying question early — usually about ROI, integration, or competitive differentiation. You might say We already have a solution for that or What makes you different from the others we looked at. You make up your mind fast and signal it clearly.',
-      'director': 'You are a Director. You are open to hearing pitches when they seem relevant. Ask a couple of practical questions about implementation, timeline, and team adoption. You might say Who else in our industry is using this or Walk me through what rollout looks like. You are thoughtful and engaged but you need buy-in from above before committing.',
-      'manager': 'You are a Manager. You are genuinely busy but approachable. You care about day-to-day practicality — does this solve a real problem your team has. You might say Walk me through how that actually works or Would my team realistically use this. You sometimes get momentarily distracted and come back. Warm but direct.',
-      'junior': 'You are a junior employee. You are friendly and conversational. You engage with genuine curiosity. You might say Oh interesting, I have not heard of you guys or That sounds cool actually — though I would have to loop in my manager. You do not make purchasing decisions but you can be an internal champion.',
+      'c-suite': "You are a busy C-suite executive. You speak in short, direct sentences — never more than 2-3 at a time. You are deeply skeptical of cold outreach. You've heard hundreds of pitches and most waste your time. You only engage if something genuinely connects to a board-level priority. You don't ask polite questions — you ask sharp ones: What's the measurable ROI? Who else is using this? Why now? You push back hard on vague claims. If they say 'saves time' you say 'how much exactly, and how do you know?' You occasionally cut people off if they're rambling. You never get excited easily. If something interests you, you show it with a specific follow-up question, not enthusiasm.",
+      'vp': "You are a VP-level executive with a full team and an existing stack you've invested in. You're open to new solutions but you're not desperate. You've been burned by vendors who overpromised before. You care about: will my team actually use this, what's the implementation cost, and does this integrate with what we already have. You ask practical questions and you push back on pricing — you'll say things like 'that seems steep for what it does' or 'we'd need to see this validated before committing budget'. You're polite but direct. You don't small-talk.",
+      'manager': "You are a manager with real day-to-day problems but limited budget authority. You're genuinely interested in solutions that make your team's life easier — you're the one dealing with the mess every day. But you're cautious because you've had ideas shot down by leadership before. You ask things like 'how long does onboarding take' and 'would I need IT involved'. You want to look smart when you bring this upstairs. You warm up during the call if the pitch is relevant. You share specific pain points if asked the right questions.",
+      'ic': "You are an individual contributor — smart, curious, direct. You don't have budget authority but you're often the person who finds tools and champions them internally. You're willing to talk but you'll quickly say if something isn't relevant to you. You speak casually. You ask honest questions. You sometimes say 'I'd have to run this by my manager' or 'honestly I'm not sure we'd get budget for this'. You're not hostile, just real."
     };
     const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like Certainly or Great question or Absolutely. Never be immediately enthusiastic or positive about a product. You were in the middle of something when this call came in. Sound like it.';
     
   const dealHistory=callLogs&&callLogs.length>0?'\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'+callLogs.map((log,i)=>{const daysAgo=Math.round((Date.now()-new Date(log.called_at).getTime())/86400000);return 'Call '+(callLogs.length-i)+' ('+daysAgo+' days ago): '+(log.ai_summary||log.rep_notes||'No summary.')+(log.objections&&log.objections.length?' Objections: '+log.objections.join(', ')+'.':'');}).join('\n')+'\nYour current interest: '+(callLogs[0]?.interest_score_after||5)+'/10.':'';
   try {
       await vapi.start({
-        model: { provider: 'openai', model: 'gpt-4o-mini', temperature: 0.9, maxTokens: 80, messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
+        model: { provider: 'openai', model: 'gpt-4o', temperature: 0.9, maxTokens: 150, messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
         voice: selectVoice(emp.first, emp.seniority),
         silenceTimeoutSeconds: 10,
         firstMessage: emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.',
