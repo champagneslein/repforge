@@ -462,21 +462,21 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     const isIrish = irish.has(fn);
     const isFemale = female.has(fn);
     if (seniority === 'c-suite') {
-      if (isIrish && !isFemale) return { provider: 'deepgram', voiceId: 'aura-angus-en' };
-      if (isFemale) return { provider: 'deepgram', voiceId: 'aura-athena-en' };
-      return { provider: 'deepgram', voiceId: 'aura-zeus-en' };
+      if (isIrish && !isFemale) return { provider: 'deepgram', voiceId: 'angus' };
+      if (isFemale) return { provider: 'deepgram', voiceId: 'athena' };
+      return { provider: 'deepgram', voiceId: 'zeus' };
     }
     if (seniority === 'vp') {
-      if (isFemale) return { provider: 'deepgram', voiceId: 'aura-asteria-en' };
-      if (isIrish) return { provider: 'deepgram', voiceId: 'aura-angus-en' };
-      return { provider: 'deepgram', voiceId: 'aura-orion-en' };
+      if (isFemale) return { provider: 'deepgram', voiceId: 'asteria' };
+      if (isIrish) return { provider: 'deepgram', voiceId: 'angus' };
+      return { provider: 'deepgram', voiceId: 'orion' };
     }
     if (seniority === 'manager') {
-      if (isFemale) return { provider: 'deepgram', voiceId: 'aura-stella-en' };
-      return { provider: 'deepgram', voiceId: 'aura-perseus-en' };
+      if (isFemale) return { provider: 'deepgram', voiceId: 'stella' };
+      return { provider: 'deepgram', voiceId: 'perseus' };
     }
-    if (isFemale) return { provider: 'deepgram', voiceId: 'aura-luna-en' };
-    return { provider: 'deepgram', voiceId: 'aura-arcas-en' };
+    if (isFemale) return { provider: 'deepgram', voiceId: 'luna' };
+    return { provider: 'deepgram', voiceId: 'arcas' };
   }
 
     async function startCall(emp, company, callLogs=[]) {
