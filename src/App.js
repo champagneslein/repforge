@@ -461,22 +461,22 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','emma','sarah','sophie','claire','rachel','laura','kate','anne','mary','lisa','helen','jane','julia','alice','olivia','grace','emily','charlotte','amy','hannah','leah','ava']);
     const isIrish = irish.has(fn);
     const isFemale = female.has(fn);
+    // ElevenLabs voices — confirmed IDs from account
     if (seniority === 'c-suite') {
-      if (isIrish && !isFemale) return { provider: 'deepgram', voiceId: 'angus' };
-      if (isFemale) return { provider: 'deepgram', voiceId: 'athena' };
-      return { provider: 'deepgram', voiceId: 'zeus' };
+      if (isFemale) return { provider: '11labs', voiceId: 'XrExE9yKIg1WjnnlVkGX' }; // Matilda — professional, authoritative
+      return { provider: '11labs', voiceId: 'pNInz6obpgDQGcFmaJgB' }; // Adam — dominant, firm
     }
     if (seniority === 'vp') {
-      if (isFemale) return { provider: 'deepgram', voiceId: 'asteria' };
-      if (isIrish) return { provider: 'deepgram', voiceId: 'angus' };
-      return { provider: 'deepgram', voiceId: 'orion' };
+      if (isFemale) return { provider: '11labs', voiceId: 'EXAVITQu4vr4xnSDxMaL' }; // Sarah — mature, confident
+      return { provider: '11labs', voiceId: 'nPczCjzI2devNBz1zQrb' }; // Brian — deep, resonant
     }
     if (seniority === 'manager') {
-      if (isFemale) return { provider: 'deepgram', voiceId: 'stella' };
-      return { provider: 'deepgram', voiceId: 'perseus' };
+      if (isFemale) return { provider: '11labs', voiceId: 'cgSgspJ2msm6clMCkdW9' }; // Jessica — warm, engaging
+      return { provider: '11labs', voiceId: 'cjVigY5qzO86Huf0OWal' }; // Eric — smooth, trustworthy
     }
-    if (isFemale) return { provider: 'deepgram', voiceId: 'luna' };
-    return { provider: 'deepgram', voiceId: 'arcas' };
+    // IC / default
+    if (isFemale) return { provider: '11labs', voiceId: 'FGY2WhTYpPnrIDTdsKH5' }; // Laura — enthusiastic
+    return { provider: '11labs', voiceId: 'bIHbv24MWmeRgasZH58o' }; // Will — relaxed, friendly
   }
 
     async function startCall(emp, company, callLogs=[]) {
