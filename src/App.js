@@ -461,22 +461,22 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','emma','sarah','sophie','claire','rachel','laura','kate','anne','mary','lisa','helen','jane','julia','alice','olivia','grace','emily','charlotte','amy','hannah','leah','ava']);
     const isIrish = irish.has(fn);
     const isFemale = female.has(fn);
-    // ElevenLabs pre-made voices — natural, human-sounding
     if (seniority === 'c-suite') {
-      if (isFemale) return { provider: '11labs', voiceId: '21m00Tcm4TlvDq8ikWAM' }; // Rachel — calm, authoritative
-      return { provider: '11labs', voiceId: 'pNInz6obpgDQGcFmaJgB' }; // Adam — deep, executive
+      if (isIrish && !isFemale) return { provider: 'deepgram', voiceId: 'angus' };
+      if (isFemale) return { provider: 'deepgram', voiceId: 'athena' };
+      return { provider: 'deepgram', voiceId: 'zeus' };
     }
     if (seniority === 'vp') {
-      if (isFemale) return { provider: '11labs', voiceId: 'AZnzlk1XvdvUeBnXmlld' }; // Domi — confident
-      return { provider: '11labs', voiceId: 'TxGEqnHWrfWFTfGW9XjX' }; // Josh — assured
+      if (isFemale) return { provider: 'deepgram', voiceId: 'asteria' };
+      if (isIrish) return { provider: 'deepgram', voiceId: 'angus' };
+      return { provider: 'deepgram', voiceId: 'orion' };
     }
     if (seniority === 'manager') {
-      if (isFemale) return { provider: '11labs', voiceId: 'EXAVITQu4vr4xnSDxMaL' }; // Bella — warm
-      return { provider: '11labs', voiceId: 'ErXwobaYiN019PkySvjV' }; // Antoni — natural
+      if (isFemale) return { provider: 'deepgram', voiceId: 'stella' };
+      return { provider: 'deepgram', voiceId: 'perseus' };
     }
-    // IC / default
-    if (isFemale) return { provider: '11labs', voiceId: 'MF3mGyEYCl7XYWbV9V6O' }; // Elli — energetic
-    return { provider: '11labs', voiceId: 'yoZ06aMxZJJ28mfd3POQ' }; // Sam — conversational
+    if (isFemale) return { provider: 'deepgram', voiceId: 'luna' };
+    return { provider: 'deepgram', voiceId: 'arcas' };
   }
 
     async function startCall(emp, company, callLogs=[]) {
