@@ -27,9 +27,9 @@ async function fetchSupabase(endpoint, filter = '') {
                                                                                     }
                                                                                     }
 
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // COMPANY + EMPLOYEE DATA
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 const companies = [
   { id:1,  name:"Nexaflow",         industry:"SaaS",           size:"Enterprise", employees:42, domain:"nexaflow.io",         description:"Cloud workflow automation for enterprise ops teams",        location:"Dublin",         dealValue:75000  },
   { id:2,  name:"CloudPulse",       industry:"SaaS",           size:"Mid-Market", employees:25, domain:"cloudpulse.io",       description:"Real-time analytics and monitoring SaaS",                  location:"London",         dealValue:35000  },
@@ -54,39 +54,39 @@ const companies = [
 ];
 
 const allEmployees = {
-  1:[{id:101,first:"Conor",last:"Murphy",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Serial entrepreneur. Previously exited two SaaS companies. Board member at three Dublin startups.",personality:"Dismissive of generic pitches. Responds only to sharp, outcome-focused messaging after multiple touches. Time is their scarcest resource",posts:["Proud to announce Nexaflow just crossed 500 enterprise customers Ã°ÂÂÂ","Leadership lesson: hire people smarter than you, then get out of their way.","Great panel at SaaS Ireland yesterday on AI in operations. The future is closer than you think."]},
+  1:[{id:101,first:"Conor",last:"Murphy",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Serial entrepreneur. Previously exited two SaaS companies. Board member at three Dublin startups.",personality:"Dismissive of generic pitches. Responds only to sharp, outcome-focused messaging after multiple touches. Time is their scarcest resource",posts:["Proud to announce Nexaflow just crossed 500 enterprise customers ÃÂ°ÃÂÃÂÃÂ","Leadership lesson: hire people smarter than you, then get out of their way.","Great panel at SaaS Ireland yesterday on AI in operations. The future is closer than you think."]},
     {id:102,first:"Rachel",last:"O'Brien",title:"CTO",seniority:"c-suite",bio:"Engineering leader with 15 years in cloud infrastructure. Previously Staff Engineer at AWS.",personality:"Data-driven and technical. Wants proof, not promises. Will ask hard questions if you get through",posts:["We just migrated our entire infrastructure to Kubernetes. 6 months of work. Worth every minute.","Hot take: most SaaS companies over-engineer their MVP. Ship fast, iterate faster."]},
-    {id:103,first:"David",last:"Flynn",title:"VP Sales",seniority:"vp",bio:"Sales leader. 10 years in enterprise SaaS. Love building teams from scratch and scaling revenue.",personality:"Seen every sales tactic. Responds to reps who understand pipeline pain. Needs 3-4 touches before engaging",posts:["Hiring 3 AEs in Dublin right now. DM me if you know anyone strong.","The best salespeople I've hired all had one thing in common: genuine curiosity about the customer's problem.","Q1 closed strong. Team absolutely smashed it Ã°ÂÂÂª"]},
-    {id:104,first:"Siobhan",last:"Kelly",title:"VP Marketing",seniority:"vp",bio:"Brand and demand gen leader. Previously HubSpot EMEA. Passionate about category creation.",personality:"Brand-conscious, ROI-focused. Replies to well-crafted emails. Prefers async over calls",posts:["Content is still king. But distribution is the kingdom.","Just back from SaaStr. The AI narrative is everywhere Ã¢ÂÂ the companies winning are the ones with real ROI stories."]},
+    {id:103,first:"David",last:"Flynn",title:"VP Sales",seniority:"vp",bio:"Sales leader. 10 years in enterprise SaaS. Love building teams from scratch and scaling revenue.",personality:"Seen every sales tactic. Responds to reps who understand pipeline pain. Needs 3-4 touches before engaging",posts:["Hiring 3 AEs in Dublin right now. DM me if you know anyone strong.","The best salespeople I've hired all had one thing in common: genuine curiosity about the customer's problem.","Q1 closed strong. Team absolutely smashed it ÃÂ°ÃÂÃÂÃÂª"]},
+    {id:104,first:"Siobhan",last:"Kelly",title:"VP Marketing",seniority:"vp",bio:"Brand and demand gen leader. Previously HubSpot EMEA. Passionate about category creation.",personality:"Brand-conscious, ROI-focused. Replies to well-crafted emails. Prefers async over calls",posts:["Content is still king. But distribution is the kingdom.","Just back from SaaStr. The AI narrative is everywhere ÃÂ¢ÃÂÃÂ the companies winning are the ones with real ROI stories."]},
     {id:105,first:"Mark",last:"Doyle",title:"Head of Product",seniority:"director",bio:"Product leader focused on workflow automation. Ex-Intercom. Obsessed with reducing friction.",personality:"Pragmatic problem-solver. Will engage if you speak to their specific challenge. Needs 2-3 attempts",posts:["Shipped three new features this week. User feedback has been incredible.","Product managers: your job is to say no. Nicely, but firmly."]},
-    {id:106,first:"Aoife",last:"Walsh",title:"Sales Manager",seniority:"manager",bio:"Building and coaching the Nexaflow sales team. 5 years in B2B SaaS sales.",personality:"Keen to solve team problems quickly. Responds well to empathy and concrete demos. Usually picks up after 1-2 calls",posts:["Ran a great cold call training session with the team today. Practice makes permanent.","New quarter, new goals. Let's go team! Ã°ÂÂÂ¯"]},
-    {id:107,first:"Liam",last:"Burke",title:"Enterprise AE",seniority:"mid",bio:"Enterprise AE at Nexaflow. Helping large ops teams eliminate manual work.",personality:"Not a decision maker but a helpful gatekeeper. Will forward to manager if the pitch is relevant",posts:["Just closed my biggest deal to date. Onwards! Ã°ÂÂÂ"]},
+    {id:106,first:"Aoife",last:"Walsh",title:"Sales Manager",seniority:"manager",bio:"Building and coaching the Nexaflow sales team. 5 years in B2B SaaS sales.",personality:"Keen to solve team problems quickly. Responds well to empathy and concrete demos. Usually picks up after 1-2 calls",posts:["Ran a great cold call training session with the team today. Practice makes permanent.","New quarter, new goals. Let's go team! ÃÂ°ÃÂÃÂÃÂ¯"]},
+    {id:107,first:"Liam",last:"Burke",title:"Enterprise AE",seniority:"mid",bio:"Enterprise AE at Nexaflow. Helping large ops teams eliminate manual work.",personality:"Not a decision maker but a helpful gatekeeper. Will forward to manager if the pitch is relevant",posts:["Just closed my biggest deal to date. Onwards! ÃÂ°ÃÂÃÂÃÂ"]},
     {id:108,first:"Emma",last:"Byrne",title:"Customer Success Manager",seniority:"mid",bio:"Making sure Nexaflow customers get value from day one.",personality:"Focused on customer outcomes. Responds well to product improvements that drive retention",posts:["QBR season is here. Love seeing customers light up when we show them their ROI data."]},
-    {id:109,first:"Sean",last:"Farrell",title:"SDR",seniority:"junior",bio:"SDR at Nexaflow. Learning the ropes and loving it.",personality:"Eager and responsive. Will pass you up immediately. Friendly and enthusiastic",posts:["Week 3 on the job. Already booked my first meeting. Buzzing! Ã¢ÂÂ¡"]},
-    {id:110,first:"Niamh",last:"Clarke",title:"Marketing Coordinator",seniority:"junior",bio:"Marketing team at Nexaflow. Events, content, socials.",personality:"Enthusiastic team player. Not involved in purchases but engaged with content. Easy to reach",posts:["Our booth at TechConnect was a massive success! Thanks to everyone who stopped by Ã°ÂÂÂ"]},
+    {id:109,first:"Sean",last:"Farrell",title:"SDR",seniority:"junior",bio:"SDR at Nexaflow. Learning the ropes and loving it.",personality:"Eager and responsive. Will pass you up immediately. Friendly and enthusiastic",posts:["Week 3 on the job. Already booked my first meeting. Buzzing! ÃÂ¢ÃÂÃÂ¡"]},
+    {id:110,first:"Niamh",last:"Clarke",title:"Marketing Coordinator",seniority:"junior",bio:"Marketing team at Nexaflow. Events, content, socials.",personality:"Enthusiastic team player. Not involved in purchases but engaged with content. Easy to reach",posts:["Our booth at TechConnect was a massive success! Thanks to everyone who stopped by ÃÂ°ÃÂÃÂÃÂ"]},
   ],
   2:[{id:201,first:"James",last:"Sheridan",title:"CEO & Founder",seniority:"c-suite",bio:"Founded CloudPulse after 8 years at Datadog. Building the next generation of ops analytics.",personality:"Founder energy. Approachable but laser-focused on traction. Responds to metrics and momentum",posts:["Thrilled to announce our Series A. Thank you to every customer who believed in us early.","Rule for founders: never be too busy to talk to a customer."]},
     {id:202,first:"Laura",last:"Nolan",title:"Head of Sales",seniority:"director",bio:"Sales leader at CloudPulse. Previously Salesforce and Zendesk.",personality:"Sales veteran. Respects solid methodology. Will take a call if you reference their industry",posts:["Hiring AEs in London. If you can tell me what a good discovery question looks like, you're halfway there.","The best cold email I got this week had three lines and one question. Hired that SDR."]},
     {id:203,first:"Ronan",last:"Higgins",title:"Head of Engineering",seniority:"director",bio:"Engineering at CloudPulse. Prev Google SRE. Obsessed with reliability.",personality:"Engineering-first. Cares about reliability, not hype. Engage with technical depth",posts:["99.99% uptime last quarter. The team deserves all the credit."]},
     {id:204,first:"Clare",last:"Brennan",title:"Sales Manager",seniority:"manager",bio:"Running CloudPulse's mid-market sales motion. Love a clean pipeline.",personality:"Pipeline obsessive. Direct, no-nonsense. Responds to reps who respect her time",posts:["Pipeline review day. Time to separate the real deals from the wishful thinking.","Favourite part of the job: coaching a rep through a tough objection live on a call."]},
-    {id:205,first:"Patrick",last:"Duggan",title:"Account Executive",seniority:"mid",bio:"AE at CloudPulse. Helping ops teams see their data clearly.",personality:"Motivated closer. Responsive to managers and peer reps. Eager to help",posts:["Closed 2 deals this week. Good problems to have on a Friday! Ã°ÂÂÂ"]},
+    {id:205,first:"Patrick",last:"Duggan",title:"Account Executive",seniority:"mid",bio:"AE at CloudPulse. Helping ops teams see their data clearly.",personality:"Motivated closer. Responsive to managers and peer reps. Eager to help",posts:["Closed 2 deals this week. Good problems to have on a Friday! ÃÂ°ÃÂÃÂÃÂ"]},
     {id:206,first:"Aoibhe",last:"Ryan",title:"Marketing Manager",seniority:"manager",bio:"Demand gen and brand at CloudPulse.",personality:"Marketing practitioner. Responds to data-backed pitches. Prefers structured outreach",posts:["Webinar next Tuesday on real-time ops analytics. Register now!"]},
-    {id:207,first:"Cian",last:"McCarthy",title:"SDR",seniority:"junior",bio:"SDR at CloudPulse. Dialing and smiling.",personality:"Hungry SDR. Responds to coaching and peer insight. Very receptive",posts:["100 calls this week. 4 meetings booked. Progress! Ã°ÂÂÂ"]},
-    {id:208,first:"Fiona",last:"O'Sullivan",title:"Operations Coordinator",seniority:"junior",bio:"Ops team at CloudPulse. Keeping things running smoothly.",personality:"Team-oriented. Helpful and responsive. Will pass along info to decision makers",posts:["Team offsite was a blast! Great people here Ã°ÂÂÂ"]},
+    {id:207,first:"Cian",last:"McCarthy",title:"SDR",seniority:"junior",bio:"SDR at CloudPulse. Dialing and smiling.",personality:"Hungry SDR. Responds to coaching and peer insight. Very receptive",posts:["100 calls this week. 4 meetings booked. Progress! ÃÂ°ÃÂÃÂÃÂ"]},
+    {id:208,first:"Fiona",last:"O'Sullivan",title:"Operations Coordinator",seniority:"junior",bio:"Ops team at CloudPulse. Keeping things running smoothly.",personality:"Team-oriented. Helpful and responsive. Will pass along info to decision makers",posts:["Team offsite was a blast! Great people here ÃÂ°ÃÂÃÂÃÂ"]},
   ],
   3:[{id:301,first:"Tom",last:"Keane",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Building Stackly to fix developer productivity. Ex-GitHub. YC W22.",personality:"YC founder mindset. Moves fast, makes decisions quick. Responds to novel approaches",posts:["Just hit 10k developers on the platform. Wild.","The best product feedback comes from watching someone use your product in silence."]},
     {id:302,first:"Sarah",last:"Power",title:"CTO & Co-Founder",seniority:"c-suite",bio:"CTO at Stackly. MIT grad. Code review obsessive.",personality:"Technical perfectionist. Skeptical of over-engineered solutions. Engage on architecture",posts:["Shipped our new AI-assisted review engine today. Weeks of work. Couldn't be prouder of the team."]},
     {id:303,first:"Jack",last:"Lennon",title:"Head of Growth",seniority:"director",bio:"Growth at Stackly. PLG motion, community, partnerships.",personality:"PLG expert. Understands viral loops. Responds to growth mechanics, not features",posts:["PLG tip: your best salespeople are your existing users. Enable them."]},
-    {id:304,first:"Megan",last:"Lawlor",title:"Lead Developer",seniority:"mid",bio:"Fullstack developer at Stackly. TypeScript nerd.",personality:"Developer-focused. Values simplicity and good DX. Helpful peer voice",posts:["Finally fixed that bug that's been haunting me for 3 weeks. Sleep tonight Ã°ÂÂÂ"]},
+    {id:304,first:"Megan",last:"Lawlor",title:"Lead Developer",seniority:"mid",bio:"Fullstack developer at Stackly. TypeScript nerd.",personality:"Developer-focused. Values simplicity and good DX. Helpful peer voice",posts:["Finally fixed that bug that's been haunting me for 3 weeks. Sleep tonight ÃÂ°ÃÂÃÂÃÂ"]},
     {id:305,first:"Kevin",last:"Brady",title:"Sales Rep",seniority:"junior",bio:"First sales hire at Stackly. Learning fast.",personality:"First-time sales rep. Eager, learning fast. Very responsive and coachable",posts:["First week done. This team moves fast. Love it!"]},
   ],
   4:[{id:401,first:"Brian",last:"Cassidy",title:"CEO",seniority:"c-suite",bio:"CEO at Velodata. Data infrastructure background. Ex-Palantir.",personality:"Data infrastructure veteran. Wants integration depth. Responds to technical fit discussions",posts:["Data pipelines shouldn't be a competitive advantage. They should be table stakes. That's what we're building.","Grateful for the team we've assembled. Hire slow."]},
-    {id:402,first:"Karen",last:"Moran",title:"VP Engineering",seniority:"vp",bio:"Engineering leader at Velodata. 12 years in data infrastructure.",personality:"Architecture-driven. Needs to understand your data model. Very technical gatekeeper",posts:["Modern data stack deep dive Ã¢ÂÂ happy to share our architecture if useful. Drop a comment."]},
-    {id:403,first:"Declan",last:"Phelan",title:"Director of Sales",seniority:"director",bio:"Sales at Velodata. Former Snowflake. Love a complex technical sale.",personality:"Complex deal expert. Enjoys the long sales cycle. Responds to consultative approach",posts:["Technical sales tip: understand the data flow before you understand the budget.","Closed a 7-figure deal today. Long cycle, worth it. Team effort. Ã°ÂÂÂ"]},
+    {id:402,first:"Karen",last:"Moran",title:"VP Engineering",seniority:"vp",bio:"Engineering leader at Velodata. 12 years in data infrastructure.",personality:"Architecture-driven. Needs to understand your data model. Very technical gatekeeper",posts:["Modern data stack deep dive ÃÂ¢ÃÂÃÂ happy to share our architecture if useful. Drop a comment."]},
+    {id:403,first:"Declan",last:"Phelan",title:"Director of Sales",seniority:"director",bio:"Sales at Velodata. Former Snowflake. Love a complex technical sale.",personality:"Complex deal expert. Enjoys the long sales cycle. Responds to consultative approach",posts:["Technical sales tip: understand the data flow before you understand the budget.","Closed a 7-figure deal today. Long cycle, worth it. Team effort. ÃÂ°ÃÂÃÂÃÂ"]},
     {id:404,first:"Aisling",last:"Tobin",title:"Product Manager",seniority:"manager",bio:"PM at Velodata. Connector-obsessed.",personality:"Connector-obsessed. Practical PM. Responds to feature requests from customers",posts:["We just added Salesforce + dbt connectors. Customers have been asking for months."]},
     {id:405,first:"Fergal",last:"O'Dwyer",title:"Account Executive",seniority:"mid",bio:"AE at Velodata. Selling data pipelines to data teams.",personality:"Mid-level AE. Strong peer voice. Will engage easily",posts:["Nothing like a customer saying 'this just works' to make your week."]},
     {id:406,first:"Ruth",last:"Hennessy",title:"Data Analyst",seniority:"mid",bio:"Data analyst at Velodata. Numbers tell stories.",personality:"Numbers-focused analyst. Helpful for building cases. Can champion internally",posts:[]},
-    {id:407,first:"Cathal",last:"Dunne",title:"SDR",seniority:"junior",bio:"SDR at Velodata. Learning technical sales.",personality:"Learning technical sales. Responds well to demos and 1:1 support",posts:["Booked my first enterprise meeting today! Ã°ÂÂÂ"]},
+    {id:407,first:"Cathal",last:"Dunne",title:"SDR",seniority:"junior",bio:"SDR at Velodata. Learning technical sales.",personality:"Learning technical sales. Responds well to demos and 1:1 support",posts:["Booked my first enterprise meeting today! ÃÂ°ÃÂÃÂÃÂ"]},
   ],
   5:[{id:501,first:"Gerard",last:"Connolly",title:"CEO",seniority:"c-suite",bio:"CEO at ShieldOps. 20 years in cybersecurity. Former CISO turned founder.",personality:"Security veteran, founder energy. Visionary but practical. Responds to industry insight",posts:["The threat landscape has fundamentally changed. Endpoint protection alone is no longer enough.","Thrilled to welcome three new enterprise customers this quarter. The pipeline is strong."]},
     {id:502,first:"Denise",last:"Hanlon",title:"CISO",seniority:"c-suite",bio:"CISO at ShieldOps. Former Head of Security at AIB. Board advisor to two fintech firms.",personality:"CISO authority. Board-savvy. Responds to executive positioning and risk framing",posts:["Ransomware attacks up 40% YoY. If you don't have an incident response plan, you're already behind.","Speaking at CyberDublin next month on zero-trust implementation. Register if you're attending."]},
@@ -95,14 +95,14 @@ const allEmployees = {
     {id:505,first:"Niall",last:"Regan",title:"Security Architect",seniority:"manager",bio:"Security architecture and design at ShieldOps.",personality:"Security architect. Philosophy-driven. Engages deeply on approach, not product",posts:["Zero trust isn't a product. It's a philosophy. Fight me."]},
     {id:506,first:"Eimear",last:"Daly",title:"Threat Intelligence Lead",seniority:"manager",bio:"Threat intel and analysis at ShieldOps.",personality:"Threat intel specialist. Current events knowledge. Engages on risk narratives",posts:["New threat actor targeting Irish financial institutions. Briefing clients now."]},
     {id:507,first:"Shane",last:"Cunningham",title:"SOC Manager",seniority:"manager",bio:"Managing the ShieldOps SOC team.",personality:"SOC manager. Overworked, coffee-dependent. Responds to relief, not complexity",posts:["24/7 SOC life. Coffee is not optional."]},
-    {id:508,first:"Ciara",last:"Fitzpatrick",title:"Compliance Manager",seniority:"manager",bio:"Compliance and regulatory at ShieldOps. GDPR, NIS2, DORA.",personality:"Compliance specialist. Regulatory lens. Engages on frameworks and standards",posts:["DORA deadline approaching. Financial firms Ã¢ÂÂ are you ready?"]},
+    {id:508,first:"Ciara",last:"Fitzpatrick",title:"Compliance Manager",seniority:"manager",bio:"Compliance and regulatory at ShieldOps. GDPR, NIS2, DORA.",personality:"Compliance specialist. Regulatory lens. Engages on frameworks and standards",posts:["DORA deadline approaching. Financial firms ÃÂ¢ÃÂÃÂ are you ready?"]},
     {id:509,first:"Alan",last:"Delaney",title:"Penetration Tester",seniority:"mid",bio:"Ethical hacker at ShieldOps. Breaking things so customers don't have to.",personality:"Ethical hacker mindset. Technical depth required. Responds to advanced concepts",posts:["Just completed a red team engagement. Can't share details obviously. But wow."]},
-    {id:510,first:"Orla",last:"Quinn",title:"Security Analyst",seniority:"junior",bio:"Junior security analyst at ShieldOps. Always learning.",personality:"Junior analyst, learning. Eager, responsive. Will loop in managers",posts:["Passed my CEH exam! Ã°ÂÂÂ"]},
+    {id:510,first:"Orla",last:"Quinn",title:"Security Analyst",seniority:"junior",bio:"Junior security analyst at ShieldOps. Always learning.",personality:"Junior analyst, learning. Eager, responsive. Will loop in managers",posts:["Passed my CEH exam! ÃÂ°ÃÂÃÂÃÂ"]},
   ],
   6:[{id:601,first:"Brendan",last:"Forde",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at CipherEdge. Identity obsessive. Ex-Okta.",personality:"Identity obsessive, founder. Visionary and technical. Responds to strategic fit",posts:["Identity is the new perimeter. We've been saying this for three years. The market is finally listening."]},
     {id:602,first:"Yvonne",last:"Stapleton",title:"Head of Security",seniority:"director",bio:"Security engineering at CipherEdge.",personality:"Security engineer. Deep technical. Wants whitepaper depth. Engineering peer conversation",posts:["Our zero-trust framework white paper is live. Link in comments."]},
     {id:603,first:"Colm",last:"Sheridan",title:"Sales Director",seniority:"director",bio:"Sales at CipherEdge. 10 years in identity and access management.",personality:"Identity sales expert. Strategic framing required. Responds to business impact",posts:["Every CISO I've spoken to this month has mentioned identity as their top priority. We're in the right place at the right time."]},
-    {id:604,first:"Sinead",last:"Whelan",title:"Identity & Access Manager",seniority:"manager",bio:"IAM specialist at CipherEdge.",personality:"IAM specialist. Standards and best practice driven. Engages on technical implementation",posts:["MFA fatigue is a real attack vector. Here's how to mitigate it: Ã°ÂÂ§Âµ"]},
+    {id:604,first:"Sinead",last:"Whelan",title:"Identity & Access Manager",seniority:"manager",bio:"IAM specialist at CipherEdge.",personality:"IAM specialist. Standards and best practice driven. Engages on technical implementation",posts:["MFA fatigue is a real attack vector. Here's how to mitigate it: ÃÂ°ÃÂÃÂ§ÃÂµ"]},
     {id:605,first:"Darragh",last:"Murphy",title:"AE",seniority:"mid",bio:"Account Executive at CipherEdge.",personality:"Enterprise AE. Responsive to manager guidance. Mid-level peer voice",posts:[]},
     {id:606,first:"Leah",last:"O'Connor",title:"SDR",seniority:"junior",bio:"SDR at CipherEdge. Learning the security space.",personality:"Junior SDR. Learning security. Very responsive and eager to connect",posts:["Great team, great product. Excited to be here!"]},
   ],
@@ -115,7 +115,7 @@ const allEmployees = {
     {id:802,first:"Maeve",last:"Donovan",title:"CISO",seniority:"c-suite",bio:"CISO at Fortivex. Board-level security advisor.",personality:"Board-level CISO. Executive presence. Needs strategic business framing",posts:["Board members: cybersecurity is not an IT issue. It's a business risk issue. Time to treat it that way."]},
     {id:803,first:"Ronan",last:"Foley",title:"VP Sales EMEA",seniority:"vp",bio:"VP Sales EMEA at Fortivex.",personality:"Enterprise EMEA VP. Quota-driven. Responds to pipeline opportunity",posts:["EMEA pipeline looking very healthy heading into H2. Team is firing on all cylinders."]},
     {id:804,first:"Grainne",last:"Lawless",title:"Director, SOC Automation",seniority:"director",bio:"SOC automation specialist at Fortivex.",personality:"SOC automation expert. Operational mindset. Engages on process improvement",posts:["Automation doesn't replace analysts. It frees them to do the work that actually matters."]},
-    {id:805,first:"Barry",last:"Malone",title:"Enterprise Sales Manager",seniority:"manager",bio:"Enterprise sales at Fortivex.",personality:"Enterprise sales manager. Long cycle expert. Responds to structured deals",posts:["Closed a 3-year enterprise deal today. Longest sales cycle I've ever run. Worth it. Ã°ÂÂÂ"]},
+    {id:805,first:"Barry",last:"Malone",title:"Enterprise Sales Manager",seniority:"manager",bio:"Enterprise sales at Fortivex.",personality:"Enterprise sales manager. Long cycle expert. Responds to structured deals",posts:["Closed a 3-year enterprise deal today. Longest sales cycle I've ever run. Worth it. ÃÂ°ÃÂÃÂÃÂ"]},
     {id:806,first:"Cliona",last:"Healy",title:"SOC Analyst",seniority:"mid",bio:"SOC analyst at Fortivex.",personality:"SOC analyst practitioner. Helpful peer. Will champion good tools",posts:[]},
     {id:807,first:"Fergus",last:"Dolan",title:"SDR",seniority:"junior",bio:"SDR at Fortivex. Breaking into the security sales world.",personality:"Junior SDR. Breaking into security. Eager and responsive",posts:["Cold calling CISOs is not for the faint-hearted. But I'm learning fast."]},
   ],
@@ -126,9 +126,9 @@ const allEmployees = {
     {id:905,first:"Donal",last:"Hartigan",title:"Director of Procurement",seniority:"director",bio:"Procurement at IronCore. 150+ supplier relationships.",personality:"Procurement lead. Risk and vendor management. Engages on supplier benefits",posts:["Supplier diversity isn't just ethical. It's strategic risk management."]},
     {id:906,first:"Teresa",last:"Coughlan",title:"Supply Chain Manager",seniority:"manager",bio:"Supply chain at IronCore.",personality:"Supply chain coordinator. Process-focused. Helpful internal voice",posts:[]},
     {id:907,first:"Paddy",last:"Sheehan",title:"Operations Manager",seniority:"manager",bio:"Operations at IronCore.",personality:"Operations manager. Lean philosophy. Responds to waste elimination",posts:["Great lean workshop with the team today. Waste elimination never stops."]},
-    {id:908,first:"Louise",last:"Tracey",title:"Quality Control Manager",seniority:"manager",bio:"QC at IronCore. Zero defects is the goal.",personality:"Quality obsessive. Zero-defect mentality. Engages on quality metrics",posts:["ISO 9001 audit passed with zero non-conformances. Team effort! Ã°ÂÂÂ"]},
+    {id:908,first:"Louise",last:"Tracey",title:"Quality Control Manager",seniority:"manager",bio:"QC at IronCore. Zero defects is the goal.",personality:"Quality obsessive. Zero-defect mentality. Engages on quality metrics",posts:["ISO 9001 audit passed with zero non-conformances. Team effort! ÃÂ°ÃÂÃÂÃÂ"]},
     {id:909,first:"Kevin",last:"Dunford",title:"Production Supervisor",seniority:"mid",bio:"Production supervisor at IronCore.",personality:"Production supervisor. Hands-on. Practical, results-focused",posts:[]},
-    {id:910,first:"Denise",last:"Gleeson",title:"EHS Coordinator",seniority:"junior",bio:"EHS at IronCore. Safety first, always.",personality:"EHS coordinator. Safety-first culture. Responsive to team",posts:["1000 days without a lost-time incident! Ã°ÂÂÂ"]},
+    {id:910,first:"Denise",last:"Gleeson",title:"EHS Coordinator",seniority:"junior",bio:"EHS at IronCore. Safety first, always.",personality:"EHS coordinator. Safety-first culture. Responsive to team",posts:["1000 days without a lost-time incident! ÃÂ°ÃÂÃÂÃÂ"]},
   ],
   10:[{id:1001,first:"Seamus",last:"Fitzgibbon",title:"MD & Owner",seniority:"c-suite",bio:"Owner and MD of PrecisionWorks. Family business, third generation.",personality:"Family business owner. Long-term mindset. Responds to stability and growth",posts:["40 years of precision engineering. Still learning every day.","Cork manufacturing is alive and well. Proud to be part of it."]},
     {id:1002,first:"Mary",last:"Quigley",title:"Operations Director",seniority:"director",bio:"Operations at PrecisionWorks.",personality:"Operations director. Equipment and capability focused. Engages on manufacturing",posts:["New CNC equipment installed this week. Massive upgrade in our capability."]},
@@ -144,7 +144,7 @@ const allEmployees = {
   ],
   12:[{id:1201,first:"Robert",last:"Kearney",title:"CEO",seniority:"c-suite",bio:"CEO at FluxTech. Advanced materials pioneer.",personality:"Materials pioneer, CEO. Innovation-focused. Responds to advanced tech",posts:["Composite materials are reshaping aerospace, automotive, and construction. We're at the centre of it."]},
     {id:1202,first:"Helen",last:"Dempsey",title:"VP Operations",seniority:"vp",bio:"VP Ops at FluxTech. Scaling manufacturing excellence.",personality:"Operations VP. Scaling expert. Engages on manufacturing excellence",posts:["Operational resilience is the competitive advantage nobody talks about enough."]},
-    {id:1203,first:"Ciaran",last:"Moynihan",title:"R&D Director",seniority:"director",bio:"R&D lead at FluxTech. Material science nerd.",personality:"R&D director. Patent-driven. Technical depth required",posts:["New patent filed this week. Can't say more yet. Watch this space Ã°ÂÂÂ"]},
+    {id:1203,first:"Ciaran",last:"Moynihan",title:"R&D Director",seniority:"director",bio:"R&D lead at FluxTech. Material science nerd.",personality:"R&D director. Patent-driven. Technical depth required",posts:["New patent filed this week. Can't say more yet. Watch this space ÃÂ°ÃÂÃÂÃÂ"]},
     {id:1204,first:"Noreen",last:"Fahy",title:"Procurement Manager",seniority:"manager",bio:"Procurement at FluxTech.",personality:"Procurement manager. Supplier and materials focus",posts:[]},
     {id:1205,first:"Alan",last:"Staunton",title:"Process Engineer",seniority:"mid",bio:"Process engineering at FluxTech.",personality:"Process engineer. Operational improvement mindset",posts:[]},
     {id:1206,first:"Roisin",last:"Neary",title:"Quality Technician",seniority:"junior",bio:"Quality assurance at FluxTech.",personality:"Quality technician. Quality systems focused. Helpful peer",posts:[]},
@@ -156,7 +156,7 @@ const allEmployees = {
     {id:1305,first:"Dermot",last:"Farley",title:"Head of Compliance",seniority:"director",bio:"Compliance at CapitalBridge. MiFID II, EMIR, DORA.",personality:"Compliance director. Regulatory framework. Engages on standards and governance",posts:["DORA compliance is not optional. It's time to treat it with the urgency it deserves."]},
     {id:1306,first:"Lorna",last:"Fagan",title:"Head of Partnerships",seniority:"director",bio:"Partnerships and BD at CapitalBridge.",personality:"Partnerships head. Business development focused. Strategic relationship play",posts:["Three new partnerships announced this quarter. Exciting times ahead."]},
     {id:1307,first:"Tim",last:"Galligan",title:"Risk Manager",seniority:"manager",bio:"Risk management at CapitalBridge.",personality:"Risk manager. Risk-averse perspective. Engages on mitigation",posts:[]},
-    {id:1308,first:"Elaine",last:"Maguire",title:"Sales Manager",seniority:"manager",bio:"Sales management at CapitalBridge.",personality:"Sales manager, fintech. Quota-focused. Responds to pipeline",posts:["Great team, great quarter. Onwards to Q3! Ã°ÂÂÂ¯"]},
+    {id:1308,first:"Elaine",last:"Maguire",title:"Sales Manager",seniority:"manager",bio:"Sales management at CapitalBridge.",personality:"Sales manager, fintech. Quota-focused. Responds to pipeline",posts:["Great team, great quarter. Onwards to Q3! ÃÂ°ÃÂÃÂÃÂ¯"]},
     {id:1309,first:"Ross",last:"Kiernan",title:"Financial Analyst",seniority:"mid",bio:"Financial analysis at CapitalBridge.",personality:"Financial analyst. Numbers-focused. Helpful internal analyst",posts:[]},
     {id:1310,first:"Amy",last:"Doherty",title:"SDR",seniority:"junior",bio:"SDR at CapitalBridge. Learning financial services sales.",personality:"Junior SDR. Learning fintech. Eager and responsive",posts:["Week one in fintech sales. Steep learning curve. Loving it."]},
   ],
@@ -165,7 +165,7 @@ const allEmployees = {
     {id:1403,first:"Colm",last:"Nash",title:"Head of Sales",seniority:"director",bio:"Sales at Moneta Labs.",personality:"Sales director. Fintech relationship expert. Responds to partnership fit",posts:["Fintech sales is a relationship business. Full stop."]},
     {id:1404,first:"Roisin",last:"Smyth",title:"Compliance Lead",seniority:"manager",bio:"Compliance at Moneta Labs.",personality:"Compliance lead. Regulatory focus. Engages on governance",posts:[]},
     {id:1405,first:"Darragh",last:"Cullinane",title:"AE",seniority:"mid",bio:"Account Executive at Moneta Labs.",personality:"AE, mid-level. Responsive peer voice",posts:[]},
-    {id:1406,first:"Grace",last:"Langan",title:"Marketing Executive",seniority:"junior",bio:"Marketing at Moneta Labs.",personality:"Junior marketing exec. Brand-focused. Responsive and eager",posts:["Our new brand is live! Check it out Ã¢ÂÂ¨"]},
+    {id:1406,first:"Grace",last:"Langan",title:"Marketing Executive",seniority:"junior",bio:"Marketing at Moneta Labs.",personality:"Junior marketing exec. Brand-focused. Responsive and eager",posts:["Our new brand is live! Check it out ÃÂ¢ÃÂÃÂ¨"]},
   ],
   15:[{id:1501,first:"Ken",last:"Morrissey",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at PayStream. Fintech operator. Payment reconciliation obsessive.",personality:"Founder, fintech. Reconciliation expert. Responds to specific SMB pain",posts:["Every finance team I speak to has the same problem: too much time on reconciliation, not enough on analysis. We fix that."]},
     {id:1502,first:"Jackie",last:"Naughton",title:"Head of Finance",seniority:"director",bio:"Finance lead at PayStream.",personality:"Finance leader. Numbers obsessive. Engages on metrics",posts:[]},
@@ -173,7 +173,7 @@ const allEmployees = {
     {id:1504,first:"Laura",last:"Slattery",title:"Customer Success Rep",seniority:"junior",bio:"CS at PayStream.",personality:"Junior CS rep. Helpful and responsive",posts:[]},
   ],
   16:[{id:1601,first:"Richard",last:"Hackett",title:"CEO",seniority:"c-suite",bio:"CEO at FinAxis Group. 20 years in financial regulation and risk.",personality:"Regulatory veteran, CEO. Risk framework mindset. Responds to compliance advantage",posts:["Regulatory complexity is accelerating. The firms that will win are the ones that turn compliance into a competitive advantage."]},
-    {id:1602,first:"Fiona",last:"Quigley",title:"Chief Compliance Officer",seniority:"c-suite",bio:"CCO at FinAxis Group. Board-level regulatory advisor.",personality:"Board-level CCO. Executive authority. Strategic regulatory positioning required",posts:["DORA, NIS2, Basel IV Ã¢ÂÂ the regulatory pipeline is full. Start now."]},
+    {id:1602,first:"Fiona",last:"Quigley",title:"Chief Compliance Officer",seniority:"c-suite",bio:"CCO at FinAxis Group. Board-level regulatory advisor.",personality:"Board-level CCO. Executive authority. Strategic regulatory positioning required",posts:["DORA, NIS2, Basel IV ÃÂ¢ÃÂÃÂ the regulatory pipeline is full. Start now."]},
     {id:1603,first:"Eoin",last:"Sexton",title:"VP Sales EMEA",seniority:"vp",bio:"VP Sales EMEA at FinAxis Group.",personality:"VP Sales EMEA. RegTech expert. Responds to timing and momentum",posts:["RegTech is having its moment. We've been ready for years."]},
     {id:1604,first:"Grainne",last:"Cronin",title:"Head of Risk",seniority:"director",bio:"Risk management at FinAxis Group.",personality:"Risk director. Model risk focus. Engages on quantitative rigor",posts:["Model risk is the next frontier. Most firms are woefully underprepared."]},
     {id:1605,first:"Ruairi",last:"O'Neill",title:"Sales Manager",seniority:"manager",bio:"Sales manager at FinAxis Group.",personality:"Sales manager. Quota and compliance balance. Responds to pipeline",posts:[]},
@@ -197,28 +197,28 @@ const allEmployees = {
     {id:1904,first:"Tara",last:"Gannon",title:"Head of Partnerships",seniority:"director",bio:"Partnerships and alliances at RetailEdge.",personality:"Partnerships head. Ecosystem play. Engages on integration",posts:["Just announced our Shopify Plus partnership. Big news for our customers."]},
     {id:1905,first:"Barry",last:"Jennings",title:"Enterprise Sales Manager",seniority:"manager",bio:"Enterprise sales at RetailEdge.",personality:"Enterprise sales manager. Long retail cycles. Responds to consultative approach",posts:[]},
     {id:1906,first:"Lisa",last:"Donoghue",title:"AE",seniority:"mid",bio:"Account Executive at RetailEdge.",personality:"AE, mid-level. Responsive peer",posts:[]},
-    {id:1907,first:"Oisin",last:"Magee",title:"SDR",seniority:"junior",bio:"SDR at RetailEdge.",personality:"Junior SDR. Learning retail. Eager and responsive",posts:["First meeting booked with a top-10 UK retailer. Yes! Ã°ÂÂÂ¯"]},
+    {id:1907,first:"Oisin",last:"Magee",title:"SDR",seniority:"junior",bio:"SDR at RetailEdge.",personality:"Junior SDR. Learning retail. Eager and responsive",posts:["First meeting booked with a top-10 UK retailer. Yes! ÃÂ°ÃÂÃÂÃÂ¯"]},
   ],
   20:[{id:2001,first:"Mick",last:"Harrington",title:"MD & Founder",seniority:"c-suite",bio:"Founder at BuildRight. 20 years in construction, last 5 in construction tech.",personality:"Construction founder. Industry digitization focus. Responds to site reality",posts:["Construction is the last major industry to be digitised. We're changing that.","Great to see Irish construction tech getting recognition at Build Digital Summit."]},
     {id:2002,first:"Brid",last:"Fallon",title:"Operations Director",seniority:"director",bio:"Operations at BuildRight.",personality:"Operations director. Construction operations. Practical process focus",posts:[]},
-    {id:2003,first:"SeÃÂ¡n",last:"Power",title:"Head of Projects",seniority:"director",bio:"Project management at BuildRight.",personality:"Project management head. Digital delivery expert. Responds to efficiency gains",posts:["Digital project management has cut our delays by 30%. The data doesn't lie."]},
+    {id:2003,first:"SeÃÂÃÂ¡n",last:"Power",title:"Head of Projects",seniority:"director",bio:"Project management at BuildRight.",personality:"Project management head. Digital delivery expert. Responds to efficiency gains",posts:["Digital project management has cut our delays by 30%. The data doesn't lie."]},
     {id:2004,first:"Joan",last:"Kerrigan",title:"Compliance Manager",seniority:"manager",bio:"Compliance and health & safety at BuildRight.",personality:"Compliance manager. H&S obsessed. Engages on safety impact",posts:["H&S compliance in construction is life and death. We take it seriously."]},
     {id:2005,first:"Liam",last:"Cronin",title:"Project Manager",seniority:"mid",bio:"Project manager at BuildRight.",personality:"Project manager. Site-focused. Practical, responsive",posts:[]},
     {id:2006,first:"Aoibhinn",last:"Sheehan",title:"Site Coordinator",seniority:"junior",bio:"Site coordination at BuildRight.",personality:"Site coordinator. Ground-level voice. Helpful and engaged",posts:[]},
   ],
 };
 
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // EMAIL DELAY BY SENIORITY (simulation days)
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 const emailDelay = { "c-suite": 5, "vp": 3, "director": 2, "manager": 1, "mid": 0, "junior": 0 };
 const emailResponseChance = { "c-suite": 0.45, "vp": 0.65, "director": 0.80, "mid": 0.95, "junior": 0.98 };
 const linkedinDelay = { "c-suite": 7, "vp": 4, "director": 3, "manager": 2, "mid": 1, "junior": 0 };
 const linkedinAcceptChance = { "c-suite": 0.35, "vp": 0.55, "director": 0.70, "manager": 0.80, "mid": 0.90, "junior": 0.95 };
 
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // ATTEMPT THRESHOLDS BY SENIORITY
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // How many call ATTEMPTS before there's a real chance of connecting
 const minCallsToConnect = { "c-suite": 4, "vp": 3, "director": 2, "manager": 1, "mid": 0, "junior": 0 };
 // How many emails must be sent before they'll reply
@@ -229,44 +229,44 @@ const attemptsNeededLabel = { "c-suite": "4-5 touches needed", "vp": "3-4 touche
 
 const emailReplies = {
   "c-suite": ["I don't usually respond to cold outreach but this is relevant. What does implementation look like?", "Forwarded to our Head of Enablement. They'll be in touch if there's a fit.", "Interesting. Send me the ROI case in one page. No decks.", "We might have a need for this in Q3. My EA will reach out if so."],
-  "vp": ["This is timely Ã¢ÂÂ we just hired a new cohort. Can you send more detail on the scoring methodology?", "I've seen tools like this before. What makes yours different? Be specific.", "Looks relevant. What's the commercial model?", "Happy to take a 20-minute call. What does your calendar look like Thursday?"],
-  "director": ["Thanks Ã¢ÂÂ this is actually something we've been discussing internally. Can you send a one-pager?", "Relevant timing Ã¢ÂÂ we're onboarding 4 new AEs next month. Happy to jump on a call.", "I've shared this with my Sales Manager. They'll follow up.", "This looks interesting. What does a typical pilot look like?"],
+  "vp": ["This is timely ÃÂ¢ÃÂÃÂ we just hired a new cohort. Can you send more detail on the scoring methodology?", "I've seen tools like this before. What makes yours different? Be specific.", "Looks relevant. What's the commercial model?", "Happy to take a 20-minute call. What does your calendar look like Thursday?"],
+  "director": ["Thanks ÃÂ¢ÃÂÃÂ this is actually something we've been discussing internally. Can you send a one-pager?", "Relevant timing ÃÂ¢ÃÂÃÂ we're onboarding 4 new AEs next month. Happy to jump on a call.", "I've shared this with my Sales Manager. They'll follow up.", "This looks interesting. What does a typical pilot look like?"],
   "manager": ["This is exactly the problem I've been trying to solve. Can we jump on a call this week?", "We just had two new reps struggle in their first month. Very timely. When are you free?", "Love the concept. Send me a demo link and I'll take a look today.", "My team would benefit from this. Let me loop in my VP."],
-  "mid": ["Thanks Ã¢ÂÂ I've forwarded this to my manager. They're the right person to speak to.", "Hi! Not really my area but I've passed this on to the sales manager."],
-  "junior": ["Hi! This looks cool Ã¢ÂÂ I've forwarded it to my manager. They'll be the right person to chat to Ã°ÂÂÂ", "Hey! Passed this to the right person internally Ã¢ÂÂ they'll reach out if there's interest!"],
+  "mid": ["Thanks ÃÂ¢ÃÂÃÂ I've forwarded this to my manager. They're the right person to speak to.", "Hi! Not really my area but I've passed this on to the sales manager."],
+  "junior": ["Hi! This looks cool ÃÂ¢ÃÂÃÂ I've forwarded it to my manager. They'll be the right person to chat to ÃÂ°ÃÂÃÂÃÂ", "Hey! Passed this to the right person internally ÃÂ¢ÃÂÃÂ they'll reach out if there's interest!"],
 };
 
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // PROLINK MESSAGE REPLIES BY SENIORITY
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 const linkedinMessageReplies = {
   "c-suite": ["Thanks for connecting. What's on your mind?", "Happy to connect. What are you working on?"],
   "vp": ["Good to connect! What can I help with?", "Thanks for the connection. What's this about?"],
-  "director": ["Thanks for connecting! Always happy to chat sales tech.", "Good to connect Ã¢ÂÂ what are you building?"],
+  "director": ["Thanks for connecting! Always happy to chat sales tech.", "Good to connect ÃÂ¢ÃÂÃÂ what are you building?"],
   "manager": ["Hi! Great to connect. What's the product about?", "Hey! Thanks for reaching out. Tell me more?"],
-  "mid": ["Hi! Nice to connect Ã°ÂÂÂ What do you do?", "Hey, good to connect! What brings you my way?"],
-  "junior": ["Hi!! Great to connect! Ã°ÂÂÂ", "Hey, welcome to ProLink! What do you do?"],
+  "mid": ["Hi! Nice to connect ÃÂ°ÃÂÃÂÃÂ What do you do?", "Hey, good to connect! What brings you my way?"],
+  "junior": ["Hi!! Great to connect! ÃÂ°ÃÂÃÂÃÂ", "Hey, welcome to ProLink! What do you do?"],
 };
 
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // CALL MECHANIC
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 const callConnectChance = { "c-suite": 0.18, "vp": 0.28, "director": 0.40, "manager": 0.55, "mid": 0.70, "junior": 0.82 };
 const callConnectedLines = {
-  "c-suite": ["I have two minutes. Make it count.", "Who is this? I'm between meetings.", "You've got sixty seconds Ã¢ÂÂ what's the pitch?", "I'm literally walking into a boardroom. Email me."],
-  "vp": ["I'm heading into a call Ã¢ÂÂ can you send me an email first?", "Sure, I can talk for a few minutes. What's this about?", "I saw your email actually. Tell me more.", "Good timing. I've got five minutes."],
-  "director": ["Hi! Yes, what can I do for you?", "Good timing Ã¢ÂÂ I was just thinking about this space.", "Sure, I have a few minutes.", "Hi! Glad you called actually."],
+  "c-suite": ["I have two minutes. Make it count.", "Who is this? I'm between meetings.", "You've got sixty seconds ÃÂ¢ÃÂÃÂ what's the pitch?", "I'm literally walking into a boardroom. Email me."],
+  "vp": ["I'm heading into a call ÃÂ¢ÃÂÃÂ can you send me an email first?", "Sure, I can talk for a few minutes. What's this about?", "I saw your email actually. Tell me more.", "Good timing. I've got five minutes."],
+  "director": ["Hi! Yes, what can I do for you?", "Good timing ÃÂ¢ÃÂÃÂ I was just thinking about this space.", "Sure, I have a few minutes.", "Hi! Glad you called actually."],
   "manager": ["Hey! Great timing, I've been thinking about this exact problem.", "Hi! Yes, happy to chat. What do you have?", "Oh interesting! Tell me more.", "Hi! We literally just had a team meeting about this."],
-  "mid": ["Hi! Let me grab my manager Ã¢ÂÂ they're the right person for this.", "Sure, but I'm not the decision maker here. Let me transfer you.", "Hi! I can chat but you'd really need to speak to my boss."],
+  "mid": ["Hi! Let me grab my manager ÃÂ¢ÃÂÃÂ they're the right person for this.", "Sure, but I'm not the decision maker here. Let me transfer you.", "Hi! I can chat but you'd really need to speak to my boss."],
   "junior": ["Hi! Oh wow, sure! Let me get someone who can help you!", "Hey! I'll pass you to my manager right now!", "Hi! I'm not sure I'm the right person but happy to listen!"],
 };
 const callVoicemailLines = {
   "c-suite": ["You've reached the voicemail of [name]. Leave a message after the tone.", "Hi, I'm not available right now. Please leave a brief message."],
-  "vp": ["You've reached [name]. I'm either on a call or out of office. Leave a message and I'll get back to you.", "Hi, this is [name]. Can't take your call right now Ã¢ÂÂ leave a message."],
-  "director": ["Hi, [name] here. I'm not available Ã¢ÂÂ please leave your name and number.", "You've reached [name]'s voicemail. Leave a message and I'll call you back."],
+  "vp": ["You've reached [name]. I'm either on a call or out of office. Leave a message and I'll get back to you.", "Hi, this is [name]. Can't take your call right now ÃÂ¢ÃÂÃÂ leave a message."],
+  "director": ["Hi, [name] here. I'm not available ÃÂ¢ÃÂÃÂ please leave your name and number.", "You've reached [name]'s voicemail. Leave a message and I'll call you back."],
   "manager": ["Hey, it's [name]! Can't get to the phone. Leave a message and I'll call you back!", "Hi! This is [name]. I'll call you back as soon as I can."],
-  "mid": ["Hey, it's [name]! Leave me a message and I'll get back to you!", "Hi, [name] here Ã¢ÂÂ well, not exactly. Leave a message!"],
-  "junior": ["Hey, it's [name]! I'll call you back super soon! Ã°ÂÂÂ", "Hi! [name] here Ã¢ÂÂ can't take your call right now but leave a message!"],
+  "mid": ["Hey, it's [name]! Leave me a message and I'll get back to you!", "Hi, [name] here ÃÂ¢ÃÂÃÂ well, not exactly. Leave a message!"],
+  "junior": ["Hey, it's [name]! I'll call you back super soon! ÃÂ°ÃÂÃÂÃÂ", "Hi! [name] here ÃÂ¢ÃÂÃÂ can't take your call right now but leave a message!"],
 };
 const callGatekeeperLines = [
   "Hi, this is reception. Can I ask who's calling and what it's regarding?",
@@ -275,30 +275,30 @@ const callGatekeeperLines = [
   "Thanks for calling. Are you expected?",
 ];
 
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // MEETING MECHANIC
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 const meetingAcceptChance = { "c-suite": 0.55, "vp": 0.65, "director": 0.75, "manager": 0.85, "mid": 0.35, "junior": 0.25 };
 const meetingBookedReplies = {
-  "c-suite": ["Let's do it. 30 minutes next Tuesday Ã¢ÂÂ my EA will send an invite.", "I've got 20 minutes Thursday at 3pm. Confirmed."],
-  "vp": ["Booked Ã¢ÂÂ Thursday works. Looking forward to it.", "Happy to. I'll send a calendar invite for next week."],
-  "director": ["Sure Ã¢ÂÂ let's put something in the diary. Tuesday at 11am?", "Happy to chat. I'll send a slot over for next week."],
-  "manager": ["Absolutely Ã¢ÂÂ this week works. How's Wednesday at 2pm?", "Yes! Let's do it. I'll send a calendar link now."],
-  "mid": ["I'll check with my manager first but I'm happy to be on the call.", "I'd need to loop in my boss Ã¢ÂÂ can you send the invite to them too?"],
-  "junior": ["I'll forward this to my manager Ã¢ÂÂ they'll be the right person!", "I need to check with the team but I think this could work!"],
+  "c-suite": ["Let's do it. 30 minutes next Tuesday ÃÂ¢ÃÂÃÂ my EA will send an invite.", "I've got 20 minutes Thursday at 3pm. Confirmed."],
+  "vp": ["Booked ÃÂ¢ÃÂÃÂ Thursday works. Looking forward to it.", "Happy to. I'll send a calendar invite for next week."],
+  "director": ["Sure ÃÂ¢ÃÂÃÂ let's put something in the diary. Tuesday at 11am?", "Happy to chat. I'll send a slot over for next week."],
+  "manager": ["Absolutely ÃÂ¢ÃÂÃÂ this week works. How's Wednesday at 2pm?", "Yes! Let's do it. I'll send a calendar link now."],
+  "mid": ["I'll check with my manager first but I'm happy to be on the call.", "I'd need to loop in my boss ÃÂ¢ÃÂÃÂ can you send the invite to them too?"],
+  "junior": ["I'll forward this to my manager ÃÂ¢ÃÂÃÂ they'll be the right person!", "I need to check with the team but I think this could work!"],
 };
 const meetingDeclinedReplies = {
   "c-suite": ["Not the right time for us. Will keep you in mind for Q3.", "We're heads down this quarter. Come back in six months."],
-  "vp": ["We've already invested in a solution here. Thanks though.", "Budget is locked for the year Ã¢ÂÂ not one for us right now."],
+  "vp": ["We've already invested in a solution here. Thanks though.", "Budget is locked for the year ÃÂ¢ÃÂÃÂ not one for us right now."],
   "director": ["We'd need more internal alignment before a call. Thanks for reaching out.", "Not quite the right fit for the team at the moment."],
-  "manager": ["Good timing but we're mid-project. Come back in 6 weeks?", "I'd need sign-off from above Ã¢ÂÂ this isn't purely my call."],
+  "manager": ["Good timing but we're mid-project. Come back in 6 weeks?", "I'd need sign-off from above ÃÂ¢ÃÂÃÂ this isn't purely my call."],
   "mid": ["I've passed your details on but we're not looking at this currently.", "Thanks but I think we're covered on this."],
-  "junior": ["I'll pass it along but I don't think we're in the market right now!", "Thanks Ã¢ÂÂ I'll let the team know but I think we're good!"],
+  "junior": ["I'll pass it along but I don't think we're in the market right now!", "Thanks ÃÂ¢ÃÂÃÂ I'll let the team know but I think we're good!"],
 };
 
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // HELPERS
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 const sizeColors = { "Enterprise":"bg-purple-100 text-purple-700","Mid-Market":"bg-blue-100 text-blue-700","SMB":"bg-green-100 text-green-700" };
 const industryColors = { "SaaS":"bg-sky-100 text-sky-700","Cyber Security":"bg-red-100 text-red-700","Manufacturing":"bg-orange-100 text-orange-700","Fintech":"bg-yellow-100 text-[#FBBF24]","Energy":"bg-green-100 text-green-700","Healthcare":"bg-pink-100 text-pink-700","Retail Tech":"bg-indigo-100 text-indigo-700","Construction":"bg-amber-100 text-amber-700" };
 const seniorityColors = { "c-suite":"bg-red-100 text-red-700","vp":"bg-orange-100 text-orange-700","director":"bg-yellow-100 text-[#FBBF24]","manager":"bg-blue-100 text-blue-700","mid":"bg-gray-100 text-[#7A9CC4]","junior":"bg-green-100 text-green-700" };
@@ -338,9 +338,9 @@ function initState() {
   return state;
 }
 
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 // MAIN APP
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 
 async function supaSignUp(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/signup',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
 async function supaSignIn(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/authTok?grant_type=password',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
@@ -446,6 +446,11 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const [labTarget,setLabTarget] = React.useState(null);
   const [labTurns,setLabTurns] = React.useState(8);
   const [labResults,setLabResults] = React.useState([]);
+  const [labMode,setLabMode] = React.useState('pipeline');
+  const [pipelineLog,setPipelineLog] = React.useState([]);
+  const [pipelineStage,setPipelineStage] = React.useState(null);
+  const [pipelineScore,setPipelineScore] = React.useState(null);
+  const [pipelineRunning,setPipelineRunning] = React.useState(false);
 
   const vapiRef = useRef(null);
   const [activeCallId, setActiveCallId] = useState(null);
@@ -472,22 +477,22 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','emma','sarah','sophie','claire','rachel','laura','kate','anne','mary','lisa','helen','jane','julia','alice','olivia','grace','emily','charlotte','amy','hannah','leah','ava']);
     const isIrish = irish.has(fn);
     const isFemale = female.has(fn);
-    // ElevenLabs voices Ã¢ÂÂ confirmed IDs from account
+    // ElevenLabs voices ÃÂ¢ÃÂÃÂ confirmed IDs from account
     if (seniority === 'c-suite') {
-      if (isFemale) return { provider: '11labs', voiceId: 'XrExE9yKIg1WjnnlVkGX' }; // Matilda Ã¢ÂÂ professional, authoritative
-      return { provider: '11labs', voiceId: 'pNInz6obpgDQGcFmaJgB' }; // Adam Ã¢ÂÂ dominant, firm
+      if (isFemale) return { provider: '11labs', voiceId: 'XrExE9yKIg1WjnnlVkGX' }; // Matilda ÃÂ¢ÃÂÃÂ professional, authoritative
+      return { provider: '11labs', voiceId: 'pNInz6obpgDQGcFmaJgB' }; // Adam ÃÂ¢ÃÂÃÂ dominant, firm
     }
     if (seniority === 'vp') {
-      if (isFemale) return { provider: '11labs', voiceId: 'EXAVITQu4vr4xnSDxMaL' }; // Sarah Ã¢ÂÂ mature, confident
-      return { provider: '11labs', voiceId: 'nPczCjzI2devNBz1zQrb' }; // Brian Ã¢ÂÂ deep, resonant
+      if (isFemale) return { provider: '11labs', voiceId: 'EXAVITQu4vr4xnSDxMaL' }; // Sarah ÃÂ¢ÃÂÃÂ mature, confident
+      return { provider: '11labs', voiceId: 'nPczCjzI2devNBz1zQrb' }; // Brian ÃÂ¢ÃÂÃÂ deep, resonant
     }
     if (seniority === 'manager') {
-      if (isFemale) return { provider: '11labs', voiceId: 'cgSgspJ2msm6clMCkdW9' }; // Jessica Ã¢ÂÂ warm, engaging
-      return { provider: '11labs', voiceId: 'cjVigY5qzO86Huf0OWal' }; // Eric Ã¢ÂÂ smooth, trustworthy
+      if (isFemale) return { provider: '11labs', voiceId: 'cgSgspJ2msm6clMCkdW9' }; // Jessica ÃÂ¢ÃÂÃÂ warm, engaging
+      return { provider: '11labs', voiceId: 'cjVigY5qzO86Huf0OWal' }; // Eric ÃÂ¢ÃÂÃÂ smooth, trustworthy
     }
     // IC / default
-    if (isFemale) return { provider: '11labs', voiceId: 'FGY2WhTYpPnrIDTdsKH5' }; // Laura Ã¢ÂÂ enthusiastic
-    return { provider: '11labs', voiceId: 'bIHbv24MWmeRgasZH58o' }; // Will Ã¢ÂÂ relaxed, friendly
+    if (isFemale) return { provider: '11labs', voiceId: 'FGY2WhTYpPnrIDTdsKH5' }; // Laura ÃÂ¢ÃÂÃÂ enthusiastic
+    return { provider: '11labs', voiceId: 'bIHbv24MWmeRgasZH58o' }; // Will ÃÂ¢ÃÂÃÂ relaxed, friendly
   }
 
     async function startCall(emp, company, callLogs=[]) {
@@ -495,12 +500,12 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     setCallStatus('connecting');
     const vapi = getVapiInstance();
     const guides = {
-      'c-suite': "You are a busy C-suite executive. You speak in short, direct sentences Ã¢ÂÂ never more than 2-3 at a time. You are deeply skeptical of cold outreach. You've heard hundreds of pitches and most waste your time. You only engage if something genuinely connects to a board-level priority. You don't ask polite questions Ã¢ÂÂ you ask sharp ones: What's the measurable ROI? Who else is using this? Why now? You push back hard on vague claims. If they say 'saves time' you say 'how much exactly, and how do you know?' You occasionally cut people off if they're rambling. You never get excited easily. If something interests you, you show it with a specific follow-up question, not enthusiasm.",
-      'vp': "You are a VP-level executive with a full team and an existing stack you've invested in. You're open to new solutions but you're not desperate. You've been burned by vendors who overpromised before. You care about: will my team actually use this, what's the implementation cost, and does this integrate with what we already have. You ask practical questions and you push back on pricing Ã¢ÂÂ you'll say things like 'that seems steep for what it does' or 'we'd need to see this validated before committing budget'. You're polite but direct. You don't small-talk.",
-      'manager': "You are a manager with real day-to-day problems but limited budget authority. You're genuinely interested in solutions that make your team's life easier Ã¢ÂÂ you're the one dealing with the mess every day. But you're cautious because you've had ideas shot down by leadership before. You ask things like 'how long does onboarding take' and 'would I need IT involved'. You want to look smart when you bring this upstairs. You warm up during the call if the pitch is relevant. You share specific pain points if asked the right questions.",
-      'ic': "You are an individual contributor Ã¢ÂÂ smart, curious, direct. You don't have budget authority but you're often the person who finds tools and champions them internally. You're willing to talk but you'll quickly say if something isn't relevant to you. You speak casually. You ask honest questions. You sometimes say 'I'd have to run this by my manager' or 'honestly I'm not sure we'd get budget for this'. You're not hostile, just real."
+      'c-suite': "You are a busy C-suite executive. You speak in short, direct sentences ÃÂ¢ÃÂÃÂ never more than 2-3 at a time. You are deeply skeptical of cold outreach. You've heard hundreds of pitches and most waste your time. You only engage if something genuinely connects to a board-level priority. You don't ask polite questions ÃÂ¢ÃÂÃÂ you ask sharp ones: What's the measurable ROI? Who else is using this? Why now? You push back hard on vague claims. If they say 'saves time' you say 'how much exactly, and how do you know?' You occasionally cut people off if they're rambling. You never get excited easily. If something interests you, you show it with a specific follow-up question, not enthusiasm.",
+      'vp': "You are a VP-level executive with a full team and an existing stack you've invested in. You're open to new solutions but you're not desperate. You've been burned by vendors who overpromised before. You care about: will my team actually use this, what's the implementation cost, and does this integrate with what we already have. You ask practical questions and you push back on pricing ÃÂ¢ÃÂÃÂ you'll say things like 'that seems steep for what it does' or 'we'd need to see this validated before committing budget'. You're polite but direct. You don't small-talk.",
+      'manager': "You are a manager with real day-to-day problems but limited budget authority. You're genuinely interested in solutions that make your team's life easier ÃÂ¢ÃÂÃÂ you're the one dealing with the mess every day. But you're cautious because you've had ideas shot down by leadership before. You ask things like 'how long does onboarding take' and 'would I need IT involved'. You want to look smart when you bring this upstairs. You warm up during the call if the pitch is relevant. You share specific pain points if asked the right questions.",
+      'ic': "You are an individual contributor ÃÂ¢ÃÂÃÂ smart, curious, direct. You don't have budget authority but you're often the person who finds tools and champions them internally. You're willing to talk but you'll quickly say if something isn't relevant to you. You speak casually. You ask honest questions. You sometimes say 'I'd have to run this by my manager' or 'honestly I'm not sure we'd get budget for this'. You're not hostile, just real."
     };
-    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call Ã¢ÂÂ not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like Certainly or Great question or Absolutely. Never be immediately enthusiastic or positive about a product. You were in the middle of something when this call came in. Sound like it.';
+    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call ÃÂ¢ÃÂÃÂ not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like Certainly or Great question or Absolutely. Never be immediately enthusiastic or positive about a product. You were in the middle of something when this call came in. Sound like it.';
     
   const dealHistory=callLogs&&callLogs.length>0?'\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'+callLogs.map((log,i)=>{const daysAgo=Math.round((Date.now()-new Date(log.called_at).getTime())/86400000);return 'Call '+(callLogs.length-i)+' ('+daysAgo+' days ago): '+(log.ai_summary||log.rep_notes||'No summary.')+(log.objections&&log.objections.length?' Objections: '+log.objections.join(', ')+'.':'');}).join('\n')+'\nYour current interest: '+(callLogs[0]?.interest_score_after||5)+'/10.':'';
   try {
@@ -524,7 +529,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     const target = allEmps[Math.floor(Math.random() * allEmps.length)];
     const co = companies.find(c => c.id === target.cId) || {name:'their company',industry:'tech'};
     setLabTarget(target);
-    const guides = {'c-suite':'You are a busy C-suite exec. Be skeptical. Short sentences.','vp':'VP. Open to solutions, ask tough ROI questions.','manager':'Manager, real problems, limited budget.','ic':'IC — smart, direct, no budget.'};
+    const guides = {'c-suite':'You are a busy C-suite exec. Be skeptical. Short sentences.','vp':'VP. Open to solutions, ask tough ROI questions.','manager':'Manager, real problems, limited budget.','ic':'IC â smart, direct, no budget.'};
     const prospectSys = `You are ${target.first} ${target.last}, ${target.title} at ${co.name}. ${guides[target.seniority]||guides['ic']} Industry: ${co.industry}. Have real challenges but don't reveal easily. 2-4 sentences per response. Answer good qualifying questions. Push back on pitches without discovery.`;
     const agentSys = agentPrompt.trim() + `\n\nProspect: ${target.first} ${target.last}, ${target.title} at ${co.name} (${co.industry}).`;
     const pH=[{role:'system',content:prospectSys}]; const aH=[{role:'system',content:agentSys}]; const cv=[];
@@ -546,6 +551,65 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
       catch(e){setLabScore({grade:'?',overall:0,meddic:0,objections:0,rapport:0,nextStep:0,summary:'Scoring failed',strength:'-',weakness:'-'});}
     }catch(e){console.error('Lab error',e);}
     setLabRunning(false);
+  }
+  async function runFullPipeline() {
+    if (!apiKey || !agentPrompt.trim() || allEmps.length === 0) return;
+    setPipelineRunning(true); setPipelineLog([]); setPipelineScore(null); setPipelineStage('email');
+    const target = allEmps[Math.floor(Math.random() * allEmps.length)];
+    const co = companies.find(c => c.id === target.cId) || {name:'Acme Corp',industry:'tech'};
+    setLabTarget(target);
+    const guides = {'c-suite':'Busy C-suite exec. Very skeptical, protective of time.','vp':'VP level. Open if ROI is clear. Asks tough ROI questions.','manager':'Manager with real pains, limited budget authority.','ic':'Smart IC. Direct. No budget influence.'};
+    const prospectSys = "You are "+target.first+" "+target.last+", "+target.title+" at "+co.name+". "+(guides[target.seniority]||guides['ic'])+" Industry: "+co.industry+". You have real operational challenges but don't reveal them easily. React authentically. Keep responses 2-3 sentences.";
+    const log = [];
+    const addLog = (stage, role, content) => { log.push({stage,role,content}); setPipelineLog([...log]); };
+    const gpt = async (msgs, tok) => {
+      tok = tok||250;
+      try {
+        const r = await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+apiKey},body:JSON.stringify({model:'gpt-4o',messages:msgs,max_tokens:tok,temperature:0.8})});
+        const d = await r.json(); return d.choices?.[0]?.message?.content||'';
+      } catch(e) { return ''; }
+    };
+    try {
+      setPipelineStage('email');
+      const emailMsg = await gpt([{role:'system',content:agentPrompt.trim()+" You are reaching out to "+target.first+" "+target.last+", "+target.title+" at "+co.name+" ("+co.industry+"). Write a cold outreach email with subject line. Max 150 words. Be specific and personalized."},{role:'user',content:'Write the cold email now.'}],300);
+      addLog('email','agent',emailMsg);
+      setPipelineStage('reply');
+      const prospectReply = await gpt([{role:'system',content:prospectSys},{role:'user',content:"You received this cold email:\n\n"+emailMsg+"\n\nReply authentically. You are somewhat interested but skeptical. 2-3 sentences."}],150);
+      addLog('reply','prospect',prospectReply);
+      setPipelineStage('followup');
+      const followUp = await gpt([{role:'system',content:agentPrompt.trim()},{role:'user',content:"You sent a cold email and got this reply:\n\n"+prospectReply+"\n\nFollow up to move toward booking a 15-min discovery call. Be brief and direct."}],200);
+      addLog('followup','agent',followUp);
+      const objection = await gpt([{role:'system',content:prospectSys},{role:'user',content:"Sales rep said:\n\n"+followUp+"\n\nRaise a real objection (timing, budget, have a solution, not a priority). Be direct. 2 sentences."}],100);
+      addLog('followup','prospect',objection);
+      setPipelineStage('booking');
+      const booking = await gpt([{role:'system',content:agentPrompt.trim()},{role:'user',content:"Prospect said:\n\n"+objection+"\n\nHandle the objection and try to book a 15-min call. Empathetic and compelling. 2-3 sentences."}],200);
+      addLog('booking','agent',booking);
+      const bookConfirm = await gpt([{role:'system',content:prospectSys},{role:'user',content:"Sales rep said:\n\n"+booking+"\n\nYou agree to a short call. Confirm a time. 1-2 sentences."}],80);
+      addLog('booking','prospect',bookConfirm);
+      setPipelineStage('discovery');
+      const discPH = [{role:'system',content:prospectSys}];
+      const discAH = [{role:'system',content:agentPrompt.trim()+" You are on a live 15-min discovery call with "+target.first+" "+target.last+", "+target.title+" at "+co.name+". Run structured discovery using MEDDIC. Uncover pain. Build rapport. Keep turns to 2-3 sentences."}];
+      for(let t=0;t<4;t++){
+        const agentTurn = await gpt(discAH,180);
+        addLog('discovery','agent',agentTurn);
+        discAH.push({role:'assistant',content:agentTurn});
+        discPH.push({role:'user',content:agentTurn});
+        const prospectTurn = await gpt(discPH,150);
+        addLog('discovery','prospect',prospectTurn);
+        discPH.push({role:'assistant',content:prospectTurn});
+        discAH.push({role:'user',content:prospectTurn});
+      }
+      setPipelineStage('scoring');
+      const transcript = log.map(e=>'['+e.stage.toUpperCase()+'] '+(e.role==='agent'?'AGENT':'PROSPECT')+': '+e.content).join('\n\n');
+      const scoreRes = await gpt([{role:'user',content:'You are an expert sales coach. Score this full sales pipeline simulation:\n\n'+transcript+'\n\nReturn ONLY valid JSON (no markdown):\n{"emailQuality":0,"objectionHandling":0,"discoverySkill":0,"meddic":0,"overall":0,"grade":"A","bookedCall":true,"summary":"summary","strength":"strength","weakness":"weakness"} fill in real numbers 0-100 and real text.'}],400);
+      try {
+        const sc = JSON.parse(scoreRes.replace(/```json|```/g,'').trim());
+        setPipelineScore(sc);
+        setLabResults(p=>[{agentName:agentName||'Agent',grade:sc.grade,overall:sc.overall,mode:'pipeline',target:target.first+' '+target.last,company:co.name,ts:new Date().toLocaleTimeString()},...p.slice(0,9)]);
+      } catch(e) { setPipelineScore({grade:'?',overall:0,emailQuality:0,objectionHandling:0,discoverySkill:0,meddic:0,summary:'Scoring failed.',strength:'-',weakness:'-'}); }
+    } catch(e) { console.error('Pipeline error',e); }
+    setPipelineStage('done');
+    setPipelineRunning(false);
   }
 
   async function generateAIReply(emp, company, emailThread) {
@@ -723,7 +787,7 @@ function sendEmail(emp, company, subject, body) {
     setState(prev => ({ ...prev, [emp.id]: { ...prev[emp.id], linkedinMsgs: newMsgs } }));
   }
 
-  // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ INBOX DATA Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+  // ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ INBOX DATA ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
   const inbox = allEmps.filter(e => state[e.id]?.emailStatus === "replied").map(e => ({ emp:e, company:getCompanyForEmp(e.id), thread:state[e.id].emailThread }));
   const sent = allEmps.filter(e => ["sent","replied"].includes(state[e.id]?.emailStatus)).map(e => ({ emp:e, company:getCompanyForEmp(e.id), thread:state[e.id].emailThread }));
   const pending = allEmps.filter(e => state[e.id]?.emailStatus === "sent").length;
@@ -750,19 +814,19 @@ function sendEmail(emp, company, subject, body) {
     return { grade:"F", label:"Below Target", color:"text-red-700", bg:"bg-red-50 border-red-200" };
   }
 
-  // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ FEED POSTS Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
-  // Ã¢ÂÂÃ¢ÂÂ EXTRA BUYING SIGNAL / CHALLENGE POSTS Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+  // ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ FEED POSTS ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+  // ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ EXTRA BUYING SIGNAL / CHALLENGE POSTS ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
   const EXTRA_FEED_POSTS = [
     { empId:101, type:'signal', text:"We're actively evaluating workflow automation platforms for Q3. Our current stack can't handle the volume since we crossed 500 customers. Open to recommendations from anyone who's gone through a similar eval.", time:'2h', likes:34, comments:8 },
     { empId:201, type:'signal', text:"Honest question: how are other SaaS companies handling data pipeline complexity at scale? We're starting to hit serious limits with our current tooling. DMs welcome.", time:'4h', likes:27, comments:11 },
     { empId:301, type:'challenge', text:"Biggest challenge right now: we've doubled headcount in 6 months but our internal tooling hasn't kept up. Starting to look at what enterprises use to manage this kind of growth.", time:'5h', likes:41, comments:15 },
     { empId:104, type:'signal', text:"Quarter review coming up and I'm building a shortlist of analytics platforms. ROI visibility is #1 criteria. What's everyone using in 2025?", time:'6h', likes:19, comments:7 },
-    { empId:202, type:'signal', text:"Our sales team is growing fast and we're outgrowing our current CRM. Looking at alternatives Ã¢ÂÂ needs to integrate with our stack and scale to 30+ reps.", time:'8h', likes:22, comments:9 },
+    { empId:202, type:'signal', text:"Our sales team is growing fast and we're outgrowing our current CRM. Looking at alternatives ÃÂ¢ÃÂÃÂ needs to integrate with our stack and scale to 30+ reps.", time:'8h', likes:22, comments:9 },
     { empId:102, type:'signal', text:"Making a decision on infra tooling next month. If you've deployed at Series B scale in the last 18 months I'd love to chat. What did you go with and why?", time:'12h', likes:31, comments:14 },
     { empId:302, type:'challenge', text:"Nobody talks about the hidden cost of switching vendors: it's not just the software, it's the 6-week migration. We're in the middle of one now. Painful doesn't cover it.", time:'14h', likes:55, comments:22 },
     { empId:501, type:'signal', text:"Kicking off a vendor review for automated threat detection. Any security leaders who've evaluated this space recently? Would appreciate a candid conversation.", time:'16h', likes:29, comments:10 },
     { empId:105, type:'insight', text:"Unpopular opinion: most B2B demos show you the happy path. Push for a live session with your own messy data. You'll learn 10x more in 20 minutes.", time:'18h', likes:87, comments:31 },
-    { empId:203, type:'milestone', text:"Just closed our Series A. Incredible team effort. Now the real work begins Ã¢ÂÂ rebuilding our engineering org from scratch. We're hiring across the board.", time:'1d', likes:124, comments:47 },
+    { empId:203, type:'milestone', text:"Just closed our Series A. Incredible team effort. Now the real work begins ÃÂ¢ÃÂÃÂ rebuilding our engineering org from scratch. We're hiring across the board.", time:'1d', likes:124, comments:47 },
     { empId:303, type:'challenge', text:"Sales motion breaks when your ICP shifts. We built our playbook for SMB but 40% of pipeline is now mid-market. Rebuilding everything in real time while still hitting quota.", time:'1d', likes:63, comments:24 },
     { empId:401, type:'challenge', text:"Compliance is becoming a bottleneck. GDPR + SOC2 is eating 20% of engineering bandwidth. Actively looking at tools that automate more of this without sacrificing coverage.", time:'1d', likes:38, comments:13 },
     { empId:502, type:'challenge', text:"Hardest part of security leadership: convincing the board to invest before an incident. By then it's too late. Any CISOs who've cracked this communication problem?", time:'2d', likes:74, comments:28 },
@@ -796,9 +860,9 @@ function sendEmail(emp, company, subject, body) {
     </button>
   );
 
-  // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+  // ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
   // RENDER
-  // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+  // ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 
   // Fetch scheduled calls
   React.useEffect(()=>{
@@ -890,11 +954,11 @@ function generateDemoObjections(dd,pName,cName){
   const budget=dd&&dd.budget?dd.budget:'your budget';
   const timeline=dd&&dd.timeline?dd.timeline:'your timeline';
   return[
-    {id:1,cat:'Competitor',icon:'Ã¢ÂÂÃ¯Â¸Â',text:`How does this compare to ${comp}? We've used them for years.`},
-    {id:2,cat:'Pricing',icon:'Ã°ÂÂÂ°',text:`This seems expensive. How does it fit ${budget}?`},
-    {id:3,cat:'Feature',icon:'Ã°ÂÂÂ',text:`Walk me through how this solves ${pain}.`},
-    {id:4,cat:'Timeline',icon:'Ã¢ÂÂ±Ã¯Â¸Â',text:`How long is implementation? We need this in ${timeline}.`},
-    {id:5,cat:'Risk',icon:'Ã¢ÂÂ Ã¯Â¸Â',text:`What if we start and it doesn't work? What's the exit clause?`},
+    {id:1,cat:'Competitor',icon:'ÃÂ¢ÃÂÃÂÃÂ¯ÃÂ¸ÃÂ',text:`How does this compare to ${comp}? We've used them for years.`},
+    {id:2,cat:'Pricing',icon:'ÃÂ°ÃÂÃÂÃÂ°',text:`This seems expensive. How does it fit ${budget}?`},
+    {id:3,cat:'Feature',icon:'ÃÂ°ÃÂÃÂÃÂ',text:`Walk me through how this solves ${pain}.`},
+    {id:4,cat:'Timeline',icon:'ÃÂ¢ÃÂÃÂ±ÃÂ¯ÃÂ¸ÃÂ',text:`How long is implementation? We need this in ${timeline}.`},
+    {id:5,cat:'Risk',icon:'ÃÂ¢ÃÂÃÂ ÃÂ¯ÃÂ¸ÃÂ',text:`What if we start and it doesn't work? What's the exit clause?`},
   ];
 }
 React.useEffect(()=>{
@@ -904,7 +968,7 @@ React.useEffect(()=>{
   return()=>timers.forEach(clearTimeout);
 },[sessionActive,activeSession&&activeSession.id]);
 
-// Ã¢ÂÂÃ¢ÂÂ ProLink enrichment helpers Ã¢ÂÂÃ¢ÂÂ
+// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ ProLink enrichment helpers ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
 function getPersonaPhoto(id){return 'https://i.pravatar.cc/150?u=rpf'+id;}
 function getPersonaConnections(id){const b=[412,867,1203,543,2100,789,1567,334,901,1456];return b[id%b.length]+(id*7)%200;}
 function getPersonaPainPoints(emp,company){
@@ -933,7 +997,7 @@ function getPersonaPosts(emp,company){
   const t=tags[ind]||['#Tech','#Innovation','#Leadership'];
   const timings=['1d','2d','3d','5d','1w','2w'];
   return [
-    {text:sen==='c-suite'?'Three years ago '+cn+' had 12 customers. Today we serve over '+(Math.floor(rng(1)*400)+100)+' enterprise teams across Europe.\n\nThe thing nobody tells you about scaling a '+ind+' company: the hardest part isn\'t product. It\'s people and process. Every time.\n\nWe\'re hiring senior ICs. DM me if you know someone.':sen==='vp'?'Spent Q2 rebuilding how our team approaches '+(title.includes('Sales')?'pipeline management and forecasting':'cross-functional delivery and prioritisation')+'..\nBiggest lesson: slow down to speed up. Teams that skip alignment always pay for it in rework and morale.\n'+cn+' is in a really strong position heading into H2.':'Just wrapped a very productive sprint at '+cn+'.\nThe team is shipping faster than ever Ã¢ÂÂ and the quality bar keeps rising. Proud to be part of this one.',
+    {text:sen==='c-suite'?'Three years ago '+cn+' had 12 customers. Today we serve over '+(Math.floor(rng(1)*400)+100)+' enterprise teams across Europe.\n\nThe thing nobody tells you about scaling a '+ind+' company: the hardest part isn\'t product. It\'s people and process. Every time.\n\nWe\'re hiring senior ICs. DM me if you know someone.':sen==='vp'?'Spent Q2 rebuilding how our team approaches '+(title.includes('Sales')?'pipeline management and forecasting':'cross-functional delivery and prioritisation')+'..\nBiggest lesson: slow down to speed up. Teams that skip alignment always pay for it in rework and morale.\n'+cn+' is in a really strong position heading into H2.':'Just wrapped a very productive sprint at '+cn+'.\nThe team is shipping faster than ever ÃÂ¢ÃÂÃÂ and the quality bar keeps rising. Proud to be part of this one.',
 
 
 
@@ -941,13 +1005,13 @@ function getPersonaPosts(emp,company){
 
 
      likes:Math.floor(likeBase*(0.8+rng(2)*0.5)),comments:Math.floor(comBase*(0.8+rng(3)*0.5)),timeAgo:timings[id%3],tags:[t[0],t[1]],hasImage:false},
-    {text:sen==='c-suite'?'Hot take: most '+ind+' companies are solving the wrong problem.\n\nEveryone is chasing feature parity. The winners are obsessing over workflow and time-to-value.\n\nWe saw this pattern two years ago at '+cn+' and made a hard pivot. Best decision we ever made.\n\nWhat\'s your take?':sen==='vp'?'Controversial opinion: the biggest bottleneck in most '+ind+' orgs isn\'t headcount.\n\nIt\'s tooling debt.\n\nWe spent 6 months at '+cn+' ripping out systems that were slowing us down. The ROI showed up in 90 days flat.':'If you\'re in '+ind+' and not paying attention to how AI is changing '+(title.includes('Sales')||title.includes('Marketing')?'go-to-market':'operations')+', you\'re already behind.\n\nSome notes from a workshop I attended this week Ã¢ÂÂ thread below.',
+    {text:sen==='c-suite'?'Hot take: most '+ind+' companies are solving the wrong problem.\n\nEveryone is chasing feature parity. The winners are obsessing over workflow and time-to-value.\n\nWe saw this pattern two years ago at '+cn+' and made a hard pivot. Best decision we ever made.\n\nWhat\'s your take?':sen==='vp'?'Controversial opinion: the biggest bottleneck in most '+ind+' orgs isn\'t headcount.\n\nIt\'s tooling debt.\n\nWe spent 6 months at '+cn+' ripping out systems that were slowing us down. The ROI showed up in 90 days flat.':'If you\'re in '+ind+' and not paying attention to how AI is changing '+(title.includes('Sales')||title.includes('Marketing')?'go-to-market':'operations')+', you\'re already behind.\n\nSome notes from a workshop I attended this week ÃÂ¢ÃÂÃÂ thread below.',
      likes:Math.floor(likeBase*(0.6+rng(4)*0.8)),comments:Math.floor(comBase*(0.6+rng(5)*0.7)),timeAgo:timings[(id+1)%4+1],tags:[t[2]],hasImage:id%5===0},
-    {text:sen==='c-suite'||sen==='vp'?'We just made a call that made us uncomfortable.\n\nWe said no to a Ã¢ÂÂ¬'+(Math.floor(rng(6)*400)+150)+'k deal because the customer wasn\'t the right fit for where '+cn+' is going.\n\nEarly stage you take every deal. Later stage you realise bad-fit customers cost more than they\'re worth. Churn, support load, culture damage.\n\nBuilding for the long game.':'Looking for recommendations Ã¢ÂÂ what tools is your team using for '+(title.includes('Eng')||title.includes('CTO')?'CI/CD and code quality monitoring':title.includes('Sales')?'sales engagement and pipeline visibility':'project management and async communication')+' in 2025?\n\nWe\'re evaluating options at '+cn+' right now. Drop a comment Ã°ÂÂÂ',
+    {text:sen==='c-suite'||sen==='vp'?'We just made a call that made us uncomfortable.\n\nWe said no to a ÃÂ¢ÃÂÃÂ¬'+(Math.floor(rng(6)*400)+150)+'k deal because the customer wasn\'t the right fit for where '+cn+' is going.\n\nEarly stage you take every deal. Later stage you realise bad-fit customers cost more than they\'re worth. Churn, support load, culture damage.\n\nBuilding for the long game.':'Looking for recommendations ÃÂ¢ÃÂÃÂ what tools is your team using for '+(title.includes('Eng')||title.includes('CTO')?'CI/CD and code quality monitoring':title.includes('Sales')?'sales engagement and pipeline visibility':'project management and async communication')+' in 2025?\n\nWe\'re evaluating options at '+cn+' right now. Drop a comment ÃÂ°ÃÂÃÂÃÂ',
      likes:Math.floor(likeBase*(0.9+rng(7)*0.4)),comments:Math.floor(comBase*(1.2+rng(8)*0.8)),timeAgo:timings[(id+2)%5],tags:[t[id%t.length]],hasImage:false},
     {text:'Reflecting on what\'s actually hard about working in '+ind+' right now:\n\n1. '+(sen==='c-suite'?'Finding people who think commercially AND technically':'Getting visibility into what leadership actually cares about')+'\n2. '+(title.includes('Sales')?'Keeping pipeline quality high under quota pressure':'Shipping fast without accumulating tech/process debt')+'\n3. '+(company.employees>30?'Maintaining culture as the team grows':'Doing more with less')+'\n\nNone of this is new. All of it is harder in '+new Date().getFullYear()+'.',
      likes:Math.floor(likeBase*(1.0+rng(9)*0.4)),comments:Math.floor(comBase*(0.9+rng(10)*0.5)),timeAgo:timings[(id+3)%timings.length],tags:[t[0],t[t.length-1]],hasImage:false},
-    {text:sen==='c-suite'?'I still interview every senior hire personally.\n\nNot to check qualifications Ã¢ÂÂ the team handles that.\n\nI\'m looking for one thing: do they make the people around them better?\n\nThe best people I\'ve ever worked with always do. The ones who didn\'t make the team stronger didn\'t last.\n\n#Leadership':'End of quarter reflection at '+cn+':\n\nWins: '+(title.includes('Sales')?'pipeline coverage strong, team at 94% of target':'shipped 3 major features, zero Sev-1s in production')+'\nNeeds work: documentation, async comms, onboarding speed\n\nEvery quarter we get a bit better. That\'s the job.',
+    {text:sen==='c-suite'?'I still interview every senior hire personally.\n\nNot to check qualifications ÃÂ¢ÃÂÃÂ the team handles that.\n\nI\'m looking for one thing: do they make the people around them better?\n\nThe best people I\'ve ever worked with always do. The ones who didn\'t make the team stronger didn\'t last.\n\n#Leadership':'End of quarter reflection at '+cn+':\n\nWins: '+(title.includes('Sales')?'pipeline coverage strong, team at 94% of target':'shipped 3 major features, zero Sev-1s in production')+'\nNeeds work: documentation, async comms, onboarding speed\n\nEvery quarter we get a bit better. That\'s the job.',
      likes:Math.floor(likeBase*(1.1+rng(11)*0.3)),comments:Math.floor(comBase*(0.8+rng(12)*0.4)),timeAgo:timings[(id+4)%timings.length],tags:[],hasImage:id%7===0},
   ];
 }
@@ -956,7 +1020,7 @@ function getPersonaPosts(emp,company){
     <div className="min-h-screen bg-[#070C18]">
       {!user&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(15,15,25,0.97)',zIndex:99999,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'#0D1525',borderRadius:'14px',padding:'40px 44px',width:'380px',maxWidth:'90vw',boxShadow:'0 20px 60px rgba(0,0,0,0.3)'}}>
-          <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'6px'}}><span style={{fontSize:'24px'}}>Ã°ÂÂÂ¨</span><h1 style={{margin:0,fontSize:'22px',fontWeight:'800',color:'#0EA5E9'}}>RepForge</h1></div>
+          <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'6px'}}><span style={{fontSize:'24px'}}>ÃÂ°ÃÂÃÂÃÂ¨</span><h1 style={{margin:0,fontSize:'22px',fontWeight:'800',color:'#0EA5E9'}}>RepForge</h1></div>
           <p style={{margin:'0 0 22px',color:'#7A9CC4',fontSize:'13px'}}>AI-powered sales training platform</p>
           <div style={{display:'flex',marginBottom:'18px',borderRadius:'8px',border:'1px solid #1B3154',overflow:'hidden'}}>
             <button onClick={()=>setAuthView('login')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='login'?'#0EA5E9':'#111F36',color:authView==='login'?'#fff':'#4A6B8A',fontSize:'13px'}}>Log In</button>
@@ -992,13 +1056,13 @@ function getPersonaPosts(emp,company){
       {showPostCall&&(
         <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.7)',zIndex:9996,display:'flex',alignItems:'center',justifyContent:'center'}}>
           <div style={{background:'#0D1525',borderRadius:12,padding:28,width:500,maxWidth:'95vw',maxHeight:'90vh',overflowY:'auto'}}>
-            <div style={{fontSize:17,fontWeight:700,color:'#0EA5E9',marginBottom:4}}>Ã°ÂÂÂ Call Summary</div>
-            <div style={{fontSize:12,color:'#4A6B8A',marginBottom:16}}>Auto-generated Ã¢ÂÂ edit and save to pipeline</div>
+            <div style={{fontSize:17,fontWeight:700,color:'#0EA5E9',marginBottom:4}}>ÃÂ°ÃÂÃÂÃÂ Call Summary</div>
+            <div style={{fontSize:12,color:'#4A6B8A',marginBottom:16}}>Auto-generated ÃÂ¢ÃÂÃÂ edit and save to pipeline</div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#D4E5FF',marginBottom:4}}>Summary</div><textarea value={postCallSummary} onChange={e=>setPostCallSummary(e.target.value)} rows={3} style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#D4E5FF',marginBottom:4}}>Your Notes</div><textarea value={postCallNotes} onChange={e=>setPostCallNotes(e.target.value)} rows={2} placeholder="What went well? Follow-ups?" style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#D4E5FF',marginBottom:4}}>Objections (one per line)</div><textarea value={postCallObjs} onChange={e=>setPostCallObjs(e.target.value)} rows={2} style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:18}}><div style={{fontSize:12,fontWeight:600,color:'#D4E5FF',marginBottom:6}}>Prospect Interest: <span style={{color:scoreColor(postCallScore),fontWeight:700}}>{postCallScore}/10</span></div><input type="range" min={1} max={10} value={postCallScore} onChange={e=>setPostCallScore(Number(e.target.value))} style={{width:'100%'}}/></div>
-            <div style={{display:'flex',gap:10}}><button onClick={handlePostCallSave} style={{flex:1,background:'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:'#fff',border:'none',borderRadius:8,padding:'10px 0',fontWeight:700,fontSize:14,cursor:'pointer',letterSpacing:'0.02em'}}>Ã°ÂÂÂ¾ Save to Pipeline</button><button onClick={()=>setShowPostCall(false)} style={{flex:1,background:'#111F36',color:'#D4E5FF',border:'none',borderRadius:8,padding:'10px 0',fontSize:14,cursor:'pointer'}}>Skip</button></div>
+            <div style={{display:'flex',gap:10}}><button onClick={handlePostCallSave} style={{flex:1,background:'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:'#fff',border:'none',borderRadius:8,padding:'10px 0',fontWeight:700,fontSize:14,cursor:'pointer',letterSpacing:'0.02em'}}>ÃÂ°ÃÂÃÂÃÂ¾ Save to Pipeline</button><button onClick={()=>setShowPostCall(false)} style={{flex:1,background:'#111F36',color:'#D4E5FF',border:'none',borderRadius:8,padding:'10px 0',fontSize:14,cursor:'pointer'}}>Skip</button></div>
           </div>
         </div>
       )}
@@ -1006,8 +1070,8 @@ function getPersonaPosts(emp,company){
         <div style={{position:'fixed',inset:0,background:'#070C18',zIndex:9990,overflowY:'auto'}}>
           <div style={{padding:'20px 28px',maxWidth:1300,margin:'0 auto'}}>
             <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24}}>
-              <div><div style={{fontSize:22,fontWeight:800,letterSpacing:"-0.02em",color:'#0EA5E9'}}>Ã°ÂÂÂ Deal Pipeline</div><div style={{fontSize:13,color:'#7A9CC4',marginTop:2}}>{deals.length} deal{deals.length!==1?'s':''} tracked</div></div>
-              <button onClick={()=>{setShowPipeline(false);setTab('crm');}} style={{background:'#0EA5E9',color:'#fff',border:'none',borderRadius:8,padding:'8px 20px',fontWeight:600,fontSize:14,cursor:'pointer'}}>Ã¢ÂÂ Close</button>
+              <div><div style={{fontSize:22,fontWeight:800,letterSpacing:"-0.02em",color:'#0EA5E9'}}>ÃÂ°ÃÂÃÂÃÂ Deal Pipeline</div><div style={{fontSize:13,color:'#7A9CC4',marginTop:2}}>{deals.length} deal{deals.length!==1?'s':''} tracked</div></div>
+              <button onClick={()=>{setShowPipeline(false);setTab('crm');}} style={{background:'#0EA5E9',color:'#fff',border:'none',borderRadius:8,padding:'8px 20px',fontWeight:600,fontSize:14,cursor:'pointer'}}>ÃÂ¢ÃÂÃÂ Close</button>
             </div>
             <div style={{marginBottom:12,background:'#0A1F1A',borderRadius:8,padding:'12px 16px',border:'1px solid #065F46'}}>
               {(()=>{
@@ -1016,13 +1080,13 @@ function getPersonaPosts(emp,company){
                 const pct=Math.min(100,Math.round(closedVal/10000));
                 return(<>
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:6}}>
-                    <span style={{fontSize:13,fontWeight:700,color:'#0EA5E9'}}>Ã°ÂÂÂ° Quota Attainment</span>
+                    <span style={{fontSize:13,fontWeight:700,color:'#0EA5E9'}}>ÃÂ°ÃÂÃÂÃÂ° Quota Attainment</span>
                     <span style={{fontSize:13,fontWeight:700,color:'#10B981'}}>${closedVal.toLocaleString()} <span style={{fontWeight:400,color:'#6b7280'}}>/ $1,000,000</span></span>
                   </div>
                   <div style={{height:8,background:'#F0FDF4',borderRadius:4,overflow:'hidden'}}>
                     <div style={{height:'100%',width:pct+'%',background:'linear-gradient(90deg,#16a34a,#22c55e)',borderRadius:4,transition:'width 0.5s'}}></div>
                   </div>
-                  <div style={{fontSize:11,color:'#6b7280',marginTop:4}}>{closedDeals.length} deals closed ÃÂ· {100-pct}% remaining to target</div>
+                  <div style={{fontSize:11,color:'#6b7280',marginTop:4}}>{closedDeals.length} deals closed ÃÂÃÂ· {100-pct}% remaining to target</div>
                 </>);
               })()}
             </div>
@@ -1044,14 +1108,14 @@ function getPersonaPosts(emp,company){
                         <div key={deal.id} style={{background:'#0D1525',borderRadius:8,padding:'10px 12px',marginBottom:8,boxShadow:'0 1px 3px rgba(0,0,0,0.08)'}}>
                           <div style={{fontSize:13,fontWeight:700,color:'#0EA5E9'}}>{deal.persona_name}</div>
                           <div style={{fontSize:11,color:'#6b7280',marginBottom:3}}>{deal.company_name}</div>
-                          <div style={{fontSize:11,fontWeight:700,color:'#10B981',marginBottom:6,letterSpacing:'-0.2px'}}>Ã°ÂÂÂ° ${(companies.find(c=>c.name===deal.company_name)||{dealValue:0}).dealValue.toLocaleString()}</div>
+                          <div style={{fontSize:11,fontWeight:700,color:'#10B981',marginBottom:6,letterSpacing:'-0.2px'}}>ÃÂ°ÃÂÃÂÃÂ° ${(companies.find(c=>c.name===deal.company_name)||{dealValue:0}).dealValue.toLocaleString()}</div>
                           <div style={{display:'flex',alignItems:'center',gap:4,marginBottom:8}}>
                             <div style={{width:7,height:7,borderRadius:'50%',background:scoreColor(sc),flexShrink:0}}/>
                             <span style={{fontSize:11,color:scoreColor(sc),fontWeight:600}}>{sc}/10 interest</span>
                           </div>
                           <div style={{display:'flex',gap:4}}>
-                            {ci>0&&<button onClick={()=>handleMoveDeal(deal.id,all[ci-1])} style={{fontSize:10,padding:'3px 7px',background:'#f9fafb',border:'1px solid #e5e7eb',borderRadius:4,cursor:'pointer',color:'#6b7280'}}>Ã¢ÂÂ Back</button>}
-                            {ci<4&&<button onClick={()=>handleMoveDeal(deal.id,all[ci+1])} style={{fontSize:10,padding:'3px 8px',background:brd[stage],border:'none',borderRadius:4,cursor:'pointer',color:'#fff',fontWeight:600}}>Advance Ã¢ÂÂ</button>}
+                            {ci>0&&<button onClick={()=>handleMoveDeal(deal.id,all[ci-1])} style={{fontSize:10,padding:'3px 7px',background:'#f9fafb',border:'1px solid #e5e7eb',borderRadius:4,cursor:'pointer',color:'#6b7280'}}>ÃÂ¢ÃÂÃÂ Back</button>}
+                            {ci<4&&<button onClick={()=>handleMoveDeal(deal.id,all[ci+1])} style={{fontSize:10,padding:'3px 8px',background:brd[stage],border:'none',borderRadius:4,cursor:'pointer',color:'#fff',fontWeight:600}}>Advance ÃÂ¢ÃÂÃÂ</button>}
                           </div>
                         </div>
                       );
@@ -1095,7 +1159,7 @@ function getPersonaPosts(emp,company){
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'16px 24px',borderBottom:'1px solid #1e293b',background:'#0f172a'}}>
         <div style={{display:'flex',alignItems:'center',gap:12}}>
           <div style={{width:10,height:10,borderRadius:'50%',background:'#16a34a',boxShadow:'0 0 8px #22c55e'}}/>
-          <span style={{color:'#f1f5f9',fontWeight:700,fontSize:16}}>{activeSession.call_type==='demo'?'Demo':'Discovery'} Call Ã¢ÂÂ {activeSession.persona_name}</span>
+          <span style={{color:'#f1f5f9',fontWeight:700,fontSize:16}}>{activeSession.call_type==='demo'?'Demo':'Discovery'} Call ÃÂ¢ÃÂÃÂ {activeSession.persona_name}</span>
           <span style={{background:'#1e293b',color:'#4A6B8A',padding:'2px 10px',borderRadius:20,fontSize:12}}>{activeSession.company_name}</span>
         </div>
         <div style={{display:'flex',alignItems:'center',gap:16}}>
@@ -1110,7 +1174,7 @@ function getPersonaPosts(emp,company){
         <div style={{flex:1,display:'flex',gap:0,overflow:'hidden'}}>
           <div style={{flex:1,display:'flex',flexDirection:'column',background:'#0F172A',padding:20,gap:12,overflow:'hidden'}}>
             <div style={{flex:1,background:'#111827',borderRadius:12,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>
-              <div style={{textAlign:'center'}}><div style={{fontSize:48,marginBottom:12}}>Ã°ÂÂÂ¥Ã¯Â¸Â</div><div style={{color:'#475569',fontSize:14}}>Screen share area</div><div style={{color:'#334155',fontSize:12,marginTop:4}}>Present your demo here</div></div>
+              <div style={{textAlign:'center'}}><div style={{fontSize:48,marginBottom:12}}>ÃÂ°ÃÂÃÂÃÂ¥ÃÂ¯ÃÂ¸ÃÂ</div><div style={{color:'#475569',fontSize:14}}>Screen share area</div><div style={{color:'#334155',fontSize:12,marginTop:4}}>Present your demo here</div></div>
               <div style={{position:'absolute',bottom:12,left:12,background:'rgba(0,0,0,0.7)',padding:'4px 10px',borderRadius:6,color:'#4A6B8A',fontSize:11}}>Your Screen</div>
             </div>
             <div style={{display:'flex',gap:12,height:120}}>
@@ -1120,20 +1184,20 @@ function getPersonaPosts(emp,company){
                 <div style={{position:'absolute',bottom:6,right:6,background:'#16a34a',width:8,height:8,borderRadius:'50%'}}/>
               </div>
               <div style={{flex:1,background:'#0f1929',borderRadius:10,border:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:6}}>
-                <div style={{fontSize:28}}>Ã°ÂÂÂ¤</div><span style={{color:'#4A6B8A',fontSize:11}}>You</span>
+                <div style={{fontSize:28}}>ÃÂ°ÃÂÃÂÃÂ¤</div><span style={{color:'#4A6B8A',fontSize:11}}>You</span>
               </div>
               <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                <button onClick={handleCloseSession} style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#ef4444',color:'#fff',fontSize:18,cursor:'pointer'}}>Ã°ÂÂÂµ</button>
+                <button onClick={handleCloseSession} style={{width:44,height:44,borderRadius:'50%',border:'none',background:'#ef4444',color:'#fff',fontSize:18,cursor:'pointer'}}>ÃÂ°ÃÂÃÂÃÂµ</button>
               </div>
             </div>
           </div>
           <div style={{width:280,background:'#0d1526',borderLeft:'1px solid #1e293b',display:'flex',flexDirection:'column',overflow:'hidden'}}>
             <div style={{padding:'14px 16px',borderBottom:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-              <span style={{color:'#f1f5f9',fontWeight:700,fontSize:13}}>Ã¢ÂÂÃ¯Â¸Â Objection Tracker</span>
+              <span style={{color:'#f1f5f9',fontWeight:700,fontSize:13}}>ÃÂ¢ÃÂÃÂÃÂ¯ÃÂ¸ÃÂ Objection Tracker</span>
               <span style={{background:handledObjections.size===demoObjections.length&&demoObjections.length>0?'#16a34a':'#334155',color:'#fff',fontSize:11,padding:'2px 8px',borderRadius:10,fontWeight:600}}>{handledObjections.size}/{demoObjections.length} handled</span>
             </div>
             <div style={{flex:1,overflowY:'auto',padding:12,display:'flex',flexDirection:'column',gap:8}}>
-              {demoObjections.length===0?(<div style={{textAlign:'center',color:'#475569',fontSize:12,marginTop:40}}><div style={{fontSize:28,marginBottom:8}}>Ã¢ÂÂ³</div><div>Objections will surface</div><div>as the demo progressesÃ¢ÂÂ¦</div></div>):demoObjections.map(obj=>(<div key={obj.id} style={{background:handledObjections.has(obj.id)?'rgba(34,197,94,0.08)':'rgba(239,68,68,0.08)',border:`1px solid ${handledObjections.has(obj.id)?'#166534':'#7f1d1d'}`,borderRadius:8,padding:'8px 10px'}}><div style={{display:'flex',alignItems:'flex-start',gap:6,marginBottom:6}}><span style={{fontSize:14}}>{obj.icon}</span><div style={{flex:1}}><span style={{background:handledObjections.has(obj.id)?'#166534':'#7f1d1d',color:'#fff',fontSize:9,padding:'1px 5px',borderRadius:3,fontWeight:700}}>{obj.cat}</span><p style={{color:'#cbd5e1',fontSize:12,margin:'4px 0 0',lineHeight:1.4}}>{obj.text}</p></div></div>{!handledObjections.has(obj.id)?(<button onClick={()=>setHandledObjections(prev=>{const s=new Set(prev);s.add(obj.id);return s;})} style={{width:'100%',padding:'4px',borderRadius:5,border:'1px solid #22c55e',background:'rgba(34,197,94,0.1)',color:'#10B981',fontSize:11,cursor:'pointer',fontWeight:600}}>Ã¢ÂÂ Mark Handled</button>):(<div style={{textAlign:'center',color:'#10B981',fontSize:11,fontWeight:600}}>Ã¢ÂÂ Handled</div>)}</div>))}
+              {demoObjections.length===0?(<div style={{textAlign:'center',color:'#475569',fontSize:12,marginTop:40}}><div style={{fontSize:28,marginBottom:8}}>ÃÂ¢ÃÂÃÂ³</div><div>Objections will surface</div><div>as the demo progressesÃÂ¢ÃÂÃÂ¦</div></div>):demoObjections.map(obj=>(<div key={obj.id} style={{background:handledObjections.has(obj.id)?'rgba(34,197,94,0.08)':'rgba(239,68,68,0.08)',border:`1px solid ${handledObjections.has(obj.id)?'#166534':'#7f1d1d'}`,borderRadius:8,padding:'8px 10px'}}><div style={{display:'flex',alignItems:'flex-start',gap:6,marginBottom:6}}><span style={{fontSize:14}}>{obj.icon}</span><div style={{flex:1}}><span style={{background:handledObjections.has(obj.id)?'#166534':'#7f1d1d',color:'#fff',fontSize:9,padding:'1px 5px',borderRadius:3,fontWeight:700}}>{obj.cat}</span><p style={{color:'#cbd5e1',fontSize:12,margin:'4px 0 0',lineHeight:1.4}}>{obj.text}</p></div></div>{!handledObjections.has(obj.id)?(<button onClick={()=>setHandledObjections(prev=>{const s=new Set(prev);s.add(obj.id);return s;})} style={{width:'100%',padding:'4px',borderRadius:5,border:'1px solid #22c55e',background:'rgba(34,197,94,0.1)',color:'#10B981',fontSize:11,cursor:'pointer',fontWeight:600}}>ÃÂ¢ÃÂÃÂ Mark Handled</button>):(<div style={{textAlign:'center',color:'#10B981',fontSize:11,fontWeight:600}}>ÃÂ¢ÃÂÃÂ Handled</div>)}</div>))}
             </div>
             {demoObjections.length>0&&(<div style={{padding:'10px 16px',borderTop:'1px solid #1e293b',background:'#0F172A'}}><div style={{display:'flex',justifyContent:'space-between',marginBottom:4}}><span style={{color:'#4A6B8A',fontSize:11}}>Demo Score</span><span style={{color:handledObjections.size/Math.max(demoObjections.length,1)>=0.8?'#16a34a':handledObjections.size/Math.max(demoObjections.length,1)>=0.5?'#F97316':'#ef4444',fontSize:11,fontWeight:700}}>{Math.round(handledObjections.size/Math.max(demoObjections.length,1)*100)}%</span></div><div style={{height:4,background:'#1e293b',borderRadius:2,overflow:'hidden'}}><div style={{height:'100%',width:`${Math.round(handledObjections.size/Math.max(demoObjections.length,1)*100)}%`,background:handledObjections.size/Math.max(demoObjections.length,1)>=0.8?'#16a34a':handledObjections.size/Math.max(demoObjections.length,1)>=0.5?'#F97316':'#ef4444',borderRadius:2,transition:'width 0.4s'}}/></div></div>)}
           </div>
@@ -1169,25 +1233,25 @@ function getPersonaPosts(emp,company){
               <div style={{color:'#94a3b8',fontSize:12,marginTop:2}}>{activeSession.company_name}</div>
             </div>
             <div style={{position:'absolute',bottom:20,right:20,width:168,height:100,background:'#111827',borderRadius:12,border:'2px solid #1e293b',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:4,boxShadow:'0 4px 20px rgba(0,0,0,0.6)'}}>
-              <div style={{fontSize:26}}>ð¤«</div>
-              <span style={{color:'#475569',fontSize:11}}>Camera off Â· You</span>
+              <div style={{fontSize:26}}>Ã°ÂÂ¤Â«</div>
+              <span style={{color:'#475569',fontSize:11}}>Camera off ÃÂ· You</span>
             </div>
           </div>
           <div style={{background:'rgba(10,15,26,0.96)',backdropFilter:'blur(16px)',padding:'16px 0 20px',display:'flex',alignItems:'center',justifyContent:'center',gap:20,borderTop:'1px solid rgba(30,41,59,0.6)'}}>
             <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:4}}>
-              <button style={{width:52,height:52,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:20,cursor:'default',display:'flex',alignItems:'center',justifyContent:'center'}}>ðï¸</button>
+              <button style={{width:52,height:52,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:20,cursor:'default',display:'flex',alignItems:'center',justifyContent:'center'}}>Ã°ÂÂÂÃ¯Â¸Â</button>
               <span style={{color:'#475569',fontSize:10}}>Mute</span>
             </div>
             <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:4}}>
-              <button style={{width:52,height:52,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:20,cursor:'default',display:'flex',alignItems:'center',justifyContent:'center'}}>ð·</button>
+              <button style={{width:52,height:52,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:20,cursor:'default',display:'flex',alignItems:'center',justifyContent:'center'}}>Ã°ÂÂÂ·</button>
               <span style={{color:'#475569',fontSize:10}}>Camera</span>
             </div>
             <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:4}}>
-              <button onClick={handleCloseSession} style={{width:64,height:52,borderRadius:28,border:'none',background:'#dc2626',color:'#fff',fontSize:20,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center'}}>ðµ</button>
+              <button onClick={handleCloseSession} style={{width:64,height:52,borderRadius:28,border:'none',background:'#dc2626',color:'#fff',fontSize:20,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center'}}>Ã°ÂÂÂµ</button>
               <span style={{color:'#ef4444',fontSize:10}}>End Call</span>
             </div>
             <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:4}}>
-              <button style={{width:52,height:52,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:20,cursor:'default',display:'flex',alignItems:'center',justifyContent:'center'}}>â®</button>
+              <button style={{width:52,height:52,borderRadius:'50%',border:'none',background:'#1e293b',color:'#94a3b8',fontSize:20,cursor:'default',display:'flex',alignItems:'center',justifyContent:'center'}}>Ã¢ÂÂ®</button>
               <span style={{color:'#475569',fontSize:10}}>More</span>
             </div>
           </div>
@@ -1198,7 +1262,7 @@ function getPersonaPosts(emp,company){
       
   {midCallBooking&&(
     <div style={{position:'fixed',bottom:24,right:24,zIndex:1001,background:'#1e293b',border:'1px solid #6366f1',borderRadius:12,padding:'16px 20px',maxWidth:320,boxShadow:'0 8px 32px rgba(0,0,0,0.5)'}}>
-      <div style={{color:'#f1f5f9',fontWeight:700,marginBottom:6,fontSize:14}}>Ã°ÂÂÂ Prospect wants to schedule</div>
+      <div style={{color:'#f1f5f9',fontWeight:700,marginBottom:6,fontSize:14}}>ÃÂ°ÃÂÃÂÃÂ Prospect wants to schedule</div>
       <div style={{color:'#4A6B8A',fontSize:13,marginBottom:12}}>{midCallBooking.persona_name} mentioned booking a follow-up.</div>
       <div style={{display:'flex',gap:8}}>
         <button onClick={()=>{handleOpenBooking(allEmps.find(p=>p.id===midCallBooking.persona_id),midCallBooking.call_type);setMidCallBooking(null);}} style={{flex:1,padding:'7px 0',borderRadius:8,border:'none',background:'#6366f1',color:'#fff',cursor:'pointer',fontWeight:600,fontSize:13}}>Book Now</button>
@@ -1214,30 +1278,30 @@ function getPersonaPosts(emp,company){
             <span className="ml-2 px-2 py-0.5 bg-[#0EA5E9]/10 text-[#38BDF8] text-xs font-medium rounded-full border border-[#0EA5E9]/20 tracking-wide">Sales Training Platform</span>
           </div>
           <div className="flex items-center gap-1">
-            {navBtn("crm","CRM","Ã°ÂÂÂ¢",0)}
-            {navBtn("email","Email","Ã¢ÂÂ",inbox.length)}
-            {navBtn("prolink","ProLink","Ã°ÂÂÂ",pendingConnections)}
-            {navBtn("score","Scorecard","Ã°ÂÂÂ",meetingsBooked>0?meetingsBooked:0)}
-{navBtn("pipeline","Pipeline","Ã°ÂÂÂ",deals.length)}
-            {navBtn("scheduled","Calls","Ã°ÂÂÂ",scheduledCalls.filter(c=>c.status==='upcoming').length)}
-            {navBtn("inbox","Inbox","Ã°ÂÂÂ¬",personaMessages.filter(m=>!m.is_read).length)}
-            {navBtn("agentlab","Agent Lab","🤖",0)}
+            {navBtn("crm","CRM","ÃÂ°ÃÂÃÂÃÂ¢",0)}
+            {navBtn("email","Email","ÃÂ¢ÃÂÃÂ",inbox.length)}
+            {navBtn("prolink","ProLink","ÃÂ°ÃÂÃÂÃÂ",pendingConnections)}
+            {navBtn("score","Scorecard","ÃÂ°ÃÂÃÂÃÂ",meetingsBooked>0?meetingsBooked:0)}
+{navBtn("pipeline","Pipeline","ÃÂ°ÃÂÃÂÃÂ",deals.length)}
+            {navBtn("scheduled","Calls","ÃÂ°ÃÂÃÂÃÂ",scheduledCalls.filter(c=>c.status==='upcoming').length)}
+            {navBtn("inbox","Inbox","ÃÂ°ÃÂÃÂÃÂ¬",personaMessages.filter(m=>!m.is_read).length)}
+            {navBtn("agentlab","Agent Lab","ð¤",0)}
                     </div>
         </div>
         <div className="flex items-center gap-3">
           <div className="text-sm text-[#7A9CC4] hover:text-[#38BDF8]">Day <span className="font-bold text-[#D4E5FF]">{simDay}</span><span className="text-[#4A6B8A]"> / {SIM_LENGTH}</span></div>
           {!simComplete ? (
-            <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1">Ã¢ÂÂ© Advance Day</button>              <button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-medium text-xs flex items-center gap-1 transition-colors ${apiKey ? "bg-emerald-700 text-white hover:bg-emerald-600" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}>Ã¢ÂÂÃ¯Â¸Â {apiKey ? "AI On" : "Add AI Key"}</button></>
+            <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1">ÃÂ¢ÃÂÃÂ© Advance Day</button>              <button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-medium text-xs flex items-center gap-1 transition-colors ${apiKey ? "bg-emerald-700 text-white hover:bg-emerald-600" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}>ÃÂ¢ÃÂÃÂÃÂ¯ÃÂ¸ÃÂ {apiKey ? "AI On" : "Add AI Key"}</button></>
           ) : (
-            <button onClick={() => setTab("score")} className="bg-[#0EA5E9] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1">Ã°ÂÂÂ View Final Score</button>
+            <button onClick={() => setTab("score")} className="bg-[#0EA5E9] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1">ÃÂ°ÃÂÃÂÃÂ View Final Score</button>
           )}
-          <button onClick={()=>setShowProdSetup(true)} style={{fontSize:'11px',padding:'4px 10px',background:product?'#4F46E5':'#dc2626',color:'white',border:'none',borderRadius:'6px',cursor:'pointer',fontWeight:'600',whiteSpace:'nowrap'}}>{product?'Ã°ÂÂÂ¦ '+product.product_name.substring(0,18):'Ã¢ÂÂ Ã¯Â¸Â Setup Product'}</button><button onClick={handleLogout} style={{fontSize:'11px',padding:'4px 10px',background:'#f1f5f9',color:'#475569',border:'1px solid #1B3154',borderRadius:'6px',cursor:'pointer',whiteSpace:'nowrap'}}>{user?user.email.split('@')[0]+' ÃÂ· Logout':'Logout'}</button>
+          <button onClick={()=>setShowProdSetup(true)} style={{fontSize:'11px',padding:'4px 10px',background:product?'#4F46E5':'#dc2626',color:'white',border:'none',borderRadius:'6px',cursor:'pointer',fontWeight:'600',whiteSpace:'nowrap'}}>{product?'ÃÂ°ÃÂÃÂÃÂ¦ '+product.product_name.substring(0,18):'ÃÂ¢ÃÂÃÂ ÃÂ¯ÃÂ¸ÃÂ Setup Product'}</button><button onClick={handleLogout} style={{fontSize:'11px',padding:'4px 10px',background:'#f1f5f9',color:'#475569',border:'1px solid #1B3154',borderRadius:'6px',cursor:'pointer',whiteSpace:'nowrap'}}>{user?user.email.split('@')[0]+' ÃÂÃÂ· Logout':'Logout'}</button>
         </div>
       </div>
 
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {/* CRM TAB                                    */}
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {tab === "crm" && (
         <div className="p-6">
           {/* Accounts grid */}
@@ -1269,7 +1333,7 @@ function getPersonaPosts(emp,company){
                         <span className="text-[#4A6B8A] text-xs">{c.location}</span>
                       </div>
                                             <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-semibold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">Ã°ÂÂÂ° ${(c.dealValue||0).toLocaleString()}</span>
+                        <span className="text-xs font-semibold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">ÃÂ°ÃÂÃÂÃÂ° ${(c.dealValue||0).toLocaleString()}</span>
                         <span className="text-xs text-[#4A6B8A]">{c.size} target</span>
                       </div>
                       <div className="border-t border-[#152840] pt-2">
@@ -1290,7 +1354,7 @@ function getPersonaPosts(emp,company){
           {crmView === "company" && selCompany && (
             <>
               <div className="flex items-center gap-2 mb-5 text-sm">
-                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); }} className="text-[#38BDF8] hover:underline font-medium">Ã¢ÂÂ Accounts</button>
+                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); }} className="text-[#38BDF8] hover:underline font-medium">ÃÂ¢ÃÂÃÂ Accounts</button>
                 <span className="text-gray-300">/</span>
                 <span className="font-semibold text-[#A8BFDB]">{selCompany.name}</span>
               </div>
@@ -1303,7 +1367,7 @@ function getPersonaPosts(emp,company){
                     <div className="flex gap-2 mt-1.5">
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${industryColors[selCompany.industry]||""}`}>{selCompany.industry}</span>
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sizeColors[selCompany.size]}`}>{selCompany.size}</span>
-                      <span className="text-[#4A6B8A] text-xs">Ã°ÂÂÂ {selCompany.location}</span>
+                      <span className="text-[#4A6B8A] text-xs">ÃÂ°ÃÂÃÂÃÂ {selCompany.location}</span>
                     </div>
                   </div>
                 </div>
@@ -1329,30 +1393,30 @@ function getPersonaPosts(emp,company){
                           <td className="px-4 py-3 text-[#4A6B8A] text-xs">{getEmail(emp, selCompany)}</td>
                           <td className="px-4 py-3">
                             {cs.emailStatus==="none" && <span className="text-xs text-[#4A6B8A]">Not contacted</span>}
-                            {cs.emailStatus==="sent" && <span className="text-xs text-[#FBBF24] font-medium">Ã¢ÂÂ³ Awaiting reply</span>}
-                            {cs.emailStatus==="replied" && <span className="text-xs text-green-600 font-medium">Ã¢ÂÂ Replied</span>}
+                            {cs.emailStatus==="sent" && <span className="text-xs text-[#FBBF24] font-medium">ÃÂ¢ÃÂÃÂ³ Awaiting reply</span>}
+                            {cs.emailStatus==="replied" && <span className="text-xs text-green-600 font-medium">ÃÂ¢ÃÂÃÂ Replied</span>}
                           </td>
                           <td className="px-4 py-3">
                             {cs.linkedinStatus==="none" && <span className="text-xs text-[#4A6B8A]">Not connected</span>}
-                            {cs.linkedinStatus==="pending" && <span className="text-xs text-[#FBBF24] font-medium">Ã¢ÂÂ³ Pending</span>}
-                            {cs.linkedinStatus==="connected" && <span className="text-xs text-blue-600 font-medium">Ã°ÂÂÂ Connected</span>}
+                            {cs.linkedinStatus==="pending" && <span className="text-xs text-[#FBBF24] font-medium">ÃÂ¢ÃÂÃÂ³ Pending</span>}
+                            {cs.linkedinStatus==="connected" && <span className="text-xs text-blue-600 font-medium">ÃÂ°ÃÂÃÂÃÂ Connected</span>}
                             {cs.linkedinStatus==="ignored" && <span className="text-xs text-red-400">Ignored</span>}
                           </td>
                           <td className="px-4 py-3" onClick={e=>e.stopPropagation()}>
                             <div className="flex gap-1.5">
-                              <button onClick={() => initiateCall(emp)} className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">Ã°ÂÂÂ Call</button>
-                              <button onClick={() => { setEmailCompose({emp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-xs px-3 py-1.5 rounded-lg font-medium">Ã¢ÂÂ Email</button>
-                              <button onClick={() => { setPlProfile(emp); setTab("prolink"); setPlView("profile"); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-xs px-3 py-1.5 rounded-lg font-medium">Ã°ÂÂÂ Profile</button>
-                              <button onClick={() => activeCallId === emp.id ? endCall() : handleStartCallWithDeal(emp, selCompany)} disabled={activeCallId !== null && activeCallId !== emp.id} style={{marginLeft:'6px',padding:'4px 12px',borderRadius:'6px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:'600',background:activeCallId===emp.id?(callStatus==='active'?'#ef4444':'#f97316'):'#7c3aed',color:'white',opacity:activeCallId!==null&&activeCallId!==emp.id?0.4:1}}>{activeCallId === emp.id ? (callStatus === 'connecting' ? 'Ã°ÂÂÂ Connecting...' : 'Ã°ÂÂÂ´ End Call') : 'Ã°ÂÂÂÃ¯Â¸Â AI Call'}</button><button onClick={()=>handleOpenBooking(allEmps.find(p=>p.id===emp.id),'discovery')} style={{marginLeft:6,padding:'4px 10px',borderRadius:6,border:'none',background:'#334155',color:'#818cf8',cursor:'pointer',fontSize:11,fontWeight:600}}>Ã°ÂÂÂ Book</button>
-                              <button onClick={() => setExpandedIntel(expandedIntel === emp.id ? null : emp.id)} style={{marginLeft:'6px',padding:'4px 10px',borderRadius:'6px',border:'1px solid #1B3154',cursor:'pointer',fontSize:'12px',fontWeight:'600',background:expandedIntel===emp.id?'#eff6ff':'#f8fafc',color:'#7C3AED'}}>Ã°ÂÂÂ Intel</button>
+                              <button onClick={() => initiateCall(emp)} className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂ°ÃÂÃÂÃÂ Call</button>
+                              <button onClick={() => { setEmailCompose({emp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂ¢ÃÂÃÂ Email</button>
+                              <button onClick={() => { setPlProfile(emp); setTab("prolink"); setPlView("profile"); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-xs px-3 py-1.5 rounded-lg font-medium">ÃÂ°ÃÂÃÂÃÂ Profile</button>
+                              <button onClick={() => activeCallId === emp.id ? endCall() : handleStartCallWithDeal(emp, selCompany)} disabled={activeCallId !== null && activeCallId !== emp.id} style={{marginLeft:'6px',padding:'4px 12px',borderRadius:'6px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:'600',background:activeCallId===emp.id?(callStatus==='active'?'#ef4444':'#f97316'):'#7c3aed',color:'white',opacity:activeCallId!==null&&activeCallId!==emp.id?0.4:1}}>{activeCallId === emp.id ? (callStatus === 'connecting' ? 'ÃÂ°ÃÂÃÂÃÂ Connecting...' : 'ÃÂ°ÃÂÃÂÃÂ´ End Call') : 'ÃÂ°ÃÂÃÂÃÂÃÂ¯ÃÂ¸ÃÂ AI Call'}</button><button onClick={()=>handleOpenBooking(allEmps.find(p=>p.id===emp.id),'discovery')} style={{marginLeft:6,padding:'4px 10px',borderRadius:6,border:'none',background:'#334155',color:'#818cf8',cursor:'pointer',fontSize:11,fontWeight:600}}>ÃÂ°ÃÂÃÂÃÂ Book</button>
+                              <button onClick={() => setExpandedIntel(expandedIntel === emp.id ? null : emp.id)} style={{marginLeft:'6px',padding:'4px 10px',borderRadius:'6px',border:'1px solid #1B3154',cursor:'pointer',fontSize:'12px',fontWeight:'600',background:expandedIntel===emp.id?'#eff6ff':'#f8fafc',color:'#7C3AED'}}>ÃÂ°ÃÂÃÂÃÂ Intel</button>
                             </div>
                           {expandedIntel === emp.id && intelData[emp.id] && (
                             <div style={{marginTop:'8px',padding:'14px 16px',background:'#0A1020',border:'1px solid #1B3154',borderRadius:'8px',fontSize:'13px',lineHeight:'1.5'}}>
                               <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'14px'}}>
-                                <div><div style={{color:'#dc2626',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>Ã¢ÂÂ  Pain Points</div><ul style={{margin:0,paddingLeft:'16px',color:'#D4E5FF'}}>{(intelData[emp.id].pain_points||[]).map((p,i)=><li key={i}>{p}</li>)}</ul></div>
-                                <div><div style={{color:'#10B981',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>Ã°ÂÂÂ¯ Goals</div><ul style={{margin:0,paddingLeft:'16px',color:'#D4E5FF'}}>{(intelData[emp.id].goals||[]).map((g,i)=><li key={i}>{g}</li>)}</ul></div>
-                                <div><div style={{color:'#7c3aed',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>Ã°ÂÂ§Â© Challenges</div><ul style={{margin:0,paddingLeft:'16px',color:'#D4E5FF'}}>{(intelData[emp.id].challenges||[]).map((ch,i)=><li key={i}>{ch}</li>)}</ul></div>
-                                <div><div style={{color:'#0369a1',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>Ã°ÂÂÂ¼ Buying Role</div><p style={{margin:'4px 0 0',color:'#D4E5FF'}}>{(intelData[emp.id].buying_role||'').replace(/_/g,' ').replace(/\b\w/g,x=>x.toUpperCase())} {intelData[emp.id].budget_authority?'Ã¢ÂÂ':'Ã¢ÂÂ'} Budget Auth</p></div>
+                                <div><div style={{color:'#dc2626',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>ÃÂ¢ÃÂÃÂ  Pain Points</div><ul style={{margin:0,paddingLeft:'16px',color:'#D4E5FF'}}>{(intelData[emp.id].pain_points||[]).map((p,i)=><li key={i}>{p}</li>)}</ul></div>
+                                <div><div style={{color:'#10B981',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>ÃÂ°ÃÂÃÂÃÂ¯ Goals</div><ul style={{margin:0,paddingLeft:'16px',color:'#D4E5FF'}}>{(intelData[emp.id].goals||[]).map((g,i)=><li key={i}>{g}</li>)}</ul></div>
+                                <div><div style={{color:'#7c3aed',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>ÃÂ°ÃÂÃÂ§ÃÂ© Challenges</div><ul style={{margin:0,paddingLeft:'16px',color:'#D4E5FF'}}>{(intelData[emp.id].challenges||[]).map((ch,i)=><li key={i}>{ch}</li>)}</ul></div>
+                                <div><div style={{color:'#0369a1',fontWeight:'700',fontSize:'11px',textTransform:'uppercase',marginBottom:'4px'}}>ÃÂ°ÃÂÃÂÃÂ¼ Buying Role</div><p style={{margin:'4px 0 0',color:'#D4E5FF'}}>{(intelData[emp.id].buying_role||'').replace(/_/g,' ').replace(/\b\w/g,x=>x.toUpperCase())} {intelData[emp.id].budget_authority?'ÃÂ¢ÃÂÃÂ':'ÃÂ¢ÃÂÃÂ'} Budget Auth</p></div>
                               </div>
                             </div>
                           )}
@@ -1370,7 +1434,7 @@ function getPersonaPosts(emp,company){
           {crmView === "employee" && selEmp && selCompany && (
             <>
               <div className="flex items-center gap-2 mb-5 text-sm">
-                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); setSelEmp(null); }} className="text-[#38BDF8] hover:underline font-medium">Ã¢ÂÂ Accounts</button>
+                <button onClick={() => { setCrmView("accounts"); setSelCompany(null); setSelEmp(null); }} className="text-[#38BDF8] hover:underline font-medium">ÃÂ¢ÃÂÃÂ Accounts</button>
                 <span className="text-gray-300">/</span>
                 <button onClick={() => { setCrmView("company"); setSelEmp(null); }} className="text-[#38BDF8] hover:underline font-medium">{selCompany.name}</button>
                 <span className="text-gray-300">/</span>
@@ -1387,29 +1451,29 @@ function getPersonaPosts(emp,company){
                     <div className="text-xs text-[#7A9CC4] mt-1">
                       {state[selEmp.id] && (
                         <span className="ml-2 text-[#4A6B8A]">
-                          ÃÂ· {state[selEmp.id].emailCount || 0} email{(state[selEmp.id].emailCount||0)!==1?'s':''} ÃÂ· {state[selEmp.id].calls || 0} call{(state[selEmp.id].calls||0)!==1?'s':''}
+                          ÃÂÃÂ· {state[selEmp.id].emailCount || 0} email{(state[selEmp.id].emailCount||0)!==1?'s':''} ÃÂÃÂ· {state[selEmp.id].calls || 0} call{(state[selEmp.id].calls||0)!==1?'s':''}
                         </span>
                       )}
                     </div>
                     <div className="mt-3 space-y-1 text-xs text-[#7A9CC4] text-left border-t border-[#152840] pt-3">
-                      <div>Ã°ÂÂÂ {getPhone(selEmp)}</div>
-                      <div>Ã¢ÂÂ {getEmail(selEmp, selCompany)}</div>
-                      {(state[selEmp.id]?.calls||0) > 0 && <div className="text-[#38BDF8] font-medium pt-1">Ã¢ÂÂ {state[selEmp.id].calls} call{state[selEmp.id].calls>1?"s":""} logged</div>}
+                      <div>ÃÂ°ÃÂÃÂÃÂ {getPhone(selEmp)}</div>
+                      <div>ÃÂ¢ÃÂÃÂ {getEmail(selEmp, selCompany)}</div>
+                      {(state[selEmp.id]?.calls||0) > 0 && <div className="text-[#38BDF8] font-medium pt-1">ÃÂ¢ÃÂÃÂ {state[selEmp.id].calls} call{state[selEmp.id].calls>1?"s":""} logged</div>}
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <button onClick={() => initiateCall(selEmp)} className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg py-2 text-sm font-medium">Ã°ÂÂÂ Call {selEmp.first}</button>
-                    <button onClick={() => { setEmailCompose({emp:selEmp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white rounded-lg py-2 text-sm font-medium">Ã¢ÂÂ Email {selEmp.first}</button>
-                    <button onClick={() => { setPlProfile(selEmp); setTab("prolink"); setPlView("profile"); }} className="bg-[#2A5A3A] hover:bg-[#0EA5E9] text-white rounded-lg py-2 text-sm font-medium">Ã°ÂÂÂ View ProLink Profile</button>
-                    {/* Meeting request button Ã¢ÂÂ unlocks once they've replied or you're connected */}
+                    <button onClick={() => initiateCall(selEmp)} className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg py-2 text-sm font-medium">ÃÂ°ÃÂÃÂÃÂ Call {selEmp.first}</button>
+                    <button onClick={() => { setEmailCompose({emp:selEmp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white rounded-lg py-2 text-sm font-medium">ÃÂ¢ÃÂÃÂ Email {selEmp.first}</button>
+                    <button onClick={() => { setPlProfile(selEmp); setTab("prolink"); setPlView("profile"); }} className="bg-[#2A5A3A] hover:bg-[#0EA5E9] text-white rounded-lg py-2 text-sm font-medium">ÃÂ°ÃÂÃÂÃÂ View ProLink Profile</button>
+                    {/* Meeting request button ÃÂ¢ÃÂÃÂ unlocks once they've replied or you're connected */}
                     {(state[selEmp.id]?.emailStatus === "replied" || state[selEmp.id]?.linkedinStatus === "connected") && state[selEmp.id]?.meetingStatus === "none" && (
-                      <button onClick={() => requestMeeting(selEmp)} className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg py-2 text-sm font-medium">Ã°ÂÂÂ Request Meeting</button>
+                      <button onClick={() => requestMeeting(selEmp)} className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg py-2 text-sm font-medium">ÃÂ°ÃÂÃÂÃÂ Request Meeting</button>
                     )}
                     {state[selEmp.id]?.meetingStatus === "booked" && (
-                      <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg py-2 text-sm font-medium text-center">Ã¢ÂÂ Meeting Booked!</div>
+                      <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg py-2 text-sm font-medium text-center">ÃÂ¢ÃÂÃÂ Meeting Booked!</div>
                     )}
                     {state[selEmp.id]?.meetingStatus === "declined" && (
-                      <div className="bg-red-50 border border-red-200 text-red-600 rounded-lg py-2 text-sm font-medium text-center">Ã¢ÂÂ Meeting Declined</div>
+                      <div className="bg-red-50 border border-red-200 text-red-600 rounded-lg py-2 text-sm font-medium text-center">ÃÂ¢ÃÂÃÂ Meeting Declined</div>
                     )}
                   </div>
                 </div>
@@ -1421,13 +1485,13 @@ function getPersonaPosts(emp,company){
                         <div className="text-center py-8 text-[#4A6B8A] text-sm">No emails sent yet. Email {selEmp.first} to start the conversation.</div>
                       ) : state[selEmp.id].emailThread.map((msg,i) => (
                         <div key={i} className={`p-3 rounded-lg text-xs leading-relaxed ${msg.from==="rep" ? "bg-[#EDF5EE] border border-[#B8D4BB] ml-8" : "bg-[#F2EFE8] border border-[#1B3154] mr-8"}`}>
-                          <div className={`font-semibold mb-1 ${msg.from==="rep" ? "text-[#38BDF8]" : "text-[#D4E5FF]"}`}>{msg.from==="rep" ? "You" : `${selEmp.first} ${selEmp.last}`} ÃÂ· Day {msg.day}</div>
+                          <div className={`font-semibold mb-1 ${msg.from==="rep" ? "text-[#38BDF8]" : "text-[#D4E5FF]"}`}>{msg.from==="rep" ? "You" : `${selEmp.first} ${selEmp.last}`} ÃÂÃÂ· Day {msg.day}</div>
                           {msg.subject && <div className="font-medium text-[#A8BFDB] mb-0.5">Re: {msg.subject}</div>}
                           {msg.body}
                         </div>
                       ))}
                       {state[selEmp.id]?.emailStatus==="sent" && (
-                        <div className="text-center py-2 text-xs text-[#FBBF24]">Ã¢ÂÂ³ Email sent Ã¢ÂÂ reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.</div>)}
+                        <div className="text-center py-2 text-xs text-[#FBBF24]">ÃÂ¢ÃÂÃÂ³ Email sent ÃÂ¢ÃÂÃÂ reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.</div>)}
               {apiKey && state[selEmp.id]?.willReplyEmail && (
                 <button onClick={async () => {
                   const company = getCompanyForEmp(selEmp.id);
@@ -1439,7 +1503,7 @@ function getPersonaPosts(emp,company){
                     setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));
                   }
                 }} disabled={aiEmailLoading[selEmp.id]} className="ml-2 bg-[#0EA5E9] hover:bg-[#0284C7] disabled:opacity-50 text-white text-xs px-3 py-1 rounded-full transition-colors">
-                  {aiEmailLoading[selEmp.id] ? "Ã°ÂÂ¤Â Writing..." : "Ã°ÂÂ¤Â AI Reply Now"}
+                  {aiEmailLoading[selEmp.id] ? "ÃÂ°ÃÂÃÂ¤ÃÂ Writing..." : "ÃÂ°ÃÂÃÂ¤ÃÂ AI Reply Now"}
                 </button>
               )}
                     </div>
@@ -1447,7 +1511,7 @@ function getPersonaPosts(emp,company){
                   {/* Call Log */}
                   {(state[selEmp.id]?.callLog||[]).length > 0 && (
                     <div className="bg-[#0D1525] rounded-xl border border-[#1B3154] overflow-hidden mt-4">
-                      <div className="px-4 py-3 border-b border-[#152840] font-semibold text-[#A8BFDB] text-sm">Ã°ÂÂÂ Call Log ({state[selEmp.id].callLog.length})</div>
+                      <div className="px-4 py-3 border-b border-[#152840] font-semibold text-[#A8BFDB] text-sm">ÃÂ°ÃÂÃÂÃÂ Call Log ({state[selEmp.id].callLog.length})</div>
                       <div className="divide-y divide-gray-50">
                         {state[selEmp.id].callLog.map((log, i) => (
                           <div key={i} className="px-4 py-3 flex items-start gap-3">
@@ -1455,7 +1519,7 @@ function getPersonaPosts(emp,company){
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-0.5">
                                 <span className="text-xs font-semibold text-[#A8BFDB] capitalize">{log.outcome === "no-answer" ? "No Answer" : log.outcome}</span>
-                                <span className="text-xs text-[#4A6B8A]">ÃÂ· Day {log.day}</span>
+                                <span className="text-xs text-[#4A6B8A]">ÃÂÃÂ· Day {log.day}</span>
                               </div>
                               {log.note && <div className="text-xs text-[#7A9CC4] italic">"{log.note}"</div>}
                             </div>
@@ -1471,9 +1535,9 @@ function getPersonaPosts(emp,company){
         </div>
       )}
 
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {/* EMAIL TAB                                  */}
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {tab === "email" && (
         <div className="flex h-screen">
           <div className="w-56 bg-[#0A1020] border-r border-[#1B3154] p-4">
@@ -1490,7 +1554,7 @@ function getPersonaPosts(emp,company){
                 <h2 className="font-bold text-[#F8FAFC] mb-4">Inbox ({inbox.length})</h2>
                 {inbox.length === 0 ? (
                   <div className="text-center py-16 text-[#4A6B8A]">
-                    <div className="text-4xl mb-3">Ã°ÂÂÂ¬</div>
+                    <div className="text-4xl mb-3">ÃÂ°ÃÂÃÂÃÂ¬</div>
                     <div>No replies yet. Send emails and advance the simulation day to receive responses.</div>
                     <div className="text-xs mt-2">Senior contacts take longer to reply. Some may not reply at all.</div>
                   </div>
@@ -1500,13 +1564,13 @@ function getPersonaPosts(emp,company){
                       <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
-                          <div><span className="font-semibold text-[#D4E5FF]">{emp.first} {emp.last}</span><span className="text-[#4A6B8A] text-xs ml-2">{emp.title} ÃÂ· {company?.name}</span></div>
-                          <span className="text-xs text-green-600 font-medium">Ã¢ÂÂ Replied</span>
+                          <div><span className="font-semibold text-[#D4E5FF]">{emp.first} {emp.last}</span><span className="text-[#4A6B8A] text-xs ml-2">{emp.title} ÃÂÃÂ· {company?.name}</span></div>
+                          <span className="text-xs text-green-600 font-medium">ÃÂ¢ÃÂÃÂ Replied</span>
                         </div>
                         <div className="mt-2 space-y-1.5">
                           {thread.map((msg,i) => (
                             <div key={i} className={`p-2.5 rounded-lg text-xs leading-relaxed ${msg.from==="rep" ? "bg-[#EDF5EE] border border-[#B8D4BB] ml-6" : "bg-[#F2EFE8] border border-[#1B3154] mr-6"}`}>
-                              <div className={`font-semibold mb-0.5 ${msg.from==="rep" ? "text-[#38BDF8]" : "text-[#D4E5FF]"}`}>{msg.from==="rep" ? "You" : emp.first} ÃÂ· Day {msg.day}</div>
+                              <div className={`font-semibold mb-0.5 ${msg.from==="rep" ? "text-[#38BDF8]" : "text-[#D4E5FF]"}`}>{msg.from==="rep" ? "You" : emp.first} ÃÂÃÂ· Day {msg.day}</div>
                               {msg.body}
                             </div>
                           ))}
@@ -1520,17 +1584,17 @@ function getPersonaPosts(emp,company){
             {plView === "sent" && (
               <>
                 <h2 className="font-bold text-[#F8FAFC] mb-4">Sent ({sent.length})</h2>
-                {sent.length === 0 ? <div className="text-center py-16 text-[#4A6B8A]"><div className="text-4xl mb-3">Ã°ÂÂÂ¤</div><div>No emails sent yet.</div></div>
+                {sent.length === 0 ? <div className="text-center py-16 text-[#4A6B8A]"><div className="text-4xl mb-3">ÃÂ°ÃÂÃÂÃÂ¤</div><div>No emails sent yet.</div></div>
                 : sent.map(({emp, company, thread}) => (
                   <div key={emp.id} className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-4 mb-3">
                     <div className="flex items-center gap-3">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                       <div className="flex-1">
-                        <div className="font-medium text-[#D4E5FF] text-sm">{emp.first} {emp.last} <span className="text-[#4A6B8A] font-normal">ÃÂ· {company?.name}</span></div>
+                        <div className="font-medium text-[#D4E5FF] text-sm">{emp.first} {emp.last} <span className="text-[#4A6B8A] font-normal">ÃÂÃÂ· {company?.name}</span></div>
                         <div className="text-[#7A9CC4] text-xs">{thread[0]?.body?.slice(0,80)}...</div>
                       </div>
                       <div>
-                        {state[emp.id]?.emailStatus==="replied" ? <span className="text-xs text-green-600 font-medium">Ã¢ÂÂ Replied</span> : <span className="text-xs text-[#FBBF24]">Ã¢ÂÂ³ Awaiting</span>}
+                        {state[emp.id]?.emailStatus==="replied" ? <span className="text-xs text-green-600 font-medium">ÃÂ¢ÃÂÃÂ Replied</span> : <span className="text-xs text-[#FBBF24]">ÃÂ¢ÃÂÃÂ³ Awaiting</span>}
                       </div>
                     </div>
                   </div>
@@ -1541,7 +1605,7 @@ function getPersonaPosts(emp,company){
               <>
                 <h2 className="font-bold text-[#F8FAFC] mb-4">Awaiting Reply ({pending})</h2>
                 <div className="bg-[#1A1200] border border-[#3D2D00] rounded-lg p-3 text-xs text-[#FDE68A] mb-4">
-                  Ã¢ÂÂ© Hit <strong>Advance Day</strong> in the top bar to progress the simulation and trigger replies. Senior contacts take longer Ã¢ÂÂ a C-suite contact may take 5+ days to respond.
+                  ÃÂ¢ÃÂÃÂ© Hit <strong>Advance Day</strong> in the top bar to progress the simulation and trigger replies. Senior contacts take longer ÃÂ¢ÃÂÃÂ a C-suite contact may take 5+ days to respond.
                 </div>
                 {allEmps.filter(e => state[e.id]?.emailStatus==="sent").map(emp => {
                   const company = getCompanyForEmp(emp.id);
@@ -1550,8 +1614,8 @@ function getPersonaPosts(emp,company){
                     <div key={emp.id} className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-3 mb-2 flex items-center gap-3">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                       <div className="flex-1">
-                        <div className="font-medium text-[#D4E5FF] text-sm">{emp.first} {emp.last} <span className="text-[#4A6B8A] font-normal">ÃÂ· {company?.name}</span></div>
-                        <div className="text-[#4A6B8A] text-xs">{seniorityLabels[emp.seniority]} ÃÂ· Sent Day {cs.emailThread[0]?.day}</div>
+                        <div className="font-medium text-[#D4E5FF] text-sm">{emp.first} {emp.last} <span className="text-[#4A6B8A] font-normal">ÃÂÃÂ· {company?.name}</span></div>
+                        <div className="text-[#4A6B8A] text-xs">{seniorityLabels[emp.seniority]} ÃÂÃÂ· Sent Day {cs.emailThread[0]?.day}</div>
                       </div>
                       <div className="text-xs text-[#FBBF24]">Expected ~Day {cs.emailReplyDay || "?"}</div>
                     </div>
@@ -1563,9 +1627,9 @@ function getPersonaPosts(emp,company){
         </div>
       )}
 
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {/* PROLINK TAB                                */}
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {tab === "prolink" && (
         <div className="flex min-h-screen">
           {/* ProLink sidebar */}
@@ -1574,7 +1638,7 @@ function getPersonaPosts(emp,company){
               <div className="font-bold text-[#38BDF8] text-lg">ProLink</div>
               <div className="text-[#4A6A4A] text-xs">Professional Network</div>
             </div>
-            {[{id:"feed",icon:"Ã°ÂÂÂ ",label:"Home Feed"},{id:"network",icon:"Ã°ÂÂÂ¥",label:`Network ${pendingConnections>0?"("+pendingConnections+" pending)":""}`},{id:"search",icon:"Ã°ÂÂÂ",label:"Search People"},{id:"messages",icon:"Ã°ÂÂÂ¬",label:`Messages ${connections.length>0?"("+connections.length+")":""}` }].map(v => (
+            {[{id:"feed",icon:"ÃÂ°ÃÂÃÂÃÂ ",label:"Home Feed"},{id:"network",icon:"ÃÂ°ÃÂÃÂÃÂ¥",label:`Network ${pendingConnections>0?"("+pendingConnections+" pending)":""}`},{id:"search",icon:"ÃÂ°ÃÂÃÂÃÂ",label:"Search People"},{id:"messages",icon:"ÃÂ°ÃÂÃÂÃÂ¬",label:`Messages ${connections.length>0?"("+connections.length+")":""}` }].map(v => (
               <button key={v.id} onClick={() => setPlView(v.id)} className={`text-left px-3 py-2 rounded-lg text-sm transition-colors ${plView===v.id ? "bg-[#EDF5EE] text-[#38BDF8] font-medium" : "text-[#3A5A3A] hover:bg-[#EEF0FF]"}`}>{v.icon} {v.label}</button>
             ))}
           </div>
@@ -1599,26 +1663,26 @@ function getPersonaPosts(emp,company){
                           <div className="flex items-center justify-between">
                             <div>
                               <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="font-semibold text-[#F8FAFC] hover:text-blue-600 hover:underline text-sm">{emp.first} {emp.last}</button>
-                              <div className="text-[#7A9CC4] text-xs">{emp.title} ÃÂ· {company?.name} <span className="text-[#4A6B8A]">ÃÂ· {post.time}</span></div>
+                              <div className="text-[#7A9CC4] text-xs">{emp.title} ÃÂÃÂ· {company?.name} <span className="text-[#4A6B8A]">ÃÂÃÂ· {post.time}</span></div>
                             </div>
                             <div>
                               {cs.linkedinStatus === "none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#38BDF8] border border-[#0EA5E9] text-xs px-3 py-1 rounded-full hover:bg-[#EDF5EE] transition-colors">+ Connect</button>}
                               {cs.linkedinStatus === "pending" && <span className="text-[#FBBF24] text-xs px-3 py-1 rounded-full border border-yellow-200 bg-[#1A1200]">Pending</span>}
-                              {cs.linkedinStatus === "connected" && <span className="text-green-600 text-xs px-3 py-1 rounded-full border border-green-200 bg-green-50">Ã¢ÂÂ Connected</span>}
-                              {cs.linkedinStatus === "ignored" && <span className="text-[#4A6B8A] text-xs">Ã¢ÂÂ</span>}
+                              {cs.linkedinStatus === "connected" && <span className="text-green-600 text-xs px-3 py-1 rounded-full border border-green-200 bg-green-50">ÃÂ¢ÃÂÃÂ Connected</span>}
+                              {cs.linkedinStatus === "ignored" && <span className="text-[#4A6B8A] text-xs">ÃÂ¢ÃÂÃÂ</span>}
                             </div>
                           </div>
                         </div>
                       </div>
                       <div>
-                        {post.type === 'signal' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-amber-50 text-amber-700 border border-amber-200">Ã°ÂÂÂ Buying Signal</span>}
-                        {post.type === 'challenge' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-rose-50 text-rose-700 border border-rose-200">Ã¢ÂÂ Ã¯Â¸Â Challenge</span>}
-                        {post.type === 'milestone' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-emerald-50 text-emerald-700 border border-emerald-200">Ã°ÂÂÂ Milestone</span>}
+                        {post.type === 'signal' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-amber-50 text-amber-700 border border-amber-200">ÃÂ°ÃÂÃÂÃÂ Buying Signal</span>}
+                        {post.type === 'challenge' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-rose-50 text-rose-700 border border-rose-200">ÃÂ¢ÃÂÃÂ ÃÂ¯ÃÂ¸ÃÂ Challenge</span>}
+                        {post.type === 'milestone' && <span className="inline-flex items-center text-xs px-2 py-0.5 rounded-full font-semibold mb-2 bg-emerald-50 text-emerald-700 border border-emerald-200">ÃÂ°ÃÂÃÂÃÂ Milestone</span>}
                         <p className="text-[#A8BFDB] text-sm leading-relaxed mb-2">{post.text}</p>
-                        <p className="text-[#4A6B8A] text-xs mb-3">{post.likes} likes ÃÂ· {post.comments} comments</p>
+                        <p className="text-[#4A6B8A] text-xs mb-3">{post.likes} likes ÃÂÃÂ· {post.comments} comments</p>
                       </div>
                       <div className="flex gap-4 pt-2 border-t border-[#152840]">
-                        {["Ã°ÂÂÂ Like","Ã°ÂÂÂ¬ Comment","Ã°ÂÂÂ Repost"].map(a => (
+                        {["ÃÂ°ÃÂÃÂÃÂ Like","ÃÂ°ÃÂÃÂÃÂ¬ Comment","ÃÂ°ÃÂÃÂÃÂ Repost"].map(a => (
                           <button key={a} className="text-[#7A9CC4] text-xs hover:text-[#38BDF8] transition-colors">{a}</button>
                         ))}
                       </div>
@@ -1634,28 +1698,28 @@ function getPersonaPosts(emp,company){
                 <h2 className="font-bold text-[#F8FAFC] mb-4">Your Network</h2>
                 {pendingConnections > 0 && (
                   <div className="mb-5">
-                    <div className="font-semibold text-[#A8BFDB] text-sm mb-3">Ã¢ÂÂ³ Pending Requests ({pendingConnections})</div>
-                    <div className="bg-amber-50 border border-amber-100 rounded-lg p-3 text-xs text-amber-700 mb-3">Hit <strong>Advance Day</strong> to simulate time passing Ã¢ÂÂ senior contacts take longer to accept.</div>
+                    <div className="font-semibold text-[#A8BFDB] text-sm mb-3">ÃÂ¢ÃÂÃÂ³ Pending Requests ({pendingConnections})</div>
+                    <div className="bg-amber-50 border border-amber-100 rounded-lg p-3 text-xs text-amber-700 mb-3">Hit <strong>Advance Day</strong> to simulate time passing ÃÂ¢ÃÂÃÂ senior contacts take longer to accept.</div>
                     {allEmps.filter(e => state[e.id]?.linkedinStatus==="pending").map(emp => {
                       const company = getCompanyForEmp(emp.id);
                       return (
                         <div key={emp.id} className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-3 mb-2 flex items-center gap-3">
                           <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
-                          <div className="flex-1"><div className="font-medium text-[#D4E5FF] text-sm">{emp.first} {emp.last}</div><div className="text-[#4A6B8A] text-xs">{emp.title} ÃÂ· {company?.name}</div></div>
-                          <span className="text-[#FBBF24] text-xs">Pending ÃÂ· Expected Day {state[emp.id].linkedinReplyDay}</span>
+                          <div className="flex-1"><div className="font-medium text-[#D4E5FF] text-sm">{emp.first} {emp.last}</div><div className="text-[#4A6B8A] text-xs">{emp.title} ÃÂÃÂ· {company?.name}</div></div>
+                          <span className="text-[#FBBF24] text-xs">Pending ÃÂÃÂ· Expected Day {state[emp.id].linkedinReplyDay}</span>
                         </div>
                       );
                     })}
                   </div>
                 )}
-                <div className="font-semibold text-[#A8BFDB] text-sm mb-3">Ã°ÂÂÂ Connections ({connections.length})</div>
+                <div className="font-semibold text-[#A8BFDB] text-sm mb-3">ÃÂ°ÃÂÃÂÃÂ Connections ({connections.length})</div>
                 {connections.length === 0 ? <div className="text-center py-8 text-[#4A6B8A] text-sm">No connections yet. Search for people or connect from the feed.</div>
                 : connections.map(emp => {
                   const company = getCompanyForEmp(emp.id);
                   return (
                     <div key={emp.id} className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-3 mb-2 flex items-center gap-3">
                       <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
-                      <div className="flex-1"><div className="font-medium text-[#D4E5FF] text-sm">{emp.first} {emp.last}</div><div className="text-[#4A6B8A] text-xs">{emp.title} ÃÂ· {company?.name}</div></div>
+                      <div className="flex-1"><div className="font-medium text-[#D4E5FF] text-sm">{emp.first} {emp.last}</div><div className="text-[#4A6B8A] text-xs">{emp.title} ÃÂÃÂ· {company?.name}</div></div>
                       <button onClick={() => { setPlMsgEmp(emp); setPlView("messages"); }} className="text-[#38BDF8] text-xs border border-[#B8D4BB] px-3 py-1 rounded-full hover:bg-[#EDF5EE]">Message</button>
                     </div>
                   );
@@ -1681,13 +1745,13 @@ function getPersonaPosts(emp,company){
                         <div className={`w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs flex-shrink-0 ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                         <div className="flex-1">
                           <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="font-medium text-[#D4E5FF] text-sm hover:text-blue-600 hover:underline">{emp.first} {emp.last}</button>
-                          <div className="text-[#4A6B8A] text-xs">{emp.title} ÃÂ· {company?.name} ÃÂ· {company?.location}</div>
+                          <div className="text-[#4A6B8A] text-xs">{emp.title} ÃÂÃÂ· {company?.name} ÃÂÃÂ· {company?.location}</div>
                         </div>
                         <div className="flex gap-1.5">
                           {cs.linkedinStatus==="none" && <button onClick={() => sendLinkedinConnect(emp)} className="text-[#38BDF8] border border-[#0EA5E9] text-xs px-2.5 py-1 rounded-full hover:bg-[#EDF5EE]">+ Connect</button>}
                           {cs.linkedinStatus==="pending" && <span className="text-yellow-700 text-xs px-2.5 py-1 rounded-full border border-yellow-200 bg-[#1A1200]">Pending</span>}
                           {cs.linkedinStatus==="connected" && <button onClick={() => { setPlMsgEmp(emp); setPlView("messages"); }} className="text-[#38BDF8] text-xs border border-[#B8D4BB] px-2.5 py-1 rounded-full bg-[#EDF5EE]">Message</button>}
-                          {cs.linkedinStatus==="ignored" && <span className="text-[#4A6B8A] text-xs">Ã¢ÂÂ</span>}
+                          {cs.linkedinStatus==="ignored" && <span className="text-[#4A6B8A] text-xs">ÃÂ¢ÃÂÃÂ</span>}
                           <button onClick={() => { setPlProfile(emp); setPlView("profile"); }} className="text-[#3A5A3A] text-xs border border-[#1B3154] px-2.5 py-1 rounded-full hover:bg-[#FFFFFF]">View</button>
                         </div>
                       </div>
@@ -1704,7 +1768,7 @@ function getPersonaPosts(emp,company){
               return (
                 <div>
                   <button onClick={()=>setPlView("feed")} className="flex items-center gap-1.5 text-sm font-semibold mb-4 transition-colors" style={{color:'#0A66C2'}}>
-                    <span>Ã¢ÂÂ Back to Feed</span>
+                    <span>ÃÂ¢ÃÂÃÂ Back to Feed</span>
                   </button>
 
                   <div className="bg-[#0D1525] rounded-2xl overflow-hidden mb-3" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.08)'}}>
@@ -1722,12 +1786,12 @@ function getPersonaPosts(emp,company){
                       </div>
                       <h2 className="text-lg font-bold text-[#F8FAFC] leading-tight mb-0.5">{plProfile.first} {plProfile.last}</h2>
                       <p className="text-sm text-[#7A9CC4] hover:text-[#38BDF8] leading-snug mb-1">{plProfile.title}</p>
-                      <p className="text-sm text-[#D4E5FF] font-medium mb-2">{company?company.name:''}{company&&<span className="text-[#4A6B8A] font-normal"> ÃÂ· {company.industry}</span>}</p>
+                      <p className="text-sm text-[#D4E5FF] font-medium mb-2">{company?company.name:''}{company&&<span className="text-[#4A6B8A] font-normal"> ÃÂÃÂ· {company.industry}</span>}</p>
                       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#7A9CC4] mb-3">
                         <span className="font-semibold" style={{color:'#0A66C2'}}>{getPersonaConnections(plProfile.id).toLocaleString()} connections</span>
-                        <span>ÃÂ·</span>
-                        <span>Ã°ÂÂÂ {(companies.find(c=>c.id===getCompanyForEmp(plProfile.id))||{location:'Dublin'}).location}</span>
-                        {company&&<><span>ÃÂ·</span><span>{company.size}</span></>}
+                        <span>ÃÂÃÂ·</span>
+                        <span>ÃÂ°ÃÂÃÂÃÂ {(companies.find(c=>c.id===getCompanyForEmp(plProfile.id))||{location:'Dublin'}).location}</span>
+                        {company&&<><span>ÃÂÃÂ·</span><span>{company.size}</span></>}
                       </div>
                       {company&&<span className="inline-block px-3 py-1 rounded-full text-xs font-semibold" style={{background:'#EBF5FB',color:'#0A66C2',border:'1px solid #BFDBFE'}}>{company.industry}</span>}
                     </div>
@@ -1775,21 +1839,21 @@ function getPersonaPosts(emp,company){
                             <img src={getPersonaPhoto(plProfile.id)} className="w-9 h-9 rounded-full object-cover flex-shrink-0" style={{border:'1px solid rgba(0,0,0,0.08)'}} onError={e=>{e.target.style.display='none';}} alt=""/>
                             <div className="flex-1 min-w-0">
                               <p className="text-sm font-bold text-[#F8FAFC] leading-tight">{plProfile.first} {plProfile.last}</p>
-                              <p className="text-xs text-[#7A9CC4] leading-tight truncate">{plProfile.title} ÃÂ· {company?company.name:''}</p>
-                              <p className="text-xs text-[#4A6B8A] leading-tight">{post.timeAgo} ÃÂ· Ã°ÂÂÂ</p>
+                              <p className="text-xs text-[#7A9CC4] leading-tight truncate">{plProfile.title} ÃÂÃÂ· {company?company.name:''}</p>
+                              <p className="text-xs text-[#4A6B8A] leading-tight">{post.timeAgo} ÃÂÃÂ· ÃÂ°ÃÂÃÂÃÂ</p>
                             </div>
                             <button className="flex-shrink-0 text-xs font-bold px-3 py-1 rounded-full" style={{color:'#0A66C2',border:'1.5px solid #0A66C2',background:'transparent',cursor:'pointer',whiteSpace:'nowrap'}}>+ Follow</button>
                           </div>
                           <p className="text-sm text-[#D4E5FF] leading-relaxed mb-3">{post.text}</p>
-                          {post.hasImage&&<div className="rounded-xl mb-3 flex items-center justify-center text-4xl" style={{height:'120px',background:'linear-gradient(135deg,#EFF6FF,#EDE9FE)'}}>{['Ã°ÂÂÂ','Ã°ÂÂÂ','Ã°ÂÂÂ','Ã°ÂÂÂ¡','Ã°ÂÂ¤Â'][pi%5]}</div>}
+                          {post.hasImage&&<div className="rounded-xl mb-3 flex items-center justify-center text-4xl" style={{height:'120px',background:'linear-gradient(135deg,#EFF6FF,#EDE9FE)'}}>{['ÃÂ°ÃÂÃÂÃÂ','ÃÂ°ÃÂÃÂÃÂ','ÃÂ°ÃÂÃÂÃÂ','ÃÂ°ÃÂÃÂÃÂ¡','ÃÂ°ÃÂÃÂ¤ÃÂ'][pi%5]}</div>}
                           {post.tags&&post.tags.length>0&&<div className="flex flex-wrap gap-2 mb-3">{post.tags.map((t,ti)=><span key={ti} className="text-xs font-semibold" style={{color:'#0A66C2'}}>{t}</span>)}</div>}
                           <div className="flex items-center text-xs text-[#7A9CC4] pt-2.5 border-t border-[#152840]">
-                            <span className="flex items-center gap-1.5"><span className="inline-flex items-center justify-center w-4 h-4 rounded-full text-white" style={{background:'#0A66C2',fontSize:'9px'}}>Ã°ÂÂÂ</span><span>{post.likes.toLocaleString()} likes</span></span>
+                            <span className="flex items-center gap-1.5"><span className="inline-flex items-center justify-center w-4 h-4 rounded-full text-white" style={{background:'#0A66C2',fontSize:'9px'}}>ÃÂ°ÃÂÃÂÃÂ</span><span>{post.likes.toLocaleString()} likes</span></span>
                             <span className="ml-auto">{post.comments} comments</span>
                           </div>
                         </div>
                         <div className="flex border-t border-[#152840]">
-                          {[['Ã°ÂÂÂ','Like'],['Ã°ÂÂÂ¬','Comment'],['Ã°ÂÂÂ','Repost'],['Ã°ÂÂÂ¤','Send']].map(([icon,label],ai)=>(
+                          {[['ÃÂ°ÃÂÃÂÃÂ','Like'],['ÃÂ°ÃÂÃÂÃÂ¬','Comment'],['ÃÂ°ÃÂÃÂÃÂ','Repost'],['ÃÂ°ÃÂÃÂÃÂ¤','Send']].map(([icon,label],ai)=>(
                             <button key={ai} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-semibold text-[#7A9CC4] hover:bg-[#152840] transition-colors">{icon} {label}</button>
                           ))}
                         </div>
@@ -1806,7 +1870,7 @@ function getPersonaPosts(emp,company){
               <div>
                 <h2 className="font-bold text-[#F8FAFC] mb-4">Messages</h2>
                 {connections.length === 0 ? (
-                  <div className="text-center py-12 text-[#4A6B8A]"><div className="text-4xl mb-3">Ã°ÂÂÂ¬</div><div>No connections yet. Connect with people to message them.</div></div>
+                  <div className="text-center py-12 text-[#4A6B8A]"><div className="text-4xl mb-3">ÃÂ°ÃÂÃÂÃÂ¬</div><div>No connections yet. Connect with people to message them.</div></div>
                 ) : (
                   <div className="flex gap-4 h-96">
                     <div className="w-48 border border-[#1B3154] rounded-xl overflow-hidden bg-[#0D1525]">
@@ -1849,15 +1913,15 @@ function getPersonaPosts(emp,company){
         </div>
       )}
 
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {/* SCORECARD TAB                              */}
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {tab === "score" && (() => {
         const g = calcGrade();
         const emailReplyRate = emailsSent > 0 ? Math.round((emailsReplied / emailsSent) * 100) : 0;
         const stats = [
-          { label: "Meetings Booked", value: `${meetingsBooked} / ${MEETING_GOAL}`, sub: meetingsBooked >= MEETING_GOAL ? "Goal reached! Ã°ÂÂÂ" : `${MEETING_GOAL - meetingsBooked} more to hit target`, highlight: meetingsBooked >= MEETING_GOAL },
-          { label: "Emails Sent", value: emailsSent, sub: `${emailsReplied} replied ÃÂ· ${emailReplyRate}% reply rate`, highlight: false },
+          { label: "Meetings Booked", value: `${meetingsBooked} / ${MEETING_GOAL}`, sub: meetingsBooked >= MEETING_GOAL ? "Goal reached! ÃÂ°ÃÂÃÂÃÂ" : `${MEETING_GOAL - meetingsBooked} more to hit target`, highlight: meetingsBooked >= MEETING_GOAL },
+          { label: "Emails Sent", value: emailsSent, sub: `${emailsReplied} replied ÃÂÃÂ· ${emailReplyRate}% reply rate`, highlight: false },
           { label: "ProLink Connections", value: connections.length, sub: `${pendingConnections} still pending`, highlight: false },
           { label: "Accounts Touched", value: `${accountsTouched} / 20`, sub: "Accounts with at least 1 touchpoint", highlight: false },
           { label: "Simulation Day", value: `${Math.min(simDay, SIM_LENGTH)} / ${SIM_LENGTH}`, sub: simComplete ? "Simulation complete" : `${SIM_LENGTH - simDay} days remaining`, highlight: simComplete },
@@ -1891,7 +1955,7 @@ function getPersonaPosts(emp,company){
             </div>
             {/* Meeting list */}
             <div className="bg-[#0D1525] rounded-xl border border-[#1B3154] overflow-hidden">
-              <div className="px-4 py-3 border-b border-[#1B3154] font-semibold text-[#D4E5FF] text-sm">Ã°ÂÂÂ Meetings Booked ({meetingsBooked})</div>
+              <div className="px-4 py-3 border-b border-[#1B3154] font-semibold text-[#D4E5FF] text-sm">ÃÂ°ÃÂÃÂÃÂ Meetings Booked ({meetingsBooked})</div>
               {meetingsBooked === 0 ? (
                 <div className="text-center py-8 text-[#4A6B8A] text-sm">No meetings booked yet. Get a prospect to reply, then hit Request Meeting.</div>
               ) : allEmps.filter(e => state[e.id]?.meetingStatus === "booked").map(emp => {
@@ -1901,10 +1965,10 @@ function getPersonaPosts(emp,company){
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${getAvatarColor(emp.id)}`}>{getInitials(emp)}</div>
                     <div className="flex-1">
                       <div className="font-medium text-[#F8FAFC] text-sm">{emp.first} {emp.last}</div>
-                      <div className="text-[#4A6B8A] text-xs">{emp.title} ÃÂ· {company?.name}</div>
+                      <div className="text-[#4A6B8A] text-xs">{emp.title} ÃÂÃÂ· {company?.name}</div>
                     </div>
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${seniorityColors[emp.seniority]}`}>{seniorityLabels[emp.seniority]}</span>
-                    <span className="text-green-600 text-xs font-medium">Ã¢ÂÂ Booked</span>
+                    <span className="text-green-600 text-xs font-medium">ÃÂ¢ÃÂÃÂ Booked</span>
                   </div>
                 );
               })}
@@ -1917,7 +1981,7 @@ function getPersonaPosts(emp,company){
       {simComplete && tab !== "score" && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="bg-[#0D1525] rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 text-center">
-            <div className="text-5xl mb-3">Ã°ÂÂÂ</div>
+            <div className="text-5xl mb-3">ÃÂ°ÃÂÃÂÃÂ</div>
             <h2 className="text-2xl font-black text-[#F8FAFC] mb-1">Simulation Complete</h2>
             <p className="text-[#7A9CC4] text-sm mb-5">30 days done. Time to see how you performed.</p>
             <div className="flex gap-3 justify-center">
@@ -1928,9 +1992,9 @@ function getPersonaPosts(emp,company){
         </div>
       )}
 
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {/* SETTINGS MODAL */}
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {callModal && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
           <div className="bg-[#1A2A20] rounded-3xl shadow-2xl w-80 overflow-hidden">
@@ -1957,16 +2021,16 @@ function getPersonaPosts(emp,company){
               )}
               {callPhase === "outcome" && callOutcome === "connected" && (
                 <div>
-                  <div className="text-emerald-400 text-sm font-semibold mb-2">Ã¢ÂÂ Connected</div>
+                  <div className="text-emerald-400 text-sm font-semibold mb-2">ÃÂ¢ÃÂÃÂ Connected</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-[#4A6B8A] text-xs mb-1">{callModal.first} says:</div>
-                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? "Ã°ÂÂÂ Generating..." : "Ã°ÂÂÂ Hear AI Voice"}</button>)}
+                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? "ÃÂ°ÃÂÃÂÃÂ Generating..." : "ÃÂ°ÃÂÃÂÃÂ Hear AI Voice"}</button>)}
                   </div>
                 </div>
               )}
               {callPhase === "outcome" && callOutcome === "gatekeeper" && (
                 <div>
-                  <div className="text-orange-400 text-sm font-semibold mb-2">Ã°ÂÂÂ§ Gatekeeper</div>
+                  <div className="text-orange-400 text-sm font-semibold mb-2">ÃÂ°ÃÂÃÂÃÂ§ Gatekeeper</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-[#4A6B8A] text-xs mb-1">Reception says:</div>
                     <div className="text-white text-sm leading-relaxed">"{callLine}"</div>
@@ -1975,16 +2039,16 @@ function getPersonaPosts(emp,company){
               )}
               {callPhase === "outcome" && callOutcome === "voicemail" && (
                 <div>
-                  <div className="text-yellow-400 text-sm font-semibold mb-2">Ã°ÂÂÂ¨ Voicemail</div>
+                  <div className="text-yellow-400 text-sm font-semibold mb-2">ÃÂ°ÃÂÃÂÃÂ¨ Voicemail</div>
                   <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
                     <div className="text-[#4A6B8A] text-xs mb-1">Voicemail:</div>
-                    <div className="text-white text-sm leading-relaxed italic">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">{aiVoiceLoading ? "Ã°ÂÂÂ Generating..." : "Ã°ÂÂÂ Hear AI Voice"}</button>)}
+                    <div className="text-white text-sm leading-relaxed italic">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">{aiVoiceLoading ? "ÃÂ°ÃÂÃÂÃÂ Generating..." : "ÃÂ°ÃÂÃÂÃÂ Hear AI Voice"}</button>)}
                   </div>
                 </div>
               )}
               {callPhase === "outcome" && callOutcome === "no-answer" && (
                 <div>
-                  <div className="text-[#4A6B8A] text-sm font-semibold mb-2">Ã°ÂÂÂµ No Answer</div>
+                  <div className="text-[#4A6B8A] text-sm font-semibold mb-2">ÃÂ°ÃÂÃÂÃÂµ No Answer</div>
                   <div className="text-[#7A9CC4] text-xs">The call rang out. Try again later or send a follow-up email.</div>
                 </div>
               )}
@@ -1993,13 +2057,13 @@ function getPersonaPosts(emp,company){
             {/* Actions */}
             <div className="px-6 pb-8 flex justify-center gap-6">
               {callPhase === "dialing" && (
-                <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">Ã°ÂÂÂµ</button>
+                <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">ÃÂ°ÃÂÃÂÃÂµ</button>
               )}
               {callPhase === "outcome" && (
                 <>
-                  <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">Ã°ÂÂÂµ</button>
+                  <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors">ÃÂ°ÃÂÃÂÃÂµ</button>
                   {(callOutcome === "connected" || callOutcome === "voicemail") && (
-                    <button onClick={() => { endCall(); setEmailCompose({emp:callModal, company:getCompanyForEmp(callModal.id)}); setEmailDraft({subject:"Following up on our call", body:""}); }} className="w-14 h-14 rounded-full bg-[#0EA5E9] hover:bg-[#0284C7] border border-emerald-700 flex items-center justify-center text-2xl transition-colors">Ã¢ÂÂ</button>
+                    <button onClick={() => { endCall(); setEmailCompose({emp:callModal, company:getCompanyForEmp(callModal.id)}); setEmailDraft({subject:"Following up on our call", body:""}); }} className="w-14 h-14 rounded-full bg-[#0EA5E9] hover:bg-[#0284C7] border border-emerald-700 flex items-center justify-center text-2xl transition-colors">ÃÂ¢ÃÂÃÂ</button>
                   )}
                 </>
               )}
@@ -2009,15 +2073,15 @@ function getPersonaPosts(emp,company){
         </div>
       )}
 
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {/* EMAIL COMPOSE MODAL                        */}
-      {/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */}
+      {/* ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ */}
       {emailCompose && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-end z-50 p-4">
           <div className="bg-[#0D1525] rounded-2xl shadow-2xl w-full max-w-md">
             <div className="px-4 py-3 bg-[#0EA5E9] rounded-t-2xl flex items-center justify-between">
               <span className="text-white text-sm font-medium">New Email</span>
-              <button onClick={() => setEmailCompose(null)} className="text-[#4A6B8A] hover:text-white text-lg">ÃÂ</button>
+              <button onClick={() => setEmailCompose(null)} className="text-[#4A6B8A] hover:text-white text-lg">ÃÂÃÂ</button>
             </div>
             <div className="p-4">
               {emailCompose.emp ? (
@@ -2032,11 +2096,11 @@ function getPersonaPosts(emp,company){
               <textarea value={emailDraft.body} onChange={e => setEmailDraft(d => ({...d, body:e.target.value}))} placeholder={emailCompose.emp ? `Write your email to ${emailCompose.emp.first}...\n\nTip: ${emailCompose.emp?.seniority==="c-suite"||emailCompose.emp?.seniority==="vp" ? "Keep it to 3 lines for senior buyers. Lead with their pain, not your product." : "Be specific about why you're reaching out to them specifically."}` : "Write your email..."} className="w-full border border-[#1B3154] rounded-lg px-3 py-2 text-sm min-h-32 resize-none focus:outline-none focus:border-[#0EA5E9] mb-3"/>
               {emailCompose.emp && (
                 <div className="text-xs text-[#4A6B8A] mb-3">
-                  {emailCompose.emp.seniority === "c-suite" && "Ã¢ÂÂ Ã¯Â¸Â C-Suite: Takes ~5 days to respond. May not respond at all."}
-                  {emailCompose.emp.seniority === "vp" && "Ã°ÂÂÂ VP level: Usually responds within 3 days if the email earns it."}
-                  {emailCompose.emp.seniority === "director" && "Ã°ÂÂÂ Director: Usually responds within 2 days."}
-                  {emailCompose.emp.seniority === "manager" && "Ã¢ÂÂ Manager: Likely to respond within 1 day."}
-                  {(emailCompose.emp.seniority === "mid" || emailCompose.emp.seniority === "junior") && "Ã¢ÂÂ Will respond quickly Ã¢ÂÂ but may redirect you upward."}
+                  {emailCompose.emp.seniority === "c-suite" && "ÃÂ¢ÃÂÃÂ ÃÂ¯ÃÂ¸ÃÂ C-Suite: Takes ~5 days to respond. May not respond at all."}
+                  {emailCompose.emp.seniority === "vp" && "ÃÂ°ÃÂÃÂÃÂ VP level: Usually responds within 3 days if the email earns it."}
+                  {emailCompose.emp.seniority === "director" && "ÃÂ°ÃÂÃÂÃÂ Director: Usually responds within 2 days."}
+                  {emailCompose.emp.seniority === "manager" && "ÃÂ¢ÃÂÃÂ Manager: Likely to respond within 1 day."}
+                  {(emailCompose.emp.seniority === "mid" || emailCompose.emp.seniority === "junior") && "ÃÂ¢ÃÂÃÂ Will respond quickly ÃÂ¢ÃÂÃÂ but may redirect you upward."}
                 </div>
               )}
               <div className="flex justify-end gap-2">
@@ -2052,14 +2116,14 @@ function getPersonaPosts(emp,company){
   {tab==='scheduled'&&(
     <div style={{padding:32,maxWidth:900,margin:'0 auto'}}>
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24}}>
-        <h2 style={{color:'#f1f5f9',margin:0,fontSize:22,fontWeight:700}}>Ã°ÂÂÂ Scheduled Calls</h2>
+        <h2 style={{color:'#f1f5f9',margin:0,fontSize:22,fontWeight:700}}>ÃÂ°ÃÂÃÂÃÂ Scheduled Calls</h2>
         {allEmps.length>0&&(
           <button onClick={()=>{const emp=allEmps[0];handleOpenBooking(emp,'discovery');}} style={{padding:'9px 18px',borderRadius:9,border:'none',background:'#6366f1',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:14}}>+ Book Call</button>
         )}
       </div>
       {scheduledCalls.length===0?(
         <div style={{textAlign:'center',padding:'60px 0',color:'#475569'}}>
-          <div style={{fontSize:48,marginBottom:12}}>Ã°ÂÂÂ</div>
+          <div style={{fontSize:48,marginBottom:12}}>ÃÂ°ÃÂÃÂÃÂ</div>
           <div style={{fontSize:16,fontWeight:600,marginBottom:8,color:'#7A9CC4'}}>No calls scheduled yet</div>
           <div style={{fontSize:13}}>Book a discovery or demo call with a prospect to get started.</div>
         </div>
@@ -2072,11 +2136,11 @@ function getPersonaPosts(emp,company){
               <div key={sc.id} style={{background:'#1e293b',borderRadius:12,padding:'18px 22px',border:'1px solid #334155',display:'flex',alignItems:'center',justifyContent:'space-between',opacity:sc.status==='completed'?0.6:1}}>
                 <div style={{display:'flex',alignItems:'center',gap:16}}>
                   <div style={{width:44,height:44,borderRadius:'50%',background:sc.call_type==='demo'?'linear-gradient(135deg,#0ea5e9,#6366f1)':'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:20}}>
-                    {sc.call_type==='demo'?'Ã°ÂÂÂ¥Ã¯Â¸Â':'Ã°ÂÂÂÃ¯Â¸Â'}
+                    {sc.call_type==='demo'?'ÃÂ°ÃÂÃÂÃÂ¥ÃÂ¯ÃÂ¸ÃÂ':'ÃÂ°ÃÂÃÂÃÂÃÂ¯ÃÂ¸ÃÂ'}
                   </div>
                   <div>
                     <div style={{color:'#f1f5f9',fontWeight:700,fontSize:15}}>{sc.persona_name}</div>
-                    <div style={{color:'#7A9CC4',fontSize:13}}>{sc.company_name} ÃÂ· {sc.call_type==='demo'?'Demo':'Discovery'}</div>
+                    <div style={{color:'#7A9CC4',fontSize:13}}>{sc.company_name} ÃÂÃÂ· {sc.call_type==='demo'?'Demo':'Discovery'}</div>
                   </div>
                 </div>
                 <div style={{textAlign:'right',display:'flex',alignItems:'center',gap:16}}>
@@ -2099,10 +2163,10 @@ function getPersonaPosts(emp,company){
       
   {tab==='inbox'&&(
     <div style={{padding:32,maxWidth:900,margin:'0 auto'}}>
-      <h2 style={{color:'#f1f5f9',margin:'0 0 24px',fontSize:22,fontWeight:700}}>Ã°ÂÂÂ¬ Prospect Inbox</h2>
+      <h2 style={{color:'#f1f5f9',margin:'0 0 24px',fontSize:22,fontWeight:700}}>ÃÂ°ÃÂÃÂÃÂ¬ Prospect Inbox</h2>
       {personaMessages.length===0?(
         <div style={{textAlign:'center',padding:'60px 0',color:'#475569'}}>
-          <div style={{fontSize:48,marginBottom:12}}>Ã°ÂÂÂ¬</div>
+          <div style={{fontSize:48,marginBottom:12}}>ÃÂ°ÃÂÃÂÃÂ¬</div>
           <div style={{fontSize:16,fontWeight:600,marginBottom:8,color:'#7A9CC4'}}>No messages yet</div>
           <div style={{fontSize:13}}>Prospects will reach out soon with questions and call requests.</div>
         </div>
@@ -2123,21 +2187,21 @@ function getPersonaPosts(emp,company){
                     {(msg.persona_name||'?').split(' ').map(n=>n[0]).join('').slice(0,2)}
                   </div>
                   <div>
-                    <div style={{color:msg.is_read?'#94a3b8':'#f1f5f9',fontWeight:msg.is_read?400:700,fontSize:14}}>{msg.persona_name} <span style={{color:'#475569',fontWeight:400}}>ÃÂ· {msg.company_name}</span></div>
+                    <div style={{color:msg.is_read?'#94a3b8':'#f1f5f9',fontWeight:msg.is_read?400:700,fontSize:14}}>{msg.persona_name} <span style={{color:'#475569',fontWeight:400}}>ÃÂÃÂ· {msg.company_name}</span></div>
                     <div style={{color:'#7A9CC4',fontSize:12,marginTop:2}}>{msg.subject}</div>
                   </div>
                 </div>
                 <div style={{display:'flex',alignItems:'center',gap:10}}>
                   <span style={{padding:'2px 8px',borderRadius:20,fontSize:11,background:msg.msg_type==='call_request'?'rgba(34,197,94,0.15)':msg.msg_type==='demo_request'?'rgba(14,165,233,0.15)':'rgba(99,102,241,0.15)',color:msg.msg_type==='call_request'?'#16a34a':msg.msg_type==='demo_request'?'#38bdf8':'#818cf8',border:'1px solid '+(msg.msg_type==='call_request'?'#16a34a':msg.msg_type==='demo_request'?'#0ea5e9':'#6366f1')}}>{msg.msg_type.replace('_',' ')}</span>
                   <span style={{color:'#475569',fontSize:11}}>{new Date(msg.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric'})}</span>
-                  <span style={{color:'#475569',fontSize:16}}>{expandedMsg===msg.id?'Ã¢ÂÂ²':'Ã¢ÂÂ¼'}</span>
+                  <span style={{color:'#475569',fontSize:16}}>{expandedMsg===msg.id?'ÃÂ¢ÃÂÃÂ²':'ÃÂ¢ÃÂÃÂ¼'}</span>
                 </div>
               </div>
               {expandedMsg===msg.id&&(
                 <div style={{background:'#162032',border:'1px solid #334155',borderTop:'none',borderRadius:'0 0 12px 12px',padding:'16px 18px'}}>
                   <p style={{color:'#4A6B8A',fontSize:14,lineHeight:1.7,margin:'0 0 16px',whiteSpace:'pre-wrap'}}>{msg.body}</p>
                   {msg.wants_call&&(
-                    <button onClick={()=>handleMsgBooking(msg)} style={{padding:'9px 20px',borderRadius:9,border:'none',background:'#6366f1',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:14}}>Ã°ÂÂÂ Book {msg.call_type==='demo'?'Demo':'Discovery'} Call</button>
+                    <button onClick={()=>handleMsgBooking(msg)} style={{padding:'9px 20px',borderRadius:9,border:'none',background:'#6366f1',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:14}}>ÃÂ°ÃÂÃÂÃÂ Book {msg.call_type==='demo'?'Demo':'Discovery'} Call</button>
                   )}
                 </div>
               )}
@@ -2179,27 +2243,68 @@ function getPersonaPosts(emp,company){
       )}
 
   {tab==='agentlab'&&(
-    <div style={{padding:32,maxWidth:1100,margin:'0 auto'}}>
-      <style>{`@keyframes spin{to{transform:rotate(360deg)}} @keyframes labPulse{0%,100%{opacity:1}50%{opacity:0.4}}`}</style>
-      <div style={{marginBottom:28}}><h2 style={{color:'#f1f5f9',margin:'0 0 6px',fontSize:22,fontWeight:700}}>🤖 AI Agent Lab</h2><p style={{color:'#4A6B8A',margin:0,fontSize:14}}>Test how well AI sales agents (or human reps) perform cold calls against realistic prospect personas. Scored on MEDDIC coverage, objection handling, rapport, and booking rate.</p></div>
-      {!apiKey&&(<div style={{background:'rgba(245,158,11,0.08)',border:'1px solid #f59e0b',borderRadius:10,padding:'12px 16px',marginBottom:20,display:'flex',alignItems:'center',gap:10}}><span>⚠️</span><span style={{color:'#fbbf24',fontSize:13}}>Add your OpenAI API key in <button onClick={()=>setShowSettings(true)} style={{background:'none',border:'none',color:'#6366f1',cursor:'pointer',fontWeight:600,textDecoration:'underline',padding:0,fontSize:13}}>Settings</button> to run AI simulations.</span></div>)}
-      <div style={{display:'grid',gridTemplateColumns:'380px 1fr',gap:24,alignItems:'start'}}>
-        <div style={{background:'#0d1526',borderRadius:12,border:'1px solid #1e293b',padding:20,display:'flex',flexDirection:'column',gap:16}}>
-          <div style={{color:'#f1f5f9',fontWeight:700,fontSize:15}}>⚙️ Agent / Rep Configuration</div>
-          <div><label style={{display:'block',color:'#7A9CC4',fontSize:11,fontWeight:700,letterSpacing:0.5,marginBottom:6,textTransform:'uppercase'}}>Name</label><input value={agentName} onChange={e=>setAgentName(e.target.value)} placeholder='e.g. SDR-Bot v1, or rep name...' style={{width:'100%',background:'#111827',border:'1px solid #334155',borderRadius:8,padding:'8px 12px',color:'#f1f5f9',fontSize:13,boxSizing:'border-box'}}/></div>
-          <div><label style={{display:'block',color:'#7A9CC4',fontSize:11,fontWeight:700,letterSpacing:0.5,marginBottom:6,textTransform:'uppercase'}}>System Prompt (AI Agent) or Playbook (Human Rep)</label><textarea value={agentPrompt} onChange={e=>setAgentPrompt(e.target.value)} rows={9} placeholder={'For AI agent: paste its system prompt.\nFor human rep: describe their sales approach, product, methodology...\n\nExample:\nYou are an AI SDR for Acme Corp. Qualify with MEDDIC. Book a discovery call. Open with a strong hook. Handle objections with empathy...'} style={{width:'100%',background:'#111827',border:'1px solid #334155',borderRadius:8,padding:'10px 12px',color:'#f1f5f9',fontSize:12,lineHeight:1.6,resize:'vertical',boxSizing:'border-box',fontFamily:'monospace'}}/></div>
-          <div><label style={{display:'block',color:'#7A9CC4',fontSize:11,fontWeight:700,letterSpacing:0.5,marginBottom:6,textTransform:'uppercase'}}>Turns: {labTurns}</label><input type='range' min={4} max={12} value={labTurns} onChange={e=>setLabTurns(Number(e.target.value))} style={{width:'100%',accentColor:'#6366f1'}}/><div style={{display:'flex',justifyContent:'space-between',color:'#475569',fontSize:10,marginTop:2}}><span>4 (quick)</span><span>12 (deep)</span></div></div>
-          <button onClick={runAgentTest} disabled={labRunning||!agentPrompt.trim()||!apiKey} style={{padding:'11px 0',borderRadius:9,border:'none',background:labRunning||!agentPrompt.trim()||!apiKey?'#1e293b':'linear-gradient(135deg,#6366f1,#8b5cf6)',color:labRunning||!agentPrompt.trim()||!apiKey?'#475569':'#fff',fontWeight:700,fontSize:14,cursor:labRunning||!agentPrompt.trim()||!apiKey?'not-allowed':'pointer',display:'flex',alignItems:'center',justifyContent:'center',gap:8}}>{labRunning?(<><div style={{width:14,height:14,borderRadius:'50%',border:'2px solid rgba(255,255,255,0.3)',borderTopColor:'#fff',animation:'spin 0.7s linear infinite'}}/>Simulating...</>):'▶ Run Test'}</button>
-          {labResults.length>0&&(<div><div style={{color:'#7A9CC4',fontSize:11,fontWeight:700,letterSpacing:0.5,marginBottom:8,textTransform:'uppercase'}}>Past Runs</div><div style={{display:'flex',flexDirection:'column',gap:6}}>{labResults.map((r,i)=>(<div key={i} style={{background:'#111827',borderRadius:8,padding:'8px 12px',display:'flex',alignItems:'center',justifyContent:'space-between'}}><div><div style={{color:'#f1f5f9',fontSize:12,fontWeight:600}}>{r.agentName}</div><div style={{color:'#4A6B8A',fontSize:11}}>vs {r.target} · {r.company}</div></div><div style={{display:'flex',flexDirection:'column',alignItems:'flex-end',gap:2}}><span style={{fontWeight:800,fontSize:16,color:r.grade==='A'?'#22c55e':r.grade==='B'?'#84cc16':r.grade==='C'?'#f59e0b':r.grade==='D'?'#f97316':'#ef4444'}}>{r.grade}</span><span style={{color:'#475569',fontSize:10}}>{r.ts}</span></div></div>))}</div></div>)}
-        </div>
-        <div style={{display:'flex',flexDirection:'column',gap:20}}>
-          {!labRunning&&labConversation.length===0&&!labScore&&(<div style={{background:'#0d1526',borderRadius:12,border:'1px solid #1e293b',padding:60,textAlign:'center'}}><div style={{fontSize:52,marginBottom:16}}>🤖 vs 🧑‍💼</div><div style={{color:'#f1f5f9',fontSize:18,fontWeight:700,marginBottom:8}}>AI Agents + Human Reps vs Real Prospects</div><div style={{color:'#4A6B8A',fontSize:14,maxWidth:460,margin:'0 auto',lineHeight:1.7}}>Test any AI sales agent or human rep's approach against RepForge's realistic prospect personas. Simulates a full cold call, then scores on MEDDIC qualification, objection handling, rapport, and booking rate. Compare multiple agents head-to-head using Past Runs.</div></div>)}
-          {(labConversation.length>0||labRunning)&&(<div style={{background:'#0d1526',borderRadius:12,border:'1px solid #1e293b',overflow:'hidden'}}><div style={{padding:'14px 18px',borderBottom:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'space-between'}}><div style={{color:'#f1f5f9',fontWeight:700,fontSize:13,display:'flex',alignItems:'center',gap:8}}>💬 Simulation{labTarget&&<span style={{background:'#1e293b',color:'#7A9CC4',fontSize:11,padding:'2px 8px',borderRadius:20}}>{labTarget.first} {labTarget.last} · {companies.find(c=>c.id===labTarget.cId)?.name||'Unknown'}</span>}</div>{labRunning&&<div style={{display:'flex',alignItems:'center',gap:6,color:'#6366f1',fontSize:12}}><div style={{width:8,height:8,borderRadius:'50%',background:'#6366f1',animation:'labPulse 1.2s ease-in-out infinite'}}/>Simulating call...</div>}</div><div style={{padding:16,display:'flex',flexDirection:'column',gap:10,maxHeight:420,overflowY:'auto'}}>{labConversation.map((msg,i)=>(<div key={i} style={{display:'flex',flexDirection:'column',alignItems:msg.role==='agent'?'flex-end':'flex-start'}}><div style={{fontSize:10,color:'#475569',marginBottom:3,fontWeight:600}}>{msg.role==='agent'?(agentName||'AGENT').toUpperCase():(msg.name||'PROSPECT').toUpperCase()}</div><div style={{maxWidth:'82%',background:msg.role==='agent'?'linear-gradient(135deg,#6366f1,#8b5cf6)':'#1e293b',color:'#e2e8f0',borderRadius:msg.role==='agent'?'12px 12px 2px 12px':'12px 12px 12px 2px',padding:'10px 14px',fontSize:13,lineHeight:1.6}}>{msg.text}</div></div>))}{labRunning&&labConversation.length>0&&(<div style={{display:'flex'}}><div style={{background:'#1e293b',borderRadius:'12px 12px 12px 2px',padding:'10px 16px',display:'flex',gap:4,alignItems:'center'}}>{[0,1,2].map(b=>(<div key={b} style={{width:6,height:6,borderRadius:'50%',background:'#475569',animation:`labPulse 0.9s ease-in-out ${b*0.2}s infinite`}}/>))}</div></div>)}</div></div>)}
-          {labScore&&(<div style={{background:'#0d1526',borderRadius:12,border:'1px solid #1e293b',overflow:'hidden'}}><div style={{padding:'14px 18px',borderBottom:'1px solid #1e293b',display:'flex',alignItems:'center',justifyContent:'space-between'}}><div style={{color:'#f1f5f9',fontWeight:700,fontSize:13}}>📊 Scorecard — {agentName||'Agent'}</div><div style={{display:'flex',alignItems:'center',gap:8}}><span style={{color:'#7A9CC4',fontSize:12}}>Grade</span><span style={{fontSize:30,fontWeight:800,color:labScore.grade==='A'?'#22c55e':labScore.grade==='B'?'#84cc16':labScore.grade==='C'?'#f59e0b':labScore.grade==='D'?'#f97316':'#ef4444'}}>{labScore.grade}</span></div></div><div style={{padding:18}}><div style={{background:'#111827',borderRadius:8,padding:'10px 14px',marginBottom:16,color:'#94a3b8',fontSize:13,lineHeight:1.6,fontStyle:'italic'}}>“{labScore.summary}”</div><div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginBottom:14}}>{[['MEDDIC Coverage',labScore.meddic],['Objection Handling',labScore.objections],['Rapport & Tone',labScore.rapport],['Booked Next Step',labScore.nextStep]].map(([lbl,sc])=>(<div key={lbl} style={{background:'#111827',borderRadius:8,padding:'10px 12px'}}><div style={{display:'flex',justifyContent:'space-between',marginBottom:5}}><span style={{color:'#7A9CC4',fontSize:11,fontWeight:600}}>{lbl}</span><span style={{color:'#f1f5f9',fontSize:13,fontWeight:700}}>{sc}/10</span></div><div style={{height:4,background:'#1e293b',borderRadius:2,overflow:'hidden'}}><div style={{height:'100%',borderRadius:2,width:sc*10+'%',background:sc>=8?'#22c55e':sc>=6?'#84cc16':sc>=4?'#f59e0b':'#ef4444'}}/></div></div>))}</div><div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}}><div style={{background:'rgba(34,197,94,0.08)',border:'1px solid rgba(34,197,94,0.2)',borderRadius:8,padding:'10px 12px'}}><div style={{color:'#22c55e',fontSize:10,fontWeight:700,letterSpacing:0.5,marginBottom:4}}>✅ STRENGTH</div><div style={{color:'#86efac',fontSize:12,lineHeight:1.5}}>{labScore.strength}</div></div><div style={{background:'rgba(239,68,68,0.08)',border:'1px solid rgba(239,68,68,0.2)',borderRadius:8,padding:'10px 12px'}}><div style={{color:'#ef4444',fontSize:10,fontWeight:700,letterSpacing:0.5,marginBottom:4}}>⚠️ WEAKNESS</div><div style={{color:'#fca5a5',fontSize:12,lineHeight:1.5}}>{labScore.weakness}</div></div></div></div></div>)}
-        </div>
+  <div style={{padding:32,maxWidth:1100,margin:'0 auto'}}>
+    <style>{`@keyframes spin{to{transform:rotate(360deg)}} @keyframes labPulse{0%,100%{opacity:1}50%{opacity:0.4}} @keyframes stageFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+    <div style={{marginBottom:24,display:'flex',alignItems:'flex-start',justifyContent:'space-between',flexWrap:'wrap',gap:12}}>
+      <div><h2 style={{color:'#f1f5f9',margin:'0 0 6px',fontSize:22,fontWeight:700}}>🤖 AI Agent Lab</h2><p style={{color:'#4A6B8A',margin:0,fontSize:14}}>Run your agent through the full sales pipeline — cold email, objection handling, booking, and discovery call. All scored end to end.</p></div>
+      <div style={{display:'flex',background:'#0d1526',border:'1px solid #1e293b',borderRadius:8,overflow:'hidden'}}>
+        {['pipeline','call'].map(m=>(<button key={m} onClick={()=>setLabMode(m)} style={{padding:'8px 18px',background:labMode===m?'#6366f1':'transparent',color:labMode===m?'#fff':'#4A6B8A',border:'none',cursor:'pointer',fontSize:13,fontWeight:600,transition:'all 0.2s'}}>{m==='pipeline'?'🔥 Full Pipeline':'📞 Cold Call'}</button>))}
       </div>
     </div>
-  )}
+    {!apiKey&&(<div style={{background:'rgba(245,158,11,0.08)',border:'1px solid #f59e0b',borderRadius:10,padding:'12px 16px',marginBottom:20,display:'flex',alignItems:'center',gap:10}}><span>⚠️</span><span style={{color:'#fbbf24',fontSize:13}}>Add your OpenAI API key in <button onClick={()=>setShowSettings(true)} style={{background:'none',border:'none',color:'#6366f1',cursor:'pointer',fontWeight:600,textDecoration:'underline',fontSize:13}}>Settings</button> to run simulations.</span></div>)}
+    <div style={{display:'grid',gridTemplateColumns:'340px 1fr',gap:20}}>
+      <div style={{background:'#0d1526',borderRadius:12,border:'1px solid #1e293b',padding:20,display:'flex',flexDirection:'column',gap:16}}>
+        <div style={{color:'#f1f5f9',fontWeight:700,fontSize:15}}>⚙️ Configuration</div>
+        <div><label style={{display:'block',color:'#7A9CC4',fontSize:11,fontWeight:700,letterSpacing:0.5,marginBottom:6,textTransform:'uppercase'}}>Name</label><input value={agentName} onChange={e=>setAgentName(e.target.value)} placeholder='e.g. SDR-Bot v1, or rep name...' style={{width:'100%',background:'#111827',border:'1px solid #334155',borderRadius:8,padding:'8px 12px',color:'#f1f5f9',fontSize:13,boxSizing:'border-box'}}/></div>
+        <div><label style={{display:'block',color:'#7A9CC4',fontSize:11,fontWeight:700,letterSpacing:0.5,marginBottom:6,textTransform:'uppercase'}}>System Prompt or Sales Playbook</label><textarea value={agentPrompt} onChange={e=>setAgentPrompt(e.target.value)} rows={9} placeholder={'AI agent: paste system prompt here.
+Human rep: describe your sales approach...'} style={{width:'100%',background:'#111827',border:'1px solid #334155',borderRadius:8,padding:'8px 12px',color:'#f1f5f9',fontSize:12,boxSizing:'border-box',resize:'vertical',fontFamily:'inherit'}}/></div>
+        {labMode==='call'&&(<div><label style={{display:'block',color:'#7A9CC4',fontSize:11,fontWeight:700,letterSpacing:0.5,marginBottom:6,textTransform:'uppercase'}}>Turns: {labTurns}</label><div style={{display:'flex',alignItems:'center',gap:8}}><span style={{color:'#4A6B8A',fontSize:11}}>4</span><input type='range' min={4} max={12} value={labTurns} onChange={e=>setLabTurns(parseInt(e.target.value))} style={{flex:1}}/><span style={{color:'#4A6B8A',fontSize:11}}>12</span></div></div>)}
+        <button onClick={labMode==='pipeline'?runFullPipeline:runAgentTest} disabled={!apiKey||!agentPrompt.trim()||(labMode==='pipeline'?pipelineRunning:labRunning)} style={{padding:'10px 0',background:(!apiKey||!agentPrompt.trim())?'#1e293b':'linear-gradient(135deg,#6366f1,#8b5cf6)',color:(!apiKey||!agentPrompt.trim())?'#4A6B8A':'#fff',border:'none',borderRadius:8,fontWeight:700,fontSize:14,cursor:(!apiKey||!agentPrompt.trim())?'not-allowed':'pointer',display:'flex',alignItems:'center',justifyContent:'center',gap:8}}>
+          {(labMode==='pipeline'?pipelineRunning:labRunning)?(<><span style={{display:'inline-block',width:14,height:14,border:'2px solid rgba(255,255,255,0.3)',borderTopColor:'#fff',borderRadius:'50%',animation:'spin 0.8s linear infinite'}}/>Running...</>):'▶ Run Test'}
+        </button>
+        {labResults.length>0&&(<div><div style={{color:'#7A9CC4',fontSize:11,fontWeight:700,letterSpacing:0.5,textTransform:'uppercase',marginBottom:8}}>Past Runs</div>{labResults.map((r,i)=>(<div key={i} style={{background:'#111827',borderRadius:6,padding:'8px 10px',marginBottom:6,display:'flex',justifyContent:'space-between',alignItems:'center'}}><div><div style={{color:'#f1f5f9',fontSize:12,fontWeight:600}}>{r.agentName}</div><div style={{color:'#4A6B8A',fontSize:10}}>{r.target} @ {r.company} · {r.ts}</div></div><span style={{background:r.grade==='A'?'#10b981':r.grade==='B'?'#6366f1':r.grade==='C'?'#f59e0b':'#ef4444',color:'#fff',borderRadius:4,padding:'2px 7px',fontWeight:700,fontSize:13}}>{r.grade}</span></div>))}</div>)}
+      </div>
+      <div style={{background:'#0d1526',borderRadius:12,border:'1px solid #1e293b',padding:20,minHeight:400,display:'flex',flexDirection:'column',overflowY:'auto'}}>
+        {labMode==='pipeline'&&!pipelineRunning&&pipelineLog.length===0&&!pipelineScore&&(<div style={{flex:1,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:12,color:'#4A6B8A'}}><div style={{fontSize:48}}>🔥</div><div style={{fontSize:16,fontWeight:600,color:'#94a3b8'}}>Full Pipeline Simulation</div><div style={{fontSize:13,textAlign:'center',maxWidth:400}}>Your agent will cold email a real prospect, handle objections, book a call, and run a discovery conversation — all scored end to end.</div></div>)}
+        {labMode==='call'&&!labRunning&&labConversation.length===0&&!labScore&&(<div style={{flex:1,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:12,color:'#4A6B8A'}}><div style={{fontSize:48}}>📞</div><div style={{fontSize:16,fontWeight:600,color:'#94a3b8'}}>Cold Call Simulation</div><div style={{fontSize:13,textAlign:'center',maxWidth:400}}>Your agent cold calls a random prospect and is scored on MEDDIC coverage, objection handling, rapport, and booking.</div></div>)}
+        {labMode==='pipeline'&&(pipelineRunning||pipelineLog.length>0)&&(<div style={{display:'flex',flexDirection:'column',gap:0,flex:1}}>
+          {labTarget&&(<div style={{background:'#111827',borderRadius:8,padding:'10px 14px',marginBottom:14,display:'flex',alignItems:'center',gap:10,flexShrink:0}}><div style={{width:32,height:32,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontWeight:700,fontSize:13,flexShrink:0}}>{labTarget.first[0]}</div><div><div style={{color:'#f1f5f9',fontSize:13,fontWeight:600}}>{labTarget.first} {labTarget.last}</div><div style={{color:'#4A6B8A',fontSize:11}}>{labTarget.title}</div></div></div>)}
+          <div style={{display:'flex',gap:4,marginBottom:14,flexWrap:'wrap',flexShrink:0}}>
+            {['email','reply','followup','booking','discovery','scoring'].map(s=>{
+              const order=['email','reply','followup','booking','discovery','scoring','done'];
+              const done=order.indexOf(pipelineStage)>order.indexOf(s)||(pipelineStage==='done');
+              const active=pipelineStage===s;
+              const labels={email:'📧 Email',reply:'↩️ Reply',followup:'🔄 Follow-up',booking:'📅 Book',discovery:'🎙️ Discovery',scoring:'📊 Score'};
+              return(<div key={s} style={{padding:'4px 10px',borderRadius:20,fontSize:11,fontWeight:600,background:done?'rgba(99,102,241,0.2)':active?'rgba(99,102,241,0.1)':'transparent',border:active?'1px solid #6366f1':done?'1px solid rgba(99,102,241,0.4)':'1px solid #1e293b',color:active?'#a5b4fc':done?'#6366f1':'#4A6B8A',animation:active?'labPulse 1.5s infinite':''}}>{labels[s]}</div>);
+            })}
+          </div>
+          <div style={{flex:1,overflowY:'auto',display:'flex',flexDirection:'column',gap:10}}>
+            {pipelineLog.map((entry,i)=>(<div key={i} style={{animation:'stageFade 0.3s ease',display:'flex',flexDirection:'column',alignItems:entry.role==='agent'?'flex-end':'flex-start'}}><div style={{fontSize:10,color:'#4A6B8A',marginBottom:3,textTransform:'uppercase',letterSpacing:0.5}}>{entry.role==='agent'?(agentName||'Agent'):(labTarget?labTarget.first+' '+labTarget.last:'Prospect')} · {entry.stage}</div><div style={{maxWidth:'85%',background:entry.role==='agent'?'rgba(99,102,241,0.15)':'#111827',border:entry.role==='agent'?'1px solid rgba(99,102,241,0.3)':'1px solid #1e293b',borderRadius:10,padding:'10px 14px',color:'#e2e8f0',fontSize:13,lineHeight:1.5,whiteSpace:'pre-wrap'}}>{entry.content}</div></div>))}
+            {pipelineRunning&&pipelineStage!=='done'&&(<div style={{display:'flex',gap:4,padding:8}}>{[0,1,2].map(i=>(<div key={i} style={{width:6,height:6,borderRadius:'50%',background:'#6366f1',animation:'labPulse 1.2s '+(i*0.2)+'s infinite'}}/>))}</div>)}
+          </div>
+        </div>)}
+        {labMode==='pipeline'&&pipelineScore&&(<div style={{borderTop:'1px solid #1e293b',marginTop:16,paddingTop:16,flexShrink:0}}>
+          <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:14}}><div style={{width:56,height:56,borderRadius:'50%',background:pipelineScore.grade==='A'?'linear-gradient(135deg,#10b981,#059669)':pipelineScore.grade==='B'?'linear-gradient(135deg,#6366f1,#8b5cf6)':pipelineScore.grade==='C'?'linear-gradient(135deg,#f59e0b,#d97706)':'linear-gradient(135deg,#ef4444,#dc2626)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontWeight:800,fontSize:24,flexShrink:0}}>{pipelineScore.grade}</div><div><div style={{color:'#f1f5f9',fontWeight:700,fontSize:15}}>Pipeline Score: {pipelineScore.overall}/100</div><div style={{color:'#64748b',fontSize:12,marginTop:3}}>{pipelineScore.summary}</div></div></div>
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8,marginBottom:10}}>
+            {[['📧 Email Quality',pipelineScore.emailQuality],['🛡️ Objection Handling',pipelineScore.objectionHandling],['🎙️ Discovery Skill',pipelineScore.discoverySkill],['🎯 MEDDIC',pipelineScore.meddic]].map(([label,score])=>(<div key={label} style={{background:'#111827',borderRadius:8,padding:'10px 12px'}}><div style={{display:'flex',justifyContent:'space-between',marginBottom:5}}><span style={{color:'#94a3b8',fontSize:11}}>{label}</span><span style={{color:'#f1f5f9',fontWeight:700,fontSize:12}}>{score}</span></div><div style={{background:'#1e293b',borderRadius:4,height:4}}><div style={{height:4,borderRadius:4,background:'linear-gradient(90deg,#6366f1,#8b5cf6)',width:score+'%',transition:'width 0.8s ease'}}/></div></div>))}
+          </div>
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8}}>
+            <div style={{background:'rgba(16,185,129,0.08)',border:'1px solid rgba(16,185,129,0.2)',borderRadius:8,padding:'10px 12px'}}><div style={{color:'#10b981',fontSize:11,fontWeight:700,marginBottom:4}}>✅ STRENGTH</div><div style={{color:'#94a3b8',fontSize:12}}>{pipelineScore.strength}</div></div>
+            <div style={{background:'rgba(239,68,68,0.08)',border:'1px solid rgba(239,68,68,0.2)',borderRadius:8,padding:'10px 12px'}}><div style={{color:'#ef4444',fontSize:11,fontWeight:700,marginBottom:4}}>⚠️ WEAKNESS</div><div style={{color:'#94a3b8',fontSize:12}}>{pipelineScore.weakness}</div></div>
+          </div>
+        </div>)}
+        {labMode==='call'&&(labRunning||labConversation.length>0)&&(<div style={{display:'flex',flexDirection:'column',gap:10,flex:1}}>
+          {labTarget&&(<div style={{background:'#111827',borderRadius:8,padding:'10px 14px',marginBottom:8,display:'flex',alignItems:'center',gap:10,flexShrink:0}}><div style={{width:32,height:32,borderRadius:'50%',background:'linear-gradient(135deg,#6366f1,#8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontWeight:700,fontSize:13}}>{labTarget.first[0]}</div><div><div style={{color:'#f1f5f9',fontSize:13,fontWeight:600}}>{labTarget.first} {labTarget.last}</div><div style={{color:'#4A6B8A',fontSize:11}}>{labTarget.title}</div></div></div>)}
+          <div style={{flex:1,overflowY:'auto',display:'flex',flexDirection:'column',gap:8}}>
+            {labConversation.map((m,i)=>(<div key={i} style={{display:'flex',flexDirection:'column',alignItems:m.role==='agent'?'flex-end':'flex-start'}}><div style={{fontSize:10,color:'#4A6B8A',marginBottom:2,textTransform:'uppercase'}}>{m.role==='agent'?(agentName||'Agent'):(labTarget?labTarget.first:'Prospect')}</div><div style={{maxWidth:'80%',background:m.role==='agent'?'rgba(99,102,241,0.15)':'#111827',border:m.role==='agent'?'1px solid rgba(99,102,241,0.3)':'1px solid #1e293b',borderRadius:8,padding:'8px 12px',color:'#e2e8f0',fontSize:13}}>{m.content}</div></div>))}
+            {labRunning&&(<div style={{display:'flex',gap:4,padding:8}}>{[0,1,2].map(i=>(<div key={i} style={{width:6,height:6,borderRadius:'50%',background:'#6366f1',animation:'labPulse 1.2s '+(i*0.2)+'s infinite'}}/>))}</div>)}
+          </div>
+          {labScore&&(<div style={{borderTop:'1px solid #1e293b',paddingTop:12,marginTop:4,flexShrink:0}}><div style={{display:'flex',alignItems:'center',gap:12,marginBottom:10}}><div style={{width:44,height:44,borderRadius:'50%',background:labScore.grade==='A'?'linear-gradient(135deg,#10b981,#059669)':labScore.grade==='B'?'linear-gradient(135deg,#6366f1,#8b5cf6)':labScore.grade==='C'?'linear-gradient(135deg,#f59e0b,#d97706)':'linear-gradient(135deg,#ef4444,#dc2626)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontWeight:800,fontSize:18}}>{labScore.grade}</div><div><div style={{color:'#f1f5f9',fontWeight:700}}>Overall: {labScore.overall}/100</div><div style={{color:'#64748b',fontSize:11}}>{labScore.summary}</div></div></div><div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:6}}>{[['MEDDIC',labScore.meddic],['Objections',labScore.objections],['Rapport',labScore.rapport],['Next Step',labScore.nextStep]].map(([l,s])=>(<div key={l} style={{background:'#111827',borderRadius:6,padding:'8px 10px'}}><div style={{display:'flex',justifyContent:'space-between',marginBottom:3}}><span style={{color:'#64748b',fontSize:10}}>{l}</span><span style={{color:'#f1f5f9',fontWeight:700,fontSize:11}}>{s}</span></div><div style={{background:'#1e293b',borderRadius:3,height:3}}><div style={{height:3,borderRadius:3,background:'linear-gradient(90deg,#6366f1,#8b5cf6)',width:s+'%'}}/></div></div>))}</div></div>)}
+        </div>)}
+      </div>
+    </div>
+  </div>
+)}
   </div>
   );
 }
