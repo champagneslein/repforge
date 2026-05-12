@@ -1496,7 +1496,7 @@ function getPersonaPosts(emp,company){
                       const co = companies.find(c => c.name === empDeal.company_name);
                       const dv = co ? co.dealValue : 25000;
                       const ps = proposalState[empDeal.id] || {};
-                      if (empDeal.stage === 'Closed Won') return (
+                      if ((empDeal.stage === 'Closed Won' || ps.closed)) return (
                         <div style={{background:'#052e16',border:'1px solid #16a34a',borderRadius:10,padding:'12px 16px',marginTop:8,display:'flex',alignItems:'center',gap:10}}>
                           <span style={{fontSize:22}}>&#127942;</span>
                           <div>
