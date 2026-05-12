@@ -5,7 +5,6 @@ import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 // Supabase Configuration
 const SUPABASE_URL = 'https://scvlwmwegdxcgwshlqub.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjdmx3bXdlZ2R4Y2d3c2hscXViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2NTM5MjcsImV4cCI6MjA5MzIyOTkyN30.KVT2qeLVQ4uMd78-7zxdy_vLE8xI8L8nltC_T7nGnRA';
-
 // Helper function to fetch from Supabase REST API
 async function fetchSupabase(endpoint, filter = '') {
   const url = `${SUPABASE_URL}/rest/v1/${endpoint}${filter}`;
@@ -1500,10 +1499,12 @@ function getPersonaPosts(emp,company){
                     const empDeal = deals.find(d => d.employeeId === selEmp.id) || {};
                     const personaName = ((selEmp.first || '') + ' ' + (selEmp.last || '')).trim() || 'Prospect';
                     const personaRole = selEmp.title || 'Decision Maker';
-                    const companyName = (selCo && selCo.name) || '';
-                    const companyDesc = selEmp.bio || selEmp.personality || '';
-                    const industry = (selCo && selCo.industry) || '';
-                    const dealValue = (selCo && selCo.dealValue) || 50000;
+                    const _pn = ((selEmp.first||'') + ' ' + (selEmp.last||'')).trim();
+                const _pd = (deals||[]).find(function(d){return d.persona_name===_pn;}) || {};
+                const companyName = _pd.company_name || '';
+                const companyDesc = selEmp.bio || selEmp.personality || '';
+                const industry = '';
+                const dealValue = 50000;
 
                     const sendMsg = async (msgText) => {
                       if (!msgText || !msgText.trim() || conv.thinking) return;
