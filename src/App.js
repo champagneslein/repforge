@@ -1480,7 +1480,35 @@ function getPersonaPosts(emp,company){
                 </div>
                 <div className="flex-1">
                   <div className="bg-[#0D1525] rounded-xl border border-[#1B3154] overflow-hidden">
-                    <div className="px-4 py-3 border-b border-[#152840] font-semibold text-[#A8BFDB] text-sm">Email Thread</div>
+                    
+{/* Buying Committee Panel */}
+{selEmp&&['Legal Review','Procurement'].includes(state[selEmp.id]&&state[selEmp.id].stage)&&(function(){
+  var acct=selEmp.accountId;var stage=state[selEmp.id]&&state[selEmp.id].stage;
+  var contacts=[];
+  try{if(getLegalStakeholder){var l=getLegalStakeholder(acct);if(l)contacts.push(l);}
+  if(getProcurementStakeholder&&stage==='Procurement'){var p=getProcurementStakeholder(acct);if(p)contacts.push(p);}}catch(e){}
+  if(!contacts.length)return null;
+  return React.createElement('div',{style:{margin:'0 0 16px',padding:'12px 16px',background:'rgba(15,15,45,0.8)',borderRadius:10,border:'1px solid rgba(99,102,241,0.25)'}},
+    React.createElement('div',{style:{fontSize:11,fontWeight:700,color:'#818cf8',letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:12}},'Buying Committee'),
+    contacts.map(function(c){return React.createElement('div',{key:c.id},
+      React.createElement('div',{style:{display:'flex',alignItems:'center',gap:10,padding:'8px 0',borderBottom:'1px solid rgba(99,102,241,0.1)'}},
+        React.createElement('div',{style:{width:36,height:36,borderRadius:'50%',background:c.type==='legal'?'rgba(245,158,11,0.15)':'rgba(16,185,129,0.15)',border:c.type==='legal'?'1px solid rgba(245,158,11,0.4)':'1px solid rgba(16,185,129,0.4)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:11,fontWeight:700,color:c.type==='legal'?'#f59e0b':'#10b981',flexShrink:0}},c.avatar),
+        React.createElement('div',{style:{flex:1,minWidth:0}},
+          React.createElement('div',{style:{fontSize:13,fontWeight:600,color:'#e2e8f0'}},c.name),
+          React.createElement('div',{style:{fontSize:11,color:'#6b7280'}},c.role)),
+        React.createElement('div',{style:{display:'flex',gap:6,alignItems:'center',flexShrink:0}},
+          React.createElement('span',{style:{fontSize:10,padding:'2px 7px',borderRadius:4,textTransform:'uppercase',fontWeight:700,color:c.type==='legal'?'#f59e0b':'#10b981',background:c.type==='legal'?'rgba(245,158,11,0.1)':'rgba(16,185,129,0.1)'}},c.type),
+          React.createElement('button',{onClick:function(){setEmailCompose(emailCompose===c.id?null:c.id);setEmailDraft('');window.__stk=c;},style:{fontSize:11,background:'rgba(99,102,241,0.2)',border:'1px solid rgba(99,102,241,0.4)',borderRadius:6,padding:'4px 10px',color:'#818cf8',cursor:'pointer',fontWeight:600}},'Email'))),
+      emailCompose===c.id&&React.createElement('div',{style:{padding:'10px 0 6px'}},
+        React.createElement('div',{style:{fontSize:11,color:'#6b7280',marginBottom:6}},'To: '+c.email),
+        React.createElement('textarea',{value:emailDraft,onChange:function(e){setEmailDraft(e.target.value);},placeholder:'Write to '+c.name+'...',rows:3,style:{width:'100%',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(99,102,241,0.3)',borderRadius:6,padding:'8px 10px',color:'#e2e8f0',fontSize:12,resize:'vertical',boxSizing:'border-box',outline:'none'}}),
+        React.createElement('div',{style:{display:'flex',gap:8,marginTop:8,justifyContent:'flex-end'}},
+          React.createElement('button',{onClick:function(){setEmailCompose(null);setEmailDraft('');},style:{fontSize:11,background:'transparent',border:'1px solid rgba(255,255,255,0.12)',borderRadius:6,padding:'4px 12px',color:'#9ca3af',cursor:'pointer'}},'Cancel'),
+          React.createElement('button',{onClick:function(){var st=window.__stk||c;var body=emailDraft;setEmailDraft('');setEmailCompose(null);fetch(st.type==='legal'?'/api/legal-reply':'/api/procurement-reply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({personaName:st.name,personaRole:st.role,companyName:(selEmp&&selEmp.account)||'',dealStage:stage||'',threadContext:[],userMessage:body,openaiKey:(product&&(product.openaiKey||product.apiKey))||''})}).then(function(r){return r.json();}).then(function(d){if(d.reply)window.alert(st.name+' replied:\n\n'+d.reply);if(d.error)window.alert('Error: '+d.error);}).catch(function(e){console.error('stakeholder err',e);});},style:{fontSize:11,background:'#4f46e5',border:'none',borderRadius:6,padding:'4px 14px',color:'white',cursor:'pointer',fontWeight:600}},'Send')))));
+    })
+  );
+})()}
+<div className="px-4 py-3 border-b border-[#152840] font-semibold text-[#A8BFDB] text-sm">Email Thread</div>
                     <div className="p-4 min-h-40 space-y-2">
                       {state[selEmp.id]?.emailThread.length === 0 ? (
                         <div className="text-center py-8 text-[#4A6B8A] text-sm">No emails sent yet. Email {selEmp.first} to start the conversation.</div>
