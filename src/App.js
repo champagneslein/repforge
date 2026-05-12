@@ -456,6 +456,8 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const vapiRef = useRef(null);
   const [activeCallId, setActiveCallId] = useState(null);
   const [callStatus, setCallStatus] = useState('idle');
+  const [proposalState, setProposalState] = React.useState({});
+  const [closeLoading, setCloseLoading] = React.useState(false);
   const industries = ["All","SaaS","Cyber Security","Manufacturing","Fintech","Energy","Healthcare","Retail Tech","Construction"];
   const allEmps = Object.entries(allEmployees).flatMap(([cId,emps])=>emps.map(e=>({...e,cId:parseInt(cId),cName:(companies.find(c=>c.id===parseInt(cId))||{name:''}).name})));
 
@@ -1504,6 +1506,78 @@ function getPersonaPosts(emp,company){
                 </div>)}
               </div>);
             })()}
+                    {selEmp && deals.length > 0 && (()=>{
+                      const empDeal = deals.find(d => d.persona_name === selEmp.first + ' ' + selEmp.last);
+                      if (!empDeal) return null;
+                      const co = companies.find(c => c.name === empDeal.company_name);
+                      const dv = co ? co.dealValue : 25000;
+                      const ps = proposalState[empDeal.id] || {};
+                      if (empDeal.stage === 'Closed Won') return (
+                        <div style={{background:'#052e16',border:'1px solid #16a34a',borderRadius:10,padding:'12px 16px',marginTop:8,display:'flex',alignItems:'center',gap:10}}>
+                          <span style={{fontSize:22}}>&#127942;</span>
+                          <div>
+                            <div style={{color:'#22c55e',fontWeight:700,fontSize:14}}>CLOSED WON</div>
+                            <div style={{color:'#4ade80',fontSize:12}}>${(Math.round(dv*(1-(ps.discount||0)/100))).toLocaleString()} ARR/yr</div>
+                          </div>
+                        </div>
+                      );
+                      return (
+                        <div style={{background:'#0D1525',border:'1px solid #1B3154',borderRadius:10,padding:12,marginTop:8}}>
+                          <div style={{fontSize:11,fontWeight:700,color:'#4A6B8A',textTransform:'uppercase',letterSpacing:1,marginBottom:10}}>Close This Deal</div>
+                          {!ps.proposalSent ? (
+                            <button disabled={closeLoading} onClick={async ()=>{
+                              setCloseLoading(true);
+                              try {
+                                const r = await fetch('/api/proposal-reply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({personaName:selEmp.first+' '+selEmp.last,personaRole:selEmp.seniority||'Executive',companyName:empDeal.company_name||'',dealValue:dv,discount:0,userMessage:'Sending proposal for '+empDeal.company_name})});
+                                const dat = await r.json();
+                                setProposalState(p=>({...p,[empDeal.id]:{proposalSent:true,reply:dat.reply||'Thanks, will review.',discount:0}}));
+                              } catch(e) {
+                                setProposalState(p=>({...p,[empDeal.id]:{proposalSent:true,reply:'Thanks, will review.',discount:0}}));
+                              }
+                              setCloseLoading(false);
+                            }} style={{width:'100%',padding:'8px 0',background:closeLoading?'#374151':'#1e40af',color:'#fff',border:'none',borderRadius:6,cursor:'pointer',fontWeight:700,fontSize:13}}>
+                              {closeLoading ? 'Sending...' : 'Send Proposal - $'+dv.toLocaleString()+'/yr'}
+                            </button>
+                          ) : (
+                            <div>
+                              <div style={{background:'#060e1e',borderRadius:6,padding:'8px 10px',fontSize:11,color:'#94a3b8',marginBottom:10,lineHeight:1.5,border:'1px solid #1B3154'}}>{ps.reply}</div>
+                              <div style={{display:'flex',gap:6,marginBottom:10,flexWrap:'wrap',alignItems:'center'}}>
+                                <span style={{fontSize:11,color:'#4A6B8A'}}>Discount:</span>
+                                {[0,10,15,20].map(pct=>(
+                                  <button key={pct} onClick={()=>setProposalState(p=>({...p,[empDeal.id]:{...p[empDeal.id],discount:pct}}))} style={{fontSize:11,padding:'3px 7px',background:ps.discount===pct?'#1e40af':'#1B3154',color:ps.discount===pct?'#fff':'#8BA5C2',border:'none',borderRadius:4,cursor:'pointer'}}>
+                                    {pct===0?'List':pct+'%'}
+                                  </button>
+                                ))}
+                                <span style={{fontSize:11,color:'#F8FAFC',marginLeft:4}}>${Math.round(dv*(1-(ps.discount||0)/100)).toLocaleString()}/yr</span>
+                              </div>
+                              {!ps.closeReply ? (
+                                <button disabled={closeLoading} onClick={async ()=>{
+                                  setCloseLoading(true);
+                                  const price = Math.round(dv*(1-(ps.discount||0)/100));
+                                  try {
+                                    const r = await fetch('/api/close-reply',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({personaName:selEmp.first+' '+selEmp.last,personaRole:selEmp.seniority||'Executive',companyName:empDeal.company_name||'',finalPrice:price,userMessage:'Ready to sign at $'+price+'/year?'})});
+                                    const dat = await r.json();
+                                    setProposalState(p=>({...p,[empDeal.id]:{...p[empDeal.id],closeReply:dat.reply,closed:dat.closed}}));
+                                    if(dat.closed) await handleMoveDeal(empDeal.id,'Closed Won');
+                                  } catch(e) {
+                                    setProposalState(p=>({...p,[empDeal.id]:{...p[empDeal.id],closeReply:'Need more time internally.',closed:false}}));
+                                  }
+                                  setCloseLoading(false);
+                                }} style={{width:'100%',padding:'9px 0',background:closeLoading?'#374151':'#15803d',color:'#fff',border:'none',borderRadius:6,cursor:'pointer',fontWeight:700,fontSize:13}}>
+                                  {closeLoading ? 'Closing...' : 'Ask for the Business'}
+                                </button>
+                              ) : (
+                                <div>
+                                  <div style={{background:ps.closed?'#052e16':'#1a0a0a',border:'1px solid '+(ps.closed?'#16a34a':'#7f1d1d'),borderRadius:6,padding:'8px 10px',fontSize:12,color:ps.closed?'#4ade80':'#f87171',lineHeight:1.5,marginBottom:6}}>{ps.closeReply}</div>
+                                  {!ps.closed && <button onClick={()=>handleMoveDeal(empDeal.id,'Closed Lost')} style={{fontSize:11,padding:'4px 10px',background:'transparent',color:'#ef4444',border:'1px solid #7f1d1d',borderRadius:4,cursor:'pointer'}}>Mark Closed Lost</button>}
+                                  {ps.closed && <button onClick={()=>setProposalState(p=>({...p,[empDeal.id]:{...p[empDeal.id],closeReply:null,closed:false}}))} style={{fontSize:11,padding:'4px 10px',background:'transparent',color:'#60a5fa',border:'1px solid #1e3a5f',borderRadius:4,cursor:'pointer'}}>Try Again</button>}
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })()}
                     <div className="p-4 min-h-40 space-y-2">
                       {state[selEmp.id]?.emailThread.length === 0 ? (
                         <div className="text-center py-8 text-[#4A6B8A] text-sm">No emails sent yet. Email {selEmp.first} to start the conversation.</div>
