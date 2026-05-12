@@ -384,7 +384,7 @@ export default function App() {
   const [showProdSetup,setShowProdSetup]=React.useState(false);
   const [prodForm,setProdForm]=React.useState({name:'',desc:'',icp:'',vps:'',objs:''});
   const [prodSaving,setProdSaving]=React.useState(false);
-  const [deals,setDeals]=React.useState([]);
+  const [deals,setDeals]=React.useState([{id:'demo-001',persona_name:'Conor Murphy',company_name:'Nexaflow',stage:'Proposal',updated_at:new Date().toISOString()},{id:'demo-002',persona_name:'David Flynn',company_name:'Nexaflow',stage:'Discovery',updated_at:new Date().toISOString()}]);
   const [showPipeline,setShowPipeline]=React.useState(false);
   const [showPostCall,setShowPostCall]=React.useState(false);
   const [postCallSummary,setPostCallSummary]=React.useState('');
