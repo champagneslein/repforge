@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Vapi from '@vapi-ai/web';
+import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
 // Supabase Configuration
 const SUPABASE_URL = 'https://scvlwmwegdxcgwshlqub.supabase.co';
@@ -509,7 +510,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     
   const dealHistory=callLogs&&callLogs.length>0?'\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'+callLogs.map((log,i)=>{const daysAgo=Math.round((Date.now()-new Date(log.called_at).getTime())/86400000);return 'Call '+(callLogs.length-i)+' ('+daysAgo+' days ago): '+(log.ai_summary||log.rep_notes||'No summary.')+(log.objections&&log.objections.length?' Objections: '+log.objections.join(', ')+'.':'');}).join('\n')+'\nYour current interest: '+(callLogs[0]?.interest_score_after||5)+'/10.':'';
   try {
-      await vapi.start({
+      await vapi.start({ maxDuration: 1800,
         model: { provider: 'openai', model: 'gpt-4o', temperature: 0.9, maxTokens: 150, messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
         voice: selectVoice(emp.first, emp.seniority),
         silenceTimeoutSeconds: 10,
@@ -1091,11 +1092,11 @@ function getPersonaPosts(emp,company){
               })()}
             </div>
             <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:12}}>
-              {['Prospecting','Discovery','Demo','Proposal','Closed Won'].map(stage=>{
+              {['Prospecting','Discovery','Demo','Proposal','Legal Review','Procurement','Closed Won'].map(stage=>{
                 const sd=deals.filter(d=>d.stage===stage);
                 const col={'Prospecting':'#F0FDF4','Discovery':'#F5F3FF','Demo':'#fef3c7','Proposal':'#ECFDF5','Closed Won':'#EEF2FF'};
                 const brd={'Prospecting':'#16a34a','Discovery':'#2563eb','Demo':'#d97706','Proposal':'#7c3aed','Closed Won':'#065f46'};
-                const all=['Prospecting','Discovery','Demo','Proposal','Closed Won'];
+                const all=['Prospecting','Discovery','Demo','Proposal','Legal Review','Procurement','Closed Won'];
                 return(
                   <div key={stage} style={{background:col[stage],borderRadius:10,padding:12,border:'2px solid '+brd[stage],minHeight:180}}>
                     <div style={{fontSize:11,fontWeight:700,color:brd[stage],marginBottom:10,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
