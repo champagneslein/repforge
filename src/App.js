@@ -1021,22 +1021,6 @@ function getPersonaPosts(emp,company){
 
   return (
     <div className="min-h-screen bg-[#070C18]">
-      {!user&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(15,15,25,0.97)',zIndex:99999,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
-        <div style={{background:'#0D1525',borderRadius:'14px',padding:'40px 44px',width:'380px',maxWidth:'90vw',boxShadow:'0 20px 60px rgba(0,0,0,0.3)'}}>
-          <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'6px'}}><span style={{fontSize:'24px'}}>ÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂ¨</span><h1 style={{margin:0,fontSize:'22px',fontWeight:'800',color:'#0EA5E9'}}>RepForge</h1></div>
-          <p style={{margin:'0 0 22px',color:'#7A9CC4',fontSize:'13px'}}>AI-powered sales training platform</p>
-          <div style={{display:'flex',marginBottom:'18px',borderRadius:'8px',border:'1px solid #1B3154',overflow:'hidden'}}>
-            <button onClick={()=>setAuthView('login')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='login'?'#0EA5E9':'#111F36',color:authView==='login'?'#fff':'#4A6B8A',fontSize:'13px'}}>Log In</button>
-            <button onClick={()=>setAuthView('signup')} style={{flex:1,padding:'10px',border:'none',cursor:'pointer',fontWeight:'600',background:authView==='signup'?'#0EA5E9':'#111F36',color:authView==='signup'?'#fff':'#4A6B8A',fontSize:'13px'}}>Sign Up</button>
-          </div>
-          <input value={authEmail} onChange={e=>setAuthEmail(e.target.value)} placeholder="Email address" style={{width:'100%',padding:'11px 14px',marginBottom:'10px',border:'1px solid #1B3154',borderRadius:'8px',fontSize:'14px',boxSizing:'border-box'}} type="email" autoFocus />
-          <input value={authPwd} onChange={e=>setAuthPwd(e.target.value)} placeholder="Password" style={{width:'100%',padding:'11px 14px',marginBottom:'16px',border:'1px solid #1B3154',borderRadius:'8px',fontSize:'14px',boxSizing:'border-box'}} type="password" onKeyDown={e=>{if(e.key==='Enter')authView==='login'?handleLogin():handleSignup();}} />
-          {authErr&&<div style={{color:'#dc2626',fontSize:'13px',marginBottom:'14px',padding:'9px 12px',background:'#fef2f2',borderRadius:'6px',border:'1px solid #fecaca'}}>{authErr}</div>}
-          <button onClick={authView==='login'?handleLogin:handleSignup} disabled={authBusy} style={{width:'100%',padding:'12px',background:'#0EA5E9',color:'white',border:'none',borderRadius:'8px',fontSize:'14px',fontWeight:'700',cursor:authBusy?'not-allowed':'pointer',opacity:authBusy?0.65:1}}>
-            {authBusy?'...':(authView==='login'?'Log In':'Create Account')}
-          </button>
-        </div>
-      </div>)}
       {showProdSetup&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'#0D1525',borderRadius:'14px',padding:'32px 36px',width:'500px',maxWidth:'92vw',maxHeight:'85vh',overflowY:'auto',boxShadow:'0 24px 60px rgba(0,0,0,0.25)'}}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:6}}><h2 style={{margin:0,fontSize:'19px',fontWeight:'800',color:'#0EA5E9'}}>What are you selling?</h2><button onClick={()=>setShowProdSetup(false)} style={{background:'none',border:'none',fontSize:22,cursor:'pointer',color:'#9ca3af',lineHeight:1,padding:0,marginTop:-2}}>&times;</button></div>
