@@ -1490,8 +1490,8 @@ function getPersonaPosts(emp,company){
                 </div>)}
               </div>);
             })()}
-                    {selEmp && deals.length > 0 && (()=>{
-                      const empDeal = deals.find(d => d.persona_name === selEmp.first + ' ' + selEmp.last);
+                    {selEmp && (()=>{
+                      const empDeal = deals.find(d => d.persona_name === selEmp.first + ' ' + selEmp.last)|| {id:'demo-'+Date.now(),persona_name:selEmp.first+' '+selEmp.last,company_name:selCompany?.name||'',stage:'Proposal',updated_at:new Date().toISOString()};
                       if (!empDeal) return null;
                       const co = companies.find(c => c.name === empDeal.company_name);
                       const dv = co ? co.dealValue : 25000;
