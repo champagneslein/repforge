@@ -1216,7 +1216,7 @@ function getPersonaPosts(emp,company){
               <div style={{position:'absolute',width:195,height:195,borderRadius:'50%',border:'2px solid rgba(99,102,241,0.3)',animation:'pingRing 1.3s ease-out 0.22s infinite',pointerEvents:'none'}}/>
             </>)}
             <div style={{width:140,height:140,borderRadius:'50%',userSelect:'none',background:isPersonaSpeaking?'linear-gradient(135deg,#6366f1,#8b5cf6)':'linear-gradient(135deg,#334155,#475569)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:50,fontWeight:800,color:'#fff',transition:'all 0.3s ease',transform:isPersonaSpeaking?'scale(1.07)':'scale(1)',animation:isPersonaSpeaking?'avatarGlow 1.6s ease-in-out infinite':'none',boxShadow:isPersonaSpeaking?'0 0 40px rgba(99,102,241,0.5)':'0 4px 24px rgba(0,0,0,0.5)'}}>
-              {(activeSession.persona_name||'?').split(' ').map(n=>n[0]).join('').slice(0,2)}
+              <img src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${activeSession.persona_id||activeSession.persona_name||'x'}`} style={{width:'100%',height:'100%',borderRadius:'50%',objectFit:'cover'}} alt="" onError={e=>{e.target.style.display='none'}}/>
             </div>
             {isPersonaSpeaking&&(
               <div style={{position:'absolute',bottom:96,left:'50%',transform:'translateX(-50%)',background:'rgba(0,0,0,0.75)',backdropFilter:'blur(8px)',padding:'8px 18px',borderRadius:20,display:'flex',alignItems:'center',gap:8}}>
@@ -2029,7 +2029,7 @@ function getPersonaPosts(emp,company){
           <div className="bg-[#1A2A20] rounded-3xl shadow-2xl w-80 overflow-hidden">
             {/* Header */}
             <div className="px-6 pt-8 pb-4 text-center">
-              <div className={`w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-3 ${getAvatarColor(callModal.id)}`}>{getInitials(callModal)}</div>
+              <div className="relative mx-auto mb-3 flex items-center justify-center" style={{width:88,height:88}}><div className="absolute inset-0 rounded-full border-2 border-blue-400 animate-ping" style={{opacity:0.5}}/><div className="absolute rounded-full border border-blue-300 animate-ping" style={{inset:-7,opacity:0.25,animationDelay:'0.8s'}}/><img src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${callModal&&callModal.id}`} className={`w-20 h-20 rounded-full object-cover border-2 border-blue-500 ${getAvatarColor(callModal&&callModal.id)}`} alt="" onError={e=>{e.target.style.display='none'}}/></div>
               <div className="text-white font-bold text-lg">{callModal.first} {callModal.last}</div>
               <div className="text-[#4A6B8A] text-sm">{callModal.title}</div>
               <div className="text-[#7A9CC4] text-xs mt-0.5 font-mono">{getPhone(callModal)}</div>
