@@ -1498,12 +1498,12 @@ function getPersonaPosts(emp,company){
                     const stageIdx = stageList.indexOf(stage);
                     const stageLabels = ['Prospecting','Discovery','Demo','Negotiation','Closing','Closed','Lost'];
                     const empDeal = deals.find(d => d.employeeId === selEmp.id) || {};
-                    const personaName = selEmp.prospectName || selEmp.name || 'Prospect';
-                    const personaRole = selEmp.prospectRole || 'Decision Maker';
-                    const companyName = selEmp.company || empDeal.company || '';
-                    const companyDesc = selEmp.companyDesc || '';
-                    const industry = selEmp.industry || '';
-                    const dealValue = empDeal.value || 50000;
+                    const personaName = ((selEmp.first || '') + ' ' + (selEmp.last || '')).trim() || 'Prospect';
+                    const personaRole = selEmp.title || 'Decision Maker';
+                    const companyName = (selCo && selCo.name) || '';
+                    const companyDesc = selEmp.bio || selEmp.personality || '';
+                    const industry = (selCo && selCo.industry) || '';
+                    const dealValue = (selCo && selCo.dealValue) || 50000;
 
                     const sendMsg = async (msgText) => {
                       if (!msgText || !msgText.trim() || conv.thinking) return;
