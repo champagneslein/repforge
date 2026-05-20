@@ -1280,13 +1280,13 @@ function getPersonaPosts(emp,company){
                     </div>
         </div>
         <div className="flex items-center gap-3">
-          <div className="text-sm text-[#7A9CC4] hover:text-[#38BDF8]">Day <span className="font-bold text-[#D4E5FF]">{simDay}</span><span className="text-[#4A6B8A]"> / {SIM_LENGTH}</span></div>
+          <div className="flex items-center gap-1.5 bg-[#070E1C] border border-[#1B3154] rounded-lg px-2.5 py-1.5"><span className="text-[#4A6B8A] text-xs">Day</span><span className="font-bold text-[#38BDF8] text-sm leading-none">{simDay}</span><span className="text-[#2A4A6A] text-xs">/{SIM_LENGTH}</span></div>
           {!simComplete ? (
-            <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1"> Advance Day</button>              <button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-medium text-xs flex items-center gap-1 transition-colors ${apiKey ? "bg-emerald-700 text-white hover:bg-emerald-600" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}> {apiKey ? "AI On" : "Add AI Key"}</button></>
+            <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-400 text-white text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' className='w-3 h-3' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5'><path d='M5 12h14M15 6l6 6-6 6'/></svg>Next Day</button><button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-semibold text-xs flex items-center gap-1.5 transition-colors ${apiKey ? "bg-[#0A1E0F] text-emerald-400 border border-emerald-900 hover:bg-[#0D2B15]" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}><div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${apiKey ? "bg-emerald-400" : "bg-white animate-pulse"}`}/>{apiKey ? "AI On" : "Setup AI"}</button></>
           ) : (
             <button onClick={() => setTab("score")} className="bg-[#0EA5E9] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1"> View Final Score</button>
           )}
-          <button onClick={()=>setShowProdSetup(true)} style={{fontSize:'11px',padding:'4px 10px',background:product?'#4F46E5':'#dc2626',color:'white',border:'none',borderRadius:'6px',cursor:'pointer',fontWeight:'600',whiteSpace:'nowrap'}}>{product?' '+product.product_name.substring(0,18):' Setup Product'}</button><button onClick={handleLogout} style={{fontSize:'11px',padding:'4px 10px',background:'#f1f5f9',color:'#475569',border:'1px solid #1B3154',borderRadius:'6px',cursor:'pointer',whiteSpace:'nowrap'}}>{user?user.email.split('@')[0]+'  Logout':'Logout'}</button>
+          <button onClick={()=>setShowProdSetup(true)} className={`text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 ${product?'bg-[#0F0A2A] text-violet-400 border border-violet-900 hover:bg-[#150E35]':'bg-red-600 text-white hover:bg-red-500'}`}>{product?product.product_name.substring(0,16):'Setup Product'}</button><button onClick={handleLogout} className="text-xs px-2.5 py-1.5 rounded-lg font-medium text-[#4A6B8A] hover:text-[#7A9CC4] border border-[#1B3154] hover:border-[#2A4A6A] bg-transparent transition-colors">{user?user.email.split('@')[0]:'Logout'}</button>
         </div>
       </div>
 
@@ -1433,8 +1433,8 @@ function getPersonaPosts(emp,company){
               </div>
               <div className="flex gap-5">
                 <div className="w-64 flex-shrink-0 space-y-4">
-                  <div className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-4 text-center">
-                    <div className={`w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-2 ${getAvatarColor(selEmp.id)}`}>{getInitials(selEmp)}</div>
+                  <div className="rounded-xl border border-[#1B3154] p-5 text-center" style={{background:'linear-gradient(160deg,#0D1B2E 0%,#070E1C 100%)'}}>
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-3 ring-2 ring-[#1B3154] ${getAvatarColor(selEmp.id)}`}>{getInitials(selEmp)}</div>
                     <div className="font-bold text-[#F8FAFC]">{selEmp.first} {selEmp.last}</div>
                     <div className="text-[#7A9CC4] text-sm">{selEmp.title}</div>
                     <div className="text-[#4A6B8A] text-xs">{selCompany.name}</div>
@@ -1453,9 +1453,9 @@ function getPersonaPosts(emp,company){
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <button onClick={() => initiateCall(selEmp)} className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg py-2 text-sm font-medium"> Call {selEmp.first}</button>
-                    <button onClick={() => { setEmailCompose({emp:selEmp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white rounded-lg py-2 text-sm font-medium"> Email {selEmp.first}</button>
-                    <button onClick={() => { setPlProfile(selEmp); setTab("prolink"); setPlView("profile"); }} className="bg-[#2A5A3A] hover:bg-[#0EA5E9] text-white rounded-lg py-2 text-sm font-medium"> View ProLink Profile</button>
+                    <button onClick={() => initiateCall(selEmp)} className="flex items-center justify-center gap-2 bg-[#071A10] border border-emerald-900 hover:bg-[#0A2418] text-emerald-400 rounded-lg py-2.5 text-sm font-semibold transition-colors"><svg xmlns='http://www.w3.org/2000/svg' className='w-4 h-4 flex-shrink-0' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z'/></svg>Call {selEmp.first}</button>
+                    <button onClick={() => { setEmailCompose({emp:selEmp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="flex items-center justify-center gap-2 bg-[#06121F] border border-sky-900 hover:bg-[#091A2D] text-sky-400 rounded-lg py-2.5 text-sm font-semibold transition-colors"><svg xmlns='http://www.w3.org/2000/svg' className='w-4 h-4 flex-shrink-0' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2'><path d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/><polyline points='22,6 12,13 2,6'/></svg>Email {selEmp.first}</button>
+                    <button onClick={() => { setPlProfile(selEmp); setTab("prolink"); setPlView("profile"); }} className="flex items-center justify-center gap-2 bg-[#080E28] border border-blue-900 hover:bg-[#0C1535] text-blue-400 rounded-lg py-2.5 text-sm font-semibold transition-colors"><svg xmlns='http://www.w3.org/2000/svg' className='w-4 h-4 flex-shrink-0' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2'><path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z'/><rect x='2' y='9' width='4' height='12'/><circle cx='4' cy='4' r='2'/></svg>ProLink Profile</button>
                     {/* Meeting request button  unlocks once they've replied or you're connected */}
                     {(state[selEmp.id]?.emailStatus === "replied" || state[selEmp.id]?.linkedinStatus === "connected") && state[selEmp.id]?.meetingStatus === "none" && (
                       <button onClick={() => requestMeeting(selEmp)} className="bg-amber-500 hover:bg-amber-600 text-white rounded-lg py-2 text-sm font-medium"> Request Meeting</button>
@@ -1541,18 +1541,26 @@ function getPersonaPosts(emp,company){
                             LOST
                           </div>
                         )}
-                        <div style={{display:'flex', gap:'6px', marginBottom:'12px', flexWrap:'wrap'}}>
+                        <div style={{display:'flex', alignItems:'center', marginBottom:'14px', padding:'8px 12px', background:'#070E1C', borderRadius:'10px', border:'1px solid #1B3154'}}>
                           {stageLabels.slice(0,5).map((lb, i) => (
-                            <div key={lb} style={{
-                              padding:'4px 10px', borderRadius:'20px', fontSize:'12px', fontWeight:600,
-                              background: i < stageIdx ? '#bbf7d0' : i === stageIdx ? '#2563eb' : '#e5e7eb',
-                              color: i < stageIdx ? '#15803d' : i === stageIdx ? '#fff' : '#6b7280'
-                            }}>{lb}</div>
+                            <React.Fragment key={lb}>
+                              <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'3px', flex:1}}>
+                                <div style={{width:'22px', height:'22px', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'10px', fontWeight:700, flexShrink:0,
+                                  background: i < stageIdx ? '#064E3B' : i === stageIdx ? '#1D4ED8' : '#0D1525',
+                                  color: i < stageIdx ? '#34d399' : i === stageIdx ? '#fff' : '#334155',
+                                  boxShadow: i === stageIdx ? '0 0 0 3px rgba(59,130,246,0.3)' : 'none'
+                                }}>{i+1}</div>
+                                <div style={{fontSize:'9px', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.04em', whiteSpace:'nowrap',
+                                  color: i < stageIdx ? '#34d399' : i === stageIdx ? '#60a5fa' : '#334155'
+                                }}>{lb}</div>
+                              </div>
+                              {i < 4 && <div style={{height:'1px', flex:'0 0 12px', marginBottom:'12px', background: i < stageIdx ? '#064E3B' : '#1B3154'}}/>}
+                            </React.Fragment>
                           ))}
                         </div>
                         <div style={{flex:1, overflowY:'auto', display:'flex', flexDirection:'column', gap:'8px', marginBottom:'12px', minHeight:0}}>
                           {conv.messages.length === 0 && (
-                            <div style={{color:'#9ca3af', fontSize:'13px', textAlign:'center', marginTop:'20px', lineHeight:'1.6'}}>
+                            <div style={{color:'#4A6B8A', fontSize:'13px', textAlign:'center', marginTop:'20px', lineHeight:'1.6'}}>
                               You are speaking with <strong>{personaName}</strong> at <strong>{companyName}</strong>.<br/>
                               You are in the <strong>{stageLabels[stageIdx]}</strong> stage. Type your opening message to begin.
                             </div>
@@ -1561,20 +1569,20 @@ function getPersonaPosts(emp,company){
                             <div key={i} style={{display:'flex', justifyContent: m.from === 'rep' ? 'flex-end' : 'flex-start'}}>
                               <div style={{
                                 maxWidth:'80%', padding:'8px 12px', borderRadius:'12px', fontSize:'13px', lineHeight:'1.5',
-                                background: m.from === 'rep' ? '#2563eb' : '#f3f4f6',
-                                color: m.from === 'rep' ? '#fff' : '#111827'
+                                background: m.from === 'rep' ? '#1D4ED8' : '#111827',
+                                color: m.from === 'rep' ? '#fff' : '#D4E5FF'
                               }}>{m.text}</div>
                             </div>
                           ))}
                           {conv.thinking && (
-                            <div style={{color:'#9ca3af', fontSize:'12px', fontStyle:'italic', paddingLeft:'4px'}}>{personaName} is typing...</div>
+                            <div style={{color:'#4A6B8A', fontSize:'12px', fontStyle:'italic', paddingLeft:'4px'}}>{personaName} is typing...</div>
                           )}
                         </div>
                         {stage !== 'closed' && stage !== 'lost' && (
                           <div style={{display:'flex', gap:'8px', flexShrink:0}}>
                             <input
                               id={'rfchat-' + selEmp.id}
-                              style={{flex:1, padding:'8px 12px', borderRadius:'8px', border:'1px solid #d1d5db', fontSize:'13px', outline:'none'}}
+                              style={{flex:1, padding:'8px 12px', borderRadius:'8px', border:'1px solid #1B3154', fontSize:'13px', outline:'none', background:'#070E1C', color:'#D4E5FF'}}
                               placeholder={'Message ' + personaName + '...'}
                               onKeyDown={e => {
                                 if (e.key === 'Enter' && !e.shiftKey) {
