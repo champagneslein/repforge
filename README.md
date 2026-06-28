@@ -1,64 +1,61 @@
 # Repforge
 
-A modern React application powered by V.AI AI.
+Repforge is a React frontend with a .NET backend for a sales training platform.
 
-## Features
-
-- Built with React 18
-- AI-powered features using @vapi-ai
-- Ready for production deployment
-
-## Getting Started
-
-### Installation
+## Local development
 
 ```bash
 npm install
-```
-
-### Development
-
-```bash
 npm start
 ```
 
-### Build
+```bash
+dotnet run --project src/SharpenedIron/SharpenedIron.csproj
+```
+
+The backend exposes:
+
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/profile`
+- `POST /api/auth/change-password`
+- `GET /healthz`
+
+## Backend configuration
+
+Use environment variables in production:
 
 ```bash
-npm run build
+ConnectionStrings__DefaultConnection="Server=tcp:<server>.database.windows.net,1433;Initial Catalog=repforge;..."
+Tokens__JwtKey="<at-least-32-random-characters>"
+Tokens__Issuer="RepForge"
+Tokens__Audience="RepForge"
+Cors__AllowedOrigins__0="https://repforge.example.com"
 ```
 
-### Test
+Run the database bootstrap job once to create the ASP.NET Identity schema for the basic login service. Replace this with EF migrations before production customer data is important.
+
+## AKS deployment
+
+Build and push images to Azure Container Registry:
 
 ```bash
-npm test
+az acr build --registry <acr-name> --image repforge-frontend:latest --file Dockerfile.frontend .
+az acr build --registry <acr-name> --image repforge-backend:latest --file Dockerfile.backend .
 ```
 
-## Scripts
+Update the image registry and host placeholders in `k8s/*.yaml`, then create a real secret from `k8s/secret.example.yaml`:
 
-| Script | Description |
-|--------|-------------|
-| `start` | Start development server |
-| `build` | Build for production |
-| `test` | Run tests |
-| `eject` | Eject from create-react-scripts |
-
-## Project Structure
-
-```
-repforge/
-├── api/          # API endpoints and functions
-├── public/       # Static assets
-├── src/          # Source code
-└── package.json  # Project configuration
+```bash
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/secret.yaml
+kubectl apply -f k8s/configmap.yaml
+kubectl apply -f k8s/db-bootstrap-job.yaml
+kubectl apply -k k8s
 ```
 
-## Tech Stack
+The ingress routes `/api` to the .NET backend and all other paths to the React frontend.
 
-- **Frontend**: React 18
-- **AI Integration**: V.AI (using web SDK)
-- **Build Tool**: react-scripts
+## Federated login path
 
-## License
-
-Copyright 2024. All rights reserved.
+Basic email/password auth is now in place using ASP.NET Core Identity and JWTs. For client corporate login later, add a tenant table keyed by customer domain and configure per-tenant OIDC/SAML providers, typically starting with Microsoft Entra ID OIDC for each client. The current `TenantId` claim on `ApplicationUser` is the placeholder for that future tenant boundary.
