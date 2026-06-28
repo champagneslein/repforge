@@ -27,7 +27,6 @@ builder.Services
         options.SignIn.RequireConfirmedEmail = false;
     })
     .AddUserStore<MongoUserStore>()
-    .AddSignInManager()
     .AddDefaultTokenProviders();
 
 builder.Services.AddAuthentication(options =>
