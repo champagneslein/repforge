@@ -1,15 +1,22 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddHealthChecks();
-builder.Services.AddDbContext<ApplicationDb>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+var mongoConnectionString = builder.Configuration.GetConnectionString("MongoDB")
+    ?? throw new InvalidOperationException("ConnectionStrings__MongoDB must be configured.");
+
+builder.Services.AddSingleton<IMongoDatabase>(_ =>
+{
+    var client = new MongoClient(mongoConnectionString);
+    return client.GetDatabase("repforge");
+});
 
 builder.Services
     .AddIdentityCore<ApplicationUser>(options =>
@@ -19,7 +26,7 @@ builder.Services
         options.Password.RequireNonAlphanumeric = false;
         options.SignIn.RequireConfirmedEmail = false;
     })
-    .AddEntityFrameworkStores<ApplicationDb>()
+    .AddUserStore<MongoUserStore>()
     .AddSignInManager()
     .AddDefaultTokenProviders();
 
@@ -62,14 +69,6 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
-
-if (args.Contains("--ensure-db", StringComparer.OrdinalIgnoreCase))
-{
-    using var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<ApplicationDb>();
-    db.Database.EnsureCreated();
-    return;
-}
 
 if (!app.Environment.IsDevelopment())
 {

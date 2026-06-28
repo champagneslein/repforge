@@ -1,0 +1,116 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  ACR_REGISTRY: ironforge.azurecr.io
+  AKS_CLUSTER: Ironforge-Test
+  AKS_RESOURCE_GROUP: Ironforge
+  K8S_NAMESPACE: repforge
+
+jobs:
+  build-and-push:
+    name: Build & Push Images
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    outputs:
+      image-tag: ${{ steps.meta.outputs.tag }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Log in to ACR
+        run: az acr login --name ironforge
+
+      - name: Set image tag
+        id: meta
+        run: echo "tag=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+
+      - name: Build & push backend
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.backend
+          push: true
+          tags: |
+            ${{ env.ACR_REGISTRY }}/repforge-backend:${{ steps.meta.outputs.tag }}
+            ${{ env.ACR_REGISTRY }}/repforge-backend:latest
+
+      - name: Build & push frontend
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.frontend
+          push: true
+          tags: |
+            ${{ env.ACR_REGISTRY }}/repforge-frontend:${{ steps.meta.outputs.tag }}
+            ${{ env.ACR_REGISTRY }}/repforge-frontend:latest
+
+  deploy:
+    name: Deploy to AKS
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Set AKS context
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: ${{ env.AKS_RESOURCE_GROUP }}
+          cluster-name: ${{ env.AKS_CLUSTER }}
+
+      - name: Apply namespace & config
+        run: |
+          kubectl apply -f k8s/namespace.yaml
+          kubectl apply -f k8s/configmap.yaml
+
+      - name: Apply k8s secrets (from GitHub secrets)
+        run: |
+          kubectl create secret generic repforge-secrets \
+            --namespace=${{ env.K8S_NAMESPACE }} \
+            --from-literal=ConnectionStrings__MongoDB='${{ secrets.MONGODB_CONNECTION_STRING }}' \
+            --from-literal=Tokens__JwtKey='${{ secrets.JWT_KEY }}' \
+            --save-config \
+            --dry-run=client -o yaml | kubectl apply -f -
+
+      - name: Update image tags in manifests
+        run: |
+          sed -i 's|ironforge.azurecr.io/repforge-backend:.*|ironforge.azurecr.io/repforge-backend:${{ needs.build-and-push.outputs.image-tag }}|g' k8s/backend.yaml
+          sed -i 's|ironforge.azurecr.io/repforge-frontend:.*|ironforge.azurecr.io/repforge-frontend:${{ needs.build-and-push.outputs.image-tag }}|g' k8s/frontend.yaml
+
+      - name: Deploy backend & frontend
+        run: |
+          kubectl apply -f k8s/backend.yaml
+          kubectl apply -f k8s/frontend.yaml
+          kubectl apply -f k8s/ingress.yaml
+
+      - name: Wait for rollout
+        run: |
+          kubectl rollout status deployment/repforge-backend -n ${{ env.K8S_NAMESPACE }} --timeout=180s
+          kubectl rollout status deployment/repforge-frontend -n ${{ env.K8S_NAMESPACE }} --timeout=180s
