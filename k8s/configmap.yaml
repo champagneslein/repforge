@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: repforge-config
+  namespace: repforge
+data:
+  ASPNETCORE_ENVIRONMENT: Production
+  Tokens__Issuer: RepForge
+  Tokens__Audience: RepForge
+  Tokens__AccessTokenMinutes: "60"
+  Cors__AllowedOrigins__0: https://repforge.example.com

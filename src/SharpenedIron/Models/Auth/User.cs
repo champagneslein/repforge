@@ -1,13 +1,15 @@
+using System.ComponentModel.DataAnnotations;
+
 public class RegisterRequest
 {
     [Required]
     [StringLength(256, MinimumLength=6)]
     [EmailAddress]
-    public string Email { get; set; }
+    public required string Email { get; set; }
 
     [Required]
-    [StringLength(256, MinimumLength=6)]
-    public string Password { get; set; }
+    [StringLength(256, MinimumLength=8)]
+    public required string Password { get; set; }
 
     public string? FirstName { get; set; }
 
@@ -18,11 +20,26 @@ public class LoginRequest
 {
     [Required]
     [EmailAddress]
-    public string Email { get; set; }
+    public required string Email { get; set; }
 
     [Required]
-    [StringLength(256, MinimumLength=6)]
-    public string Password { get; set; }
+    [StringLength(256, MinimumLength=8)]
+    public required string Password { get; set; }
+}
+
+public class RefreshTokenRequest
+{
+    public string? RefreshToken { get; set; }
+}
+
+public class ChangePasswordRequest
+{
+    [Required]
+    public required string OldPassword { get; set; }
+
+    [Required]
+    [StringLength(256, MinimumLength=8)]
+    public required string NewPassword { get; set; }
 }
 
 public class TokenResponse
@@ -36,9 +53,9 @@ public class TokenResponse
 
 public class UserProfile
 {
-    public int Id { get; set; }
+    public string? Id { get; set; }
 
-    public string Email { get; set; }
+    public string? Email { get; set; }
     
     public string? FirstName { get; set; }
 

@@ -1,59 +1,50 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
+
 public class AuthService : IAuthService
 {
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
-    private readonly TokenService _tokenService;
-    private readonly ITokenService _tokenServiceProxy;
+    private readonly ITokenService _tokenService;
 
     public AuthService(
         UserManager<ApplicationUser> userManager,
         SignInManager<ApplicationUser> signInManager,
-        ITokenService tokenService, // or TokenService in production
-        ITokenService tokenServiceProxy) // injected based on project structure
+        ITokenService tokenService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _tokenService = tokenService;
-        _tokenServiceProxy = tokenServiceProxy;
     }
 
     public async Task<TokenResponse> RegisterAsync(RegisterRequest request, CancellationToken cancellationToken = default)
     {
-        // Check if user already exists
         var existingUser = await _userManager.FindByEmailAsync(request.Email);
         if (existingUser != null)
         {
             throw new InvalidOperationException("A user with this email already exists.");
         }
 
-        // Create user
         var user = new ApplicationUser
         {
             Email = request.Email,
             UserName = request.Email,
             FirstName = request.FirstName,
             LastName = request.LastName,
-            EmailConfirmed = false
+            EmailConfirmed = true
         };
 
-        // Register user
-        var result = await _userManager.CreateAsync(user, request.Password, cancellationToken);
+        var result = await _userManager.CreateAsync(user, request.Password);
         if (!result.Succeeded)
         {
             var errors = string.Join("; ", result.Errors.Select(e => e.Description));
             throw new InvalidOperationException($"Registration failed: {errors}");
         }
 
-        // Send email confirmation
-        await _userManager.SendEmailConfirmationAsync(user, cancellationToken);
+        await _signInManager.SignInAsync(user, isPersistent: false);
 
-        // Auto sign in user
-        await _signInManager.SignInAsync(user, isPersistent: true, cancellationToken);
-
-        // Generate token
-        var tokenResponse = await GenerateToken(user);
-
-        return tokenResponse;
+        return await _tokenService.GenerateTokenAsync(user, cancellationToken);
     }
 
     public async Task<TokenResponse> LoginAsync(LoginRequest request, CancellationToken cancellationToken = default)
@@ -64,44 +55,34 @@ public class AuthService : IAuthService
             throw new InvalidOperationException("Invalid email or password.");
         }
 
-        var result = await _signInManager.PasswordSignInAsync(
-            user, request.Password, 
-            isPersistent: false, 
-            requireRememberMe: false,
-            cancellationToken: cancellationToken);
-
+        var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, lockoutOnFailure: true);
         if (!result.Succeeded)
         {
             throw new InvalidOperationException("Invalid email or password.");
         }
 
-        return await GenerateTokenAsync(user);
+        return await _tokenService.GenerateTokenAsync(user, cancellationToken);
     }
 
-    public async Task<bool> LogoutAsync(string userId, CancellationToken cancellationToken = default)
+    public async Task<bool> LogoutAsync(string? userId, CancellationToken cancellationToken = default)
     {
-        var user = await _userManager.FindByIdAsync(userId);
-        if (user == null)
+        await _signInManager.SignOutAsync();
+        return !string.IsNullOrWhiteSpace(userId);
+    }
+
+    public Task<TokenResponse> RefreshTokenAsync(string? refreshToken, CancellationToken cancellationToken = default)
+    {
+        return _tokenService.RefreshAccessTokenAsync(refreshToken, cancellationToken);
+    }
+
+    public async Task<UserProfile> GetProfileAsync(string? userId, CancellationToken cancellationToken = default)
+    {
+        if (string.IsNullOrWhiteSpace(userId))
         {
-            return false;
+            throw new InvalidOperationException("User not found.");
         }
 
-        await _signInManager.SignOutAsync(user);
-        return true;
-    }
-
-    public async Task<TokenResponse> RefreshTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
-    {
-        // Validate refresh token
-        // Check expiration
-        // Generate new access token
-        
-        return await _tokenService.RefreshAccessTokenAsync(refreshToken, cancellationToken);
-    }
-
-    public async Task<UserProfile> GetProfileAsync(string userId, CancellationToken cancellationToken = default)
-    {
-        var user = await _userManager.FindByIdAsync(userId, cancellationToken);
+        var user = await _userManager.FindByIdAsync(userId);
         if (user == null)
         {
             throw new InvalidOperationException("User not found.");
@@ -117,35 +98,30 @@ public class AuthService : IAuthService
         };
     }
 
-    public async Task ChangePasswordAsync(string userId, string oldPassword, string newPassword, CancellationToken cancellationToken = default)
+    public async Task ChangePasswordAsync(string? userId, string oldPassword, string newPassword, CancellationToken cancellationToken = default)
     {
-        var user = await _userManager.FindByIdAsync(userId, cancellationToken);
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            throw new InvalidOperationException("User not found.");
+        }
+
+        var user = await _userManager.FindByIdAsync(userId);
         if (user == null)
         {
             throw new InvalidOperationException("User not found.");
         }
 
-        var result = await _userManager.ChangePasswordAsync(
-            user, oldPassword, newPassword, cancellationToken);
-
+        var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
         if (!result.Succeeded)
         {
             var errors = string.Join("; ", result.Errors.Select(e => e.Description));
             throw new InvalidOperationException($"Password change failed: {errors}");
         }
-
-        // Re-sign in user
-        await _signInManager.SignInAsync(user, isPersistent: true, cancellationToken);
     }
 
-    private async Task<TokenResponse> GenerateTokenAsync(ApplicationUser user)
+    public static string? GetUserId(ClaimsPrincipal user)
     {
-        return await GenerateToken(user);
-    }
-
-    private async Task<TokenResponse> GenerateToken(ApplicationUser user)
-    {
-        // Implementation depends on your JWT or Bearer token implementation
-        return await _tokenService.GenerateTokenAsync(user);
+        return user.FindFirstValue(JwtRegisteredClaimNames.Sub)
+            ?? user.FindFirstValue(ClaimTypes.NameIdentifier);
     }
 }
