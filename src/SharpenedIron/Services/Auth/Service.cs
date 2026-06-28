@@ -5,16 +5,13 @@ using Microsoft.AspNetCore.Identity;
 public class AuthService : IAuthService
 {
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly ITokenService _tokenService;
 
     public AuthService(
         UserManager<ApplicationUser> userManager,
-        SignInManager<ApplicationUser> signInManager,
         ITokenService tokenService)
     {
         _userManager = userManager;
-        _signInManager = signInManager;
         _tokenService = tokenService;
     }
 
@@ -42,8 +39,6 @@ public class AuthService : IAuthService
             throw new InvalidOperationException($"Registration failed: {errors}");
         }
 
-        await _signInManager.SignInAsync(user, isPersistent: false);
-
         return await _tokenService.GenerateTokenAsync(user, cancellationToken);
     }
 
@@ -55,19 +50,21 @@ public class AuthService : IAuthService
             throw new InvalidOperationException("Invalid email or password.");
         }
 
-        var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, lockoutOnFailure: true);
-        if (!result.Succeeded)
+        var passwordValid = await _userManager.CheckPasswordAsync(user, request.Password);
+        if (!passwordValid)
         {
+            await _userManager.AccessFailedAsync(user);
             throw new InvalidOperationException("Invalid email or password.");
         }
 
+        await _userManager.ResetAccessFailedCountAsync(user);
         return await _tokenService.GenerateTokenAsync(user, cancellationToken);
     }
 
-    public async Task<bool> LogoutAsync(string? userId, CancellationToken cancellationToken = default)
+    public Task<bool> LogoutAsync(string? userId, CancellationToken cancellationToken = default)
     {
-        await _signInManager.SignOutAsync();
-        return !string.IsNullOrWhiteSpace(userId);
+        // JWT logout is client-side (discard the token); nothing to do server-side yet
+        return Task.FromResult(!string.IsNullOrWhiteSpace(userId));
     }
 
     public Task<TokenResponse> RefreshTokenAsync(string? refreshToken, CancellationToken cancellationToken = default)
