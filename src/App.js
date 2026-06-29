@@ -2,30 +2,35 @@ import React, { useState, useRef } from "react";
 import Vapi from '@vapi-ai/web';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
-// Supabase Configuration
-const SUPABASE_URL = 'https://scvlwmwegdxcgwshlqub.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjdmx3bXdlZ2R4Y2d3c2hscXViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2NTM5MjcsImV4cCI6MjA5MzIyOTkyN30.KVT2qeLVQ4uMd78-7zxdy_vLE8xI8L8nltC_T7nGnRA';
-// Helper function to fetch from Supabase REST API
-async function fetchSupabase(endpoint, filter = '') {
-  const url = `${SUPABASE_URL}/rest/v1/${endpoint}${filter}`;
-    try {
-        const response = await fetch(url, {
-              headers: {
-                      'apikey': SUPABASE_KEY,
-                              'Authorization': `Bearer ${SUPABASE_KEY}`,
-                                      'Content-Type': 'application/json',
-                                            },
-                                                });
-                                                    if (!response.ok) {
-                                                          console.warn(`Supabase fetch failed for ${endpoint}: ${response.status}`);
-                                                                return null;
-                                                                    }
-                                                                        return await response.json();
-                                                                          } catch (error) {
-                                                                              console.warn(`Error fetching ${endpoint} from Supabase:`, error);
-                                                                                  return null;
-                                                                                    }
-                                                                                    }
+// Backend API helpers
+async function apiPost(path, body, token) {
+  const headers = { 'Content-Type': 'application/json' };
+  if (token) headers['Authorization'] = 'Bearer ' + token;
+  const r = await fetch(path, { method: 'POST', headers, body: JSON.stringify(body) });
+  if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || r.statusText); }
+  return r.json();
+}
+async function apiGet(path, token) {
+  const r = await fetch(path, { headers: token ? { Authorization: 'Bearer ' + token } : {} });
+  if (!r.ok) return null;
+  return r.json();
+}
+async function authRegister(email, password, firstName, lastName) {
+  return apiPost('/api/auth/register', { email, password, firstName, lastName });
+}
+async function authLogin(email, password) {
+  return apiPost('/api/auth/login', { email, password });
+}
+async function authLogout(token) {
+  await fetch('/api/auth/logout', { method: 'POST', headers: { Authorization: 'Bearer ' + token } });
+}
+async function loadProgress(token) {
+  const res = await apiGet('/api/progress', token);
+  return res?.data ?? null;
+}
+async function saveProgress(token, data) {
+  await apiPost('/api/progress', { data }, token);
+}
 
 // 
 // COMPANY + EMPLOYEE DATA
@@ -342,24 +347,7 @@ function initState() {
 // MAIN APP
 // 
 
-async function supaSignUp(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/signup',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
-async function supaSignIn(email,password){const r=await fetch(SUPABASE_URL+'/auth/v1/authTok?grant_type=password',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({email,password})});return r.json();}
-async function supaSignOut(tok){await fetch(SUPABASE_URL+'/auth/v1/logout',{method:'POST',headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY}});}
-async function fetchProduct(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/user_products?user_id=eq.'+uid+'&limit=1',{headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY}});const d=await r.json();return d[0]||null;}
-async function upsertProduct(tok,uid,form){await fetch(SUPABASE_URL+'/rest/v1/user_products',{method:'POST',headers:{Authorization:'Bearer '+tok,'apikey':SUPABASE_KEY,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},body:JSON.stringify({user_id:uid,product_name:form.name,product_description:form.desc,icp:form.icp,value_props:form.vps.split('\n').filter(Boolean),objections:form.objs.split('\n').filter(Boolean)})});}
-async function upsertDeal(tok,uid,personaId,personaName,companyId,companyName){const r=await fetch(SUPABASE_URL+'/rest/v1/deals',{method:'POST',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates,return=representation'},body:JSON.stringify({user_id:uid,persona_id:personaId,persona_name:personaName,company_id:companyId,company_name:companyName,updated_at:new Date().toISOString()})});const d=await r.json();return Array.isArray(d)?d[0]:d;}
-async function fetchCallLogs(tok,dealId){const r=await fetch(SUPABASE_URL+'/rest/v1/call_logs?deal_id=eq.'+dealId+'&order=called_at.desc&limit=5',{headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY}});return r.json();}
-async function saveCallLog(tok,uid,dealId,personaId,log){await fetch(SUPABASE_URL+'/rest/v1/call_logs',{method:'POST',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({deal_id:dealId,user_id:uid,persona_id:personaId,...log})});await fetch(SUPABASE_URL+'/rest/v1/deals?id=eq.'+dealId,{method:'PATCH',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({interest_score:log.interest_score_after,updated_at:new Date().toISOString()})});}
-async function fetchAllDeals(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/deals?user_id=eq.'+uid+'&order=updated_at.desc',{headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY}});return r.json();}
-async function moveDealStage(tok,dealId,stage){await fetch(SUPABASE_URL+'/rest/v1/deals?id=eq.'+dealId,{method:'PATCH',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({stage,updated_at:new Date().toISOString()})});}
 function scoreColor(s){return s>=8?'#16a34a':s>=5?'#d97706':'#dc2626';}
-
-async function bookCall(tok,uid,pId,pName,cId,cName,scheduledAt,callType,discoveryData,dealId){const r=await fetch(SUPABASE_URL+'/rest/v1/scheduled_calls',{method:'POST',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json',Prefer:'return=representation'},body:JSON.stringify({user_id:uid,persona_id:pId,persona_name:pName,company_id:cId,company_name:cName,scheduled_at:scheduledAt,call_type:callType,discovery_data:discoveryData,deal_id:dealId||null,booked_by:'rep'})});const d=await r.json();return Array.isArray(d)?d[0]:d;}
-async function fetchScheduledCalls(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/scheduled_calls?user_id=eq.'+uid+'&order=scheduled_at.asc',{headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY}});return r.json();}
-async function updateCallStatus(tok,callId,status){await fetch(SUPABASE_URL+'/rest/v1/scheduled_calls?id=eq.'+callId,{method:'PATCH',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({status})});}
-async function fetchPersonaMessages(tok,uid){const r=await fetch(SUPABASE_URL+'/rest/v1/persona_messages?user_id=eq.'+uid+'&order=created_at.desc',{headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY}});return r.json();}
-async function markMsgRead(tok,msgId){await fetch(SUPABASE_URL+'/rest/v1/persona_messages?id=eq.'+msgId,{method:'PATCH',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({is_read:true})});}
-async function savePersonaMsg(tok,uid,pId,pName,cName,subj,bdy,msgType,wantsCall,callType){await fetch(SUPABASE_URL+'/rest/v1/persona_messages',{method:'POST',headers:{Authorization:'Bearer '+tok,apikey:SUPABASE_KEY,'Content-Type':'application/json'},body:JSON.stringify({user_id:uid,persona_id:pId,persona_name:pName,company_name:cName,subject:subj,body:bdy,msg_type:msgType,wants_call:wantsCall,call_type:callType})});}
 function generateDiscoveryData(){const p=a=>a[Math.floor(Math.random()*a.length)];return{budget:p(['$25K-$50K','$50K-$100K','$100K-$250K','$250K-$500K','Over $500K']),authority:p(['Economic Buyer','Champion','Technical Evaluator','Gatekeeper','End User']),timeline:p(['End of Q2','End of Q3','End of Q4','H1 next year','No fixed deadline']),decision_process:p(['Sole decision maker','Needs VP sign-off','3-vendor shortlist + IT review','Committee decision','Board approval required']),pain:p(['Manual reporting costs the team 10+ hrs a week','Our current tool breaks at critical moments','Outgrew legacy system and it cannot scale','We lose deals because our process is too slow','No single source of truth across teams']),competition:p(['Unhappy with current vendor on pricing','Running everything in spreadsheets','Using an outdated on-prem system','Evaluating two other vendors alongside you','No current solution - building from scratch']),interest:Math.floor(Math.random()*4)+5};}
 function genPersonaMsg(pName,cName,product,idx){const msgs=[{subject:'Quick question about '+product,bdy:'Hi,\n\nI came across '+product+' and it looks interesting for what we are solving at '+cName+'. Could you send more detail on pricing and what onboarding looks like?\n\nLooking forward to hearing from you,\n'+pName,msg_type:'info_request',wants_call:false,call_type:'discovery'},{subject:'Interested in a demo of '+product,bdy:'Hi,\n\nI have been evaluating solutions and '+product+' keeps coming up. I would love to see a 30-minute demo - specifically how it handles our core use case.\n\nAre you available this week or next?\n\nBest,\n'+pName,msg_type:'demo_request',wants_call:true,call_type:'demo'},{subject:'Can we set up a discovery call?',bdy:'Hi,\n\nWe are evaluating vendors at '+cName+' and I want to understand if '+product+' could be a fit before we go deeper. Could we find 30 minutes for a discovery call?\n\nThanks,\n'+pName,msg_type:'call_request',wants_call:true,call_type:'discovery'},{subject:product+' evaluation - a few questions',bdy:'Hi,\n\nMy team flagged '+product+' as worth exploring. I am the technical evaluator at '+cName+'. What does your integration story look like and do you have case studies from similar companies?\n\n'+pName,msg_type:'info_request',wants_call:false,call_type:'discovery'},{subject:'Revisiting '+product,bdy:'Hi,\n\nWe looked at '+product+' a while back but timing was not right. We are in a better position now and wanted to reconnect. Would you be open to a quick discovery call?\n\nBest,\n'+pName,msg_type:'call_request',wants_call:true,call_type:'discovery'}];const m=msgs[idx%msgs.length];return{...m,body:m.bdy,persona_name:pName,company_name:cName};}
 
@@ -372,8 +360,9 @@ export default function App() {
   const [selCompany, setSelCompany] = useState(null);
   const [intelData, setIntelData] = React.useState({});
   const [expandedIntel, setExpandedIntel] = React.useState(null);
-  const [user,setUser]=React.useState(()=>{try{return JSON.parse(localStorage.getItem('rp_sess')||'{}').user||null;}catch{return null;}});
-  const [authTok,setAuthTok]=React.useState(()=>{try{return JSON.parse(localStorage.getItem('rp_sess')||'{}').access_token||null;}catch{return null;}});
+  const [user,setUser]=React.useState(()=>{try{const s=JSON.parse(localStorage.getItem('rp_sess')||'{}');return s.userId?{id:s.userId,email:s.email}:null;}catch{return null;}});
+  const [authTok,setAuthTok]=React.useState(()=>{try{return JSON.parse(localStorage.getItem('rp_sess')||'{}').accessToken||null;}catch{return null;}});
+  const saveDebounceRef=useRef(null);
   const [authView,setAuthView]=React.useState('login');
   const [authEmail,setAuthEmail]=React.useState('');
   const [authPwd,setAuthPwd]=React.useState('');
@@ -407,22 +396,97 @@ export default function App() {
 const [demoObjections,setDemoObjections]=React.useState([]);
 const [handledObjections,setHandledObjections]=React.useState(new Set());
 
+  // Restore progress on mount if session exists
   React.useEffect(()=>{
     try{const s=JSON.parse(localStorage.getItem('rp_sess')||'{}');
-      if(s.access_token&&s.user){fetchProduct(s.access_token,s.user.id).then(p=>{if(p){setProduct(p);setProdForm({name:p.product_name||'',desc:p.product_description||'',icp:p.icp||'',vps:(p.value_props||[]).join('\n'),objs:(p.objections||[]).join('\n')});}else setShowProdSetup(true);});}
+      if(s.accessToken&&s.userId){
+        loadProgress(s.accessToken).then(data=>{
+          if(data){
+            if(data.product){setProduct(data.product);setProdForm({name:data.product.product_name||'',desc:data.product.product_description||'',icp:data.product.icp||'',vps:(data.product.value_props||[]).join('\n'),objs:(data.product.objections||[]).join('\n')});}
+            else setShowProdSetup(true);
+            if(data.deals)setDeals(data.deals);
+            if(data.scheduledCalls)setScheduledCalls(data.scheduledCalls);
+            if(data.personaMessages)setPersonaMessages(data.personaMessages);
+            if(data.simDay)setSimDay(data.simDay);
+            if(data.state){const merged={...initState(),...data.state};setState(merged);}
+          }else setShowProdSetup(true);
+        }).catch(()=>setShowProdSetup(true));
+      }
     }catch(e){}
   },[]);
 
-  const handleLogin=async()=>{setAuthErr('');setAuthBusy(true);const res=await supaSignIn(authEmail,authPwd);if(res.error){setAuthErr(res.error.message||'Login failed');setAuthBusy(false);return;}localStorage.setItem('rp_sess',JSON.stringify({access_token:res.access_token,user:res.user}));setUser(res.user);setAuthTok(res.access_token);const p=await fetchProduct(res.access_token,res.user.id);if(p){setProduct(p);setProdForm({name:p.product_name||'',desc:p.product_description||'',icp:p.icp||'',vps:(p.value_props||[]).join('\n'),objs:(p.objections||[]).join('\n')});}else setShowProdSetup(true);setAuthBusy(false);};
-  const handleSignup=async()=>{setAuthErr('');setAuthBusy(true);const r1=await supaSignUp(authEmail,authPwd);if(r1.error){setAuthErr(r1.error.message||'Signup failed');setAuthBusy(false);return;}const r2=await supaSignIn(authEmail,authPwd);if(r2.error){setAuthErr('Account created! Please log in.');setAuthView('login');setAuthBusy(false);return;}localStorage.setItem('rp_sess',JSON.stringify({access_token:r2.access_token,user:r2.user}));setUser(r2.user);setAuthTok(r2.access_token);setShowProdSetup(true);setAuthBusy(false);};
-  const handleLogout=async()=>{if(authTok)await supaSignOut(authTok);localStorage.removeItem('rp_sess');setUser(null);setAuthTok(null);setProduct(null);};
-  const handleSaveProd=async()=>{if(!prodForm.name.trim())return;setProdSaving(true);await upsertProduct(authTok,user.id,prodForm);const p=await fetchProduct(authTok,user.id);setProduct(p);setShowProdSetup(false);setProdSaving(false);}
-  React.useEffect(()=>{if(authTok&&user){fetchAllDeals(authTok,user.id).then(d=>setDeals(Array.isArray(d)?d:[])).catch(()=>{});}},[authTok,user?.id]);
+  // Debounced progress save
+  const triggerProgressSave=React.useCallback((tok,newState,newSimDay,newProduct,newDeals,newScheduledCalls,newPersonaMessages)=>{
+    if(!tok)return;
+    if(saveDebounceRef.current)clearTimeout(saveDebounceRef.current);
+    saveDebounceRef.current=setTimeout(()=>{
+      saveProgress(tok,{state:newState,simDay:newSimDay,product:newProduct,deals:newDeals,scheduledCalls:newScheduledCalls,personaMessages:newPersonaMessages}).catch(()=>{});
+    },2000);
+  },[]);
+
+  const handleLogin=async()=>{
+    setAuthErr('');setAuthBusy(true);
+    try{
+      const res=await authLogin(authEmail,authPwd);
+      const userObj={id:res.userId,email:authEmail};
+      localStorage.setItem('rp_sess',JSON.stringify({accessToken:res.accessToken,userId:res.userId,email:authEmail}));
+      setUser(userObj);setAuthTok(res.accessToken);
+      const data=await loadProgress(res.accessToken);
+      if(data){
+        if(data.product){setProduct(data.product);setProdForm({name:data.product.product_name||'',desc:data.product.product_description||'',icp:data.product.icp||'',vps:(data.product.value_props||[]).join('\n'),objs:(data.product.objections||[]).join('\n')});}
+        else setShowProdSetup(true);
+        if(data.deals)setDeals(data.deals);
+        if(data.scheduledCalls)setScheduledCalls(data.scheduledCalls);
+        if(data.personaMessages)setPersonaMessages(data.personaMessages);
+        if(data.simDay)setSimDay(data.simDay);
+        if(data.state){const merged={...initState(),...data.state};setState(merged);}
+      }else setShowProdSetup(true);
+    }catch(e){setAuthErr(e.message||'Login failed');}
+    setAuthBusy(false);
+  };
+  const handleSignup=async()=>{
+    setAuthErr('');setAuthBusy(true);
+    try{
+      const [fn,...rest]=authEmail.split('@')[0].split('.');
+      const res=await authRegister(authEmail,authPwd,fn||'User',rest.join(' ')||'');
+      const userObj={id:res.userId,email:authEmail};
+      localStorage.setItem('rp_sess',JSON.stringify({accessToken:res.accessToken,userId:res.userId,email:authEmail}));
+      setUser(userObj);setAuthTok(res.accessToken);setShowProdSetup(true);
+    }catch(e){setAuthErr(e.message||'Signup failed');}
+    setAuthBusy(false);
+  };
+  const handleLogout=async()=>{if(authTok)await authLogout(authTok).catch(()=>{});localStorage.removeItem('rp_sess');setUser(null);setAuthTok(null);setProduct(null);};
+  const handleSaveProd=async()=>{
+    if(!prodForm.name.trim())return;
+    setProdSaving(true);
+    const p={product_name:prodForm.name,product_description:prodForm.desc,icp:prodForm.icp,value_props:prodForm.vps.split('\n').filter(Boolean),objections:prodForm.objs.split('\n').filter(Boolean)};
+    setProduct(p);
+    setShowProdSetup(false);
+    setProdSaving(false);
+    triggerProgressSave(authTok,state,simDay,p,deals,scheduledCalls,personaMessages);
+  };
   React.useEffect(()=>{if(tab==='pipeline'){setShowPipeline(true);}},[tab]);
-  React.useEffect(()=>{try{const vi=getVapiInstance();vi.on('message',(msg)=>{if(msg.type==='transcript'&&msg.transcriptType==='final'){if(!window._callTranscript)window._callTranscript=[];window._callTranscript.push({role:msg.role,text:msg.transcript});}});vi.on('call-end',()=>{if(window._activeDealId){const t=window._callTranscript||[];if(window._activeDealId){saveCallLog(authTok,user&&user.id,window._activeDealId,window._activePersonaId||'',window._callTranscript).catch(()=>{});}const objKw=['expensive','price','cost','budget','already have','not the right time','not interested','competitor'];const found=objKw.filter(kw=>t.some(m=>m.text&&m.text.toLowerCase().includes(kw)));const rep=t.filter(m=>m.role==='user').length;const pros=t.filter(m=>m.role==='assistant').length;const nm=window._activePersonaName||'prospect';const co=window._activeCompanyName||'';const summary=rep+'-turn call with '+nm+(co?' at '+co:'')+'. Rep '+rep+' turns, prospect '+pros+' turns.'+(found.length?' Discussed: '+found.join(', '):' No major objections.');setPostCallSummary(summary);setPostCallObjs(found.join('\n'));setShowPostCall(true);}});}catch(e){}},[]);
-  const handleStartCallWithDeal=async(emp,company)=>{if(!authTok||!user){startCall(emp,company,[]);return;}try{window._callTranscript=[];window._activePersonaName=(emp.first||'')+' '+(emp.last||'');window._activeCompanyName=company.name||'';window._activePersonaId=emp.id||'';const deal=await upsertDeal(authTok,user.id,emp.id,(emp.first||'')+' '+(emp.last||''),company.id||'',company.name||'');window._activeDealId=deal?.id||null;const logs=deal?await fetchCallLogs(authTok,deal.id):[];startCall(emp,company,Array.isArray(logs)?logs:[]);}catch(e){startCall(emp,company,[]);}};
-  const handlePostCallSave=async()=>{if(!window._activeDealId||!authTok||!user)return;try{await saveCallLog(authTok,user.id,window._activeDealId,window._activePersonaId||'',{transcript:window._callTranscript||[],ai_summary:postCallSummary,rep_notes:postCallNotes,objections:postCallObjs.split('\n').filter(Boolean),interest_score_before:5,interest_score_after:postCallScore});const updated=await fetchAllDeals(authTok,user.id);setDeals(Array.isArray(updated)?updated:[]);}catch(e){}setShowPostCall(false);setPostCallSummary('');setPostCallNotes('');setPostCallScore(5);setPostCallObjs('');window._activeDealId=null;};
-  const handleMoveDeal=async(dealId,newStage)=>{if(!authTok)return;await moveDealStage(authTok,dealId,newStage);setDeals(prev=>prev.map(d=>d.id===dealId?{...d,stage:newStage,updated_at:new Date().toISOString()}:d));};
+
+  // Auto-save progress on state changes
+  React.useEffect(()=>{if(authTok&&user)triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,personaMessages);},[state,simDay,product,deals,scheduledCalls,personaMessages]);
+  React.useEffect(()=>{try{const vi=getVapiInstance();vi.on('message',(msg)=>{if(msg.type==='transcript'&&msg.transcriptType==='final'){if(!window._callTranscript)window._callTranscript=[];window._callTranscript.push({role:msg.role,text:msg.transcript});}});vi.on('call-end',()=>{if(window._activeDealId){const t=window._callTranscript||[];const objKw=['expensive','price','cost','budget','already have','not the right time','not interested','competitor'];const found=objKw.filter(kw=>t.some(m=>m.text&&m.text.toLowerCase().includes(kw)));const rep=t.filter(m=>m.role==='user').length;const pros=t.filter(m=>m.role==='assistant').length;const nm=window._activePersonaName||'prospect';const co=window._activeCompanyName||'';const summary=rep+'-turn call with '+nm+(co?' at '+co:'')+'. Rep '+rep+' turns, prospect '+pros+' turns.'+(found.length?' Discussed: '+found.join(', '):' No major objections.');setPostCallSummary(summary);setPostCallObjs(found.join('\n'));setShowPostCall(true);}});}catch(e){}},[]);
+  const handleStartCallWithDeal=async(emp,company)=>{
+    window._callTranscript=[];window._activePersonaName=(emp.first||'')+' '+(emp.last||'');window._activeCompanyName=company.name||'';window._activePersonaId=emp.id||'';
+    // Find or create deal locally
+    const personaName=(emp.first||'')+' '+(emp.last||'');
+    let deal=deals.find(d=>d.persona_id===emp.id&&d.company_id===(company.id||''));
+    if(!deal){deal={id:crypto.randomUUID(),persona_id:emp.id,persona_name:personaName,company_id:company.id||'',company_name:company.name||'',stage:'Discovery',updated_at:new Date().toISOString(),callLogs:[]};setDeals(prev=>{const next=[...prev,deal];triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});}
+    window._activeDealId=deal.id||null;
+    const logs=deal.callLogs||[];
+    startCall(emp,company,Array.isArray(logs)?logs:[]);
+  };
+  const handlePostCallSave=async()=>{
+    if(!window._activeDealId)return;
+    const callLog={called_at:new Date().toISOString(),transcript:window._callTranscript||[],ai_summary:postCallSummary,rep_notes:postCallNotes,objections:postCallObjs.split('\n').filter(Boolean),interest_score_before:5,interest_score_after:postCallScore};
+    setDeals(prev=>{const next=prev.map(d=>{if(d.id!==window._activeDealId)return d;return{...d,callLogs:[callLog,...(d.callLogs||[])].slice(0,5),updated_at:new Date().toISOString()};});triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});
+    setShowPostCall(false);setPostCallSummary('');setPostCallNotes('');setPostCallScore(5);setPostCallObjs('');window._activeDealId=null;
+  };
+  const handleMoveDeal=(dealId,newStage)=>{setDeals(prev=>{const next=prev.map(d=>d.id===dealId?{...d,stage:newStage,updated_at:new Date().toISOString()}:d);triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});};
 
   const [selEmp, setSelEmp] = useState(null);
   const [filterInd, setFilterInd] = useState("All");
@@ -871,26 +935,17 @@ function sendEmail(emp, company, subject, body) {
   // RENDER
   // 
 
-  // Fetch scheduled calls
-  React.useEffect(()=>{
-    if(!authTok||!user?.id)return;
-    fetchScheduledCalls(authTok,user?.id).then(d=>{if(Array.isArray(d))setScheduledCalls(d);}).catch(()=>{});
-  },[authTok,user?.id]);
-
-  // Generate persona messages randomly
+  // Generate persona messages randomly (local only, persisted via progress save)
   React.useEffect(()=>{
     if(!authTok||!user?.id||!allEmps.length)return;
-    fetchPersonaMessages(authTok,user?.id).then(d=>{if(Array.isArray(d))setPersonaMessages(d);}).catch(()=>{});
-    const iv=setInterval(async()=>{
+    const iv=setInterval(()=>{
       const emp=allEmps[Math.floor(Math.random()*allEmps.length)];
       if(!emp)return;
       const co=companies.find(c=>c.id===emp.cId)||{name:'Acme Corp'};
       const idx=Math.floor(Math.random()*5);
       const msg=genPersonaMsg(emp.first+' '+emp.last,co.name,(product?.name||'RepForge')||'your product',idx);
-      try{
-        const saved=await savePersonaMsg(authTok,user?.id,emp.id,emp.first+' '+emp.last,co.name,msg.subject,msg.body,msg.type,msg.wantsCall,msg.callType);
-        if(saved&&saved.id)setPersonaMessages(prev=>[saved,...prev]);
-      }catch(e){}
+      const newMsg={id:crypto.randomUUID(),persona_id:emp.id,persona_name:emp.first+' '+emp.last,company_name:co.name,subject:msg.subject,body:msg.body,msg_type:msg.msg_type,wants_call:msg.wants_call,call_type:msg.call_type,is_read:false,created_at:new Date().toISOString()};
+      setPersonaMessages(prev=>{const next=[newMsg,...prev];triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,next);return next;});
     },45000+Math.floor(Math.random()*75000));
     return()=>clearInterval(iv);
   },[authTok,user?.id,allEmps.length,(product?.name||'RepForge')]);
@@ -920,10 +975,8 @@ function sendEmail(emp, company, subject, body) {
     if(!bookingPersona||!bookingDateTime)return;
     const co=companies.find(c=>c.id===bookingPersona.cId)||{id:'',name:'Unknown'};
     const dd=generateDiscoveryData();
-    try{
-      const saved=await bookCall(authTok,user?.id,bookingPersona.id,bookingPersona.first+' '+bookingPersona.last,co.id,co.name,new Date(bookingDateTime).toISOString(),bookingCallType,dd,null);
-      if(saved&&saved.id)setScheduledCalls(prev=>[...prev,saved]);
-    }catch(e){}
+    const saved={id:crypto.randomUUID(),persona_id:bookingPersona.id,persona_name:bookingPersona.first+' '+bookingPersona.last,company_id:co.id,company_name:co.name,scheduled_at:new Date(bookingDateTime).toISOString(),call_type:bookingCallType,discovery_data:dd,deal_id:null,booked_by:'rep',status:'scheduled'};
+    setScheduledCalls(prev=>{const next=[...prev,saved];triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
     setShowBookingModal(false);
   };
 
@@ -936,15 +989,13 @@ function sendEmail(emp, company, subject, body) {
     setSessionTimer(1800);
     setSessionActive(true);
     setShowCallSession(true);
-    if(sc&&sc.id)await updateCallStatus(authTok,sc.id,'active');
-    setScheduledCalls(prev=>prev.map(c=>c.id===sc.id?{...c,status:'active'}:c));
+    setScheduledCalls(prev=>{const next=prev.map(c=>c.id===sc.id?{...c,status:'active'}:c);triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
   };
 
   const handleCloseSession=async()=>{
     setSessionActive(false);
     setShowCallSession(false);
-    if(activeSession&&activeSession.id)await updateCallStatus(authTok,activeSession.id,'completed');
-    setScheduledCalls(prev=>prev.map(c=>c.id===activeSession?.id?{...c,status:'completed'}:c));
+    setScheduledCalls(prev=>{const next=prev.map(c=>c.id===activeSession?.id?{...c,status:'completed'}:c);triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
     setActiveSession(null);
     setSessionTimer(1800);
     if(vi){try{vi.stop();}catch(e){}}
@@ -2300,8 +2351,7 @@ function getPersonaPosts(emp,company){
             <div key={msg.id}>
               <div onClick={async()=>{
                 if(!msg.is_read){
-                  await markMsgRead(authTok,msg.id);
-                  setPersonaMessages(prev=>prev.map(m=>m.id===msg.id?{...m,is_read:true}:m));
+                  setPersonaMessages(prev=>{const next=prev.map(m=>m.id===msg.id?{...m,is_read:true}:m);triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,next);return next;});
                 }
                 setExpandedMsg(expandedMsg===msg.id?null:msg.id);
               }} style={{background:'#1e293b',borderRadius:expandedMsg===msg.id?'12px 12px 0 0':'12px',padding:'14px 18px',border:'1px solid '+(msg.is_read?'#334155':'#6366f1'),cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'space-between',transition:'all 0.15s'}}>

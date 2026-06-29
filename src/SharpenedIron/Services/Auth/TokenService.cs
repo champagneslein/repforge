@@ -62,7 +62,9 @@ public class TokenService : ITokenService
         {
             AccessToken = new JwtSecurityTokenHandler().WriteToken(jwt),
             ExpiresAt = expires,
-            RefreshToken = GenerateRefreshToken()
+            RefreshToken = GenerateRefreshToken(),
+            UserId = user.Id,
+            Email = user.Email
         };
 
         return Task.FromResult(response);
