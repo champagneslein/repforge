@@ -1,5 +1,6 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { ConversationProvider } from '@elevenlabs/react';
 import './style.css';
 import App from './App';
 
@@ -11,7 +12,9 @@ s.src = 'https://cdn.tailwindcss.com';
 s.onload = function() {
   root.render(
     <StrictMode>
-      <App />
+      <ConversationProvider>
+        <App />
+      </ConversationProvider>
     </StrictMode>
   );
 };
