@@ -8,8 +8,7 @@ metadata:
 spec:
   ingressClassName: webapprouting.kubernetes.azure.com
   rules:
-    - host: repforge.example.com
-      http:
+    - http:
         paths:
           - path: /api
             pathType: Prefix
