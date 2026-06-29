@@ -599,7 +599,6 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     const fullPrompt = sysPrompt + productCtx + dealHistory + (window._discoveryBlock || '');
     const firstMessage = emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.';
     try {
-      await navigator.mediaDevices.getUserMedia({ audio: true });
       const tokenRes = await apiGet('/api/calltoken', authTok);
       const sessionConfig = tokenRes?.token
         ? { conversationToken: tokenRes.token, connectionType: 'webrtc' }
