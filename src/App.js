@@ -17,6 +17,13 @@ async function apiGet(path, token) {
   if (!r.ok) return null;
   return r.json();
 }
+async function apiPut(path, body, token) {
+  const headers = { 'Content-Type': 'application/json' };
+  if (token) headers['Authorization'] = 'Bearer ' + token;
+  const r = await fetch(path, { method: 'PUT', headers, body: JSON.stringify(body) });
+  if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || r.statusText); }
+  return r.json().catch(() => null);
+}
 async function authRegister(email, password, firstName, lastName) {
   return apiPost('/api/auth/register', { email, password, firstName, lastName });
 }
@@ -31,7 +38,7 @@ async function loadProgress(token) {
   return res?.data ?? null;
 }
 async function saveProgress(token, data) {
-  await apiPost('/api/progress', { data }, token);
+  await apiPut('/api/progress', { data }, token);
 }
 
 // 
@@ -593,9 +600,12 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     const firstMessage = emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.';
     try {
       await navigator.mediaDevices.getUserMedia({ audio: true });
+      const tokenRes = await apiGet('/api/calltoken', authTok);
+      const sessionConfig = tokenRes?.token
+        ? { conversationToken: tokenRes.token, connectionType: 'webrtc' }
+        : { agentId: 'agent_9601kw8ekb86ex0abgh5vr8kh4xe', connectionType: 'webrtc' };
       await elConversation.startSession({
-        agentId: 'agent_9601kw8ekb86ex0abgh5vr8kh4xe',
-        connectionType: 'webrtc',
+        ...sessionConfig,
         overrides: {
           agent: { prompt: { prompt: fullPrompt }, firstMessage },
           tts: { voiceId: selectVoice(emp.first, emp.seniority) },
