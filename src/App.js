@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Vapi from '@vapi-ai/web';
+import { useConversation } from '@elevenlabs/react';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
 // Backend API helpers
@@ -469,7 +469,6 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
 
   // Auto-save progress on state changes
   React.useEffect(()=>{if(authTok&&user)triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,personaMessages);},[state,simDay,product,deals,scheduledCalls,personaMessages]);
-  React.useEffect(()=>{try{const vi=getVapiInstance();vi.on('message',(msg)=>{if(msg.type==='transcript'&&msg.transcriptType==='final'){if(!window._callTranscript)window._callTranscript=[];window._callTranscript.push({role:msg.role,text:msg.transcript});}});vi.on('call-end',()=>{if(window._activeDealId){const t=window._callTranscript||[];const objKw=['expensive','price','cost','budget','already have','not the right time','not interested','competitor'];const found=objKw.filter(kw=>t.some(m=>m.text&&m.text.toLowerCase().includes(kw)));const rep=t.filter(m=>m.role==='user').length;const pros=t.filter(m=>m.role==='assistant').length;const nm=window._activePersonaName||'prospect';const co=window._activeCompanyName||'';const summary=rep+'-turn call with '+nm+(co?' at '+co:'')+'. Rep '+rep+' turns, prospect '+pros+' turns.'+(found.length?' Discussed: '+found.join(', '):' No major objections.');setPostCallSummary(summary);setPostCallObjs(found.join('\n'));setShowPostCall(true);}});}catch(e){}},[]);
   const handleStartCallWithDeal=async(emp,company)=>{
     window._callTranscript=[];window._activePersonaName=(emp.first||'')+' '+(emp.last||'');window._activeCompanyName=company.name||'';window._activePersonaId=emp.id||'';
     // Find or create deal locally
@@ -516,7 +515,6 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const [pipelineScore,setPipelineScore] = React.useState(null);
   const [pipelineRunning,setPipelineRunning] = React.useState(false);
 
-  const vapiRef = useRef(null);
   const [activeCallId, setActiveCallId] = useState(null);
   const [callStatus, setCallStatus] = useState('idle');
   const [proposalState, setProposalState] = React.useState({});
@@ -525,69 +523,77 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const industries = ["All","SaaS","Cyber Security","Manufacturing","Fintech","Energy","Healthcare","Retail Tech","Construction"];
   const allEmps = Object.entries(allEmployees).flatMap(([cId,emps])=>emps.map(e=>({...e,cId:parseInt(cId),cName:(companies.find(c=>c.id===parseInt(cId))||{name:''}).name})));
 
-  function getVapiInstance() {
-    if (!vapiRef.current) {
-      const k = ['4405a0df','150e','41b2','ae24','f01d9a4c17ce'].join('-');
-      vapiRef.current = new Vapi(k);
-      vapiRef.current.on('call-start', () => setCallStatus('active'));
-      vapiRef.current.on('call-end', () => { setActiveCallId(null); setCallStatus('idle'); });
-      vapiRef.current.on('speech-start', () => setIsPersonaSpeaking(true));
-      vapiRef.current.on('speech-end', () => setIsPersonaSpeaking(false));
-      vapiRef.current.on('error', () => { setActiveCallId(null); setCallStatus('idle'); });
-    }
-    return vapiRef.current;
-  }
+  const elConversation = useConversation({
+    onConnect: () => setCallStatus('active'),
+    onDisconnect: () => {
+      setActiveCallId(null); setCallStatus('idle'); setIsPersonaSpeaking(false);
+      if (window._activeDealId) {
+        const t = window._callTranscript || [];
+        const objKw = ['expensive','price','cost','budget','already have','not the right time','not interested','competitor'];
+        const found = objKw.filter(kw => t.some(m => m.text && m.text.toLowerCase().includes(kw)));
+        const rep = t.filter(m => m.role === 'user').length;
+        const pros = t.filter(m => m.role === 'assistant').length;
+        const nm = window._activePersonaName || 'prospect';
+        const co = window._activeCompanyName || '';
+        const summary = rep + '-turn call with ' + nm + (co ? ' at ' + co : '') + '. Rep ' + rep + ' turns, prospect ' + pros + ' turns.' + (found.length ? ' Discussed: ' + found.join(', ') : ' No major objections.');
+        setPostCallSummary(summary); setPostCallObjs(found.join('\n')); setShowPostCall(true);
+      }
+    },
+    onMessage: (msg) => {
+      if (!window._callTranscript) window._callTranscript = [];
+      if (msg.source === 'user') window._callTranscript.push({ role: 'user', text: msg.message });
+      else if (msg.source === 'agent') window._callTranscript.push({ role: 'assistant', text: msg.message });
+    },
+    onModeChange: (mode) => setIsPersonaSpeaking(mode.mode === 'speaking'),
+    onError: (err) => { console.error('[RepForge] ElevenLabs error:', err); setActiveCallId(null); setCallStatus('idle'); },
+  });
 
   function selectVoice(firstName, seniority) {
     const fn = firstName.toLowerCase();
-    const irish = new Set(['aoife','cian','fiona','siobhan','niamh','eoin','seamus','padraig','brigid','caoimhe','conor','declan','emer','grainne','kieran','muireann','nuala','oisin','roisin','saoirse','tadhg','sean','brendan','fintan','colm','liam','ciaran','rory','cathal','lorcan']);
     const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','emma','sarah','sophie','claire','rachel','laura','kate','anne','mary','lisa','helen','jane','julia','alice','olivia','grace','emily','charlotte','amy','hannah','leah','ava']);
-    const isIrish = irish.has(fn);
     const isFemale = female.has(fn);
-    // ElevenLabs voices  confirmed IDs from account
     if (seniority === 'c-suite') {
-      if (isFemale) return { provider: '11labs', voiceId: 'XrExE9yKIg1WjnnlVkGX' }; // Matilda  professional, authoritative
-      return { provider: '11labs', voiceId: 'pNInz6obpgDQGcFmaJgB' }; // Adam  dominant, firm
+      if (isFemale) return 'XrExE9yKIg1WjnnlVkGX'; // Matilda
+      return 'pNInz6obpgDQGcFmaJgB'; // Adam
     }
     if (seniority === 'vp') {
-      if (isFemale) return { provider: '11labs', voiceId: 'EXAVITQu4vr4xnSDxMaL' }; // Sarah  mature, confident
-      return { provider: '11labs', voiceId: 'nPczCjzI2devNBz1zQrb' }; // Brian  deep, resonant
+      if (isFemale) return 'EXAVITQu4vr4xnSDxMaL'; // Sarah
+      return 'nPczCjzI2devNBz1zQrb'; // Brian
     }
     if (seniority === 'manager') {
-      if (isFemale) return { provider: '11labs', voiceId: 'cgSgspJ2msm6clMCkdW9' }; // Jessica  warm, engaging
-      return { provider: '11labs', voiceId: 'cjVigY5qzO86Huf0OWal' }; // Eric  smooth, trustworthy
+      if (isFemale) return 'cgSgspJ2msm6clMCkdW9'; // Jessica
+      return 'cjVigY5qzO86Huf0OWal'; // Eric
     }
-    // IC / default
-    if (isFemale) return { provider: '11labs', voiceId: 'FGY2WhTYpPnrIDTdsKH5' }; // Laura  enthusiastic
-    return { provider: '11labs', voiceId: 'bIHbv24MWmeRgasZH58o' }; // Will  relaxed, friendly
+    if (isFemale) return 'FGY2WhTYpPnrIDTdsKH5'; // Laura
+    return 'bIHbv24MWmeRgasZH58o'; // Will
   }
 
-    async function startCall(emp, company, callLogs=[]) {
+  async function startCall(emp, company, callLogs=[]) {
     setActiveCallId(emp.id);
     setCallStatus('connecting');
-    const vapi = getVapiInstance();
+    window._callTranscript = [];
     const guides = {
-      'c-suite': "You are a busy C-suite executive. You speak in short, direct sentences  never more than 2-3 at a time. You are deeply skeptical of cold outreach. You've heard hundreds of pitches and most waste your time. You only engage if something genuinely connects to a board-level priority. You don't ask polite questions  you ask sharp ones: What's the measurable ROI? Who else is using this? Why now? You push back hard on vague claims. If they say 'saves time' you say 'how much exactly, and how do you know?' You occasionally cut people off if they're rambling. You never get excited easily. If something interests you, you show it with a specific follow-up question, not enthusiasm.",
-      'vp': "You are a VP-level executive with a full team and an existing stack you've invested in. You're open to new solutions but you're not desperate. You've been burned by vendors who overpromised before. You care about: will my team actually use this, what's the implementation cost, and does this integrate with what we already have. You ask practical questions and you push back on pricing  you'll say things like 'that seems steep for what it does' or 'we'd need to see this validated before committing budget'. You're polite but direct. You don't small-talk.",
-      'manager': "You are a manager with real day-to-day problems but limited budget authority. You're genuinely interested in solutions that make your team's life easier  you're the one dealing with the mess every day. But you're cautious because you've had ideas shot down by leadership before. You ask things like 'how long does onboarding take' and 'would I need IT involved'. You want to look smart when you bring this upstairs. You warm up during the call if the pitch is relevant. You share specific pain points if asked the right questions.",
-      'ic': "You are an individual contributor  smart, curious, direct. You don't have budget authority but you're often the person who finds tools and champions them internally. You're willing to talk but you'll quickly say if something isn't relevant to you. You speak casually. You ask honest questions. You sometimes say 'I'd have to run this by my manager' or 'honestly I'm not sure we'd get budget for this'. You're not hostile, just real."
+      'c-suite': "You are a busy C-suite executive. You speak in short, direct sentences — never more than 2-3 at a time. You are deeply skeptical of cold outreach. You've heard hundreds of pitches and most waste your time. You only engage if something genuinely connects to a board-level priority. You ask sharp questions: What's the measurable ROI? Who else is using this? Why now? You push back hard on vague claims. You occasionally cut people off if they're rambling. You never get excited easily.",
+      'vp': "You are a VP-level executive with a full team and an existing stack. You're open to new solutions but not desperate. You've been burned by vendors who overpromised. You care about: will my team actually use this, what's the implementation cost, and does this integrate with what we have. You're polite but direct. You don't small-talk.",
+      'manager': "You are a manager with real day-to-day problems but limited budget authority. You're genuinely interested in solutions that make your team's life easier. But you're cautious because you've had ideas shot down by leadership. You ask things like 'how long does onboarding take' and 'would I need IT involved'. You warm up during the call if the pitch is relevant.",
+      'ic': "You are an individual contributor — smart, curious, direct. You don't have budget authority but you're often the person who finds tools and champions them internally. You're willing to talk but you'll quickly say if something isn't relevant to you. You speak casually and honestly."
     };
-    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call  not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like Certainly or Great question or Absolutely. Never be immediately enthusiastic or positive about a product. You were in the middle of something when this call came in. Sound like it.';
-    
-  const dealHistory=callLogs&&callLogs.length>0?'\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'+callLogs.map((log,i)=>{const daysAgo=Math.round((Date.now()-new Date(log.called_at).getTime())/86400000);return 'Call '+(callLogs.length-i)+' ('+daysAgo+' days ago): '+(log.ai_summary||log.rep_notes||'No summary.')+(log.objections&&log.objections.length?' Objections: '+log.objections.join(', ')+'.':'');}).join('\n')+'\nYour current interest: '+(callLogs[0]?.interest_score_after||5)+'/10.':'';
-  try {
-      await vapi.start({ maxDuration: 1800,
-        model: { provider: 'openai', model: 'gpt-4o', temperature: 0.9, maxTokens: 150, messages: [{ role: 'system', content: sysPrompt+(product?'\n\n--- PRODUCT BEING PITCHED ---\nProduct: '+product.product_name+'. '+(product.product_description||'')+(product.icp?'\nTarget customer: '+product.icp:'')+((product.value_props||[]).length?'\nValue props: '+product.value_props.join('; '):'')+((product.objections||[]).length?'\nExpect objections about: '+product.objections.join('; '):''):'') + dealHistory + (window._discoveryBlock||'') }] },
-        voice: selectVoice(emp.first, emp.seniority),
-        silenceTimeoutSeconds: 10,
-        firstMessage: emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.',
+    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like "Certainly" or "Great question" or "Absolutely". Never be immediately enthusiastic about a product. You were in the middle of something when this call came in.';
+    const dealHistory = callLogs && callLogs.length > 0 ? '\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n' + callLogs.map((log,i) => { const daysAgo = Math.round((Date.now() - new Date(log.called_at).getTime()) / 86400000); return 'Call ' + (callLogs.length - i) + ' (' + daysAgo + ' days ago): ' + (log.ai_summary || log.rep_notes || 'No summary.') + (log.objections && log.objections.length ? ' Objections: ' + log.objections.join(', ') + '.' : ''); }).join('\n') + '\nYour current interest: ' + (callLogs[0]?.interest_score_after || 5) + '/10.' : '';
+    const productCtx = product ? '\n\n--- PRODUCT BEING PITCHED ---\nProduct: ' + product.product_name + '. ' + (product.product_description || '') + (product.icp ? '\nTarget customer: ' + product.icp : '') + ((product.value_props || []).length ? '\nValue props: ' + product.value_props.join('; ') : '') + ((product.objections || []).length ? '\nExpect objections about: ' + product.objections.join('; ') : '') : '';
+    const fullPrompt = sysPrompt + productCtx + dealHistory + (window._discoveryBlock || '');
+    const firstMessage = emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.';
+    try {
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+      await elConversation.startSession({
+        agentId: 'agent_9601kw8ekb86ex0abgh5vr8kh4xe',
+        connectionType: 'webrtc',
+        overrides: {
+          agent: { prompt: { prompt: fullPrompt }, firstMessage },
+          tts: { voiceId: selectVoice(emp.first, emp.seniority) },
+        },
       });
     } catch(e) { console.error('[RepForge] Call failed:', e); setActiveCallId(null); setCallStatus('idle'); }
-  }
-
-  function endCall() {
-    try { vapiRef.current?.stop(); } catch(e) {}
-    setActiveCallId(null); setCallStatus('idle');
   }
 
   async function runAgentTest() {
@@ -807,7 +813,6 @@ function sendEmail(emp, company, subject, body) {
       setCallOutcome(outcome);
       setCallLine(line);
       setCallPhase("outcome");
-      // Trigger real Vapi voice call when prospect picks up
       if (outcome === 'connected') {
         setTimeout(() => startCall(emp, getCompanyForEmp(emp.id), []), 800);
       }
@@ -825,6 +830,8 @@ function sendEmail(emp, company, subject, body) {
   }
 
   function endCall() {
+    try { elConversation.endSession(); } catch(e) {}
+    setActiveCallId(null); setCallStatus('idle');
     setCallModal(null);
     setCallPhase("idle");
     setCallOutcome(null);
@@ -955,7 +962,7 @@ function sendEmail(emp, company, subject, body) {
     if(!sessionActive)return;
     const iv=setInterval(()=>{
       setSessionTimer(t=>{
-        if(t<=1){clearInterval(iv);setSessionActive(false);setShowCallSession(false);setActiveSession(null);setSessionTimer(1800);if(vi){try{vi.stop();}catch(e){}}return 0;}
+        if(t<=1){clearInterval(iv);setSessionActive(false);setShowCallSession(false);setActiveSession(null);setSessionTimer(1800);try{elConversation.endSession();}catch(e){}return 0;}
         return t-1;
       });
     },1000);
@@ -990,6 +997,9 @@ function sendEmail(emp, company, subject, body) {
     setSessionActive(true);
     setShowCallSession(true);
     setScheduledCalls(prev=>{const next=prev.map(c=>c.id===sc.id?{...c,status:'active'}:c);triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
+    const sessEmp=allEmps.find(e=>e.id===sc.persona_id);
+    const sessCo=companies.find(c=>c.id===sc.company_id)||{name:sc.company_name,id:sc.company_id};
+    if(sessEmp){window._callTranscript=[];window._activePersonaName=sc.persona_name||'';window._activeCompanyName=sc.company_name||'';window._activePersonaId=sc.persona_id||'';window._activeDealId=sc.deal_id||null;startCall(sessEmp,sessCo,[]);}
   };
 
   const handleCloseSession=async()=>{
@@ -998,7 +1008,7 @@ function sendEmail(emp, company, subject, body) {
     setScheduledCalls(prev=>{const next=prev.map(c=>c.id===activeSession?.id?{...c,status:'completed'}:c);triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
     setActiveSession(null);
     setSessionTimer(1800);
-    if(vi){try{vi.stop();}catch(e){}}
+    try{elConversation.endSession();}catch(e){}
   };
 
   const handleMsgBooking=(msg)=>{
