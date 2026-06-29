@@ -471,12 +471,18 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   React.useEffect(()=>{if(authTok&&user)triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,personaMessages);},[state,simDay,product,deals,scheduledCalls,personaMessages]);
   const handleStartCallWithDeal=async(emp,company)=>{
     window._callTranscript=[];window._activePersonaName=(emp.first||'')+' '+(emp.last||'');window._activeCompanyName=company.name||'';window._activePersonaId=emp.id||'';
-    // Find or create deal locally
     const personaName=(emp.first||'')+' '+(emp.last||'');
     let deal=deals.find(d=>d.persona_id===emp.id&&d.company_id===(company.id||''));
     if(!deal){deal={id:crypto.randomUUID(),persona_id:emp.id,persona_name:personaName,company_id:company.id||'',company_name:company.name||'',stage:'Discovery',updated_at:new Date().toISOString(),callLogs:[]};setDeals(prev=>{const next=[...prev,deal];triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});}
     window._activeDealId=deal.id||null;
     const logs=deal.callLogs||[];
+    // Show call session UI
+    const dd=generateDiscoveryData();
+    window._discoveryBlock=`\n\n## MEDDIC Context (Hidden from Prospect)\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nDecision Process: ${dd.decision_process}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n`;
+    setActiveSession({id:deal.id,persona_id:emp.id,persona_name:personaName,company_id:company.id,company_name:company.name,call_type:'discovery',discovery_data:dd,deal_id:deal.id,status:'active'});
+    setSessionTimer(1800);
+    setSessionActive(true);
+    setShowCallSession(true);
     startCall(emp,company,Array.isArray(logs)?logs:[]);
   };
   const handlePostCallSave=async()=>{
