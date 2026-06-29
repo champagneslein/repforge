@@ -501,7 +501,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const [callModal, setCallModal] = useState(null);       // emp being called
   const [callPhase, setCallPhase] = useState("idle");     // idle | dialing | outcome
   const [callOutcome, setCallOutcome] = useState(null);   // connected | voicemail | no-answer | gatekeeper
-  const [callLine, setCallLine] = useState("");  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");  const [showSettings, setShowSettings] = useState(!localStorage.getItem("repforge_openai_key"));  const [aiVoiceLoading, setAiVoiceLoading] = useState(false);  const [aiEmailLoading, setAiEmailLoading] = useState({});  const audioRef = useRef(null);  // what the prospect says
+  const [callLine, setCallLine] = useState("");  const [apiKey, setApiKey] = useState(localStorage.getItem("repforge_openai_key") || "");  const [showSettings, setShowSettings] = useState(false);  const [aiVoiceLoading, setAiVoiceLoading] = useState(false);  const [aiEmailLoading, setAiEmailLoading] = useState({});  const audioRef = useRef(null);  // what the prospect says
   const [agentName,setAgentName] = React.useState('');
   const [agentPrompt,setAgentPrompt] = React.useState('');
   const [labRunning,setLabRunning] = React.useState(false);
@@ -1074,6 +1074,33 @@ function getPersonaPosts(emp,company){
   ];
 }
 
+  if (!user) {
+    return (
+      <div style={{minHeight:'100vh',background:'#070C18',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
+        <div style={{background:'#0D1525',borderRadius:14,padding:'36px 40px',width:400,maxWidth:'92vw',boxShadow:'0 24px 60px rgba(0,0,0,0.4)',border:'1px solid #1B3154'}}>
+          <div style={{textAlign:'center',marginBottom:28}}>
+            <div style={{fontSize:22,fontWeight:800,color:'#0EA5E9',letterSpacing:'-0.02em'}}>RepForge</div>
+            <div style={{fontSize:13,color:'#4A6B8A',marginTop:4}}>AI Sales Training Platform</div>
+          </div>
+          <div style={{display:'flex',gap:0,marginBottom:24,background:'#070C18',borderRadius:8,padding:3}}>
+            <button onClick={()=>{setAuthView('login');setAuthErr('');}} style={{flex:1,padding:'8px 0',borderRadius:6,border:'none',background:authView==='login'?'#1B3154':'transparent',color:authView==='login'?'#F8FAFC':'#4A6B8A',fontWeight:600,fontSize:13,cursor:'pointer',transition:'all 0.15s'}}>Sign In</button>
+            <button onClick={()=>{setAuthView('register');setAuthErr('');}} style={{flex:1,padding:'8px 0',borderRadius:6,border:'none',background:authView==='register'?'#1B3154':'transparent',color:authView==='register'?'#F8FAFC':'#4A6B8A',fontWeight:600,fontSize:13,cursor:'pointer',transition:'all 0.15s'}}>Create Account</button>
+          </div>
+          {authErr&&<div style={{background:'rgba(239,68,68,0.1)',border:'1px solid rgba(239,68,68,0.3)',borderRadius:6,padding:'8px 12px',color:'#f87171',fontSize:12,marginBottom:14}}>{authErr}</div>}
+          <div style={{marginBottom:14}}>
+            <label style={{display:'block',fontSize:11,fontWeight:600,color:'#7A9CC4',marginBottom:5,textTransform:'uppercase',letterSpacing:'0.06em'}}>Email</label>
+            <input value={authEmail} onChange={e=>setAuthEmail(e.target.value)} onKeyDown={e=>e.key==='Enter'&&(authView==='login'?handleLogin():handleSignup())} type="email" placeholder="you@company.com" style={{width:'100%',boxSizing:'border-box',background:'#070C18',border:'1px solid #1B3154',borderRadius:7,padding:'9px 12px',color:'#F8FAFC',fontSize:14,outline:'none'}}/>
+          </div>
+          <div style={{marginBottom:22}}>
+            <label style={{display:'block',fontSize:11,fontWeight:600,color:'#7A9CC4',marginBottom:5,textTransform:'uppercase',letterSpacing:'0.06em'}}>Password</label>
+            <input value={authPwd} onChange={e=>setAuthPwd(e.target.value)} onKeyDown={e=>e.key==='Enter'&&(authView==='login'?handleLogin():handleSignup())} type="password" placeholder="Min. 8 characters" style={{width:'100%',boxSizing:'border-box',background:'#070C18',border:'1px solid #1B3154',borderRadius:7,padding:'9px 12px',color:'#F8FAFC',fontSize:14,outline:'none'}}/>
+          </div>
+          <button onClick={authView==='login'?handleLogin:handleSignup} disabled={authBusy||!authEmail||!authPwd} style={{width:'100%',padding:'11px 0',borderRadius:8,border:'none',background:authBusy||!authEmail||!authPwd?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:authBusy||!authEmail||!authPwd?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:authBusy||!authEmail||!authPwd?'not-allowed':'pointer',transition:'all 0.15s'}}>{authBusy?(authView==='login'?'Signing in…':'Creating account…'):(authView==='login'?'Sign In':'Create Account')}</button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#070C18]">
       {showProdSetup&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
@@ -1363,7 +1390,7 @@ function getPersonaPosts(emp,company){
                   const replied = emps.filter(e => state[e.id]?.emailStatus==="replied" || state[e.id]?.linkedinStatus==="connected").length;
                   const contacted = emps.filter(e => state[e.id]?.emailStatus!=="none" || state[e.id]?.calls>0 || state[e.id]?.linkedinStatus!=="none").length;
                   return (
-                    <div key={c.id} onClick={() => { setSelCompany(c); fetchSupabase('allEmps?company_id=eq.' + c.id + '&select=id,first_name,last_name,pain_points,goals,challenges,buying_role,budget_authority').then(d => { if(d){ const m={}; d.forEach(p=>{m[p.id]=p;}); setIntelData(m); setExpandedIntel(null); } }); setCrmView("company"); }} className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-4 cursor-pointer hover:border-[#0EA5E9] hover:shadow-md transition-all group">
+                    <div key={c.id} onClick={() => { setSelCompany(c); const empsForCo=allEmployees[c.id]||[]; const buyingRoleMap={'c-suite':'economic_buyer','vp':'champion','manager':'technical_evaluator','ic':'end_user'}; const m={}; empsForCo.forEach(emp=>{m[emp.id]={pain_points:getPersonaPainPoints(emp,c),goals:getPersonaGoals(emp,c),challenges:getPersonaPainPoints(emp,c).slice(0,2),buying_role:buyingRoleMap[emp.seniority]||'end_user',budget_authority:emp.seniority==='c-suite'||emp.seniority==='vp'};}); setIntelData(m); setExpandedIntel(null); setCrmView("company"); }} className="bg-[#0D1525] rounded-xl border border-[#1B3154] p-4 cursor-pointer hover:border-[#0EA5E9] hover:shadow-md transition-all group">
                       <div className="flex items-start justify-between mb-3">
                         <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm ${getAvatarColor(c.id)}`}>{c.name.slice(0,2).toUpperCase()}</div>
                         <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${sizeColors[c.size]}`}>{c.size}</span>
