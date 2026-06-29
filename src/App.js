@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import { useConversation } from '@elevenlabs/react';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
+function uuid(){if(typeof crypto!=='undefined'&&crypto.randomUUID)return uuid();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16);});}
+
 // Backend API helpers
 async function apiPost(path, body, token) {
   const headers = { 'Content-Type': 'application/json' };
@@ -473,7 +475,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     window._callTranscript=[];window._activePersonaName=(emp.first||'')+' '+(emp.last||'');window._activeCompanyName=company.name||'';window._activePersonaId=emp.id||'';
     const personaName=(emp.first||'')+' '+(emp.last||'');
     let deal=deals.find(d=>d.persona_id===emp.id&&d.company_id===(company.id||''));
-    if(!deal){deal={id:crypto.randomUUID(),persona_id:emp.id,persona_name:personaName,company_id:company.id||'',company_name:company.name||'',stage:'Discovery',updated_at:new Date().toISOString(),callLogs:[]};setDeals(prev=>{const next=[...prev,deal];triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});}
+    if(!deal){deal={id:uuid(),persona_id:emp.id,persona_name:personaName,company_id:company.id||'',company_name:company.name||'',stage:'Discovery',updated_at:new Date().toISOString(),callLogs:[]};setDeals(prev=>{const next=[...prev,deal];triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});}
     window._activeDealId=deal.id||null;
     const logs=deal.callLogs||[];
     // Show call session UI
@@ -957,7 +959,7 @@ function sendEmail(emp, company, subject, body) {
       const co=companies.find(c=>c.id===emp.cId)||{name:'Acme Corp'};
       const idx=Math.floor(Math.random()*5);
       const msg=genPersonaMsg(emp.first+' '+emp.last,co.name,(product?.name||'RepForge')||'your product',idx);
-      const newMsg={id:crypto.randomUUID(),persona_id:emp.id,persona_name:emp.first+' '+emp.last,company_name:co.name,subject:msg.subject,body:msg.body,msg_type:msg.msg_type,wants_call:msg.wants_call,call_type:msg.call_type,is_read:false,created_at:new Date().toISOString()};
+      const newMsg={id:uuid(),persona_id:emp.id,persona_name:emp.first+' '+emp.last,company_name:co.name,subject:msg.subject,body:msg.body,msg_type:msg.msg_type,wants_call:msg.wants_call,call_type:msg.call_type,is_read:false,created_at:new Date().toISOString()};
       setPersonaMessages(prev=>{const next=[newMsg,...prev];triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,next);return next;});
     },45000+Math.floor(Math.random()*75000));
     return()=>clearInterval(iv);
@@ -988,7 +990,7 @@ function sendEmail(emp, company, subject, body) {
     if(!bookingPersona||!bookingDateTime)return;
     const co=companies.find(c=>c.id===bookingPersona.cId)||{id:'',name:'Unknown'};
     const dd=generateDiscoveryData();
-    const saved={id:crypto.randomUUID(),persona_id:bookingPersona.id,persona_name:bookingPersona.first+' '+bookingPersona.last,company_id:co.id,company_name:co.name,scheduled_at:new Date(bookingDateTime).toISOString(),call_type:bookingCallType,discovery_data:dd,deal_id:null,booked_by:'rep',status:'scheduled'};
+    const saved={id:uuid(),persona_id:bookingPersona.id,persona_name:bookingPersona.first+' '+bookingPersona.last,company_id:co.id,company_name:co.name,scheduled_at:new Date(bookingDateTime).toISOString(),call_type:bookingCallType,discovery_data:dd,deal_id:null,booked_by:'rep',status:'scheduled'};
     setScheduledCalls(prev=>{const next=[...prev,saved];triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
     setShowBookingModal(false);
   };
