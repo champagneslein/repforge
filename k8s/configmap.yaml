@@ -5,7 +5,6 @@ metadata:
   namespace: repforge
 data:
   ASPNETCORE_ENVIRONMENT: Production
-  Tokens__Issuer: RepForge
-  Tokens__Audience: RepForge
-  Tokens__AccessTokenMinutes: "60"
-  Cors__AllowedOrigins__0: https://repforge.example.com
+  Entra__Authority: https://repforgecustomers.ciamlogin.com/144ce918-4124-41e9-9cce-8d2204fd1cde/v2.0
+  Entra__ClientId: 3cb03558-710b-4a35-a82c-8936f112ac25
+  Cors__AllowedOrigins__0: https://20.56.202.212

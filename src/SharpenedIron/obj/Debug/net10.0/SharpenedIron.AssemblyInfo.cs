@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SharpenedIron")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa4cf09567f7b12000ff9474be0747ada410f0e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6df62c2c2d74964a46ee953a3cad1b3b1582d380")]
 [assembly: System.Reflection.AssemblyProductAttribute("SharpenedIron")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SharpenedIron")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
