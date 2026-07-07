@@ -1,37 +1,33 @@
 import React, { useState, useRef } from "react";
 import { useConversation } from '@elevenlabs/react';
+import { useMsal } from '@azure/msal-react';
+import { getApiToken, API_SCOPES } from './authConfig';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
-function uuid(){if(typeof crypto!=='undefined'&&crypto.randomUUID)return uuid();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16);});}
+function uuid(){if(typeof crypto!=='undefined'&&crypto.randomUUID)return crypto.randomUUID();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16);});}
 
-// Backend API helpers
-async function apiPost(path, body, token) {
-  const headers = { 'Content-Type': 'application/json' };
-  if (token) headers['Authorization'] = 'Bearer ' + token;
+// Backend API helpers — tokens come from MSAL, the token parameter is kept
+// only so existing call sites don't need to change.
+async function authHeader() {
+  const t = await getApiToken();
+  return t ? { Authorization: 'Bearer ' + t } : {};
+}
+async function apiPost(path, body, _token) {
+  const headers = { 'Content-Type': 'application/json', ...(await authHeader()) };
   const r = await fetch(path, { method: 'POST', headers, body: JSON.stringify(body) });
   if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || r.statusText); }
   return r.json();
 }
-async function apiGet(path, token) {
-  const r = await fetch(path, { headers: token ? { Authorization: 'Bearer ' + token } : {} });
+async function apiGet(path, _token) {
+  const r = await fetch(path, { headers: await authHeader() });
   if (!r.ok) return null;
   return r.json();
 }
-async function apiPut(path, body, token) {
-  const headers = { 'Content-Type': 'application/json' };
-  if (token) headers['Authorization'] = 'Bearer ' + token;
+async function apiPut(path, body, _token) {
+  const headers = { 'Content-Type': 'application/json', ...(await authHeader()) };
   const r = await fetch(path, { method: 'PUT', headers, body: JSON.stringify(body) });
   if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || r.statusText); }
   return r.json().catch(() => null);
-}
-async function authRegister(email, password, firstName, lastName) {
-  return apiPost('/api/auth/register', { email, password, firstName, lastName });
-}
-async function authLogin(email, password) {
-  return apiPost('/api/auth/login', { email, password });
-}
-async function authLogout(token) {
-  await fetch('/api/auth/logout', { method: 'POST', headers: { Authorization: 'Bearer ' + token } });
 }
 async function loadProgress(token) {
   const res = await apiGet('/api/progress', token);
@@ -369,14 +365,10 @@ export default function App() {
   const [selCompany, setSelCompany] = useState(null);
   const [intelData, setIntelData] = React.useState({});
   const [expandedIntel, setExpandedIntel] = React.useState(null);
-  const [user,setUser]=React.useState(()=>{try{const s=JSON.parse(localStorage.getItem('rp_sess')||'{}');return s.userId?{id:s.userId,email:s.email}:null;}catch{return null;}});
-  const [authTok,setAuthTok]=React.useState(()=>{try{return JSON.parse(localStorage.getItem('rp_sess')||'{}').accessToken||null;}catch{return null;}});
+  const { instance: msal, accounts: msalAccounts, inProgress: msalInProgress } = useMsal();
+  const [user,setUser]=React.useState(null);
+  const [authTok,setAuthTok]=React.useState(null);
   const saveDebounceRef=useRef(null);
-  const [authView,setAuthView]=React.useState('login');
-  const [authEmail,setAuthEmail]=React.useState('');
-  const [authPwd,setAuthPwd]=React.useState('');
-  const [authErr,setAuthErr]=React.useState('');
-  const [authBusy,setAuthBusy]=React.useState(false);
   const [product,setProduct]=React.useState(null);
   const [showProdSetup,setShowProdSetup]=React.useState(false);
   const [prodForm,setProdForm]=React.useState({name:'',desc:'',icp:'',vps:'',objs:''});
@@ -405,24 +397,25 @@ export default function App() {
 const [demoObjections,setDemoObjections]=React.useState([]);
 const [handledObjections,setHandledObjections]=React.useState(new Set());
 
-  // Restore progress on mount if session exists
+  // Sync user state with the MSAL account and restore progress after sign-in
   React.useEffect(()=>{
-    try{const s=JSON.parse(localStorage.getItem('rp_sess')||'{}');
-      if(s.accessToken&&s.userId){
-        loadProgress(s.accessToken).then(data=>{
-          if(data){
-            if(data.product){setProduct(data.product);setProdForm({name:data.product.product_name||'',desc:data.product.product_description||'',icp:data.product.icp||'',vps:(data.product.value_props||[]).join('\n'),objs:(data.product.objections||[]).join('\n')});}
-            else setShowProdSetup(true);
-            if(data.deals)setDeals(data.deals);
-            if(data.scheduledCalls)setScheduledCalls(data.scheduledCalls);
-            if(data.personaMessages)setPersonaMessages(data.personaMessages);
-            if(data.simDay)setSimDay(data.simDay);
-            if(data.state){const merged={...initState(),...data.state};setState(merged);}
-          }else setShowProdSetup(true);
-        }).catch(()=>setShowProdSetup(true));
-      }
-    }catch(e){}
-  },[]);
+    const acct=msalAccounts[0];
+    if(!acct){setUser(null);setAuthTok(null);return;}
+    msal.setActiveAccount(acct);
+    setUser({id:acct.localAccountId,email:acct.username});
+    setAuthTok('entra');
+    loadProgress().then(data=>{
+      if(data){
+        if(data.product){setProduct(data.product);setProdForm({name:data.product.product_name||'',desc:data.product.product_description||'',icp:data.product.icp||'',vps:(data.product.value_props||[]).join('\n'),objs:(data.product.objections||[]).join('\n')});}
+        else setShowProdSetup(true);
+        if(data.deals)setDeals(data.deals);
+        if(data.scheduledCalls)setScheduledCalls(data.scheduledCalls);
+        if(data.personaMessages)setPersonaMessages(data.personaMessages);
+        if(data.simDay)setSimDay(data.simDay);
+        if(data.state){const merged={...initState(),...data.state};setState(merged);}
+      }else setShowProdSetup(true);
+    }).catch(()=>setShowProdSetup(true));
+  },[msalAccounts.length]);
 
   // Debounced progress save
   const triggerProgressSave=React.useCallback((tok,newState,newSimDay,newProduct,newDeals,newScheduledCalls,newPersonaMessages)=>{
@@ -433,38 +426,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     },2000);
   },[]);
 
-  const handleLogin=async()=>{
-    setAuthErr('');setAuthBusy(true);
-    try{
-      const res=await authLogin(authEmail,authPwd);
-      const userObj={id:res.userId,email:authEmail};
-      localStorage.setItem('rp_sess',JSON.stringify({accessToken:res.accessToken,userId:res.userId,email:authEmail}));
-      setUser(userObj);setAuthTok(res.accessToken);
-      const data=await loadProgress(res.accessToken);
-      if(data){
-        if(data.product){setProduct(data.product);setProdForm({name:data.product.product_name||'',desc:data.product.product_description||'',icp:data.product.icp||'',vps:(data.product.value_props||[]).join('\n'),objs:(data.product.objections||[]).join('\n')});}
-        else setShowProdSetup(true);
-        if(data.deals)setDeals(data.deals);
-        if(data.scheduledCalls)setScheduledCalls(data.scheduledCalls);
-        if(data.personaMessages)setPersonaMessages(data.personaMessages);
-        if(data.simDay)setSimDay(data.simDay);
-        if(data.state){const merged={...initState(),...data.state};setState(merged);}
-      }else setShowProdSetup(true);
-    }catch(e){setAuthErr(e.message||'Login failed');}
-    setAuthBusy(false);
-  };
-  const handleSignup=async()=>{
-    setAuthErr('');setAuthBusy(true);
-    try{
-      const [fn,...rest]=authEmail.split('@')[0].split('.');
-      const res=await authRegister(authEmail,authPwd,fn||'User',rest.join(' ')||'');
-      const userObj={id:res.userId,email:authEmail};
-      localStorage.setItem('rp_sess',JSON.stringify({accessToken:res.accessToken,userId:res.userId,email:authEmail}));
-      setUser(userObj);setAuthTok(res.accessToken);setShowProdSetup(true);
-    }catch(e){setAuthErr(e.message||'Signup failed');}
-    setAuthBusy(false);
-  };
-  const handleLogout=async()=>{if(authTok)await authLogout(authTok).catch(()=>{});localStorage.removeItem('rp_sess');setUser(null);setAuthTok(null);setProduct(null);};
+  const handleLogout=async()=>{setUser(null);setAuthTok(null);setProduct(null);try{await msal.logoutRedirect();}catch(e){}};
   const handleSaveProd=async()=>{
     if(!prodForm.name.trim())return;
     setProdSaving(true);
@@ -1102,6 +1064,7 @@ function getPersonaPosts(emp,company){
 }
 
   if (!user) {
+    const authBusy = msalInProgress !== 'none';
     return (
       <div style={{minHeight:'100vh',background:'#070C18',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'#0D1525',borderRadius:14,padding:'36px 40px',width:400,maxWidth:'92vw',boxShadow:'0 24px 60px rgba(0,0,0,0.4)',border:'1px solid #1B3154'}}>
@@ -1109,20 +1072,8 @@ function getPersonaPosts(emp,company){
             <div style={{fontSize:22,fontWeight:800,color:'#0EA5E9',letterSpacing:'-0.02em'}}>RepForge</div>
             <div style={{fontSize:13,color:'#4A6B8A',marginTop:4}}>AI Sales Training Platform</div>
           </div>
-          <div style={{display:'flex',gap:0,marginBottom:24,background:'#070C18',borderRadius:8,padding:3}}>
-            <button onClick={()=>{setAuthView('login');setAuthErr('');}} style={{flex:1,padding:'8px 0',borderRadius:6,border:'none',background:authView==='login'?'#1B3154':'transparent',color:authView==='login'?'#F8FAFC':'#4A6B8A',fontWeight:600,fontSize:13,cursor:'pointer',transition:'all 0.15s'}}>Sign In</button>
-            <button onClick={()=>{setAuthView('register');setAuthErr('');}} style={{flex:1,padding:'8px 0',borderRadius:6,border:'none',background:authView==='register'?'#1B3154':'transparent',color:authView==='register'?'#F8FAFC':'#4A6B8A',fontWeight:600,fontSize:13,cursor:'pointer',transition:'all 0.15s'}}>Create Account</button>
-          </div>
-          {authErr&&<div style={{background:'rgba(239,68,68,0.1)',border:'1px solid rgba(239,68,68,0.3)',borderRadius:6,padding:'8px 12px',color:'#f87171',fontSize:12,marginBottom:14}}>{authErr}</div>}
-          <div style={{marginBottom:14}}>
-            <label style={{display:'block',fontSize:11,fontWeight:600,color:'#7A9CC4',marginBottom:5,textTransform:'uppercase',letterSpacing:'0.06em'}}>Email</label>
-            <input value={authEmail} onChange={e=>setAuthEmail(e.target.value)} onKeyDown={e=>e.key==='Enter'&&(authView==='login'?handleLogin():handleSignup())} type="email" placeholder="you@company.com" style={{width:'100%',boxSizing:'border-box',background:'#070C18',border:'1px solid #1B3154',borderRadius:7,padding:'9px 12px',color:'#F8FAFC',fontSize:14,outline:'none'}}/>
-          </div>
-          <div style={{marginBottom:22}}>
-            <label style={{display:'block',fontSize:11,fontWeight:600,color:'#7A9CC4',marginBottom:5,textTransform:'uppercase',letterSpacing:'0.06em'}}>Password</label>
-            <input value={authPwd} onChange={e=>setAuthPwd(e.target.value)} onKeyDown={e=>e.key==='Enter'&&(authView==='login'?handleLogin():handleSignup())} type="password" placeholder="Min. 8 characters" style={{width:'100%',boxSizing:'border-box',background:'#070C18',border:'1px solid #1B3154',borderRadius:7,padding:'9px 12px',color:'#F8FAFC',fontSize:14,outline:'none'}}/>
-          </div>
-          <button onClick={authView==='login'?handleLogin:handleSignup} disabled={authBusy||!authEmail||!authPwd} style={{width:'100%',padding:'11px 0',borderRadius:8,border:'none',background:authBusy||!authEmail||!authPwd?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:authBusy||!authEmail||!authPwd?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:authBusy||!authEmail||!authPwd?'not-allowed':'pointer',transition:'all 0.15s'}}>{authBusy?(authView==='login'?'Signing in…':'Creating account…'):(authView==='login'?'Sign In':'Create Account')}</button>
+          <button onClick={()=>msal.loginRedirect({scopes:API_SCOPES})} disabled={authBusy} style={{width:'100%',padding:'12px 0',borderRadius:8,border:'none',background:authBusy?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:authBusy?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:authBusy?'wait':'pointer',transition:'all 0.15s'}}>{authBusy?'Signing in…':'Sign In / Create Account'}</button>
+          <div style={{textAlign:'center',marginTop:14,fontSize:12,color:'#4A6B8A'}}>Secured by Microsoft Entra</div>
         </div>
       </div>
     );

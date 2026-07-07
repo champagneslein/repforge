@@ -1,7 +1,4 @@
-using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,44 +15,20 @@ builder.Services.AddSingleton<IMongoDatabase>(_ =>
     return client.GetDatabase("repforge");
 });
 
-builder.Services
-    .AddIdentityCore<ApplicationUser>(options =>
-    {
-        options.User.RequireUniqueEmail = true;
-        options.Password.RequiredLength = 8;
-        options.Password.RequireNonAlphanumeric = false;
-        options.SignIn.RequireConfirmedEmail = false;
-    })
-    .AddUserStore<MongoUserStore>()
-    .AddDefaultTokenProviders();
+var entraAuthority = builder.Configuration["Entra:Authority"]
+    ?? throw new InvalidOperationException("Entra__Authority must be configured (https://<tenant>.ciamlogin.com/<tenantId>/v2.0).");
+var entraClientId = builder.Configuration["Entra:ClientId"]
+    ?? throw new InvalidOperationException("Entra__ClientId must be configured.");
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    var jwtKey = builder.Configuration["Tokens:JwtKey"]
-        ?? throw new InvalidOperationException("Tokens:JwtKey must be configured.");
-
-    options.TokenValidationParameters = new TokenValidationParameters
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
     {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidIssuer = builder.Configuration["Tokens:Issuer"] ?? "RepForge",
-        ValidAudience = builder.Configuration["Tokens:Audience"] ?? "RepForge",
-        ClockSkew = TimeSpan.Zero
-    };
-});
+        options.Authority = entraAuthority;
+        options.TokenValidationParameters.ValidAudiences = [entraClientId, $"api://{entraClientId}"];
+        options.TokenValidationParameters.NameClaimType = "name";
+    });
 
 builder.Services.AddAuthorization();
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>

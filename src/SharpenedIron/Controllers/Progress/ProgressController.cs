@@ -1,4 +1,3 @@
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -48,7 +47,8 @@ public class ProgressController : ControllerBase
     }
 
     private string? GetUserId() =>
-        User.FindFirstValue(JwtRegisteredClaimNames.Sub)
+        User.FindFirstValue("oid")
+        ?? User.FindFirstValue("http://schemas.microsoft.com/identity/claims/objectidentifier")
         ?? User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
