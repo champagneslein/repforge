@@ -2,3 +2,6 @@ node_modules/
 build/
 .env
 .DS_Store
+appsettings.Development.json
+src/SharpenedIron/bin/
+src/SharpenedIron/obj/
