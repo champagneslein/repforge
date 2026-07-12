@@ -36,6 +36,75 @@ async function loadProgress(token) {
 async function saveProgress(token, data) {
   await apiPut('/api/progress', { data }, token);
 }
+async function loadGoldStandard() {
+  const res = await apiGet('/api/goldstandard');
+  return res?.data ?? null;
+}
+async function saveGoldStandard(data) {
+  await apiPut('/api/goldstandard', { data });
+}
+
+// Product knowledge schema — shared by the trainee's setup form and the
+// customer-provided gold standard. `m` = multiline, `lines` = parse as array.
+const PRODUCT_FIELDS = [
+  { k:'name',           l:'Product Name',                        ph:'e.g. Acme CRM',                                                        m:false, sec:'Basics' },
+  { k:'desc',           l:'Elevator Pitch (30 seconds)',         ph:'What is it, who is it for, why does it win — in 2-3 sentences',        m:true,  sec:'Basics' },
+  { k:'problems',       l:'Problems & Pain Points Solved',       ph:'The concrete pains a prospect feels before buying',                    m:true,  sec:'Basics' },
+  { k:'icp',            l:'Ideal Customer Profile',              ph:'e.g. B2B SaaS, 50-500 employees, VP Sales owns the budget',            m:false, sec:'Market' },
+  { k:'personas',       l:'Buying Committee & Personas',         ph:'Who champions it, who signs, who evaluates, who blocks',               m:true,  sec:'Market' },
+  { k:'competitors',    l:'Competitors & Why We Win',            ph:'Main alternatives (incl. spreadsheets/status quo) and our edge',       m:true,  sec:'Market' },
+  { k:'vps',            l:'Value Props (one per line)',          ph:'Saves 5hrs/week\nReduces churn 20%',                                   m:true,  sec:'Pitch', lines:true },
+  { k:'proof',          l:'Proof Points',                        ph:'Case studies, ROI numbers, marquee customers, awards',                 m:true,  sec:'Pitch' },
+  { k:'pricing',        l:'Pricing & Packaging',                 ph:'Tiers, typical deal size, billing model, discount policy',             m:true,  sec:'Commercials' },
+  { k:'implementation', l:'Implementation & Integrations',       ph:'Time to go live, onboarding effort, key integrations, who does what',  m:true,  sec:'Commercials' },
+  { k:'objs',           l:'Objections & Rebuttals (one per line: objection | rebuttal)', ph:'Too expensive | ROI pays back in 4 months\nWe have a tool | Ask what it breaks at scale', m:true, sec:'Field Readiness', lines:true },
+  { k:'discovery',      l:'Key Discovery Questions (one per line)', ph:'What does this problem cost you today?\nWho else feels this pain?', m:true,  sec:'Field Readiness', lines:true },
+];
+
+function formToProduct(f) {
+  return {
+    product_name: f.name || '', product_description: f.desc || '', problems: f.problems || '',
+    icp: f.icp || '', personas: f.personas || '', competitors: f.competitors || '',
+    value_props: (f.vps || '').split('\n').filter(Boolean), proof: f.proof || '',
+    pricing: f.pricing || '', implementation: f.implementation || '',
+    objections: (f.objs || '').split('\n').filter(Boolean),
+    discovery_questions: (f.discovery || '').split('\n').filter(Boolean),
+  };
+}
+function productToForm(p) {
+  if (!p) return { name:'', desc:'', problems:'', icp:'', personas:'', competitors:'', vps:'', proof:'', pricing:'', implementation:'', objs:'', discovery:'' };
+  return {
+    name: p.product_name || '', desc: p.product_description || '', problems: p.problems || '',
+    icp: p.icp || '', personas: p.personas || '', competitors: p.competitors || '',
+    vps: (p.value_props || []).join('\n'), proof: p.proof || '',
+    pricing: p.pricing || '', implementation: p.implementation || '',
+    objs: (p.objections || []).join('\n'), discovery: (p.discovery_questions || []).join('\n'),
+  };
+}
+// Serializes a product profile into prompt context for the AI personas.
+function productContext(p) {
+  if (!p) return '';
+  const parts = ['\n\n--- PRODUCT BEING PITCHED (ground truth) ---', 'Product: ' + p.product_name + '. ' + (p.product_description || '')];
+  if (p.problems) parts.push('Problems it solves: ' + p.problems);
+  if (p.icp) parts.push('Target customer: ' + p.icp);
+  if (p.personas) parts.push('Buying committee: ' + p.personas);
+  if (p.competitors) parts.push('Competitive landscape: ' + p.competitors);
+  if ((p.value_props || []).length) parts.push('Value props: ' + p.value_props.join('; '));
+  if (p.proof) parts.push('Proof points: ' + p.proof);
+  if (p.pricing) parts.push('Pricing: ' + p.pricing);
+  if (p.implementation) parts.push('Implementation: ' + p.implementation);
+  if ((p.objections || []).length) parts.push('Known objections and strong rebuttals: ' + p.objections.join('; '));
+  return parts.join('\n');
+}
+async function gptJson(apiKey, prompt, maxTokens = 1000) {
+  const r = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey },
+    body: JSON.stringify({ model: 'gpt-4o', messages: [{ role: 'user', content: prompt }], max_tokens: maxTokens, temperature: 0.2, response_format: { type: 'json_object' } }),
+  });
+  const t = (await r.json()).choices?.[0]?.message?.content || '{}';
+  return JSON.parse(t);
+}
 
 // 
 // COMPANY + EMPLOYEE DATA
@@ -370,9 +439,15 @@ export default function App() {
   const [authTok,setAuthTok]=React.useState(null);
   const saveDebounceRef=useRef(null);
   const [product,setProduct]=React.useState(null);
+  const [goldStandard,setGoldStandard]=React.useState(null);
   const [showProdSetup,setShowProdSetup]=React.useState(false);
-  const [prodForm,setProdForm]=React.useState({name:'',desc:'',icp:'',vps:'',objs:''});
+  const [prodSetupMode,setProdSetupMode]=React.useState('trainee'); // trainee | gold
+  const [prodForm,setProdForm]=React.useState(productToForm(null));
   const [prodSaving,setProdSaving]=React.useState(false);
+  const [setupGrade,setSetupGrade]=React.useState(null);
+  const [gradingBusy,setGradingBusy]=React.useState(false);
+  const [postCallAi,setPostCallAi]=React.useState(null);
+  const [postCallAiLoading,setPostCallAiLoading]=React.useState(false);
   const [deals,setDeals]=React.useState([{id:'demo-001',persona_name:'Conor Murphy',company_name:'Nexaflow',stage:'Proposal',updated_at:new Date().toISOString()},{id:'demo-002',persona_name:'David Flynn',company_name:'Nexaflow',stage:'Discovery',updated_at:new Date().toISOString()}]);
   const [showPipeline,setShowPipeline]=React.useState(false);
   const [showPostCall,setShowPostCall]=React.useState(false);
@@ -404,9 +479,10 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     msal.setActiveAccount(acct);
     setUser({id:acct.localAccountId,email:acct.username});
     setAuthTok('entra');
+    loadGoldStandard().then(gs=>setGoldStandard(gs)).catch(()=>{});
     loadProgress().then(data=>{
       if(data){
-        if(data.product){setProduct(data.product);setProdForm({name:data.product.product_name||'',desc:data.product.product_description||'',icp:data.product.icp||'',vps:(data.product.value_props||[]).join('\n'),objs:(data.product.objections||[]).join('\n')});}
+        if(data.product){setProduct(data.product);setProdForm(productToForm(data.product));setSetupGrade(data.product.setup_grade||null);}
         else setShowProdSetup(true);
         if(data.deals)setDeals(data.deals);
         if(data.scheduledCalls)setScheduledCalls(data.scheduledCalls);
@@ -427,14 +503,44 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   },[]);
 
   const handleLogout=async()=>{setUser(null);setAuthTok(null);setProduct(null);try{await msal.logoutRedirect();}catch(e){}};
+  const openProdSetup=(mode)=>{
+    setProdSetupMode(mode);
+    setProdForm(productToForm(mode==='gold'?goldStandard:product));
+    setShowProdSetup(true);
+  };
   const handleSaveProd=async()=>{
     if(!prodForm.name.trim())return;
     setProdSaving(true);
-    const p={product_name:prodForm.name,product_description:prodForm.desc,icp:prodForm.icp,value_props:prodForm.vps.split('\n').filter(Boolean),objections:prodForm.objs.split('\n').filter(Boolean)};
-    setProduct(p);
-    setShowProdSetup(false);
+    const p=formToProduct(prodForm);
+    if(prodSetupMode==='gold'){
+      try{await saveGoldStandard(p);setGoldStandard(p);}catch(e){console.error('gold standard save failed',e);}
+      setShowProdSetup(false);setProdSetupMode('trainee');setProdForm(productToForm(product));
+    }else{
+      if(product?.setup_grade)p.setup_grade=product.setup_grade;
+      setProduct(p);
+      setShowProdSetup(false);
+      triggerProgressSave(authTok,state,simDay,p,deals,scheduledCalls,personaMessages);
+    }
     setProdSaving(false);
-    triggerProgressSave(authTok,state,simDay,p,deals,scheduledCalls,personaMessages);
+  };
+  // Grade the trainee's product knowledge against the customer's gold standard
+  const handleGradeSetup=async()=>{
+    if(!goldStandard||!apiKey||gradingBusy)return;
+    setGradingBusy(true);
+    try{
+      const trainee=formToProduct(prodForm);
+      const res=await gptJson(apiKey,
+        'You are a sales enablement coach. Compare a trainee\'s product knowledge write-up against the company\'s gold-standard product profile. Grade understanding, not writing style. Penalize factual errors more than omissions.\n\n'
+        +'GOLD STANDARD:\n'+JSON.stringify(goldStandard)+'\n\nTRAINEE VERSION:\n'+JSON.stringify(trainee)
+        +'\n\nReturn JSON exactly: {"sections":[{"area":"<one of: Pitch & Problems, ICP & Personas, Competition, Value Props & Proof, Pricing & Implementation, Objections & Discovery>","score":0-10,"gap":"<what they missed or got wrong, 1 sentence>","tip":"<what to study, 1 sentence>"}],"overall":0-100,"grade":"A|B|C|D|F","summary":"<2 sentences>","focus":["<top study priority>","<second priority>"]}',1400);
+      if(res&&res.sections){
+        setSetupGrade(res);
+        const p={...formToProduct(prodForm),setup_grade:res};
+        setProduct(p);
+        triggerProgressSave(authTok,state,simDay,p,deals,scheduledCalls,personaMessages);
+      }
+    }catch(e){console.error('grading failed',e);}
+    setGradingBusy(false);
   };
   React.useEffect(()=>{if(tab==='pipeline'){setShowPipeline(true);}},[tab]);
 
@@ -458,9 +564,9 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   };
   const handlePostCallSave=async()=>{
     if(!window._activeDealId)return;
-    const callLog={called_at:new Date().toISOString(),transcript:window._callTranscript||[],ai_summary:postCallSummary,rep_notes:postCallNotes,objections:postCallObjs.split('\n').filter(Boolean),interest_score_before:5,interest_score_after:postCallScore};
+    const callLog={called_at:new Date().toISOString(),transcript:window._callTranscript||[],ai_summary:postCallSummary,rep_notes:postCallNotes,objections:postCallObjs.split('\n').filter(Boolean),interest_score_before:5,interest_score_after:postCallScore,ai_scores:postCallAi||null};
     setDeals(prev=>{const next=prev.map(d=>{if(d.id!==window._activeDealId)return d;return{...d,callLogs:[callLog,...(d.callLogs||[])].slice(0,5),updated_at:new Date().toISOString()};});triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});
-    setShowPostCall(false);setPostCallSummary('');setPostCallNotes('');setPostCallScore(5);setPostCallObjs('');window._activeDealId=null;
+    setShowPostCall(false);setPostCallSummary('');setPostCallNotes('');setPostCallScore(5);setPostCallObjs('');setPostCallAi(null);window._activeDealId=null;
   };
   const handleMoveDeal=(dealId,newStage)=>{setDeals(prev=>{const next=prev.map(d=>d.id===dealId?{...d,stage:newStage,updated_at:new Date().toISOString()}:d);triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});};
 
@@ -513,7 +619,8 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
         const nm = window._activePersonaName || 'prospect';
         const co = window._activeCompanyName || '';
         const summary = rep + '-turn call with ' + nm + (co ? ' at ' + co : '') + '. Rep ' + rep + ' turns, prospect ' + pros + ' turns.' + (found.length ? ' Discussed: ' + found.join(', ') : ' No major objections.');
-        setPostCallSummary(summary); setPostCallObjs(found.join('\n')); setShowPostCall(true);
+        setPostCallSummary(summary); setPostCallObjs(found.join('\n')); setPostCallAi(null); setShowPostCall(true);
+        analyzeCallTranscript(t);
       }
     },
     onMessage: (msg) => {
@@ -545,6 +652,25 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     return 'bIHbv24MWmeRgasZH58o'; // Will
   }
 
+  // Score the rep's performance on a call transcript — a spectrum, not a binary.
+  // Product knowledge is judged against the gold standard when one exists.
+  async function analyzeCallTranscript(transcript) {
+    const key = localStorage.getItem('repforge_openai_key') || '';
+    if (!key || !transcript || transcript.length < 4) return;
+    setPostCallAiLoading(true);
+    try {
+      const truth = goldStandard || product;
+      const convo = transcript.map(m => (m.role === 'user' ? 'REP' : 'PROSPECT') + ': ' + m.text).join('\n');
+      const res = await gptJson(key,
+        'You are a sales call coach. Score this training call between a sales rep (REP) and an AI prospect (PROSPECT). Judge the REP only. Be strict but fair — a short call with no discovery scores low on discovery.\n'
+        + (truth ? '\nGROUND-TRUTH PRODUCT PROFILE (judge product claims against this — flag anything the rep said that contradicts it):\n' + JSON.stringify(truth) + '\n' : '')
+        + '\nTRANSCRIPT:\n' + convo
+        + '\n\nReturn JSON exactly: {"dimensions":[{"key":"opening","label":"Opening & Rapport","score":0-10,"note":"1 sentence"},{"key":"discovery","label":"Discovery Quality","score":0-10,"note":"1 sentence"},{"key":"product_knowledge","label":"Product Knowledge Accuracy","score":0-10,"note":"1 sentence"},{"key":"objection_handling","label":"Objection Handling","score":0-10,"note":"1 sentence"},{"key":"clarity","label":"Clarity of Explanation","score":0-10,"note":"1 sentence"},{"key":"closing","label":"Next Steps & Closing","score":0-10,"note":"1 sentence"}],"overall":0-100,"grade":"A|B|C|D|F","strengths":["...","..."],"improvements":["...","..."],"factual_errors":["<claims contradicting the product profile, empty array if none>"]}', 1400);
+      if (res && res.dimensions) setPostCallAi(res);
+    } catch (e) { console.error('call analysis failed', e); }
+    setPostCallAiLoading(false);
+  }
+
   async function startCall(emp, company, callLogs=[]) {
     setActiveCallId(emp.id);
     setCallStatus('connecting');
@@ -557,7 +683,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     };
     const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like "Certainly" or "Great question" or "Absolutely". Never be immediately enthusiastic about a product. You were in the middle of something when this call came in.';
     const dealHistory = callLogs && callLogs.length > 0 ? '\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n' + callLogs.map((log,i) => { const daysAgo = Math.round((Date.now() - new Date(log.called_at).getTime()) / 86400000); return 'Call ' + (callLogs.length - i) + ' (' + daysAgo + ' days ago): ' + (log.ai_summary || log.rep_notes || 'No summary.') + (log.objections && log.objections.length ? ' Objections: ' + log.objections.join(', ') + '.' : ''); }).join('\n') + '\nYour current interest: ' + (callLogs[0]?.interest_score_after || 5) + '/10.' : '';
-    const productCtx = product ? '\n\n--- PRODUCT BEING PITCHED ---\nProduct: ' + product.product_name + '. ' + (product.product_description || '') + (product.icp ? '\nTarget customer: ' + product.icp : '') + ((product.value_props || []).length ? '\nValue props: ' + product.value_props.join('; ') : '') + ((product.objections || []).length ? '\nExpect objections about: ' + product.objections.join('; ') : '') : '';
+    const productCtx = productContext(goldStandard || product);
     const fullPrompt = sysPrompt + productCtx + dealHistory + (window._discoveryBlock || '');
     const firstMessage = emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.';
     try {
@@ -1083,18 +1209,46 @@ function getPersonaPosts(emp,company){
     <div className="min-h-screen bg-[#070C18]">
       {showProdSetup&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'#0D1525',borderRadius:'14px',padding:'32px 36px',width:'500px',maxWidth:'92vw',maxHeight:'85vh',overflowY:'auto',boxShadow:'0 24px 60px rgba(0,0,0,0.25)'}}>
-          <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:6}}><h2 style={{margin:0,fontSize:'19px',fontWeight:'800',color:'#0EA5E9'}}>What are you selling?</h2><button onClick={()=>setShowProdSetup(false)} style={{background:'none',border:'none',fontSize:22,cursor:'pointer',color:'#9ca3af',lineHeight:1,padding:0,marginTop:-2}}>&times;</button></div>
-          <p style={{margin:'0 0 22px',color:'#7A9CC4',fontSize:'13px'}}>The AI allEmps will know your product and respond to your pitch.</p>
-          {[{l:'Product Name *',k:'name',ph:'e.g. Acme CRM',m:false},{l:'Elevator Pitch',k:'desc',ph:'What problem does it solve and for who?',m:true},{l:'Ideal Customer Profile',k:'icp',ph:'e.g. B2B SaaS, 50-500 employees, VP Sales',m:false},{l:'Value Props (one per line)',k:'vps',ph:'Saves 5hrs/week\nReduces churn 20%',m:true},{l:'Common Objections (one per line)',k:'objs',ph:'Too expensive\nWe already have a solution',m:true}].map(({l,k,ph,m})=>(
-            <div key={k} style={{marginBottom:'15px'}}>
-              <label style={{display:'block',fontSize:'11px',fontWeight:'700',color:'#D4E5FF',marginBottom:'5px',letterSpacing:'0.05em'}}>{l.toUpperCase()}</label>
-              {m?<textarea value={prodForm[k]} onChange={e=>setProdForm({...prodForm,[k]:e.target.value})} placeholder={ph} style={{width:'100%',padding:'9px 12px',border:'1px solid #1B3154',borderRadius:'8px',fontSize:'13px',boxSizing:'border-box',minHeight:'62px',resize:'vertical',fontFamily:'inherit'}}/>:<input value={prodForm[k]} onChange={e=>setProdForm({...prodForm,[k]:e.target.value})} placeholder={ph} style={{width:'100%',padding:'9px 12px',border:'1px solid #1B3154',borderRadius:'8px',fontSize:'13px',boxSizing:'border-box'}}/>}
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:6}}>
+            <h2 style={{margin:0,fontSize:'19px',fontWeight:'800',color:prodSetupMode==='gold'?'#F59E0B':'#0EA5E9'}}>{prodSetupMode==='gold'?'Gold Standard Product Profile':'What are you selling?'}</h2>
+            <button onClick={()=>{setShowProdSetup(false);setProdSetupMode('trainee');setProdForm(productToForm(product));}} style={{background:'none',border:'none',fontSize:22,cursor:'pointer',color:'#9ca3af',lineHeight:1,padding:0,marginTop:-2}}>&times;</button>
+          </div>
+          <p style={{margin:'0 0 18px',color:'#7A9CC4',fontSize:'13px'}}>{prodSetupMode==='gold'
+            ?'The company-approved source of truth. AI prospects react based on this profile, and trainee write-ups are graded against it.'
+            :'Fill this in from your own knowledge — no peeking at the enablement docs. You\'ll be graded against the company gold standard, and it shapes how prospects respond to you.'}</p>
+          {['Basics','Market','Pitch','Commercials','Field Readiness'].map(sec=>(
+            <div key={sec}>
+              <div style={{fontSize:'11px',fontWeight:'800',color:prodSetupMode==='gold'?'#F59E0B':'#38BDF8',letterSpacing:'0.08em',textTransform:'uppercase',margin:'18px 0 10px',paddingBottom:4,borderBottom:'1px solid #1B3154'}}>{sec}</div>
+              {PRODUCT_FIELDS.filter(f=>f.sec===sec).map(({k,l,ph,m})=>(
+                <div key={k} style={{marginBottom:'13px'}}>
+                  <label style={{display:'block',fontSize:'11px',fontWeight:'700',color:'#D4E5FF',marginBottom:'5px',letterSpacing:'0.05em'}}>{l.toUpperCase()}{k==='name'?' *':''}</label>
+                  {m?<textarea value={prodForm[k]} onChange={e=>setProdForm({...prodForm,[k]:e.target.value})} placeholder={ph} style={{width:'100%',padding:'9px 12px',border:'1px solid #1B3154',borderRadius:'8px',fontSize:'13px',boxSizing:'border-box',minHeight:'56px',resize:'vertical',fontFamily:'inherit'}}/>:<input value={prodForm[k]} onChange={e=>setProdForm({...prodForm,[k]:e.target.value})} placeholder={ph} style={{width:'100%',padding:'9px 12px',border:'1px solid #1B3154',borderRadius:'8px',fontSize:'13px',boxSizing:'border-box'}}/>}
+                </div>
+              ))}
             </div>
           ))}
+          {prodSetupMode==='trainee'&&setupGrade&&(
+            <div style={{marginTop:20,padding:'16px 18px',background:'#0A1020',border:'1px solid #1B3154',borderRadius:10}}>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
+                <span style={{fontSize:13,fontWeight:800,color:'#F8FAFC'}}>Knowledge Grade</span>
+                <span style={{fontSize:20,fontWeight:800,color:setupGrade.overall>=80?'#16a34a':setupGrade.overall>=60?'#F59E0B':'#ef4444'}}>{setupGrade.grade} <span style={{fontSize:12,color:'#4A6B8A',fontWeight:600}}>{setupGrade.overall}/100</span></span>
+              </div>
+              <p style={{margin:'0 0 12px',fontSize:12,color:'#7A9CC4'}}>{setupGrade.summary}</p>
+              {(setupGrade.sections||[]).map(s=>(
+                <div key={s.area} style={{marginBottom:9}}>
+                  <div style={{display:'flex',justifyContent:'space-between',fontSize:11,marginBottom:3}}><span style={{color:'#D4E5FF',fontWeight:600}}>{s.area}</span><span style={{color:scoreColor(s.score),fontWeight:700}}>{s.score}/10</span></div>
+                  <div style={{height:4,background:'#1B3154',borderRadius:2}}><div style={{height:'100%',width:(s.score*10)+'%',background:scoreColor(s.score),borderRadius:2}}/></div>
+                  {s.score<8&&<div style={{fontSize:11,color:'#4A6B8A',marginTop:3}}>{s.gap} <span style={{color:'#38BDF8'}}>{s.tip}</span></div>}
+                </div>
+              ))}
+              {(setupGrade.focus||[]).length>0&&<div style={{marginTop:10,fontSize:12,color:'#F59E0B'}}><b>Study priorities:</b> {(setupGrade.focus||[]).join(' · ')}</div>}
+            </div>
+          )}
           <div style={{display:'flex',gap:'10px',justifyContent:'flex-end',marginTop:'22px'}}>
-            {product&&<button onClick={()=>setShowProdSetup(false)} style={{padding:'10px 18px',border:'1px solid #1B3154',borderRadius:'8px',cursor:'pointer',fontSize:'13px',fontWeight:'600',color:'#7A9CC4'}}>Cancel</button>}
-            <button onClick={handleSaveProd} disabled={prodSaving||!prodForm.name.trim()} style={{padding:'10px 24px',background:'#0EA5E9',color:'white',border:'none',borderRadius:'8px',cursor:(prodSaving||!prodForm.name.trim())?'not-allowed':'pointer',fontSize:'13px',fontWeight:'700',opacity:(prodSaving||!prodForm.name.trim())?0.6:1}}>
-              {prodSaving?'Saving...':'Save & Start Selling'}
+            {(product||prodSetupMode==='gold')&&<button onClick={()=>{setShowProdSetup(false);setProdSetupMode('trainee');setProdForm(productToForm(product));}} style={{padding:'10px 18px',border:'1px solid #1B3154',borderRadius:'8px',cursor:'pointer',fontSize:'13px',fontWeight:'600',color:'#7A9CC4'}}>Cancel</button>}
+            {prodSetupMode==='trainee'&&<button onClick={handleGradeSetup} disabled={gradingBusy||!goldStandard||!apiKey||!prodForm.name.trim()} title={!goldStandard?'No gold standard configured yet (Settings)':!apiKey?'Add your OpenAI key in Settings first':''} style={{padding:'10px 18px',background:'transparent',color:gradingBusy||!goldStandard||!apiKey?'#4A6B8A':'#F59E0B',border:'1px solid '+(gradingBusy||!goldStandard||!apiKey?'#1B3154':'#F59E0B'),borderRadius:'8px',cursor:gradingBusy||!goldStandard||!apiKey?'not-allowed':'pointer',fontSize:'13px',fontWeight:'700'}}>{gradingBusy?'Grading…':'Grade My Knowledge'}</button>}
+            <button onClick={handleSaveProd} disabled={prodSaving||!prodForm.name.trim()} style={{padding:'10px 24px',background:prodSetupMode==='gold'?'#F59E0B':'#0EA5E9',color:'white',border:'none',borderRadius:'8px',cursor:(prodSaving||!prodForm.name.trim())?'not-allowed':'pointer',fontSize:'13px',fontWeight:'700',opacity:(prodSaving||!prodForm.name.trim())?0.6:1}}>
+              {prodSaving?'Saving...':prodSetupMode==='gold'?'Save Gold Standard':'Save & Start Selling'}
             </button>
           </div>
         </div>
@@ -1109,7 +1263,26 @@ function getPersonaPosts(emp,company){
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#D4E5FF',marginBottom:4}}>Your Notes</div><textarea value={postCallNotes} onChange={e=>setPostCallNotes(e.target.value)} rows={2} placeholder="What went well? Follow-ups?" style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:12}}><div style={{fontSize:12,fontWeight:600,color:'#D4E5FF',marginBottom:4}}>Objections (one per line)</div><textarea value={postCallObjs} onChange={e=>setPostCallObjs(e.target.value)} rows={2} style={{width:'100%',border:'1px solid #d1d5db',borderRadius:6,padding:'8px',fontSize:13,resize:'vertical',boxSizing:'border-box'}}/></div>
             <div style={{marginBottom:18}}><div style={{fontSize:12,fontWeight:600,color:'#D4E5FF',marginBottom:6}}>Prospect Interest: <span style={{color:scoreColor(postCallScore),fontWeight:700}}>{postCallScore}/10</span></div><input type="range" min={1} max={10} value={postCallScore} onChange={e=>setPostCallScore(Number(e.target.value))} style={{width:'100%'}}/></div>
-            <div style={{display:'flex',gap:10}}><button onClick={handlePostCallSave} style={{flex:1,background:'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:'#fff',border:'none',borderRadius:8,padding:'10px 0',fontWeight:700,fontSize:14,cursor:'pointer',letterSpacing:'0.02em'}}> Save to Pipeline</button><button onClick={()=>setShowPostCall(false)} style={{flex:1,background:'#111F36',color:'#D4E5FF',border:'none',borderRadius:8,padding:'10px 0',fontSize:14,cursor:'pointer'}}>Skip</button></div>
+            {postCallAiLoading&&<div style={{marginBottom:16,padding:'14px 16px',background:'#0A1020',border:'1px solid #1B3154',borderRadius:10,fontSize:12,color:'#7A9CC4'}}>Coach is reviewing the transcript…</div>}
+            {postCallAi&&(
+              <div style={{marginBottom:16,padding:'16px 18px',background:'#0A1020',border:'1px solid #1B3154',borderRadius:10}}>
+                <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
+                  <span style={{fontSize:13,fontWeight:800,color:'#F8FAFC'}}>Coach Scorecard</span>
+                  <span style={{fontSize:20,fontWeight:800,color:postCallAi.overall>=80?'#16a34a':postCallAi.overall>=60?'#F59E0B':'#ef4444'}}>{postCallAi.grade} <span style={{fontSize:12,color:'#4A6B8A',fontWeight:600}}>{postCallAi.overall}/100</span></span>
+                </div>
+                {(postCallAi.dimensions||[]).map(d=>(
+                  <div key={d.key} style={{marginBottom:8}}>
+                    <div style={{display:'flex',justifyContent:'space-between',fontSize:11,marginBottom:3}}><span style={{color:'#D4E5FF',fontWeight:600}}>{d.label}</span><span style={{color:scoreColor(d.score),fontWeight:700}}>{d.score}/10</span></div>
+                    <div style={{height:4,background:'#1B3154',borderRadius:2}}><div style={{height:'100%',width:(d.score*10)+'%',background:scoreColor(d.score),borderRadius:2}}/></div>
+                    <div style={{fontSize:11,color:'#4A6B8A',marginTop:2}}>{d.note}</div>
+                  </div>
+                ))}
+                {(postCallAi.factual_errors||[]).length>0&&<div style={{marginTop:10,padding:'8px 10px',background:'rgba(239,68,68,0.08)',border:'1px solid #7f1d1d',borderRadius:6,fontSize:11,color:'#f87171'}}><b>Product claims to correct:</b><ul style={{margin:'4px 0 0',paddingLeft:16}}>{postCallAi.factual_errors.map((e,i)=><li key={i}>{e}</li>)}</ul></div>}
+                {(postCallAi.strengths||[]).length>0&&<div style={{marginTop:8,fontSize:11,color:'#10B981'}}><b>Strengths:</b> {postCallAi.strengths.join(' · ')}</div>}
+                {(postCallAi.improvements||[]).length>0&&<div style={{marginTop:4,fontSize:11,color:'#F59E0B'}}><b>Work on:</b> {postCallAi.improvements.join(' · ')}</div>}
+              </div>
+            )}
+            <div style={{display:'flex',gap:10}}><button onClick={handlePostCallSave} style={{flex:1,background:'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:'#fff',border:'none',borderRadius:8,padding:'10px 0',fontWeight:700,fontSize:14,cursor:'pointer',letterSpacing:'0.02em'}}> Save to Pipeline</button><button onClick={()=>{setShowPostCall(false);setPostCallAi(null);}} style={{flex:1,background:'#111F36',color:'#D4E5FF',border:'none',borderRadius:8,padding:'10px 0',fontSize:14,cursor:'pointer'}}>Skip</button></div>
           </div>
         </div>
       )}
@@ -1342,7 +1515,7 @@ function getPersonaPosts(emp,company){
           ) : (
             <button onClick={() => setTab("score")} className="bg-[#0EA5E9] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1"> View Final Score</button>
           )}
-          <button onClick={()=>setShowProdSetup(true)} className={`text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 ${product?'bg-[#0F0A2A] text-violet-400 border border-violet-900 hover:bg-[#150E35]':'bg-red-600 text-white hover:bg-red-500'}`}>{product?product.product_name.substring(0,16):'Setup Product'}</button><button onClick={handleLogout} className="text-xs px-2.5 py-1.5 rounded-lg font-medium text-[#4A6B8A] hover:text-[#7A9CC4] border border-[#1B3154] hover:border-[#2A4A6A] bg-transparent transition-colors">{user?user.email.split('@')[0]:'Logout'}</button>
+          <button onClick={()=>openProdSetup('trainee')} className={`text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 ${product?'bg-[#0F0A2A] text-violet-400 border border-violet-900 hover:bg-[#150E35]':'bg-red-600 text-white hover:bg-red-500'}`}>{product?product.product_name.substring(0,16):'Setup Product'}</button><button onClick={handleLogout} className="text-xs px-2.5 py-1.5 rounded-lg font-medium text-[#4A6B8A] hover:text-[#7A9CC4] border border-[#1B3154] hover:border-[#2A4A6A] bg-transparent transition-colors">{user?user.email.split('@')[0]:'Logout'}</button>
         </div>
       </div>
 
@@ -2407,6 +2580,11 @@ function getPersonaPosts(emp,company){
                 defaultValue={apiKey}
                 id="settings-api-key-input"
               />
+            </div>
+            <div className="mb-5 pt-4 border-t border-[#1E3A5F]">
+              <label className="block text-xs font-semibold text-[#7A9CC4] uppercase tracking-wider mb-2">Sales Enablement (Admin)</label>
+              <p className="text-xs text-[#4A6B8A] mb-2">The gold standard is the company-approved product profile. AI prospects react to it, and trainee setups are graded against it.</p>
+              <button onClick={()=>{setShowSettings(false);openProdSetup('gold');}} className="w-full text-xs px-3 py-2 rounded-lg font-semibold border border-amber-700 text-amber-400 hover:bg-amber-950 transition-colors">{goldStandard?'Edit Gold Standard Product Profile':'Create Gold Standard Product Profile'}</button>
             </div>
             <div className="flex gap-2 justify-end">
               <button onClick={() => setShowSettings(false)} className="px-4 py-2 rounded-lg text-sm text-[#7A9CC4] hover:text-[#D4E5FF] transition-colors">Cancel</button>
