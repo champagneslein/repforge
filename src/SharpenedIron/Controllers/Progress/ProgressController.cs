@@ -1,7 +1,9 @@
 using System.Security.Claims;
+using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
+using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 
@@ -27,7 +29,8 @@ public class ProgressController : ControllerBase
         if (userId == null) return Unauthorized();
 
         var doc = await _progress.Find(p => p.UserId == userId).FirstOrDefaultAsync(ct);
-        return Ok(new { data = doc?.Data });
+        var json = doc?.Data?.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.RelaxedExtendedJson }) ?? "null";
+        return Content("{\"data\":" + json + "}", "application/json");
     }
 
     [HttpPut]
@@ -36,9 +39,16 @@ public class ProgressController : ControllerBase
         var userId = GetUserId();
         if (userId == null) return Unauthorized();
 
+        // System.Text.Json binds `data` as JsonElement, which the Mongo driver
+        // cannot serialize — round-trip through raw JSON into a BsonDocument.
+        var bson = payload.Data is { ValueKind: JsonValueKind.Object } el
+            ? BsonDocument.Parse(el.GetRawText())
+            : null;
+        if (bson == null) return BadRequest(new { error = "data must be a JSON object" });
+
         var filter = Builders<UserProgress>.Filter.Eq(p => p.UserId, userId);
         var update = Builders<UserProgress>.Update
-            .Set(p => p.Data, payload.Data)
+            .Set(p => p.Data, bson)
             .Set(p => p.UpdatedAt, DateTime.UtcNow)
             .SetOnInsert(p => p.UserId, userId);
 
@@ -58,11 +68,11 @@ public class UserProgress
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
     public string UserId { get; set; } = "";
-    public object? Data { get; set; }
+    public BsonDocument? Data { get; set; }
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 }
 
 public class ProgressPayload
 {
-    public object? Data { get; set; }
+    public JsonElement Data { get; set; }
 }

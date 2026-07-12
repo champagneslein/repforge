@@ -1,6 +1,8 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
+using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 
@@ -26,15 +28,23 @@ public class GoldStandardController : ControllerBase
     public async Task<IActionResult> Get(CancellationToken ct)
     {
         var doc = await _gold.Find(g => g.TenantId == TenantId).FirstOrDefaultAsync(ct);
-        return Ok(new { data = doc?.Data });
+        var json = doc?.Data?.ToJson(new JsonWriterSettings { OutputMode = JsonOutputMode.RelaxedExtendedJson }) ?? "null";
+        return Content("{\"data\":" + json + "}", "application/json");
     }
 
     [HttpPut]
     public async Task<IActionResult> Put([FromBody] GoldStandardPayload payload, CancellationToken ct)
     {
+        // System.Text.Json binds `data` as JsonElement, which the Mongo driver
+        // cannot serialize — round-trip through raw JSON into a BsonDocument.
+        var bson = payload.Data is { ValueKind: JsonValueKind.Object } el
+            ? BsonDocument.Parse(el.GetRawText())
+            : null;
+        if (bson == null) return BadRequest(new { error = "data must be a JSON object" });
+
         var filter = Builders<GoldStandard>.Filter.Eq(g => g.TenantId, TenantId);
         var update = Builders<GoldStandard>.Update
-            .Set(g => g.Data, payload.Data)
+            .Set(g => g.Data, bson)
             .Set(g => g.UpdatedAt, DateTime.UtcNow)
             .SetOnInsert(g => g.TenantId, TenantId);
 
@@ -49,11 +59,11 @@ public class GoldStandard
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
     public string TenantId { get; set; } = "";
-    public object? Data { get; set; }
+    public BsonDocument? Data { get; set; }
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 }
 
 public class GoldStandardPayload
 {
-    public object? Data { get; set; }
+    public JsonElement Data { get; set; }
 }
