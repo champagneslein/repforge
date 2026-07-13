@@ -446,6 +446,8 @@ export default function App() {
   const [prodSaving,setProdSaving]=React.useState(false);
   const [setupGrade,setSetupGrade]=React.useState(null);
   const [gradingBusy,setGradingBusy]=React.useState(false);
+  const [surveyOpen,setSurveyOpen]=React.useState(false);
+  const [surveyIdx,setSurveyIdx]=React.useState(0);
   const [postCallAi,setPostCallAi]=React.useState(null);
   const [postCallAiLoading,setPostCallAiLoading]=React.useState(false);
   const [deals,setDeals]=React.useState([{id:'demo-001',persona_name:'Conor Murphy',company_name:'Nexaflow',stage:'Proposal',updated_at:new Date().toISOString()},{id:'demo-002',persona_name:'David Flynn',company_name:'Nexaflow',stage:'Discovery',updated_at:new Date().toISOString()}]);
@@ -483,14 +485,13 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     loadProgress().then(data=>{
       if(data){
         if(data.product){setProduct(data.product);setProdForm(productToForm(data.product));setSetupGrade(data.product.setup_grade||null);}
-        else setShowProdSetup(true);
         if(data.deals)setDeals(data.deals);
         if(data.scheduledCalls)setScheduledCalls(data.scheduledCalls);
         if(data.personaMessages)setPersonaMessages(data.personaMessages);
         if(data.simDay)setSimDay(data.simDay);
         if(data.state){const merged={...initState(),...data.state};setState(merged);}
-      }else setShowProdSetup(true);
-    }).catch(()=>setShowProdSetup(true));
+      }
+    }).catch(()=>{});
   },[msalAccounts.length]);
 
   // Debounced progress save
@@ -504,9 +505,11 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
 
   const handleLogout=async()=>{setUser(null);setAuthTok(null);setProduct(null);try{await msal.logoutRedirect();}catch(e){}};
   const openProdSetup=(mode)=>{
+    if(!goldStandard)loadGoldStandard().then(gs=>{if(gs)setGoldStandard(gs);}).catch(()=>{});
     setProdSetupMode(mode);
     setProdForm(productToForm(mode==='gold'?goldStandard:product));
-    setShowProdSetup(true);
+    if(mode==='gold'){setShowProdSetup(true);}
+    else{setSurveyIdx(0);setSurveyOpen(true);}
   };
   const handleSaveProd=async()=>{
     if(!prodForm.name.trim())return;
@@ -516,9 +519,9 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
       try{await saveGoldStandard(p);setGoldStandard(p);}catch(e){console.error('gold standard save failed',e);}
       setShowProdSetup(false);setProdSetupMode('trainee');setProdForm(productToForm(product));
     }else{
-      if(product?.setup_grade)p.setup_grade=product.setup_grade;
+      if(setupGrade)p.setup_grade=setupGrade;
       setProduct(p);
-      setShowProdSetup(false);
+      setSurveyOpen(false);
       triggerProgressSave(authTok,state,simDay,p,deals,scheduledCalls,personaMessages);
     }
     setProdSaving(false);
@@ -1207,7 +1210,74 @@ function getPersonaPosts(emp,company){
 
   return (
     <div className="min-h-screen bg-[#070C18]">
-      {showProdSetup&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
+      {surveyOpen&&(()=>{
+        const total=PRODUCT_FIELDS.length;
+        const f=surveyIdx<total?PRODUCT_FIELDS[surveyIdx]:null;
+        const next=()=>setSurveyIdx(i=>i+1);
+        const answered=PRODUCT_FIELDS.filter(x=>(prodForm[x.k]||'').trim()).length;
+        const closeSurvey=()=>{setSurveyOpen(false);setProdForm(productToForm(product));};
+        return(
+        <div style={{position:'fixed',inset:0,background:'#070C18',zIndex:9999,display:'flex',flexDirection:'column',fontFamily:'system-ui'}}>
+          <style>{`@keyframes qIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}`}</style>
+          <div style={{height:3,background:'#111F36',flexShrink:0}}><div style={{height:'100%',width:(Math.min(surveyIdx,total)/total*100)+'%',background:'linear-gradient(90deg,#0EA5E9,#7C3AED)',transition:'width .4s cubic-bezier(.22,1,.36,1)'}}/></div>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'14px 22px',flexShrink:0}}>
+            <button onClick={()=>setSurveyIdx(i=>Math.max(0,i-1))} disabled={surveyIdx===0} style={{background:'none',border:'none',color:surveyIdx===0?'#1B3154':'#7A9CC4',fontSize:13,cursor:surveyIdx===0?'default':'pointer',fontWeight:600}}>← Back</button>
+            <span style={{color:'#4A6B8A',fontSize:12,fontWeight:600}}>{f?`${surveyIdx+1} / ${total}`:'Review'}</span>
+            <button onClick={closeSurvey} style={{background:'none',border:'none',color:'#4A6B8A',fontSize:20,cursor:'pointer',lineHeight:1}}>&times;</button>
+          </div>
+          {f?(
+            <div key={surveyIdx} style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',padding:'0 24px 60px',animation:'qIn .45s cubic-bezier(.22,1,.36,1)',overflowY:'auto'}}>
+              <div style={{width:'100%',maxWidth:640}}>
+                <div style={{display:'inline-block',fontSize:11,fontWeight:800,color:'#38BDF8',letterSpacing:'0.08em',textTransform:'uppercase',background:'rgba(14,165,233,0.1)',border:'1px solid rgba(14,165,233,0.25)',padding:'3px 10px',borderRadius:20,marginBottom:16}}>{f.sec}</div>
+                <h2 style={{margin:'0 0 6px',fontSize:26,fontWeight:800,color:'#F8FAFC',letterSpacing:'-0.02em'}}>{f.l}{f.k==='name'&&<span style={{color:'#0EA5E9'}}> *</span>}</h2>
+                <p style={{margin:'0 0 22px',fontSize:14,color:'#4A6B8A'}}>{f.ph}</p>
+                {f.m?(
+                  <textarea autoFocus value={prodForm[f.k]} onChange={e=>setProdForm({...prodForm,[f.k]:e.target.value})} onKeyDown={e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter')next();}} rows={5} style={{width:'100%',boxSizing:'border-box',background:'transparent',border:'none',borderBottom:'2px solid #1B3154',padding:'8px 2px',fontSize:18,color:'#F8FAFC',outline:'none',resize:'none',fontFamily:'inherit',lineHeight:1.5}}/>
+                ):(
+                  <input autoFocus value={prodForm[f.k]} onChange={e=>setProdForm({...prodForm,[f.k]:e.target.value})} onKeyDown={e=>{if(e.key==='Enter')next();}} style={{width:'100%',boxSizing:'border-box',background:'transparent',border:'none',borderBottom:'2px solid #1B3154',padding:'8px 2px',fontSize:22,color:'#F8FAFC',outline:'none'}}/>
+                )}
+                <div style={{display:'flex',alignItems:'center',gap:14,marginTop:26}}>
+                  <button onClick={next} style={{padding:'11px 28px',borderRadius:8,border:'none',background:'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:'#fff',fontWeight:700,fontSize:15,cursor:'pointer'}}>OK →</button>
+                  <button onClick={next} style={{padding:'11px 16px',borderRadius:8,border:'none',background:'transparent',color:'#4A6B8A',fontWeight:600,fontSize:13,cursor:'pointer'}}>Skip</button>
+                  <span style={{fontSize:11,color:'#2A4A6A',marginLeft:'auto'}}>{f.m?'⌘+Enter to continue':'Enter to continue'}</span>
+                </div>
+              </div>
+            </div>
+          ):(
+            <div key="summary" style={{flex:1,display:'flex',justifyContent:'center',padding:'20px 24px 60px',animation:'qIn .45s cubic-bezier(.22,1,.36,1)',overflowY:'auto'}}>
+              <div style={{width:'100%',maxWidth:640}}>
+                <h2 style={{margin:'0 0 6px',fontSize:26,fontWeight:800,color:'#F8FAFC',letterSpacing:'-0.02em'}}>Review &amp; finish</h2>
+                <p style={{margin:'0 0 20px',fontSize:14,color:'#7A9CC4'}}>{prodForm.name.trim()?<><b style={{color:'#F8FAFC'}}>{prodForm.name}</b> — you answered {answered} of {total} questions.</>:'You answered '+answered+' of '+total+' questions.'}</p>
+                {!prodForm.name.trim()&&<div style={{marginBottom:16,padding:'10px 14px',background:'rgba(239,68,68,0.08)',border:'1px solid #7f1d1d',borderRadius:8,fontSize:13,color:'#f87171'}}>Your product needs a name before saving. <button onClick={()=>setSurveyIdx(0)} style={{background:'none',border:'none',color:'#38BDF8',cursor:'pointer',fontSize:13,padding:0,textDecoration:'underline'}}>Go to question 1</button></div>}
+                {setupGrade&&(
+                  <div style={{marginBottom:18,padding:'16px 18px',background:'#0A1020',border:'1px solid #1B3154',borderRadius:10}}>
+                    <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
+                      <span style={{fontSize:13,fontWeight:800,color:'#F8FAFC'}}>Knowledge Grade</span>
+                      <span style={{fontSize:20,fontWeight:800,color:setupGrade.overall>=80?'#16a34a':setupGrade.overall>=60?'#F59E0B':'#ef4444'}}>{setupGrade.grade} <span style={{fontSize:12,color:'#4A6B8A',fontWeight:600}}>{setupGrade.overall}/100</span></span>
+                    </div>
+                    <p style={{margin:'0 0 12px',fontSize:12,color:'#7A9CC4'}}>{setupGrade.summary}</p>
+                    {(setupGrade.sections||[]).map(s=>(
+                      <div key={s.area} style={{marginBottom:9}}>
+                        <div style={{display:'flex',justifyContent:'space-between',fontSize:11,marginBottom:3}}><span style={{color:'#D4E5FF',fontWeight:600}}>{s.area}</span><span style={{color:scoreColor(s.score),fontWeight:700}}>{s.score}/10</span></div>
+                        <div style={{height:4,background:'#1B3154',borderRadius:2}}><div style={{height:'100%',width:(s.score*10)+'%',background:scoreColor(s.score),borderRadius:2}}/></div>
+                        {s.score<8&&<div style={{fontSize:11,color:'#4A6B8A',marginTop:3}}>{s.gap} <span style={{color:'#38BDF8'}}>{s.tip}</span></div>}
+                      </div>
+                    ))}
+                    {(setupGrade.focus||[]).length>0&&<div style={{marginTop:10,fontSize:12,color:'#F59E0B'}}><b>Study priorities:</b> {(setupGrade.focus||[]).join(' · ')}</div>}
+                  </div>
+                )}
+                {!goldStandard&&<div style={{marginBottom:12,fontSize:12,color:'#4A6B8A'}}>Grading unavailable: no company gold standard configured yet (Settings → Sales Enablement).</div>}
+                {goldStandard&&!apiKey&&<div style={{marginBottom:12,fontSize:12,color:'#4A6B8A'}}>Grading unavailable: add your OpenAI API key in Settings first.</div>}
+                <div style={{display:'flex',gap:12}}>
+                  {goldStandard&&apiKey&&<button onClick={handleGradeSetup} disabled={gradingBusy||!prodForm.name.trim()} style={{padding:'12px 22px',borderRadius:8,background:'transparent',color:gradingBusy?'#4A6B8A':'#F59E0B',border:'1px solid '+(gradingBusy?'#1B3154':'#F59E0B'),fontWeight:700,fontSize:14,cursor:gradingBusy?'wait':'pointer'}}>{gradingBusy?'Grading…':'Grade My Knowledge'}</button>}
+                  <button onClick={handleSaveProd} disabled={prodSaving||!prodForm.name.trim()} style={{padding:'12px 28px',borderRadius:8,border:'none',background:prodSaving||!prodForm.name.trim()?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:prodSaving||!prodForm.name.trim()?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:prodSaving||!prodForm.name.trim()?'not-allowed':'pointer'}}>{prodSaving?'Saving…':'Save & Finish'}</button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>);})()}
+
+      {showProdSetup&&prodSetupMode==='gold'&&(<div style={{position:'fixed',top:0,left:0,right:0,bottom:0,background:'rgba(0,0,0,0.6)',zIndex:9998,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
         <div style={{background:'#0D1525',borderRadius:'14px',padding:'32px 36px',width:'500px',maxWidth:'92vw',maxHeight:'85vh',overflowY:'auto',boxShadow:'0 24px 60px rgba(0,0,0,0.25)'}}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:6}}>
             <h2 style={{margin:0,fontSize:'19px',fontWeight:'800',color:prodSetupMode==='gold'?'#F59E0B':'#0EA5E9'}}>{prodSetupMode==='gold'?'Gold Standard Product Profile':'What are you selling?'}</h2>
@@ -1515,7 +1585,7 @@ function getPersonaPosts(emp,company){
           ) : (
             <button onClick={() => setTab("score")} className="bg-[#0EA5E9] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1"> View Final Score</button>
           )}
-          <button onClick={()=>openProdSetup('trainee')} className={`text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 ${product?'bg-[#0F0A2A] text-violet-400 border border-violet-900 hover:bg-[#150E35]':'bg-red-600 text-white hover:bg-red-500'}`}>{product?product.product_name.substring(0,16):'Setup Product'}</button><button onClick={handleLogout} className="text-xs px-2.5 py-1.5 rounded-lg font-medium text-[#4A6B8A] hover:text-[#7A9CC4] border border-[#1B3154] hover:border-[#2A4A6A] bg-transparent transition-colors">{user?user.email.split('@')[0]:'Logout'}</button>
+          <button onClick={()=>openProdSetup('trainee')} className="text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 bg-[#0F0A2A] text-violet-400 border border-violet-900 hover:bg-[#150E35]">{product?product.product_name.substring(0,16):'Product Setup'}</button><button onClick={handleLogout} className="text-xs px-2.5 py-1.5 rounded-lg font-medium text-[#4A6B8A] hover:text-[#7A9CC4] border border-[#1B3154] hover:border-[#2A4A6A] bg-transparent transition-colors">{user?user.email.split('@')[0]:'Logout'}</button>
         </div>
       </div>
 
