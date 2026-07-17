@@ -1,110 +1,13 @@
 import React, { useState, useRef } from "react";
-import { useConversation } from '@elevenlabs/react';
 import { useMsal } from '@azure/msal-react';
-import { getApiToken, API_SCOPES } from './authConfig';
+import { API_SCOPES } from './authConfig';
+import { apiGet, apiPost, apiPut, loadProgress, saveProgress, loadGoldStandard, saveGoldStandard, gptJson } from './api';
+import { PRODUCT_FIELDS, formToProduct, productToForm, productContext } from './product';
+import { useVoiceCall, ensureMicPermission } from './call/useVoiceCall';
+import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
 function uuid(){if(typeof crypto!=='undefined'&&crypto.randomUUID)return crypto.randomUUID();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16);});}
-
-// Backend API helpers — tokens come from MSAL, the token parameter is kept
-// only so existing call sites don't need to change.
-async function authHeader() {
-  const t = await getApiToken();
-  return t ? { Authorization: 'Bearer ' + t } : {};
-}
-async function apiPost(path, body, _token) {
-  const headers = { 'Content-Type': 'application/json', ...(await authHeader()) };
-  const r = await fetch(path, { method: 'POST', headers, body: JSON.stringify(body) });
-  if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || r.statusText); }
-  return r.json();
-}
-async function apiGet(path, _token) {
-  const r = await fetch(path, { headers: await authHeader() });
-  if (!r.ok) return null;
-  return r.json();
-}
-async function apiPut(path, body, _token) {
-  const headers = { 'Content-Type': 'application/json', ...(await authHeader()) };
-  const r = await fetch(path, { method: 'PUT', headers, body: JSON.stringify(body) });
-  if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || r.statusText); }
-  return r.json().catch(() => null);
-}
-async function loadProgress(token) {
-  const res = await apiGet('/api/progress', token);
-  return res?.data ?? null;
-}
-async function saveProgress(token, data) {
-  await apiPut('/api/progress', { data }, token);
-}
-async function loadGoldStandard() {
-  const res = await apiGet('/api/goldstandard');
-  return res?.data ?? null;
-}
-async function saveGoldStandard(data) {
-  await apiPut('/api/goldstandard', { data });
-}
-
-// Product knowledge schema — shared by the trainee's setup form and the
-// customer-provided gold standard. `m` = multiline, `lines` = parse as array.
-const PRODUCT_FIELDS = [
-  { k:'name',           l:'Product Name',                        ph:'e.g. Acme CRM',                                                        m:false, sec:'Basics' },
-  { k:'desc',           l:'Elevator Pitch (30 seconds)',         ph:'What is it, who is it for, why does it win — in 2-3 sentences',        m:true,  sec:'Basics' },
-  { k:'problems',       l:'Problems & Pain Points Solved',       ph:'The concrete pains a prospect feels before buying',                    m:true,  sec:'Basics' },
-  { k:'icp',            l:'Ideal Customer Profile',              ph:'e.g. B2B SaaS, 50-500 employees, VP Sales owns the budget',            m:false, sec:'Market' },
-  { k:'personas',       l:'Buying Committee & Personas',         ph:'Who champions it, who signs, who evaluates, who blocks',               m:true,  sec:'Market' },
-  { k:'competitors',    l:'Competitors & Why We Win',            ph:'Main alternatives (incl. spreadsheets/status quo) and our edge',       m:true,  sec:'Market' },
-  { k:'vps',            l:'Value Props (one per line)',          ph:'Saves 5hrs/week\nReduces churn 20%',                                   m:true,  sec:'Pitch', lines:true },
-  { k:'proof',          l:'Proof Points',                        ph:'Case studies, ROI numbers, marquee customers, awards',                 m:true,  sec:'Pitch' },
-  { k:'pricing',        l:'Pricing & Packaging',                 ph:'Tiers, typical deal size, billing model, discount policy',             m:true,  sec:'Commercials' },
-  { k:'implementation', l:'Implementation & Integrations',       ph:'Time to go live, onboarding effort, key integrations, who does what',  m:true,  sec:'Commercials' },
-  { k:'objs',           l:'Objections & Rebuttals (one per line: objection | rebuttal)', ph:'Too expensive | ROI pays back in 4 months\nWe have a tool | Ask what it breaks at scale', m:true, sec:'Field Readiness', lines:true },
-  { k:'discovery',      l:'Key Discovery Questions (one per line)', ph:'What does this problem cost you today?\nWho else feels this pain?', m:true,  sec:'Field Readiness', lines:true },
-];
-
-function formToProduct(f) {
-  return {
-    product_name: f.name || '', product_description: f.desc || '', problems: f.problems || '',
-    icp: f.icp || '', personas: f.personas || '', competitors: f.competitors || '',
-    value_props: (f.vps || '').split('\n').filter(Boolean), proof: f.proof || '',
-    pricing: f.pricing || '', implementation: f.implementation || '',
-    objections: (f.objs || '').split('\n').filter(Boolean),
-    discovery_questions: (f.discovery || '').split('\n').filter(Boolean),
-  };
-}
-function productToForm(p) {
-  if (!p) return { name:'', desc:'', problems:'', icp:'', personas:'', competitors:'', vps:'', proof:'', pricing:'', implementation:'', objs:'', discovery:'' };
-  return {
-    name: p.product_name || '', desc: p.product_description || '', problems: p.problems || '',
-    icp: p.icp || '', personas: p.personas || '', competitors: p.competitors || '',
-    vps: (p.value_props || []).join('\n'), proof: p.proof || '',
-    pricing: p.pricing || '', implementation: p.implementation || '',
-    objs: (p.objections || []).join('\n'), discovery: (p.discovery_questions || []).join('\n'),
-  };
-}
-// Serializes a product profile into prompt context for the AI personas.
-function productContext(p) {
-  if (!p) return '';
-  const parts = ['\n\n--- PRODUCT BEING PITCHED (ground truth) ---', 'Product: ' + p.product_name + '. ' + (p.product_description || '')];
-  if (p.problems) parts.push('Problems it solves: ' + p.problems);
-  if (p.icp) parts.push('Target customer: ' + p.icp);
-  if (p.personas) parts.push('Buying committee: ' + p.personas);
-  if (p.competitors) parts.push('Competitive landscape: ' + p.competitors);
-  if ((p.value_props || []).length) parts.push('Value props: ' + p.value_props.join('; '));
-  if (p.proof) parts.push('Proof points: ' + p.proof);
-  if (p.pricing) parts.push('Pricing: ' + p.pricing);
-  if (p.implementation) parts.push('Implementation: ' + p.implementation);
-  if ((p.objections || []).length) parts.push('Known objections and strong rebuttals: ' + p.objections.join('; '));
-  return parts.join('\n');
-}
-async function gptJson(apiKey, prompt, maxTokens = 1000) {
-  const r = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey },
-    body: JSON.stringify({ model: 'gpt-4o', messages: [{ role: 'user', content: prompt }], max_tokens: maxTokens, temperature: 0.2, response_format: { type: 'json_object' } }),
-  });
-  const t = (await r.json()).choices?.[0]?.message?.content || '{}';
-  return JSON.parse(t);
-}
 
 // 
 // COMPANY + EMPLOYEE DATA
@@ -468,7 +371,6 @@ export default function App() {
   const [activeSession,setActiveSession]=React.useState(null);
   const [sessionTimer,setSessionTimer]=React.useState(1800);
   const [sessionActive,setSessionActive]=React.useState(false);
-  const [isPersonaSpeaking,setIsPersonaSpeaking] = React.useState(false);
   const [midCallBooking,setMidCallBooking]=React.useState(null);
   const [expandedMsg,setExpandedMsg]=React.useState(null);
 const [demoObjections,setDemoObjections]=React.useState([]);
@@ -481,6 +383,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     msal.setActiveAccount(acct);
     setUser({id:acct.localAccountId,email:acct.username});
     setAuthTok('entra');
+    ensureMicPermission(); // ask once at login so calls start without a popup
     loadGoldStandard().then(gs=>setGoldStandard(gs)).catch(()=>{});
     loadProgress().then(data=>{
       if(data){
@@ -549,21 +452,16 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
 
   // Auto-save progress on state changes
   React.useEffect(()=>{if(authTok&&user)triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,personaMessages);},[state,simDay,product,deals,scheduledCalls,personaMessages]);
-  const handleStartCallWithDeal=async(emp,company)=>{
-    window._callTranscript=[];window._activePersonaName=(emp.first||'')+' '+(emp.last||'');window._activeCompanyName=company.name||'';window._activePersonaId=emp.id||'';
+  // Find or create the deal for a persona and prime the call context globals.
+  const ensureDealForCall=(emp,company)=>{
     const personaName=(emp.first||'')+' '+(emp.last||'');
+    window._callTranscript=[];window._activePersonaName=personaName;window._activeCompanyName=company.name||'';window._activePersonaId=emp.id||'';
     let deal=deals.find(d=>d.persona_id===emp.id&&d.company_id===(company.id||''));
     if(!deal){deal={id:uuid(),persona_id:emp.id,persona_name:personaName,company_id:company.id||'',company_name:company.name||'',stage:'Discovery',updated_at:new Date().toISOString(),callLogs:[]};setDeals(prev=>{const next=[...prev,deal];triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});}
     window._activeDealId=deal.id||null;
-    const logs=deal.callLogs||[];
-    // Show call session UI
     const dd=generateDiscoveryData();
     window._discoveryBlock=`\n\n## MEDDIC Context (Hidden from Prospect)\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nDecision Process: ${dd.decision_process}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n`;
-    setActiveSession({id:deal.id,persona_id:emp.id,persona_name:personaName,company_id:company.id,company_name:company.name,call_type:'discovery',discovery_data:dd,deal_id:deal.id,status:'active'});
-    setSessionTimer(1800);
-    setSessionActive(true);
-    setShowCallSession(true);
-    startCall(emp,company,Array.isArray(logs)?logs:[]);
+    return deal;
   };
   const handlePostCallSave=async()=>{
     if(!window._activeDealId)return;
@@ -601,20 +499,17 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const [pipelineScore,setPipelineScore] = React.useState(null);
   const [pipelineRunning,setPipelineRunning] = React.useState(false);
 
-  const [activeCallId, setActiveCallId] = useState(null);
-  const [callStatus, setCallStatus] = useState('idle');
   const [proposalState, setProposalState] = React.useState({});
   const [salesConvs, setSalesConvs] = React.useState({});
   const [closeLoading, setCloseLoading] = React.useState(false);
   const industries = ["All","SaaS","Cyber Security","Manufacturing","Fintech","Energy","Healthcare","Retail Tech","Construction"];
   const allEmps = Object.entries(allEmployees).flatMap(([cId,emps])=>emps.map(e=>({...e,cId:parseInt(cId),cName:(companies.find(c=>c.id===parseInt(cId))||{name:''}).name})));
 
-  const elConversation = useConversation({
-    onConnect: () => setCallStatus('active'),
-    onDisconnect: () => {
-      setActiveCallId(null); setCallStatus('idle'); setIsPersonaSpeaking(false);
+  const { activeCallId, callStatus, isSpeaking: isPersonaSpeaking, startCall: startVoiceCall, endCall: endVoiceCall } = useVoiceCall({
+    agentId: 'agent_9601kw8ekb86ex0abgh5vr8kh4xe',
+    getToken: async () => (await apiGet('/api/calltoken'))?.token || null,
+    onCallEnd: (t) => {
       if (window._activeDealId) {
-        const t = window._callTranscript || [];
         const objKw = ['expensive','price','cost','budget','already have','not the right time','not interested','competitor'];
         const found = objKw.filter(kw => t.some(m => m.text && m.text.toLowerCase().includes(kw)));
         const rep = t.filter(m => m.role === 'user').length;
@@ -626,34 +521,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
         analyzeCallTranscript(t);
       }
     },
-    onMessage: (msg) => {
-      if (!window._callTranscript) window._callTranscript = [];
-      if (msg.source === 'user') window._callTranscript.push({ role: 'user', text: msg.message });
-      else if (msg.source === 'agent') window._callTranscript.push({ role: 'assistant', text: msg.message });
-    },
-    onModeChange: (mode) => setIsPersonaSpeaking(mode.mode === 'speaking'),
-    onError: (err) => { console.error('[RepForge] ElevenLabs error:', err); setActiveCallId(null); setCallStatus('idle'); },
   });
-
-  function selectVoice(firstName, seniority) {
-    const fn = firstName.toLowerCase();
-    const female = new Set(['aoife','fiona','siobhan','niamh','brigid','caoimhe','emer','grainne','muireann','nuala','roisin','saoirse','emma','sarah','sophie','claire','rachel','laura','kate','anne','mary','lisa','helen','jane','julia','alice','olivia','grace','emily','charlotte','amy','hannah','leah','ava']);
-    const isFemale = female.has(fn);
-    if (seniority === 'c-suite') {
-      if (isFemale) return 'XrExE9yKIg1WjnnlVkGX'; // Matilda
-      return 'pNInz6obpgDQGcFmaJgB'; // Adam
-    }
-    if (seniority === 'vp') {
-      if (isFemale) return 'EXAVITQu4vr4xnSDxMaL'; // Sarah
-      return 'nPczCjzI2devNBz1zQrb'; // Brian
-    }
-    if (seniority === 'manager') {
-      if (isFemale) return 'cgSgspJ2msm6clMCkdW9'; // Jessica
-      return 'cjVigY5qzO86Huf0OWal'; // Eric
-    }
-    if (isFemale) return 'FGY2WhTYpPnrIDTdsKH5'; // Laura
-    return 'bIHbv24MWmeRgasZH58o'; // Will
-  }
 
   // Score the rep's performance on a call transcript — a spectrum, not a binary.
   // Product knowledge is judged against the gold standard when one exists.
@@ -675,33 +543,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   }
 
   async function startCall(emp, company, callLogs=[]) {
-    setActiveCallId(emp.id);
-    setCallStatus('connecting');
-    window._callTranscript = [];
-    const guides = {
-      'c-suite': "You are a busy C-suite executive. You speak in short, direct sentences — never more than 2-3 at a time. You are deeply skeptical of cold outreach. You've heard hundreds of pitches and most waste your time. You only engage if something genuinely connects to a board-level priority. You ask sharp questions: What's the measurable ROI? Who else is using this? Why now? You push back hard on vague claims. You occasionally cut people off if they're rambling. You never get excited easily.",
-      'vp': "You are a VP-level executive with a full team and an existing stack. You're open to new solutions but not desperate. You've been burned by vendors who overpromised. You care about: will my team actually use this, what's the implementation cost, and does this integrate with what we have. You're polite but direct. You don't small-talk.",
-      'manager': "You are a manager with real day-to-day problems but limited budget authority. You're genuinely interested in solutions that make your team's life easier. But you're cautious because you've had ideas shot down by leadership. You ask things like 'how long does onboarding take' and 'would I need IT involved'. You warm up during the call if the pitch is relevant.",
-      'ic': "You are an individual contributor — smart, curious, direct. You don't have budget authority but you're often the person who finds tools and champions them internally. You're willing to talk but you'll quickly say if something isn't relevant to you. You speak casually and honestly."
-    };
-    const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (guides[emp.seniority] || guides.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like "Certainly" or "Great question" or "Absolutely". Never be immediately enthusiastic about a product. You were in the middle of something when this call came in.';
-    const dealHistory = callLogs && callLogs.length > 0 ? '\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n' + callLogs.map((log,i) => { const daysAgo = Math.round((Date.now() - new Date(log.called_at).getTime()) / 86400000); return 'Call ' + (callLogs.length - i) + ' (' + daysAgo + ' days ago): ' + (log.ai_summary || log.rep_notes || 'No summary.') + (log.objections && log.objections.length ? ' Objections: ' + log.objections.join(', ') + '.' : ''); }).join('\n') + '\nYour current interest: ' + (callLogs[0]?.interest_score_after || 5) + '/10.' : '';
-    const productCtx = productContext(goldStandard || product);
-    const fullPrompt = sysPrompt + productCtx + dealHistory + (window._discoveryBlock || '');
-    const firstMessage = emp.seniority === 'c-suite' ? emp.first + '.' : emp.seniority === 'vp' ? emp.first + ', yeah.' : emp.seniority === 'junior' ? 'Hi, this is ' + emp.first + '.' : emp.first + ', hi.';
-    try {
-      const tokenRes = await apiGet('/api/calltoken', authTok);
-      const sessionConfig = tokenRes?.token
-        ? { conversationToken: tokenRes.token, connectionType: 'webrtc' }
-        : { agentId: 'agent_9601kw8ekb86ex0abgh5vr8kh4xe', connectionType: 'webrtc' };
-      await elConversation.startSession({
-        ...sessionConfig,
-        overrides: {
-          agent: { prompt: { prompt: fullPrompt }, firstMessage },
-          tts: { voiceId: selectVoice(emp.first, emp.seniority) },
-        },
-      });
-    } catch(e) { console.error('[RepForge] Call failed:', e); setActiveCallId(null); setCallStatus('idle'); }
+    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '' });
   }
 
   async function runAgentTest() {
@@ -922,7 +764,9 @@ function sendEmail(emp, company, subject, body) {
       setCallLine(line);
       setCallPhase("outcome");
       if (outcome === 'connected') {
-        setTimeout(() => startCall(emp, getCompanyForEmp(emp.id), []), 800);
+        const company = getCompanyForEmp(emp.id) || {};
+        const deal = ensureDealForCall(emp, company);
+        setTimeout(() => startCall(emp, company, Array.isArray(deal.callLogs) ? deal.callLogs : []), 400);
       }
       // Log the call in state
       setState(prev => ({
@@ -938,12 +782,12 @@ function sendEmail(emp, company, subject, body) {
   }
 
   function endCall() {
-    try { elConversation.endSession(); } catch(e) {}
-    setActiveCallId(null); setCallStatus('idle');
+    endVoiceCall();
     setCallModal(null);
     setCallPhase("idle");
     setCallOutcome(null);
     setCallLine("");
+    window._discoveryBlock = '';
   }
 
   function requestMeeting(emp) {
@@ -1070,7 +914,7 @@ function sendEmail(emp, company, subject, body) {
     if(!sessionActive)return;
     const iv=setInterval(()=>{
       setSessionTimer(t=>{
-        if(t<=1){clearInterval(iv);setSessionActive(false);setShowCallSession(false);setActiveSession(null);setSessionTimer(1800);try{elConversation.endSession();}catch(e){}return 0;}
+        if(t<=1){clearInterval(iv);setSessionActive(false);setShowCallSession(false);setActiveSession(null);setSessionTimer(1800);endVoiceCall();return 0;}
         return t-1;
       });
     },1000);
@@ -1116,7 +960,7 @@ function sendEmail(emp, company, subject, body) {
     setScheduledCalls(prev=>{const next=prev.map(c=>c.id===activeSession?.id?{...c,status:'completed'}:c);triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
     setActiveSession(null);
     setSessionTimer(1800);
-    try{elConversation.endSession();}catch(e){}
+    endVoiceCall();
   };
 
   const handleMsgBooking=(msg)=>{
@@ -1697,7 +1541,7 @@ function getPersonaPosts(emp,company){
                               <button onClick={() => initiateCall(emp)} className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-medium"> Call</button>
                               <button onClick={() => { setEmailCompose({emp, company:selCompany}); setEmailDraft({subject:"",body:""}); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-xs px-3 py-1.5 rounded-lg font-medium"> Email</button>
                               <button onClick={() => { setPlProfile(emp); setTab("prolink"); setPlView("profile"); }} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-xs px-3 py-1.5 rounded-lg font-medium"> Profile</button>
-                              <button onClick={() => activeCallId === emp.id ? endCall() : handleStartCallWithDeal(emp, selCompany)} disabled={activeCallId !== null && activeCallId !== emp.id} style={{marginLeft:'6px',padding:'4px 12px',borderRadius:'6px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:'600',background:activeCallId===emp.id?(callStatus==='active'?'#ef4444':'#f97316'):'#7c3aed',color:'white',opacity:activeCallId!==null&&activeCallId!==emp.id?0.4:1}}>{activeCallId === emp.id ? (callStatus === 'connecting' ? ' Connecting...' : ' End Call') : ' AI Call'}</button><button onClick={()=>handleOpenBooking(allEmps.find(p=>p.id===emp.id),'discovery')} style={{marginLeft:6,padding:'4px 10px',borderRadius:6,border:'none',background:'#334155',color:'#818cf8',cursor:'pointer',fontSize:11,fontWeight:600}}> Book</button>
+                              <button onClick={()=>handleOpenBooking(allEmps.find(p=>p.id===emp.id),'discovery')} style={{marginLeft:6,padding:'4px 10px',borderRadius:6,border:'none',background:'#334155',color:'#818cf8',cursor:'pointer',fontSize:11,fontWeight:600}}> Book</button>
                               <button onClick={() => setExpandedIntel(expandedIntel === emp.id ? null : emp.id)} style={{marginLeft:'6px',padding:'4px 10px',borderRadius:'6px',border:'1px solid #1B3154',cursor:'pointer',fontSize:'12px',fontWeight:'600',background:expandedIntel===emp.id?'#eff6ff':'#f8fafc',color:'#7C3AED'}}> Intel</button>
                             </div>
                           {expandedIntel === emp.id && intelData[emp.id] && (
@@ -2418,83 +2262,17 @@ function getPersonaPosts(emp,company){
       {/*  */}
       {/* SETTINGS MODAL */}
       {/*  */}
-      {callModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-[#1A2A20] rounded-3xl shadow-2xl w-80 overflow-hidden">
-            {/* Header */}
-            <div className="px-6 pt-8 pb-4 text-center">
-              <div className="relative mx-auto mb-3 flex items-center justify-center" style={{width:88,height:88}}><div className="absolute inset-0 rounded-full border-2 border-blue-400 animate-ping" style={{opacity:0.5}}/><div className="absolute rounded-full border border-blue-300 animate-ping" style={{inset:-7,opacity:0.25,animationDelay:'0.8s'}}/><img src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${callModal&&callModal.id}`} className={`w-20 h-20 rounded-full object-cover border-2 border-blue-500 ${getAvatarColor(callModal&&callModal.id)}`} alt="" onError={e=>{e.target.style.display='none'}}/></div>
-              <div className="text-white font-bold text-lg">{callModal.first} {callModal.last}</div>
-              <div className="text-[#4A6B8A] text-sm">{callModal.title}</div>
-              <div className="text-[#7A9CC4] text-xs mt-0.5 font-mono">{getPhone(callModal)}</div>
-            </div>
-
-            {/* Status area */}
-            <div className="px-6 py-4 text-center min-h-28">
-              {callPhase === "dialing" && (
-                <div>
-                  <div className="flex justify-center gap-2 mb-4">
-                    {[0,1,2].map(i => (
-                      <div key={i} className="w-3 h-3 rounded-full bg-emerald-400" style={{animation:`pulse 1.2s ease-in-out ${i*0.3}s infinite`}}></div>
-                    ))}
-                  </div>
-                  <div className="text-emerald-400 text-sm font-medium">Dialling...</div>
-                  <div className="text-[#7A9CC4] text-xs mt-1">{getPhone(callModal)}</div>
-                </div>
-              )}
-              {callPhase === "outcome" && callOutcome === "connected" && (
-                <div>
-                  <div className="text-emerald-400 text-sm font-semibold mb-2"> Connected</div>
-                  <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
-                    <div className="text-[#4A6B8A] text-xs mb-1">{callModal.first} says:</div>
-                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">                        {aiVoiceLoading ? " Generating..." : " Hear AI Voice"}</button>)}
-                  </div>
-                </div>
-              )}
-              {callPhase === "outcome" && callOutcome === "gatekeeper" && (
-                <div>
-                  <div className="text-orange-400 text-sm font-semibold mb-2"> Gatekeeper</div>
-                  <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
-                    <div className="text-[#4A6B8A] text-xs mb-1">Reception says:</div>
-                    <div className="text-white text-sm leading-relaxed">"{callLine}"</div>
-                  </div>
-                </div>
-              )}
-              {callPhase === "outcome" && callOutcome === "voicemail" && (
-                <div>
-                  <div className="text-yellow-400 text-sm font-semibold mb-2"> Voicemail</div>
-                  <div className="bg-[#0F1F15] rounded-xl p-3 text-left">
-                    <div className="text-[#4A6B8A] text-xs mb-1">Voicemail:</div>
-                    <div className="text-white text-sm leading-relaxed italic">"{callLine}"</div>                    {apiKey && callLine && (                      <button onClick={() => generateAiVoice(callModal, callLine)} disabled={aiVoiceLoading} className="mt-3 flex items-center gap-2 mx-auto bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white text-xs px-4 py-2 rounded-full transition-colors">{aiVoiceLoading ? " Generating..." : " Hear AI Voice"}</button>)}
-                  </div>
-                </div>
-              )}
-              {callPhase === "outcome" && callOutcome === "no-answer" && (
-                <div>
-                  <div className="text-[#4A6B8A] text-sm font-semibold mb-2"> No Answer</div>
-                  <div className="text-[#7A9CC4] text-xs">The call rang out. Try again later or send a follow-up email.</div>
-                </div>
-              )}
-            </div>
-
-            {/* Actions */}
-            <div className="px-6 pb-8 flex justify-center gap-6">
-              {callPhase === "dialing" && (
-                <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors"></button>
-              )}
-              {callPhase === "outcome" && (
-                <>
-                  <button onClick={endCall} className="w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 flex items-center justify-center text-2xl transition-colors"></button>
-                  {(callOutcome === "connected" || callOutcome === "voicemail") && (
-                    <button onClick={() => { endCall(); setEmailCompose({emp:callModal, company:getCompanyForEmp(callModal.id)}); setEmailDraft({subject:"Following up on our call", body:""}); }} className="w-14 h-14 rounded-full bg-[#0EA5E9] hover:bg-[#0284C7] border border-emerald-700 flex items-center justify-center text-2xl transition-colors"></button>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
-          <style>{`@keyframes pulse { 0%,100%{opacity:0.3;transform:scale(0.8)} 50%{opacity:1;transform:scale(1.2)} }`}</style>
-        </div>
-      )}
+      <CallOverlay
+        emp={callModal}
+        company={callModal ? getCompanyForEmp(callModal.id) : null}
+        phase={callPhase}
+        outcome={callOutcome}
+        line={callLine}
+        callStatus={callStatus}
+        isSpeaking={isPersonaSpeaking}
+        onEnd={endCall}
+        onFollowUpEmail={() => { const m = callModal; endCall(); setEmailCompose({ emp: m, company: getCompanyForEmp(m.id) }); setEmailDraft({ subject: "Following up on my call", body: "" }); }}
+      />
 
       {/*  */}
       {/* EMAIL COMPOSE MODAL                        */}
