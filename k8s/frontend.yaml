@@ -6,7 +6,11 @@ metadata:
   labels:
     app: repforge-frontend
 spec:
-  replicas: 2
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: repforge-frontend
@@ -35,7 +39,7 @@ spec:
             periodSeconds: 30
           resources:
             requests:
-              cpu: 50m
+              cpu: 25m
               memory: 64Mi
             limits:
               cpu: 250m
