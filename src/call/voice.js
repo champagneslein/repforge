@@ -17,7 +17,7 @@ const SENIORITY_GUIDES = {
   'ic': "You are an individual contributor — smart, curious, direct. You don't have budget authority but you're often the person who finds tools and champions them internally. You're willing to talk but you'll quickly say if something isn't relevant to you. You speak casually and honestly."
 };
 
-export function buildPersonaPrompt(emp, company, callLogs = [], productCtx = '', discoveryBlock = '') {
+export function buildPersonaPrompt(emp, company, callLogs = [], productCtx = '', discoveryBlock = '', memoryBlock = '') {
   const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (SENIORITY_GUIDES[emp.seniority] || SENIORITY_GUIDES.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like "Certainly" or "Great question" or "Absolutely". Never be immediately enthusiastic about a product. You were in the middle of something when this call came in.';
   const dealHistory = callLogs && callLogs.length > 0
     ? '\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'
@@ -28,7 +28,7 @@ export function buildPersonaPrompt(emp, company, callLogs = [], productCtx = '',
         }).join('\n')
       + '\nYour current interest: ' + (callLogs[0]?.interest_score_after || 5) + '/10.'
     : '';
-  return sysPrompt + productCtx + dealHistory + discoveryBlock;
+  return sysPrompt + productCtx + dealHistory + memoryBlock + discoveryBlock;
 }
 
 export function personaFirstMessage(emp) {

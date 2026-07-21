@@ -6,6 +6,9 @@ RUN npm ci
 
 COPY public/ public/
 COPY src/ src/
+# CRA inlines REACT_APP_* variables into the bundle at build time
+ARG REACT_APP_GEMINI_KEY
+ENV REACT_APP_GEMINI_KEY=$REACT_APP_GEMINI_KEY
 RUN npm run build
 
 FROM nginx:1.27-alpine AS runtime

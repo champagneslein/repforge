@@ -56,6 +56,8 @@ jobs:
           context: .
           file: Dockerfile.frontend
           push: true
+          build-args: |
+            REACT_APP_GEMINI_KEY=${{ secrets.REACT_APP_GEMINI_KEY }}
           tags: |
             ${{ env.ACR_REGISTRY }}/repforge-frontend:${{ steps.meta.outputs.tag }}
             ${{ env.ACR_REGISTRY }}/repforge-frontend:latest

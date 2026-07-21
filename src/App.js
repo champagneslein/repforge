@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 import { useMsal } from '@azure/msal-react';
 import { API_SCOPES } from './authConfig';
-import { apiGet, apiPost, apiPut, loadProgress, saveProgress, loadGoldStandard, saveGoldStandard, gptJson } from './api';
+import { apiGet, apiPost, apiPut, loadProgress, saveProgress, loadGoldStandard, saveGoldStandard, gptJson, llmJson, getLlmConfig, LLM_PROVIDERS } from './api';
+import { buildTraineeDossier, runCoachReview } from './coach';
 import { PRODUCT_FIELDS, formToProduct, productToForm, productContext } from './product';
 import { useVoiceCall, ensureMicPermission } from './call/useVoiceCall';
+import { fetchPersonaMemory, remember, buildMemoryBlock } from './memory';
 import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
@@ -351,6 +353,9 @@ export default function App() {
   const [gradingBusy,setGradingBusy]=React.useState(false);
   const [surveyOpen,setSurveyOpen]=React.useState(false);
   const [surveyIdx,setSurveyIdx]=React.useState(0);
+  const [llmCfg,setLlmCfg]=React.useState(getLlmConfig());
+  const [coachReport,setCoachReport]=React.useState(null);
+  const [coachBusy,setCoachBusy]=React.useState(false);
   const [postCallAi,setPostCallAi]=React.useState(null);
   const [postCallAiLoading,setPostCallAiLoading]=React.useState(false);
   const [deals,setDeals]=React.useState([{id:'demo-001',persona_name:'Conor Murphy',company_name:'Nexaflow',stage:'Proposal',updated_at:new Date().toISOString()},{id:'demo-002',persona_name:'David Flynn',company_name:'Nexaflow',stage:'Discovery',updated_at:new Date().toISOString()}]);
@@ -384,6 +389,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     setUser({id:acct.localAccountId,email:acct.username});
     setAuthTok('entra');
     ensureMicPermission(); // ask once at login so calls start without a popup
+    try{const cached=JSON.parse(localStorage.getItem('rp_coach_'+acct.localAccountId)||'null');if(cached)setCoachReport(cached);}catch(e){}
     loadGoldStandard().then(gs=>setGoldStandard(gs)).catch(()=>{});
     loadProgress().then(data=>{
       if(data){
@@ -431,11 +437,11 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   };
   // Grade the trainee's product knowledge against the customer's gold standard
   const handleGradeSetup=async()=>{
-    if(!goldStandard||!apiKey||gradingBusy)return;
+    if(!goldStandard||!llmCfg.key||gradingBusy)return;
     setGradingBusy(true);
     try{
       const trainee=formToProduct(prodForm);
-      const res=await gptJson(apiKey,
+      const res=await llmJson(
         'You are a sales enablement coach. Compare a trainee\'s product knowledge write-up against the company\'s gold-standard product profile. Grade understanding, not writing style. Penalize factual errors more than omissions.\n\n'
         +'GOLD STANDARD:\n'+JSON.stringify(goldStandard)+'\n\nTRAINEE VERSION:\n'+JSON.stringify(trainee)
         +'\n\nReturn JSON exactly: {"sections":[{"area":"<one of: Pitch & Problems, ICP & Personas, Competition, Value Props & Proof, Pricing & Implementation, Objections & Discovery>","score":0-10,"gap":"<what they missed or got wrong, 1 sentence>","tip":"<what to study, 1 sentence>"}],"overall":0-100,"grade":"A|B|C|D|F","summary":"<2 sentences>","focus":["<top study priority>","<second priority>"]}',1400);
@@ -447,6 +453,17 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
       }
     }catch(e){console.error('grading failed',e);}
     setGradingBusy(false);
+  };
+  // The overarching coach: reviews everything the trainee has done so far
+  const handleRunCoach=async()=>{
+    if(!llmCfg.key||coachBusy)return;
+    setCoachBusy(true);
+    try{
+      const dossier=buildTraineeDossier({product,setupGrade,deals,state,simDay,scheduledCalls,companies});
+      const rep=await runCoachReview(dossier);
+      if(rep&&rep.grade){setCoachReport(rep);try{localStorage.setItem('rp_coach_'+(user?.id||''),JSON.stringify(rep));}catch(e){}}
+    }catch(e){console.error('coach review failed',e);}
+    setCoachBusy(false);
   };
   React.useEffect(()=>{if(tab==='pipeline'){setShowPipeline(true);}},[tab]);
 
@@ -518,6 +535,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
         const co = window._activeCompanyName || '';
         const summary = rep + '-turn call with ' + nm + (co ? ' at ' + co : '') + '. Rep ' + rep + ' turns, prospect ' + pros + ' turns.' + (found.length ? ' Discussed: ' + found.join(', ') : ' No major objections.');
         setPostCallSummary(summary); setPostCallObjs(found.join('\n')); setPostCallAi(null); setShowPostCall(true);
+        if (window._activePersonaId && rep + pros > 0) remember(window._activePersonaId, 'phone_call', simDay, 'You spoke with the rep on the phone. ' + (found.length ? 'Topics that came up: ' + found.join(', ') + '. ' : '') + (t.slice(-2).map(m => (m.role === 'user' ? 'Rep said: ' : 'You said: ') + '"' + (m.text || '').slice(0, 150) + '"').join(' ')));
         analyzeCallTranscript(t);
       }
     },
@@ -526,13 +544,12 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   // Score the rep's performance on a call transcript — a spectrum, not a binary.
   // Product knowledge is judged against the gold standard when one exists.
   async function analyzeCallTranscript(transcript) {
-    const key = localStorage.getItem('repforge_openai_key') || '';
-    if (!key || !transcript || transcript.length < 4) return;
+    if (!getLlmConfig().key || !transcript || transcript.length < 4) return;
     setPostCallAiLoading(true);
     try {
       const truth = goldStandard || product;
       const convo = transcript.map(m => (m.role === 'user' ? 'REP' : 'PROSPECT') + ': ' + m.text).join('\n');
-      const res = await gptJson(key,
+      const res = await llmJson(
         'You are a sales call coach. Score this training call between a sales rep (REP) and an AI prospect (PROSPECT). Judge the REP only. Be strict but fair — a short call with no discovery scores low on discovery.\n'
         + (truth ? '\nGROUND-TRUTH PRODUCT PROFILE (judge product claims against this — flag anything the rep said that contradicts it):\n' + JSON.stringify(truth) + '\n' : '')
         + '\nTRANSCRIPT:\n' + convo
@@ -543,7 +560,9 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   }
 
   async function startCall(emp, company, callLogs=[]) {
-    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '' });
+    let memoryBlock = '';
+    try { memoryBlock = buildMemoryBlock(await fetchPersonaMemory(emp.id)); } catch (e) {}
+    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '', memoryBlock });
   }
 
   async function runAgentTest() {
@@ -717,12 +736,14 @@ function sendEmail(emp, company, subject, body) {
         emailCount: newEmailCount,
       }
     }));
+    remember(emp.id, 'email_received', simDay, 'The rep emailed you. Subject: "' + (subject || '(no subject)') + '". It said: "' + (body || '').slice(0, 250) + '"');
   }
 
   function sendLinkedinConnect(emp) {
     const delay = linkedinDelay[emp.seniority] ?? 2;
     const replyDay = simDay + delay;
     setState(prev => ({ ...prev, [emp.id]: { ...prev[emp.id], linkedinStatus:"pending", linkedinReplyDay: replyDay } }));
+    remember(emp.id, 'connect_request', simDay, 'The rep sent you a ProLink connection request.');
   }
 
   function initiateCall(emp) {
@@ -758,6 +779,7 @@ function sendEmail(emp, company, subject, body) {
           outcome = "voicemail";
           const vmLines = callVoicemailLines[emp.seniority] || callVoicemailLines["manager"];
           line = vmLines[emp.id % vmLines.length].replace("[name]", emp.first);
+          remember(emp.id, 'missed_call', simDay, 'You missed a call from the rep; it went to your voicemail.');
         }
       }
       setCallOutcome(outcome);
@@ -803,6 +825,7 @@ function sendEmail(emp, company, subject, body) {
         emailThread: [...prev[emp.id].emailThread, { from:"prospect", body: reply, day: simDay }],
       }
     }));
+    remember(emp.id, accepted ? 'meeting_agreed' : 'meeting_declined', simDay, accepted ? 'The rep asked for a meeting and you agreed. You replied: "' + reply.slice(0, 200) + '"' : 'The rep asked for a meeting and you declined. You replied: "' + reply.slice(0, 200) + '"');
   }
 
   function sendLinkedinMsg(emp, msg) {
@@ -815,6 +838,7 @@ function sendEmail(emp, company, subject, body) {
       setState(prev => ({ ...prev, [emp.id]: { ...prev[emp.id], linkedinMsgs: [...prev[emp.id].linkedinMsgs, { from:"rep", text:msg, day:simDay }, { from:"prospect", text:reply, day:simDay }] } }));
     }, 800);
     setState(prev => ({ ...prev, [emp.id]: { ...prev[emp.id], linkedinMsgs: newMsgs } }));
+    remember(emp.id, 'dm_exchange', simDay, 'ProLink DM from the rep: "' + msg.slice(0, 200) + '" — you replied: "' + reply.slice(0, 200) + '"');
   }
 
   //  INBOX DATA 
@@ -936,6 +960,7 @@ function sendEmail(emp, company, subject, body) {
     const dd=generateDiscoveryData();
     const saved={id:uuid(),persona_id:bookingPersona.id,persona_name:bookingPersona.first+' '+bookingPersona.last,company_id:co.id,company_name:co.name,scheduled_at:new Date(bookingDateTime).toISOString(),call_type:bookingCallType,discovery_data:dd,deal_id:null,booked_by:'rep',status:'scheduled'};
     setScheduledCalls(prev=>{const next=[...prev,saved];triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
+    remember(bookingPersona.id,'meeting_booked',simDay,'A '+bookingCallType+' call with the rep is on your calendar for '+new Date(bookingDateTime).toLocaleString()+'.');
     setShowBookingModal(false);
   };
 
@@ -1111,9 +1136,9 @@ function getPersonaPosts(emp,company){
                   </div>
                 )}
                 {!goldStandard&&<div style={{marginBottom:12,fontSize:12,color:'#4A6B8A'}}>Grading unavailable: no company gold standard configured yet (Settings → Sales Enablement).</div>}
-                {goldStandard&&!apiKey&&<div style={{marginBottom:12,fontSize:12,color:'#4A6B8A'}}>Grading unavailable: add your OpenAI API key in Settings first.</div>}
+                {goldStandard&&!llmCfg.key&&<div style={{marginBottom:12,fontSize:12,color:'#4A6B8A'}}>Grading unavailable: add a grading AI key in Settings — Google Gemini and Groq have free tiers.</div>}
                 <div style={{display:'flex',gap:12}}>
-                  {goldStandard&&apiKey&&<button onClick={handleGradeSetup} disabled={gradingBusy||!prodForm.name.trim()} style={{padding:'12px 22px',borderRadius:8,background:'transparent',color:gradingBusy?'#4A6B8A':'#F59E0B',border:'1px solid '+(gradingBusy?'#1B3154':'#F59E0B'),fontWeight:700,fontSize:14,cursor:gradingBusy?'wait':'pointer'}}>{gradingBusy?'Grading…':'Grade My Knowledge'}</button>}
+                  {goldStandard&&llmCfg.key&&<button onClick={handleGradeSetup} disabled={gradingBusy||!prodForm.name.trim()} style={{padding:'12px 22px',borderRadius:8,background:'transparent',color:gradingBusy?'#4A6B8A':'#F59E0B',border:'1px solid '+(gradingBusy?'#1B3154':'#F59E0B'),fontWeight:700,fontSize:14,cursor:gradingBusy?'wait':'pointer'}}>{gradingBusy?'Grading…':'Grade My Knowledge'}</button>}
                   <button onClick={handleSaveProd} disabled={prodSaving||!prodForm.name.trim()} style={{padding:'12px 28px',borderRadius:8,border:'none',background:prodSaving||!prodForm.name.trim()?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:prodSaving||!prodForm.name.trim()?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:prodSaving||!prodForm.name.trim()?'not-allowed':'pointer'}}>{prodSaving?'Saving…':'Save & Finish'}</button>
                 </div>
               </div>
@@ -1420,6 +1445,7 @@ function getPersonaPosts(emp,company){
             {navBtn("scheduled","Calls","",scheduledCalls.filter(c=>c.status==='upcoming').length)}
             {navBtn("inbox","Inbox","",personaMessages.filter(m=>!m.is_read).length)}
             {navBtn("agentlab","Agent Lab","",0)}
+            {navBtn("coach","Coach","",0)}
                     </div>
         </div>
         <div className="flex items-center gap-3">
@@ -1768,6 +1794,7 @@ function getPersonaPosts(emp,company){
                   const reply = await generateAiEmailReply(selEmp, company, lastSent.subject || "Your email", lastSent.body);
                   if (reply) {
                     setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));
+                    remember(selEmp.id, 'email_replied', simDay, 'You replied to the rep\'s email ("' + (lastSent.subject || 'no subject') + '"). You wrote: "' + reply.slice(0, 250) + '"');
                   }
                 }} disabled={aiEmailLoading[selEmp.id]} className="ml-2 bg-[#0EA5E9] hover:bg-[#0284C7] disabled:opacity-50 text-white text-xs px-3 py-1 rounded-full transition-colors">
                   {aiEmailLoading[selEmp.id] ? " Writing..." : " AI Reply Now"}
@@ -2430,6 +2457,20 @@ function getPersonaPosts(emp,company){
               />
             </div>
             <div className="mb-5 pt-4 border-t border-[#1E3A5F]">
+              <label className="block text-xs font-semibold text-[#7A9CC4] uppercase tracking-wider mb-2">Grading & Coaching AI</label>
+              <p className="text-xs text-[#4A6B8A] mb-2">Powers knowledge grading, call scoring, and the Coach. Gemini and Groq have free tiers — ideal for testing.</p>
+              <select id="settings-llm-provider" defaultValue={llmCfg.provider} className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-lg px-3 py-2 text-sm text-[#D4E5FF] mb-2 focus:outline-none focus:border-[#0EA5E9]">
+                {Object.entries(LLM_PROVIDERS).map(([id,p])=><option key={id} value={id}>{p.label}</option>)}
+              </select>
+              <input
+                type="password"
+                className="w-full bg-[#0A1628] border border-[#1E3A5F] rounded-lg px-3 py-2 text-sm text-[#D4E5FF] placeholder-[#4A6B8A] focus:outline-none focus:border-[#0EA5E9]"
+                placeholder={(LLM_PROVIDERS[llmCfg.provider]||{}).keyHint||'API key'}
+                defaultValue={localStorage.getItem('repforge_llm_key')||''}
+                id="settings-llm-key-input"
+              />
+            </div>
+            <div className="mb-5 pt-4 border-t border-[#1E3A5F]">
               <label className="block text-xs font-semibold text-[#7A9CC4] uppercase tracking-wider mb-2">Sales Enablement (Admin)</label>
               <p className="text-xs text-[#4A6B8A] mb-2">The gold standard is the company-approved product profile. AI prospects react to it, and trainee setups are graded against it.</p>
               <button onClick={()=>{setShowSettings(false);openProdSetup('gold');}} className="w-full text-xs px-3 py-2 rounded-lg font-semibold border border-amber-700 text-amber-400 hover:bg-amber-950 transition-colors">{goldStandard?'Edit Gold Standard Product Profile':'Create Gold Standard Product Profile'}</button>
@@ -2440,12 +2481,74 @@ function getPersonaPosts(emp,company){
                 const val = document.getElementById('settings-api-key-input').value.trim();
                 localStorage.setItem('repforge_openai_key', val);
                 setApiKey(val);
+                const prov = document.getElementById('settings-llm-provider').value;
+                const lkey = document.getElementById('settings-llm-key-input').value.trim();
+                localStorage.setItem('repforge_llm_provider', prov);
+                if (lkey) localStorage.setItem('repforge_llm_key', lkey); else localStorage.removeItem('repforge_llm_key');
+                setLlmCfg(getLlmConfig());
                 setShowSettings(false);
               }} className="px-4 py-2 rounded-lg text-sm bg-[#0EA5E9] text-white hover:bg-[#0284C7] font-medium transition-colors">Save</button>
             </div>
           </div>
         </div>
       )}
+
+  {tab==='coach'&&(
+    <div style={{padding:32,maxWidth:900,margin:'0 auto'}}>
+      <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',flexWrap:'wrap',gap:12,marginBottom:20}}>
+        <div>
+          <h2 style={{color:'#f1f5f9',margin:'0 0 6px',fontSize:22,fontWeight:700}}>Your Coach</h2>
+          <p style={{color:'#4A6B8A',margin:0,fontSize:14}}>Reviews everything — your product knowledge, every scored call, activity, and pipeline — and tells you what to work on.</p>
+        </div>
+        <button onClick={handleRunCoach} disabled={coachBusy||!llmCfg.key} style={{padding:'10px 22px',borderRadius:8,border:'none',background:coachBusy||!llmCfg.key?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:coachBusy||!llmCfg.key?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:coachBusy?'wait':!llmCfg.key?'not-allowed':'pointer'}}>{coachBusy?'Reviewing…':'Run Coaching Review'}</button>
+      </div>
+      {!llmCfg.key&&<div style={{padding:'12px 16px',background:'#0D1525',border:'1px solid #1B3154',borderRadius:10,fontSize:13,color:'#7A9CC4'}}>Add a grading AI key in Settings to enable the Coach — Google Gemini and Groq both have free tiers.</div>}
+      {coachReport&&(
+        <div style={{background:'#0D1525',border:'1px solid #1B3154',borderRadius:12,padding:'22px 24px'}}>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:6}}>
+            <span style={{fontSize:15,fontWeight:800,color:'#F8FAFC'}}>Coaching Review — Day {simDay}</span>
+            <span style={{fontSize:26,fontWeight:800,color:coachReport.overall>=80?'#16a34a':coachReport.overall>=60?'#F59E0B':'#ef4444'}}>{coachReport.grade} <span style={{fontSize:13,color:'#4A6B8A',fontWeight:600}}>{coachReport.overall}/100</span></span>
+          </div>
+          <p style={{margin:'0 0 18px',fontSize:14,color:'#D4E5FF',fontStyle:'italic'}}>{coachReport.headline}</p>
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:16}}>
+            <div style={{background:'rgba(22,163,74,0.06)',border:'1px solid #14532d',borderRadius:10,padding:'12px 16px'}}>
+              <div style={{fontSize:11,fontWeight:800,color:'#10B981',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Wins</div>
+              <ul style={{margin:0,paddingLeft:16,fontSize:13,color:'#D4E5FF',lineHeight:1.6}}>{(coachReport.wins||[]).map((w,i)=><li key={i}>{w}</li>)}</ul>
+            </div>
+            <div style={{background:'rgba(239,68,68,0.06)',border:'1px solid #7f1d1d',borderRadius:10,padding:'12px 16px'}}>
+              <div style={{fontSize:11,fontWeight:800,color:'#f87171',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Misses</div>
+              <ul style={{margin:0,paddingLeft:16,fontSize:13,color:'#D4E5FF',lineHeight:1.6}}>{(coachReport.misses||[]).map((m,i)=><li key={i}>{m}</li>)}</ul>
+            </div>
+          </div>
+          {(coachReport.trends||[]).length>0&&<div style={{marginBottom:16}}>
+            <div style={{fontSize:11,fontWeight:800,color:'#38BDF8',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:6}}>Trends</div>
+            <ul style={{margin:0,paddingLeft:16,fontSize:13,color:'#7A9CC4',lineHeight:1.6}}>{coachReport.trends.map((t,i)=><li key={i}>{t}</li>)}</ul>
+          </div>}
+          {coachReport.knowledge_note&&<div style={{marginBottom:16,padding:'10px 14px',background:'rgba(245,158,11,0.06)',border:'1px solid #78350f',borderRadius:8,fontSize:13,color:'#FCD34D'}}>{coachReport.knowledge_note}</div>}
+          {(coachReport.drills||[]).length>0&&<div>
+            <div style={{fontSize:11,fontWeight:800,color:'#a78bfa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Do This Next</div>
+            {coachReport.drills.map((d,i)=>(
+              <div key={i} style={{display:'flex',gap:10,padding:'10px 14px',background:'#0A1020',border:'1px solid #1B3154',borderRadius:8,marginBottom:8}}>
+                <span style={{color:'#a78bfa',fontWeight:800,fontSize:13}}>{i+1}.</span>
+                <div><div style={{fontSize:13,color:'#F8FAFC',fontWeight:600}}>{d.drill}</div><div style={{fontSize:12,color:'#4A6B8A',marginTop:2}}>{d.why}</div></div>
+              </div>
+            ))}
+          </div>}
+        </div>
+      )}
+      {!coachReport&&llmCfg.key&&!coachBusy&&<div style={{padding:'40px 20px',textAlign:'center',color:'#4A6B8A',fontSize:14,background:'#0D1525',border:'1px solid #1B3154',borderRadius:12}}>No review yet. Make some calls, send some emails, then run your first coaching review.</div>}
+      {(()=>{const scored=[];(deals||[]).forEach(d=>(d.callLogs||[]).forEach(l=>{if(l.ai_scores)scored.push({when:l.called_at,persona:d.persona_name,company:d.company_name,grade:l.ai_scores.grade,overall:l.ai_scores.overall});}));scored.sort((a,b)=>new Date(b.when)-new Date(a.when));return scored.length>0&&(
+        <div style={{marginTop:20,background:'#0D1525',border:'1px solid #1B3154',borderRadius:12,padding:'18px 22px'}}>
+          <div style={{fontSize:13,fontWeight:800,color:'#F8FAFC',marginBottom:12}}>Scored Calls</div>
+          {scored.slice(0,10).map((s,i)=>(
+            <div key={i} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'8px 0',borderBottom:i<Math.min(scored.length,10)-1?'1px solid #111F36':'none'}}>
+              <span style={{fontSize:13,color:'#D4E5FF'}}>{s.persona} <span style={{color:'#4A6B8A'}}>· {s.company}</span></span>
+              <span style={{fontSize:13,fontWeight:700,color:s.overall>=80?'#16a34a':s.overall>=60?'#F59E0B':'#ef4444'}}>{s.grade} <span style={{color:'#4A6B8A',fontWeight:500}}>{s.overall}/100</span></span>
+            </div>
+          ))}
+        </div>);})()}
+    </div>
+  )}
 
   {tab==='agentlab'&&(
   <div style={{padding:32,maxWidth:1100,margin:'0 auto'}}>
