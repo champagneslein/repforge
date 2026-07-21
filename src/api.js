@@ -48,3 +48,33 @@ export async function gptJson(apiKey, prompt, maxTokens = 1000) {
   const t = (await r.json()).choices?.[0]?.message?.content || '{}';
   return JSON.parse(t);
 }
+
+// Grading & coaching LLM — provider-agnostic via OpenAI-compatible endpoints.
+// Google Gemini and Groq both have free tiers, ideal for testing.
+export const LLM_PROVIDERS = {
+  gemini: { label: 'Google Gemini (free tier)', base: 'https://generativelanguage.googleapis.com/v1beta/openai', model: 'gemini-2.5-flash', keyHint: 'AIza… — aistudio.google.com/apikey' },
+  groq:   { label: 'Groq / Llama (free tier)',  base: 'https://api.groq.com/openai/v1',                          model: 'llama-3.3-70b-versatile', keyHint: 'gsk_… — console.groq.com/keys' },
+  openai: { label: 'OpenAI (paid)',             base: 'https://api.openai.com/v1',                               model: 'gpt-4o', keyHint: 'sk-…' },
+};
+
+export function getLlmConfig() {
+  const provider = localStorage.getItem('repforge_llm_provider') || 'openai';
+  const preset = LLM_PROVIDERS[provider] || LLM_PROVIDERS.openai;
+  // Fall back to the legacy OpenAI key so existing setups keep working.
+  const key = localStorage.getItem('repforge_llm_key') || (provider === 'openai' ? localStorage.getItem('repforge_openai_key') || '' : '');
+  return { provider, key, base: preset.base, model: preset.model };
+}
+
+export async function llmJson(prompt, maxTokens = 1000) {
+  const { base, model, key } = getLlmConfig();
+  if (!key) throw new Error('No grading AI key configured (Settings)');
+  const r = await fetch(base + '/chat/completions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+    body: JSON.stringify({ model, messages: [{ role: 'user', content: prompt }], max_tokens: maxTokens, temperature: 0.2, response_format: { type: 'json_object' } }),
+  });
+  const t = (await r.json()).choices?.[0]?.message?.content || '{}';
+  // Some models wrap JSON in markdown fences despite response_format.
+  const m = t.match(/\{[\s\S]*\}/);
+  return JSON.parse(m ? m[0] : t);
+}
