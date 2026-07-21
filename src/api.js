@@ -52,16 +52,22 @@ export async function gptJson(apiKey, prompt, maxTokens = 1000) {
 // Grading & coaching LLM — provider-agnostic via OpenAI-compatible endpoints.
 // Google Gemini and Groq both have free tiers, ideal for testing.
 export const LLM_PROVIDERS = {
-  gemini: { label: 'Google Gemini (free tier)', base: 'https://generativelanguage.googleapis.com/v1beta/openai', model: 'gemini-2.5-flash', keyHint: 'AIza… — aistudio.google.com/apikey' },
+  gemini: { label: 'Google Gemini (free tier)', base: 'https://generativelanguage.googleapis.com/v1beta/openai', model: 'gemini-flash-latest', keyHint: 'aistudio.google.com/apikey' },
   groq:   { label: 'Groq / Llama (free tier)',  base: 'https://api.groq.com/openai/v1',                          model: 'llama-3.3-70b-versatile', keyHint: 'gsk_… — console.groq.com/keys' },
   openai: { label: 'OpenAI (paid)',             base: 'https://api.openai.com/v1',                               model: 'gpt-4o', keyHint: 'sk-…' },
 };
 
+// Build-time default key (from gitignored .env) so dev environments work
+// with zero Settings configuration.
+const ENV_GEMINI_KEY = process.env.REACT_APP_GEMINI_KEY || '';
+
 export function getLlmConfig() {
-  const provider = localStorage.getItem('repforge_llm_provider') || 'openai';
+  const storedProvider = localStorage.getItem('repforge_llm_provider');
+  const provider = storedProvider || (ENV_GEMINI_KEY ? 'gemini' : 'openai');
   const preset = LLM_PROVIDERS[provider] || LLM_PROVIDERS.openai;
-  // Fall back to the legacy OpenAI key so existing setups keep working.
-  const key = localStorage.getItem('repforge_llm_key') || (provider === 'openai' ? localStorage.getItem('repforge_openai_key') || '' : '');
+  const key = localStorage.getItem('repforge_llm_key')
+    || (provider === 'gemini' ? ENV_GEMINI_KEY : '')
+    || (provider === 'openai' ? localStorage.getItem('repforge_openai_key') || '' : '');
   return { provider, key, base: preset.base, model: preset.model };
 }
 
