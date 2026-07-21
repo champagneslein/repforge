@@ -41,7 +41,7 @@ export function useVoiceCall({ agentId, getToken, onCallEnd }) {
     onError: (err) => { console.error('[RepForge] ElevenLabs error:', err); setActiveCallId(null); setCallStatus('idle'); },
   });
 
-  const startCall = useCallback(async ({ emp, company, callLogs = [], productCtx = '', discoveryBlock = '' }) => {
+  const startCall = useCallback(async ({ emp, company, callLogs = [], productCtx = '', discoveryBlock = '', memoryBlock = '' }) => {
     setActiveCallId(emp.id);
     setCallStatus('connecting');
     window._callTranscript = [];
@@ -54,7 +54,7 @@ export function useVoiceCall({ agentId, getToken, onCallEnd }) {
       await conversation.startSession({
         ...sessionConfig,
         overrides: {
-          agent: { prompt: { prompt: buildPersonaPrompt(emp, company, callLogs, productCtx, discoveryBlock) }, firstMessage: personaFirstMessage(emp) },
+          agent: { prompt: { prompt: buildPersonaPrompt(emp, company, callLogs, productCtx, discoveryBlock, memoryBlock) }, firstMessage: personaFirstMessage(emp) },
           tts: { voiceId: selectVoice(emp.first, emp.seniority) },
         },
       });

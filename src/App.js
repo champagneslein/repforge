@@ -4,6 +4,7 @@ import { API_SCOPES } from './authConfig';
 import { apiGet, apiPost, apiPut, loadProgress, saveProgress, loadGoldStandard, saveGoldStandard, gptJson } from './api';
 import { PRODUCT_FIELDS, formToProduct, productToForm, productContext } from './product';
 import { useVoiceCall, ensureMicPermission } from './call/useVoiceCall';
+import { fetchPersonaMemory, remember, buildMemoryBlock } from './memory';
 import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
@@ -518,6 +519,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
         const co = window._activeCompanyName || '';
         const summary = rep + '-turn call with ' + nm + (co ? ' at ' + co : '') + '. Rep ' + rep + ' turns, prospect ' + pros + ' turns.' + (found.length ? ' Discussed: ' + found.join(', ') : ' No major objections.');
         setPostCallSummary(summary); setPostCallObjs(found.join('\n')); setPostCallAi(null); setShowPostCall(true);
+        if (window._activePersonaId && rep + pros > 0) remember(window._activePersonaId, 'phone_call', simDay, 'You spoke with the rep on the phone. ' + (found.length ? 'Topics that came up: ' + found.join(', ') + '. ' : '') + (t.slice(-2).map(m => (m.role === 'user' ? 'Rep said: ' : 'You said: ') + '"' + (m.text || '').slice(0, 150) + '"').join(' ')));
         analyzeCallTranscript(t);
       }
     },
@@ -543,7 +545,9 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   }
 
   async function startCall(emp, company, callLogs=[]) {
-    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '' });
+    let memoryBlock = '';
+    try { memoryBlock = buildMemoryBlock(await fetchPersonaMemory(emp.id)); } catch (e) {}
+    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '', memoryBlock });
   }
 
   async function runAgentTest() {
@@ -717,12 +721,14 @@ function sendEmail(emp, company, subject, body) {
         emailCount: newEmailCount,
       }
     }));
+    remember(emp.id, 'email_received', simDay, 'The rep emailed you. Subject: "' + (subject || '(no subject)') + '". It said: "' + (body || '').slice(0, 250) + '"');
   }
 
   function sendLinkedinConnect(emp) {
     const delay = linkedinDelay[emp.seniority] ?? 2;
     const replyDay = simDay + delay;
     setState(prev => ({ ...prev, [emp.id]: { ...prev[emp.id], linkedinStatus:"pending", linkedinReplyDay: replyDay } }));
+    remember(emp.id, 'connect_request', simDay, 'The rep sent you a ProLink connection request.');
   }
 
   function initiateCall(emp) {
@@ -758,6 +764,7 @@ function sendEmail(emp, company, subject, body) {
           outcome = "voicemail";
           const vmLines = callVoicemailLines[emp.seniority] || callVoicemailLines["manager"];
           line = vmLines[emp.id % vmLines.length].replace("[name]", emp.first);
+          remember(emp.id, 'missed_call', simDay, 'You missed a call from the rep; it went to your voicemail.');
         }
       }
       setCallOutcome(outcome);
@@ -803,6 +810,7 @@ function sendEmail(emp, company, subject, body) {
         emailThread: [...prev[emp.id].emailThread, { from:"prospect", body: reply, day: simDay }],
       }
     }));
+    remember(emp.id, accepted ? 'meeting_agreed' : 'meeting_declined', simDay, accepted ? 'The rep asked for a meeting and you agreed. You replied: "' + reply.slice(0, 200) + '"' : 'The rep asked for a meeting and you declined. You replied: "' + reply.slice(0, 200) + '"');
   }
 
   function sendLinkedinMsg(emp, msg) {
@@ -815,6 +823,7 @@ function sendEmail(emp, company, subject, body) {
       setState(prev => ({ ...prev, [emp.id]: { ...prev[emp.id], linkedinMsgs: [...prev[emp.id].linkedinMsgs, { from:"rep", text:msg, day:simDay }, { from:"prospect", text:reply, day:simDay }] } }));
     }, 800);
     setState(prev => ({ ...prev, [emp.id]: { ...prev[emp.id], linkedinMsgs: newMsgs } }));
+    remember(emp.id, 'dm_exchange', simDay, 'ProLink DM from the rep: "' + msg.slice(0, 200) + '" — you replied: "' + reply.slice(0, 200) + '"');
   }
 
   //  INBOX DATA 
@@ -936,6 +945,7 @@ function sendEmail(emp, company, subject, body) {
     const dd=generateDiscoveryData();
     const saved={id:uuid(),persona_id:bookingPersona.id,persona_name:bookingPersona.first+' '+bookingPersona.last,company_id:co.id,company_name:co.name,scheduled_at:new Date(bookingDateTime).toISOString(),call_type:bookingCallType,discovery_data:dd,deal_id:null,booked_by:'rep',status:'scheduled'};
     setScheduledCalls(prev=>{const next=[...prev,saved];triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
+    remember(bookingPersona.id,'meeting_booked',simDay,'A '+bookingCallType+' call with the rep is on your calendar for '+new Date(bookingDateTime).toLocaleString()+'.');
     setShowBookingModal(false);
   };
 
@@ -1768,6 +1778,7 @@ function getPersonaPosts(emp,company){
                   const reply = await generateAiEmailReply(selEmp, company, lastSent.subject || "Your email", lastSent.body);
                   if (reply) {
                     setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));
+                    remember(selEmp.id, 'email_replied', simDay, 'You replied to the rep\'s email ("' + (lastSent.subject || 'no subject') + '"). You wrote: "' + reply.slice(0, 250) + '"');
                   }
                 }} disabled={aiEmailLoading[selEmp.id]} className="ml-2 bg-[#0EA5E9] hover:bg-[#0284C7] disabled:opacity-50 text-white text-xs px-3 py-1 rounded-full transition-colors">
                   {aiEmailLoading[selEmp.id] ? " Writing..." : " AI Reply Now"}
