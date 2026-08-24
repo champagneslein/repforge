@@ -7,7 +7,7 @@ import { PRODUCT_FIELDS, formToProduct, productToForm, productContext } from './
 import { useVoiceCall, ensureMicPermission } from './call/useVoiceCall';
 import { fetchPersonaMemory, remember, buildMemoryBlock } from './memory';
 import { buildWorldContext } from './call/world';
-import { todayIso, dateForDay, dayForDate, formatSimDate, relativeDayLabel } from './calendar';
+import { todayIso, dateForDay, dayForDate, formatSimDate, formatLongDate, relativeDayLabel } from './calendar';
 import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
@@ -477,11 +477,16 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   // Auto-save progress on state changes
   React.useEffect(()=>{if(authTok&&user)triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,personaMessages);},[state,simDay,product,deals,scheduledCalls,personaMessages]);
   // Find or create the deal for a persona and prime the call context globals.
-  const ensureDealForCall=(emp,company)=>{
+  const ensureDealForCall=(emp,company,dayOverride)=>{
+    const day=dayOverride||simDay;
+    // Both call paths run through here, so this is where the effective sim day
+    // for the call is pinned — a cold call resets it, a time-travelled
+    // scheduled call sets it forward.
+    window._simDayOverride=day;
     const personaName=(emp.first||'')+' '+(emp.last||'');
     window._callTranscript=[];window._activePersonaName=personaName;window._activeCompanyName=company.name||'';window._activePersonaId=emp.id||'';
     let deal=deals.find(d=>d.persona_id===emp.id&&d.company_id===(company.id||''));
-    if(!deal){deal={id:uuid(),persona_id:emp.id,persona_name:personaName,company_id:company.id||'',company_name:company.name||'',stage:'Discovery',updated_at:new Date().toISOString(),callLogs:[]};setDeals(prev=>{const next=[...prev,deal];triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});}
+    if(!deal){deal={id:uuid(),persona_id:emp.id,persona_name:personaName,company_id:company.id||'',company_name:company.name||'',stage:'Discovery',updated_at:new Date().toISOString(),callLogs:[]};setDeals(prev=>{const next=[...prev,deal];triggerProgressSave(authTok,state,day,product,next,scheduledCalls,personaMessages);return next;});}
     window._activeDealId=deal.id||null;
     const dd=generateDiscoveryData();
     window._discoveryBlock=`\n\n## MEDDIC Context (Hidden from Prospect)\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nDecision Process: ${dd.decision_process}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n`;
@@ -489,7 +494,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   };
   const handlePostCallSave=async()=>{
     if(!window._activeDealId)return;
-    const callLog={called_at:new Date().toISOString(),transcript:window._callTranscript||[],ai_summary:postCallSummary,rep_notes:postCallNotes,objections:postCallObjs.split('\n').filter(Boolean),interest_score_before:5,interest_score_after:postCallScore,ai_scores:postCallAi||null};
+    const callLog={called_at:new Date().toISOString(),sim_day:window._simDayOverride||simDay,transcript:window._callTranscript||[],ai_summary:postCallSummary,rep_notes:postCallNotes,objections:postCallObjs.split('\n').filter(Boolean),interest_score_before:5,interest_score_after:postCallScore,ai_scores:postCallAi||null};
     setDeals(prev=>{const next=prev.map(d=>{if(d.id!==window._activeDealId)return d;return{...d,callLogs:[callLog,...(d.callLogs||[])].slice(0,5),updated_at:new Date().toISOString()};});triggerProgressSave(authTok,state,simDay,product,next,scheduledCalls,personaMessages);return next;});
     setShowPostCall(false);setPostCallSummary('');setPostCallNotes('');setPostCallScore(5);setPostCallObjs('');setPostCallAi(null);window._activeDealId=null;
   };
@@ -567,10 +572,14 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   }
 
   async function startCall(emp, company, callLogs=[]) {
+    // The persona must run on the simulated calendar, not the model's own
+    // idea of today.
+    const day = window._simDayOverride || simDay;
     let memoryBlock = '';
-    try { memoryBlock = buildMemoryBlock(await fetchPersonaMemory(emp.id)); } catch (e) {}
+    try { memoryBlock = buildMemoryBlock(await fetchPersonaMemory(emp.id), day); } catch (e) {}
     const worldCtx = buildWorldContext(emp, company, allEmployees[company?.id] || []);
-    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '', memoryBlock, worldCtx });
+    const dateCtx = { label: formatLongDate(dateForDay(simStart, day)), simDay: day };
+    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '', memoryBlock, worldCtx, dateCtx });
   }
 
   async function runAgentTest() {
@@ -999,7 +1008,7 @@ function sendEmail(emp, company, subject, body) {
     // discovery/demo framing on top.
     const sessEmp0=allEmps.find(e=>e.id===sc.persona_id);
     const sessCo0=companies.find(c=>c.id===sc.company_id)||{name:sc.company_name,id:sc.company_id};
-    const deal=sessEmp0?ensureDealForCall(sessEmp0,sessCo0):null;
+    const deal=sessEmp0?ensureDealForCall(sessEmp0,sessCo0,day):null;
     window._discoveryBlock=sc.call_type==='demo'
       ?`\n\n## Demo Call Context (Hidden from Prospect)\nYou already had a discovery call. You understand the problem. You are now watching a product demo. Stay in character as ${sc.persona_name} from ${sc.company_name}.\n\nMEDDIC Summary:\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n\n## Your Demo Behavior\nYou are a skeptical but genuinely interested prospect. During the demo MUST:\n- Raise 3-4 pointed objections (pricing, implementation time, comparison to ${dd.competition})\n- Ask at least one feature question tied to your pain: ${dd.pain}\n- If impressed follow with "but what about..."\n- Towards the end ask about next steps only if convinced\n- Do NOT ask basic discovery questions`
       :`\n\n## MEDDIC Context (Hidden from Prospect)\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nDecision Process: ${dd.decision_process}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n`;

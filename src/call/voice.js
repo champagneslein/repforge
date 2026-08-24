@@ -20,13 +20,18 @@ const SENIORITY_GUIDES = {
   'ic': "You are an individual contributor — smart, curious, direct. You don't have budget authority but you're often the person who finds tools and champions them internally. You're willing to talk but you'll quickly say if something isn't relevant to you. You speak casually and honestly."
 };
 
-export function buildPersonaPrompt(emp, company, callLogs = [], productCtx = '', discoveryBlock = '', memoryBlock = '', worldCtx = '') {
+export function buildPersonaPrompt(emp, company, callLogs = [], productCtx = '', discoveryBlock = '', memoryBlock = '', worldCtx = '', dateCtx = { label: '', simDay: 0 }) {
   const sysPrompt = 'You are ' + emp.first + ' ' + emp.last + ', ' + emp.title + ' at ' + (company?.name || 'your company') + '. ' + (emp.bio || '') + (emp.personality ? ' Personality: ' + emp.personality + '.' : '') + ' ' + (SENIORITY_GUIDES[emp.seniority] || SENIORITY_GUIDES.manager) + ' IMPORTANT: You are a real human on a live phone call — not an assistant, not a chatbot. Speak the way a real professional talks: use contractions, occasional filler words like uh or look or honestly, show impatience or mild curiosity depending on context. Keep every response to 1-3 SHORT sentences. Never use formal phrases like "Certainly" or "Great question" or "Absolutely". Never be immediately enthusiastic about a product. You were in the middle of something when this call came in.';
   const dealHistory = callLogs && callLogs.length > 0
     ? '\n\n--- PREVIOUS INTERACTIONS ---\nYou have spoken with this rep before. Remember these naturally:\n'
       + callLogs.map((log, i) => {
-          const daysAgo = Math.round((Date.now() - new Date(log.called_at).getTime()) / 86400000);
-          return 'Call ' + (callLogs.length - i) + ' (' + daysAgo + ' days ago): ' + (log.ai_summary || log.rep_notes || 'No summary.')
+          // Prefer simulated elapsed time; fall back to wall-clock for logs
+          // recorded before sim_day was captured.
+          const daysAgo = (typeof log.sim_day === 'number' && dateCtx.simDay)
+            ? Math.max(0, dateCtx.simDay - log.sim_day)
+            : Math.round((Date.now() - new Date(log.called_at).getTime()) / 86400000);
+          const when = daysAgo === 0 ? 'earlier today' : daysAgo === 1 ? 'yesterday' : daysAgo + ' days ago';
+          return 'Call ' + (callLogs.length - i) + ' (' + when + '): ' + (log.ai_summary || log.rep_notes || 'No summary.')
             + (log.objections && log.objections.length ? ' Objections: ' + log.objections.join(', ') + '.' : '');
         }).join('\n')
       + '\nYour current interest: ' + (callLogs[0]?.interest_score_after || 5) + '/10.'
@@ -36,7 +41,14 @@ export function buildPersonaPrompt(emp, company, callLogs = [], productCtx = '',
     + 'THE CALLER is an external salesperson from a different company. They do NOT work at ' + (company?.name || 'your company') + '. They are calling to sell you something.\n'
     + 'You are the buyer on this call. You are never the seller. Never pitch anything to the caller, never try to sell them your own company\'s products or services, and never behave as if you work for the company whose product they are pitching.\n'
     + 'If the caller seems confused about who you are, who they are, or what your company does, correct them plainly — that is exactly what a real person would do.';
-  return sysPrompt + callerBlock + worldCtx + productCtx + dealHistory + memoryBlock + discoveryBlock;
+  const dateBlock = dateCtx.label
+    ? '\n\n--- TODAY\'S DATE ---\n'
+      + 'Today is ' + dateCtx.label + '. That is the current date, full stop.\n'
+      + 'You may have an internal sense that today is some other date. It is not — disregard it completely. '
+      + 'Every reference you make to dates, days of the week, "next week", "end of the month", quarters, deadlines and timelines must be worked out from today being ' + dateCtx.label + '.\n'
+      + 'If the caller proposes a time or date, reason about it relative to today as defined here.'
+    : '';
+  return sysPrompt + dateBlock + callerBlock + worldCtx + productCtx + dealHistory + memoryBlock + discoveryBlock;
 }
 
 export function personaFirstMessage(emp) {
