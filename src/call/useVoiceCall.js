@@ -29,7 +29,14 @@ export function useVoiceCall({ agentId, getToken, onCallEnd }) {
 
   const conversation = useConversation({
     onConnect: () => setCallStatus('active'),
-    onDisconnect: () => {
+    onDisconnect: (details) => {
+      // details.reason: "user" (we hung up), "agent" (ElevenLabs ended it —
+      // check closeCode/closeReason), or "error" (network/session failure —
+      // check message). Logged so real drop causes are diagnosable instead
+      // of guessed at.
+      if (details?.reason !== 'user') {
+        console.warn('[RepForge] Call ended unexpectedly:', details?.reason, details?.closeCode, details?.closeReason || details?.message);
+      }
       setActiveCallId(null); setCallStatus('idle');
       if (onCallEnd) onCallEnd(window._callTranscript || []);
     },
