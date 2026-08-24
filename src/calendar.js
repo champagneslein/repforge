@@ -38,6 +38,12 @@ export function formatSimDate(date, opts = {}) {
   });
 }
 
+// Business days only — prospects don't email you on a Sunday.
+export function isWeekday(date) {
+  const d = new Date(date).getDay();
+  return d !== 0 && d !== 6;
+}
+
 // Long form used when telling an AI persona what today's date is.
 export function formatLongDate(date) {
   return new Date(date).toLocaleDateString('en-GB', {
