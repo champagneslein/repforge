@@ -690,7 +690,10 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
 // resolves everything that came due in between, because the checks below are
 // "due on or before newDay" rather than "due exactly on newDay".
 async function advanceDay(targetDay) {
-  const newDay = Math.max(simDay + 1, targetDay || 0);
+  // Guard against being used directly as an onClick handler, where React
+  // would pass a click event in as targetDay.
+  const target = typeof targetDay === 'number' && isFinite(targetDay) ? targetDay : 0;
+  const newDay = Math.max(simDay + 1, target);
   setSimDay(newDay);
   const emailTasks = Object.entries(state)
     .filter(([, cs]) => newDay >= cs.emailReplyDay && cs.emailStatus === 'sent')
@@ -1480,7 +1483,7 @@ function getPersonaPosts(emp,company){
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5 bg-[#070E1C] border border-[#1B3154] rounded-lg px-2.5 py-1.5" title={'Simulation day '+simDay}><span className="font-bold text-[#38BDF8] text-sm leading-none">{formatSimDate(dateForDay(simStart,simDay))}</span></div>
           {!simComplete ? (
-            <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-400 text-white text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' className='w-3 h-3' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5'><path d='M5 12h14M15 6l6 6-6 6'/></svg>Next Day</button><button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-semibold text-xs flex items-center gap-1.5 transition-colors ${apiKey ? "bg-[#0A1E0F] text-emerald-400 border border-emerald-900 hover:bg-[#0D2B15]" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}><div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${apiKey ? "bg-emerald-400" : "bg-white animate-pulse"}`}/>{apiKey ? "AI On" : "Setup AI"}</button></>
+            <><button onClick={() => advanceDay()} className="bg-amber-500 hover:bg-amber-400 text-white text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' className='w-3 h-3' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5'><path d='M5 12h14M15 6l6 6-6 6'/></svg>Next Day</button><button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-semibold text-xs flex items-center gap-1.5 transition-colors ${apiKey ? "bg-[#0A1E0F] text-emerald-400 border border-emerald-900 hover:bg-[#0D2B15]" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}><div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${apiKey ? "bg-emerald-400" : "bg-white animate-pulse"}`}/>{apiKey ? "AI On" : "Setup AI"}</button></>
           ) : (
             <button onClick={() => setTab("score")} className="bg-[#0EA5E9] text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1"> View Final Score</button>
           )}
