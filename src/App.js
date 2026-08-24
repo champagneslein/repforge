@@ -6,6 +6,8 @@ import { buildTraineeDossier, runCoachReview } from './coach';
 import { PRODUCT_FIELDS, formToProduct, productToForm, productContext } from './product';
 import { useVoiceCall, ensureMicPermission } from './call/useVoiceCall';
 import { fetchPersonaMemory, remember, buildMemoryBlock } from './memory';
+import { buildWorldContext } from './call/world';
+import { todayIso, dateForDay, dayForDate, formatSimDate, relativeDayLabel } from './calendar';
 import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
@@ -334,6 +336,7 @@ function genPersonaMsg(pName,cName,product,idx){const msgs=[{subject:'Quick ques
 export default function App() {
   const [tab, setTab] = useState("crm");
   const [simDay, setSimDay] = useState(1);
+  const [simStart, setSimStart] = useState(todayIso);
   const [state, setState] = useState(initState);
   const [crmView, setCrmView] = useState("accounts");
   const [selCompany, setSelCompany] = useState(null);
@@ -398,17 +401,21 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
         if(data.scheduledCalls)setScheduledCalls(data.scheduledCalls);
         if(data.personaMessages)setPersonaMessages(data.personaMessages);
         if(data.simDay)setSimDay(data.simDay);
+        if(data.simStart)setSimStart(data.simStart);
         if(data.state){const merged={...initState(),...data.state};setState(merged);}
       }
     }).catch(()=>{});
   },[msalAccounts.length]);
 
-  // Debounced progress save
+  // Debounced progress save. simStart rides along via a ref so the calendar
+  // anchor persists without changing this function's positional signature.
+  const simStartRef=useRef(simStart);
+  React.useEffect(()=>{simStartRef.current=simStart;},[simStart]);
   const triggerProgressSave=React.useCallback((tok,newState,newSimDay,newProduct,newDeals,newScheduledCalls,newPersonaMessages)=>{
     if(!tok)return;
     if(saveDebounceRef.current)clearTimeout(saveDebounceRef.current);
     saveDebounceRef.current=setTimeout(()=>{
-      saveProgress(tok,{state:newState,simDay:newSimDay,product:newProduct,deals:newDeals,scheduledCalls:newScheduledCalls,personaMessages:newPersonaMessages}).catch(()=>{});
+      saveProgress(tok,{state:newState,simDay:newSimDay,simStart:simStartRef.current,product:newProduct,deals:newDeals,scheduledCalls:newScheduledCalls,personaMessages:newPersonaMessages}).catch(()=>{});
     },2000);
   },[]);
 
@@ -562,7 +569,8 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   async function startCall(emp, company, callLogs=[]) {
     let memoryBlock = '';
     try { memoryBlock = buildMemoryBlock(await fetchPersonaMemory(emp.id)); } catch (e) {}
-    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '', memoryBlock });
+    const worldCtx = buildWorldContext(emp, company, allEmployees[company?.id] || []);
+    await startVoiceCall({ emp, company, callLogs, productCtx: productContext(goldStandard || product), discoveryBlock: window._discoveryBlock || '', memoryBlock, worldCtx });
   }
 
   async function runAgentTest() {
@@ -678,8 +686,11 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   }
 }
 
-async function advanceDay() {
-  const newDay = simDay + 1;
+// Advance to the next day, or jump forward to a specific day. Jumping still
+// resolves everything that came due in between, because the checks below are
+// "due on or before newDay" rather than "due exactly on newDay".
+async function advanceDay(targetDay) {
+  const newDay = Math.max(simDay + 1, targetDay || 0);
   setSimDay(newDay);
   const emailTasks = Object.entries(state)
     .filter(([, cs]) => newDay >= cs.emailReplyDay && cs.emailStatus === 'sent')
@@ -853,8 +864,10 @@ function sendEmail(emp, company, subject, body) {
   const totalCalls = allEmps.reduce((acc, e) => acc + (state[e.id]?.calls || 0), 0);
   const accountsTouched = companies.filter(c => (allEmployees[c.id]||[]).some(e => state[e.id]?.emailStatus !== "none" || (state[e.id]?.calls||0) > 0 || state[e.id]?.linkedinStatus !== "none")).length;
   const MEETING_GOAL = 5;
+  // The simulation runs on a real calendar with no fixed end date. SIM_LENGTH
+  // is kept only as the scorecard's reference campaign window.
   const SIM_LENGTH = 30;
-  const simComplete = simDay > SIM_LENGTH;
+  const simComplete = false;
   function calcGrade() {
     let score = 0;
     score += Math.min(meetingsBooked / MEETING_GOAL, 1) * 50;
@@ -948,9 +961,10 @@ function sendEmail(emp, company, subject, body) {
   const handleOpenBooking=(persona,callType)=>{
     setBookingPersona(persona);
     setBookingCallType(callType||'discovery');
-    const dt=new Date(Date.now()+86400000);
+    // Default to the day after the current simulated date, not real "now".
+    const dt=dateForDay(simStart,simDay+1);
     dt.setHours(10,0,0,0);
-    setBookingDateTime(dt.toISOString().slice(0,16));
+    setBookingDateTime(new Date(dt.getTime()-dt.getTimezoneOffset()*60000).toISOString().slice(0,16));
     setShowBookingModal(true);
   };
 
@@ -964,8 +978,25 @@ function sendEmail(emp, company, subject, body) {
     setShowBookingModal(false);
   };
 
-  const handleJoinCall=async(sc)=>{
+  // Which sim day does a scheduled call land on, and can we take it yet?
+  const dayOfCall=(sc)=>dayForDate(simStart,new Date(sc.scheduled_at));
+  const handleTravelAndJoin=async(sc)=>{
+    const target=dayOfCall(sc);
+    if(target>simDay){await advanceDay(target);handleJoinCall(sc,target);return;}
+    handleJoinCall(sc);
+  };
+
+  // dayOverride keeps the progress save correct when we've just jumped days —
+  // this closure's simDay is still the pre-jump value.
+  const handleJoinCall=async(sc,dayOverride)=>{
+    const day=dayOverride||simDay;
     const dd=sc.discovery_data||generateDiscoveryData();
+    // Find or create the deal first — this sets the call-context globals and
+    // gives us the persona's prior call history — then layer this call's own
+    // discovery/demo framing on top.
+    const sessEmp0=allEmps.find(e=>e.id===sc.persona_id);
+    const sessCo0=companies.find(c=>c.id===sc.company_id)||{name:sc.company_name,id:sc.company_id};
+    const deal=sessEmp0?ensureDealForCall(sessEmp0,sessCo0):null;
     window._discoveryBlock=sc.call_type==='demo'
       ?`\n\n## Demo Call Context (Hidden from Prospect)\nYou already had a discovery call. You understand the problem. You are now watching a product demo. Stay in character as ${sc.persona_name} from ${sc.company_name}.\n\nMEDDIC Summary:\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n\n## Your Demo Behavior\nYou are a skeptical but genuinely interested prospect. During the demo MUST:\n- Raise 3-4 pointed objections (pricing, implementation time, comparison to ${dd.competition})\n- Ask at least one feature question tied to your pain: ${dd.pain}\n- If impressed follow with "but what about..."\n- Towards the end ask about next steps only if convinced\n- Do NOT ask basic discovery questions`
       :`\n\n## MEDDIC Context (Hidden from Prospect)\nBudget: ${dd.budget}\nAuthority: ${dd.authority}\nTimeline: ${dd.timeline}\nDecision Process: ${dd.decision_process}\nPain: ${dd.pain}\nCompetition: ${dd.competition}\nInterest Score: ${dd.interest}/8\n`;
@@ -973,10 +1004,8 @@ function sendEmail(emp, company, subject, body) {
     setSessionTimer(1800);
     setSessionActive(true);
     setShowCallSession(true);
-    setScheduledCalls(prev=>{const next=prev.map(c=>c.id===sc.id?{...c,status:'active'}:c);triggerProgressSave(authTok,state,simDay,product,deals,next,personaMessages);return next;});
-    const sessEmp=allEmps.find(e=>e.id===sc.persona_id);
-    const sessCo=companies.find(c=>c.id===sc.company_id)||{name:sc.company_name,id:sc.company_id};
-    if(sessEmp){window._callTranscript=[];window._activePersonaName=sc.persona_name||'';window._activeCompanyName=sc.company_name||'';window._activePersonaId=sc.persona_id||'';window._activeDealId=sc.deal_id||null;startCall(sessEmp,sessCo,[]);}
+    setScheduledCalls(prev=>{const next=prev.map(c=>c.id===sc.id?{...c,status:'active'}:c);triggerProgressSave(authTok,state,day,product,deals,next,personaMessages);return next;});
+    if(sessEmp0)startCall(sessEmp0,sessCo0,Array.isArray(deal?.callLogs)?deal.callLogs:[]);
   };
 
   const handleCloseSession=async()=>{
@@ -1442,14 +1471,14 @@ function getPersonaPosts(emp,company){
             {navBtn("prolink","ProLink","",pendingConnections)}
             {navBtn("score","Scorecard","",meetingsBooked>0?meetingsBooked:0)}
 {navBtn("pipeline","Pipeline","",deals.length)}
-            {navBtn("scheduled","Calls","",scheduledCalls.filter(c=>c.status==='upcoming').length)}
+            {navBtn("scheduled","Calls","",scheduledCalls.filter(c=>c.status==='scheduled'||c.status==='upcoming').length)}
             {navBtn("inbox","Inbox","",personaMessages.filter(m=>!m.is_read).length)}
             {navBtn("agentlab","Agent Lab","",0)}
             {navBtn("coach","Coach","",0)}
                     </div>
         </div>
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 bg-[#070E1C] border border-[#1B3154] rounded-lg px-2.5 py-1.5"><span className="text-[#4A6B8A] text-xs">Day</span><span className="font-bold text-[#38BDF8] text-sm leading-none">{simDay}</span><span className="text-[#2A4A6A] text-xs">/{SIM_LENGTH}</span></div>
+          <div className="flex items-center gap-1.5 bg-[#070E1C] border border-[#1B3154] rounded-lg px-2.5 py-1.5" title={'Simulation day '+simDay}><span className="font-bold text-[#38BDF8] text-sm leading-none">{formatSimDate(dateForDay(simStart,simDay))}</span></div>
           {!simComplete ? (
             <><button onClick={advanceDay} className="bg-amber-500 hover:bg-amber-400 text-white text-xs px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1.5 shadow-sm"><svg xmlns='http://www.w3.org/2000/svg' className='w-3 h-3' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5'><path d='M5 12h14M15 6l6 6-6 6'/></svg>Next Day</button><button onClick={() => setShowSettings(true)} className={`px-3 py-1.5 rounded-lg font-semibold text-xs flex items-center gap-1.5 transition-colors ${apiKey ? "bg-[#0A1E0F] text-emerald-400 border border-emerald-900 hover:bg-[#0D2B15]" : "bg-red-600 text-white hover:bg-red-500 animate-pulse"}`}><div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${apiKey ? "bg-emerald-400" : "bg-white animate-pulse"}`}/>{apiKey ? "AI On" : "Setup AI"}</button></>
           ) : (
@@ -2218,7 +2247,7 @@ function getPersonaPosts(emp,company){
           { label: "Emails Sent", value: emailsSent, sub: `${emailsReplied} replied  ${emailReplyRate}% reply rate`, highlight: false },
           { label: "ProLink Connections", value: connections.length, sub: `${pendingConnections} still pending`, highlight: false },
           { label: "Accounts Touched", value: `${accountsTouched} / 20`, sub: "Accounts with at least 1 touchpoint", highlight: false },
-          { label: "Simulation Day", value: `${Math.min(simDay, SIM_LENGTH)} / ${SIM_LENGTH}`, sub: simComplete ? "Simulation complete" : `${SIM_LENGTH - simDay} days remaining`, highlight: simComplete },
+          { label: "Current Date", value: formatSimDate(dateForDay(simStart, simDay), { weekday: false }), sub: `Day ${simDay} of selling`, highlight: false },
           { label: "Meetings Declined", value: allEmps.filter(e => state[e.id]?.meetingStatus === "declined").length, sub: "Rejections are part of the game", highlight: false },
         ];
         return (
@@ -2359,7 +2388,10 @@ function getPersonaPosts(emp,company){
         <div style={{display:'flex',flexDirection:'column',gap:12}}>
           {scheduledCalls.map(sc=>{
             const d=new Date(sc.scheduled_at);
-            const past=d<new Date();
+            const callDay=dayOfCall(sc);
+            const diff=callDay-simDay;
+            const pending=sc.status==='scheduled'||sc.status==='upcoming';
+            const ready=diff<=0;
             return(
               <div key={sc.id} style={{background:'#1e293b',borderRadius:12,padding:'18px 22px',border:'1px solid #334155',display:'flex',alignItems:'center',justifyContent:'space-between',opacity:sc.status==='completed'?0.6:1}}>
                 <div style={{display:'flex',alignItems:'center',gap:16}}>
@@ -2373,12 +2405,14 @@ function getPersonaPosts(emp,company){
                 </div>
                 <div style={{textAlign:'right',display:'flex',alignItems:'center',gap:16}}>
                   <div>
-                    <div style={{color:'#e2e8f0',fontSize:14,fontWeight:600}}>{d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</div>
-                    <div style={{color:'#7A9CC4',fontSize:13}}>{d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}</div>
+                    <div style={{color:'#e2e8f0',fontSize:14,fontWeight:600}}>{formatSimDate(d)}</div>
+                    <div style={{color:ready?'#16a34a':'#7A9CC4',fontSize:13}}>{pending?relativeDayLabel(diff):d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'})}</div>
                   </div>
                   <span style={{padding:'3px 10px',borderRadius:20,fontSize:11,fontWeight:700,background:sc.status==='completed'?'#1e293b':sc.status==='active'?'rgba(34,197,94,0.15)':'rgba(99,102,241,0.15)',color:sc.status==='completed'?'#475569':sc.status==='active'?'#16a34a':'#818cf8',border:'1px solid '+(sc.status==='completed'?'#334155':sc.status==='active'?'#16a34a':'#6366f1')}}>{sc.status}</span>
-                  {sc.status==='upcoming'&&(
-                    <button onClick={()=>handleJoinCall(sc)} style={{padding:'8px 16px',borderRadius:8,border:'none',background:'#16a34a',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:13}}>Join</button>
+                  {pending&&(
+                    ready
+                      ?<button onClick={()=>handleJoinCall(sc)} style={{padding:'8px 16px',borderRadius:8,border:'none',background:'#16a34a',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:13,whiteSpace:'nowrap'}}>Join call</button>
+                      :<button onClick={()=>handleTravelAndJoin(sc)} title={'Advances the simulation to '+formatSimDate(d)+' and starts the call'} style={{padding:'8px 16px',borderRadius:8,border:'1px solid #6366f1',background:'transparent',color:'#818cf8',fontWeight:700,cursor:'pointer',fontSize:13,whiteSpace:'nowrap'}}>Skip ahead & join</button>
                   )}
                 </div>
               </div>
