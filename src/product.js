@@ -36,17 +36,26 @@ export function productToForm(p) {
   };
 }
 // Serializes a product profile into prompt context for the AI personas.
+// Written strictly from the BUYER's point of view: this is the caller's
+// product, not the persona's, and the persona must not do the rep's job.
 export function productContext(p) {
   if (!p) return '';
-  const parts = ['\n\n--- PRODUCT BEING PITCHED (ground truth) ---', 'Product: ' + p.product_name + '. ' + (p.product_description || '')];
-  if (p.problems) parts.push('Problems it solves: ' + p.problems);
-  if (p.icp) parts.push('Target customer: ' + p.icp);
-  if (p.personas) parts.push('Buying committee: ' + p.personas);
-  if (p.competitors) parts.push('Competitive landscape: ' + p.competitors);
-  if ((p.value_props || []).length) parts.push('Value props: ' + p.value_props.join('; '));
-  if (p.proof) parts.push('Proof points: ' + p.proof);
-  if (p.pricing) parts.push('Pricing: ' + p.pricing);
-  if (p.implementation) parts.push('Implementation: ' + p.implementation);
-  if ((p.objections || []).length) parts.push('Known objections and strong rebuttals: ' + p.objections.join('; '));
+  const parts = [
+    '\n\n--- WHAT THE CALLER IS SELLING (reference only) ---',
+    'The caller works for the company behind ' + p.product_name + ' and is trying to sell it to you. It is THEIR product. You do not work on it, sell it, or represent it in any way.',
+    'Product: ' + p.product_name + '. ' + (p.product_description || ''),
+  ];
+  if (p.problems) parts.push('Problems it claims to solve: ' + p.problems);
+  if ((p.value_props || []).length) parts.push('Claims the caller may make: ' + p.value_props.join('; '));
+  if (p.proof) parts.push('Evidence they may cite: ' + p.proof);
+  if (p.pricing) parts.push('Their actual pricing: ' + p.pricing + ' (You would not know this up front. Use it only to judge whether what the caller tells you is accurate.)');
+  if (p.implementation) parts.push('How it actually gets implemented: ' + p.implementation + ' (Again, you would not know this — it is here so you can tell if the caller is being straight with you.)');
+  if (p.competitors) parts.push('Their competitive landscape: ' + p.competitors);
+  if ((p.objections || []).length) {
+    parts.push('Concerns someone in your position would naturally raise: '
+      + p.objections.map(o => String(o).split('|')[0].trim()).filter(Boolean).join('; ')
+      + '. Raise these when they fit the conversation — they are your instincts, not a checklist.');
+  }
+  parts.push('IMPORTANT: You know none of this in advance. You only know what the caller actually tells you on this call, plus whatever you would plausibly know from your own job and market. Never recite this material back. Never argue the caller\'s case for them, and never answer your own objections — making the argument is their job, and your role is to make them earn it.');
   return parts.join('\n');
 }
