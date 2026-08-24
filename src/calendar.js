@@ -12,9 +12,11 @@ export function todayIso() {
 }
 
 export function dateForDay(simStart, day) {
-  const start = new Date(simStart || todayIso());
+  let start = new Date(simStart || todayIso());
+  if (isNaN(start.getTime())) start = new Date();
   start.setHours(0, 0, 0, 0);
-  return new Date(start.getTime() + (Math.max(1, day) - 1) * MS_PER_DAY);
+  const d = typeof day === 'number' && isFinite(day) ? Math.max(1, day) : 1;
+  return new Date(start.getTime() + (d - 1) * MS_PER_DAY);
 }
 
 // Which sim day does this real date fall on? Can return < 1 (past) or a day
