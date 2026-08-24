@@ -15,11 +15,25 @@ export function remember(personaId, type, day, text) {
   apiPost('/api/memory/' + personaId, { events: [{ type, day, text }] }).catch(() => {});
 }
 
-export function buildMemoryBlock(mem) {
+export function buildMemoryBlock(mem, currentSimDay) {
   const events = mem?.events || [];
   if (!mem || (!mem.summary && events.length === 0)) return '';
   const recent = events.slice(-15);
-  const lines = recent.map(e => 'Day ' + e.day + ' — ' + (e.type || 'note').replace(/_/g, ' ') + ': ' + e.text);
+  // Express timing the way a person would, relative to today in the sim.
+  const when = (day) => {
+    if (!currentSimDay || typeof day !== 'number') return '';
+    const diff = currentSimDay - day;
+    if (diff <= 0) return 'Earlier today';
+    if (diff === 1) return 'Yesterday';
+    if (diff < 7) return diff + ' days ago';
+    if (diff < 14) return 'About a week ago';
+    if (diff < 31) return Math.round(diff / 7) + ' weeks ago';
+    return 'Over a month ago';
+  };
+  const lines = recent.map(e => {
+    const w = when(e.day);
+    return (w ? w + ' — ' : '') + (e.type || 'note').replace(/_/g, ' ') + ': ' + e.text;
+  });
   return '\n\n--- YOUR MEMORY OF THIS SALES REP ---\n'
     + 'These things actually happened to you, in order. They are part of your life at this company.\n'
     + (mem.summary ? 'Earlier history: ' + mem.summary + '\n' : '')

@@ -38,6 +38,13 @@ export function formatSimDate(date, opts = {}) {
   });
 }
 
+// Long form used when telling an AI persona what today's date is.
+export function formatLongDate(date) {
+  return new Date(date).toLocaleDateString('en-GB', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+  });
+}
+
 // Human-friendly gap between the current sim day and a target day.
 export function relativeDayLabel(diff) {
   if (diff === 0) return 'today';
