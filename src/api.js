@@ -71,6 +71,19 @@ export function getLlmConfig() {
   return { provider, key, base: preset.base, model: preset.model };
 }
 
+// Plain-prose completion, for things like email replies where JSON would
+// only get in the way.
+export async function llmText(prompt, maxTokens = 600) {
+  const { base, model, key } = getLlmConfig();
+  if (!key) throw new Error('No AI key configured (Settings)');
+  const r = await fetch(base + '/chat/completions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+    body: JSON.stringify({ model, messages: [{ role: 'user', content: prompt }], max_tokens: maxTokens, temperature: 0.8 }),
+  });
+  return (await r.json()).choices?.[0]?.message?.content?.trim() || '';
+}
+
 export async function llmJson(prompt, maxTokens = 1000) {
   const { base, model, key } = getLlmConfig();
   if (!key) throw new Error('No grading AI key configured (Settings)');

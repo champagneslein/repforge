@@ -1,13 +1,13 @@
 import React, { useState, useRef } from "react";
 import { useMsal } from '@azure/msal-react';
 import { API_SCOPES } from './authConfig';
-import { apiGet, apiPost, apiPut, loadProgress, saveProgress, loadGoldStandard, saveGoldStandard, gptJson, llmJson, getLlmConfig, LLM_PROVIDERS } from './api';
+import { apiGet, apiPost, apiPut, loadProgress, saveProgress, loadGoldStandard, saveGoldStandard, gptJson, llmJson, llmText, getLlmConfig, LLM_PROVIDERS } from './api';
 import { buildTraineeDossier, runCoachReview } from './coach';
 import { PRODUCT_FIELDS, formToProduct, productToForm, productContext } from './product';
 import { useVoiceCall, ensureMicPermission } from './call/useVoiceCall';
 import { fetchPersonaMemory, remember, buildMemoryBlock } from './memory';
 import { buildWorldContext } from './call/world';
-import { todayIso, dateForDay, dayForDate, formatSimDate, formatLongDate, relativeDayLabel } from './calendar';
+import { todayIso, dateForDay, dayForDate, formatSimDate, formatLongDate, relativeDayLabel, isWeekday } from './calendar';
 import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 
@@ -381,6 +381,8 @@ export default function App() {
   const [sessionActive,setSessionActive]=React.useState(false);
   const [midCallBooking,setMidCallBooking]=React.useState(null);
   const [expandedMsg,setExpandedMsg]=React.useState(null);
+  const [msgReplyDraft,setMsgReplyDraft]=React.useState('');
+  const [msgSending,setMsgSending]=React.useState(false);
 const [demoObjections,setDemoObjections]=React.useState([]);
 const [handledObjections,setHandledObjections]=React.useState(new Set());
 
@@ -738,6 +740,15 @@ async function advanceDay(targetDay) {
     });
     return next;
   });
+  // Prospect mail that landed on the business days we just moved through.
+  const inbound = generateInboundMail(simDay + 1, newDay);
+  if (inbound.length) {
+    setPersonaMessages(prev => {
+      const next = [...inbound.reverse(), ...prev];
+      triggerProgressSave(authTok, state, newDay, product, deals, scheduledCalls, next);
+      return next;
+    });
+  }
 }
 
 function sendEmail(emp, company, subject, body) {
@@ -943,20 +954,25 @@ function sendEmail(emp, company, subject, body) {
   // RENDER
   // 
 
-  // Generate persona messages randomly (local only, persisted via progress save)
-  React.useEffect(()=>{
-    if(!authTok||!user?.id||!allEmps.length)return;
-    const iv=setInterval(()=>{
-      const emp=allEmps[Math.floor(Math.random()*allEmps.length)];
-      if(!emp)return;
-      const co=companies.find(c=>c.id===emp.cId)||{name:'Acme Corp'};
-      const idx=Math.floor(Math.random()*5);
-      const msg=genPersonaMsg(emp.first+' '+emp.last,co.name,(product?.name||'RepForge')||'your product',idx);
-      const newMsg={id:uuid(),persona_id:emp.id,persona_name:emp.first+' '+emp.last,company_name:co.name,subject:msg.subject,body:msg.body,msg_type:msg.msg_type,wants_call:msg.wants_call,call_type:msg.call_type,is_read:false,created_at:new Date().toISOString()};
-      setPersonaMessages(prev=>{const next=[newMsg,...prev];triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,next);return next;});
-    },45000+Math.floor(Math.random()*75000));
-    return()=>clearInterval(iv);
-  },[authTok,user?.id,allEmps.length,(product?.name||'RepForge')]);
+  // Inbound prospect mail arrives on business days as the simulation advances.
+  // Personas the rep has already touched are far likelier to write in.
+  const generateInboundMail=React.useCallback((fromDay,toDay)=>{
+    if(!allEmps.length)return[];
+    const productName=product?.product_name||'your product';
+    const out=[];
+    for(let d=fromDay;d<=toDay;d++){
+      if(!isWeekday(dateForDay(simStartRef.current,d)))continue;
+      if(Math.random()>0.35)continue;
+      const warm=allEmps.filter(e=>{const cs=state[e.id];return cs&&(cs.emailStatus!=='none'||cs.calls>0||cs.linkedinStatus!=='none');});
+      const pool=(warm.length&&Math.random()<0.75)?warm:allEmps;
+      const emp=pool[Math.floor(Math.random()*pool.length)];
+      if(!emp)continue;
+      const co=companies.find(c=>c.id===emp.cId)||{name:emp.cName||'Acme Corp'};
+      const msg=genPersonaMsg(emp.first+' '+emp.last,co.name,productName,Math.floor(Math.random()*5));
+      out.push({id:uuid(),persona_id:emp.id,persona_name:emp.first+' '+emp.last,company_name:co.name,subject:msg.subject,body:msg.body,msg_type:msg.msg_type,wants_call:msg.wants_call,call_type:msg.call_type,is_read:false,sim_day:d,created_at:dateForDay(simStartRef.current,d).toISOString(),thread:[]});
+    }
+    return out;
+  },[allEmps,product,state]);
 
   // Session countdown timer
   React.useEffect(()=>{
@@ -1027,6 +1043,34 @@ function sendEmail(emp, company, subject, body) {
     setActiveSession(null);
     setSessionTimer(1800);
     endVoiceCall();
+  };
+
+  // Reply to an inbound prospect email. The rep's reply is recorded to the
+  // persona's memory, then the persona writes back in character.
+  const handleSendMsgReply=async(msg)=>{
+    const body=msgReplyDraft.trim();
+    if(!body||msgSending)return;
+    setMsgSending(true);
+    const emp=allEmps.find(e=>e.id===msg.persona_id);
+    const co=companies.find(c=>c.id===emp?.cId)||{name:msg.company_name};
+    setPersonaMessages(prev=>{const next=prev.map(m=>m.id===msg.id?{...m,replied:true,thread:[...(m.thread||[]),{from:'rep',body,sim_day:simDay}]}:m);triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,next);return next;});
+    setMsgReplyDraft('');
+    remember(msg.persona_id,'email_received',simDay,'You emailed the rep asking about '+(msg.subject||'their product')+'. They replied: "'+body.slice(0,250)+'"');
+    try{
+      if(getLlmConfig().key&&emp){
+        const reply=await llmText(
+          'You are '+emp.first+' '+emp.last+', '+emp.title+' at '+(co.name||'your company')+'. You are a potential BUYER — a salesperson is selling to you, you are not selling anything.\n'
+          +'You emailed them: Subject "'+msg.subject+'"\n'+msg.body+'\n\n'
+          +'They replied:\n'+body+'\n\n'
+          +'Write your email response back. Stay in character: '+(emp.seniority==='c-suite'||emp.seniority==='vp'?'brief and direct, you are senior and busy':'practical and specific')+'. '
+          +'React honestly to whether they actually answered your question — if they dodged it or sent a generic pitch, say so. Keep it under 120 words. Return only the email body, no subject line and no commentary.',450);
+        if(reply){
+          setPersonaMessages(prev=>{const next=prev.map(m=>m.id===msg.id?{...m,thread:[...(m.thread||[]),{from:'prospect',body:reply,sim_day:simDay}]}:m);triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,next);return next;});
+          remember(msg.persona_id,'email_replied',simDay,'You wrote back to the rep: "'+reply.slice(0,250)+'"');
+        }
+      }
+    }catch(e){console.error('inbox reply failed',e);}
+    setMsgSending(false);
   };
 
   const handleMsgBooking=(msg)=>{
@@ -1826,19 +1870,29 @@ function getPersonaPosts(emp,company){
                       ))}
                       {state[selEmp.id]?.emailStatus==="sent" && (
                         <div className="text-center py-2 text-xs text-[#FBBF24]"> Email sent  reply expected around Day {state[selEmp.id].emailReplyDay || "?"}. Click Advance Day to progress.</div>)}
-              {apiKey && state[selEmp.id]?.willReplyEmail && (
+              {getLlmConfig().key && state[selEmp.id]?.willReplyEmail && (
                 <button onClick={async () => {
                   const company = getCompanyForEmp(selEmp.id);
                   const thread = state[selEmp.id]?.emailThread || [];
                   const lastSent = [...thread].reverse().find(m => m.from === "rep");
-                  if (!lastSent) return;
-                  const reply = await generateAiEmailReply(selEmp, company, lastSent.subject || "Your email", lastSent.body);
-                  if (reply) {
-                    setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));
-                    remember(selEmp.id, 'email_replied', simDay, 'You replied to the rep\'s email ("' + (lastSent.subject || 'no subject') + '"). You wrote: "' + reply.slice(0, 250) + '"');
-                  }
+                  if (!lastSent || aiEmailLoading[selEmp.id]) return;
+                  setAiEmailLoading(p => ({...p, [selEmp.id]: true}));
+                  try {
+                    const reply = await llmText(
+                      'You are ' + selEmp.first + ' ' + selEmp.last + ', ' + selEmp.title + ' at ' + (company?.name || 'your company')
+                      + '. You are a potential BUYER — a salesperson is emailing you, you are not selling anything.\n'
+                      + 'Their email — Subject: "' + (lastSent.subject || '(none)') + '"\n' + (lastSent.body || '') + '\n\n'
+                      + 'Write your reply. Stay in character: '
+                      + (selEmp.seniority === 'c-suite' || selEmp.seniority === 'vp' ? 'brief and direct, you are senior and busy' : 'practical and specific')
+                      + '. Be realistically skeptical — if the email is generic or does not speak to a problem you actually have, say so or decline. Under 120 words. Return only the email body.', 450);
+                    if (reply) {
+                      setState(prev => ({...prev, [selEmp.id]: {...prev[selEmp.id], emailThread: [...prev[selEmp.id].emailThread, {from:"prospect", body:reply, day:simDay}], emailStatus:"replied"}}));
+                      remember(selEmp.id, 'email_replied', simDay, 'You replied to the rep\'s email ("' + (lastSent.subject || 'no subject') + '"). You wrote: "' + reply.slice(0, 250) + '"');
+                    }
+                  } catch (e) { console.error('AI reply failed', e); }
+                  setAiEmailLoading(p => ({...p, [selEmp.id]: false}));
                 }} disabled={aiEmailLoading[selEmp.id]} className="ml-2 bg-[#0EA5E9] hover:bg-[#0284C7] disabled:opacity-50 text-white text-xs px-3 py-1 rounded-full transition-colors">
-                  {aiEmailLoading[selEmp.id] ? " Writing..." : " AI Reply Now"}
+                  {aiEmailLoading[selEmp.id] ? "Writing..." : "AI Reply Now"}
                 </button>
               )}
                     </div>
@@ -2453,6 +2507,7 @@ function getPersonaPosts(emp,company){
                   setPersonaMessages(prev=>{const next=prev.map(m=>m.id===msg.id?{...m,is_read:true}:m);triggerProgressSave(authTok,state,simDay,product,deals,scheduledCalls,next);return next;});
                 }
                 setExpandedMsg(expandedMsg===msg.id?null:msg.id);
+                setMsgReplyDraft('');
               }} style={{background:'#1e293b',borderRadius:expandedMsg===msg.id?'12px 12px 0 0':'12px',padding:'14px 18px',border:'1px solid '+(msg.is_read?'#334155':'#6366f1'),cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'space-between',transition:'all 0.15s'}}>
                 <div style={{display:'flex',alignItems:'center',gap:12}}>
                   {!msg.is_read&&<div style={{width:8,height:8,borderRadius:'50%',background:'#6366f1',flexShrink:0}}/>}
@@ -2473,9 +2528,23 @@ function getPersonaPosts(emp,company){
               {expandedMsg===msg.id&&(
                 <div style={{background:'#162032',border:'1px solid #334155',borderTop:'none',borderRadius:'0 0 12px 12px',padding:'16px 18px'}}>
                   <p style={{color:'#4A6B8A',fontSize:14,lineHeight:1.7,margin:'0 0 16px',whiteSpace:'pre-wrap'}}>{msg.body}</p>
-                  {msg.wants_call&&(
-                    <button onClick={()=>handleMsgBooking(msg)} style={{padding:'9px 20px',borderRadius:9,border:'none',background:'#6366f1',color:'#fff',fontWeight:700,cursor:'pointer',fontSize:14}}> Book {msg.call_type==='demo'?'Demo':'Discovery'} Call</button>
-                  )}
+                  {(msg.thread||[]).map((t,i)=>(
+                    <div key={i} style={{margin:'0 0 12px',padding:'10px 14px',borderRadius:8,background:t.from==='rep'?'rgba(14,165,233,0.07)':'#0F1A2B',borderLeft:'3px solid '+(t.from==='rep'?'#0EA5E9':'#6366f1')}}>
+                      <div style={{fontSize:11,fontWeight:700,color:t.from==='rep'?'#38BDF8':'#818cf8',marginBottom:4}}>{t.from==='rep'?'You':msg.persona_name}</div>
+                      <div style={{color:'#D4E5FF',fontSize:13,lineHeight:1.6,whiteSpace:'pre-wrap'}}>{t.body}</div>
+                    </div>
+                  ))}
+                  {msgSending&&<div style={{fontSize:12,color:'#7A9CC4',marginBottom:12}}>{msg.persona_name.split(' ')[0]} is typing…</div>}
+                  <div style={{marginTop:4}}>
+                    <textarea value={expandedMsg===msg.id?msgReplyDraft:''} onChange={e=>setMsgReplyDraft(e.target.value)} placeholder={'Reply to '+msg.persona_name.split(' ')[0]+'…'} rows={4} style={{width:'100%',boxSizing:'border-box',background:'#0A1020',border:'1px solid #334155',borderRadius:8,padding:'10px 12px',color:'#F8FAFC',fontSize:13,fontFamily:'inherit',resize:'vertical',outline:'none'}}/>
+                    <div style={{display:'flex',gap:10,marginTop:10,alignItems:'center'}}>
+                      <button onClick={()=>handleSendMsgReply(msg)} disabled={!msgReplyDraft.trim()||msgSending} style={{padding:'9px 20px',borderRadius:9,border:'none',background:!msgReplyDraft.trim()||msgSending?'#1B3154':'#0EA5E9',color:!msgReplyDraft.trim()||msgSending?'#4A6B8A':'#fff',fontWeight:700,cursor:!msgReplyDraft.trim()||msgSending?'not-allowed':'pointer',fontSize:14}}>{msgSending?'Sending…':'Send Reply'}</button>
+                      {msg.wants_call&&(
+                        <button onClick={()=>handleMsgBooking(msg)} style={{padding:'9px 20px',borderRadius:9,border:'1px solid #6366f1',background:'transparent',color:'#818cf8',fontWeight:700,cursor:'pointer',fontSize:14}}>Book {msg.call_type==='demo'?'Demo':'Discovery'} Call</button>
+                      )}
+                      {!getLlmConfig().key&&<span style={{fontSize:11,color:'#4A6B8A'}}>Add an AI key in Settings for them to write back.</span>}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
