@@ -769,7 +769,7 @@ function sendEmail(emp, company, subject, body) {
       const company = emp ? getCompanyForEmp(ep.empId) : null;
       return emp ? { emp, company, days: i, post: { text: ep.text, type: ep.type, time: ep.time, likes: ep.likes, comments: ep.comments }, id: ep.empId * 100 + 90 + i } : null;
     }).filter(Boolean)
-  ].sort((a,b) => a.days - b.days).slice(0, 150), [allEmps]); // eslint-disable-line react-hooks/exhaustive-deps
+  ].sort((a,b) => a.days - b.days).slice(0, 150), [allEmps]);
 
   const navBtn = (id, label, icon, badge) => (
     <button key={id} onClick={() => setTab(id)}
