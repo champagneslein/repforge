@@ -5,3 +5,4 @@ build/
 appsettings.Development.json
 src/SharpenedIron/bin/
 src/SharpenedIron/obj/
+.env.local

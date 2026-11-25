@@ -4,8 +4,6 @@
   "private": true,
   "proxy": "http://localhost:5050",
   "dependencies": {
-    "@azure/msal-browser": "^5.17.0",
-    "@azure/msal-react": "^5.5.2",
     "@elevenlabs/react": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"

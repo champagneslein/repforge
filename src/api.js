@@ -1,6 +1,6 @@
-import { getApiToken } from './authConfig';
+import { getApiToken } from './auth';
 
-// Backend API helpers — tokens come from MSAL; the optional token parameter is
+// Backend API helpers — tokens come from the Supabase session; the optional token parameter is
 // kept only so legacy call sites don't need to change.
 async function authHeader() {
   const t = await getApiToken();

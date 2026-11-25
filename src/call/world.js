@@ -17,7 +17,13 @@ const INDUSTRY_PRESSURES = {
   'Retail Tech': ['margin pressure from marketplace giants', 'omnichannel inventory accuracy is poor', 'seasonal demand spikes strain infrastructure', 'customer acquisition costs keep climbing'],
   'PropTech': ['construction cost inflation squeezes project margins', 'site data collection is still paper-based in places', 'long sales cycles with conservative buyers', 'fragmented subcontractor coordination'],
   'Construction': ['project margins squeezed by cost inflation', 'site progress reporting lags reality by days', 'subcontractor coordination is fragmented', 'rework from late-caught quality issues'],
+  'AI': ['GPU and inference costs grow faster than revenue', 'enterprise pilots stall before production', 'customers and regulators ask hard questions about AI risk', 'ML talent is scarce and expensive'],
+  'Food & Beverage': ['retailers squeeze supplier margins every year', 'ingredient and packaging costs keep rising', 'food safety audits and traceability demand constant work', 'waste and short shelf life eat profit'],
+  'Professional Services': ['billable utilisation is under pressure', 'clients push for fixed fees and more value', 'senior people are hard to hire and keep', 'new business depends too much on referrals'],
 };
+
+// Lower-case only the first letter so acronyms (AI, ML, KYC) survive.
+const lc = s => s.charAt(0).toLowerCase() + s.slice(1);
 
 const SIZE_LABEL = { 'Enterprise': 'An enterprise', 'Mid-Market': 'A mid-market', 'SMB': 'A small' };
 
@@ -109,6 +115,9 @@ export function buildWorldContext(emp, company, colleagues) {
   ];
   if (sizeNote) lines.push('How decisions work here: ' + sizeNote);
   if (pressures.length) lines.push('Pressures on the business right now: ' + pressures.join('; ') + '.');
+  if (company.pains && company.pains.length) lines.push('Specific problems at ' + company.name + ' right now: ' + company.pains.map(p => lc(p.pain)).join('; ') + '. These are real but you do not volunteer them to a stranger; a caller who asks good questions earns them.');
+  if (emp.pains && emp.pains.length) lines.push('The problem you personally feel most: ' + emp.pains.map(lc).join('; ') + '.');
+  if (company.goals && company.goals.length && (emp.seniority === 'c-suite' || emp.seniority === 'vp')) lines.push('Company goals this year: ' + company.goals.map(lc).join('; ') + '.');
   lines.push('Your job: as ' + emp.title + ' you are accountable for ' + scope.accountable + '.');
   lines.push('What frustrates you in your role: ' + rolePains.join('; ') + '.');
   lines.push('What you can actually authorise: ' + scope.authority);

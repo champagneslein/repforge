@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useMsal } from '@azure/msal-react';
-import { API_SCOPES } from './authConfig';
+import { useAuth, signIn, signUp, signOut, authConfigured } from './auth';
 import { apiGet, apiPost, apiPut, loadProgress, saveProgress, loadGoldStandard, saveGoldStandard, gptJson, llmJson, llmText, getLlmConfig, LLM_PROVIDERS } from './api';
 import { buildTraineeDossier, runCoachReview } from './coach';
 import { PRODUCT_FIELDS, formToProduct, productToForm, productContext } from './product';
@@ -10,189 +9,11 @@ import { buildWorldContext } from './call/world';
 import { todayIso, dateForDay, dayForDate, formatSimDate, formatLongDate, relativeDayLabel, isWeekday } from './calendar';
 import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
+// Accounts and people live in src/world (80 accounts across 8 industries).
+import { companies, allEmployees, INDUSTRY_NAMES, SEGMENTS } from './world/companies';
 
 function uuid(){if(typeof crypto!=='undefined'&&crypto.randomUUID)return crypto.randomUUID();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16);});}
 
-// 
-// COMPANY + EMPLOYEE DATA
-// 
-const companies = [
-  { id:1,  name:"Nexaflow",         industry:"SaaS",           size:"Enterprise", employees:42, domain:"nexaflow.io",         description:"Cloud workflow automation for enterprise ops teams",        location:"Dublin",         dealValue:75000  },
-  { id:2,  name:"CloudPulse",       industry:"SaaS",           size:"Mid-Market", employees:25, domain:"cloudpulse.io",       description:"Real-time analytics and monitoring SaaS",                  location:"London",         dealValue:35000  },
-  { id:3,  name:"Stackly",          industry:"SaaS",           size:"SMB",        employees:14, domain:"stackly.dev",         description:"Developer productivity and code review tooling",           location:"Dublin",         dealValue:20000  },
-  { id:4,  name:"Velodata",         industry:"SaaS",           size:"Mid-Market", employees:28, domain:"velodata.com",        description:"Data pipeline and ETL automation platform",                location:"London",         dealValue:40000  },
-  { id:5,  name:"ShieldOps",        industry:"Cyber Security", size:"Enterprise", employees:45, domain:"shieldops.io",        description:"Next-gen endpoint security and threat response",           location:"Dublin",         dealValue:80000  },
-  { id:6,  name:"CipherEdge",       industry:"Cyber Security", size:"Mid-Market", employees:22, domain:"cipheredge.com",      description:"Zero-trust network access and SASE platform",             location:"London",         dealValue:30000  },
-  { id:7,  name:"ThreatNest",       industry:"Cyber Security", size:"SMB",        employees:16, domain:"threatnest.io",       description:"SMB-focused vulnerability scanning and alerts",            location:"Dublin",         dealValue:25000  },
-  { id:8,  name:"Fortivex",         industry:"Cyber Security", size:"Enterprise", employees:50, domain:"fortivex.com",        description:"Enterprise SOC-as-a-service and SIEM platform",           location:"London",         dealValue:100000 },
-  { id:9,  name:"IronCore Systems", industry:"Manufacturing",  size:"Enterprise", employees:48, domain:"ironcore.systems",    description:"Industrial IoT and smart factory automation",              location:"Dublin",         dealValue:90000  },
-  { id:10, name:"PrecisionWorks",   industry:"Manufacturing",  size:"Mid-Market", employees:30, domain:"precisionworks.ie",   description:"CNC machining and precision components for aerospace",     location:"Cork",           dealValue:45000  },
-  { id:11, name:"NovaMach",         industry:"Manufacturing",  size:"SMB",        employees:15, domain:"novamach.ie",         description:"Custom fabrication and tooling for local industry",        location:"Limerick",       dealValue:22000  },
-  { id:12, name:"FluxTech",         industry:"Manufacturing",  size:"Mid-Market", employees:35, domain:"fluxtech.ie",         description:"Electronics manufacturing and PCB assembly",               location:"Galway",         dealValue:55000  },
-  { id:13, name:"CapitalBridge",    industry:"FinTech",        size:"Enterprise", employees:44, domain:"capitalbridge.io",    description:"Institutional trading and capital markets infrastructure",  location:"Dublin",         dealValue:85000  },
-  { id:14, name:"Moneta Labs",      industry:"FinTech",        size:"Mid-Market", employees:20, domain:"monetalabs.io",       description:"Embedded finance and BaaS APIs for fintechs",             location:"London",         dealValue:28000  },
-  { id:15, name:"PayStream",        industry:"FinTech",        size:"SMB",        employees:18, domain:"paystream.io",        description:"Payment orchestration for SMB e-commerce",                location:"Dublin",         dealValue:28000  },
-  { id:16, name:"FinAxis Group",    industry:"FinTech",        size:"Enterprise", employees:50, domain:"finaxis.io",          description:"Risk analytics and regulatory reporting for banks",        location:"London",         dealValue:95000  },
-  { id:17, name:"GreenLeaf Energy", industry:"CleanTech",      size:"Mid-Market", employees:24, domain:"greenleaf.energy",    description:"Renewable energy management and carbon tracking SaaS",     location:"Cork",           dealValue:32000  },
-  { id:18, name:"MedPoint Health",  industry:"HealthTech",     size:"SMB",        employees:17, domain:"medpoint.health",     description:"Digital health records and patient engagement platform",   location:"Dublin",         dealValue:20000  },
-  { id:19, name:"RetailEdge",       industry:"RetailTech",     size:"Enterprise", employees:38, domain:"retailedge.io",       description:"Omnichannel retail operations and inventory intelligence",  location:"London",         dealValue:65000  },
-  { id:20, name:"BuildRight",       industry:"PropTech",       size:"Mid-Market", employees:22, domain:"buildright.ie",       description:"Construction project management and compliance SaaS",      location:"Dublin",         dealValue:30000  },
-];
-
-const allEmployees = {
-  1:[{id:101,first:"Conor",last:"Murphy",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Serial entrepreneur. Previously exited two SaaS companies. Board member at three Dublin startups.",personality:"Dismissive of generic pitches. Responds only to sharp, outcome-focused messaging after multiple touches. Time is their scarcest resource",posts:["Proud to announce Nexaflow just crossed 500 enterprise customers ","Leadership lesson: hire people smarter than you, then get out of their way.","Great panel at SaaS Ireland yesterday on AI in operations. The future is closer than you think."]},
-    {id:102,first:"Rachel",last:"O'Brien",title:"CTO",seniority:"c-suite",bio:"Engineering leader with 15 years in cloud infrastructure. Previously Staff Engineer at AWS.",personality:"Data-driven and technical. Wants proof, not promises. Will ask hard questions if you get through",posts:["We just migrated our entire infrastructure to Kubernetes. 6 months of work. Worth every minute.","Hot take: most SaaS companies over-engineer their MVP. Ship fast, iterate faster."]},
-    {id:103,first:"David",last:"Flynn",title:"VP Sales",seniority:"vp",bio:"Sales leader. 10 years in enterprise SaaS. Love building teams from scratch and scaling revenue.",personality:"Seen every sales tactic. Responds to reps who understand pipeline pain. Needs 3-4 touches before engaging",posts:["Hiring 3 AEs in Dublin right now. DM me if you know anyone strong.","The best salespeople I've hired all had one thing in common: genuine curiosity about the customer's problem.","Q1 closed strong. Team absolutely smashed it "]},
-    {id:104,first:"Siobhan",last:"Kelly",title:"VP Marketing",seniority:"vp",bio:"Brand and demand gen leader. Previously HubSpot EMEA. Passionate about category creation.",personality:"Brand-conscious, ROI-focused. Replies to well-crafted emails. Prefers async over calls",posts:["Content is still king. But distribution is the kingdom.","Just back from SaaStr. The AI narrative is everywhere  the companies winning are the ones with real ROI stories."]},
-    {id:105,first:"Mark",last:"Doyle",title:"Head of Product",seniority:"director",bio:"Product leader focused on workflow automation. Ex-Intercom. Obsessed with reducing friction.",personality:"Pragmatic problem-solver. Will engage if you speak to their specific challenge. Needs 2-3 attempts",posts:["Shipped three new features this week. User feedback has been incredible.","Product managers: your job is to say no. Nicely, but firmly."]},
-    {id:106,first:"Aoife",last:"Walsh",title:"Sales Manager",seniority:"manager",bio:"Building and coaching the Nexaflow sales team. 5 years in B2B SaaS sales.",personality:"Keen to solve team problems quickly. Responds well to empathy and concrete demos. Usually picks up after 1-2 calls",posts:["Ran a great cold call training session with the team today. Practice makes permanent.","New quarter, new goals. Let's go team! "]},
-    {id:107,first:"Liam",last:"Burke",title:"Enterprise AE",seniority:"mid",bio:"Enterprise AE at Nexaflow. Helping large ops teams eliminate manual work.",personality:"Not a decision maker but a helpful gatekeeper. Will forward to manager if the pitch is relevant",posts:["Just closed my biggest deal to date. Onwards! "]},
-    {id:108,first:"Emma",last:"Byrne",title:"Customer Success Manager",seniority:"mid",bio:"Making sure Nexaflow customers get value from day one.",personality:"Focused on customer outcomes. Responds well to product improvements that drive retention",posts:["QBR season is here. Love seeing customers light up when we show them their ROI data."]},
-    {id:109,first:"Sean",last:"Farrell",title:"SDR",seniority:"junior",bio:"SDR at Nexaflow. Learning the ropes and loving it.",personality:"Eager and responsive. Will pass you up immediately. Friendly and enthusiastic",posts:["Week 3 on the job. Already booked my first meeting. Buzzing! "]},
-    {id:110,first:"Niamh",last:"Clarke",title:"Marketing Coordinator",seniority:"junior",bio:"Marketing team at Nexaflow. Events, content, socials.",personality:"Enthusiastic team player. Not involved in purchases but engaged with content. Easy to reach",posts:["Our booth at TechConnect was a massive success! Thanks to everyone who stopped by "]},
-  ],
-  2:[{id:201,first:"James",last:"Sheridan",title:"CEO & Founder",seniority:"c-suite",bio:"Founded CloudPulse after 8 years at Datadog. Building the next generation of ops analytics.",personality:"Founder energy. Approachable but laser-focused on traction. Responds to metrics and momentum",posts:["Thrilled to announce our Series A. Thank you to every customer who believed in us early.","Rule for founders: never be too busy to talk to a customer."]},
-    {id:202,first:"Laura",last:"Nolan",title:"Head of Sales",seniority:"director",bio:"Sales leader at CloudPulse. Previously Salesforce and Zendesk.",personality:"Sales veteran. Respects solid methodology. Will take a call if you reference their industry",posts:["Hiring AEs in London. If you can tell me what a good discovery question looks like, you're halfway there.","The best cold email I got this week had three lines and one question. Hired that SDR."]},
-    {id:203,first:"Ronan",last:"Higgins",title:"Head of Engineering",seniority:"director",bio:"Engineering at CloudPulse. Prev Google SRE. Obsessed with reliability.",personality:"Engineering-first. Cares about reliability, not hype. Engage with technical depth",posts:["99.99% uptime last quarter. The team deserves all the credit."]},
-    {id:204,first:"Clare",last:"Brennan",title:"Sales Manager",seniority:"manager",bio:"Running CloudPulse's mid-market sales motion. Love a clean pipeline.",personality:"Pipeline obsessive. Direct, no-nonsense. Responds to reps who respect her time",posts:["Pipeline review day. Time to separate the real deals from the wishful thinking.","Favourite part of the job: coaching a rep through a tough objection live on a call."]},
-    {id:205,first:"Patrick",last:"Duggan",title:"Account Executive",seniority:"mid",bio:"AE at CloudPulse. Helping ops teams see their data clearly.",personality:"Motivated closer. Responsive to managers and peer reps. Eager to help",posts:["Closed 2 deals this week. Good problems to have on a Friday! "]},
-    {id:206,first:"Aoibhe",last:"Ryan",title:"Marketing Manager",seniority:"manager",bio:"Demand gen and brand at CloudPulse.",personality:"Marketing practitioner. Responds to data-backed pitches. Prefers structured outreach",posts:["Webinar next Tuesday on real-time ops analytics. Register now!"]},
-    {id:207,first:"Cian",last:"McCarthy",title:"SDR",seniority:"junior",bio:"SDR at CloudPulse. Dialing and smiling.",personality:"Hungry SDR. Responds to coaching and peer insight. Very receptive",posts:["100 calls this week. 4 meetings booked. Progress! "]},
-    {id:208,first:"Fiona",last:"O'Sullivan",title:"Operations Coordinator",seniority:"junior",bio:"Ops team at CloudPulse. Keeping things running smoothly.",personality:"Team-oriented. Helpful and responsive. Will pass along info to decision makers",posts:["Team offsite was a blast! Great people here "]},
-  ],
-  3:[{id:301,first:"Tom",last:"Keane",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Building Stackly to fix developer productivity. Ex-GitHub. YC W22.",personality:"YC founder mindset. Moves fast, makes decisions quick. Responds to novel approaches",posts:["Just hit 10k developers on the platform. Wild.","The best product feedback comes from watching someone use your product in silence."]},
-    {id:302,first:"Sarah",last:"Power",title:"CTO & Co-Founder",seniority:"c-suite",bio:"CTO at Stackly. MIT grad. Code review obsessive.",personality:"Technical perfectionist. Skeptical of over-engineered solutions. Engage on architecture",posts:["Shipped our new AI-assisted review engine today. Weeks of work. Couldn't be prouder of the team."]},
-    {id:303,first:"Jack",last:"Lennon",title:"Head of Growth",seniority:"director",bio:"Growth at Stackly. PLG motion, community, partnerships.",personality:"PLG expert. Understands viral loops. Responds to growth mechanics, not features",posts:["PLG tip: your best salespeople are your existing users. Enable them."]},
-    {id:304,first:"Megan",last:"Lawlor",title:"Lead Developer",seniority:"mid",bio:"Fullstack developer at Stackly. TypeScript nerd.",personality:"Developer-focused. Values simplicity and good DX. Helpful peer voice",posts:["Finally fixed that bug that's been haunting me for 3 weeks. Sleep tonight "]},
-    {id:305,first:"Kevin",last:"Brady",title:"Sales Rep",seniority:"junior",bio:"First sales hire at Stackly. Learning fast.",personality:"First-time sales rep. Eager, learning fast. Very responsive and coachable",posts:["First week done. This team moves fast. Love it!"]},
-  ],
-  4:[{id:401,first:"Brian",last:"Cassidy",title:"CEO",seniority:"c-suite",bio:"CEO at Velodata. Data infrastructure background. Ex-Palantir.",personality:"Data infrastructure veteran. Wants integration depth. Responds to technical fit discussions",posts:["Data pipelines shouldn't be a competitive advantage. They should be table stakes. That's what we're building.","Grateful for the team we've assembled. Hire slow."]},
-    {id:402,first:"Karen",last:"Moran",title:"VP Engineering",seniority:"vp",bio:"Engineering leader at Velodata. 12 years in data infrastructure.",personality:"Architecture-driven. Needs to understand your data model. Very technical gatekeeper",posts:["Modern data stack deep dive  happy to share our architecture if useful. Drop a comment."]},
-    {id:403,first:"Declan",last:"Phelan",title:"Director of Sales",seniority:"director",bio:"Sales at Velodata. Former Snowflake. Love a complex technical sale.",personality:"Complex deal expert. Enjoys the long sales cycle. Responds to consultative approach",posts:["Technical sales tip: understand the data flow before you understand the budget.","Closed a 7-figure deal today. Long cycle, worth it. Team effort. "]},
-    {id:404,first:"Aisling",last:"Tobin",title:"Product Manager",seniority:"manager",bio:"PM at Velodata. Connector-obsessed.",personality:"Connector-obsessed. Practical PM. Responds to feature requests from customers",posts:["We just added Salesforce + dbt connectors. Customers have been asking for months."]},
-    {id:405,first:"Fergal",last:"O'Dwyer",title:"Account Executive",seniority:"mid",bio:"AE at Velodata. Selling data pipelines to data teams.",personality:"Mid-level AE. Strong peer voice. Will engage easily",posts:["Nothing like a customer saying 'this just works' to make your week."]},
-    {id:406,first:"Ruth",last:"Hennessy",title:"Data Analyst",seniority:"mid",bio:"Data analyst at Velodata. Numbers tell stories.",personality:"Numbers-focused analyst. Helpful for building cases. Can champion internally",posts:[]},
-    {id:407,first:"Cathal",last:"Dunne",title:"SDR",seniority:"junior",bio:"SDR at Velodata. Learning technical sales.",personality:"Learning technical sales. Responds well to demos and 1:1 support",posts:["Booked my first enterprise meeting today! "]},
-  ],
-  5:[{id:501,first:"Gerard",last:"Connolly",title:"CEO",seniority:"c-suite",bio:"CEO at ShieldOps. 20 years in cybersecurity. Former CISO turned founder.",personality:"Security veteran, founder energy. Visionary but practical. Responds to industry insight",posts:["The threat landscape has fundamentally changed. Endpoint protection alone is no longer enough.","Thrilled to welcome three new enterprise customers this quarter. The pipeline is strong."]},
-    {id:502,first:"Denise",last:"Hanlon",title:"CISO",seniority:"c-suite",bio:"CISO at ShieldOps. Former Head of Security at AIB. Board advisor to two fintech firms.",personality:"CISO authority. Board-savvy. Responds to executive positioning and risk framing",posts:["Ransomware attacks up 40% YoY. If you don't have an incident response plan, you're already behind.","Speaking at CyberDublin next month on zero-trust implementation. Register if you're attending."]},
-    {id:503,first:"Paul",last:"Costello",title:"VP Sales",seniority:"vp",bio:"VP Sales at ShieldOps. Selling enterprise security for 12 years.",personality:"Enterprise security seller. Tough, experienced. Needs consultative discovery",posts:["Security budgets are growing but CISOs are more selective. The ROI conversation has never mattered more."]},
-    {id:504,first:"Triona",last:"Gallagher",title:"Director, Security Ops",seniority:"director",bio:"Security operations leader at ShieldOps.",personality:"Ops leader. Responds to efficiency gains and team capability. Practical mindset",posts:["Just completed our ISO 27001 renewal. Team worked incredibly hard."]},
-    {id:505,first:"Niall",last:"Regan",title:"Security Architect",seniority:"manager",bio:"Security architecture and design at ShieldOps.",personality:"Security architect. Philosophy-driven. Engages deeply on approach, not product",posts:["Zero trust isn't a product. It's a philosophy. Fight me."]},
-    {id:506,first:"Eimear",last:"Daly",title:"Threat Intelligence Lead",seniority:"manager",bio:"Threat intel and analysis at ShieldOps.",personality:"Threat intel specialist. Current events knowledge. Engages on risk narratives",posts:["New threat actor targeting Irish financial institutions. Briefing clients now."]},
-    {id:507,first:"Shane",last:"Cunningham",title:"SOC Manager",seniority:"manager",bio:"Managing the ShieldOps SOC team.",personality:"SOC manager. Overworked, coffee-dependent. Responds to relief, not complexity",posts:["24/7 SOC life. Coffee is not optional."]},
-    {id:508,first:"Ciara",last:"Fitzpatrick",title:"Compliance Manager",seniority:"manager",bio:"Compliance and regulatory at ShieldOps. GDPR, NIS2, DORA.",personality:"Compliance specialist. Regulatory lens. Engages on frameworks and standards",posts:["DORA deadline approaching. Financial firms  are you ready?"]},
-    {id:509,first:"Alan",last:"Delaney",title:"Penetration Tester",seniority:"mid",bio:"Ethical hacker at ShieldOps. Breaking things so customers don't have to.",personality:"Ethical hacker mindset. Technical depth required. Responds to advanced concepts",posts:["Just completed a red team engagement. Can't share details obviously. But wow."]},
-    {id:510,first:"Orla",last:"Quinn",title:"Security Analyst",seniority:"junior",bio:"Junior security analyst at ShieldOps. Always learning.",personality:"Junior analyst, learning. Eager, responsive. Will loop in managers",posts:["Passed my CEH exam! "]},
-  ],
-  6:[{id:601,first:"Brendan",last:"Forde",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at CipherEdge. Identity obsessive. Ex-Okta.",personality:"Identity obsessive, founder. Visionary and technical. Responds to strategic fit",posts:["Identity is the new perimeter. We've been saying this for three years. The market is finally listening."]},
-    {id:602,first:"Yvonne",last:"Stapleton",title:"Head of Security",seniority:"director",bio:"Security engineering at CipherEdge.",personality:"Security engineer. Deep technical. Wants whitepaper depth. Engineering peer conversation",posts:["Our zero-trust framework white paper is live. Link in comments."]},
-    {id:603,first:"Colm",last:"Sheridan",title:"Sales Director",seniority:"director",bio:"Sales at CipherEdge. 10 years in identity and access management.",personality:"Identity sales expert. Strategic framing required. Responds to business impact",posts:["Every CISO I've spoken to this month has mentioned identity as their top priority. We're in the right place at the right time."]},
-    {id:604,first:"Sinead",last:"Whelan",title:"Identity & Access Manager",seniority:"manager",bio:"IAM specialist at CipherEdge.",personality:"IAM specialist. Standards and best practice driven. Engages on technical implementation",posts:["MFA fatigue is a real attack vector. Here's how to mitigate it: "]},
-    {id:605,first:"Darragh",last:"Murphy",title:"AE",seniority:"mid",bio:"Account Executive at CipherEdge.",personality:"Enterprise AE. Responsive to manager guidance. Mid-level peer voice",posts:[]},
-    {id:606,first:"Leah",last:"O'Connor",title:"SDR",seniority:"junior",bio:"SDR at CipherEdge. Learning the security space.",personality:"Junior SDR. Learning security. Very responsive and eager to connect",posts:["Great team, great product. Excited to be here!"]},
-  ],
-  7:[{id:701,first:"Owen",last:"Callaghan",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at ThreatNest. Making enterprise security accessible to SMBs.",personality:"SMB security champion. Mission-driven. Responds to democratic tech positioning",posts:["SMBs are attacked more than enterprises. They just don't have the resources to fight back. That's why we exist."]},
-    {id:702,first:"Michelle",last:"Carey",title:"Head of Product",seniority:"director",bio:"Product at ThreatNest.",personality:"Product leader. UX-focused. Responds to design quality and user feedback",posts:["New dashboard release next week. The UX team absolutely nailed this one."]},
-    {id:703,first:"Eoin",last:"Nolan",title:"Security Engineer",seniority:"mid",bio:"Security engineering at ThreatNest.",personality:"Security engineer. Technical implementation focus. Peer-level conversation",posts:[]},
-    {id:704,first:"Aoife",last:"Brennan",title:"Customer Success Rep",seniority:"junior",bio:"CS at ThreatNest. Helping SMBs stay safe.",personality:"Customer success rep. User advocate. Responsive and helpful peer",posts:["Love when a customer tells us we've given them peace of mind. That's the job."]},
-  ],
-  8:[{id:801,first:"Kieran",last:"Tully",title:"CEO",seniority:"c-suite",bio:"CEO at Fortivex. Former Head of GCHQ secondment. Building the future of SOC automation.",personality:"Former GCHQ, CEO. Deep security expertise. Responds to operational depth",posts:["The SOC is broken. Too many alerts, too few analysts, too much noise. We fix that.","Proud to be named in Gartner's Cool Vendors report for security operations."]},
-    {id:802,first:"Maeve",last:"Donovan",title:"CISO",seniority:"c-suite",bio:"CISO at Fortivex. Board-level security advisor.",personality:"Board-level CISO. Executive presence. Needs strategic business framing",posts:["Board members: cybersecurity is not an IT issue. It's a business risk issue. Time to treat it that way."]},
-    {id:803,first:"Ronan",last:"Foley",title:"VP Sales EMEA",seniority:"vp",bio:"VP Sales EMEA at Fortivex.",personality:"Enterprise EMEA VP. Quota-driven. Responds to pipeline opportunity",posts:["EMEA pipeline looking very healthy heading into H2. Team is firing on all cylinders."]},
-    {id:804,first:"Grainne",last:"Lawless",title:"Director, SOC Automation",seniority:"director",bio:"SOC automation specialist at Fortivex.",personality:"SOC automation expert. Operational mindset. Engages on process improvement",posts:["Automation doesn't replace analysts. It frees them to do the work that actually matters."]},
-    {id:805,first:"Barry",last:"Malone",title:"Enterprise Sales Manager",seniority:"manager",bio:"Enterprise sales at Fortivex.",personality:"Enterprise sales manager. Long cycle expert. Responds to structured deals",posts:["Closed a 3-year enterprise deal today. Longest sales cycle I've ever run. Worth it. "]},
-    {id:806,first:"Cliona",last:"Healy",title:"SOC Analyst",seniority:"mid",bio:"SOC analyst at Fortivex.",personality:"SOC analyst practitioner. Helpful peer. Will champion good tools",posts:[]},
-    {id:807,first:"Fergus",last:"Dolan",title:"SDR",seniority:"junior",bio:"SDR at Fortivex. Breaking into the security sales world.",personality:"Junior SDR. Breaking into security. Eager and responsive",posts:["Cold calling CISOs is not for the faint-hearted. But I'm learning fast."]},
-  ],
-  9:[{id:901,first:"Michael",last:"Bourke",title:"CEO",seniority:"c-suite",bio:"CEO at IronCore Systems. 25 years in industrial manufacturing and IoT.",personality:"Manufacturing veteran, CEO. Practical, measured. Responds to ROI, not hype",posts:["Industry 4.0 is not a buzzword in our factories. It's every day.","Great to represent Irish manufacturing at Hannover Messe this year."]},
-    {id:902,first:"Ann",last:"O'Leary",title:"COO",seniority:"c-suite",bio:"COO at IronCore. Operations excellence is my obsession.",personality:"Operations obsessive, COO. Discipline-driven. Engages on process efficiency",posts:["You can't improve what you can't measure. That's why we invested in IoT from day one."]},
-    {id:903,first:"Joe",last:"Cullen",title:"VP Operations",seniority:"vp",bio:"VP Ops at IronCore. Supply chain and factory floor.",personality:"Supply chain expert. Vendor-relationship focused. Responds to reliability",posts:["Supply chain visibility has saved us more money than any other technology investment."]},
-    {id:904,first:"Patricia",last:"Barry",title:"Plant Manager",seniority:"director",bio:"Plant manager at IronCore's Dublin facility.",personality:"Plant manager. Floor reality focus. Responds to practical, tested solutions",posts:["Another record production week. Proud of the team on the floor."]},
-    {id:905,first:"Donal",last:"Hartigan",title:"Director of Procurement",seniority:"director",bio:"Procurement at IronCore. 150+ supplier relationships.",personality:"Procurement lead. Risk and vendor management. Engages on supplier benefits",posts:["Supplier diversity isn't just ethical. It's strategic risk management."]},
-    {id:906,first:"Teresa",last:"Coughlan",title:"Supply Chain Manager",seniority:"manager",bio:"Supply chain at IronCore.",personality:"Supply chain coordinator. Process-focused. Helpful internal voice",posts:[]},
-    {id:907,first:"Paddy",last:"Sheehan",title:"Operations Manager",seniority:"manager",bio:"Operations at IronCore.",personality:"Operations manager. Lean philosophy. Responds to waste elimination",posts:["Great lean workshop with the team today. Waste elimination never stops."]},
-    {id:908,first:"Louise",last:"Tracey",title:"Quality Control Manager",seniority:"manager",bio:"QC at IronCore. Zero defects is the goal.",personality:"Quality obsessive. Zero-defect mentality. Engages on quality metrics",posts:["ISO 9001 audit passed with zero non-conformances. Team effort! "]},
-    {id:909,first:"Kevin",last:"Dunford",title:"Production Supervisor",seniority:"mid",bio:"Production supervisor at IronCore.",personality:"Production supervisor. Hands-on. Practical, results-focused",posts:[]},
-    {id:910,first:"Denise",last:"Gleeson",title:"EHS Coordinator",seniority:"junior",bio:"EHS at IronCore. Safety first, always.",personality:"EHS coordinator. Safety-first culture. Responsive to team",posts:["1000 days without a lost-time incident! "]},
-  ],
-  10:[{id:1001,first:"Seamus",last:"Fitzgibbon",title:"MD & Owner",seniority:"c-suite",bio:"Owner and MD of PrecisionWorks. Family business, third generation.",personality:"Family business owner. Long-term mindset. Responds to stability and growth",posts:["40 years of precision engineering. Still learning every day.","Cork manufacturing is alive and well. Proud to be part of it."]},
-    {id:1002,first:"Mary",last:"Quigley",title:"Operations Director",seniority:"director",bio:"Operations at PrecisionWorks.",personality:"Operations director. Equipment and capability focused. Engages on manufacturing",posts:["New CNC equipment installed this week. Massive upgrade in our capability."]},
-    {id:1003,first:"Fintan",last:"Mullins",title:"Head of Procurement",seniority:"director",bio:"Procurement and supplier management at PrecisionWorks.",personality:"Procurement lead. Supplier and cost management. Vendor-focused conversation",posts:[]},
-    {id:1004,first:"Brigid",last:"Horan",title:"Quality Manager",seniority:"manager",bio:"Quality systems at PrecisionWorks.",personality:"Quality manager. Standards-driven. Responds to certifications and compliance",posts:["Quality isn't an inspection. It's a culture."]},
-    {id:1005,first:"Colm",last:"Madden",title:"Production Coordinator",seniority:"mid",bio:"Keeping the production floor running at PrecisionWorks.",personality:"Production coordinator. Keeps things running. Process-oriented",posts:[]},
-    {id:1006,first:"Una",last:"Flanagan",title:"Admin Assistant",seniority:"junior",bio:"Admin and front of house at PrecisionWorks.",personality:"Admin assistant. Front of house. Helpful and friendly",posts:[]},
-  ],
-  11:[{id:1101,first:"Frank",last:"Meehan",title:"Owner & MD",seniority:"c-suite",bio:"Owner of NovaMach. Custom machinery specialist for 20 years.",personality:"Manufacturing specialist, owner. Craft-focused. Responds to precision and quality",posts:["Small business, big quality. That's the NovaMach way."]},
-    {id:1102,first:"Carmel",last:"Lyons",title:"Operations Manager",seniority:"manager",bio:"Operations at NovaMach.",personality:"Operations manager. Small business lean. Responsive to efficiency",posts:[]},
-    {id:1103,first:"Declan",last:"Coffey",title:"Lead Machinist",seniority:"mid",bio:"Lead machinist and tooling specialist at NovaMach.",personality:"Lead machinist. Technical expertise. Peer-level technical conversation",posts:[]},
-    {id:1104,first:"Emer",last:"Costello",title:"Office Manager",seniority:"junior",bio:"Office management at NovaMach.",personality:"Office manager. Small business backbone. Helpful and engaged",posts:[]},
-  ],
-  12:[{id:1201,first:"Robert",last:"Kearney",title:"CEO",seniority:"c-suite",bio:"CEO at FluxTech. Advanced materials pioneer.",personality:"Materials pioneer, CEO. Innovation-focused. Responds to advanced tech",posts:["Composite materials are reshaping aerospace, automotive, and construction. We're at the centre of it."]},
-    {id:1202,first:"Helen",last:"Dempsey",title:"VP Operations",seniority:"vp",bio:"VP Ops at FluxTech. Scaling manufacturing excellence.",personality:"Operations VP. Scaling expert. Engages on manufacturing excellence",posts:["Operational resilience is the competitive advantage nobody talks about enough."]},
-    {id:1203,first:"Ciaran",last:"Moynihan",title:"R&D Director",seniority:"director",bio:"R&D lead at FluxTech. Material science nerd.",personality:"R&D director. Patent-driven. Technical depth required",posts:["New patent filed this week. Can't say more yet. Watch this space "]},
-    {id:1204,first:"Noreen",last:"Fahy",title:"Procurement Manager",seniority:"manager",bio:"Procurement at FluxTech.",personality:"Procurement manager. Supplier and materials focus",posts:[]},
-    {id:1205,first:"Alan",last:"Staunton",title:"Process Engineer",seniority:"mid",bio:"Process engineering at FluxTech.",personality:"Process engineer. Operational improvement mindset",posts:[]},
-    {id:1206,first:"Roisin",last:"Neary",title:"Quality Technician",seniority:"junior",bio:"Quality assurance at FluxTech.",personality:"Quality technician. Quality systems focused. Helpful peer",posts:[]},
-  ],
-  13:[{id:1301,first:"Neil",last:"Callaghan",title:"CEO",seniority:"c-suite",bio:"CEO at CapitalBridge. Ex-Goldman Sachs. Building the future of institutional trading.",personality:"Goldman Sachs veteran, CEO. Quantitative mindset. Responds to metrics and execution",posts:["The capital markets are being rebuilt in software. We're at the forefront of that.","Privileged to ring the bell at Euronext Dublin today alongside our new partners."]},
-    {id:1302,first:"Sandra",last:"Kinsella",title:"CFO",seniority:"c-suite",bio:"CFO at CapitalBridge. Previously Deloitte and AIB Capital Markets.",personality:"CFO, Deloitte background. Regulatory and financial discipline. Responds to compliance",posts:["Finance leaders: regulatory burden is increasing. Technology is the only scalable answer."]},
-    {id:1303,first:"Hugh",last:"Feely",title:"CTO",seniority:"c-suite",bio:"CTO at CapitalBridge. Low-latency systems architect.",personality:"Millisecond-minded CTO. Low-latency obsessive. Deep technical engagement",posts:["Sub-millisecond execution. That's not a target. That's a baseline."]},
-    {id:1304,first:"Valerie",last:"Roche",title:"VP Sales",seniority:"vp",bio:"VP Sales at CapitalBridge. Institutional sales, complex deals.",personality:"Institutional sales expert. Trust-building required. Long cycle complexity",posts:["Enterprise sales in financial services: trust is the product. Everything else follows."]},
-    {id:1305,first:"Dermot",last:"Farley",title:"Head of Compliance",seniority:"director",bio:"Compliance at CapitalBridge. MiFID II, EMIR, DORA.",personality:"Compliance director. Regulatory framework. Engages on standards and governance",posts:["DORA compliance is not optional. It's time to treat it with the urgency it deserves."]},
-    {id:1306,first:"Lorna",last:"Fagan",title:"Head of Partnerships",seniority:"director",bio:"Partnerships and BD at CapitalBridge.",personality:"Partnerships head. Business development focused. Strategic relationship play",posts:["Three new partnerships announced this quarter. Exciting times ahead."]},
-    {id:1307,first:"Tim",last:"Galligan",title:"Risk Manager",seniority:"manager",bio:"Risk management at CapitalBridge.",personality:"Risk manager. Risk-averse perspective. Engages on mitigation",posts:[]},
-    {id:1308,first:"Elaine",last:"Maguire",title:"Sales Manager",seniority:"manager",bio:"Sales management at CapitalBridge.",personality:"Sales manager, fintech. Quota-focused. Responds to pipeline",posts:["Great team, great quarter. Onwards to Q3! "]},
-    {id:1309,first:"Ross",last:"Kiernan",title:"Financial Analyst",seniority:"mid",bio:"Financial analysis at CapitalBridge.",personality:"Financial analyst. Numbers-focused. Helpful internal analyst",posts:[]},
-    {id:1310,first:"Amy",last:"Doherty",title:"SDR",seniority:"junior",bio:"SDR at CapitalBridge. Learning financial services sales.",personality:"Junior SDR. Learning fintech. Eager and responsive",posts:["Week one in fintech sales. Steep learning curve. Loving it."]},
-  ],
-  14:[{id:1401,first:"Gavin",last:"Enright",title:"CEO & Co-Founder",seniority:"c-suite",bio:"Founder at Moneta Labs. Embedded finance visionary. YC S21.",personality:"Fintech visionary, YC founder. Big picture thinker. Responds to market narrative",posts:["Every company will become a fintech company. The question is when."]},
-    {id:1402,first:"Aoife",last:"Doyle",title:"CFO",seniority:"c-suite",bio:"CFO at Moneta Labs. Ex-Stripe.",personality:"Ex-Stripe CFO. Financial discipline and scaling. Intentional mindset",posts:["Financial discipline in a startup doesn't mean being conservative. It means being intentional."]},
-    {id:1403,first:"Colm",last:"Nash",title:"Head of Sales",seniority:"director",bio:"Sales at Moneta Labs.",personality:"Sales director. Fintech relationship expert. Responds to partnership fit",posts:["Fintech sales is a relationship business. Full stop."]},
-    {id:1404,first:"Roisin",last:"Smyth",title:"Compliance Lead",seniority:"manager",bio:"Compliance at Moneta Labs.",personality:"Compliance lead. Regulatory focus. Engages on governance",posts:[]},
-    {id:1405,first:"Darragh",last:"Cullinane",title:"AE",seniority:"mid",bio:"Account Executive at Moneta Labs.",personality:"AE, mid-level. Responsive peer voice",posts:[]},
-    {id:1406,first:"Grace",last:"Langan",title:"Marketing Executive",seniority:"junior",bio:"Marketing at Moneta Labs.",personality:"Junior marketing exec. Brand-focused. Responsive and eager",posts:["Our new brand is live! Check it out "]},
-  ],
-  15:[{id:1501,first:"Ken",last:"Morrissey",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at PayStream. Fintech operator. Payment reconciliation obsessive.",personality:"Founder, fintech. Reconciliation expert. Responds to specific SMB pain",posts:["Every finance team I speak to has the same problem: too much time on reconciliation, not enough on analysis. We fix that."]},
-    {id:1502,first:"Jackie",last:"Naughton",title:"Head of Finance",seniority:"director",bio:"Finance lead at PayStream.",personality:"Finance leader. Numbers obsessive. Engages on metrics",posts:[]},
-    {id:1503,first:"Evan",last:"Sherry",title:"Sales Manager",seniority:"manager",bio:"Sales at PayStream.",personality:"Sales manager, SMB. Fast cycles. Responds to quick trust-building",posts:["SMB sales is fast. You have to earn trust quickly or move on."]},
-    {id:1504,first:"Laura",last:"Slattery",title:"Customer Success Rep",seniority:"junior",bio:"CS at PayStream.",personality:"Junior CS rep. Helpful and responsive",posts:[]},
-  ],
-  16:[{id:1601,first:"Richard",last:"Hackett",title:"CEO",seniority:"c-suite",bio:"CEO at FinAxis Group. 20 years in financial regulation and risk.",personality:"Regulatory veteran, CEO. Risk framework mindset. Responds to compliance advantage",posts:["Regulatory complexity is accelerating. The firms that will win are the ones that turn compliance into a competitive advantage."]},
-    {id:1602,first:"Fiona",last:"Quigley",title:"Chief Compliance Officer",seniority:"c-suite",bio:"CCO at FinAxis Group. Board-level regulatory advisor.",personality:"Board-level CCO. Executive authority. Strategic regulatory positioning required",posts:["DORA, NIS2, Basel IV  the regulatory pipeline is full. Start now."]},
-    {id:1603,first:"Eoin",last:"Sexton",title:"VP Sales EMEA",seniority:"vp",bio:"VP Sales EMEA at FinAxis Group.",personality:"VP Sales EMEA. RegTech expert. Responds to timing and momentum",posts:["RegTech is having its moment. We've been ready for years."]},
-    {id:1604,first:"Grainne",last:"Cronin",title:"Head of Risk",seniority:"director",bio:"Risk management at FinAxis Group.",personality:"Risk director. Model risk focus. Engages on quantitative rigor",posts:["Model risk is the next frontier. Most firms are woefully underprepared."]},
-    {id:1605,first:"Ruairi",last:"O'Neill",title:"Sales Manager",seniority:"manager",bio:"Sales manager at FinAxis Group.",personality:"Sales manager. Quota and compliance balance. Responds to pipeline",posts:[]},
-    {id:1606,first:"Nessa",last:"Higgins",title:"Regulatory Analyst",seniority:"mid",bio:"Regulatory analysis at FinAxis Group.",personality:"Regulatory analyst. Standards-focused. Helpful peer voice",posts:[]},
-    {id:1607,first:"Conall",last:"Carey",title:"SDR",seniority:"junior",bio:"SDR at FinAxis Group.",personality:"Junior SDR. Learning RegTech. Eager and responsive",posts:["Breaking into RegTech sales. Fascinating space."]},
-  ],
-  17:[{id:1701,first:"Dara",last:"O'Brien",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at GreenLeaf Energy. Renewable energy developer and advocate.",personality:"Renewable energy founder. Mission-driven, practical. Responds to project metrics",posts:["The energy transition is not coming. It's here. The question is how fast.","Just signed our largest solar PPA to date. Proud of the team."]},
-    {id:1702,first:"Sorcha",last:"Teehan",title:"Head of Operations",seniority:"director",bio:"Operations at GreenLeaf Energy.",personality:"Operations director. Project execution focused",posts:[]},
-    {id:1703,first:"Pauric",last:"Spillane",title:"Project Manager",seniority:"manager",bio:"Project management at GreenLeaf Energy.",personality:"Project manager. Delivery-focused. Engages on project methodology",posts:["Phase 1 of the Galway wind project is complete. On time, on budget. That's how we do it."]},
-    {id:1704,first:"Muireann",last:"Carey",title:"Sustainability Analyst",seniority:"mid",bio:"Sustainability and impact reporting at GreenLeaf Energy.",personality:"Sustainability analyst. Impact-focused. Responds to measurement",posts:["Our 2024 sustainability report is live. We hit every target."]},
-    {id:1705,first:"Diarmuid",last:"Daly",title:"Admin Coordinator",seniority:"junior",bio:"Admin at GreenLeaf Energy.",personality:"Admin coordinator. Helpful team support",posts:[]},
-  ],
-  18:[{id:1801,first:"Dr. Fiona",last:"Lyons",title:"CEO & Founder",seniority:"c-suite",bio:"Founder at MedPoint Health. GP turned healthtech entrepreneur.",personality:"Founder, GP background. Healthcare insight. Responds to clinical and operational fit",posts:["The Irish health system is under enormous pressure. Technology is part of the answer.","Our digital health records product just went live in 50 new practices. Huge milestone."]},
-    {id:1802,first:"Aine",last:"Thornton",title:"Operations Manager",seniority:"manager",bio:"Operations at MedPoint Health.",personality:"Operations manager. Healthcare process focused",posts:[]},
-    {id:1803,first:"Cathal",last:"Madden",title:"Software Lead",seniority:"mid",bio:"Software development at MedPoint Health. Healthcare tech builder.",personality:"Software lead. Healthcare tech builder. Technical peer conversation",posts:[]},
-    {id:1804,first:"Siobhan",last:"Reilly",title:"Customer Success Rep",seniority:"junior",bio:"CS at MedPoint Health.",personality:"Junior CS rep. User advocate. Responsive and engaged",posts:["Helped onboard 5 new GP practices this week. Every time I hear 'this saves us hours' I know we're doing something right."]},
-  ],
-  19:[{id:1901,first:"Andrew",last:"McAuley",title:"CEO",seniority:"c-suite",bio:"CEO at RetailEdge. 15 years in retail technology.",personality:"Retail tech veteran, CEO. Omnichannel expert. Responds to industry trend insight",posts:["Retail isn't dying. Bad retail is dying. Omnichannel-first retailers are thriving.","Joined the IMRG board this month. Excited to give back to the industry."]},
-    {id:1902,first:"Claire",last:"Bergin",title:"COO",seniority:"c-suite",bio:"COO at RetailEdge. Operations and scaling expert.",personality:"COO, operations expert. Scaling and reliability focus",posts:["Operational excellence in retail tech: speed, reliability, and a relentless focus on the customer."]},
-    {id:1903,first:"Ross",last:"Buckley",title:"VP Sales",seniority:"vp",bio:"VP Sales at RetailEdge.",personality:"VP Sales. Retail buying cycle expert. Responds to pace and timing",posts:["Retail tech buying cycles are shortening. Retailers want to move fast now."]},
-    {id:1904,first:"Tara",last:"Gannon",title:"Head of Partnerships",seniority:"director",bio:"Partnerships and alliances at RetailEdge.",personality:"Partnerships head. Ecosystem play. Engages on integration",posts:["Just announced our Shopify Plus partnership. Big news for our customers."]},
-    {id:1905,first:"Barry",last:"Jennings",title:"Enterprise Sales Manager",seniority:"manager",bio:"Enterprise sales at RetailEdge.",personality:"Enterprise sales manager. Long retail cycles. Responds to consultative approach",posts:[]},
-    {id:1906,first:"Lisa",last:"Donoghue",title:"AE",seniority:"mid",bio:"Account Executive at RetailEdge.",personality:"AE, mid-level. Responsive peer",posts:[]},
-    {id:1907,first:"Oisin",last:"Magee",title:"SDR",seniority:"junior",bio:"SDR at RetailEdge.",personality:"Junior SDR. Learning retail. Eager and responsive",posts:["First meeting booked with a top-10 UK retailer. Yes! "]},
-  ],
-  20:[{id:2001,first:"Mick",last:"Harrington",title:"MD & Founder",seniority:"c-suite",bio:"Founder at BuildRight. 20 years in construction, last 5 in construction tech.",personality:"Construction founder. Industry digitization focus. Responds to site reality",posts:["Construction is the last major industry to be digitised. We're changing that.","Great to see Irish construction tech getting recognition at Build Digital Summit."]},
-    {id:2002,first:"Brid",last:"Fallon",title:"Operations Director",seniority:"director",bio:"Operations at BuildRight.",personality:"Operations director. Construction operations. Practical process focus",posts:[]},
-    {id:2003,first:"Sen",last:"Power",title:"Head of Projects",seniority:"director",bio:"Project management at BuildRight.",personality:"Project management head. Digital delivery expert. Responds to efficiency gains",posts:["Digital project management has cut our delays by 30%. The data doesn't lie."]},
-    {id:2004,first:"Joan",last:"Kerrigan",title:"Compliance Manager",seniority:"manager",bio:"Compliance and health & safety at BuildRight.",personality:"Compliance manager. H&S obsessed. Engages on safety impact",posts:["H&S compliance in construction is life and death. We take it seriously."]},
-    {id:2005,first:"Liam",last:"Cronin",title:"Project Manager",seniority:"mid",bio:"Project manager at BuildRight.",personality:"Project manager. Site-focused. Practical, responsive",posts:[]},
-    {id:2006,first:"Aoibhinn",last:"Sheehan",title:"Site Coordinator",seniority:"junior",bio:"Site coordination at BuildRight.",personality:"Site coordinator. Ground-level voice. Helpful and engaged",posts:[]},
-  ],
-};
 
 // 
 // EMAIL DELAY BY SENIORITY (simulation days)
@@ -286,7 +107,7 @@ const meetingDeclinedReplies = {
 // HELPERS
 // 
 const sizeColors = { "Enterprise":"bg-purple-100 text-purple-700","Mid-Market":"bg-blue-100 text-blue-700","SMB":"bg-green-100 text-green-700" };
-const industryColors = { "SaaS":"bg-sky-100 text-sky-700","Cyber Security":"bg-red-100 text-red-700","Manufacturing":"bg-orange-100 text-orange-700","Fintech":"bg-yellow-100 text-[#FBBF24]","Energy":"bg-green-100 text-green-700","Healthcare":"bg-pink-100 text-pink-700","Retail Tech":"bg-indigo-100 text-indigo-700","Construction":"bg-amber-100 text-amber-700" };
+const industryColors = { "SaaS":"bg-sky-100 text-sky-700","AI":"bg-violet-100 text-violet-700","Cyber Security":"bg-red-100 text-red-700","FinTech":"bg-yellow-100 text-[#FBBF24]","Manufacturing":"bg-orange-100 text-orange-700","Food & Beverage":"bg-lime-100 text-lime-700","Professional Services":"bg-slate-100 text-slate-700","Healthcare":"bg-pink-100 text-pink-700" };
 const seniorityColors = { "c-suite":"bg-red-100 text-red-700","vp":"bg-orange-100 text-orange-700","director":"bg-yellow-100 text-[#FBBF24]","manager":"bg-blue-100 text-blue-700","mid":"bg-gray-100 text-[#7A9CC4]","junior":"bg-green-100 text-green-700" };
 const seniorityLabels = { "c-suite":"C-Suite","vp":"VP","director":"Director","manager":"Manager","mid":"Mid-Level","junior":"Junior" };
 const avatarColors = ["bg-blue-500","bg-indigo-500","bg-purple-500","bg-pink-500","bg-red-500","bg-orange-500","bg-green-500","bg-teal-500","bg-cyan-500","bg-violet-500"];
@@ -342,7 +163,12 @@ export default function App() {
   const [selCompany, setSelCompany] = useState(null);
   const [intelData, setIntelData] = React.useState({});
   const [expandedIntel, setExpandedIntel] = React.useState(null);
-  const { instance: msal, accounts: msalAccounts, inProgress: msalInProgress } = useMsal();
+  const authUser = useAuth();
+  const [authMode,setAuthMode]=React.useState('signin');
+  const [authEmail,setAuthEmail]=React.useState('');
+  const [authPass,setAuthPass]=React.useState('');
+  const [authBusy,setAuthBusy]=React.useState(false);
+  const [authMsg,setAuthMsg]=React.useState(null);
   const [user,setUser]=React.useState(null);
   const [authTok,setAuthTok]=React.useState(null);
   const saveDebounceRef=useRef(null);
@@ -386,15 +212,14 @@ export default function App() {
 const [demoObjections,setDemoObjections]=React.useState([]);
 const [handledObjections,setHandledObjections]=React.useState(new Set());
 
-  // Sync user state with the MSAL account and restore progress after sign-in
+  // Sync user state with the Supabase session and restore progress after sign-in
   React.useEffect(()=>{
-    const acct=msalAccounts[0];
+    const acct=authUser;
     if(!acct){setUser(null);setAuthTok(null);return;}
-    msal.setActiveAccount(acct);
-    setUser({id:acct.localAccountId,email:acct.username});
-    setAuthTok('entra');
+    setUser({id:acct.id,email:acct.email});
+    setAuthTok('supabase');
     ensureMicPermission(); // ask once at login so calls start without a popup
-    try{const cached=JSON.parse(localStorage.getItem('rp_coach_'+acct.localAccountId)||'null');if(cached)setCoachReport(cached);}catch(e){}
+    try{const cached=JSON.parse(localStorage.getItem('rp_coach_'+acct.id)||'null');if(cached)setCoachReport(cached);}catch(e){}
     loadGoldStandard().then(gs=>setGoldStandard(gs)).catch(()=>{});
     loadProgress().then(data=>{
       if(data){
@@ -407,7 +232,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
         if(data.state){const merged={...initState(),...data.state};setState(merged);}
       }
     }).catch(()=>{});
-  },[msalAccounts.length]);
+  },[authUser?.id]);
 
   // Debounced progress save. simStart rides along via a ref so the calendar
   // anchor persists without changing this function's positional signature.
@@ -421,7 +246,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     },2000);
   },[]);
 
-  const handleLogout=async()=>{setUser(null);setAuthTok(null);setProduct(null);try{await msal.logoutRedirect();}catch(e){}};
+  const handleLogout=async()=>{setUser(null);setAuthTok(null);setProduct(null);try{await signOut();}catch(e){}};
   const openProdSetup=(mode)=>{
     if(!goldStandard)loadGoldStandard().then(gs=>{if(gs)setGoldStandard(gs);}).catch(()=>{});
     setProdSetupMode(mode);
@@ -504,6 +329,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
 
   const [selEmp, setSelEmp] = useState(null);
   const [filterInd, setFilterInd] = useState("All");
+  const [filterSize, setFilterSize] = useState("All");
   const [emailCompose, setEmailCompose] = useState(null);
   const [emailDraft, setEmailDraft] = useState({ subject:"", body:"" });
   const [plView, setPlView] = useState("feed");
@@ -533,7 +359,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const [proposalState, setProposalState] = React.useState({});
   const [salesConvs, setSalesConvs] = React.useState({});
   const [closeLoading, setCloseLoading] = React.useState(false);
-  const industries = ["All","SaaS","Cyber Security","Manufacturing","Fintech","Energy","Healthcare","Retail Tech","Construction"];
+  const industries = ["All", ...INDUSTRY_NAMES];
   const allEmps = Object.entries(allEmployees).flatMap(([cId,emps])=>emps.map(e=>({...e,cId:parseInt(cId),cName:(companies.find(c=>c.id===parseInt(cId))||{name:''}).name})));
 
   const { activeCallId, callStatus, isSpeaking: isPersonaSpeaking, startCall: startVoiceCall, endCall: endVoiceCall } = useVoiceCall({
@@ -1108,10 +934,15 @@ function getPersonaPainPoints(emp,company){
     'manager':['Managing team performance with limited visibility','Reducing manual reporting overhead','Getting leadership buy-in for process changes','Ramping new hires faster'],
     'ic':['Too much time on admin vs. actual work','Lack of clear direction from senior leadership',"Tools that don't integrate with existing stack",'Too many context switches between platforms']
   };
-  return (byRole[emp.seniority]||byRole['ic']).slice(0,3);
+  const generic=byRole[emp.seniority]||byRole['ic'];
+  // Company-specific pains first: what this person's level actually feels at this account.
+  const lvl={'c-suite':'exec','vp':'exec','director':'manager','manager':'manager'}[emp.seniority]||'ic';
+  const specific=[...(emp.pains||[]),...((company&&company.pains)||[]).filter(p=>p.owner===lvl).map(p=>p.pain)];
+  return [...new Set([...specific,...generic])].slice(0,3);
 }
 function getPersonaGoals(emp,company){
   const s=emp.seniority;
+  if((s==='c-suite'||s==='vp')&&company&&company.goals)return [...company.goals,'Hit this year\'s '+(s==='vp'?'targets for the function':'growth and margin plan')];
   return s==='c-suite'
     ?['Position '+company.name+' as category leader in '+company.industry,'Reach next funding milestone or profitability target','Expand into two new verticals this year']
     :s==='vp'
@@ -1147,17 +978,31 @@ function getPersonaPosts(emp,company){
 }
 
   if (!user) {
-    const authBusy = msalInProgress !== 'none';
+    const submitAuth=async(e)=>{
+      e.preventDefault();setAuthBusy(true);setAuthMsg(null);
+      try{
+        if(authMode==='signup'){const r=await signUp(authEmail.trim(),authPass);if(r==='confirm_email')setAuthMsg({ok:true,text:'Check your email for a confirmation link, then sign in.'});}
+        else await signIn(authEmail.trim(),authPass);
+      }catch(err){setAuthMsg({ok:false,text:err.message});}
+      setAuthBusy(false);
+    };
+    const inp={width:'100%',boxSizing:'border-box',padding:'11px 12px',marginBottom:12,borderRadius:8,border:'1px solid #1B3154',background:'#070C18',color:'#F8FAFC',fontSize:15,outline:'none'};
     return (
       <div style={{minHeight:'100vh',background:'#070C18',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
-        <div style={{background:'#0D1525',borderRadius:14,padding:'36px 40px',width:400,maxWidth:'92vw',boxShadow:'0 24px 60px rgba(0,0,0,0.4)',border:'1px solid #1B3154'}}>
-          <div style={{textAlign:'center',marginBottom:28}}>
+        <form onSubmit={submitAuth} style={{background:'#0D1525',borderRadius:14,padding:'36px 40px',width:400,maxWidth:'92vw',boxShadow:'0 24px 60px rgba(0,0,0,0.4)',border:'1px solid #1B3154'}}>
+          <div style={{textAlign:'center',marginBottom:24}}>
             <div style={{fontSize:22,fontWeight:800,color:'#0EA5E9',letterSpacing:'-0.02em'}}>RepForge</div>
             <div style={{fontSize:13,color:'#4A6B8A',marginTop:4}}>AI Sales Training Platform</div>
           </div>
-          <button onClick={()=>msal.loginRedirect({scopes:API_SCOPES})} disabled={authBusy} style={{width:'100%',padding:'12px 0',borderRadius:8,border:'none',background:authBusy?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:authBusy?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:authBusy?'wait':'pointer',transition:'all 0.15s'}}>{authBusy?'Signing in…':'Sign In / Create Account'}</button>
-          <div style={{textAlign:'center',marginTop:14,fontSize:12,color:'#4A6B8A'}}>Secured by Microsoft Entra</div>
-        </div>
+          {!authConfigured&&<div style={{fontSize:13,color:'#F97316',marginBottom:12}}>Sign-in isn't configured yet: set REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY.</div>}
+          <label style={{display:'block',fontSize:12,color:'#7A9CC4',marginBottom:4}} htmlFor="auth-email">Email</label>
+          <input id="auth-email" type="email" autoComplete="email" required value={authEmail} onChange={e=>setAuthEmail(e.target.value)} style={inp}/>
+          <label style={{display:'block',fontSize:12,color:'#7A9CC4',marginBottom:4}} htmlFor="auth-pass">Password</label>
+          <input id="auth-pass" type="password" autoComplete={authMode==='signup'?'new-password':'current-password'} required minLength={6} value={authPass} onChange={e=>setAuthPass(e.target.value)} style={inp}/>
+          {authMsg&&<div style={{fontSize:13,color:authMsg.ok?'#10B981':'#F87171',marginBottom:12}}>{authMsg.text}</div>}
+          <button type="submit" disabled={authBusy} style={{width:'100%',padding:'12px 0',borderRadius:8,border:'none',background:authBusy?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:authBusy?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:authBusy?'wait':'pointer'}}>{authBusy?'Please wait…':authMode==='signup'?'Create account':'Sign in'}</button>
+          <button type="button" onClick={()=>{setAuthMode(authMode==='signup'?'signin':'signup');setAuthMsg(null);}} style={{width:'100%',marginTop:12,background:'none',border:'none',color:'#38BDF8',fontSize:13,cursor:'pointer'}}>{authMode==='signup'?'Already have an account? Sign in':'New here? Create an account'}</button>
+        </form>
       </div>
     );
   }
@@ -1553,15 +1398,19 @@ function getPersonaPosts(emp,company){
           {crmView === "accounts" && (
             <>
               <div className="flex items-center justify-between mb-5">
-                <div><h1 className="text-lg font-bold text-[#F8FAFC]">Target Accounts</h1><p className="text-[#7A9CC4] text-sm">20 accounts. Click to begin prospecting.</p></div>
+                <div><h1 className="text-lg font-bold text-[#F8FAFC]">Target Accounts</h1><p className="text-[#7A9CC4] text-sm">{companies.length} accounts across {INDUSTRY_NAMES.length} industries. Click to begin prospecting.</p></div>
                 <div className="flex gap-1.5 flex-wrap">
                   {industries.map(ind => (
                     <button key={ind} onClick={() => setFilterInd(ind)} className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${filterInd===ind ? "bg-[#0EA5E9] text-white" : "bg-[#E4E1D8] text-[#38BDF8] hover:bg-[#D4D0C6]"}`}>{ind}</button>
                   ))}
+                  <span className="w-px bg-[#1B3154] mx-1" />
+                  {["All", ...SEGMENTS].map(sz => (
+                    <button key={'sz-'+sz} onClick={() => setFilterSize(sz)} className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${filterSize===sz ? "bg-[#0EA5E9] text-white" : "bg-[#E4E1D8] text-[#38BDF8] hover:bg-[#D4D0C6]"}`}>{sz==="All"?"All sizes":sz}</button>
+                  ))}
                 </div>
               </div>
               <div className="grid grid-cols-4 gap-4">
-                {companies.filter(c => filterInd==="All" || c.industry===filterInd).map(c => {
+                {companies.filter(c => (filterInd==="All" || c.industry===filterInd) && (filterSize==="All" || c.size===filterSize)).map(c => {
                   const emps = allEmployees[c.id]||[];
                   const replied = emps.filter(e => state[e.id]?.emailStatus==="replied" || state[e.id]?.linkedinStatus==="connected").length;
                   const contacted = emps.filter(e => state[e.id]?.emailStatus!=="none" || state[e.id]?.calls>0 || state[e.id]?.linkedinStatus!=="none").length;
