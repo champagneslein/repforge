@@ -17,7 +17,14 @@ export async function getUserId(req) {
   return u && u.id ? u.id : null;
 }
 
-const headers = (extra = {}) => ({ apikey: SERVICE, Authorization: 'Bearer ' + SERVICE, 'Content-Type': 'application/json', ...extra });
+// New-style secret keys (sb_secret_...) go only in the apikey header; legacy
+// service_role JWTs also go in Authorization.
+const headers = (extra = {}) => ({
+  apikey: SERVICE,
+  ...(SERVICE.startsWith('sb_') ? {} : { Authorization: 'Bearer ' + SERVICE }),
+  'Content-Type': 'application/json',
+  ...extra,
+});
 
 // GET one row matching all the filters, or null.
 export async function selectOne(table, filters) {
