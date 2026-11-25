@@ -1,10 +1,13 @@
-// Generates src/world/generated.js: 60 new accounts (so every industry has 10:
-// 4 SMB, 4 Mid-Market, 2 Enterprise), their people, and company-specific pains,
-// goals and buying-signal posts for all 80 accounts.
+// Generates src/world/generated.js: 68 new accounts (so every industry has 11:
+// 4 SMB, 4 Mid-Market, 3 Enterprise), their people, and company-specific pains,
+// goals and buying-signal posts for all 88 accounts. Enterprise accounts get a
+// full 30+ person org chart, and the original enterprise accounts are topped up
+// to that size too.
 //
 // Deterministic: the same seed always produces the same world, so employee ids
 // and saved progress stay stable. Run: node scripts/generate-world.mjs
 import { writeFileSync } from 'node:fs';
+import { LEGACY_COMPANIES, LEGACY_EMPLOYEES } from '../src/world/legacy.js';
 
 let seed = 20261125;
 const rnd = () => { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
@@ -190,6 +193,15 @@ const NEW_COMPANIES = [
   ['Northstar HR', 'Professional Services', 'SMB', 'northstarhr.co.uk', 'Outsourced HR for small businesses', 'Belfast', 14],
   ['Kite Marketing Studio', 'Professional Services', 'SMB', 'kitestudio.ie', 'B2B marketing agency', 'Galway', 21],
   ['Pennant IT Services', 'Professional Services', 'SMB', 'pennantit.co.uk', 'Managed IT support for small offices', 'Bristol', 28],
+  // A third enterprise account per industry (ids 81-88).
+  ['Arclight Software', 'SaaS', 'Enterprise', 'arclightsoftware.com', 'HR and payroll software for large employers', 'London', 4600],
+  ['Cobalt Intelligence', 'AI', 'Enterprise', 'cobaltintelligence.ai', 'AI fraud and risk models for global banks', 'Dublin', 2900],
+  ['Ironveil Security', 'Cyber Security', 'Enterprise', 'ironveil.com', 'Managed security services for governments and banks', 'Belfast', 3400],
+  ['Harbourpoint Bank', 'FinTech', 'Enterprise', 'harbourpointbank.ie', 'Digital bank with 2 million customers', 'Dublin', 3900],
+  ['Kestrel Automotive', 'Manufacturing', 'Enterprise', 'kestrelautomotive.co.uk', 'Tier 1 automotive parts supplier across 11 plants', 'Coventry', 7800],
+  ['Glenmore Foods Group', 'Food & Beverage', 'Enterprise', 'glenmorefoods.com', 'Snacks, bakery and frozen foods for UK and Irish supermarkets', 'Leeds', 6100],
+  ['Ashby Lane Consulting', 'Professional Services', 'Enterprise', 'ashbylane.com', 'Management and technology consulting', 'London', 5200],
+  ['Riverside Health Partners', 'Healthcare', 'Enterprise', 'riversidehealth.co.uk', 'Hospital and community care group with 12 sites', 'Manchester', 9500],
 ];
 
 // The original 20 accounts: new industry where it changed, a realistic headcount
@@ -217,8 +229,30 @@ const SEGMENT_NOTE = { SMB: ' Small team, so they wear many hats and decide fast
 const LADDER = {
   SMB: [['c-suite', 'founder'], ['c-suite', 'c', 2], ['director', 'director', 0], ['manager', 'manager', 0], ['mid', 'mid', 0], ['junior', 'junior', 0]],
   'Mid-Market': [['c-suite', 'c', 0], ['c-suite', 'c', 1], ['vp', 'vp', 0], ['director', 'director', 0], ['director', 'director', 1], ['manager', 'manager', 0], ['mid', 'mid', 0], ['junior', 'junior', 0]],
-  Enterprise: [['c-suite', 'c', 0], ['c-suite', 'c', 1], ['c-suite', 'c', 2], ['vp', 'vp', 0], ['vp', 'vp', 1], ['director', 'director', 0], ['director', 'director', 1], ['manager', 'manager', 0], ['manager', 'manager', 1], ['mid', 'mid', 0], ['mid', 'mid', 1], ['junior', 'junior', 0]],
 };
+// Enterprise org chart: the industry's own roles plus the corporate functions a
+// big company has (IT, procurement, legal, HR, finance, marketing). 33 people.
+const CORPORATE = {
+  'c-suite': ['Chief People Officer', 'Chief Revenue Officer'],
+  vp: ['VP Finance', 'VP Marketing', 'VP Information Technology', 'VP Procurement'],
+  director: ['Director of IT', 'Head of Procurement', 'Head of Legal', 'Head of Talent Acquisition', 'Director of Marketing'],
+  manager: ['IT Service Manager', 'Procurement Manager', 'HR Business Partner', 'Marketing Manager', 'Sales Manager'],
+  mid: ['Business Analyst', 'Financial Analyst', 'Recruiter'],
+  junior: ['Executive Assistant to the CEO', 'Graduate Analyst'],
+};
+function enterpriseRoster(ind) {
+  const T = INDUSTRIES[ind].titles;
+  const own = { 'c-suite': T.c, vp: T.vp, director: T.director, manager: T.manager, mid: T.mid, junior: T.junior };
+  const seen = new Set(), out = [];
+  for (const s of ['c-suite', 'vp', 'director', 'manager', 'mid', 'junior']) {
+    for (const title of [...own[s], ...CORPORATE[s]]) {
+      const k = title.toLowerCase();
+      if (!seen.has(k)) { seen.add(k); out.push([s, title]); }
+    }
+  }
+  return out;
+}
+
 const LEVEL = { 'c-suite': 'exec', vp: 'exec', director: 'manager', manager: 'manager', mid: 'ic', junior: 'ic' };
 const GENERIC_POSTS = {
   exec: ['Hiring across the team this year. If you know great people, send them my way.', 'Spent the week with customers. Best use of a leader\'s time, every time.'],
@@ -245,11 +279,10 @@ NEW_COMPANIES.forEach(([name, industry, size, domain, description, location, hea
   const [lo, hi] = DEAL[size];
   companies.push({ id, name, industry, size, employees: headcount, domain, description, location, dealValue: between(lo, hi) * 1000, pains, goals });
   const used = new Set(), postedLvl = new Set();
-  employees[id] = LADDER[size].map(([seniority, key, idx], n) => {
-    let first, last;
-    do { first = pick(FIRST); last = pick(LAST); } while (used.has(first) || used.has(last));
-    used.add(first); used.add(last);
-    const title = key === 'founder' ? ind.titles.founder : ind.titles[key][idx];
+  const roster = size === 'Enterprise' ? enterpriseRoster(industry)
+    : LADDER[size].map(([s, key, idx]) => [s, key === 'founder' ? ind.titles.founder : ind.titles[key][idx]]);
+  employees[id] = roster.map(([seniority, title], n) => {
+    const { first, last } = uniqueName(used);
     const lvl = LEVEL[seniority];
     const mine = pains.find(p => p.owner === lvl);
     const posts = [];
@@ -264,6 +297,33 @@ NEW_COMPANIES.forEach(([name, industry, size, domain, description, location, hea
   });
 });
 
+// Unique first names within a company (so people are easy to tell apart);
+// surnames may repeat, as they do in real companies.
+function uniqueName(used) {
+  let first, last;
+  do { first = pick(FIRST); last = pick(LAST); } while (used.has(first) || used.has(first + ' ' + last));
+  used.add(first); used.add(first + ' ' + last);
+  return { first, last };
+}
+
+// Top up the original enterprise accounts to a full org chart. Their
+// hand-written people stay as they are; new people get the next free ids.
+const legacyExtra = {};
+for (const c of LEGACY_COMPANIES.filter(c => c.size === 'Enterprise')) {
+  const existing = LEGACY_EMPLOYEES[c.id];
+  const industry = overrides[c.id].industry;
+  const have = new Set(existing.map(e => e.title.toLowerCase()));
+  const used = new Set(existing.flatMap(e => [e.first, e.first + ' ' + e.last]));
+  let next = Math.max(...existing.map(e => e.id)) + 1;
+  legacyExtra[c.id] = enterpriseRoster(industry).filter(([, title]) => !have.has(title.toLowerCase())).map(([seniority, title]) => {
+    const { first, last } = uniqueName(used);
+    const posts = rnd() < 0.4 ? [pick(GENERIC_POSTS[LEVEL[seniority]]).replace('{co}', c.name)] : [];
+    const bio = `${title} at ${c.name}. ${pick(['Joined', 'Been here'])} ${between(1, 9)} years.`;
+    const personality = pick(PERSONALITY[seniority]) + '.' + (['c-suite', 'vp', 'director'].includes(seniority) ? SEGMENT_NOTE.Enterprise : '');
+    return { id: next++, first, last, title, seniority, bio, personality, posts };
+  });
+}
+
 const out = `// GENERATED by scripts/generate-world.mjs. Do not edit by hand: change the
 // generator and re-run it (node scripts/generate-world.mjs).
 
@@ -272,7 +332,10 @@ export const LEGACY_OVERRIDES = ${JSON.stringify(overrides, null, 1)};
 export const GENERATED_COMPANIES = ${JSON.stringify(companies, null, 1)};
 
 export const GENERATED_EMPLOYEES = ${JSON.stringify(employees, null, 1)};
+
+export const LEGACY_EXTRA_EMPLOYEES = ${JSON.stringify(legacyExtra, null, 1)};
 `;
 writeFileSync(new URL('../src/world/generated.js', import.meta.url), out);
 const people = Object.values(employees).reduce((n, e) => n + e.length, 0);
-console.log(`Wrote ${companies.length} new companies, ${people} new people, overrides for ${Object.keys(overrides).length} legacy companies.`);
+const extra = Object.values(legacyExtra).reduce((n, e) => n + e.length, 0);
+console.log(`Wrote ${companies.length} new companies, ${people} new people, ${extra} people added to legacy enterprise accounts, overrides for ${Object.keys(overrides).length} legacy companies.`);

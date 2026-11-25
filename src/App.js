@@ -9,7 +9,7 @@ import { buildWorldContext } from './call/world';
 import { todayIso, dateForDay, dayForDate, formatSimDate, formatLongDate, relativeDayLabel, isWeekday } from './calendar';
 import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
-// Accounts and people live in src/world (80 accounts across 8 industries).
+// Accounts and people live in src/world (88 accounts across 8 industries).
 import { companies, allEmployees, INDUSTRY_NAMES, SEGMENTS } from './world/companies';
 
 function uuid(){if(typeof crypto!=='undefined'&&crypto.randomUUID)return crypto.randomUUID();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16);});}

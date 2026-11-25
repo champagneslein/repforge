@@ -24,7 +24,7 @@ npx vercel dev               # runs the app and the api/ functions together
 
 ## Accounts and people
 
-The sales world lives in `src/world`: 80 fictional accounts across 8 industries. The original 20 are hand-written in `legacy.js`; the rest come from `scripts/generate-world.mjs` (`node scripts/generate-world.mjs` regenerates `generated.js`).
+The sales world lives in `src/world`: 88 fictional accounts across 8 industries (4 SMB, 4 Mid-Market, 3 Enterprise each; enterprise accounts have 30+ people). The original 20 are hand-written in `legacy.js`; the rest come from `scripts/generate-world.mjs` (`node scripts/generate-world.mjs` regenerates `generated.js`).
 
 ## Voice calls
 
