@@ -11,7 +11,8 @@ import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 // Accounts and people live in src/world (88 accounts across 8 industries).
 import { companies, allEmployees, INDUSTRY_NAMES, SEGMENTS } from './world/companies';
-import { personProfile, personPosts } from './world/content';
+import { personProfile, personPosts, companySite } from './world/content';
+import { personNeeds, personaBriefing } from './world/persona';
 import CompanySite from './world/CompanySite';
 
 function uuid(){if(typeof crypto!=='undefined'&&crypto.randomUUID)return crypto.randomUUID();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16);});}
@@ -512,6 +513,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         emp: { first: emp.first, last: emp.last, title: emp.title, seniority: emp.seniority, bio: emp.bio },
+        briefing: company ? personaBriefing(emp, company, allEmployees[company.id] || [], companySite(company, allEmployees[company.id] || [])) : '',
         company: { name: company?.name, industry: company?.industry, size: company?.size },
         emailSubject: lastEmail.subject || '',
         emailBody: lastEmail.body || '',
@@ -929,27 +931,13 @@ React.useEffect(()=>{
 
 //  ProLink enrichment helpers 
 function getPersonaPhoto(id){return 'https://i.pravatar.cc/150?u=rpf'+id;}
+// Each person's own challenges and goals (src/world/persona.js): shaped by their
+// job and the company's real problems, and consistent with their website and posts.
 function getPersonaPainPoints(emp,company){
-  const byRole={
-    'c-suite':['Scaling '+company.name+' profitably while protecting culture','Board pressure on ARR growth without over-hiring','Competitive differentiation in a saturated '+company.industry+' market','Finding the right enterprise GTM motion'],
-    'vp':['Hitting '+( emp.title.includes('Sales')?'quota':'OKRs')+' with a lean team','Justifying new tool spend against tight budgets','Aligning cross-functional teams on priorities','Replacing legacy workflows with modern tooling'],
-    'manager':['Managing team performance with limited visibility','Reducing manual reporting overhead','Getting leadership buy-in for process changes','Ramping new hires faster'],
-    'ic':['Too much time on admin vs. actual work','Lack of clear direction from senior leadership',"Tools that don't integrate with existing stack",'Too many context switches between platforms']
-  };
-  const generic=byRole[emp.seniority]||byRole['ic'];
-  // Company-specific pains first: what this person's level actually feels at this account.
-  const lvl={'c-suite':'exec','vp':'exec','director':'manager','manager':'manager'}[emp.seniority]||'ic';
-  const specific=[...(emp.pains||[]),...((company&&company.pains)||[]).filter(p=>p.owner===lvl).map(p=>p.pain)];
-  return [...new Set([...specific,...generic])].slice(0,3);
+  return personNeeds(emp,company,(company&&allEmployees[company.id])||[]).pains.map(p=>p.text);
 }
 function getPersonaGoals(emp,company){
-  const s=emp.seniority;
-  if((s==='c-suite'||s==='vp')&&company&&company.goals)return [...company.goals,'Hit this year\'s '+(s==='vp'?'targets for the function':'growth and margin plan')];
-  return s==='c-suite'
-    ?['Position '+company.name+' as category leader in '+company.industry,'Reach next funding milestone or profitability target','Expand into two new verticals this year']
-    :s==='vp'
-    ?['Hit '+( emp.title.includes('Sales')?'revenue':'delivery')+' targets for the fiscal year','Build a repeatable, scalable team process','Reduce dependency on manual tooling by Q3']
-    :['Ship key deliverables on time with quality','Improve cross-team communication','Grow into a senior '+emp.title.replace('Junior ','').replace('Associate ','')];
+  return personNeeds(emp,company,(company&&allEmployees[company.id])||[]).goals;
 }
 
   if (!user) {
@@ -1586,7 +1574,8 @@ function getPersonaGoals(emp,company){
                     const _pn = ((selEmp.first||'') + ' ' + (selEmp.last||'')).trim();
                 const _pd = (deals||[]).find(function(d){return d.persona_name===_pn;}) || {};
                 const companyName = _pd.company_name || '';
-                const companyDesc = selEmp.bio || selEmp.personality || '';
+                const _co = getCompanyForEmp(selEmp.id);
+                const companyDesc = (selEmp.bio || selEmp.personality || '') + (_co ? personaBriefing(selEmp, _co, allEmployees[_co.id] || [], companySite(_co, allEmployees[_co.id] || [])) : '');
                 const industry = '';
                 const dealValue = 50000;
 

@@ -12,18 +12,29 @@ export const LEGACY_OVERRIDES = {
     "post": "NRR dipped under 100% last quarter for the first time. Expansion is stalling and churn is creeping up. Back to basics on customer value."
    },
    {
+    "owner": "exec",
+    "pain": "Sales cycles getting longer as buyers add approval steps",
+    "post": "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?"
+   },
+   {
     "owner": "manager",
-    "pain": "Forecasts keep missing because pipeline data is unreliable",
-    "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
+    "pain": "New sales reps take 6+ months to ramp",
+    "post": "New AEs take 6 months to ramp. That's half a year of salary before a single deal. Has to come down."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customer onboarding takes weeks before they see value",
+    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
    },
    {
     "owner": "ic",
-    "pain": "Too many tools that don't integrate",
-    "post": "Counted today: I log into 11 different tools to do my job. None of them talk to each other."
+    "pain": "Support tickets pile up after every release",
+    "post": "Every release means 300 new tickets. Love our customers, but my queue is a monster this week."
    }
   ],
   "goals": [
-   "Move upmarket into larger customers",
+   "Reach profitability without slowing growth",
+   "Get net revenue retention back above 110%",
    "Cut customer onboarding time in half"
   ]
  },
@@ -37,25 +48,6 @@ export const LEGACY_OVERRIDES = {
     "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
    },
    {
-    "owner": "manager",
-    "pain": "Forecasts keep missing because pipeline data is unreliable",
-    "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
-   },
-   {
-    "owner": "ic",
-    "pain": "Too many tools that don't integrate",
-    "post": "Counted today: I log into 11 different tools to do my job. None of them talk to each other."
-   }
-  ],
-  "goals": [
-   "Reach profitability without slowing growth",
-   "Get net revenue retention back above 110%"
-  ]
- },
- "3": {
-  "industry": "SaaS",
-  "pains": [
-   {
     "owner": "exec",
     "pain": "Net revenue retention slipping below 100%",
     "post": "NRR dipped under 100% last quarter for the first time. Expansion is stalling and churn is creeping up. Back to basics on customer value."
@@ -66,14 +58,55 @@ export const LEGACY_OVERRIDES = {
     "post": "New AEs take 6 months to ramp. That's half a year of salary before a single deal. Has to come down."
    },
    {
+    "owner": "manager",
+    "pain": "Customer onboarding takes weeks before they see value",
+    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
+   },
+   {
     "owner": "ic",
-    "pain": "Too many tools that don't integrate",
-    "post": "Counted today: I log into 11 different tools to do my job. None of them talk to each other."
+    "pain": "Support tickets pile up after every release",
+    "post": "Every release means 300 new tickets. Love our customers, but my queue is a monster this week."
    }
   ],
   "goals": [
    "Get net revenue retention back above 110%",
-   "Move upmarket into larger customers"
+   "Move upmarket into larger customers",
+   "Cut customer onboarding time in half"
+  ]
+ },
+ "3": {
+  "industry": "SaaS",
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "AI-native competitors undercutting on price",
+    "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
+   },
+   {
+    "owner": "exec",
+    "pain": "Sales cycles getting longer as buyers add approval steps",
+    "post": "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?"
+   },
+   {
+    "owner": "manager",
+    "pain": "Forecasts keep missing because pipeline data is unreliable",
+    "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
+   },
+   {
+    "owner": "manager",
+    "pain": "New sales reps take 6+ months to ramp",
+    "post": "New AEs take 6 months to ramp. That's half a year of salary before a single deal. Has to come down."
+   },
+   {
+    "owner": "ic",
+    "pain": "Support tickets pile up after every release",
+    "post": "Every release means 300 new tickets. Love our customers, but my queue is a monster this week."
+   }
+  ],
+  "goals": [
+   "Get net revenue retention back above 110%",
+   "Move upmarket into larger customers",
+   "Cut customer onboarding time in half"
   ]
  },
  "4": {
@@ -82,8 +115,18 @@ export const LEGACY_OVERRIDES = {
   "pains": [
    {
     "owner": "exec",
+    "pain": "AI-native competitors undercutting on price",
+    "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
+   },
+   {
+    "owner": "exec",
     "pain": "Sales cycles getting longer as buyers add approval steps",
     "post": "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?"
+   },
+   {
+    "owner": "manager",
+    "pain": "Customer onboarding takes weeks before they see value",
+    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
    },
    {
     "owner": "manager",
@@ -98,7 +141,8 @@ export const LEGACY_OVERRIDES = {
   ],
   "goals": [
    "Get net revenue retention back above 110%",
-   "Move upmarket into larger customers"
+   "Reach profitability without slowing growth",
+   "Cut customer onboarding time in half"
   ]
  },
  "5": {
@@ -107,13 +151,23 @@ export const LEGACY_OVERRIDES = {
   "pains": [
    {
     "owner": "exec",
-    "pain": "Long security questionnaires slowing every deal",
-    "post": "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
+    "pain": "Board wants cyber risk explained in business terms",
+    "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
+   },
+   {
+    "owner": "exec",
+    "pain": "Too many overlapping security tools and licences",
+    "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
    },
    {
     "owner": "manager",
-    "pain": "Incident response plans are out of date",
-    "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
+    "pain": "Can't hire or keep experienced security analysts",
+    "post": "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
+   },
+   {
+    "owner": "manager",
+    "pain": "Alert fatigue in the security operations team",
+    "post": "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
    },
    {
     "owner": "ic",
@@ -123,6 +177,7 @@ export const LEGACY_OVERRIDES = {
   ],
   "goals": [
    "Cut time to detect and respond to incidents",
+   "Pass ISO 27001 certification this year",
    "Consolidate the security tool stack"
   ]
  },
@@ -132,8 +187,13 @@ export const LEGACY_OVERRIDES = {
   "pains": [
    {
     "owner": "exec",
-    "pain": "Long security questionnaires slowing every deal",
-    "post": "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
+    "pain": "Too many overlapping security tools and licences",
+    "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
+   },
+   {
+    "owner": "exec",
+    "pain": "Board wants cyber risk explained in business terms",
+    "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
    },
    {
     "owner": "manager",
@@ -141,14 +201,20 @@ export const LEGACY_OVERRIDES = {
     "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
    },
    {
+    "owner": "manager",
+    "pain": "Can't hire or keep experienced security analysts",
+    "post": "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
+   },
+   {
     "owner": "ic",
-    "pain": "Compliance evidence gathering eats weeks every audit",
-    "post": "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
+    "pain": "Scanners flag huge numbers of false positives",
+    "post": "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone."
    }
   ],
   "goals": [
-   "Cut time to detect and respond to incidents",
-   "Expand into larger regulated customers"
+   "Consolidate the security tool stack",
+   "Pass ISO 27001 certification this year",
+   "Cut time to detect and respond to incidents"
   ]
  },
  "7": {
@@ -160,34 +226,19 @@ export const LEGACY_OVERRIDES = {
     "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
    },
    {
-    "owner": "manager",
-    "pain": "Incident response plans are out of date",
-    "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
-   },
-   {
-    "owner": "ic",
-    "pain": "Compliance evidence gathering eats weeks every audit",
-    "post": "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
-   }
-  ],
-  "goals": [
-   "Expand into larger regulated customers",
-   "Consolidate the security tool stack"
-  ]
- },
- "8": {
-  "industry": "Cyber Security",
-  "employees": 3200,
-  "pains": [
-   {
     "owner": "exec",
-    "pain": "Long security questionnaires slowing every deal",
-    "post": "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
+    "pain": "Board wants cyber risk explained in business terms",
+    "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
    },
    {
     "owner": "manager",
     "pain": "Incident response plans are out of date",
     "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
+   },
+   {
+    "owner": "manager",
+    "pain": "Alert fatigue in the security operations team",
+    "post": "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
    },
    {
     "owner": "ic",
@@ -196,6 +247,43 @@ export const LEGACY_OVERRIDES = {
    }
   ],
   "goals": [
+   "Cut time to detect and respond to incidents",
+   "Consolidate the security tool stack",
+   "Pass ISO 27001 certification this year"
+  ]
+ },
+ "8": {
+  "industry": "Cyber Security",
+  "employees": 3200,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Board wants cyber risk explained in business terms",
+    "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
+   },
+   {
+    "owner": "exec",
+    "pain": "Too many overlapping security tools and licences",
+    "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
+   },
+   {
+    "owner": "manager",
+    "pain": "Incident response plans are out of date",
+    "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't hire or keep experienced security analysts",
+    "post": "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
+   },
+   {
+    "owner": "ic",
+    "pain": "Scanners flag huge numbers of false positives",
+    "post": "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone."
+   }
+  ],
+  "goals": [
+   "Cut time to detect and respond to incidents",
    "Consolidate the security tool stack",
    "Pass ISO 27001 certification this year"
   ]
@@ -210,9 +298,19 @@ export const LEGACY_OVERRIDES = {
     "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
    },
    {
+    "owner": "exec",
+    "pain": "Supply chain volatility wrecking forecasts",
+    "post": "Lead times on key components went from 6 weeks to 20. Planning feels like guesswork."
+   },
+   {
     "owner": "manager",
-    "pain": "Unplanned downtime on production lines",
-    "post": "Line 3 went down for 14 hours on Tuesday. That's a week of margin gone because of one bearing."
+    "pain": "Maintenance is reactive instead of planned",
+    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't hire skilled operators and technicians",
+    "post": "Three technician roles open since spring. The skills gap on the factory floor is real."
    },
    {
     "owner": "ic",
@@ -221,8 +319,9 @@ export const LEGACY_OVERRIDES = {
    }
   ],
   "goals": [
+   "Cut unplanned downtime by 30%",
    "Win a major new OEM contract",
-   "Hit customer carbon-reporting requirements"
+   "Automate quality reporting"
   ]
  },
  "10": {
@@ -233,6 +332,87 @@ export const LEGACY_OVERRIDES = {
     "owner": "exec",
     "pain": "Energy costs squeezing margins",
     "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
+   },
+   {
+    "owner": "exec",
+    "pain": "Supply chain volatility wrecking forecasts",
+    "post": "Lead times on key components went from 6 weeks to 20. Planning feels like guesswork."
+   },
+   {
+    "owner": "manager",
+    "pain": "Unplanned downtime on production lines",
+    "post": "Line 3 went down for 14 hours on Tuesday. That's a week of margin gone because of one bearing."
+   },
+   {
+    "owner": "manager",
+    "pain": "Maintenance is reactive instead of planned",
+    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
+   },
+   {
+    "owner": "ic",
+    "pain": "Paper-based processes on the shop floor",
+    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
+   }
+  ],
+  "goals": [
+   "Cut unplanned downtime by 30%",
+   "Win a major new OEM contract",
+   "Hit customer carbon-reporting requirements"
+  ]
+ },
+ "11": {
+  "industry": "Manufacturing",
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Energy costs squeezing margins",
+    "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
+   },
+   {
+    "owner": "exec",
+    "pain": "Customers demanding carbon and sustainability data",
+    "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
+   },
+   {
+    "owner": "manager",
+    "pain": "Maintenance is reactive instead of planned",
+    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't hire skilled operators and technicians",
+    "post": "Three technician roles open since spring. The skills gap on the factory floor is real."
+   },
+   {
+    "owner": "ic",
+    "pain": "Paper-based processes on the shop floor",
+    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
+   }
+  ],
+  "goals": [
+   "Hit customer carbon-reporting requirements",
+   "Cut unplanned downtime by 30%",
+   "Automate quality reporting"
+  ]
+ },
+ "12": {
+  "industry": "Manufacturing",
+  "employees": 610,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Customers demanding carbon and sustainability data",
+    "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
+   },
+   {
+    "owner": "exec",
+    "pain": "Energy costs squeezing margins",
+    "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't hire skilled operators and technicians",
+    "post": "Three technician roles open since spring. The skills gap on the factory floor is real."
    },
    {
     "owner": "manager",
@@ -246,56 +426,8 @@ export const LEGACY_OVERRIDES = {
    }
   ],
   "goals": [
-   "Cut unplanned downtime by 30%",
-   "Win a major new OEM contract"
-  ]
- },
- "11": {
-  "industry": "Manufacturing",
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Customers demanding carbon and sustainability data",
-    "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
-   },
-   {
-    "owner": "manager",
-    "pain": "Maintenance is reactive instead of planned",
-    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
-   },
-   {
-    "owner": "ic",
-    "pain": "Paper-based processes on the shop floor",
-    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
-   }
-  ],
-  "goals": [
    "Automate quality reporting",
-   "Win a major new OEM contract"
-  ]
- },
- "12": {
-  "industry": "Manufacturing",
-  "employees": 610,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Customers demanding carbon and sustainability data",
-    "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
-   },
-   {
-    "owner": "manager",
-    "pain": "Maintenance is reactive instead of planned",
-    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
-   },
-   {
-    "owner": "ic",
-    "pain": "Paper-based processes on the shop floor",
-    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
-   }
-  ],
-  "goals": [
-   "Cut unplanned downtime by 30%",
+   "Hit customer carbon-reporting requirements",
    "Win a major new OEM contract"
   ]
  },
@@ -305,82 +437,18 @@ export const LEGACY_OVERRIDES = {
   "pains": [
    {
     "owner": "exec",
-    "pain": "Legacy core systems slow down new products",
-    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
+    "pain": "Partner bank integrations take too long",
+    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
+   },
+   {
+    "owner": "exec",
+    "pain": "Regulatory reporting burden keeps growing",
+    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
    },
    {
     "owner": "manager",
     "pain": "Fraud losses rising",
     "post": "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
-   },
-   {
-    "owner": "ic",
-    "pain": "Reconciliation still done by hand",
-    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
-   }
-  ],
-  "goals": [
-   "Launch two new products this year",
-   "Reduce fraud losses without blocking good customers"
-  ]
- },
- "14": {
-  "industry": "FinTech",
-  "employees": 260,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Legacy core systems slow down new products",
-    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
-   },
-   {
-    "owner": "manager",
-    "pain": "Support flooded with 'where's my money?' questions",
-    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
-   },
-   {
-    "owner": "ic",
-    "pain": "Reconciliation still done by hand",
-    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
-   }
-  ],
-  "goals": [
-   "Launch two new products this year",
-   "Cut onboarding drop-off in half"
-  ]
- },
- "15": {
-  "industry": "FinTech",
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Partner bank integrations take too long",
-    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
-   },
-   {
-    "owner": "manager",
-    "pain": "Support flooded with 'where's my money?' questions",
-    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
-   },
-   {
-    "owner": "ic",
-    "pain": "Compliance tools that don't share data",
-    "post": "Five compliance tools, none of them share data. I copy and paste between them all day."
-   }
-  ],
-  "goals": [
-   "Launch two new products this year",
-   "Reduce fraud losses without blocking good customers"
-  ]
- },
- "16": {
-  "industry": "FinTech",
-  "employees": 2800,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Legacy core systems slow down new products",
-    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
    },
    {
     "owner": "manager",
@@ -394,8 +462,116 @@ export const LEGACY_OVERRIDES = {
    }
   ],
   "goals": [
-   "Get a new banking licence or partner live",
+   "Launch two new products this year",
+   "Reduce fraud losses without blocking good customers",
    "Cut onboarding drop-off in half"
+  ]
+ },
+ "14": {
+  "industry": "FinTech",
+  "employees": 260,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Regulatory reporting burden keeps growing",
+    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
+   },
+   {
+    "owner": "exec",
+    "pain": "Partner bank integrations take too long",
+    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
+   },
+   {
+    "owner": "manager",
+    "pain": "Fraud losses rising",
+    "post": "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
+   },
+   {
+    "owner": "manager",
+    "pain": "Support flooded with 'where's my money?' questions",
+    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
+   },
+   {
+    "owner": "ic",
+    "pain": "Reconciliation still done by hand",
+    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
+   }
+  ],
+  "goals": [
+   "Reduce fraud losses without blocking good customers",
+   "Cut onboarding drop-off in half",
+   "Get a new banking licence or partner live"
+  ]
+ },
+ "15": {
+  "industry": "FinTech",
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Legacy core systems slow down new products",
+    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
+   },
+   {
+    "owner": "exec",
+    "pain": "Partner bank integrations take too long",
+    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
+   },
+   {
+    "owner": "manager",
+    "pain": "Support flooded with 'where's my money?' questions",
+    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
+   },
+   {
+    "owner": "manager",
+    "pain": "Fraud losses rising",
+    "post": "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
+   },
+   {
+    "owner": "ic",
+    "pain": "Compliance tools that don't share data",
+    "post": "Five compliance tools, none of them share data. I copy and paste between them all day."
+   }
+  ],
+  "goals": [
+   "Get a new banking licence or partner live",
+   "Cut onboarding drop-off in half",
+   "Reduce fraud losses without blocking good customers"
+  ]
+ },
+ "16": {
+  "industry": "FinTech",
+  "employees": 2800,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Legacy core systems slow down new products",
+    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
+   },
+   {
+    "owner": "exec",
+    "pain": "Regulatory reporting burden keeps growing",
+    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
+   },
+   {
+    "owner": "manager",
+    "pain": "Support flooded with 'where's my money?' questions",
+    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customers dropping out during identity checks",
+    "post": "38% of applicants abandon during ID checks. That's growth we paid for and lost at the last step."
+   },
+   {
+    "owner": "ic",
+    "pain": "Compliance tools that don't share data",
+    "post": "Five compliance tools, none of them share data. I copy and paste between them all day."
+   }
+  ],
+  "goals": [
+   "Cut onboarding drop-off in half",
+   "Get a new banking licence or partner live",
+   "Reduce fraud losses without blocking good customers"
   ]
  },
  "17": {
@@ -406,6 +582,123 @@ export const LEGACY_OVERRIDES = {
     "owner": "exec",
     "pain": "AI-native competitors undercutting on price",
     "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
+   },
+   {
+    "owner": "exec",
+    "pain": "Net revenue retention slipping below 100%",
+    "post": "NRR dipped under 100% last quarter for the first time. Expansion is stalling and churn is creeping up. Back to basics on customer value."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customer onboarding takes weeks before they see value",
+    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
+   },
+   {
+    "owner": "manager",
+    "pain": "Forecasts keep missing because pipeline data is unreliable",
+    "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
+   },
+   {
+    "owner": "ic",
+    "pain": "Too many tools that don't integrate",
+    "post": "Counted today: I log into 11 different tools to do my job. None of them talk to each other."
+   }
+  ],
+  "goals": [
+   "Get net revenue retention back above 110%",
+   "Reach profitability without slowing growth",
+   "Move upmarket into larger customers"
+  ]
+ },
+ "18": {
+  "industry": "Healthcare",
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Flat budgets against rising demand",
+    "post": "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
+   },
+   {
+    "owner": "exec",
+    "pain": "Waiting lists at record highs",
+    "post": "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
+   },
+   {
+    "owner": "manager",
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
+   },
+   {
+    "owner": "manager",
+    "pain": "Staff shortages and rising agency costs",
+    "post": "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
+   },
+   {
+    "owner": "ic",
+    "pain": "Phone lines jammed with booking calls",
+    "post": "Our phones open at 8am and the lines are full by 8:01. Patients deserve better."
+   }
+  ],
+  "goals": [
+   "Cut waiting times by a quarter",
+   "Reduce reliance on agency staff",
+   "Open new locations this year"
+  ]
+ },
+ "19": {
+  "industry": "SaaS",
+  "employees": 1600,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Net revenue retention slipping below 100%",
+    "post": "NRR dipped under 100% last quarter for the first time. Expansion is stalling and churn is creeping up. Back to basics on customer value."
+   },
+   {
+    "owner": "exec",
+    "pain": "Sales cycles getting longer as buyers add approval steps",
+    "post": "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?"
+   },
+   {
+    "owner": "manager",
+    "pain": "Customer onboarding takes weeks before they see value",
+    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
+   },
+   {
+    "owner": "manager",
+    "pain": "Forecasts keep missing because pipeline data is unreliable",
+    "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
+   },
+   {
+    "owner": "ic",
+    "pain": "Support tickets pile up after every release",
+    "post": "Every release means 300 new tickets. Love our customers, but my queue is a monster this week."
+   }
+  ],
+  "goals": [
+   "Move upmarket into larger customers",
+   "Cut customer onboarding time in half",
+   "Get net revenue retention back above 110%"
+  ]
+ },
+ "20": {
+  "industry": "SaaS",
+  "employees": 380,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Sales cycles getting longer as buyers add approval steps",
+    "post": "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?"
+   },
+   {
+    "owner": "exec",
+    "pain": "Net revenue retention slipping below 100%",
+    "post": "NRR dipped under 100% last quarter for the first time. Expansion is stalling and churn is creeping up. Back to basics on customer value."
+   },
+   {
+    "owner": "manager",
+    "pain": "Forecasts keep missing because pipeline data is unreliable",
+    "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
    },
    {
     "owner": "manager",
@@ -419,82 +712,9 @@ export const LEGACY_OVERRIDES = {
    }
   ],
   "goals": [
-   "Cut customer onboarding time in half",
-   "Move upmarket into larger customers"
-  ]
- },
- "18": {
-  "industry": "Healthcare",
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Data privacy reviews slow every new tool",
-    "post": "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
-   },
-   {
-    "owner": "manager",
-    "pain": "Missed appointments",
-    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
-   },
-   {
-    "owner": "ic",
-    "pain": "Patient systems that don't talk to each other",
-    "post": "I enter the same patient details into four different systems. Every single day."
-   }
-  ],
-  "goals": [
-   "Open new locations this year",
-   "Reduce reliance on agency staff"
-  ]
- },
- "19": {
-  "industry": "SaaS",
-  "employees": 1600,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Net revenue retention slipping below 100%",
-    "post": "NRR dipped under 100% last quarter for the first time. Expansion is stalling and churn is creeping up. Back to basics on customer value."
-   },
-   {
-    "owner": "manager",
-    "pain": "Customer onboarding takes weeks before they see value",
-    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
-   },
-   {
-    "owner": "ic",
-    "pain": "Too many tools that don't integrate",
-    "post": "Counted today: I log into 11 different tools to do my job. None of them talk to each other."
-   }
-  ],
-  "goals": [
    "Get net revenue retention back above 110%",
-   "Cut customer onboarding time in half"
-  ]
- },
- "20": {
-  "industry": "SaaS",
-  "employees": 380,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "AI-native competitors undercutting on price",
-    "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
-   },
-   {
-    "owner": "manager",
-    "pain": "Customer onboarding takes weeks before they see value",
-    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
-   },
-   {
-    "owner": "ic",
-    "pain": "Too many tools that don't integrate",
-    "post": "Counted today: I log into 11 different tools to do my job. None of them talk to each other."
-   }
-  ],
-  "goals": [
-   "Cut customer onboarding time in half",
-   "Move upmarket into larger customers"
+   "Move upmarket into larger customers",
+   "Reach profitability without slowing growth"
   ]
  }
 };
@@ -509,7 +729,7 @@ export const GENERATED_COMPANIES = [
   "domain": "tallybook.io",
   "description": "Invoicing and expense software for tradespeople",
   "location": "Galway",
-  "dealValue": 16000,
+  "dealValue": 19000,
   "pains": [
    {
     "owner": "exec",
@@ -517,19 +737,30 @@ export const GENERATED_COMPANIES = [
     "post": "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?"
    },
    {
+    "owner": "exec",
+    "pain": "AI-native competitors undercutting on price",
+    "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
+   },
+   {
     "owner": "manager",
-    "pain": "Customer onboarding takes weeks before they see value",
-    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
+    "pain": "Forecasts keep missing because pipeline data is unreliable",
+    "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
+   },
+   {
+    "owner": "manager",
+    "pain": "New sales reps take 6+ months to ramp",
+    "post": "New AEs take 6 months to ramp. That's half a year of salary before a single deal. Has to come down."
    },
    {
     "owner": "ic",
-    "pain": "Too many tools that don't integrate",
-    "post": "Counted today: I log into 11 different tools to do my job. None of them talk to each other."
+    "pain": "Support tickets pile up after every release",
+    "post": "Every release means 300 new tickets. Love our customers, but my queue is a monster this week."
    }
   ],
   "goals": [
    "Move upmarket into larger customers",
-   "Get net revenue retention back above 110%"
+   "Get net revenue retention back above 110%",
+   "Reach profitability without slowing growth"
   ]
  },
  {
@@ -541,7 +772,7 @@ export const GENERATED_COMPANIES = [
   "domain": "rotawise.com",
   "description": "Staff scheduling app for restaurants and cafés",
   "location": "Belfast",
-  "dealValue": 23000,
+  "dealValue": 28000,
   "pains": [
    {
     "owner": "exec",
@@ -549,19 +780,30 @@ export const GENERATED_COMPANIES = [
     "post": "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?"
    },
    {
+    "owner": "exec",
+    "pain": "AI-native competitors undercutting on price",
+    "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
+   },
+   {
     "owner": "manager",
     "pain": "Forecasts keep missing because pipeline data is unreliable",
     "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
    },
    {
+    "owner": "manager",
+    "pain": "New sales reps take 6+ months to ramp",
+    "post": "New AEs take 6 months to ramp. That's half a year of salary before a single deal. Has to come down."
+   },
+   {
     "owner": "ic",
-    "pain": "Support tickets pile up after every release",
-    "post": "Every release means 300 new tickets. Love our customers, but my queue is a monster this week."
+    "pain": "Too many tools that don't integrate",
+    "post": "Counted today: I log into 11 different tools to do my job. None of them talk to each other."
    }
   ],
   "goals": [
-   "Cut customer onboarding time in half",
-   "Move upmarket into larger customers"
+   "Get net revenue retention back above 110%",
+   "Reach profitability without slowing growth",
+   "Cut customer onboarding time in half"
   ]
  },
  {
@@ -573,12 +815,22 @@ export const GENERATED_COMPANIES = [
   "domain": "quillon.app",
   "description": "Contract templates and e-signature for agencies",
   "location": "Bristol",
-  "dealValue": 25000,
+  "dealValue": 22000,
   "pains": [
    {
     "owner": "exec",
     "pain": "AI-native competitors undercutting on price",
     "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
+   },
+   {
+    "owner": "exec",
+    "pain": "Net revenue retention slipping below 100%",
+    "post": "NRR dipped under 100% last quarter for the first time. Expansion is stalling and churn is creeping up. Back to basics on customer value."
+   },
+   {
+    "owner": "manager",
+    "pain": "Forecasts keep missing because pipeline data is unreliable",
+    "post": "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter."
    },
    {
     "owner": "manager",
@@ -592,7 +844,8 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Get net revenue retention back above 110%",
+   "Cut customer onboarding time in half",
+   "Move upmarket into larger customers",
    "Reach profitability without slowing growth"
   ]
  },
@@ -605,12 +858,22 @@ export const GENERATED_COMPANIES = [
   "domain": "bastionly.com",
   "description": "Managed detection and response for mid-size firms",
   "location": "Manchester",
-  "dealValue": 48000,
+  "dealValue": 40000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Long security questionnaires slowing every deal",
     "post": "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
+   },
+   {
+    "owner": "exec",
+    "pain": "Too many overlapping security tools and licences",
+    "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
+   },
+   {
+    "owner": "manager",
+    "pain": "Incident response plans are out of date",
+    "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
    },
    {
     "owner": "manager",
@@ -625,7 +888,8 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Cut time to detect and respond to incidents",
-   "Consolidate the security tool stack"
+   "Consolidate the security tool stack",
+   "Expand into larger regulated customers"
   ]
  },
  {
@@ -637,12 +901,108 @@ export const GENERATED_COMPANIES = [
   "domain": "keyward.io",
   "description": "Identity and access management for hybrid workforces",
   "location": "Dublin",
-  "dealValue": 46000,
+  "dealValue": 53000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Too many overlapping security tools and licences",
+    "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
+   },
+   {
+    "owner": "exec",
+    "pain": "Board wants cyber risk explained in business terms",
+    "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
+   },
+   {
+    "owner": "manager",
+    "pain": "Alert fatigue in the security operations team",
+    "post": "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't hire or keep experienced security analysts",
+    "post": "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
+   },
+   {
+    "owner": "ic",
+    "pain": "Scanners flag huge numbers of false positives",
+    "post": "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone."
+   }
+  ],
+  "goals": [
+   "Consolidate the security tool stack",
+   "Expand into larger regulated customers",
+   "Pass ISO 27001 certification this year"
+  ]
+ },
+ {
+  "id": 26,
+  "name": "Sentrova",
+  "industry": "Cyber Security",
+  "size": "Mid-Market",
+  "employees": 190,
+  "domain": "sentrova.com",
+  "description": "Cloud security posture management",
+  "location": "Edinburgh",
+  "dealValue": 31000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Board wants cyber risk explained in business terms",
+    "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
+   },
+   {
+    "owner": "exec",
+    "pain": "Long security questionnaires slowing every deal",
+    "post": "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't hire or keep experienced security analysts",
+    "post": "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
+   },
+   {
+    "owner": "manager",
+    "pain": "Incident response plans are out of date",
+    "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
+   },
+   {
+    "owner": "ic",
+    "pain": "Compliance evidence gathering eats weeks every audit",
+    "post": "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
+   }
+  ],
+  "goals": [
+   "Expand into larger regulated customers",
+   "Pass ISO 27001 certification this year",
+   "Cut time to detect and respond to incidents"
+  ]
+ },
+ {
+  "id": 27,
+  "name": "Lockpoint",
+  "industry": "Cyber Security",
+  "size": "SMB",
+  "employees": 22,
+  "domain": "lockpoint.ie",
+  "description": "Phishing simulation and security awareness training",
+  "location": "Cork",
+  "dealValue": 16000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Long security questionnaires slowing every deal",
     "post": "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
+   },
+   {
+    "owner": "exec",
+    "pain": "Board wants cyber risk explained in business terms",
+    "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't hire or keep experienced security analysts",
+    "post": "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
    },
    {
     "owner": "manager",
@@ -656,71 +1016,8 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
+   "Expand into larger regulated customers",
    "Pass ISO 27001 certification this year",
-   "Consolidate the security tool stack"
-  ]
- },
- {
-  "id": 26,
-  "name": "Sentrova",
-  "industry": "Cyber Security",
-  "size": "Mid-Market",
-  "employees": 190,
-  "domain": "sentrova.com",
-  "description": "Cloud security posture management",
-  "location": "Edinburgh",
-  "dealValue": 37000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Long security questionnaires slowing every deal",
-    "post": "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
-   },
-   {
-    "owner": "manager",
-    "pain": "Alert fatigue in the security operations team",
-    "post": "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
-   },
-   {
-    "owner": "ic",
-    "pain": "Compliance evidence gathering eats weeks every audit",
-    "post": "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
-   }
-  ],
-  "goals": [
-   "Pass ISO 27001 certification this year",
-   "Consolidate the security tool stack"
-  ]
- },
- {
-  "id": 27,
-  "name": "Lockpoint",
-  "industry": "Cyber Security",
-  "size": "SMB",
-  "employees": 22,
-  "domain": "lockpoint.ie",
-  "description": "Phishing simulation and security awareness training",
-  "location": "Cork",
-  "dealValue": 23000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Too many overlapping security tools and licences",
-    "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
-   },
-   {
-    "owner": "manager",
-    "pain": "Can't hire or keep experienced security analysts",
-    "post": "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
-   },
-   {
-    "owner": "ic",
-    "pain": "Compliance evidence gathering eats weeks every audit",
-    "post": "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
-   }
-  ],
-  "goals": [
-   "Cut time to detect and respond to incidents",
    "Consolidate the security tool stack"
   ]
  },
@@ -733,7 +1030,7 @@ export const GENERATED_COMPANIES = [
   "domain": "patchwise.io",
   "description": "Automated patching for small IT teams",
   "location": "Leeds",
-  "dealValue": 19000,
+  "dealValue": 20000,
   "pains": [
    {
     "owner": "exec",
@@ -741,19 +1038,30 @@ export const GENERATED_COMPANIES = [
     "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
    },
    {
+    "owner": "exec",
+    "pain": "Board wants cyber risk explained in business terms",
+    "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
+   },
+   {
     "owner": "manager",
-    "pain": "Can't hire or keep experienced security analysts",
-    "post": "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
+    "pain": "Alert fatigue in the security operations team",
+    "post": "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
+   },
+   {
+    "owner": "manager",
+    "pain": "Incident response plans are out of date",
+    "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
    },
    {
     "owner": "ic",
-    "pain": "Scanners flag huge numbers of false positives",
-    "post": "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone."
+    "pain": "Compliance evidence gathering eats weeks every audit",
+    "post": "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
    }
   ],
   "goals": [
-   "Cut time to detect and respond to incidents",
-   "Expand into larger regulated customers"
+   "Consolidate the security tool stack",
+   "Expand into larger regulated customers",
+   "Cut time to detect and respond to incidents"
   ]
  },
  {
@@ -773,19 +1081,30 @@ export const GENERATED_COMPANIES = [
     "post": "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer."
    },
    {
+    "owner": "exec",
+    "pain": "Too many overlapping security tools and licences",
+    "post": "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
+   },
+   {
     "owner": "manager",
     "pain": "Alert fatigue in the security operations team",
     "post": "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
    },
    {
+    "owner": "manager",
+    "pain": "Incident response plans are out of date",
+    "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
+   },
+   {
     "owner": "ic",
-    "pain": "Scanners flag huge numbers of false positives",
-    "post": "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone."
+    "pain": "Compliance evidence gathering eats weeks every audit",
+    "post": "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
    }
   ],
   "goals": [
    "Expand into larger regulated customers",
-   "Consolidate the security tool stack"
+   "Consolidate the security tool stack",
+   "Pass ISO 27001 certification this year"
   ]
  },
  {
@@ -797,12 +1116,22 @@ export const GENERATED_COMPANIES = [
   "domain": "atlasprecision.com",
   "description": "Aerospace and medical device components across 6 plants",
   "location": "Belfast",
-  "dealValue": 129000,
+  "dealValue": 116000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Customers demanding carbon and sustainability data",
     "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
+   },
+   {
+    "owner": "exec",
+    "pain": "Energy costs squeezing margins",
+    "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
+   },
+   {
+    "owner": "manager",
+    "pain": "Maintenance is reactive instead of planned",
+    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
    },
    {
     "owner": "manager",
@@ -811,12 +1140,13 @@ export const GENERATED_COMPANIES = [
    },
    {
     "owner": "ic",
-    "pain": "Paper-based processes on the shop floor",
-    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
+    "pain": "Quality data stuck in spreadsheets",
+    "post": "Our quality report is 12 spreadsheets stitched together every Friday. Half my day, every week."
    }
   ],
   "goals": [
    "Win a major new OEM contract",
+   "Cut unplanned downtime by 30%",
    "Automate quality reporting"
   ]
  },
@@ -829,12 +1159,22 @@ export const GENERATED_COMPANIES = [
   "domain": "corribpackaging.ie",
   "description": "Corrugated and recyclable packaging for food brands",
   "location": "Galway",
-  "dealValue": 34000,
+  "dealValue": 44000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Supply chain volatility wrecking forecasts",
     "post": "Lead times on key components went from 6 weeks to 20. Planning feels like guesswork."
+   },
+   {
+    "owner": "exec",
+    "pain": "Customers demanding carbon and sustainability data",
+    "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
+   },
+   {
+    "owner": "manager",
+    "pain": "Maintenance is reactive instead of planned",
+    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
    },
    {
     "owner": "manager",
@@ -848,8 +1188,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
+   "Cut unplanned downtime by 30%",
    "Hit customer carbon-reporting requirements",
-   "Cut unplanned downtime by 30%"
+   "Win a major new OEM contract"
   ]
  },
  {
@@ -861,7 +1202,7 @@ export const GENERATED_COMPANIES = [
   "domain": "hartwellplastics.co.uk",
   "description": "Injection-moulded parts for automotive suppliers",
   "location": "Leeds",
-  "dealValue": 49000,
+  "dealValue": 39000,
   "pains": [
    {
     "owner": "exec",
@@ -869,19 +1210,30 @@ export const GENERATED_COMPANIES = [
     "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
    },
    {
+    "owner": "exec",
+    "pain": "Customers demanding carbon and sustainability data",
+    "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
+   },
+   {
     "owner": "manager",
-    "pain": "Can't hire skilled operators and technicians",
-    "post": "Three technician roles open since spring. The skills gap on the factory floor is real."
+    "pain": "Maintenance is reactive instead of planned",
+    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
+   },
+   {
+    "owner": "manager",
+    "pain": "Unplanned downtime on production lines",
+    "post": "Line 3 went down for 14 hours on Tuesday. That's a week of margin gone because of one bearing."
    },
    {
     "owner": "ic",
-    "pain": "Paper-based processes on the shop floor",
-    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
+    "pain": "Quality data stuck in spreadsheets",
+    "post": "Our quality report is 12 spreadsheets stitched together every Friday. Half my day, every week."
    }
   ],
   "goals": [
    "Win a major new OEM contract",
-   "Automate quality reporting"
+   "Hit customer carbon-reporting requirements",
+   "Cut unplanned downtime by 30%"
   ]
  },
  {
@@ -893,12 +1245,17 @@ export const GENERATED_COMPANIES = [
   "domain": "brennansteel.ie",
   "description": "Structural steel fabrication for local builders",
   "location": "Limerick",
-  "dealValue": 20000,
+  "dealValue": 25000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Energy costs squeezing margins",
-    "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
+    "pain": "Customers demanding carbon and sustainability data",
+    "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
+   },
+   {
+    "owner": "exec",
+    "pain": "Supply chain volatility wrecking forecasts",
+    "post": "Lead times on key components went from 6 weeks to 20. Planning feels like guesswork."
    },
    {
     "owner": "manager",
@@ -906,13 +1263,19 @@ export const GENERATED_COMPANIES = [
     "post": "Line 3 went down for 14 hours on Tuesday. That's a week of margin gone because of one bearing."
    },
    {
+    "owner": "manager",
+    "pain": "Maintenance is reactive instead of planned",
+    "post": "We fix machines when they break. I want to fix them before they break. Building the business case now."
+   },
+   {
     "owner": "ic",
-    "pain": "Paper-based processes on the shop floor",
-    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
+    "pain": "Quality data stuck in spreadsheets",
+    "post": "Our quality report is 12 spreadsheets stitched together every Friday. Half my day, every week."
    }
   ],
   "goals": [
-   "Automate quality reporting",
+   "Win a major new OEM contract",
+   "Hit customer carbon-reporting requirements",
    "Cut unplanned downtime by 30%"
   ]
  },
@@ -925,12 +1288,22 @@ export const GENERATED_COMPANIES = [
   "domain": "kilnandco.co.uk",
   "description": "Handmade ceramic tiles for interior designers",
   "location": "Bristol",
-  "dealValue": 12000,
+  "dealValue": 23000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Supply chain volatility wrecking forecasts",
+    "post": "Lead times on key components went from 6 weeks to 20. Planning feels like guesswork."
+   },
    {
     "owner": "exec",
     "pain": "Energy costs squeezing margins",
     "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
+   },
+   {
+    "owner": "manager",
+    "pain": "Unplanned downtime on production lines",
+    "post": "Line 3 went down for 14 hours on Tuesday. That's a week of margin gone because of one bearing."
    },
    {
     "owner": "manager",
@@ -944,8 +1317,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
+   "Hit customer carbon-reporting requirements",
    "Automate quality reporting",
-   "Cut unplanned downtime by 30%"
+   "Win a major new OEM contract"
   ]
  },
  {
@@ -961,8 +1335,18 @@ export const GENERATED_COMPANIES = [
   "pains": [
    {
     "owner": "exec",
-    "pain": "Customers demanding carbon and sustainability data",
-    "post": "Two of our biggest customers now require carbon data per part. We're not set up for that."
+    "pain": "Supply chain volatility wrecking forecasts",
+    "post": "Lead times on key components went from 6 weeks to 20. Planning feels like guesswork."
+   },
+   {
+    "owner": "exec",
+    "pain": "Energy costs squeezing margins",
+    "post": "Energy is now our second-biggest cost after people. Every efficiency project is back on the table."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't hire skilled operators and technicians",
+    "post": "Three technician roles open since spring. The skills gap on the factory floor is real."
    },
    {
     "owner": "manager",
@@ -971,12 +1355,13 @@ export const GENERATED_COMPANIES = [
    },
    {
     "owner": "ic",
-    "pain": "Paper-based processes on the shop floor",
-    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
+    "pain": "Quality data stuck in spreadsheets",
+    "post": "Our quality report is 12 spreadsheets stitched together every Friday. Half my day, every week."
    }
   ],
   "goals": [
    "Cut unplanned downtime by 30%",
+   "Automate quality reporting",
    "Win a major new OEM contract"
   ]
  },
@@ -989,12 +1374,22 @@ export const GENERATED_COMPANIES = [
   "domain": "clearledger.io",
   "description": "Automated accounts payable for mid-size companies",
   "location": "London",
-  "dealValue": 37000,
+  "dealValue": 61000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Partner bank integrations take too long",
-    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
+    "pain": "Legacy core systems slow down new products",
+    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
+   },
+   {
+    "owner": "exec",
+    "pain": "Regulatory reporting burden keeps growing",
+    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customers dropping out during identity checks",
+    "post": "38% of applicants abandon during ID checks. That's growth we paid for and lost at the last step."
    },
    {
     "owner": "manager",
@@ -1003,13 +1398,14 @@ export const GENERATED_COMPANIES = [
    },
    {
     "owner": "ic",
-    "pain": "Reconciliation still done by hand",
-    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
+    "pain": "Compliance tools that don't share data",
+    "post": "Five compliance tools, none of them share data. I copy and paste between them all day."
    }
   ],
   "goals": [
-   "Launch two new products this year",
-   "Reduce fraud losses without blocking good customers"
+   "Get a new banking licence or partner live",
+   "Reduce fraud losses without blocking good customers",
+   "Launch two new products this year"
   ]
  },
  {
@@ -1021,44 +1417,22 @@ export const GENERATED_COMPANIES = [
   "domain": "northbank.digital",
   "description": "Digital-only business bank for small companies",
   "location": "Manchester",
-  "dealValue": 36000,
+  "dealValue": 51000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Regulatory reporting burden keeps growing",
     "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
+   },
+   {
+    "owner": "exec",
+    "pain": "Legacy core systems slow down new products",
+    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
    },
    {
     "owner": "manager",
-    "pain": "Support flooded with 'where's my money?' questions",
-    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
-   },
-   {
-    "owner": "ic",
-    "pain": "Reconciliation still done by hand",
-    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
-   }
-  ],
-  "goals": [
-   "Cut onboarding drop-off in half",
-   "Get a new banking licence or partner live"
-  ]
- },
- {
-  "id": 38,
-  "name": "Tessera Pay",
-  "industry": "FinTech",
-  "size": "Mid-Market",
-  "employees": 220,
-  "domain": "tesserapay.com",
-  "description": "Cross-border payroll and contractor payments",
-  "location": "Dublin",
-  "dealValue": 40000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Regulatory reporting burden keeps growing",
-    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
+    "pain": "Fraud losses rising",
+    "post": "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
    },
    {
     "owner": "manager",
@@ -1073,52 +1447,26 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Reduce fraud losses without blocking good customers",
+   "Get a new banking licence or partner live",
    "Cut onboarding drop-off in half"
   ]
  },
  {
-  "id": 39,
-  "name": "Fundbridge",
+  "id": 38,
+  "name": "Tessera Pay",
   "industry": "FinTech",
-  "size": "SMB",
-  "employees": 26,
-  "domain": "fundbridge.io",
-  "description": "Invoice financing for small businesses",
-  "location": "Belfast",
-  "dealValue": 23000,
+  "size": "Mid-Market",
+  "employees": 220,
+  "domain": "tesserapay.com",
+  "description": "Cross-border payroll and contractor payments",
+  "location": "Dublin",
+  "dealValue": 48000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Legacy core systems slow down new products",
-    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
+    "pain": "Regulatory reporting burden keeps growing",
+    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
    },
-   {
-    "owner": "manager",
-    "pain": "Support flooded with 'where's my money?' questions",
-    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
-   },
-   {
-    "owner": "ic",
-    "pain": "Reconciliation still done by hand",
-    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
-   }
-  ],
-  "goals": [
-   "Launch two new products this year",
-   "Cut onboarding drop-off in half"
-  ]
- },
- {
-  "id": 40,
-  "name": "Coinpurse",
-  "industry": "FinTech",
-  "size": "SMB",
-  "employees": 19,
-  "domain": "coinpurse.app",
-  "description": "Company spend cards for small teams",
-  "location": "Edinburgh",
-  "dealValue": 28000,
-  "pains": [
    {
     "owner": "exec",
     "pain": "Partner bank integrations take too long",
@@ -1130,6 +1478,54 @@ export const GENERATED_COMPANIES = [
     "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
    },
    {
+    "owner": "manager",
+    "pain": "Fraud losses rising",
+    "post": "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
+   },
+   {
+    "owner": "ic",
+    "pain": "Reconciliation still done by hand",
+    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
+   }
+  ],
+  "goals": [
+   "Cut onboarding drop-off in half",
+   "Get a new banking licence or partner live",
+   "Launch two new products this year"
+  ]
+ },
+ {
+  "id": 39,
+  "name": "Fundbridge",
+  "industry": "FinTech",
+  "size": "SMB",
+  "employees": 26,
+  "domain": "fundbridge.io",
+  "description": "Invoice financing for small businesses",
+  "location": "Belfast",
+  "dealValue": 14000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Regulatory reporting burden keeps growing",
+    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
+   },
+   {
+    "owner": "exec",
+    "pain": "Partner bank integrations take too long",
+    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
+   },
+   {
+    "owner": "manager",
+    "pain": "Support flooded with 'where's my money?' questions",
+    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
+   },
+   {
+    "owner": "manager",
+    "pain": "Fraud losses rising",
+    "post": "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
+   },
+   {
     "owner": "ic",
     "pain": "Compliance tools that don't share data",
     "post": "Five compliance tools, none of them share data. I copy and paste between them all day."
@@ -1137,6 +1533,50 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Launch two new products this year",
+   "Reduce fraud losses without blocking good customers",
+   "Get a new banking licence or partner live"
+  ]
+ },
+ {
+  "id": 40,
+  "name": "Coinpurse",
+  "industry": "FinTech",
+  "size": "SMB",
+  "employees": 19,
+  "domain": "coinpurse.app",
+  "description": "Company spend cards for small teams",
+  "location": "Edinburgh",
+  "dealValue": 27000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Partner bank integrations take too long",
+    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
+   },
+   {
+    "owner": "exec",
+    "pain": "Legacy core systems slow down new products",
+    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customers dropping out during identity checks",
+    "post": "38% of applicants abandon during ID checks. That's growth we paid for and lost at the last step."
+   },
+   {
+    "owner": "manager",
+    "pain": "Fraud losses rising",
+    "post": "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
+   },
+   {
+    "owner": "ic",
+    "pain": "Reconciliation still done by hand",
+    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
+   }
+  ],
+  "goals": [
+   "Launch two new products this year",
+   "Reduce fraud losses without blocking good customers",
    "Get a new banking licence or partner live"
   ]
  },
@@ -1149,12 +1589,22 @@ export const GENERATED_COMPANIES = [
   "domain": "kinlo.ie",
   "description": "Savings and budgeting app for students",
   "location": "Cork",
-  "dealValue": 27000,
+  "dealValue": 26000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Legacy core systems slow down new products",
-    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
+    "pain": "Regulatory reporting burden keeps growing",
+    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
+   },
+   {
+    "owner": "exec",
+    "pain": "Partner bank integrations take too long",
+    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
+   },
+   {
+    "owner": "manager",
+    "pain": "Support flooded with 'where's my money?' questions",
+    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
    },
    {
     "owner": "manager",
@@ -1168,8 +1618,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Launch two new products this year",
-   "Reduce fraud losses without blocking good customers"
+   "Cut onboarding drop-off in half",
+   "Get a new banking licence or partner live",
+   "Launch two new products this year"
   ]
  },
  {
@@ -1181,7 +1632,7 @@ export const GENERATED_COMPANIES = [
   "domain": "meridianhealth.ie",
   "description": "Private hospital network with 7 hospitals",
   "location": "Dublin",
-  "dealValue": 107000,
+  "dealValue": 130000,
   "pains": [
    {
     "owner": "exec",
@@ -1189,36 +1640,14 @@ export const GENERATED_COMPANIES = [
     "post": "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
    },
    {
-    "owner": "manager",
-    "pain": "Staff shortages and rising agency costs",
-    "post": "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
+    "owner": "exec",
+    "pain": "Waiting lists at record highs",
+    "post": "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
    },
    {
-    "owner": "ic",
-    "pain": "Patient systems that don't talk to each other",
-    "post": "I enter the same patient details into four different systems. Every single day."
-   }
-  ],
-  "goals": [
-   "Open new locations this year",
-   "Reduce reliance on agency staff"
-  ]
- },
- {
-  "id": 43,
-  "name": "Albion Care Homes",
-  "industry": "Healthcare",
-  "size": "Enterprise",
-  "employees": 5200,
-  "domain": "albioncare.co.uk",
-  "description": "Residential and nursing care across 64 homes",
-  "location": "Manchester",
-  "dealValue": 106000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Data privacy reviews slow every new tool",
-    "post": "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
+    "owner": "manager",
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
    },
    {
     "owner": "manager",
@@ -1233,24 +1662,35 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Move more bookings online",
-   "Open new locations this year"
+   "Reduce reliance on agency staff",
+   "Cut waiting times by a quarter"
   ]
  },
  {
-  "id": 44,
-  "name": "Brightwell Dental Group",
+  "id": 43,
+  "name": "Albion Care Homes",
   "industry": "Healthcare",
-  "size": "Mid-Market",
-  "employees": 780,
-  "domain": "brightwelldental.co.uk",
-  "description": "Family dental clinics across 42 practices",
-  "location": "Bristol",
-  "dealValue": 48000,
+  "size": "Enterprise",
+  "employees": 5200,
+  "domain": "albioncare.co.uk",
+  "description": "Residential and nursing care across 64 homes",
+  "location": "Manchester",
+  "dealValue": 157000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Waiting lists at record highs",
     "post": "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
+   },
+   {
+    "owner": "exec",
+    "pain": "Data privacy reviews slow every new tool",
+    "post": "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
+   },
+   {
+    "owner": "manager",
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
    },
    {
     "owner": "manager",
@@ -1265,20 +1705,26 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Open new locations this year",
-   "Cut waiting times by a quarter"
+   "Move more bookings online",
+   "Reduce reliance on agency staff"
   ]
  },
  {
-  "id": 45,
-  "name": "Physiolink",
+  "id": 44,
+  "name": "Brightwell Dental Group",
   "industry": "Healthcare",
   "size": "Mid-Market",
-  "employees": 340,
-  "domain": "physiolink.ie",
-  "description": "Physiotherapy and sports injury clinics in 28 locations",
-  "location": "Dublin",
-  "dealValue": 41000,
+  "employees": 780,
+  "domain": "brightwelldental.co.uk",
+  "description": "Family dental clinics across 42 practices",
+  "location": "Bristol",
+  "dealValue": 60000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Data privacy reviews slow every new tool",
+    "post": "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
+   },
    {
     "owner": "exec",
     "pain": "Waiting lists at record highs",
@@ -1290,31 +1736,47 @@ export const GENERATED_COMPANIES = [
     "post": "12% of appointments missed last month. Each one is a slot another patient needed."
    },
    {
+    "owner": "manager",
+    "pain": "Staff shortages and rising agency costs",
+    "post": "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
+   },
+   {
     "owner": "ic",
-    "pain": "Patient systems that don't talk to each other",
-    "post": "I enter the same patient details into four different systems. Every single day."
+    "pain": "Phone lines jammed with booking calls",
+    "post": "Our phones open at 8am and the lines are full by 8:01. Patients deserve better."
    }
   ],
   "goals": [
-   "Reduce reliance on agency staff",
-   "Open new locations this year"
+   "Move more bookings online",
+   "Open new locations this year",
+   "Reduce reliance on agency staff"
   ]
  },
  {
-  "id": 46,
-  "name": "ClearSight Opticians",
+  "id": 45,
+  "name": "Physiolink",
   "industry": "Healthcare",
   "size": "Mid-Market",
-  "employees": 520,
-  "domain": "clearsightopticians.co.uk",
-  "description": "Optician chain with 35 stores",
-  "location": "Leeds",
-  "dealValue": 52000,
+  "employees": 340,
+  "domain": "physiolink.ie",
+  "description": "Physiotherapy and sports injury clinics in 28 locations",
+  "location": "Dublin",
+  "dealValue": 55000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Waiting lists at record highs",
+    "post": "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
+   },
    {
     "owner": "exec",
     "pain": "Flat budgets against rising demand",
     "post": "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
+   },
+   {
+    "owner": "manager",
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
    },
    {
     "owner": "manager",
@@ -1328,7 +1790,51 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Reduce reliance on agency staff",
+   "Move more bookings online",
+   "Open new locations this year",
+   "Cut waiting times by a quarter"
+  ]
+ },
+ {
+  "id": 46,
+  "name": "ClearSight Opticians",
+  "industry": "Healthcare",
+  "size": "Mid-Market",
+  "employees": 520,
+  "domain": "clearsightopticians.co.uk",
+  "description": "Optician chain with 35 stores",
+  "location": "Leeds",
+  "dealValue": 55000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Flat budgets against rising demand",
+    "post": "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
+   },
+   {
+    "owner": "exec",
+    "pain": "Waiting lists at record highs",
+    "post": "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
+   },
+   {
+    "owner": "manager",
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
+   },
+   {
+    "owner": "manager",
+    "pain": "Staff shortages and rising agency costs",
+    "post": "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
+   },
+   {
+    "owner": "ic",
+    "pain": "Phone lines jammed with booking calls",
+    "post": "Our phones open at 8am and the lines are full by 8:01. Patients deserve better."
+   }
+  ],
+  "goals": [
+   "Open new locations this year",
+   "Cut waiting times by a quarter",
    "Move more bookings online"
   ]
  },
@@ -1341,12 +1847,22 @@ export const GENERATED_COMPANIES = [
   "domain": "carewell.ie",
   "description": "Home care for older people",
   "location": "Cork",
-  "dealValue": 54000,
+  "dealValue": 53000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Data privacy reviews slow every new tool",
     "post": "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
+   },
+   {
+    "owner": "exec",
+    "pain": "Flat budgets against rising demand",
+    "post": "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
+   },
+   {
+    "owner": "manager",
+    "pain": "Clinicians buried in admin",
+    "post": "Our clinicians spend 2 hours a day on paperwork. That's 2 hours not with patients."
    },
    {
     "owner": "manager",
@@ -1361,6 +1877,7 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Open new locations this year",
+   "Cut waiting times by a quarter",
    "Reduce reliance on agency staff"
   ]
  },
@@ -1373,8 +1890,13 @@ export const GENERATED_COMPANIES = [
   "domain": "oaklanemedical.ie",
   "description": "Family doctors' practice with 9 GPs",
   "location": "Galway",
-  "dealValue": 14000,
+  "dealValue": 28000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Data privacy reviews slow every new tool",
+    "post": "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
+   },
    {
     "owner": "exec",
     "pain": "Flat budgets against rising demand",
@@ -1386,13 +1908,19 @@ export const GENERATED_COMPANIES = [
     "post": "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
    },
    {
+    "owner": "manager",
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
+   },
+   {
     "owner": "ic",
-    "pain": "Patient systems that don't talk to each other",
-    "post": "I enter the same patient details into four different systems. Every single day."
+    "pain": "Phone lines jammed with booking calls",
+    "post": "Our phones open at 8am and the lines are full by 8:01. Patients deserve better."
    }
   ],
   "goals": [
-   "Move more bookings online",
+   "Reduce reliance on agency staff",
+   "Open new locations this year",
    "Cut waiting times by a quarter"
   ]
  },
@@ -1405,12 +1933,22 @@ export const GENERATED_COMPANIES = [
   "domain": "lumenskin.co.uk",
   "description": "Dermatology and skin clinic",
   "location": "Edinburgh",
-  "dealValue": 20000,
+  "dealValue": 13000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Flat budgets against rising demand",
     "post": "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
+   },
+   {
+    "owner": "exec",
+    "pain": "Waiting lists at record highs",
+    "post": "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
+   },
+   {
+    "owner": "manager",
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
    },
    {
     "owner": "manager",
@@ -1424,8 +1962,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Open new locations this year",
-   "Move more bookings online"
+   "Reduce reliance on agency staff",
+   "Move more bookings online",
+   "Open new locations this year"
   ]
  },
  {
@@ -1437,12 +1976,22 @@ export const GENERATED_COMPANIES = [
   "domain": "mindroom.ie",
   "description": "Online and in-person counselling practice",
   "location": "Belfast",
-  "dealValue": 26000,
+  "dealValue": 23000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Waiting lists at record highs",
-    "post": "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
+    "pain": "Flat budgets against rising demand",
+    "post": "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
+   },
+   {
+    "owner": "exec",
+    "pain": "Data privacy reviews slow every new tool",
+    "post": "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
+   },
+   {
+    "owner": "manager",
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
    },
    {
     "owner": "manager",
@@ -1451,13 +2000,14 @@ export const GENERATED_COMPANIES = [
    },
    {
     "owner": "ic",
-    "pain": "Patient systems that don't talk to each other",
-    "post": "I enter the same patient details into four different systems. Every single day."
+    "pain": "Phone lines jammed with booking calls",
+    "post": "Our phones open at 8am and the lines are full by 8:01. Patients deserve better."
    }
   ],
   "goals": [
+   "Open new locations this year",
    "Cut waiting times by a quarter",
-   "Open new locations this year"
+   "Reduce reliance on agency staff"
   ]
  },
  {
@@ -1469,8 +2019,13 @@ export const GENERATED_COMPANIES = [
   "domain": "synthara.ai",
   "description": "Enterprise AI assistants for banks and insurers",
   "location": "London",
-  "dealValue": 86000,
+  "dealValue": 101000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Enterprise customers stuck in pilots that never go live",
+    "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
+   },
    {
     "owner": "exec",
     "pain": "GPU and inference costs eating into gross margin",
@@ -1482,12 +2037,18 @@ export const GENERATED_COMPANIES = [
     "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
    },
    {
+    "owner": "manager",
+    "pain": "Hiring ML engineers is slow and expensive",
+    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
+   },
+   {
     "owner": "ic",
-    "pain": "Poor customer data quality breaks models",
-    "post": "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing."
+    "pain": "Model evaluation is manual and inconsistent",
+    "post": "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
    }
   ],
   "goals": [
+   "Turn pilots into paid production contracts",
    "Land three enterprise logos this year",
    "Improve gross margin by cutting inference costs"
   ]
@@ -1501,7 +2062,7 @@ export const GENERATED_COMPANIES = [
   "domain": "cortexa.ai",
   "description": "Computer vision for retail and logistics",
   "location": "Dublin",
-  "dealValue": 101000,
+  "dealValue": 94000,
   "pains": [
    {
     "owner": "exec",
@@ -1509,9 +2070,19 @@ export const GENERATED_COMPANIES = [
     "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
    },
    {
+    "owner": "exec",
+    "pain": "Customers worried about AI regulation and compliance",
+    "post": "Every enterprise deal now includes AI Act questions. Legal reviews are adding 6 weeks to our sales cycle."
+   },
+   {
     "owner": "manager",
     "pain": "Can't prove hard ROI to customers",
     "post": "Customers keep asking for hard ROI numbers. We have great anecdotes and not enough data. Fixing that this quarter."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customer success overwhelmed by onboarding",
+    "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
    },
    {
     "owner": "ic",
@@ -1520,8 +2091,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Get ahead of AI regulation as a selling point",
-   "Turn pilots into paid production contracts"
+   "Improve gross margin by cutting inference costs",
+   "Land three enterprise logos this year",
+   "Get ahead of AI regulation as a selling point"
   ]
  },
  {
@@ -1533,8 +2105,13 @@ export const GENERATED_COMPANIES = [
   "domain": "parsewell.ai",
   "description": "AI document processing for insurers",
   "location": "Edinburgh",
-  "dealValue": 41000,
+  "dealValue": 36000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "GPU and inference costs eating into gross margin",
+    "post": "Our inference bill grew faster than revenue last quarter. Gross margin is the conversation at every board meeting now."
+   },
    {
     "owner": "exec",
     "pain": "Customers worried about AI regulation and compliance",
@@ -1542,8 +2119,13 @@ export const GENERATED_COMPANIES = [
    },
    {
     "owner": "manager",
-    "pain": "Customer success overwhelmed by onboarding",
-    "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
+    "pain": "Can't prove hard ROI to customers",
+    "post": "Customers keep asking for hard ROI numbers. We have great anecdotes and not enough data. Fixing that this quarter."
+   },
+   {
+    "owner": "manager",
+    "pain": "Hiring ML engineers is slow and expensive",
+    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
    },
    {
     "owner": "ic",
@@ -1552,7 +2134,8 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Get ahead of AI regulation as a selling point",
+   "Improve gross margin by cutting inference costs",
+   "Land three enterprise logos this year",
    "Turn pilots into paid production contracts"
   ]
  },
@@ -1565,7 +2148,7 @@ export const GENERATED_COMPANIES = [
   "domain": "voxly.ai",
   "description": "AI voice agents for contact centres",
   "location": "Manchester",
-  "dealValue": 43000,
+  "dealValue": 50000,
   "pains": [
    {
     "owner": "exec",
@@ -1573,9 +2156,19 @@ export const GENERATED_COMPANIES = [
     "post": "Our inference bill grew faster than revenue last quarter. Gross margin is the conversation at every board meeting now."
    },
    {
+    "owner": "exec",
+    "pain": "Enterprise customers stuck in pilots that never go live",
+    "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
+   },
+   {
     "owner": "manager",
     "pain": "Customer success overwhelmed by onboarding",
     "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
+   },
+   {
+    "owner": "manager",
+    "pain": "Hiring ML engineers is slow and expensive",
+    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
    },
    {
     "owner": "ic",
@@ -1584,8 +2177,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
+   "Get ahead of AI regulation as a selling point",
    "Land three enterprise logos this year",
-   "Get ahead of AI regulation as a selling point"
+   "Turn pilots into paid production contracts"
   ]
  },
  {
@@ -1597,7 +2191,7 @@ export const GENERATED_COMPANIES = [
   "domain": "predictly.ai",
   "description": "Demand forecasting AI for retailers",
   "location": "Dublin",
-  "dealValue": 31000,
+  "dealValue": 34000,
   "pains": [
    {
     "owner": "exec",
@@ -1605,17 +2199,28 @@ export const GENERATED_COMPANIES = [
     "post": "Every enterprise deal now includes AI Act questions. Legal reviews are adding 6 weeks to our sales cycle."
    },
    {
+    "owner": "exec",
+    "pain": "Enterprise customers stuck in pilots that never go live",
+    "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
+   },
+   {
     "owner": "manager",
-    "pain": "Hiring ML engineers is slow and expensive",
-    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
+    "pain": "Customer success overwhelmed by onboarding",
+    "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't prove hard ROI to customers",
+    "post": "Customers keep asking for hard ROI numbers. We have great anecdotes and not enough data. Fixing that this quarter."
    },
    {
     "owner": "ic",
-    "pain": "Poor customer data quality breaks models",
-    "post": "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing."
+    "pain": "Model evaluation is manual and inconsistent",
+    "post": "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
    }
   ],
   "goals": [
+   "Improve gross margin by cutting inference costs",
    "Land three enterprise logos this year",
    "Get ahead of AI regulation as a selling point"
   ]
@@ -1629,12 +2234,108 @@ export const GENERATED_COMPANIES = [
   "domain": "lexigraph.ai",
   "description": "AI legal research and contract review",
   "location": "London",
-  "dealValue": 31000,
+  "dealValue": 63000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Customers worried about AI regulation and compliance",
     "post": "Every enterprise deal now includes AI Act questions. Legal reviews are adding 6 weeks to our sales cycle."
+   },
+   {
+    "owner": "exec",
+    "pain": "Enterprise customers stuck in pilots that never go live",
+    "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
+   },
+   {
+    "owner": "manager",
+    "pain": "Hiring ML engineers is slow and expensive",
+    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customer success overwhelmed by onboarding",
+    "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
+   },
+   {
+    "owner": "ic",
+    "pain": "Model evaluation is manual and inconsistent",
+    "post": "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
+   }
+  ],
+  "goals": [
+   "Land three enterprise logos this year",
+   "Turn pilots into paid production contracts",
+   "Improve gross margin by cutting inference costs"
+  ]
+ },
+ {
+  "id": 57,
+  "name": "Labelbase",
+  "industry": "AI",
+  "size": "SMB",
+  "employees": 31,
+  "domain": "labelbase.ai",
+  "description": "Data labelling for computer vision teams",
+  "location": "Cork",
+  "dealValue": 21000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "GPU and inference costs eating into gross margin",
+    "post": "Our inference bill grew faster than revenue last quarter. Gross margin is the conversation at every board meeting now."
+   },
+   {
+    "owner": "exec",
+    "pain": "Enterprise customers stuck in pilots that never go live",
+    "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't prove hard ROI to customers",
+    "post": "Customers keep asking for hard ROI numbers. We have great anecdotes and not enough data. Fixing that this quarter."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customer success overwhelmed by onboarding",
+    "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
+   },
+   {
+    "owner": "ic",
+    "pain": "Model evaluation is manual and inconsistent",
+    "post": "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
+   }
+  ],
+  "goals": [
+   "Turn pilots into paid production contracts",
+   "Get ahead of AI regulation as a selling point",
+   "Improve gross margin by cutting inference costs"
+  ]
+ },
+ {
+  "id": 58,
+  "name": "Promptwise",
+  "industry": "AI",
+  "size": "SMB",
+  "employees": 19,
+  "domain": "promptwise.ai",
+  "description": "AI writing assistant for marketing teams",
+  "location": "Galway",
+  "dealValue": 17000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Enterprise customers stuck in pilots that never go live",
+    "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
+   },
+   {
+    "owner": "exec",
+    "pain": "Customers worried about AI regulation and compliance",
+    "post": "Every enterprise deal now includes AI Act questions. Legal reviews are adding 6 weeks to our sales cycle."
+   },
+   {
+    "owner": "manager",
+    "pain": "Hiring ML engineers is slow and expensive",
+    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
    },
    {
     "owner": "manager",
@@ -1649,71 +2350,8 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Get ahead of AI regulation as a selling point",
-   "Turn pilots into paid production contracts"
-  ]
- },
- {
-  "id": 57,
-  "name": "Labelbase",
-  "industry": "AI",
-  "size": "SMB",
-  "employees": 31,
-  "domain": "labelbase.ai",
-  "description": "Data labelling for computer vision teams",
-  "location": "Cork",
-  "dealValue": 20000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Enterprise customers stuck in pilots that never go live",
-    "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
-   },
-   {
-    "owner": "manager",
-    "pain": "Hiring ML engineers is slow and expensive",
-    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
-   },
-   {
-    "owner": "ic",
-    "pain": "Model evaluation is manual and inconsistent",
-    "post": "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
-   }
-  ],
-  "goals": [
-   "Get ahead of AI regulation as a selling point",
-   "Improve gross margin by cutting inference costs"
-  ]
- },
- {
-  "id": 58,
-  "name": "Promptwise",
-  "industry": "AI",
-  "size": "SMB",
-  "employees": 19,
-  "domain": "promptwise.ai",
-  "description": "AI writing assistant for marketing teams",
-  "location": "Galway",
-  "dealValue": 15000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Enterprise customers stuck in pilots that never go live",
-    "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
-   },
-   {
-    "owner": "manager",
-    "pain": "Hiring ML engineers is slow and expensive",
-    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
-   },
-   {
-    "owner": "ic",
-    "pain": "Model evaluation is manual and inconsistent",
-    "post": "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
-   }
-  ],
-  "goals": [
-   "Land three enterprise logos this year",
-   "Turn pilots into paid production contracts"
+   "Turn pilots into paid production contracts",
+   "Land three enterprise logos this year"
   ]
  },
  {
@@ -1725,8 +2363,13 @@ export const GENERATED_COMPANIES = [
   "domain": "tutorlyn.ai",
   "description": "AI tutoring for secondary schools",
   "location": "Belfast",
-  "dealValue": 28000,
+  "dealValue": 15000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Customers worried about AI regulation and compliance",
+    "post": "Every enterprise deal now includes AI Act questions. Legal reviews are adding 6 weeks to our sales cycle."
+   },
    {
     "owner": "exec",
     "pain": "Enterprise customers stuck in pilots that never go live",
@@ -1734,8 +2377,13 @@ export const GENERATED_COMPANIES = [
    },
    {
     "owner": "manager",
-    "pain": "Hiring ML engineers is slow and expensive",
-    "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
+    "pain": "Customer success overwhelmed by onboarding",
+    "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't prove hard ROI to customers",
+    "post": "Customers keep asking for hard ROI numbers. We have great anecdotes and not enough data. Fixing that this quarter."
    },
    {
     "owner": "ic",
@@ -1744,8 +2392,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
+   "Improve gross margin by cutting inference costs",
    "Get ahead of AI regulation as a selling point",
-   "Turn pilots into paid production contracts"
+   "Land three enterprise logos this year"
   ]
  },
  {
@@ -1757,8 +2406,13 @@ export const GENERATED_COMPANIES = [
   "domain": "recruitly.ai",
   "description": "AI candidate screening for recruitment agencies",
   "location": "Leeds",
-  "dealValue": 24000,
+  "dealValue": 23000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "GPU and inference costs eating into gross margin",
+    "post": "Our inference bill grew faster than revenue last quarter. Gross margin is the conversation at every board meeting now."
+   },
    {
     "owner": "exec",
     "pain": "Enterprise customers stuck in pilots that never go live",
@@ -1770,14 +2424,20 @@ export const GENERATED_COMPANIES = [
     "post": "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
    },
    {
+    "owner": "manager",
+    "pain": "Customer success overwhelmed by onboarding",
+    "post": "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
+   },
+   {
     "owner": "ic",
-    "pain": "Poor customer data quality breaks models",
-    "post": "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing."
+    "pain": "Model evaluation is manual and inconsistent",
+    "post": "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
    }
   ],
   "goals": [
+   "Get ahead of AI regulation as a selling point",
    "Land three enterprise logos this year",
-   "Turn pilots into paid production contracts"
+   "Improve gross margin by cutting inference costs"
   ]
  },
  {
@@ -1789,12 +2449,108 @@ export const GENERATED_COMPANIES = [
   "domain": "kerriganfoods.ie",
   "description": "Dairy and chilled foods supplier to supermarkets",
   "location": "Cork",
-  "dealValue": 154000,
+  "dealValue": 114000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Supermarkets squeezing supplier margins",
+    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
+   },
    {
     "owner": "exec",
     "pain": "Expanding into new markets and channels",
     "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
+   },
+   {
+    "owner": "manager",
+    "pain": "Waste and spoilage eating profit",
+    "post": "We threw away 6% of production last month. That's money, and it's food. Has to change."
+   },
+   {
+    "owner": "manager",
+    "pain": "Hiring seasonal staff for peak periods",
+    "post": "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
+   },
+   {
+    "owner": "ic",
+    "pain": "Typing distributor orders in by hand",
+    "post": "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
+   }
+  ],
+  "goals": [
+   "Launch in a new export market",
+   "Pass every food safety audit first time",
+   "Win a national supermarket listing"
+  ]
+ },
+ {
+  "id": 62,
+  "name": "Northgate Brewing Co",
+  "industry": "Food & Beverage",
+  "size": "Enterprise",
+  "employees": 2600,
+  "domain": "northgatebrewing.co.uk",
+  "description": "Brewer and drinks distributor with 9 breweries",
+  "location": "Manchester",
+  "dealValue": 111000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Supermarkets squeezing supplier margins",
+    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
+   },
+   {
+    "owner": "exec",
+    "pain": "Ingredient and packaging costs rising",
+    "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
+   },
+   {
+    "owner": "manager",
+    "pain": "Food safety audits and traceability still half on paper",
+    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
+   },
+   {
+    "owner": "manager",
+    "pain": "Hiring seasonal staff for peak periods",
+    "post": "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
+   },
+   {
+    "owner": "ic",
+    "pain": "Typing distributor orders in by hand",
+    "post": "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
+   }
+  ],
+  "goals": [
+   "Win a national supermarket listing",
+   "Cut waste by a third",
+   "Launch in a new export market"
+  ]
+ },
+ {
+  "id": 63,
+  "name": "Harvest Lane Bakery",
+  "industry": "Food & Beverage",
+  "size": "Mid-Market",
+  "employees": 480,
+  "domain": "harvestlane.ie",
+  "description": "Industrial bakery supplying supermarkets",
+  "location": "Dublin",
+  "dealValue": 41000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Ingredient and packaging costs rising",
+    "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
+   },
+   {
+    "owner": "exec",
+    "pain": "Expanding into new markets and channels",
+    "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
+   },
+   {
+    "owner": "manager",
+    "pain": "Food safety audits and traceability still half on paper",
+    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
    },
    {
     "owner": "manager",
@@ -1808,25 +2564,36 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Win a national supermarket listing",
-   "Pass every food safety audit first time"
+   "Launch in a new export market",
+   "Pass every food safety audit first time",
+   "Win a national supermarket listing"
   ]
  },
  {
-  "id": 62,
-  "name": "Northgate Brewing Co",
+  "id": 64,
+  "name": "Wildcoast Seafood",
   "industry": "Food & Beverage",
-  "size": "Enterprise",
-  "employees": 2600,
-  "domain": "northgatebrewing.co.uk",
-  "description": "Brewer and drinks distributor with 9 breweries",
-  "location": "Manchester",
-  "dealValue": 130000,
+  "size": "Mid-Market",
+  "employees": 260,
+  "domain": "wildcoastseafood.ie",
+  "description": "Seafood processing and export",
+  "location": "Galway",
+  "dealValue": 57000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Ingredient and packaging costs rising",
-    "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
+    "pain": "Supermarkets squeezing supplier margins",
+    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
+   },
+   {
+    "owner": "exec",
+    "pain": "Expanding into new markets and channels",
+    "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
+   },
+   {
+    "owner": "manager",
+    "pain": "Waste and spoilage eating profit",
+    "post": "We threw away 6% of production last month. That's money, and it's food. Has to change."
    },
    {
     "owner": "manager",
@@ -1840,71 +2607,8 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Launch in a new export market",
-   "Cut waste by a third"
-  ]
- },
- {
-  "id": 63,
-  "name": "Harvest Lane Bakery",
-  "industry": "Food & Beverage",
-  "size": "Mid-Market",
-  "employees": 480,
-  "domain": "harvestlane.ie",
-  "description": "Industrial bakery supplying supermarkets",
-  "location": "Dublin",
-  "dealValue": 55000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Supermarkets squeezing supplier margins",
-    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
-   },
-   {
-    "owner": "manager",
-    "pain": "Waste and spoilage eating profit",
-    "post": "We threw away 6% of production last month. That's money, and it's food. Has to change."
-   },
-   {
-    "owner": "ic",
-    "pain": "Typing distributor orders in by hand",
-    "post": "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
-   }
-  ],
-  "goals": [
-   "Cut waste by a third",
-   "Pass every food safety audit first time"
-  ]
- },
- {
-  "id": 64,
-  "name": "Wildcoast Seafood",
-  "industry": "Food & Beverage",
-  "size": "Mid-Market",
-  "employees": 260,
-  "domain": "wildcoastseafood.ie",
-  "description": "Seafood processing and export",
-  "location": "Galway",
-  "dealValue": 30000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Supermarkets squeezing supplier margins",
-    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
-   },
-   {
-    "owner": "manager",
-    "pain": "Hiring seasonal staff for peak periods",
-    "post": "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
-   },
-   {
-    "owner": "ic",
-    "pain": "Demand forecasting is guesswork",
-    "post": "Sold out of the new flavour in a week, sat on 3 months of the old one. Forecasting is hard."
-   }
-  ],
-  "goals": [
    "Win a national supermarket listing",
+   "Cut waste by a third",
    "Launch in a new export market"
   ]
  },
@@ -1917,12 +2621,22 @@ export const GENERATED_COMPANIES = [
   "domain": "brambleandoak.co.uk",
   "description": "Craft soft drinks and mixers",
   "location": "Bristol",
-  "dealValue": 33000,
+  "dealValue": 43000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Supermarkets squeezing supplier margins",
+    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
+   },
    {
     "owner": "exec",
     "pain": "Expanding into new markets and channels",
     "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
+   },
+   {
+    "owner": "manager",
+    "pain": "Food safety audits and traceability still half on paper",
+    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
    },
    {
     "owner": "manager",
@@ -1936,8 +2650,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Launch in a new export market",
-   "Pass every food safety audit first time"
+   "Pass every food safety audit first time",
+   "Win a national supermarket listing",
+   "Cut waste by a third"
   ]
  },
  {
@@ -1949,12 +2664,108 @@ export const GENERATED_COMPANIES = [
   "domain": "greenfork.co.uk",
   "description": "Ready meals for retail and food service",
   "location": "Leeds",
-  "dealValue": 43000,
+  "dealValue": 31000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Expanding into new markets and channels",
     "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
+   },
+   {
+    "owner": "exec",
+    "pain": "Ingredient and packaging costs rising",
+    "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
+   },
+   {
+    "owner": "manager",
+    "pain": "Food safety audits and traceability still half on paper",
+    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
+   },
+   {
+    "owner": "manager",
+    "pain": "Hiring seasonal staff for peak periods",
+    "post": "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
+   },
+   {
+    "owner": "ic",
+    "pain": "Demand forecasting is guesswork",
+    "post": "Sold out of the new flavour in a week, sat on 3 months of the old one. Forecasting is hard."
+   }
+  ],
+  "goals": [
+   "Launch in a new export market",
+   "Cut waste by a third",
+   "Win a national supermarket listing"
+  ]
+ },
+ {
+  "id": 67,
+  "name": "Copper Kettle Roasters",
+  "industry": "Food & Beverage",
+  "size": "SMB",
+  "employees": 22,
+  "domain": "copperkettle.coffee",
+  "description": "Specialty coffee roaster supplying cafés",
+  "location": "Belfast",
+  "dealValue": 13000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Supermarkets squeezing supplier margins",
+    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
+   },
+   {
+    "owner": "exec",
+    "pain": "Ingredient and packaging costs rising",
+    "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
+   },
+   {
+    "owner": "manager",
+    "pain": "Waste and spoilage eating profit",
+    "post": "We threw away 6% of production last month. That's money, and it's food. Has to change."
+   },
+   {
+    "owner": "manager",
+    "pain": "Food safety audits and traceability still half on paper",
+    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
+   },
+   {
+    "owner": "ic",
+    "pain": "Typing distributor orders in by hand",
+    "post": "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
+   }
+  ],
+  "goals": [
+   "Win a national supermarket listing",
+   "Launch in a new export market",
+   "Pass every food safety audit first time"
+  ]
+ },
+ {
+  "id": 68,
+  "name": "Saltmarsh Distillery",
+  "industry": "Food & Beverage",
+  "size": "SMB",
+  "employees": 18,
+  "domain": "saltmarshdistillery.com",
+  "description": "Small-batch gin and whiskey distillery",
+  "location": "Edinburgh",
+  "dealValue": 16000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Expanding into new markets and channels",
+    "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
+   },
+   {
+    "owner": "exec",
+    "pain": "Ingredient and packaging costs rising",
+    "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
+   },
+   {
+    "owner": "manager",
+    "pain": "Food safety audits and traceability still half on paper",
+    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
    },
    {
     "owner": "manager",
@@ -1969,70 +2780,7 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Launch in a new export market",
-   "Pass every food safety audit first time"
-  ]
- },
- {
-  "id": 67,
-  "name": "Copper Kettle Roasters",
-  "industry": "Food & Beverage",
-  "size": "SMB",
-  "employees": 22,
-  "domain": "copperkettle.coffee",
-  "description": "Specialty coffee roaster supplying cafés",
-  "location": "Belfast",
-  "dealValue": 24000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Supermarkets squeezing supplier margins",
-    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
-   },
-   {
-    "owner": "manager",
-    "pain": "Hiring seasonal staff for peak periods",
-    "post": "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
-   },
-   {
-    "owner": "ic",
-    "pain": "Typing distributor orders in by hand",
-    "post": "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
-   }
-  ],
-  "goals": [
-   "Win a national supermarket listing",
-   "Cut waste by a third"
-  ]
- },
- {
-  "id": 68,
-  "name": "Saltmarsh Distillery",
-  "industry": "Food & Beverage",
-  "size": "SMB",
-  "employees": 18,
-  "domain": "saltmarshdistillery.com",
-  "description": "Small-batch gin and whiskey distillery",
-  "location": "Edinburgh",
-  "dealValue": 20000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Expanding into new markets and channels",
-    "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
-   },
-   {
-    "owner": "manager",
-    "pain": "Waste and spoilage eating profit",
-    "post": "We threw away 6% of production last month. That's money, and it's food. Has to change."
-   },
-   {
-    "owner": "ic",
-    "pain": "Demand forecasting is guesswork",
-    "post": "Sold out of the new flavour in a week, sat on 3 months of the old one. Forecasting is hard."
-   }
-  ],
-  "goals": [
-   "Pass every food safety audit first time",
+   "Cut waste by a third",
    "Win a national supermarket listing"
   ]
  },
@@ -2049,13 +2797,23 @@ export const GENERATED_COMPANIES = [
   "pains": [
    {
     "owner": "exec",
-    "pain": "Expanding into new markets and channels",
-    "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
+    "pain": "Ingredient and packaging costs rising",
+    "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
+   },
+   {
+    "owner": "exec",
+    "pain": "Supermarkets squeezing supplier margins",
+    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
    },
    {
     "owner": "manager",
     "pain": "Hiring seasonal staff for peak periods",
     "post": "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
+   },
+   {
+    "owner": "manager",
+    "pain": "Food safety audits and traceability still half on paper",
+    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
    },
    {
     "owner": "ic",
@@ -2064,8 +2822,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Cut waste by a third",
-   "Win a national supermarket listing"
+   "Pass every food safety audit first time",
+   "Win a national supermarket listing",
+   "Launch in a new export market"
   ]
  },
  {
@@ -2077,27 +2836,38 @@ export const GENERATED_COMPANIES = [
   "domain": "spiceroute.kitchen",
   "description": "Sauces and spice blends for grocers",
   "location": "London",
-  "dealValue": 18000,
+  "dealValue": 27000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Expanding into new markets and channels",
-    "post": "Launching in a new market next spring. New distributors, new labelling rules, new everything."
+    "pain": "Supermarkets squeezing supplier margins",
+    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
+   },
+   {
+    "owner": "exec",
+    "pain": "Ingredient and packaging costs rising",
+    "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
    },
    {
     "owner": "manager",
-    "pain": "Hiring seasonal staff for peak periods",
-    "post": "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
+    "pain": "Food safety audits and traceability still half on paper",
+    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
+   },
+   {
+    "owner": "manager",
+    "pain": "Waste and spoilage eating profit",
+    "post": "We threw away 6% of production last month. That's money, and it's food. Has to change."
    },
    {
     "owner": "ic",
-    "pain": "Demand forecasting is guesswork",
-    "post": "Sold out of the new flavour in a week, sat on 3 months of the old one. Forecasting is hard."
+    "pain": "Typing distributor orders in by hand",
+    "post": "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
    }
   ],
   "goals": [
+   "Pass every food safety audit first time",
    "Cut waste by a third",
-   "Launch in a new export market"
+   "Win a national supermarket listing"
   ]
  },
  {
@@ -2109,8 +2879,13 @@ export const GENERATED_COMPANIES = [
   "domain": "hollisgrant.com",
   "description": "Corporate law firm with 9 offices",
   "location": "London",
-  "dealValue": 126000,
+  "dealValue": 88000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Growth relies almost entirely on referrals",
+    "post": "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
+   },
    {
     "owner": "exec",
     "pain": "Billable utilisation dropping",
@@ -2122,14 +2897,20 @@ export const GENERATED_COMPANIES = [
     "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
    },
    {
+    "owner": "manager",
+    "pain": "Unbilled time leaking out of the business",
+    "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
+   },
+   {
     "owner": "ic",
-    "pain": "Proposals take days to write",
-    "post": "Every proposal starts from a blank page. Three days per pitch. There has to be a better way."
+    "pain": "Too much admin, not enough client work",
+    "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
    }
   ],
   "goals": [
    "Build a pipeline beyond referrals",
-   "Move more clients to fixed-fee work"
+   "Push utilisation back above 75%",
+   "Cut staff turnover"
   ]
  },
  {
@@ -2141,8 +2922,13 @@ export const GENERATED_COMPANIES = [
   "domain": "calderadvisory.ie",
   "description": "Accounting, audit and tax advisory",
   "location": "Dublin",
-  "dealValue": 114000,
+  "dealValue": 160000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Billable utilisation dropping",
+    "post": "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
+   },
    {
     "owner": "exec",
     "pain": "Growth relies almost entirely on referrals",
@@ -2154,6 +2940,11 @@ export const GENERATED_COMPANIES = [
     "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
    },
    {
+    "owner": "manager",
+    "pain": "Unbilled time leaking out of the business",
+    "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
+   },
+   {
     "owner": "ic",
     "pain": "Too much admin, not enough client work",
     "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
@@ -2161,7 +2952,8 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Build a pipeline beyond referrals",
-   "Push utilisation back above 75%"
+   "Push utilisation back above 75%",
+   "Cut staff turnover"
   ]
  },
  {
@@ -2173,7 +2965,7 @@ export const GENERATED_COMPANIES = [
   "domain": "whitlockeng.co.uk",
   "description": "Civil and structural engineering consultancy",
   "location": "Manchester",
-  "dealValue": 39000,
+  "dealValue": 36000,
   "pains": [
    {
     "owner": "exec",
@@ -2181,9 +2973,19 @@ export const GENERATED_COMPANIES = [
     "post": "Clients want fixed fees and more for less. The billable hour model is under real pressure."
    },
    {
+    "owner": "exec",
+    "pain": "Growth relies almost entirely on referrals",
+    "post": "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
+   },
+   {
     "owner": "manager",
-    "pain": "Losing good people to competitors",
-    "post": "Lost three senior people to a competitor this year. Retention is our biggest strategic risk."
+    "pain": "Unbilled time leaking out of the business",
+    "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
+   },
+   {
+    "owner": "manager",
+    "pain": "Know-how stuck in people's heads",
+    "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
    },
    {
     "owner": "ic",
@@ -2192,8 +2994,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
+   "Cut staff turnover",
    "Push utilisation back above 75%",
-   "Build a pipeline beyond referrals"
+   "Move more clients to fixed-fee work"
   ]
  },
  {
@@ -2205,7 +3008,7 @@ export const GENERATED_COMPANIES = [
   "domain": "bridgeviewrecruitment.ie",
   "description": "Specialist tech and finance recruitment",
   "location": "Dublin",
-  "dealValue": 46000,
+  "dealValue": 62000,
   "pains": [
    {
     "owner": "exec",
@@ -2213,9 +3016,19 @@ export const GENERATED_COMPANIES = [
     "post": "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
    },
    {
+    "owner": "exec",
+    "pain": "Growth relies almost entirely on referrals",
+    "post": "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
+   },
+   {
     "owner": "manager",
-    "pain": "Know-how stuck in people's heads",
-    "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
+    "pain": "Unbilled time leaking out of the business",
+    "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
+   },
+   {
+    "owner": "manager",
+    "pain": "Losing good people to competitors",
+    "post": "Lost three senior people to a competitor this year. Retention is our biggest strategic risk."
    },
    {
     "owner": "ic",
@@ -2224,7 +3037,8 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Push utilisation back above 75%",
+   "Cut staff turnover",
+   "Build a pipeline beyond referrals",
    "Move more clients to fixed-fee work"
   ]
  },
@@ -2237,40 +3051,13 @@ export const GENERATED_COMPANIES = [
   "domain": "fernhillarchitects.co.uk",
   "description": "Architecture practice for public projects",
   "location": "Edinburgh",
-  "dealValue": 34000,
+  "dealValue": 43000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Billable utilisation dropping",
-    "post": "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
+    "pain": "Clients pushing back on fees",
+    "post": "Clients want fixed fees and more for less. The billable hour model is under real pressure."
    },
-   {
-    "owner": "manager",
-    "pain": "Know-how stuck in people's heads",
-    "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
-   },
-   {
-    "owner": "ic",
-    "pain": "Too much admin, not enough client work",
-    "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
-   }
-  ],
-  "goals": [
-   "Move more clients to fixed-fee work",
-   "Push utilisation back above 75%"
-  ]
- },
- {
-  "id": 76,
-  "name": "Marlow & Reid",
-  "industry": "Professional Services",
-  "size": "Mid-Market",
-  "employees": 230,
-  "domain": "marlowreid.co.uk",
-  "description": "Accountants for owner-managed businesses",
-  "location": "Leeds",
-  "dealValue": 40000,
-  "pains": [
    {
     "owner": "exec",
     "pain": "Growth relies almost entirely on referrals",
@@ -2282,36 +3069,9 @@ export const GENERATED_COMPANIES = [
     "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
    },
    {
-    "owner": "ic",
-    "pain": "Too much admin, not enough client work",
-    "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
-   }
-  ],
-  "goals": [
-   "Move more clients to fixed-fee work",
-   "Build a pipeline beyond referrals"
-  ]
- },
- {
-  "id": 77,
-  "name": "Quayside Legal",
-  "industry": "Professional Services",
-  "size": "SMB",
-  "employees": 19,
-  "domain": "quaysidelegal.ie",
-  "description": "Property and family law solicitors",
-  "location": "Cork",
-  "dealValue": 22000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Clients pushing back on fees",
-    "post": "Clients want fixed fees and more for less. The billable hour model is under real pressure."
-   },
-   {
     "owner": "manager",
-    "pain": "Know-how stuck in people's heads",
-    "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
+    "pain": "Losing good people to competitors",
+    "post": "Lost three senior people to a competitor this year. Retention is our biggest strategic risk."
    },
    {
     "owner": "ic",
@@ -2320,57 +3080,36 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
-   "Move more clients to fixed-fee work",
-   "Push utilisation back above 75%"
+   "Push utilisation back above 75%",
+   "Build a pipeline beyond referrals",
+   "Cut staff turnover"
   ]
  },
  {
-  "id": 78,
-  "name": "Northstar HR",
+  "id": 76,
+  "name": "Marlow & Reid",
   "industry": "Professional Services",
-  "size": "SMB",
-  "employees": 14,
-  "domain": "northstarhr.co.uk",
-  "description": "Outsourced HR for small businesses",
-  "location": "Belfast",
-  "dealValue": 20000,
+  "size": "Mid-Market",
+  "employees": 230,
+  "domain": "marlowreid.co.uk",
+  "description": "Accountants for owner-managed businesses",
+  "location": "Leeds",
+  "dealValue": 58000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Billable utilisation dropping",
-    "post": "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
+    "pain": "Growth relies almost entirely on referrals",
+    "post": "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
+   },
+   {
+    "owner": "exec",
+    "pain": "Clients pushing back on fees",
+    "post": "Clients want fixed fees and more for less. The billable hour model is under real pressure."
    },
    {
     "owner": "manager",
     "pain": "Know-how stuck in people's heads",
     "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
-   },
-   {
-    "owner": "ic",
-    "pain": "Too much admin, not enough client work",
-    "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
-   }
-  ],
-  "goals": [
-   "Cut staff turnover",
-   "Build a pipeline beyond referrals"
-  ]
- },
- {
-  "id": 79,
-  "name": "Kite Marketing Studio",
-  "industry": "Professional Services",
-  "size": "SMB",
-  "employees": 21,
-  "domain": "kitestudio.ie",
-  "description": "B2B marketing agency",
-  "location": "Galway",
-  "dealValue": 14000,
-  "pains": [
-   {
-    "owner": "exec",
-    "pain": "Clients pushing back on fees",
-    "post": "Clients want fixed fees and more for less. The billable hour model is under real pressure."
    },
    {
     "owner": "manager",
@@ -2384,21 +3123,70 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
+   "Move more clients to fixed-fee work",
+   "Cut staff turnover",
+   "Push utilisation back above 75%"
+  ]
+ },
+ {
+  "id": 77,
+  "name": "Quayside Legal",
+  "industry": "Professional Services",
+  "size": "SMB",
+  "employees": 19,
+  "domain": "quaysidelegal.ie",
+  "description": "Property and family law solicitors",
+  "location": "Cork",
+  "dealValue": 28000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Billable utilisation dropping",
+    "post": "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
+   },
+   {
+    "owner": "exec",
+    "pain": "Growth relies almost entirely on referrals",
+    "post": "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
+   },
+   {
+    "owner": "manager",
+    "pain": "Losing good people to competitors",
+    "post": "Lost three senior people to a competitor this year. Retention is our biggest strategic risk."
+   },
+   {
+    "owner": "manager",
+    "pain": "Unbilled time leaking out of the business",
+    "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
+   },
+   {
+    "owner": "ic",
+    "pain": "Too much admin, not enough client work",
+    "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
+   }
+  ],
+  "goals": [
+   "Cut staff turnover",
    "Push utilisation back above 75%",
    "Move more clients to fixed-fee work"
   ]
  },
  {
-  "id": 80,
-  "name": "Pennant IT Services",
+  "id": 78,
+  "name": "Northstar HR",
   "industry": "Professional Services",
   "size": "SMB",
-  "employees": 28,
-  "domain": "pennantit.co.uk",
-  "description": "Managed IT support for small offices",
-  "location": "Bristol",
-  "dealValue": 28000,
+  "employees": 14,
+  "domain": "northstarhr.co.uk",
+  "description": "Outsourced HR for small businesses",
+  "location": "Belfast",
+  "dealValue": 24000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Clients pushing back on fees",
+    "post": "Clients want fixed fees and more for less. The billable hour model is under real pressure."
+   },
    {
     "owner": "exec",
     "pain": "Billable utilisation dropping",
@@ -2410,14 +3198,106 @@ export const GENERATED_COMPANIES = [
     "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
    },
    {
+    "owner": "manager",
+    "pain": "Know-how stuck in people's heads",
+    "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
+   },
+   {
+    "owner": "ic",
+    "pain": "Too much admin, not enough client work",
+    "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
+   }
+  ],
+  "goals": [
+   "Build a pipeline beyond referrals",
+   "Push utilisation back above 75%",
+   "Cut staff turnover"
+  ]
+ },
+ {
+  "id": 79,
+  "name": "Kite Marketing Studio",
+  "industry": "Professional Services",
+  "size": "SMB",
+  "employees": 21,
+  "domain": "kitestudio.ie",
+  "description": "B2B marketing agency",
+  "location": "Galway",
+  "dealValue": 23000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Clients pushing back on fees",
+    "post": "Clients want fixed fees and more for less. The billable hour model is under real pressure."
+   },
+   {
+    "owner": "exec",
+    "pain": "Growth relies almost entirely on referrals",
+    "post": "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
+   },
+   {
+    "owner": "manager",
+    "pain": "Unbilled time leaking out of the business",
+    "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
+   },
+   {
+    "owner": "manager",
+    "pain": "Know-how stuck in people's heads",
+    "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
+   },
+   {
+    "owner": "ic",
+    "pain": "Too much admin, not enough client work",
+    "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
+   }
+  ],
+  "goals": [
+   "Push utilisation back above 75%",
+   "Cut staff turnover",
+   "Build a pipeline beyond referrals"
+  ]
+ },
+ {
+  "id": 80,
+  "name": "Pennant IT Services",
+  "industry": "Professional Services",
+  "size": "SMB",
+  "employees": 28,
+  "domain": "pennantit.co.uk",
+  "description": "Managed IT support for small offices",
+  "location": "Bristol",
+  "dealValue": 22000,
+  "pains": [
+   {
+    "owner": "exec",
+    "pain": "Growth relies almost entirely on referrals",
+    "post": "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
+   },
+   {
+    "owner": "exec",
+    "pain": "Clients pushing back on fees",
+    "post": "Clients want fixed fees and more for less. The billable hour model is under real pressure."
+   },
+   {
+    "owner": "manager",
+    "pain": "Unbilled time leaking out of the business",
+    "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
+   },
+   {
+    "owner": "manager",
+    "pain": "Know-how stuck in people's heads",
+    "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
+   },
+   {
     "owner": "ic",
     "pain": "Proposals take days to write",
     "post": "Every proposal starts from a blank page. Three days per pitch. There has to be a better way."
    }
   ],
   "goals": [
-   "Build a pipeline beyond referrals",
-   "Push utilisation back above 75%"
+   "Push utilisation back above 75%",
+   "Move more clients to fixed-fee work",
+   "Build a pipeline beyond referrals"
   ]
  },
  {
@@ -2429,12 +3309,22 @@ export const GENERATED_COMPANIES = [
   "domain": "arclightsoftware.com",
   "description": "HR and payroll software for large employers",
   "location": "London",
-  "dealValue": 132000,
+  "dealValue": 111000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "AI-native competitors undercutting on price",
-    "post": "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'."
+    "pain": "Net revenue retention slipping below 100%",
+    "post": "NRR dipped under 100% last quarter for the first time. Expansion is stalling and churn is creeping up. Back to basics on customer value."
+   },
+   {
+    "owner": "exec",
+    "pain": "Sales cycles getting longer as buyers add approval steps",
+    "post": "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?"
+   },
+   {
+    "owner": "manager",
+    "pain": "Customer onboarding takes weeks before they see value",
+    "post": "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
    },
    {
     "owner": "manager",
@@ -2449,7 +3339,8 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Get net revenue retention back above 110%",
-   "Move upmarket into larger customers"
+   "Cut customer onboarding time in half",
+   "Reach profitability without slowing growth"
   ]
  },
  {
@@ -2461,12 +3352,22 @@ export const GENERATED_COMPANIES = [
   "domain": "cobaltintelligence.ai",
   "description": "AI fraud and risk models for global banks",
   "location": "Dublin",
-  "dealValue": 135000,
+  "dealValue": 154000,
   "pains": [
    {
     "owner": "exec",
     "pain": "Enterprise customers stuck in pilots that never go live",
     "post": "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
+   },
+   {
+    "owner": "exec",
+    "pain": "GPU and inference costs eating into gross margin",
+    "post": "Our inference bill grew faster than revenue last quarter. Gross margin is the conversation at every board meeting now."
+   },
+   {
+    "owner": "manager",
+    "pain": "Can't prove hard ROI to customers",
+    "post": "Customers keep asking for hard ROI numbers. We have great anecdotes and not enough data. Fixing that this quarter."
    },
    {
     "owner": "manager",
@@ -2475,12 +3376,13 @@ export const GENERATED_COMPANIES = [
    },
    {
     "owner": "ic",
-    "pain": "Poor customer data quality breaks models",
-    "post": "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing."
+    "pain": "Model evaluation is manual and inconsistent",
+    "post": "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
    }
   ],
   "goals": [
-   "Get ahead of AI regulation as a selling point",
+   "Improve gross margin by cutting inference costs",
+   "Turn pilots into paid production contracts",
    "Land three enterprise logos this year"
   ]
  },
@@ -2493,8 +3395,13 @@ export const GENERATED_COMPANIES = [
   "domain": "ironveil.com",
   "description": "Managed security services for governments and banks",
   "location": "Belfast",
-  "dealValue": 97000,
+  "dealValue": 87000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Long security questionnaires slowing every deal",
+    "post": "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
+   },
    {
     "owner": "exec",
     "pain": "Too many overlapping security tools and licences",
@@ -2506,14 +3413,20 @@ export const GENERATED_COMPANIES = [
     "post": "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling."
    },
    {
+    "owner": "manager",
+    "pain": "Alert fatigue in the security operations team",
+    "post": "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
+   },
+   {
     "owner": "ic",
-    "pain": "Compliance evidence gathering eats weeks every audit",
-    "post": "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
+    "pain": "Scanners flag huge numbers of false positives",
+    "post": "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone."
    }
   ],
   "goals": [
    "Expand into larger regulated customers",
-   "Consolidate the security tool stack"
+   "Pass ISO 27001 certification this year",
+   "Cut time to detect and respond to incidents"
   ]
  },
  {
@@ -2525,27 +3438,38 @@ export const GENERATED_COMPANIES = [
   "domain": "harbourpointbank.ie",
   "description": "Digital bank with 2 million customers",
   "location": "Dublin",
-  "dealValue": 154000,
+  "dealValue": 94000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Partner bank integrations take too long",
-    "post": "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
+    "pain": "Legacy core systems slow down new products",
+    "post": "Our core system is older than some of our engineers. Every new product takes twice as long as it should."
+   },
+   {
+    "owner": "exec",
+    "pain": "Regulatory reporting burden keeps growing",
+    "post": "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
    },
    {
     "owner": "manager",
-    "pain": "Fraud losses rising",
-    "post": "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
+    "pain": "Support flooded with 'where's my money?' questions",
+    "post": "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
+   },
+   {
+    "owner": "manager",
+    "pain": "Customers dropping out during identity checks",
+    "post": "38% of applicants abandon during ID checks. That's growth we paid for and lost at the last step."
    },
    {
     "owner": "ic",
-    "pain": "Reconciliation still done by hand",
-    "post": "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
+    "pain": "Compliance tools that don't share data",
+    "post": "Five compliance tools, none of them share data. I copy and paste between them all day."
    }
   ],
   "goals": [
-   "Get a new banking licence or partner live",
-   "Cut onboarding drop-off in half"
+   "Launch two new products this year",
+   "Cut onboarding drop-off in half",
+   "Get a new banking licence or partner live"
   ]
  },
  {
@@ -2557,8 +3481,13 @@ export const GENERATED_COMPANIES = [
   "domain": "kestrelautomotive.co.uk",
   "description": "Tier 1 automotive parts supplier across 11 plants",
   "location": "Coventry",
-  "dealValue": 115000,
+  "dealValue": 138000,
   "pains": [
+   {
+    "owner": "exec",
+    "pain": "Supply chain volatility wrecking forecasts",
+    "post": "Lead times on key components went from 6 weeks to 20. Planning feels like guesswork."
+   },
    {
     "owner": "exec",
     "pain": "Energy costs squeezing margins",
@@ -2570,14 +3499,20 @@ export const GENERATED_COMPANIES = [
     "post": "Three technician roles open since spring. The skills gap on the factory floor is real."
    },
    {
+    "owner": "manager",
+    "pain": "Unplanned downtime on production lines",
+    "post": "Line 3 went down for 14 hours on Tuesday. That's a week of margin gone because of one bearing."
+   },
+   {
     "owner": "ic",
-    "pain": "Quality data stuck in spreadsheets",
-    "post": "Our quality report is 12 spreadsheets stitched together every Friday. Half my day, every week."
+    "pain": "Paper-based processes on the shop floor",
+    "post": "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
    }
   ],
   "goals": [
-   "Cut unplanned downtime by 30%",
-   "Hit customer carbon-reporting requirements"
+   "Hit customer carbon-reporting requirements",
+   "Win a major new OEM contract",
+   "Cut unplanned downtime by 30%"
   ]
  },
  {
@@ -2589,7 +3524,7 @@ export const GENERATED_COMPANIES = [
   "domain": "glenmorefoods.com",
   "description": "Snacks, bakery and frozen foods for UK and Irish supermarkets",
   "location": "Leeds",
-  "dealValue": 103000,
+  "dealValue": 121000,
   "pains": [
    {
     "owner": "exec",
@@ -2597,9 +3532,19 @@ export const GENERATED_COMPANIES = [
     "post": "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month."
    },
    {
+    "owner": "exec",
+    "pain": "Supermarkets squeezing supplier margins",
+    "post": "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
+   },
+   {
     "owner": "manager",
-    "pain": "Food safety audits and traceability still half on paper",
-    "post": "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
+    "pain": "Waste and spoilage eating profit",
+    "post": "We threw away 6% of production last month. That's money, and it's food. Has to change."
+   },
+   {
+    "owner": "manager",
+    "pain": "Hiring seasonal staff for peak periods",
+    "post": "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
    },
    {
     "owner": "ic",
@@ -2609,7 +3554,8 @@ export const GENERATED_COMPANIES = [
   ],
   "goals": [
    "Cut waste by a third",
-   "Win a national supermarket listing"
+   "Win a national supermarket listing",
+   "Pass every food safety audit first time"
   ]
  },
  {
@@ -2621,7 +3567,7 @@ export const GENERATED_COMPANIES = [
   "domain": "ashbylane.com",
   "description": "Management and technology consulting",
   "location": "London",
-  "dealValue": 104000,
+  "dealValue": 126000,
   "pains": [
    {
     "owner": "exec",
@@ -2629,19 +3575,30 @@ export const GENERATED_COMPANIES = [
     "post": "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
    },
    {
+    "owner": "exec",
+    "pain": "Billable utilisation dropping",
+    "post": "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
+   },
+   {
     "owner": "manager",
-    "pain": "Know-how stuck in people's heads",
-    "post": "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
+    "pain": "Unbilled time leaking out of the business",
+    "post": "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
+   },
+   {
+    "owner": "manager",
+    "pain": "Losing good people to competitors",
+    "post": "Lost three senior people to a competitor this year. Retention is our biggest strategic risk."
    },
    {
     "owner": "ic",
-    "pain": "Proposals take days to write",
-    "post": "Every proposal starts from a blank page. Three days per pitch. There has to be a better way."
+    "pain": "Too much admin, not enough client work",
+    "post": "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
    }
   ],
   "goals": [
-   "Cut staff turnover",
-   "Move more clients to fixed-fee work"
+   "Push utilisation back above 75%",
+   "Move more clients to fixed-fee work",
+   "Build a pipeline beyond referrals"
   ]
  },
  {
@@ -2653,17 +3610,27 @@ export const GENERATED_COMPANIES = [
   "domain": "riversidehealth.co.uk",
   "description": "Hospital and community care group with 12 sites",
   "location": "Manchester",
-  "dealValue": 137000,
+  "dealValue": 93000,
   "pains": [
    {
     "owner": "exec",
-    "pain": "Flat budgets against rising demand",
-    "post": "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
+    "pain": "Data privacy reviews slow every new tool",
+    "post": "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
+   },
+   {
+    "owner": "exec",
+    "pain": "Waiting lists at record highs",
+    "post": "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
    },
    {
     "owner": "manager",
-    "pain": "Clinicians buried in admin",
-    "post": "Our clinicians spend 2 hours a day on paperwork. That's 2 hours not with patients."
+    "pain": "Missed appointments",
+    "post": "12% of appointments missed last month. Each one is a slot another patient needed."
+   },
+   {
+    "owner": "manager",
+    "pain": "Staff shortages and rising agency costs",
+    "post": "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
    },
    {
     "owner": "ic",
@@ -2672,8 +3639,9 @@ export const GENERATED_COMPANIES = [
    }
   ],
   "goals": [
+   "Cut waiting times by a quarter",
    "Open new locations this year",
-   "Cut waiting times by a quarter"
+   "Move more bookings online"
   ]
  }
 ];
@@ -2682,480 +3650,331 @@ export const GENERATED_EMPLOYEES = {
  "21": [
   {
    "id": 2101,
-   "first": "Harry",
-   "last": "Moreno",
+   "first": "Gareth",
+   "last": "Egan",
    "title": "CEO & Co-Founder",
    "seniority": "c-suite",
-   "bio": "CEO & Co-Founder at Tallybook. 12 years in saas.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Sales cycles getting longer as buyers add approval steps"
-   ]
+   "bio": "CEO & Co-Founder at Tallybook. 5 years in saas.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2102,
-   "first": "Bilal",
-   "last": "Jones",
+   "first": "Will",
+   "last": "Young",
    "title": "CTO",
    "seniority": "c-suite",
-   "bio": "CTO at Tallybook. 21 years in saas.",
+   "bio": "CTO at Tallybook. 10 years in saas.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Sales cycles getting longer as buyers add approval steps"
-   ]
+   "posts": []
   },
   {
    "id": 2103,
-   "first": "Hugo",
-   "last": "Power",
+   "first": "Ben",
+   "last": "Stewart",
    "title": "Head of Customer Success",
    "seniority": "director",
-   "bio": "Head of Customer Success at Tallybook. Been here 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
-   ],
-   "pains": [
-    "Customer onboarding takes weeks before they see value"
-   ]
+   "bio": "Head of Customer Success at Tallybook. Joined 3 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2104,
-   "first": "Patrick",
-   "last": "Lynch",
+   "first": "Hugo",
+   "last": "Shaw",
    "title": "RevOps Manager",
    "seniority": "manager",
-   "bio": "RevOps Manager at Tallybook. Joined 4 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer onboarding takes weeks before they see value"
-   ]
+   "bio": "RevOps Manager at Tallybook. Joined 7 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 2105,
-   "first": "Grainne",
-   "last": "Reid",
+   "first": "Freya",
+   "last": "Ward",
    "title": "Account Executive",
    "seniority": "mid",
-   "bio": "Account Executive at Tallybook. Been here 6 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Counted today: I log into 11 different tools to do my job. None of them talk to each other.",
-    "One year at Tallybook today. Learned more than I expected."
-   ],
-   "pains": [
-    "Too many tools that don't integrate"
-   ]
+   "bio": "Account Executive at Tallybook. Been here 4 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 2106,
-   "first": "Catriona",
-   "last": "Mitchell",
+   "first": "Nadia",
+   "last": "Moreno",
    "title": "SDR",
    "seniority": "junior",
-   "bio": "SDR at Tallybook. Been here 8 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Too many tools that don't integrate"
-   ]
+   "bio": "SDR at Tallybook. Joined 5 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "22": [
   {
    "id": 2201,
-   "first": "Isaac",
-   "last": "Nolan",
+   "first": "Gareth",
+   "last": "Egan",
    "title": "CEO & Co-Founder",
    "seniority": "c-suite",
-   "bio": "CEO & Co-Founder at Rotawise. 19 years in saas.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Average sales cycle went from 45 to 80 days this year. Every deal now has a CFO in it. Anyone else seeing this?",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Sales cycles getting longer as buyers add approval steps"
-   ]
+   "bio": "CEO & Co-Founder at Rotawise. 17 years in saas.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2202,
-   "first": "Ravi",
-   "last": "Young",
+   "first": "Harry",
+   "last": "Moreno",
    "title": "CTO",
    "seniority": "c-suite",
-   "bio": "CTO at Rotawise. 14 years in saas.",
+   "bio": "CTO at Rotawise. 20 years in saas.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Sales cycles getting longer as buyers add approval steps"
-   ]
+   "posts": []
   },
   {
    "id": 2203,
-   "first": "Aisling",
-   "last": "Healy",
+   "first": "Jack",
+   "last": "Chen",
    "title": "Head of Customer Success",
    "seniority": "director",
-   "bio": "Head of Customer Success at Rotawise. Been here 5 years.",
-   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Missed forecast by 18% again. The CRM says one thing, reps say another. Fixing this is my project for the quarter.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Forecasts keep missing because pipeline data is unreliable"
-   ]
+   "bio": "Head of Customer Success at Rotawise. Joined 8 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2204,
-   "first": "Diego",
-   "last": "Khan",
+   "first": "Eimear",
+   "last": "Davies",
    "title": "RevOps Manager",
    "seniority": "manager",
-   "bio": "RevOps Manager at Rotawise. Joined 5 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Forecasts keep missing because pipeline data is unreliable"
-   ]
+   "bio": "RevOps Manager at Rotawise. Been here 4 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 2205,
-   "first": "Quinn",
-   "last": "McCarthy",
+   "first": "Ruth",
+   "last": "Khan",
    "title": "Account Executive",
    "seniority": "mid",
-   "bio": "Account Executive at Rotawise. Joined 7 years.",
+   "bio": "Account Executive at Rotawise. Been here 4 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Every release means 300 new tickets. Love our customers, but my queue is a monster this week.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "posts": []
   },
   {
    "id": 2206,
-   "first": "Ewan",
-   "last": "Evans",
+   "first": "Hugo",
+   "last": "Keane",
    "title": "SDR",
    "seniority": "junior",
-   "bio": "SDR at Rotawise. Joined 6 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "bio": "SDR at Rotawise. Been here 4 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "23": [
   {
    "id": 2301,
-   "first": "Eimear",
-   "last": "Davies",
+   "first": "Freya",
+   "last": "Keane",
    "title": "CEO & Co-Founder",
    "seniority": "c-suite",
-   "bio": "CEO & Co-Founder at Quillon. 12 years in saas.",
+   "bio": "CEO & Co-Founder at Quillon. 22 years in saas.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "posts": []
   },
   {
    "id": 2302,
-   "first": "Ruth",
+   "first": "Nadia",
    "last": "Khan",
    "title": "CTO",
    "seniority": "c-suite",
-   "bio": "CTO at Quillon. 20 years in saas.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "bio": "CTO at Quillon. 5 years in saas.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2303,
-   "first": "Tomasz",
-   "last": "Moreno",
+   "first": "Kwame",
+   "last": "Wright",
    "title": "Head of Customer Success",
    "seniority": "director",
-   "bio": "Head of Customer Success at Quillon. Been here 4 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Our time-to-value is 6 weeks. Customers want it in 6 days. Rebuilding onboarding from scratch this quarter."
-   ],
-   "pains": [
-    "Customer onboarding takes weeks before they see value"
-   ]
+   "bio": "Head of Customer Success at Quillon. Joined 4 years.",
+   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2304,
-   "first": "Catriona",
-   "last": "Davies",
+   "first": "Femi",
+   "last": "Khan",
    "title": "RevOps Manager",
    "seniority": "manager",
-   "bio": "RevOps Manager at Quillon. Joined 1 years.",
+   "bio": "RevOps Manager at Quillon. Joined 4 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer onboarding takes weeks before they see value"
-   ]
+   "posts": []
   },
   {
    "id": 2305,
-   "first": "Zara",
-   "last": "Davies",
+   "first": "Rebecca",
+   "last": "Ahmed",
    "title": "Account Executive",
    "seniority": "mid",
-   "bio": "Account Executive at Quillon. Been here 4 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Every release means 300 new tickets. Love our customers, but my queue is a monster this week."
-   ],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "bio": "Account Executive at Quillon. Been here 3 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 2306,
-   "first": "Jack",
-   "last": "Moreno",
+   "first": "Will",
+   "last": "Carroll",
    "title": "SDR",
    "seniority": "junior",
-   "bio": "SDR at Quillon. Joined 4 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "bio": "SDR at Quillon. Joined 5 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "24": [
   {
    "id": 2401,
-   "first": "Amira",
-   "last": "Byrne",
+   "first": "Catriona",
+   "last": "Vaughan",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Bastionly. 9 years in cyber security.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
-   ],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "bio": "CEO at Bastionly. 15 years in cyber security.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 2402,
-   "first": "Will",
-   "last": "Carroll",
+   "first": "Fionn",
+   "last": "Quinn",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Bastionly. 11 years in cyber security.",
+   "bio": "CFO at Bastionly. 14 years in cyber security.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "posts": []
   },
   {
    "id": 2403,
-   "first": "Joel",
-   "last": "Stewart",
+   "first": "Keira",
+   "last": "Evans",
    "title": "VP Security Operations",
    "seniority": "vp",
-   "bio": "VP Security Operations at Bastionly. 20 years in cyber security.",
+   "bio": "VP Security Operations at Bastionly. 22 years in cyber security.",
    "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "posts": []
   },
   {
    "id": 2404,
-   "first": "Mei",
-   "last": "Bennett",
+   "first": "Harry",
+   "last": "Usman",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at Bastionly. Joined 6 years.",
-   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
-   ],
-   "pains": [
-    "Can't hire or keep experienced security analysts"
-   ]
+   "bio": "Director of Threat Intelligence at Bastionly. Been here 6 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 2405,
-   "first": "Bilal",
-   "last": "Wright",
+   "first": "Aoife",
+   "last": "Young",
    "title": "Head of Compliance",
    "seniority": "director",
-   "bio": "Head of Compliance at Bastionly. Been here 2 years.",
+   "bio": "Head of Compliance at Bastionly. Been here 4 years.",
    "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't hire or keep experienced security analysts"
-   ]
+   "posts": []
   },
   {
    "id": 2406,
-   "first": "Fatima",
-   "last": "Adeyemi",
+   "first": "Lorcan",
+   "last": "Ryan",
    "title": "SOC Manager",
    "seniority": "manager",
-   "bio": "SOC Manager at Bastionly. Been here 6 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire or keep experienced security analysts"
-   ]
+   "bio": "SOC Manager at Bastionly. Joined 2 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 2407,
-   "first": "Aoife",
-   "last": "Young",
+   "first": "Patrick",
+   "last": "Stewart",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at Bastionly. Joined 6 years.",
+   "bio": "Security Engineer at Bastionly. Been here 6 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone."
-   ],
-   "pains": [
-    "Scanners flag huge numbers of false positives"
-   ]
+   "posts": []
   },
   {
    "id": 2408,
-   "first": "Keira",
-   "last": "Maguire",
+   "first": "Ciara",
+   "last": "Keane",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at Bastionly. Joined 6 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "One year at Bastionly today. Learned more than I expected."
-   ],
-   "pains": [
-    "Scanners flag huge numbers of false positives"
-   ]
+   "bio": "Junior SOC Analyst at Bastionly. Been here 4 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "25": [
   {
    "id": 2501,
-   "first": "Zara",
-   "last": "Callaghan",
+   "first": "Quinn",
+   "last": "Usman",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Keyward. 17 years in cyber security.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "bio": "CEO at Keyward. 21 years in cyber security.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 2502,
-   "first": "Leah",
-   "last": "Ward",
+   "first": "Diego",
+   "last": "O'Neill",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Keyward. 13 years in cyber security.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "bio": "CFO at Keyward. 20 years in cyber security.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 2503,
-   "first": "Vanessa",
-   "last": "Fitzgerald",
+   "first": "Elena",
+   "last": "Adeyemi",
    "title": "VP Security Operations",
    "seniority": "vp",
-   "bio": "VP Security Operations at Keyward. 21 years in cyber security.",
+   "bio": "VP Security Operations at Keyward. 3 years in cyber security.",
    "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "posts": []
   },
   {
    "id": 2504,
-   "first": "Olivia",
-   "last": "Young",
+   "first": "Niall",
+   "last": "Callaghan",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at Keyward. Been here 2 years.",
+   "bio": "Director of Threat Intelligence at Keyward. Joined 1 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
-   ],
-   "pains": [
-    "Alert fatigue in the security operations team"
-   ]
+   "posts": []
   },
   {
    "id": 2505,
-   "first": "Ewan",
-   "last": "Lewis",
+   "first": "Ines",
+   "last": "Walsh",
    "title": "Head of Compliance",
    "seniority": "director",
-   "bio": "Head of Compliance at Keyward. Joined 7 years.",
+   "bio": "Head of Compliance at Keyward. Joined 2 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Alert fatigue in the security operations team"
-   ]
+   "posts": []
   },
   {
    "id": 2506,
-   "first": "Orla",
-   "last": "Gallagher",
+   "first": "Fionn",
+   "last": "Maguire",
    "title": "SOC Manager",
    "seniority": "manager",
    "bio": "SOC Manager at Keyward. Been here 6 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Alert fatigue in the security operations team"
-   ]
+   "posts": []
   },
   {
    "id": 2507,
@@ -3163,12710 +3982,8925 @@ export const GENERATED_EMPLOYEES = {
    "last": "Novak",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at Keyward. Joined 5 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone.",
-    "One year at Keyward today. Learned more than I expected."
-   ],
-   "pains": [
-    "Scanners flag huge numbers of false positives"
-   ]
+   "bio": "Security Engineer at Keyward. Joined 1 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 2508,
-   "first": "Deirdre",
-   "last": "Tierney",
+   "first": "Zara",
+   "last": "Stewart",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at Keyward. Joined 6 years.",
+   "bio": "Junior SOC Analyst at Keyward. Joined 7 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Scanners flag huge numbers of false positives"
-   ]
+   "posts": []
   }
  ],
  "26": [
   {
    "id": 2601,
-   "first": "Mei",
-   "last": "Quinn",
+   "first": "Patrick",
+   "last": "Carroll",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Sentrova. 20 years in cyber security.",
+   "bio": "CEO at Sentrova. 7 years in cyber security.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Enterprise prospects now send 300-question security questionnaires before a first meeting. It slows every deal down."
-   ],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "posts": []
   },
   {
    "id": 2602,
    "first": "Tom",
-   "last": "Khan",
+   "last": "Keane",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Sentrova. 4 years in cyber security.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "bio": "CFO at Sentrova. 20 years in cyber security.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 2603,
-   "first": "Aisling",
-   "last": "Byrne",
+   "first": "Oliver",
+   "last": "Turner",
    "title": "VP Security Operations",
    "seniority": "vp",
-   "bio": "VP Security Operations at Sentrova. 9 years in cyber security.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Long security questionnaires slowing every deal"
-   ]
+   "bio": "VP Security Operations at Sentrova. 4 years in cyber security.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 2604,
-   "first": "Eimear",
-   "last": "Adeyemi",
+   "first": "Aisling",
+   "last": "Byrne",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at Sentrova. Been here 2 years.",
+   "bio": "Director of Threat Intelligence at Sentrova. Been here 3 years.",
    "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give."
-   ],
-   "pains": [
-    "Alert fatigue in the security operations team"
-   ]
+   "posts": []
   },
   {
    "id": 2605,
-   "first": "Patrick",
-   "last": "Khan",
+   "first": "Eimear",
+   "last": "Adeyemi",
    "title": "Head of Compliance",
    "seniority": "director",
-   "bio": "Head of Compliance at Sentrova. Been here 7 years.",
-   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Alert fatigue in the security operations team"
-   ]
+   "bio": "Head of Compliance at Sentrova. Joined 5 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 2606,
-   "first": "Victor",
-   "last": "Egan",
+   "first": "Tomasz",
+   "last": "Regan",
    "title": "SOC Manager",
    "seniority": "manager",
    "bio": "SOC Manager at Sentrova. Joined 7 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Alert fatigue in the security operations team"
-   ]
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 2607,
-   "first": "Harry",
-   "last": "O'Neill",
+   "first": "Yusuf",
+   "last": "Brennan",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at Sentrova. Joined 3 years.",
+   "bio": "Security Engineer at Sentrova. Been here 1 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
-   ],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "posts": []
   },
   {
    "id": 2608,
-   "first": "Gemma",
-   "last": "Tierney",
+   "first": "Isaac",
+   "last": "Regan",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at Sentrova. Joined 4 years.",
+   "bio": "Junior SOC Analyst at Sentrova. Been here 1 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "posts": []
   }
  ],
  "27": [
   {
    "id": 2701,
-   "first": "Tom",
-   "last": "Usman",
+   "first": "Amira",
+   "last": "Khan",
    "title": "Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Founder & CEO at Lockpoint. 4 years in cyber security.",
+   "bio": "Founder & CEO at Lockpoint. 17 years in cyber security.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year."
-   ],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "posts": []
   },
   {
    "id": 2702,
-   "first": "Fatima",
-   "last": "Keane",
+   "first": "Bilal",
+   "last": "Foster",
    "title": "CISO",
    "seniority": "c-suite",
-   "bio": "CISO at Lockpoint. 18 years in cyber security.",
+   "bio": "CISO at Lockpoint. 8 years in cyber security.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "posts": []
   },
   {
    "id": 2703,
-   "first": "Piotr",
-   "last": "Silva",
+   "first": "Patrick",
+   "last": "Kowalski",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at Lockpoint. Joined 3 years.",
-   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire or keep experienced security analysts"
-   ]
+   "bio": "Director of Threat Intelligence at Lockpoint. Been here 8 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2704,
-   "first": "Mei",
-   "last": "Novak",
+   "first": "Oliver",
+   "last": "Ward",
    "title": "SOC Manager",
    "seniority": "manager",
-   "bio": "SOC Manager at Lockpoint. Joined 2 years.",
+   "bio": "SOC Manager at Lockpoint. Been here 7 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire or keep experienced security analysts"
-   ]
+   "posts": []
   },
   {
    "id": 2705,
-   "first": "Grainne",
-   "last": "Hall",
+   "first": "Piotr",
+   "last": "Silva",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at Lockpoint. Joined 2 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
-   ],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "bio": "Security Engineer at Lockpoint. Been here 8 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 2706,
-   "first": "Victor",
-   "last": "Fitzgerald",
+   "first": "Gareth",
+   "last": "Foster",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at Lockpoint. Been here 8 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "bio": "Junior SOC Analyst at Lockpoint. Been here 3 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "28": [
   {
    "id": 2801,
-   "first": "Declan",
-   "last": "Vaughan",
+   "first": "Luke",
+   "last": "Thompson",
    "title": "Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Founder & CEO at Patchwise. 7 years in cyber security.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "Founder & CEO at Patchwise. 14 years in cyber security.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2802,
-   "first": "Hugo",
-   "last": "Reid",
+   "first": "Ewan",
+   "last": "Flanagan",
    "title": "CISO",
    "seniority": "c-suite",
-   "bio": "CISO at Patchwise. 11 years in cyber security.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "CISO at Patchwise. 15 years in cyber security.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2803,
-   "first": "Tom",
-   "last": "Iqbal",
+   "first": "Fionn",
+   "last": "Novak",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at Patchwise. Been here 3 years.",
+   "bio": "Director of Threat Intelligence at Patchwise. Been here 1 years.",
    "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Lost two senior analysts to bigger firms this quarter. Hiring in security right now is brutal."
-   ],
-   "pains": [
-    "Can't hire or keep experienced security analysts"
-   ]
+   "posts": []
   },
   {
    "id": 2804,
-   "first": "Shane",
-   "last": "Power",
+   "first": "Tara",
+   "last": "Khan",
    "title": "SOC Manager",
    "seniority": "manager",
-   "bio": "SOC Manager at Patchwise. Joined 3 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire or keep experienced security analysts"
-   ]
+   "bio": "SOC Manager at Patchwise. Been here 3 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 2805,
    "first": "Orla",
-   "last": "Brennan",
+   "last": "Adeyemi",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at Patchwise. Been here 4 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone.",
-    "One year at Patchwise today. Learned more than I expected."
-   ],
-   "pains": [
-    "Scanners flag huge numbers of false positives"
-   ]
+   "bio": "Security Engineer at Patchwise. Been here 5 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 2806,
-   "first": "Nadia",
-   "last": "Brennan",
+   "first": "Eimear",
+   "last": "O'Neill",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at Patchwise. Been here 4 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Scanners flag huge numbers of false positives"
-   ]
+   "bio": "Junior SOC Analyst at Patchwise. Been here 6 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "29": [
   {
    "id": 2901,
-   "first": "Orla",
-   "last": "Reid",
+   "first": "Tomasz",
+   "last": "Quinn",
    "title": "Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Founder & CEO at VaultHaven. 9 years in cyber security.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Board asked me this week: 'how much risk are we carrying, in euros?' Still don't have a great answer.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Board wants cyber risk explained in business terms"
-   ]
+   "bio": "Founder & CEO at VaultHaven. 18 years in cyber security.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2902,
-   "first": "Adaeze",
-   "last": "Adeyemi",
+   "first": "Harry",
+   "last": "Patel",
    "title": "CISO",
    "seniority": "c-suite",
-   "bio": "CISO at VaultHaven. 17 years in cyber security.",
+   "bio": "CISO at VaultHaven. 13 years in cyber security.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Board wants cyber risk explained in business terms"
-   ]
+   "posts": []
   },
   {
    "id": 2903,
-   "first": "Vanessa",
+   "first": "Grainne",
    "last": "Jones",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at VaultHaven. Joined 4 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Our analysts closed 9,000 alerts last month. Maybe 40 mattered. Something has to give.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Alert fatigue in the security operations team"
-   ]
+   "bio": "Director of Threat Intelligence at VaultHaven. Joined 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 2904,
-   "first": "Olivia",
-   "last": "Healy",
+   "first": "Katie",
+   "last": "Iqbal",
    "title": "SOC Manager",
    "seniority": "manager",
-   "bio": "SOC Manager at VaultHaven. Been here 8 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Alert fatigue in the security operations team"
-   ]
+   "bio": "SOC Manager at VaultHaven. Joined 1 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 2905,
-   "first": "Femi",
-   "last": "Kowalski",
+   "first": "Jade",
+   "last": "Chen",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at VaultHaven. Been here 8 years.",
+   "bio": "Security Engineer at VaultHaven. Been here 3 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Scanner flagged 1,200 'critical' issues. 1,100 were false positives. My weekend is gone.",
-    "One year at VaultHaven today. Learned more than I expected."
-   ],
-   "pains": [
-    "Scanners flag huge numbers of false positives"
-   ]
+   "posts": []
   },
   {
    "id": 2906,
-   "first": "Yusuf",
-   "last": "Ryan",
+   "first": "Chloe",
+   "last": "Novak",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at VaultHaven. Been here 7 years.",
+   "bio": "Junior SOC Analyst at VaultHaven. Been here 3 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Scanners flag huge numbers of false positives"
-   ]
+   "posts": []
   }
  ],
  "30": [
   {
    "id": 3001,
-   "first": "Kwame",
-   "last": "Tierney",
+   "first": "Luke",
+   "last": "Flanagan",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Atlas Precision Group. 21 years in manufacturing.",
+   "bio": "CEO at Atlas Precision Group. 19 years in manufacturing.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Two of our biggest customers now require carbon data per part. We're not set up for that.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "posts": []
   },
   {
    "id": 3002,
-   "first": "Ines",
-   "last": "Okafor",
+   "first": "Sinead",
+   "last": "Stewart",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Atlas Precision Group. 11 years in manufacturing.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "bio": "CFO at Atlas Precision Group. 20 years in manufacturing.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 3003,
-   "first": "Bilal",
-   "last": "Byrne",
+   "first": "Femi",
+   "last": "Kowalski",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Atlas Precision Group. 6 years in manufacturing.",
+   "bio": "COO at Atlas Precision Group. 8 years in manufacturing.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "posts": []
   },
   {
    "id": 3004,
-   "first": "Hugo",
-   "last": "Callaghan",
+   "first": "Vanessa",
+   "last": "Kavanagh",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Atlas Precision Group. 10 years in manufacturing.",
+   "bio": "Chief People Officer at Atlas Precision Group. 15 years in manufacturing.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "posts": []
   },
   {
    "id": 3005,
-   "first": "Isaac",
-   "last": "Thompson",
+   "first": "Samuel",
+   "last": "Reid",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Atlas Precision Group. 16 years in manufacturing.",
+   "bio": "Chief Revenue Officer at Atlas Precision Group. 13 years in manufacturing.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "posts": []
   },
   {
    "id": 3006,
-   "first": "Will",
-   "last": "Adeyemi",
+   "first": "Marcus",
+   "last": "Kowalski",
    "title": "VP Operations",
    "seniority": "vp",
-   "bio": "VP Operations at Atlas Precision Group. 11 years in manufacturing.",
+   "bio": "VP Operations at Atlas Precision Group. 6 years in manufacturing.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "posts": []
   },
   {
    "id": 3007,
-   "first": "Uma",
-   "last": "Shaw",
+   "first": "Gareth",
+   "last": "Maguire",
    "title": "VP Supply Chain",
    "seniority": "vp",
-   "bio": "VP Supply Chain at Atlas Precision Group. 8 years in manufacturing.",
+   "bio": "VP Supply Chain at Atlas Precision Group. 9 years in manufacturing.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "posts": []
   },
   {
    "id": 3008,
-   "first": "Jade",
-   "last": "Wright",
+   "first": "Kwame",
+   "last": "Tierney",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Atlas Precision Group. 14 years in manufacturing.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "bio": "VP Finance at Atlas Precision Group. 11 years in manufacturing.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 3009,
-   "first": "Callum",
-   "last": "Ahmed",
+   "first": "Ines",
+   "last": "Okafor",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Atlas Precision Group. 3 years in manufacturing.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "bio": "VP Marketing at Atlas Precision Group. 15 years in manufacturing.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 3010,
-   "first": "Jack",
-   "last": "Shaw",
+   "first": "Daniel",
+   "last": "Vaughan",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Atlas Precision Group. 5 years in manufacturing.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "bio": "VP Information Technology at Atlas Precision Group. 3 years in manufacturing.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 3011,
-   "first": "Vanessa",
-   "last": "Iqbal",
+   "first": "Quinn",
+   "last": "Nolan",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Atlas Precision Group. 10 years in manufacturing.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "bio": "VP Procurement at Atlas Precision Group. 5 years in manufacturing.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 3012,
-   "first": "Victor",
-   "last": "Vaughan",
+   "first": "Ben",
+   "last": "Kavanagh",
    "title": "Plant Director",
    "seniority": "director",
-   "bio": "Plant Director at Atlas Precision Group. Been here 1 years.",
+   "bio": "Plant Director at Atlas Precision Group. Joined 8 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Line 3 went down for 14 hours on Tuesday. That's a week of margin gone because of one bearing.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3013,
-   "first": "Gemma",
-   "last": "Hughes",
+   "first": "Deirdre",
+   "last": "Iqbal",
    "title": "Head of Quality",
    "seniority": "director",
-   "bio": "Head of Quality at Atlas Precision Group. Been here 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "bio": "Head of Quality at Atlas Precision Group. Been here 8 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 3014,
-   "first": "Ravi",
-   "last": "Bennett",
+   "first": "Joel",
+   "last": "McCarthy",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Atlas Precision Group. Joined 7 years.",
+   "bio": "Director of IT at Atlas Precision Group. Been here 5 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3015,
-   "first": "Olivia",
-   "last": "Moreno",
+   "first": "Adaeze",
+   "last": "Grant",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Atlas Precision Group. Joined 5 years.",
+   "bio": "Head of Procurement at Atlas Precision Group. Been here 5 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3016,
-   "first": "Imogen",
-   "last": "Wright",
+   "first": "Hugo",
+   "last": "Ward",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Atlas Precision Group. Joined 1 years.",
+   "bio": "Head of Legal at Atlas Precision Group. Joined 5 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3017,
-   "first": "Amira",
-   "last": "Flanagan",
+   "first": "Wendy",
+   "last": "Stewart",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Atlas Precision Group. Joined 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "bio": "Head of Talent Acquisition at Atlas Precision Group. Been here 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 3018,
-   "first": "Grainne",
-   "last": "Brennan",
+   "first": "Nathan",
+   "last": "Evans",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Atlas Precision Group. Joined 3 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "bio": "Director of Marketing at Atlas Precision Group. Been here 6 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 3019,
-   "first": "Quinn",
-   "last": "Flanagan",
+   "first": "Ciara",
+   "last": "Foster",
    "title": "Maintenance Manager",
    "seniority": "manager",
-   "bio": "Maintenance Manager at Atlas Precision Group. Joined 6 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "bio": "Maintenance Manager at Atlas Precision Group. Joined 4 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 3020,
-   "first": "Samuel",
-   "last": "Jones",
+   "first": "Catriona",
+   "last": "Moreno",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Atlas Precision Group. Joined 8 years.",
+   "bio": "Production Manager at Atlas Precision Group. Joined 6 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3021,
-   "first": "Ewan",
-   "last": "Iqbal",
+   "first": "Will",
+   "last": "Reid",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Atlas Precision Group. Joined 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "bio": "IT Service Manager at Atlas Precision Group. Joined 3 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 3022,
-   "first": "Luke",
-   "last": "Hughes",
+   "first": "Ravi",
+   "last": "Dempsey",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Atlas Precision Group. Been here 1 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "bio": "Procurement Manager at Atlas Precision Group. Joined 7 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 3023,
-   "first": "Joel",
-   "last": "Novak",
+   "first": "Tomasz",
+   "last": "Evans",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Atlas Precision Group. Joined 7 years.",
+   "bio": "HR Business Partner at Atlas Precision Group. Been here 5 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3024,
-   "first": "Nadia",
-   "last": "Maguire",
+   "first": "Niall",
+   "last": "Sweeney",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Atlas Precision Group. Been here 5 years.",
+   "bio": "Marketing Manager at Atlas Precision Group. Joined 3 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3025,
-   "first": "Sinead",
-   "last": "Shaw",
+   "first": "Callum",
+   "last": "Patel",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Atlas Precision Group. Been here 7 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "bio": "Sales Manager at Atlas Precision Group. Been here 3 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 3026,
-   "first": "Orla",
-   "last": "Moreno",
+   "first": "Katie",
+   "last": "Kowalski",
    "title": "Quality Engineer",
    "seniority": "mid",
-   "bio": "Quality Engineer at Atlas Precision Group. Joined 5 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Quality Engineer at Atlas Precision Group. Joined 3 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 3027,
-   "first": "Nathan",
-   "last": "Ryan",
+   "first": "Amira",
+   "last": "Patel",
    "title": "Production Planner",
    "seniority": "mid",
-   "bio": "Production Planner at Atlas Precision Group. Joined 8 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Production Planner at Atlas Precision Group. Joined 6 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 3028,
-   "first": "Patrick",
-   "last": "Young",
+   "first": "Ruth",
+   "last": "Callaghan",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Atlas Precision Group. Been here 2 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Business Analyst at Atlas Precision Group. Joined 8 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 3029,
-   "first": "Lorcan",
-   "last": "Chen",
+   "first": "Bilal",
+   "last": "Power",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Atlas Precision Group. Joined 5 years.",
+   "bio": "Financial Analyst at Atlas Precision Group. Joined 1 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "posts": []
   },
   {
    "id": 3030,
-   "first": "Harry",
-   "last": "Kavanagh",
+   "first": "Rebecca",
+   "last": "Tierney",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Atlas Precision Group. Been here 7 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Recruiter at Atlas Precision Group. Joined 2 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 3031,
-   "first": "Tom",
-   "last": "Bennett",
+   "first": "Priya",
+   "last": "Adeyemi",
    "title": "Process Technician",
    "seniority": "junior",
-   "bio": "Process Technician at Atlas Precision Group. Been here 6 years.",
+   "bio": "Process Technician at Atlas Precision Group. Been here 5 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "posts": []
   },
   {
    "id": 3032,
-   "first": "Priya",
-   "last": "Turner",
+   "first": "Mei",
+   "last": "Sweeney",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Atlas Precision Group. Joined 4 years.",
+   "bio": "Executive Assistant to the CEO at Atlas Precision Group. Joined 2 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "posts": []
   },
   {
    "id": 3033,
-   "first": "Niall",
-   "last": "Okafor",
+   "first": "Zara",
+   "last": "Stewart",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Atlas Precision Group. Been here 4 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Graduate Analyst at Atlas Precision Group. Been here 1 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "31": [
   {
    "id": 3101,
-   "first": "Daniel",
-   "last": "Stewart",
+   "first": "Samuel",
+   "last": "Okafor",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Corrib Packaging. 15 years in manufacturing.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Lead times on key components went from 6 weeks to 20. Planning feels like guesswork.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Supply chain volatility wrecking forecasts"
-   ]
+   "bio": "CEO at Corrib Packaging. 19 years in manufacturing.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3102,
-   "first": "Vanessa",
-   "last": "Quinn",
+   "first": "Zara",
+   "last": "Bennett",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Corrib Packaging. 17 years in manufacturing.",
+   "bio": "CFO at Corrib Packaging. 8 years in manufacturing.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Supply chain volatility wrecking forecasts"
-   ]
+   "posts": []
   },
   {
    "id": 3103,
    "first": "Shane",
-   "last": "Nolan",
+   "last": "Power",
    "title": "VP Operations",
    "seniority": "vp",
-   "bio": "VP Operations at Corrib Packaging. 17 years in manufacturing.",
+   "bio": "VP Operations at Corrib Packaging. 8 years in manufacturing.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Supply chain volatility wrecking forecasts"
-   ]
+   "posts": []
   },
   {
    "id": 3104,
-   "first": "Harry",
-   "last": "Ward",
+   "first": "Elena",
+   "last": "Hall",
    "title": "Plant Director",
    "seniority": "director",
-   "bio": "Plant Director at Corrib Packaging. Joined 5 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Three technician roles open since spring. The skills gap on the factory floor is real.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "Plant Director at Corrib Packaging. Joined 6 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3105,
-   "first": "Gareth",
-   "last": "Quinn",
+   "first": "Tom",
+   "last": "Flanagan",
    "title": "Head of Quality",
    "seniority": "director",
-   "bio": "Head of Quality at Corrib Packaging. Been here 2 years.",
+   "bio": "Head of Quality at Corrib Packaging. Been here 1 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 3106,
-   "first": "Joel",
-   "last": "Keane",
+   "first": "Chloe",
+   "last": "Stewart",
    "title": "Maintenance Manager",
    "seniority": "manager",
-   "bio": "Maintenance Manager at Corrib Packaging. Joined 4 years.",
+   "bio": "Maintenance Manager at Corrib Packaging. Joined 5 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 3107,
-   "first": "Piotr",
-   "last": "Tierney",
+   "first": "Callum",
+   "last": "Iqbal",
    "title": "Quality Engineer",
    "seniority": "mid",
-   "bio": "Quality Engineer at Corrib Packaging. Joined 1 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Our quality report is 12 spreadsheets stitched together every Friday. Half my day, every week."
-   ],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "bio": "Quality Engineer at Corrib Packaging. Joined 7 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 3108,
-   "first": "Marcus",
-   "last": "Turner",
+   "first": "Deirdre",
+   "last": "Carroll",
    "title": "Process Technician",
    "seniority": "junior",
-   "bio": "Process Technician at Corrib Packaging. Joined 3 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "bio": "Process Technician at Corrib Packaging. Been here 3 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "32": [
   {
    "id": 3201,
    "first": "Imogen",
-   "last": "Bennett",
+   "last": "Khan",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Hartwell Plastics. 8 years in manufacturing.",
+   "bio": "CEO at Hartwell Plastics. 20 years in manufacturing.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Energy is now our second-biggest cost after people. Every efficiency project is back on the table.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "posts": []
   },
   {
    "id": 3202,
-   "first": "Eimear",
-   "last": "Turner",
+   "first": "Samuel",
+   "last": "Patel",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Hartwell Plastics. 3 years in manufacturing.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "CFO at Hartwell Plastics. 20 years in manufacturing.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3203,
-   "first": "Freya",
-   "last": "Vaughan",
+   "first": "Jade",
+   "last": "Foster",
    "title": "VP Operations",
    "seniority": "vp",
-   "bio": "VP Operations at Hartwell Plastics. 22 years in manufacturing.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "VP Operations at Hartwell Plastics. 7 years in manufacturing.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3204,
-   "first": "Maeve",
-   "last": "Dempsey",
+   "first": "Eimear",
+   "last": "Ryan",
    "title": "Plant Director",
    "seniority": "director",
-   "bio": "Plant Director at Hartwell Plastics. Joined 3 years.",
+   "bio": "Plant Director at Hartwell Plastics. Joined 2 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Three technician roles open since spring. The skills gap on the factory floor is real.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 3205,
-   "first": "Mei",
-   "last": "Novak",
+   "first": "Callum",
+   "last": "Lynch",
    "title": "Head of Quality",
    "seniority": "director",
-   "bio": "Head of Quality at Hartwell Plastics. Joined 6 years.",
-   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "Head of Quality at Hartwell Plastics. Been here 2 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3206,
-   "first": "Femi",
-   "last": "Hughes",
+   "first": "Orla",
+   "last": "Maguire",
    "title": "Maintenance Manager",
    "seniority": "manager",
-   "bio": "Maintenance Manager at Hartwell Plastics. Joined 1 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "Maintenance Manager at Hartwell Plastics. Been here 8 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 3207,
-   "first": "Priya",
-   "last": "Usman",
+   "first": "Maeve",
+   "last": "Kavanagh",
    "title": "Quality Engineer",
    "seniority": "mid",
-   "bio": "Quality Engineer at Hartwell Plastics. Been here 2 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Quality Engineer at Hartwell Plastics. Been here 3 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 3208,
-   "first": "Jack",
-   "last": "Gallagher",
+   "first": "Ewan",
+   "last": "Callaghan",
    "title": "Process Technician",
    "seniority": "junior",
-   "bio": "Process Technician at Hartwell Plastics. Joined 4 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Process Technician at Hartwell Plastics. Joined 2 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "33": [
   {
    "id": 3301,
-   "first": "Patrick",
-   "last": "Healy",
+   "first": "Rosa",
+   "last": "Regan",
    "title": "Managing Director",
    "seniority": "c-suite",
-   "bio": "Managing Director at Brennan Steelworks. 15 years in manufacturing.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Energy is now our second-biggest cost after people. Every efficiency project is back on the table.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "Managing Director at Brennan Steelworks. 18 years in manufacturing.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3302,
-   "first": "Hannah",
-   "last": "Patel",
+   "first": "Harry",
+   "last": "Lewis",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Brennan Steelworks. 16 years in manufacturing.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "COO at Brennan Steelworks. 9 years in manufacturing.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3303,
-   "first": "Ewan",
-   "last": "Walsh",
+   "first": "Shane",
+   "last": "Turner",
    "title": "Plant Director",
    "seniority": "director",
-   "bio": "Plant Director at Brennan Steelworks. Been here 6 years.",
+   "bio": "Plant Director at Brennan Steelworks. Joined 1 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Line 3 went down for 14 hours on Tuesday. That's a week of margin gone because of one bearing."
-   ],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3304,
-   "first": "Maeve",
-   "last": "Novak",
+   "first": "Marcus",
+   "last": "Turner",
    "title": "Maintenance Manager",
    "seniority": "manager",
-   "bio": "Maintenance Manager at Brennan Steelworks. Joined 3 years.",
+   "bio": "Maintenance Manager at Brennan Steelworks. Been here 2 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Unplanned downtime on production lines"
-   ]
+   "posts": []
   },
   {
    "id": 3305,
-   "first": "Keira",
-   "last": "Davies",
+   "first": "Ruth",
+   "last": "Vaughan",
    "title": "Quality Engineer",
    "seniority": "mid",
    "bio": "Quality Engineer at Brennan Steelworks. Been here 3 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "posts": []
   },
   {
    "id": 3306,
-   "first": "Tomasz",
-   "last": "McCarthy",
+   "first": "Keira",
+   "last": "Novak",
    "title": "Process Technician",
    "seniority": "junior",
-   "bio": "Process Technician at Brennan Steelworks. Joined 6 years.",
+   "bio": "Process Technician at Brennan Steelworks. Joined 4 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "posts": []
   }
  ],
  "34": [
   {
    "id": 3401,
-   "first": "Sinead",
-   "last": "Ward",
+   "first": "Rebecca",
+   "last": "Thompson",
    "title": "Managing Director",
    "seniority": "c-suite",
-   "bio": "Managing Director at Kiln & Co. 13 years in manufacturing.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Energy is now our second-biggest cost after people. Every efficiency project is back on the table.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "Managing Director at Kiln & Co. 17 years in manufacturing.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3402,
-   "first": "Oliver",
-   "last": "Keane",
+   "first": "Declan",
+   "last": "Hall",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Kiln & Co. 16 years in manufacturing.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "COO at Kiln & Co. 6 years in manufacturing.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3403,
-   "first": "Chloe",
-   "last": "McCarthy",
+   "first": "Marcus",
+   "last": "Davies",
    "title": "Plant Director",
    "seniority": "director",
-   "bio": "Plant Director at Kiln & Co. Joined 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "We fix machines when they break. I want to fix them before they break. Building the business case now."
-   ],
-   "pains": [
-    "Maintenance is reactive instead of planned"
-   ]
+   "bio": "Plant Director at Kiln & Co. Been here 5 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3404,
-   "first": "Tara",
-   "last": "Walsh",
+   "first": "Nathan",
+   "last": "Callaghan",
    "title": "Maintenance Manager",
    "seniority": "manager",
    "bio": "Maintenance Manager at Kiln & Co. Joined 6 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Maintenance is reactive instead of planned"
-   ]
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 3405,
-   "first": "Yusuf",
-   "last": "Hall",
+   "first": "Hugo",
+   "last": "Young",
    "title": "Quality Engineer",
    "seniority": "mid",
-   "bio": "Quality Engineer at Kiln & Co. Joined 4 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Quality Engineer at Kiln & Co. Joined 6 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 3406,
-   "first": "Gemma",
-   "last": "Patel",
+   "first": "Adaeze",
+   "last": "Ward",
    "title": "Process Technician",
    "seniority": "junior",
-   "bio": "Process Technician at Kiln & Co. Been here 4 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Kiln & Co today. Learned more than I expected."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Process Technician at Kiln & Co. Been here 2 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "35": [
   {
    "id": 3501,
    "first": "Ravi",
-   "last": "Shaw",
+   "last": "Carroll",
    "title": "Managing Director",
    "seniority": "c-suite",
-   "bio": "Managing Director at Ferro Tools. 17 years in manufacturing.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Two of our biggest customers now require carbon data per part. We're not set up for that."
-   ],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "bio": "Managing Director at Ferro Tools. 8 years in manufacturing.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3502,
-   "first": "Luke",
-   "last": "Turner",
+   "first": "Marcus",
+   "last": "Mitchell",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Ferro Tools. 21 years in manufacturing.",
+   "bio": "COO at Ferro Tools. 7 years in manufacturing.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Customers demanding carbon and sustainability data"
-   ]
+   "posts": []
   },
   {
    "id": 3503,
-   "first": "Aoife",
-   "last": "Novak",
+   "first": "Shane",
+   "last": "Byrne",
    "title": "Plant Director",
    "seniority": "director",
-   "bio": "Plant Director at Ferro Tools. Been here 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "We fix machines when they break. I want to fix them before they break. Building the business case now.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Maintenance is reactive instead of planned"
-   ]
+   "bio": "Plant Director at Ferro Tools. Joined 4 years.",
+   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3504,
-   "first": "Ewan",
-   "last": "Doherty",
+   "first": "Quinn",
+   "last": "Vaughan",
    "title": "Maintenance Manager",
    "seniority": "manager",
-   "bio": "Maintenance Manager at Ferro Tools. Been here 8 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Maintenance is reactive instead of planned"
-   ]
+   "bio": "Maintenance Manager at Ferro Tools. Been here 3 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 3505,
-   "first": "Ines",
-   "last": "Callaghan",
+   "first": "Hannah",
+   "last": "Power",
    "title": "Quality Engineer",
    "seniority": "mid",
-   "bio": "Quality Engineer at Ferro Tools. Joined 5 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Still printing job sheets for every order. Lost one last week and remade a whole batch. Ouch."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Quality Engineer at Ferro Tools. Been here 2 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 3506,
-   "first": "Deirdre",
-   "last": "Jones",
+   "first": "Piotr",
+   "last": "Healy",
    "title": "Process Technician",
    "seniority": "junior",
-   "bio": "Process Technician at Ferro Tools. Joined 5 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Paper-based processes on the shop floor"
-   ]
+   "bio": "Process Technician at Ferro Tools. Joined 4 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "36": [
   {
    "id": 3601,
-   "first": "Hannah",
-   "last": "Lewis",
+   "first": "Rebecca",
+   "last": "Evans",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Clearledger. 15 years in fintech.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "CEO at Clearledger. 5 years in fintech.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3602,
-   "first": "Ruth",
-   "last": "Patel",
+   "first": "Mei",
+   "last": "Lewis",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Clearledger. 4 years in fintech.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "CFO at Clearledger. 18 years in fintech.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3603,
-   "first": "Wendy",
-   "last": "Wright",
+   "first": "Nadia",
+   "last": "Foster",
    "title": "VP Product",
    "seniority": "vp",
-   "bio": "VP Product at Clearledger. 14 years in fintech.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "VP Product at Clearledger. 11 years in fintech.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3604,
-   "first": "Eimear",
-   "last": "Hughes",
+   "first": "Sinead",
+   "last": "Ward",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at Clearledger. Joined 2 years.",
+   "bio": "Head of Fraud at Clearledger. Joined 5 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "posts": []
   },
   {
    "id": 3605,
-   "first": "Orla",
-   "last": "Okafor",
+   "first": "Oliver",
+   "last": "Keane",
    "title": "Director of Payments Operations",
    "seniority": "director",
-   "bio": "Director of Payments Operations at Clearledger. Been here 4 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "bio": "Director of Payments Operations at Clearledger. Been here 6 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3606,
-   "first": "Aisling",
+   "first": "Chloe",
    "last": "McCarthy",
    "title": "Compliance Manager",
    "seniority": "manager",
-   "bio": "Compliance Manager at Clearledger. Been here 4 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "bio": "Compliance Manager at Clearledger. Joined 3 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 3607,
-   "first": "Leah",
-   "last": "Carroll",
+   "first": "Daniel",
+   "last": "Tierney",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at Clearledger. Joined 2 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Payments Analyst at Clearledger. Been here 1 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 3608,
-   "first": "Declan",
-   "last": "Moreno",
+   "first": "Femi",
+   "last": "Patel",
    "title": "Customer Support Associate",
    "seniority": "junior",
-   "bio": "Customer Support Associate at Clearledger. Joined 2 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Clearledger today. Learned more than I expected."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Customer Support Associate at Clearledger. Joined 6 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "37": [
   {
    "id": 3701,
-   "first": "Callum",
-   "last": "Doherty",
+   "first": "Jade",
+   "last": "Tierney",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Northbank Digital. 15 years in fintech.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up."
-   ],
-   "pains": [
-    "Regulatory reporting burden keeps growing"
-   ]
+   "bio": "CEO at Northbank Digital. 20 years in fintech.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3702,
-   "first": "Hannah",
-   "last": "Moreno",
+   "first": "Rebecca",
+   "last": "Vaughan",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Northbank Digital. 19 years in fintech.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Regulatory reporting burden keeps growing"
-   ]
+   "bio": "CFO at Northbank Digital. 10 years in fintech.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3703,
-   "first": "Aoife",
-   "last": "Iqbal",
+   "first": "Hannah",
+   "last": "Bennett",
    "title": "VP Product",
    "seniority": "vp",
-   "bio": "VP Product at Northbank Digital. 12 years in fintech.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Regulatory reporting burden keeps growing"
-   ]
+   "bio": "VP Product at Northbank Digital. 14 years in fintech.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3704,
-   "first": "Bilal",
-   "last": "Evans",
+   "first": "Ines",
+   "last": "Egan",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at Northbank Digital. Been here 7 years.",
+   "bio": "Head of Fraud at Northbank Digital. Been here 1 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Most of our support tickets are 'where's my money?'. Better self-serve would change everything.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "posts": []
   },
   {
    "id": 3705,
-   "first": "Ravi",
-   "last": "Foster",
+   "first": "Will",
+   "last": "Kowalski",
    "title": "Director of Payments Operations",
    "seniority": "director",
-   "bio": "Director of Payments Operations at Northbank Digital. Joined 5 years.",
+   "bio": "Director of Payments Operations at Northbank Digital. Been here 2 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "posts": []
   },
   {
    "id": 3706,
-   "first": "Uma",
-   "last": "Lynch",
+   "first": "Orla",
+   "last": "Adeyemi",
    "title": "Compliance Manager",
    "seniority": "manager",
-   "bio": "Compliance Manager at Northbank Digital. Joined 7 years.",
+   "bio": "Compliance Manager at Northbank Digital. Joined 8 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "posts": []
   },
   {
    "id": 3707,
-   "first": "Katie",
-   "last": "Shaw",
+   "first": "Victor",
+   "last": "Byrne",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at Northbank Digital. Been here 5 years.",
+   "bio": "Payments Analyst at Northbank Digital. Been here 8 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "posts": []
   },
   {
    "id": 3708,
-   "first": "Rosa",
-   "last": "Bennett",
+   "first": "Ciara",
+   "last": "Healy",
    "title": "Customer Support Associate",
    "seniority": "junior",
-   "bio": "Customer Support Associate at Northbank Digital. Been here 8 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Customer Support Associate at Northbank Digital. Joined 5 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "38": [
   {
    "id": 3801,
-   "first": "Hannah",
-   "last": "Healy",
+   "first": "Rosa",
+   "last": "Thompson",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Tessera Pay. 20 years in fintech.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Another new reporting requirement from the regulator. Our compliance team grew 40% this year just to keep up.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Regulatory reporting burden keeps growing"
-   ]
+   "bio": "CEO at Tessera Pay. 4 years in fintech.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3802,
-   "first": "Hugo",
-   "last": "Gallagher",
+   "first": "Wendy",
+   "last": "Reid",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Tessera Pay. 22 years in fintech.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Regulatory reporting burden keeps growing"
-   ]
+   "bio": "CFO at Tessera Pay. 16 years in fintech.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3803,
-   "first": "Grainne",
-   "last": "McCarthy",
+   "first": "Hannah",
+   "last": "Lewis",
    "title": "VP Product",
    "seniority": "vp",
-   "bio": "VP Product at Tessera Pay. 16 years in fintech.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Regulatory reporting burden keeps growing"
-   ]
+   "bio": "VP Product at Tessera Pay. 6 years in fintech.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3804,
-   "first": "Leah",
-   "last": "Chen",
+   "first": "Zara",
+   "last": "Gallagher",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at Tessera Pay. Joined 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
-   ],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "bio": "Head of Fraud at Tessera Pay. Been here 2 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 3805,
-   "first": "Mei",
-   "last": "Keane",
+   "first": "Declan",
+   "last": "Egan",
    "title": "Director of Payments Operations",
    "seniority": "director",
-   "bio": "Director of Payments Operations at Tessera Pay. Been here 5 years.",
+   "bio": "Director of Payments Operations at Tessera Pay. Been here 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "posts": []
   },
   {
    "id": 3806,
-   "first": "Tom",
-   "last": "Gallagher",
+   "first": "Eimear",
+   "last": "Hughes",
    "title": "Compliance Manager",
    "seniority": "manager",
-   "bio": "Compliance Manager at Tessera Pay. Joined 7 years.",
+   "bio": "Compliance Manager at Tessera Pay. Been here 5 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "posts": []
   },
   {
    "id": 3807,
-   "first": "Elena",
-   "last": "Turner",
+   "first": "Niall",
+   "last": "Kowalski",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at Tessera Pay. Been here 8 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Five compliance tools, none of them share data. I copy and paste between them all day."
-   ],
-   "pains": [
-    "Compliance tools that don't share data"
-   ]
+   "bio": "Payments Analyst at Tessera Pay. Been here 5 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 3808,
-   "first": "Ruth",
+   "first": "Quinn",
    "last": "Jones",
    "title": "Customer Support Associate",
    "seniority": "junior",
-   "bio": "Customer Support Associate at Tessera Pay. Joined 5 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Compliance tools that don't share data"
-   ]
+   "bio": "Customer Support Associate at Tessera Pay. Joined 8 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "39": [
   {
    "id": 3901,
-   "first": "Aoife",
-   "last": "Young",
+   "first": "Declan",
+   "last": "Kavanagh",
    "title": "Co-Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Co-Founder & CEO at Fundbridge. 7 years in fintech.",
+   "bio": "Co-Founder & CEO at Fundbridge. 15 years in fintech.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Our core system is older than some of our engineers. Every new product takes twice as long as it should.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Legacy core systems slow down new products"
-   ]
+   "posts": []
   },
   {
    "id": 3902,
-   "first": "Elena",
-   "last": "Young",
+   "first": "Gemma",
+   "last": "Hall",
    "title": "Chief Risk Officer",
    "seniority": "c-suite",
-   "bio": "Chief Risk Officer at Fundbridge. 18 years in fintech.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Legacy core systems slow down new products"
-   ]
+   "bio": "Chief Risk Officer at Fundbridge. 12 years in fintech.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3903,
-   "first": "Chloe",
-   "last": "Hall",
+   "first": "Ciara",
+   "last": "Regan",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at Fundbridge. Joined 1 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Most of our support tickets are 'where's my money?'. Better self-serve would change everything."
-   ],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "bio": "Head of Fraud at Fundbridge. Joined 7 years.",
+   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 3904,
-   "first": "Deirdre",
-   "last": "O'Neill",
+   "first": "Eimear",
+   "last": "Bennett",
    "title": "Compliance Manager",
    "seniority": "manager",
-   "bio": "Compliance Manager at Fundbridge. Joined 1 years.",
+   "bio": "Compliance Manager at Fundbridge. Joined 8 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "posts": []
   },
   {
    "id": 3905,
-   "first": "Piotr",
-   "last": "Adeyemi",
+   "first": "Rebecca",
+   "last": "Usman",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at Fundbridge. Joined 1 years.",
+   "bio": "Payments Analyst at Fundbridge. Joined 6 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "posts": []
   },
   {
    "id": 3906,
-   "first": "Hannah",
-   "last": "Adeyemi",
+   "first": "Mei",
+   "last": "Iqbal",
    "title": "Customer Support Associate",
    "seniority": "junior",
-   "bio": "Customer Support Associate at Fundbridge. Been here 4 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Customer Support Associate at Fundbridge. Joined 8 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "40": [
   {
    "id": 4001,
-   "first": "Leah",
-   "last": "Usman",
+   "first": "Ravi",
+   "last": "Foster",
    "title": "Co-Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Co-Founder & CEO at Coinpurse. 16 years in fintech.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "Co-Founder & CEO at Coinpurse. 15 years in fintech.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4002,
-   "first": "Quinn",
-   "last": "Thompson",
+   "first": "Isaac",
+   "last": "Shaw",
    "title": "Chief Risk Officer",
    "seniority": "c-suite",
-   "bio": "Chief Risk Officer at Coinpurse. 16 years in fintech.",
+   "bio": "Chief Risk Officer at Coinpurse. 19 years in fintech.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "posts": []
   },
   {
    "id": 4003,
-   "first": "Daniel",
-   "last": "Vaughan",
+   "first": "Keira",
+   "last": "Egan",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at Coinpurse. Been here 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Most of our support tickets are 'where's my money?'. Better self-serve would change everything.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "bio": "Head of Fraud at Coinpurse. Joined 1 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4004,
-   "first": "Hugo",
-   "last": "McCarthy",
+   "first": "Lorcan",
+   "last": "Ryan",
    "title": "Compliance Manager",
    "seniority": "manager",
-   "bio": "Compliance Manager at Coinpurse. Joined 1 years.",
+   "bio": "Compliance Manager at Coinpurse. Been here 5 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Support flooded with 'where's my money?' questions"
-   ]
+   "posts": []
   },
   {
    "id": 4005,
-   "first": "Rebecca",
-   "last": "Quinn",
+   "first": "Tom",
+   "last": "Maguire",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at Coinpurse. Joined 6 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Five compliance tools, none of them share data. I copy and paste between them all day."
-   ],
-   "pains": [
-    "Compliance tools that don't share data"
-   ]
+   "bio": "Payments Analyst at Coinpurse. Been here 8 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 4006,
-   "first": "Gareth",
-   "last": "Fitzgerald",
+   "first": "Chloe",
+   "last": "Vaughan",
    "title": "Customer Support Associate",
    "seniority": "junior",
-   "bio": "Customer Support Associate at Coinpurse. Been here 7 years.",
+   "bio": "Customer Support Associate at Coinpurse. Been here 8 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Compliance tools that don't share data"
-   ]
+   "posts": []
   }
  ],
  "41": [
   {
    "id": 4101,
-   "first": "Nathan",
-   "last": "Lewis",
+   "first": "Declan",
+   "last": "O'Neill",
    "title": "Co-Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Co-Founder & CEO at Kinlo. 6 years in fintech.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Our core system is older than some of our engineers. Every new product takes twice as long as it should.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Legacy core systems slow down new products"
-   ]
+   "bio": "Co-Founder & CEO at Kinlo. 20 years in fintech.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4102,
-   "first": "Piotr",
-   "last": "Adeyemi",
+   "first": "Hugo",
+   "last": "Gallagher",
    "title": "Chief Risk Officer",
    "seniority": "c-suite",
-   "bio": "Chief Risk Officer at Kinlo. 22 years in fintech.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Legacy core systems slow down new products"
-   ]
+   "bio": "Chief Risk Officer at Kinlo. 5 years in fintech.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4103,
-   "first": "Tom",
-   "last": "Foster",
+   "first": "Ewan",
+   "last": "Novak",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at Kinlo. Been here 5 years.",
-   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "38% of applicants abandon during ID checks. That's growth we paid for and lost at the last step."
-   ],
-   "pains": [
-    "Customers dropping out during identity checks"
-   ]
+   "bio": "Head of Fraud at Kinlo. Been here 2 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4104,
-   "first": "Aoife",
-   "last": "Bennett",
+   "first": "Diego",
+   "last": "Mitchell",
    "title": "Compliance Manager",
    "seniority": "manager",
-   "bio": "Compliance Manager at Kinlo. Joined 2 years.",
+   "bio": "Compliance Manager at Kinlo. Joined 7 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Customers dropping out during identity checks"
-   ]
+   "posts": []
   },
   {
    "id": 4105,
-   "first": "Victor",
-   "last": "Brennan",
+   "first": "Amira",
+   "last": "Chen",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at Kinlo. Joined 5 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Payments Analyst at Kinlo. Been here 7 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 4106,
-   "first": "Priya",
-   "last": "Adeyemi",
+   "first": "Patrick",
+   "last": "Patel",
    "title": "Customer Support Associate",
    "seniority": "junior",
    "bio": "Customer Support Associate at Kinlo. Joined 4 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "posts": []
   }
  ],
  "42": [
   {
    "id": 4201,
-   "first": "Grainne",
-   "last": "Okafor",
+   "first": "Victor",
+   "last": "Ahmed",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Meridian Hospital Group. 17 years in healthcare.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "CEO at Meridian Hospital Group. 15 years in healthcare.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4202,
-   "first": "Uma",
-   "last": "Healy",
+   "first": "Patrick",
+   "last": "Regan",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Meridian Hospital Group. 8 years in healthcare.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "CFO at Meridian Hospital Group. 12 years in healthcare.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4203,
-   "first": "Jade",
-   "last": "Carroll",
+   "first": "Callum",
+   "last": "Khan",
    "title": "Chief Medical Officer",
    "seniority": "c-suite",
-   "bio": "Chief Medical Officer at Meridian Hospital Group. 8 years in healthcare.",
+   "bio": "Chief Medical Officer at Meridian Hospital Group. 14 years in healthcare.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 4204,
-   "first": "Harry",
-   "last": "Walsh",
+   "first": "Jade",
+   "last": "Ward",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Meridian Hospital Group. 19 years in healthcare.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "Chief People Officer at Meridian Hospital Group. 10 years in healthcare.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4205,
-   "first": "Lorcan",
-   "last": "Regan",
+   "first": "Nathan",
+   "last": "Keane",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Meridian Hospital Group. 22 years in healthcare.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "Chief Revenue Officer at Meridian Hospital Group. 15 years in healthcare.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4206,
-   "first": "Declan",
-   "last": "Grant",
+   "first": "Elena",
+   "last": "Iqbal",
    "title": "VP Clinical Operations",
    "seniority": "vp",
-   "bio": "VP Clinical Operations at Meridian Hospital Group. 22 years in healthcare.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "VP Clinical Operations at Meridian Hospital Group. 16 years in healthcare.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4207,
-   "first": "Ruth",
-   "last": "Adeyemi",
+   "first": "Orla",
+   "last": "Young",
    "title": "Director of Nursing",
    "seniority": "vp",
-   "bio": "Director of Nursing at Meridian Hospital Group. 17 years in healthcare.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "Director of Nursing at Meridian Hospital Group. 16 years in healthcare.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4208,
-   "first": "Fionn",
-   "last": "Hughes",
+   "first": "Hugo",
+   "last": "Carroll",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Meridian Hospital Group. 5 years in healthcare.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "VP Finance at Meridian Hospital Group. 15 years in healthcare.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4209,
-   "first": "Patrick",
-   "last": "Adeyemi",
+   "first": "Kwame",
+   "last": "Moreno",
    "title": "VP Marketing",
    "seniority": "vp",
    "bio": "VP Marketing at Meridian Hospital Group. 13 years in healthcare.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4210,
-   "first": "Marcus",
-   "last": "Ryan",
+   "first": "Declan",
+   "last": "Adeyemi",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Meridian Hospital Group. 9 years in healthcare.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "VP Information Technology at Meridian Hospital Group. 22 years in healthcare.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4211,
-   "first": "Ciara",
-   "last": "Ward",
+   "first": "Femi",
+   "last": "Carroll",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Meridian Hospital Group. 12 years in healthcare.",
+   "bio": "VP Procurement at Meridian Hospital Group. 6 years in healthcare.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 4212,
-   "first": "Tom",
-   "last": "Thompson",
+   "first": "Ines",
+   "last": "Hughes",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at Meridian Hospital Group. Joined 7 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Head of Patient Services at Meridian Hospital Group. Joined 4 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4213,
-   "first": "Victor",
-   "last": "Patel",
+   "first": "Fatima",
+   "last": "Foster",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Meridian Hospital Group. Joined 5 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Director of IT at Meridian Hospital Group. Joined 8 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4214,
-   "first": "Kwame",
-   "last": "Quinn",
+   "first": "Diego",
+   "last": "Lewis",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Meridian Hospital Group. Joined 4 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Head of Procurement at Meridian Hospital Group. Been here 7 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4215,
-   "first": "Elena",
-   "last": "Thompson",
+   "first": "Mei",
+   "last": "Okafor",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Meridian Hospital Group. Been here 1 years.",
+   "bio": "Head of Legal at Meridian Hospital Group. Been here 4 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4216,
-   "first": "Daniel",
-   "last": "Ahmed",
+   "first": "Chloe",
+   "last": "Thompson",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Meridian Hospital Group. Joined 6 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Head of Talent Acquisition at Meridian Hospital Group. Joined 5 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4217,
    "first": "Olivia",
-   "last": "Sweeney",
+   "last": "Young",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Meridian Hospital Group. Joined 2 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Director of Marketing at Meridian Hospital Group. Joined 6 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4218,
-   "first": "Nathan",
-   "last": "Jones",
+   "first": "Katie",
+   "last": "Bennett",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Meridian Hospital Group. Been here 3 years.",
+   "bio": "Practice Manager at Meridian Hospital Group. Been here 8 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4219,
-   "first": "Ravi",
-   "last": "Chen",
+   "first": "Samuel",
+   "last": "Evans",
    "title": "Operations Manager",
    "seniority": "manager",
-   "bio": "Operations Manager at Meridian Hospital Group. Been here 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Operations Manager at Meridian Hospital Group. Joined 5 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 4220,
-   "first": "Owen",
-   "last": "Gallagher",
+   "first": "Niall",
+   "last": "Lynch",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Meridian Hospital Group. Joined 1 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "IT Service Manager at Meridian Hospital Group. Joined 3 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 4221,
-   "first": "Ewan",
-   "last": "Quinn",
+   "first": "Ravi",
+   "last": "Silva",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Meridian Hospital Group. Joined 3 years.",
+   "bio": "Procurement Manager at Meridian Hospital Group. Been here 7 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4222,
-   "first": "Hannah",
-   "last": "Kowalski",
+   "first": "Gareth",
+   "last": "Healy",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Meridian Hospital Group. Been here 2 years.",
+   "bio": "HR Business Partner at Meridian Hospital Group. Been here 4 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4223,
-   "first": "Priya",
-   "last": "Tierney",
+   "first": "Tomasz",
+   "last": "Nolan",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Meridian Hospital Group. Joined 8 years.",
+   "bio": "Marketing Manager at Meridian Hospital Group. Been here 7 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4224,
-   "first": "Mei",
-   "last": "Thompson",
+   "first": "Tom",
+   "last": "Foster",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Meridian Hospital Group. Joined 5 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Sales Manager at Meridian Hospital Group. Been here 6 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 4225,
-   "first": "Yusuf",
-   "last": "Jones",
+   "first": "Isaac",
+   "last": "Ryan",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at Meridian Hospital Group. Joined 6 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "I enter the same patient details into four different systems. Every single day.",
-    "One year at Meridian Hospital Group today. Learned more than I expected."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Senior Nurse at Meridian Hospital Group. Been here 4 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 4226,
-   "first": "Rebecca",
-   "last": "Brennan",
+   "first": "Maeve",
+   "last": "Gallagher",
    "title": "Patient Coordinator",
    "seniority": "mid",
-   "bio": "Patient Coordinator at Meridian Hospital Group. Joined 2 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Meridian Hospital Group today. Learned more than I expected."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Patient Coordinator at Meridian Hospital Group. Been here 2 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 4227,
-   "first": "Oliver",
-   "last": "Davies",
+   "first": "Adaeze",
+   "last": "Nolan",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Meridian Hospital Group. Been here 5 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Business Analyst at Meridian Hospital Group. Been here 4 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 4228,
-   "first": "Quinn",
-   "last": "O'Neill",
+   "first": "Fionn",
+   "last": "McCarthy",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Meridian Hospital Group. Joined 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Meridian Hospital Group today. Learned more than I expected."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Financial Analyst at Meridian Hospital Group. Joined 4 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 4229,
-   "first": "Maeve",
-   "last": "Grant",
+   "first": "Lorcan",
+   "last": "Vaughan",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Meridian Hospital Group. Joined 4 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Recruiter at Meridian Hospital Group. Been here 1 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 4230,
-   "first": "Hugo",
-   "last": "Adeyemi",
+   "first": "Daniel",
+   "last": "Gallagher",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at Meridian Hospital Group. Joined 5 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Receptionist at Meridian Hospital Group. Been here 6 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 4231,
-   "first": "Vanessa",
-   "last": "Flanagan",
+   "first": "Uma",
+   "last": "Healy",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Meridian Hospital Group. Joined 1 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Executive Assistant to the CEO at Meridian Hospital Group. Been here 3 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 4232,
-   "first": "Isaac",
-   "last": "Power",
+   "first": "Keira",
+   "last": "Iqbal",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Meridian Hospital Group. Joined 1 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Graduate Analyst at Meridian Hospital Group. Been here 1 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "43": [
   {
    "id": 4301,
-   "first": "Rosa",
-   "last": "Maguire",
+   "first": "Isaac",
+   "last": "Egan",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Albion Care Homes. 21 years in healthcare.",
+   "bio": "CEO at Albion Care Homes. 11 years in healthcare.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "posts": []
   },
   {
    "id": 4302,
-   "first": "Diego",
-   "last": "Reid",
+   "first": "Fatima",
+   "last": "Moreno",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Albion Care Homes. 20 years in healthcare.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "CFO at Albion Care Homes. 7 years in healthcare.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4303,
-   "first": "Luke",
-   "last": "Nolan",
+   "first": "Olivia",
+   "last": "Silva",
    "title": "Chief Medical Officer",
    "seniority": "c-suite",
-   "bio": "Chief Medical Officer at Albion Care Homes. 7 years in healthcare.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "Chief Medical Officer at Albion Care Homes. 17 years in healthcare.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4304,
-   "first": "Tomasz",
-   "last": "Kowalski",
+   "first": "Harry",
+   "last": "Grant",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Albion Care Homes. 16 years in healthcare.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "Chief People Officer at Albion Care Homes. 18 years in healthcare.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4305,
-   "first": "Tom",
-   "last": "Nolan",
+   "first": "Lorcan",
+   "last": "Regan",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Albion Care Homes. 20 years in healthcare.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "Chief Revenue Officer at Albion Care Homes. 18 years in healthcare.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4306,
-   "first": "Maeve",
-   "last": "Gallagher",
+   "first": "Ben",
+   "last": "Jones",
    "title": "VP Clinical Operations",
    "seniority": "vp",
-   "bio": "VP Clinical Operations at Albion Care Homes. 11 years in healthcare.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "VP Clinical Operations at Albion Care Homes. 21 years in healthcare.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4307,
-   "first": "Niall",
-   "last": "McCarthy",
+   "first": "Ravi",
+   "last": "Quinn",
    "title": "Director of Nursing",
    "seniority": "vp",
-   "bio": "Director of Nursing at Albion Care Homes. 6 years in healthcare.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "Director of Nursing at Albion Care Homes. 3 years in healthcare.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4308,
-   "first": "Victor",
-   "last": "Kavanagh",
+   "first": "Keira",
+   "last": "Flanagan",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Albion Care Homes. 6 years in healthcare.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "VP Finance at Albion Care Homes. 12 years in healthcare.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4309,
-   "first": "Oliver",
-   "last": "Chen",
+   "first": "Tom",
+   "last": "Thompson",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Albion Care Homes. 12 years in healthcare.",
+   "bio": "VP Marketing at Albion Care Homes. 19 years in healthcare.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "posts": []
   },
   {
    "id": 4310,
-   "first": "Aoife",
-   "last": "Young",
+   "first": "Kwame",
+   "last": "Adeyemi",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Albion Care Homes. 22 years in healthcare.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "VP Information Technology at Albion Care Homes. 21 years in healthcare.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4311,
-   "first": "Daniel",
-   "last": "Ward",
+   "first": "Uma",
+   "last": "Moreno",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Albion Care Homes. 3 years in healthcare.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "VP Procurement at Albion Care Homes. 19 years in healthcare.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4312,
-   "first": "Hannah",
-   "last": "Novak",
+   "first": "Yusuf",
+   "last": "Jones",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at Albion Care Homes. Been here 7 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Head of Patient Services at Albion Care Homes. Joined 1 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4313,
-   "first": "Marcus",
-   "last": "Keane",
+   "first": "Tomasz",
+   "last": "Lynch",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Albion Care Homes. Joined 8 years.",
+   "bio": "Director of IT at Albion Care Homes. Been here 6 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4314,
-   "first": "Sinead",
-   "last": "Iqbal",
+   "first": "Maeve",
+   "last": "Kowalski",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Albion Care Homes. Been here 2 years.",
+   "bio": "Head of Procurement at Albion Care Homes. Been here 1 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4315,
-   "first": "Femi",
-   "last": "Ryan",
+   "first": "Daniel",
+   "last": "Ahmed",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Albion Care Homes. Been here 5 years.",
+   "bio": "Head of Legal at Albion Care Homes. Been here 4 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4316,
-   "first": "Fatima",
-   "last": "Grant",
+   "first": "Zara",
+   "last": "Khan",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
    "bio": "Head of Talent Acquisition at Albion Care Homes. Joined 7 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 4317,
-   "first": "Leah",
-   "last": "Novak",
+   "first": "Ruth",
+   "last": "Nolan",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Albion Care Homes. Been here 2 years.",
+   "bio": "Director of Marketing at Albion Care Homes. Joined 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4318,
-   "first": "Mei",
-   "last": "Kowalski",
+   "first": "Jade",
+   "last": "Power",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Albion Care Homes. Joined 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Practice Manager at Albion Care Homes. Joined 2 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 4319,
-   "first": "Rebecca",
-   "last": "Fitzgerald",
+   "first": "Diego",
+   "last": "Thompson",
    "title": "Operations Manager",
    "seniority": "manager",
    "bio": "Operations Manager at Albion Care Homes. Joined 3 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 4320,
-   "first": "Isaac",
-   "last": "Power",
+   "first": "Gemma",
+   "last": "Usman",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Albion Care Homes. Been here 4 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "IT Service Manager at Albion Care Homes. Joined 1 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 4321,
-   "first": "Bilal",
-   "last": "Thompson",
+   "first": "Owen",
+   "last": "Khan",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Albion Care Homes. Been here 4 years.",
+   "bio": "Procurement Manager at Albion Care Homes. Been here 8 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4322,
-   "first": "Hugo",
-   "last": "Vaughan",
+   "first": "Nadia",
+   "last": "Khan",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Albion Care Homes. Joined 2 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "HR Business Partner at Albion Care Homes. Been here 4 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 4323,
-   "first": "Ravi",
-   "last": "Kavanagh",
+   "first": "Luke",
+   "last": "Quinn",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Albion Care Homes. Joined 5 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Marketing Manager at Albion Care Homes. Joined 7 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 4324,
-   "first": "Joel",
-   "last": "Adeyemi",
+   "first": "Ewan",
+   "last": "Evans",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Albion Care Homes. Joined 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Sales Manager at Albion Care Homes. Joined 2 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 4325,
-   "first": "Ines",
-   "last": "Usman",
+   "first": "Fionn",
+   "last": "Shaw",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at Albion Care Homes. Been here 8 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "I enter the same patient details into four different systems. Every single day.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Senior Nurse at Albion Care Homes. Joined 2 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 4326,
-   "first": "Fionn",
-   "last": "Bennett",
+   "first": "Tara",
+   "last": "Moreno",
    "title": "Patient Coordinator",
    "seniority": "mid",
-   "bio": "Patient Coordinator at Albion Care Homes. Been here 5 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Patient Coordinator at Albion Care Homes. Been here 7 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 4327,
-   "first": "Nathan",
-   "last": "Usman",
+   "first": "Grainne",
+   "last": "Novak",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Albion Care Homes. Been here 5 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "One year at Albion Care Homes today. Learned more than I expected."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Business Analyst at Albion Care Homes. Joined 1 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 4328,
-   "first": "Priya",
-   "last": "Keane",
+   "first": "Leah",
+   "last": "Regan",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Albion Care Homes. Joined 6 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Financial Analyst at Albion Care Homes. Joined 3 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 4329,
-   "first": "Nadia",
-   "last": "Ahmed",
+   "first": "Joel",
+   "last": "Patel",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Albion Care Homes. Joined 3 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "One year at Albion Care Homes today. Learned more than I expected."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Recruiter at Albion Care Homes. Been here 8 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 4330,
-   "first": "Gareth",
-   "last": "Novak",
+   "first": "Oliver",
+   "last": "Nolan",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at Albion Care Homes. Joined 6 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Receptionist at Albion Care Homes. Been here 2 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 4331,
-   "first": "Vanessa",
-   "last": "Kavanagh",
+   "first": "Marcus",
+   "last": "Egan",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Albion Care Homes. Been here 1 years.",
+   "bio": "Executive Assistant to the CEO at Albion Care Homes. Joined 6 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "posts": []
   },
   {
    "id": 4332,
-   "first": "Grainne",
-   "last": "Ryan",
+   "first": "Shane",
+   "last": "Usman",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Albion Care Homes. Joined 4 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Albion Care Homes today. Learned more than I expected."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Graduate Analyst at Albion Care Homes. Joined 5 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "44": [
   {
    "id": 4401,
-   "first": "Fatima",
-   "last": "Lynch",
+   "first": "Elena",
+   "last": "Egan",
    "title": "CEO",
    "seniority": "c-suite",
    "bio": "CEO at Brightwell Dental Group. 14 years in healthcare.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Our waiting list is at a record high. Every week someone waits is a week they're in pain.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Waiting lists at record highs"
-   ]
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4402,
-   "first": "Niall",
-   "last": "Ward",
+   "first": "Rebecca",
+   "last": "Jones",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Brightwell Dental Group. 8 years in healthcare.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Waiting lists at record highs"
-   ]
+   "bio": "CFO at Brightwell Dental Group. 20 years in healthcare.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4403,
-   "first": "Diego",
-   "last": "Usman",
+   "first": "Isaac",
+   "last": "Power",
    "title": "VP Clinical Operations",
    "seniority": "vp",
-   "bio": "VP Clinical Operations at Brightwell Dental Group. 19 years in healthcare.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Waiting lists at record highs"
-   ]
+   "bio": "VP Clinical Operations at Brightwell Dental Group. 12 years in healthcare.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4404,
-   "first": "Callum",
-   "last": "Keane",
+   "first": "Maeve",
+   "last": "Tierney",
    "title": "Head of Patient Services",
    "seniority": "director",
    "bio": "Head of Patient Services at Brightwell Dental Group. Been here 5 years.",
    "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Our clinicians spend 2 hours a day on paperwork. That's 2 hours not with patients."
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "posts": []
   },
   {
    "id": 4405,
-   "first": "Chloe",
-   "last": "Young",
+   "first": "Amira",
+   "last": "Lynch",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Brightwell Dental Group. Been here 6 years.",
+   "bio": "Director of IT at Brightwell Dental Group. Joined 3 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "posts": []
   },
   {
    "id": 4406,
-   "first": "Gareth",
-   "last": "Doherty",
+   "first": "Luke",
+   "last": "Mitchell",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Brightwell Dental Group. Been here 8 years.",
+   "bio": "Practice Manager at Brightwell Dental Group. Joined 6 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "posts": []
   },
   {
    "id": 4407,
-   "first": "Orla",
-   "last": "Lynch",
+   "first": "Declan",
+   "last": "Power",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at Brightwell Dental Group. Been here 1 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Our phones open at 8am and the lines are full by 8:01. Patients deserve better."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "bio": "Senior Nurse at Brightwell Dental Group. Joined 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 4408,
-   "first": "Priya",
-   "last": "Mitchell",
+   "first": "Uma",
+   "last": "Sweeney",
    "title": "Receptionist",
    "seniority": "junior",
    "bio": "Receptionist at Brightwell Dental Group. Been here 6 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "45": [
   {
    "id": 4501,
-   "first": "Tom",
-   "last": "Okafor",
+   "first": "Maeve",
+   "last": "Gallagher",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Physiolink. 22 years in healthcare.",
+   "bio": "CEO at Physiolink. 21 years in healthcare.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
-   ],
-   "pains": [
-    "Waiting lists at record highs"
-   ]
+   "posts": []
   },
   {
    "id": 4502,
-   "first": "Gemma",
-   "last": "Tierney",
+   "first": "Jack",
+   "last": "Nolan",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Physiolink. 10 years in healthcare.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Waiting lists at record highs"
-   ]
+   "bio": "CFO at Physiolink. 20 years in healthcare.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4503,
-   "first": "Yusuf",
-   "last": "Tierney",
+   "first": "Marcus",
+   "last": "Maguire",
    "title": "VP Clinical Operations",
    "seniority": "vp",
-   "bio": "VP Clinical Operations at Physiolink. 15 years in healthcare.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Waiting lists at record highs"
-   ]
+   "bio": "VP Clinical Operations at Physiolink. 5 years in healthcare.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4504,
-   "first": "Adaeze",
-   "last": "Doherty",
+   "first": "Callum",
+   "last": "Maguire",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at Physiolink. Joined 8 years.",
+   "bio": "Head of Patient Services at Physiolink. Joined 3 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "12% of appointments missed last month. Each one is a slot another patient needed.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Missed appointments"
-   ]
+   "posts": []
   },
   {
    "id": 4505,
-   "first": "Lorcan",
-   "last": "Nolan",
+   "first": "Nadia",
+   "last": "Novak",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Physiolink. Joined 3 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Missed appointments"
-   ]
+   "bio": "Director of IT at Physiolink. Been here 4 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4506,
-   "first": "Vanessa",
-   "last": "Ryan",
+   "first": "Deirdre",
+   "last": "Keane",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Physiolink. Joined 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Missed appointments"
-   ]
+   "bio": "Practice Manager at Physiolink. Been here 3 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 4507,
-   "first": "Uma",
-   "last": "Turner",
+   "first": "Ciara",
+   "last": "O'Neill",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at Physiolink. Joined 2 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "I enter the same patient details into four different systems. Every single day.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Senior Nurse at Physiolink. Been here 7 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 4508,
-   "first": "Daniel",
-   "last": "Regan",
+   "first": "Mei",
+   "last": "Keane",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at Physiolink. Joined 8 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Receptionist at Physiolink. Joined 7 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "46": [
   {
    "id": 4601,
-   "first": "Joel",
-   "last": "Ahmed",
+   "first": "Maeve",
+   "last": "Davies",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at ClearSight Opticians. 20 years in healthcare.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "CEO at ClearSight Opticians. 17 years in healthcare.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4602,
-   "first": "Adaeze",
-   "last": "Okafor",
+   "first": "Aisling",
+   "last": "Novak",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at ClearSight Opticians. 15 years in healthcare.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "CFO at ClearSight Opticians. 7 years in healthcare.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4603,
-   "first": "Quinn",
-   "last": "Kowalski",
+   "first": "Zara",
+   "last": "Kavanagh",
    "title": "VP Clinical Operations",
    "seniority": "vp",
-   "bio": "VP Clinical Operations at ClearSight Opticians. 4 years in healthcare.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "VP Clinical Operations at ClearSight Opticians. 22 years in healthcare.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4604,
-   "first": "Isaac",
-   "last": "Chen",
+   "first": "Adaeze",
+   "last": "Thompson",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at ClearSight Opticians. Been here 5 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Agency staff costs are up 30% this year. We can't hire nurses fast enough.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Head of Patient Services at ClearSight Opticians. Been here 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4605,
-   "first": "Ravi",
-   "last": "Regan",
+   "first": "Samuel",
+   "last": "Moreno",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at ClearSight Opticians. Joined 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Director of IT at ClearSight Opticians. Been here 2 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4606,
-   "first": "Fionn",
-   "last": "Brennan",
+   "first": "Daniel",
+   "last": "Adeyemi",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at ClearSight Opticians. Been here 5 years.",
+   "bio": "Practice Manager at ClearSight Opticians. Been here 6 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4607,
-   "first": "Jade",
-   "last": "Jones",
+   "first": "Keira",
+   "last": "Iqbal",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at ClearSight Opticians. Joined 2 years.",
+   "bio": "Senior Nurse at ClearSight Opticians. Joined 4 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "I enter the same patient details into four different systems. Every single day.",
-    "One year at ClearSight Opticians today. Learned more than I expected."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "posts": []
   },
   {
    "id": 4608,
-   "first": "Owen",
-   "last": "Ward",
+   "first": "Fionn",
+   "last": "Healy",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at ClearSight Opticians. Been here 6 years.",
+   "bio": "Receptionist at ClearSight Opticians. Joined 3 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "posts": []
   }
  ],
  "47": [
   {
    "id": 4701,
-   "first": "Grainne",
-   "last": "O'Neill",
+   "first": "Ewan",
+   "last": "Reid",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Carewell Home Health. 15 years in healthcare.",
+   "bio": "CEO at Carewell Home Health. 20 years in healthcare.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Every new tool means a 6-month data protection review. Necessary, but it slows everything down."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "posts": []
   },
   {
    "id": 4702,
-   "first": "Hugo",
-   "last": "Bennett",
+   "first": "Jade",
+   "last": "Dempsey",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Carewell Home Health. 3 years in healthcare.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "bio": "CFO at Carewell Home Health. 17 years in healthcare.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4703,
-   "first": "Luke",
-   "last": "Davies",
+   "first": "Adaeze",
+   "last": "Carroll",
    "title": "VP Clinical Operations",
    "seniority": "vp",
    "bio": "VP Clinical Operations at Carewell Home Health. 4 years in healthcare.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Data privacy reviews slow every new tool"
-   ]
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4704,
-   "first": "Sinead",
-   "last": "O'Neill",
+   "first": "Priya",
+   "last": "Ward",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at Carewell Home Health. Been here 3 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Agency staff costs are up 30% this year. We can't hire nurses fast enough."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Head of Patient Services at Carewell Home Health. Joined 2 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4705,
-   "first": "Marcus",
-   "last": "Moreno",
+   "first": "Freya",
+   "last": "Jones",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Carewell Home Health. Joined 8 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Director of IT at Carewell Home Health. Been here 8 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 4706,
-   "first": "Tomasz",
-   "last": "Fitzgerald",
+   "first": "Harry",
+   "last": "Adeyemi",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Carewell Home Health. Joined 1 years.",
+   "bio": "Practice Manager at Carewell Home Health. Been here 1 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4707,
-   "first": "Quinn",
-   "last": "Byrne",
+   "first": "Diego",
+   "last": "Khan",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at Carewell Home Health. Been here 3 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Our phones open at 8am and the lines are full by 8:01. Patients deserve better."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "bio": "Senior Nurse at Carewell Home Health. Been here 2 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 4708,
-   "first": "Nathan",
-   "last": "Flanagan",
+   "first": "Vanessa",
+   "last": "Davies",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at Carewell Home Health. Joined 3 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "bio": "Receptionist at Carewell Home Health. Joined 1 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "48": [
   {
    "id": 4801,
-   "first": "Femi",
-   "last": "Turner",
+   "first": "Samuel",
+   "last": "Patel",
    "title": "Founder & Clinical Director",
    "seniority": "c-suite",
-   "bio": "Founder & Clinical Director at Oak Lane Medical. 18 years in healthcare.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "Founder & Clinical Director at Oak Lane Medical. 17 years in healthcare.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4802,
-   "first": "Chloe",
-   "last": "Callaghan",
+   "first": "Luke",
+   "last": "Lewis",
    "title": "Chief Medical Officer",
    "seniority": "c-suite",
-   "bio": "Chief Medical Officer at Oak Lane Medical. 16 years in healthcare.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "Chief Medical Officer at Oak Lane Medical. 20 years in healthcare.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4803,
-   "first": "Ciara",
-   "last": "Young",
+   "first": "Callum",
+   "last": "Walsh",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at Oak Lane Medical. Joined 6 years.",
+   "bio": "Head of Patient Services at Oak Lane Medical. Been here 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Agency staff costs are up 30% this year. We can't hire nurses fast enough.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "posts": []
   },
   {
    "id": 4804,
-   "first": "Grainne",
-   "last": "Dempsey",
+   "first": "Amira",
+   "last": "Byrne",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Oak Lane Medical. Been here 4 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Practice Manager at Oak Lane Medical. Joined 4 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 4805,
-   "first": "Luke",
-   "last": "Stewart",
+   "first": "Yusuf",
+   "last": "Evans",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at Oak Lane Medical. Been here 2 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "I enter the same patient details into four different systems. Every single day."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Senior Nurse at Oak Lane Medical. Been here 3 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 4806,
-   "first": "Jade",
-   "last": "Fitzgerald",
+   "first": "Femi",
+   "last": "Moreno",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at Oak Lane Medical. Been here 6 years.",
+   "bio": "Receptionist at Oak Lane Medical. Been here 8 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Oak Lane Medical today. Learned more than I expected."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "posts": []
   }
  ],
  "49": [
   {
    "id": 4901,
-   "first": "Samuel",
-   "last": "Reid",
+   "first": "Grainne",
+   "last": "Ryan",
    "title": "Founder & Clinical Director",
    "seniority": "c-suite",
-   "bio": "Founder & Clinical Director at Lumen Skin Clinic. 11 years in healthcare.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "Founder & Clinical Director at Lumen Skin Clinic. 7 years in healthcare.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4902,
-   "first": "Tom",
-   "last": "Young",
+   "first": "Tara",
+   "last": "Lynch",
    "title": "Chief Medical Officer",
    "seniority": "c-suite",
-   "bio": "Chief Medical Officer at Lumen Skin Clinic. 14 years in healthcare.",
+   "bio": "Chief Medical Officer at Lumen Skin Clinic. 12 years in healthcare.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 4903,
-   "first": "Adaeze",
-   "last": "Vaughan",
+   "first": "Harry",
+   "last": "Egan",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at Lumen Skin Clinic. Been here 4 years.",
-   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Our clinicians spend 2 hours a day on paperwork. That's 2 hours not with patients.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "Head of Patient Services at Lumen Skin Clinic. Been here 6 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 4904,
-   "first": "Nadia",
-   "last": "Byrne",
+   "first": "Quinn",
+   "last": "Ward",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Lumen Skin Clinic. Been here 1 years.",
+   "bio": "Practice Manager at Lumen Skin Clinic. Joined 7 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "posts": []
   },
   {
    "id": 4905,
-   "first": "Gemma",
-   "last": "Flanagan",
+   "first": "Oliver",
+   "last": "Quinn",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at Lumen Skin Clinic. Joined 1 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Our phones open at 8am and the lines are full by 8:01. Patients deserve better.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "bio": "Senior Nurse at Lumen Skin Clinic. Been here 3 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 4906,
-   "first": "Tomasz",
-   "last": "Moreno",
+   "first": "Diego",
+   "last": "Usman",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at Lumen Skin Clinic. Joined 3 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "bio": "Receptionist at Lumen Skin Clinic. Joined 7 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "50": [
   {
    "id": 5001,
-   "first": "Luke",
-   "last": "Dempsey",
+   "first": "Wendy",
+   "last": "Byrne",
    "title": "Founder & Clinical Director",
    "seniority": "c-suite",
-   "bio": "Founder & Clinical Director at MindRoom Therapy. 9 years in healthcare.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Our waiting list is at a record high. Every week someone waits is a week they're in pain."
-   ],
-   "pains": [
-    "Waiting lists at record highs"
-   ]
+   "bio": "Founder & Clinical Director at MindRoom Therapy. 18 years in healthcare.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 5002,
-   "first": "Jack",
-   "last": "Carroll",
+   "first": "Femi",
+   "last": "Evans",
    "title": "Chief Medical Officer",
    "seniority": "c-suite",
-   "bio": "Chief Medical Officer at MindRoom Therapy. 6 years in healthcare.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Waiting lists at record highs"
-   ]
+   "bio": "Chief Medical Officer at MindRoom Therapy. 19 years in healthcare.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 5003,
-   "first": "Diego",
-   "last": "Tierney",
+   "first": "Vanessa",
+   "last": "Reid",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at MindRoom Therapy. Joined 4 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Agency staff costs are up 30% this year. We can't hire nurses fast enough.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Head of Patient Services at MindRoom Therapy. Joined 2 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 5004,
-   "first": "Hannah",
-   "last": "O'Neill",
+   "first": "Catriona",
+   "last": "Jones",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at MindRoom Therapy. Been here 4 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Staff shortages and rising agency costs"
-   ]
+   "bio": "Practice Manager at MindRoom Therapy. Joined 8 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 5005,
-   "first": "Femi",
-   "last": "Thompson",
+   "first": "Quinn",
+   "last": "Dempsey",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at MindRoom Therapy. Been here 7 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "I enter the same patient details into four different systems. Every single day."
-   ],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Senior Nurse at MindRoom Therapy. Been here 6 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 5006,
-   "first": "Keira",
-   "last": "Sweeney",
+   "first": "Olivia",
+   "last": "Maguire",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at MindRoom Therapy. Been here 4 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Patient systems that don't talk to each other"
-   ]
+   "bio": "Receptionist at MindRoom Therapy. Joined 5 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "51": [
   {
    "id": 5101,
-   "first": "Gemma",
-   "last": "Hughes",
+   "first": "Maeve",
+   "last": "Ahmed",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Synthara AI. 4 years in AI and software.",
+   "bio": "CEO at Synthara AI. 10 years in AI and software.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Our inference bill grew faster than revenue last quarter. Gross margin is the conversation at every board meeting now."
-   ],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "posts": []
   },
   {
    "id": 5102,
-   "first": "Tomasz",
-   "last": "Healy",
+   "first": "Yusuf",
+   "last": "Tierney",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Synthara AI. 14 years in AI and software.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "bio": "CFO at Synthara AI. 15 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5103,
-   "first": "Nathan",
-   "last": "Healy",
+   "first": "Keira",
+   "last": "Usman",
    "title": "Chief Scientist",
    "seniority": "c-suite",
-   "bio": "Chief Scientist at Synthara AI. 11 years in AI and software.",
+   "bio": "Chief Scientist at Synthara AI. 19 years in AI and software.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "posts": []
   },
   {
    "id": 5104,
-   "first": "Fionn",
-   "last": "Lewis",
+   "first": "Aisling",
+   "last": "O'Neill",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Synthara AI. 20 years in AI and software.",
+   "bio": "Chief People Officer at Synthara AI. 9 years in AI and software.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "posts": []
   },
   {
    "id": 5105,
-   "first": "Samuel",
-   "last": "Nolan",
+   "first": "Lorcan",
+   "last": "Carroll",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Synthara AI. 17 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "bio": "Chief Revenue Officer at Synthara AI. 6 years in AI and software.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5106,
-   "first": "Femi",
-   "last": "Davies",
+   "first": "Hugo",
+   "last": "Iqbal",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at Synthara AI. 20 years in AI and software.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "bio": "VP Engineering at Synthara AI. 5 years in AI and software.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5107,
-   "first": "Maeve",
-   "last": "Wright",
+   "first": "Diego",
+   "last": "O'Neill",
    "title": "VP Customer Success",
    "seniority": "vp",
-   "bio": "VP Customer Success at Synthara AI. 9 years in AI and software.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "bio": "VP Customer Success at Synthara AI. 21 years in AI and software.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5108,
-   "first": "Patrick",
-   "last": "Quinn",
+   "first": "Rosa",
+   "last": "Young",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Synthara AI. 19 years in AI and software.",
+   "bio": "VP Finance at Synthara AI. 3 years in AI and software.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "posts": []
   },
   {
    "id": 5109,
-   "first": "Ben",
-   "last": "Davies",
+   "first": "Ravi",
+   "last": "Patel",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Synthara AI. 17 years in AI and software.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "bio": "VP Marketing at Synthara AI. 15 years in AI and software.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5110,
-   "first": "Zara",
-   "last": "Lewis",
+   "first": "Victor",
+   "last": "Flanagan",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Synthara AI. 5 years in AI and software.",
+   "bio": "VP Information Technology at Synthara AI. 8 years in AI and software.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "posts": []
   },
   {
    "id": 5111,
-   "first": "Leah",
-   "last": "Hall",
+   "first": "Chloe",
+   "last": "Moreno",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Synthara AI. 18 years in AI and software.",
+   "bio": "VP Procurement at Synthara AI. 13 years in AI and software.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "posts": []
   },
   {
    "id": 5112,
-   "first": "Keira",
-   "last": "Kavanagh",
+   "first": "Nadia",
+   "last": "Chen",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Synthara AI. Joined 3 years.",
+   "bio": "Head of Machine Learning at Synthara AI. Been here 8 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 5113,
-   "first": "Declan",
-   "last": "Shaw",
+   "first": "Vanessa",
+   "last": "Mitchell",
    "title": "Director of Partnerships",
    "seniority": "director",
-   "bio": "Director of Partnerships at Synthara AI. Joined 7 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Director of Partnerships at Synthara AI. Been here 3 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5114,
-   "first": "Yusuf",
-   "last": "Vaughan",
+   "first": "Shane",
+   "last": "Kavanagh",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Synthara AI. Joined 2 years.",
+   "bio": "Director of IT at Synthara AI. Been here 3 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 5115,
-   "first": "Eimear",
-   "last": "Grant",
+   "first": "Adaeze",
+   "last": "Okafor",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Synthara AI. Joined 2 years.",
+   "bio": "Head of Procurement at Synthara AI. Been here 6 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 5116,
-   "first": "Rebecca",
-   "last": "Moreno",
+   "first": "Elena",
+   "last": "Foster",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Synthara AI. Been here 2 years.",
+   "bio": "Head of Legal at Synthara AI. Joined 1 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 5117,
-   "first": "Jade",
-   "last": "Egan",
+   "first": "Daniel",
+   "last": "Gallagher",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Synthara AI. Joined 6 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Head of Talent Acquisition at Synthara AI. Been here 5 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5118,
-   "first": "Jack",
-   "last": "Evans",
+   "first": "Aoife",
+   "last": "Bennett",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Synthara AI. Been here 1 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Director of Marketing at Synthara AI. Been here 5 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5119,
-   "first": "Grainne",
-   "last": "Gallagher",
+   "first": "Fionn",
+   "last": "Brennan",
    "title": "ML Platform Manager",
    "seniority": "manager",
-   "bio": "ML Platform Manager at Synthara AI. Joined 4 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "ML Platform Manager at Synthara AI. Joined 6 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5120,
-   "first": "Joel",
-   "last": "Carroll",
+   "first": "Zara",
+   "last": "Kowalski",
    "title": "Solutions Engineering Manager",
    "seniority": "manager",
-   "bio": "Solutions Engineering Manager at Synthara AI. Been here 1 years.",
+   "bio": "Solutions Engineering Manager at Synthara AI. Joined 3 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 5121,
-   "first": "Diego",
-   "last": "Ahmed",
+   "first": "Gareth",
+   "last": "Lynch",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Synthara AI. Joined 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "IT Service Manager at Synthara AI. Joined 3 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5122,
-   "first": "Lorcan",
-   "last": "Brennan",
+   "first": "Owen",
+   "last": "Ward",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Synthara AI. Joined 3 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Procurement Manager at Synthara AI. Been here 6 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5123,
-   "first": "Elena",
-   "last": "Vaughan",
+   "first": "Grainne",
+   "last": "O'Neill",
    "title": "HR Business Partner",
    "seniority": "manager",
    "bio": "HR Business Partner at Synthara AI. Been here 8 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5124,
-   "first": "Hannah",
-   "last": "Kavanagh",
+   "first": "Tomasz",
+   "last": "Callaghan",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Synthara AI. Been here 1 years.",
+   "bio": "Marketing Manager at Synthara AI. Joined 3 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 5125,
-   "first": "Kwame",
-   "last": "Jones",
+   "first": "Olivia",
+   "last": "Dempsey",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Synthara AI. Been here 7 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Sales Manager at Synthara AI. Been here 8 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5126,
-   "first": "Rosa",
-   "last": "Byrne",
+   "first": "Marcus",
+   "last": "Moreno",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Synthara AI. Been here 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Machine Learning Engineer at Synthara AI. Joined 1 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 5127,
-   "first": "Chloe",
-   "last": "Turner",
+   "first": "Declan",
+   "last": "Ahmed",
    "title": "Solutions Engineer",
    "seniority": "mid",
    "bio": "Solutions Engineer at Synthara AI. Joined 8 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 5128,
-   "first": "Niall",
-   "last": "Usman",
+   "first": "Samuel",
+   "last": "Davies",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Synthara AI. Been here 5 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "One year at Synthara AI today. Learned more than I expected."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Business Analyst at Synthara AI. Been here 7 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 5129,
-   "first": "Owen",
-   "last": "Ward",
+   "first": "Kwame",
+   "last": "Adeyemi",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Synthara AI. Joined 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Financial Analyst at Synthara AI. Joined 3 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 5130,
-   "first": "Oliver",
-   "last": "Doherty",
+   "first": "Femi",
+   "last": "Turner",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Synthara AI. Joined 7 years.",
+   "bio": "Recruiter at Synthara AI. Been here 6 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "posts": []
   },
   {
    "id": 5131,
-   "first": "Imogen",
-   "last": "Wright",
+   "first": "Ciara",
+   "last": "Grant",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Synthara AI. Joined 5 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Junior Data Scientist at Synthara AI. Been here 5 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 5132,
-   "first": "Wendy",
-   "last": "Shaw",
+   "first": "Will",
+   "last": "Kavanagh",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Synthara AI. Joined 5 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Executive Assistant to the CEO at Synthara AI. Been here 5 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 5133,
-   "first": "Uma",
-   "last": "Chen",
+   "first": "Gemma",
+   "last": "Hall",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Synthara AI. Joined 7 years.",
+   "bio": "Graduate Analyst at Synthara AI. Joined 8 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "posts": []
   }
  ],
  "52": [
   {
    "id": 5201,
-   "first": "Femi",
-   "last": "Okafor",
+   "first": "Wendy",
+   "last": "Usman",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Cortexa. 13 years in AI and software.",
+   "bio": "CEO at Cortexa. 9 years in AI and software.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 5202,
-   "first": "Elena",
-   "last": "Nolan",
+   "first": "Declan",
+   "last": "Power",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Cortexa. 22 years in AI and software.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "CFO at Cortexa. 6 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5203,
-   "first": "Ewan",
-   "last": "Quinn",
+   "first": "Will",
+   "last": "Khan",
    "title": "Chief Scientist",
    "seniority": "c-suite",
-   "bio": "Chief Scientist at Cortexa. 20 years in AI and software.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief Scientist at Cortexa. 13 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5204,
-   "first": "Bilal",
-   "last": "Patel",
+   "first": "Rosa",
+   "last": "Iqbal",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Cortexa. 19 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief People Officer at Cortexa. 11 years in AI and software.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5205,
-   "first": "Harry",
-   "last": "Power",
+   "first": "Elena",
+   "last": "Regan",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Cortexa. 10 years in AI and software.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief Revenue Officer at Cortexa. 16 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5206,
-   "first": "Freya",
-   "last": "Sweeney",
+   "first": "Amira",
+   "last": "Usman",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at Cortexa. 19 years in AI and software.",
+   "bio": "VP Engineering at Cortexa. 15 years in AI and software.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 5207,
-   "first": "Gemma",
-   "last": "Quinn",
+   "first": "Daniel",
+   "last": "Ahmed",
    "title": "VP Customer Success",
    "seniority": "vp",
-   "bio": "VP Customer Success at Cortexa. 11 years in AI and software.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "VP Customer Success at Cortexa. 21 years in AI and software.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5208,
-   "first": "Zara",
-   "last": "Okafor",
+   "first": "Gareth",
+   "last": "Jones",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Cortexa. 8 years in AI and software.",
+   "bio": "VP Finance at Cortexa. 3 years in AI and software.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 5209,
-   "first": "Joel",
-   "last": "Evans",
+   "first": "Tomasz",
+   "last": "Moreno",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Cortexa. 6 years in AI and software.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "VP Marketing at Cortexa. 4 years in AI and software.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5210,
-   "first": "Wendy",
-   "last": "Hughes",
+   "first": "Gemma",
+   "last": "Flanagan",
    "title": "VP Information Technology",
    "seniority": "vp",
    "bio": "VP Information Technology at Cortexa. 6 years in AI and software.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5211,
-   "first": "Oliver",
-   "last": "Foster",
+   "first": "Fionn",
+   "last": "McCarthy",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Cortexa. 20 years in AI and software.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "VP Procurement at Cortexa. 13 years in AI and software.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5212,
-   "first": "Fionn",
-   "last": "Power",
+   "first": "Grainne",
+   "last": "O'Neill",
    "title": "Head of Machine Learning",
    "seniority": "director",
    "bio": "Head of Machine Learning at Cortexa. Joined 3 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Customers keep asking for hard ROI numbers. We have great anecdotes and not enough data. Fixing that this quarter."
-   ],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5213,
-   "first": "Quinn",
-   "last": "Wright",
+   "first": "Ruth",
+   "last": "Evans",
    "title": "Director of Partnerships",
    "seniority": "director",
    "bio": "Director of Partnerships at Cortexa. Been here 5 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5214,
-   "first": "Fatima",
-   "last": "Quinn",
+   "first": "Piotr",
+   "last": "Maguire",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Cortexa. Joined 8 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "bio": "Director of IT at Cortexa. Been here 3 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5215,
-   "first": "Lorcan",
-   "last": "Sweeney",
+   "first": "Jack",
+   "last": "Carroll",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Cortexa. Been here 8 years.",
+   "bio": "Head of Procurement at Cortexa. Joined 2 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5216,
-   "first": "Owen",
-   "last": "Wright",
+   "first": "Diego",
+   "last": "Tierney",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Cortexa. Joined 3 years.",
+   "bio": "Head of Legal at Cortexa. Joined 4 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5217,
-   "first": "Hugo",
-   "last": "Novak",
+   "first": "Isaac",
+   "last": "Thompson",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Cortexa. Joined 4 years.",
+   "bio": "Head of Talent Acquisition at Cortexa. Been here 5 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5218,
-   "first": "Adaeze",
-   "last": "Shaw",
+   "first": "Nathan",
+   "last": "Foster",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Cortexa. Been here 4 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "bio": "Director of Marketing at Cortexa. Been here 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 5219,
-   "first": "Shane",
-   "last": "Davies",
+   "first": "Mei",
+   "last": "Ryan",
    "title": "ML Platform Manager",
    "seniority": "manager",
-   "bio": "ML Platform Manager at Cortexa. Joined 2 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "bio": "ML Platform Manager at Cortexa. Joined 6 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 5220,
-   "first": "Kwame",
-   "last": "Ward",
+   "first": "Adaeze",
+   "last": "Iqbal",
    "title": "Solutions Engineering Manager",
    "seniority": "manager",
-   "bio": "Solutions Engineering Manager at Cortexa. Been here 4 years.",
+   "bio": "Solutions Engineering Manager at Cortexa. Joined 6 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5221,
-   "first": "Ines",
-   "last": "Shaw",
+   "first": "Ewan",
+   "last": "Regan",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Cortexa. Joined 5 years.",
+   "bio": "IT Service Manager at Cortexa. Joined 6 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5222,
-   "first": "Aoife",
-   "last": "Stewart",
+   "first": "Eimear",
+   "last": "Okafor",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Cortexa. Joined 2 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "bio": "Procurement Manager at Cortexa. Been here 5 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5223,
-   "first": "Priya",
-   "last": "Moreno",
+   "first": "Deirdre",
+   "last": "Iqbal",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Cortexa. Been here 3 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "bio": "HR Business Partner at Cortexa. Joined 4 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 5224,
-   "first": "Rosa",
-   "last": "McCarthy",
+   "first": "Priya",
+   "last": "Keane",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Cortexa. Been here 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "bio": "Marketing Manager at Cortexa. Been here 2 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5225,
-   "first": "Victor",
-   "last": "Turner",
+   "first": "Femi",
+   "last": "Davies",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Cortexa. Been here 3 years.",
+   "bio": "Sales Manager at Cortexa. Joined 7 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5226,
-   "first": "Patrick",
-   "last": "Usman",
+   "first": "Maeve",
+   "last": "Wright",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Cortexa. Been here 3 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Machine Learning Engineer at Cortexa. Joined 3 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 5227,
-   "first": "Jack",
-   "last": "Iqbal",
+   "first": "Patrick",
+   "last": "Quinn",
    "title": "Solutions Engineer",
    "seniority": "mid",
-   "bio": "Solutions Engineer at Cortexa. Joined 5 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Solutions Engineer at Cortexa. Been here 7 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 5228,
-   "first": "Ciara",
-   "last": "Silva",
+   "first": "Freya",
+   "last": "Quinn",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Cortexa. Joined 5 years.",
+   "bio": "Business Analyst at Cortexa. Been here 7 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "posts": []
   },
   {
    "id": 5229,
-   "first": "Uma",
+   "first": "Kwame",
    "last": "Wright",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Cortexa. Joined 4 years.",
-   "personality": "Busy but approachable.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Financial Analyst at Cortexa. Been here 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 5230,
-   "first": "Sinead",
-   "last": "Power",
+   "first": "Imogen",
+   "last": "Dempsey",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Cortexa. Been here 8 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "One year at Cortexa today. Learned more than I expected."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Recruiter at Cortexa. Been here 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 5231,
-   "first": "Daniel",
+   "first": "Yusuf",
    "last": "Vaughan",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Cortexa. Been here 8 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Junior Data Scientist at Cortexa. Joined 4 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 5232,
-   "first": "Chloe",
-   "last": "Grant",
+   "first": "Oliver",
+   "last": "Byrne",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Cortexa. Been here 8 years.",
+   "bio": "Executive Assistant to the CEO at Cortexa. Joined 3 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [
-    "One year at Cortexa today. Learned more than I expected."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "posts": []
   },
   {
    "id": 5233,
-   "first": "Marcus",
-   "last": "Dempsey",
+   "first": "Hannah",
+   "last": "Egan",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Cortexa. Joined 1 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Graduate Analyst at Cortexa. Been here 8 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "53": [
   {
    "id": 5301,
-   "first": "Ben",
-   "last": "Grant",
+   "first": "Ewan",
+   "last": "Tierney",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Parsewell. 22 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Every enterprise deal now includes AI Act questions. Legal reviews are adding 6 weeks to our sales cycle.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "bio": "CEO at Parsewell. 16 years in AI and software.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5302,
-   "first": "Kwame",
-   "last": "Power",
+   "first": "Piotr",
+   "last": "Gallagher",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Parsewell. 10 years in AI and software.",
+   "bio": "CFO at Parsewell. 5 years in AI and software.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "posts": []
   },
   {
    "id": 5303,
-   "first": "Gemma",
-   "last": "Hall",
+   "first": "Eimear",
+   "last": "Grant",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at Parsewell. 20 years in AI and software.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "bio": "VP Engineering at Parsewell. 13 years in AI and software.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5304,
-   "first": "Femi",
-   "last": "Okafor",
+   "first": "Lorcan",
+   "last": "Flanagan",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Parsewell. Joined 4 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Head of Machine Learning at Parsewell. Been here 1 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5305,
-   "first": "Tomasz",
-   "last": "Turner",
+   "first": "Diego",
+   "last": "Ahmed",
    "title": "Director of Partnerships",
    "seniority": "director",
-   "bio": "Director of Partnerships at Parsewell. Joined 2 years.",
+   "bio": "Director of Partnerships at Parsewell. Been here 2 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 5306,
-   "first": "Lorcan",
-   "last": "Lewis",
+   "first": "Chloe",
+   "last": "Carroll",
    "title": "ML Platform Manager",
    "seniority": "manager",
-   "bio": "ML Platform Manager at Parsewell. Joined 8 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "ML Platform Manager at Parsewell. Joined 1 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5307,
-   "first": "Elena",
-   "last": "Walsh",
+   "first": "Leah",
+   "last": "Ahmed",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Parsewell. Been here 4 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "bio": "Machine Learning Engineer at Parsewell. Been here 6 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 5308,
-   "first": "Bilal",
-   "last": "Lewis",
+   "first": "Orla",
+   "last": "O'Neill",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Parsewell. Been here 7 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "bio": "Junior Data Scientist at Parsewell. Been here 2 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "54": [
   {
    "id": 5401,
-   "first": "Deirdre",
-   "last": "Flanagan",
+   "first": "Lorcan",
+   "last": "Okafor",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Voxly. 11 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Our inference bill grew faster than revenue last quarter. Gross margin is the conversation at every board meeting now."
-   ],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "bio": "CEO at Voxly. 4 years in AI and software.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5402,
-   "first": "Aisling",
-   "last": "Grant",
+   "first": "Kwame",
+   "last": "Jones",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Voxly. 10 years in AI and software.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "bio": "CFO at Voxly. 11 years in AI and software.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5403,
-   "first": "Catriona",
-   "last": "Evans",
+   "first": "Grainne",
+   "last": "Okafor",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at Voxly. 17 years in AI and software.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "GPU and inference costs eating into gross margin"
-   ]
+   "bio": "VP Engineering at Voxly. 19 years in AI and software.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5404,
-   "first": "Uma",
-   "last": "Doherty",
+   "first": "Rosa",
+   "last": "Byrne",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Voxly. Been here 3 years.",
+   "bio": "Head of Machine Learning at Voxly. Joined 8 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 5405,
-   "first": "Elena",
-   "last": "Carroll",
+   "first": "Amira",
+   "last": "Kavanagh",
    "title": "Director of Partnerships",
    "seniority": "director",
-   "bio": "Director of Partnerships at Voxly. Been here 4 years.",
-   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Director of Partnerships at Voxly. Joined 5 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5406,
-   "first": "Shane",
-   "last": "Iqbal",
+   "first": "Sinead",
+   "last": "Evans",
    "title": "ML Platform Manager",
    "seniority": "manager",
-   "bio": "ML Platform Manager at Voxly. Been here 7 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "ML Platform Manager at Voxly. Been here 1 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 5407,
-   "first": "Gareth",
-   "last": "Foster",
+   "first": "Quinn",
+   "last": "Novak",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Voxly. Joined 1 years.",
+   "bio": "Machine Learning Engineer at Voxly. Been here 3 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "posts": []
   },
   {
    "id": 5408,
-   "first": "Chloe",
-   "last": "Gallagher",
+   "first": "Katie",
+   "last": "Healy",
    "title": "Junior Data Scientist",
    "seniority": "junior",
    "bio": "Junior Data Scientist at Voxly. Been here 2 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [
-    "One year at Voxly today. Learned more than I expected."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "posts": []
   }
  ],
  "55": [
   {
    "id": 5501,
-   "first": "Nadia",
-   "last": "Patel",
+   "first": "Catriona",
+   "last": "Shaw",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Predictly. 5 years in AI and software.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Every enterprise deal now includes AI Act questions. Legal reviews are adding 6 weeks to our sales cycle."
-   ],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "bio": "CEO at Predictly. 6 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5502,
-   "first": "Zara",
-   "last": "Dempsey",
+   "first": "Uma",
+   "last": "Evans",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Predictly. 16 years in AI and software.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "bio": "CFO at Predictly. 14 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5503,
-   "first": "Victor",
-   "last": "Chen",
+   "first": "Oliver",
+   "last": "Brennan",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at Predictly. 22 years in AI and software.",
+   "bio": "VP Engineering at Predictly. 13 years in AI and software.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "posts": []
   },
   {
    "id": 5504,
-   "first": "Harry",
-   "last": "Lewis",
+   "first": "Victor",
+   "last": "Power",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Predictly. Joined 1 years.",
+   "bio": "Head of Machine Learning at Predictly. Been here 1 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "posts": []
   },
   {
    "id": 5505,
-   "first": "Joel",
-   "last": "Doherty",
+   "first": "Isaac",
+   "last": "Adeyemi",
    "title": "Director of Partnerships",
    "seniority": "director",
-   "bio": "Director of Partnerships at Predictly. Joined 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "bio": "Director of Partnerships at Predictly. Been here 1 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5506,
-   "first": "Will",
-   "last": "Vaughan",
+   "first": "Ravi",
+   "last": "Silva",
    "title": "ML Platform Manager",
    "seniority": "manager",
-   "bio": "ML Platform Manager at Predictly. Joined 8 years.",
+   "bio": "ML Platform Manager at Predictly. Joined 6 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "posts": []
   },
   {
    "id": 5507,
-   "first": "Keira",
-   "last": "Power",
+   "first": "Harry",
+   "last": "Flanagan",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Predictly. Joined 2 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Machine Learning Engineer at Predictly. Been here 6 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 5508,
-   "first": "Tomasz",
-   "last": "Stewart",
+   "first": "Zara",
+   "last": "Ward",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Predictly. Been here 6 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Predictly today. Learned more than I expected."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Junior Data Scientist at Predictly. Been here 2 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "56": [
   {
    "id": 5601,
-   "first": "Gareth",
-   "last": "Novak",
+   "first": "Aoife",
+   "last": "Foster",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Lexigraph. 19 years in AI and software.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Every enterprise deal now includes AI Act questions. Legal reviews are adding 6 weeks to our sales cycle.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "bio": "CEO at Lexigraph. 7 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5602,
-   "first": "Marcus",
-   "last": "Fitzgerald",
+   "first": "Ruth",
+   "last": "Kowalski",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Lexigraph. 9 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "bio": "CFO at Lexigraph. 19 years in AI and software.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5603,
-   "first": "Amira",
-   "last": "Silva",
+   "first": "Bilal",
+   "last": "Stewart",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at Lexigraph. 3 years in AI and software.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Customers worried about AI regulation and compliance"
-   ]
+   "bio": "VP Engineering at Lexigraph. 17 years in AI and software.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5604,
-   "first": "Chloe",
-   "last": "Nolan",
+   "first": "Oliver",
+   "last": "Moreno",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Lexigraph. Been here 2 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Customers keep asking for hard ROI numbers. We have great anecdotes and not enough data. Fixing that this quarter.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "bio": "Head of Machine Learning at Lexigraph. Been here 5 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5605,
-   "first": "Joel",
-   "last": "Doherty",
+   "first": "Fatima",
+   "last": "Tierney",
    "title": "Director of Partnerships",
    "seniority": "director",
-   "bio": "Director of Partnerships at Lexigraph. Been here 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "bio": "Director of Partnerships at Lexigraph. Been here 3 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 5606,
-   "first": "Wendy",
-   "last": "Carroll",
+   "first": "Niall",
+   "last": "Walsh",
    "title": "ML Platform Manager",
    "seniority": "manager",
    "bio": "ML Platform Manager at Lexigraph. Been here 5 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Can't prove hard ROI to customers"
-   ]
+   "posts": []
   },
   {
    "id": 5607,
-   "first": "Adaeze",
-   "last": "Ryan",
+   "first": "Rebecca",
+   "last": "Maguire",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Lexigraph. Been here 6 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "bio": "Machine Learning Engineer at Lexigraph. Joined 4 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 5608,
-   "first": "Tara",
-   "last": "Mitchell",
+   "first": "Sinead",
+   "last": "Bennett",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Lexigraph. Been here 1 years.",
+   "bio": "Junior Data Scientist at Lexigraph. Been here 8 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "posts": []
   }
  ],
  "57": [
   {
    "id": 5701,
-   "first": "Freya",
-   "last": "Carroll",
+   "first": "Deirdre",
+   "last": "Ward",
    "title": "Co-Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Co-Founder & CEO at Labelbase. 22 years in AI and software.",
+   "bio": "Co-Founder & CEO at Labelbase. 7 years in AI and software.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 5702,
-   "first": "Vanessa",
-   "last": "Foster",
+   "first": "Shane",
+   "last": "Maguire",
    "title": "Chief Scientist",
    "seniority": "c-suite",
-   "bio": "Chief Scientist at Labelbase. 20 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief Scientist at Labelbase. 12 years in AI and software.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 5703,
-   "first": "Catriona",
-   "last": "Foster",
+   "first": "Fionn",
+   "last": "Carroll",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Labelbase. Joined 3 years.",
+   "bio": "Head of Machine Learning at Labelbase. Been here 5 years.",
    "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
-   ],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "posts": []
   },
   {
    "id": 5704,
-   "first": "Callum",
-   "last": "Ryan",
+   "first": "Fatima",
+   "last": "Hughes",
    "title": "ML Platform Manager",
    "seniority": "manager",
-   "bio": "ML Platform Manager at Labelbase. Joined 6 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "bio": "ML Platform Manager at Labelbase. Joined 3 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5705,
-   "first": "Gemma",
-   "last": "Power",
+   "first": "Isaac",
+   "last": "Davies",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Labelbase. Been here 5 years.",
+   "bio": "Machine Learning Engineer at Labelbase. Joined 1 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "We still evaluate model releases with a spreadsheet and gut feel. Not scalable.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "posts": []
   },
   {
    "id": 5706,
    "first": "Rebecca",
-   "last": "Ward",
+   "last": "Patel",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Labelbase. Been here 3 years.",
+   "bio": "Junior Data Scientist at Labelbase. Joined 4 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Labelbase today. Learned more than I expected."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "posts": []
   }
  ],
  "58": [
   {
    "id": 5801,
-   "first": "Marcus",
-   "last": "Fitzgerald",
+   "first": "Vanessa",
+   "last": "O'Neill",
    "title": "Co-Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Co-Founder & CEO at Promptwise. 6 years in AI and software.",
+   "bio": "Co-Founder & CEO at Promptwise. 8 years in AI and software.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 5802,
-   "first": "Callum",
+   "first": "Niall",
    "last": "Hall",
    "title": "Chief Scientist",
    "seniority": "c-suite",
-   "bio": "Chief Scientist at Promptwise. 7 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief Scientist at Promptwise. 22 years in AI and software.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 5803,
-   "first": "Gemma",
-   "last": "Evans",
+   "first": "Aoife",
+   "last": "Usman",
    "title": "Head of Machine Learning",
    "seniority": "director",
    "bio": "Head of Machine Learning at Promptwise. Joined 6 years.",
    "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
-   ],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "posts": []
   },
   {
    "id": 5804,
-   "first": "Joel",
-   "last": "Egan",
+   "first": "Sinead",
+   "last": "Silva",
    "title": "ML Platform Manager",
    "seniority": "manager",
    "bio": "ML Platform Manager at Promptwise. Been here 3 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 5805,
-   "first": "Tomasz",
-   "last": "Ward",
+   "first": "Deirdre",
+   "last": "Doherty",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Promptwise. Joined 4 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "We still evaluate model releases with a spreadsheet and gut feel. Not scalable."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "bio": "Machine Learning Engineer at Promptwise. Joined 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 5806,
-   "first": "Fatima",
-   "last": "Byrne",
+   "first": "Priya",
+   "last": "Moreno",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Promptwise. Been here 3 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "One year at Promptwise today. Learned more than I expected."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "bio": "Junior Data Scientist at Promptwise. Joined 5 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "59": [
   {
    "id": 5901,
-   "first": "Ravi",
-   "last": "Hall",
+   "first": "Victor",
+   "last": "Turner",
    "title": "Co-Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Co-Founder & CEO at Tutorlyn. 3 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Co-Founder & CEO at Tutorlyn. 10 years in AI and software.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 5902,
-   "first": "Tomasz",
-   "last": "Vaughan",
+   "first": "Uma",
+   "last": "Ryan",
    "title": "Chief Scientist",
    "seniority": "c-suite",
-   "bio": "Chief Scientist at Tutorlyn. 20 years in AI and software.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief Scientist at Tutorlyn. 8 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 5903,
-   "first": "Mei",
-   "last": "Jones",
+   "first": "Patrick",
+   "last": "Usman",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Tutorlyn. Been here 8 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch."
-   ],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "bio": "Head of Machine Learning at Tutorlyn. Joined 5 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 5904,
-   "first": "Lorcan",
-   "last": "Khan",
+   "first": "Yusuf",
+   "last": "Usman",
    "title": "ML Platform Manager",
    "seniority": "manager",
    "bio": "ML Platform Manager at Tutorlyn. Joined 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 5905,
-   "first": "Joel",
-   "last": "Vaughan",
+   "first": "Piotr",
+   "last": "Flanagan",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Tutorlyn. Joined 5 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "We still evaluate model releases with a spreadsheet and gut feel. Not scalable.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "bio": "Machine Learning Engineer at Tutorlyn. Been here 3 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 5906,
-   "first": "Yusuf",
-   "last": "Carroll",
+   "first": "Orla",
+   "last": "Thompson",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Tutorlyn. Been here 6 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Model evaluation is manual and inconsistent"
-   ]
+   "bio": "Junior Data Scientist at Tutorlyn. Joined 6 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "60": [
   {
    "id": 6001,
-   "first": "Samuel",
-   "last": "Maguire",
+   "first": "Catriona",
+   "last": "Davies",
    "title": "Co-Founder & CEO",
    "seniority": "c-suite",
-   "bio": "Co-Founder & CEO at Recruitly AI. 14 years in AI and software.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Co-Founder & CEO at Recruitly AI. 11 years in AI and software.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6002,
-   "first": "Piotr",
-   "last": "Callaghan",
+   "first": "Sinead",
+   "last": "Power",
    "title": "Chief Scientist",
    "seniority": "c-suite",
-   "bio": "Chief Scientist at Recruitly AI. 18 years in AI and software.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief Scientist at Recruitly AI. 9 years in AI and software.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6003,
-   "first": "Nadia",
-   "last": "Bennett",
+   "first": "Isaac",
+   "last": "Patel",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Recruitly AI. Joined 5 years.",
+   "bio": "Head of Machine Learning at Recruitly AI. Been here 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Four months to fill one ML engineer role. Big tech pays double. Startups need a different pitch.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "posts": []
   },
   {
    "id": 6004,
-   "first": "Patrick",
-   "last": "Chen",
+   "first": "Uma",
+   "last": "Brennan",
    "title": "ML Platform Manager",
    "seniority": "manager",
    "bio": "ML Platform Manager at Recruitly AI. Been here 7 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Hiring ML engineers is slow and expensive"
-   ]
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 6005,
-   "first": "Elena",
-   "last": "O'Neill",
+   "first": "Joel",
+   "last": "Ryan",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Recruitly AI. Joined 8 years.",
+   "bio": "Machine Learning Engineer at Recruitly AI. Joined 7 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "posts": []
   },
   {
    "id": 6006,
-   "first": "Jack",
-   "last": "McCarthy",
+   "first": "Marcus",
+   "last": "Lewis",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Recruitly AI. Joined 3 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Junior Data Scientist at Recruitly AI. Joined 4 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "61": [
   {
    "id": 6101,
-   "first": "Niall",
-   "last": "Tierney",
+   "first": "Imogen",
+   "last": "Egan",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Kerrigan Foods. 8 years in food & beverage.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Launching in a new market next spring. New distributors, new labelling rules, new everything.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "CEO at Kerrigan Foods. 5 years in food & beverage.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6102,
-   "first": "Hannah",
-   "last": "Khan",
+   "first": "Will",
+   "last": "Ward",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Kerrigan Foods. 21 years in food & beverage.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "CFO at Kerrigan Foods. 17 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6103,
-   "first": "Adaeze",
-   "last": "Shaw",
+   "first": "Fionn",
+   "last": "Bennett",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Kerrigan Foods. 20 years in food & beverage.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "COO at Kerrigan Foods. 3 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6104,
-   "first": "Uma",
-   "last": "Brennan",
+   "first": "Hannah",
+   "last": "Maguire",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Kerrigan Foods. 20 years in food & beverage.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "Chief People Officer at Kerrigan Foods. 22 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6105,
-   "first": "Bilal",
-   "last": "Sweeney",
+   "first": "Kwame",
+   "last": "Power",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Kerrigan Foods. 10 years in food & beverage.",
+   "bio": "Chief Revenue Officer at Kerrigan Foods. 12 years in food & beverage.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "posts": []
   },
   {
    "id": 6106,
-   "first": "Freya",
-   "last": "Flanagan",
+   "first": "Gareth",
+   "last": "Regan",
    "title": "VP Sales & Retail",
    "seniority": "vp",
-   "bio": "VP Sales & Retail at Kerrigan Foods. 14 years in food & beverage.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "VP Sales & Retail at Kerrigan Foods. 17 years in food & beverage.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6107,
-   "first": "Tomasz",
-   "last": "Ward",
+   "first": "Keira",
+   "last": "Nolan",
    "title": "VP Operations",
    "seniority": "vp",
-   "bio": "VP Operations at Kerrigan Foods. 3 years in food & beverage.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "VP Operations at Kerrigan Foods. 20 years in food & beverage.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6108,
-   "first": "Fatima",
-   "last": "Hughes",
+   "first": "Femi",
+   "last": "Okafor",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Kerrigan Foods. 11 years in food & beverage.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "VP Finance at Kerrigan Foods. 17 years in food & beverage.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6109,
-   "first": "Isaac",
-   "last": "Ward",
+   "first": "Jack",
+   "last": "Grant",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Kerrigan Foods. 5 years in food & beverage.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "VP Marketing at Kerrigan Foods. 16 years in food & beverage.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6110,
-   "first": "Ciara",
-   "last": "Stewart",
+   "first": "Yusuf",
+   "last": "Keane",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Kerrigan Foods. 17 years in food & beverage.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "VP Information Technology at Kerrigan Foods. 15 years in food & beverage.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6111,
-   "first": "Leah",
-   "last": "Sweeney",
+   "first": "Maeve",
+   "last": "Doherty",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Kerrigan Foods. 17 years in food & beverage.",
+   "bio": "VP Procurement at Kerrigan Foods. 18 years in food & beverage.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "posts": []
   },
   {
    "id": 6112,
-   "first": "Luke",
-   "last": "Brennan",
+   "first": "Katie",
+   "last": "Lewis",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Kerrigan Foods. Been here 5 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "We threw away 6% of production last month. That's money, and it's food. Has to change.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Head of Food Safety at Kerrigan Foods. Been here 2 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6113,
-   "first": "Rosa",
-   "last": "Regan",
+   "first": "Tara",
+   "last": "Mitchell",
    "title": "Supply Chain Director",
    "seniority": "director",
-   "bio": "Supply Chain Director at Kerrigan Foods. Joined 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Supply Chain Director at Kerrigan Foods. Been here 4 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6114,
-   "first": "Ruth",
-   "last": "Fitzgerald",
+   "first": "Bilal",
+   "last": "Lewis",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Kerrigan Foods. Been here 7 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Director of IT at Kerrigan Foods. Joined 6 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6115,
-   "first": "Mei",
-   "last": "Shaw",
+   "first": "Declan",
+   "last": "Fitzgerald",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Kerrigan Foods. Joined 8 years.",
+   "bio": "Head of Procurement at Kerrigan Foods. Been here 3 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "posts": []
   },
   {
    "id": 6116,
-   "first": "Catriona",
-   "last": "Keane",
+   "first": "Tom",
+   "last": "Foster",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Kerrigan Foods. Joined 2 years.",
+   "bio": "Head of Legal at Kerrigan Foods. Been here 6 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "posts": []
   },
   {
    "id": 6117,
-   "first": "Vanessa",
-   "last": "Flanagan",
+   "first": "Isaac",
+   "last": "Byrne",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Kerrigan Foods. Joined 2 years.",
+   "bio": "Head of Talent Acquisition at Kerrigan Foods. Been here 3 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "posts": []
   },
   {
    "id": 6118,
-   "first": "Marcus",
-   "last": "Sweeney",
+   "first": "Catriona",
+   "last": "Evans",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Kerrigan Foods. Joined 6 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Director of Marketing at Kerrigan Foods. Been here 6 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6119,
-   "first": "Sinead",
-   "last": "Regan",
+   "first": "Uma",
+   "last": "Doherty",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Kerrigan Foods. Been here 6 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Production Manager at Kerrigan Foods. Been here 7 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 6120,
-   "first": "Piotr",
-   "last": "Evans",
+   "first": "Olivia",
+   "last": "Kowalski",
    "title": "Category Manager",
    "seniority": "manager",
-   "bio": "Category Manager at Kerrigan Foods. Been here 6 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Category Manager at Kerrigan Foods. Joined 8 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 6121,
-   "first": "Ravi",
-   "last": "Young",
+   "first": "Mei",
+   "last": "Grant",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Kerrigan Foods. Joined 3 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "IT Service Manager at Kerrigan Foods. Been here 6 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 6122,
-   "first": "Imogen",
-   "last": "Adeyemi",
+   "first": "Leah",
+   "last": "Lynch",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Kerrigan Foods. Joined 3 years.",
+   "bio": "Procurement Manager at Kerrigan Foods. Been here 8 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "posts": []
   },
   {
    "id": 6123,
-   "first": "Oliver",
-   "last": "Ward",
+   "first": "Ben",
+   "last": "Keane",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Kerrigan Foods. Joined 5 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "HR Business Partner at Kerrigan Foods. Joined 2 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 6124,
-   "first": "Diego",
-   "last": "Wright",
+   "first": "Niall",
+   "last": "Reid",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Kerrigan Foods. Been here 1 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Marketing Manager at Kerrigan Foods. Been here 2 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 6125,
-   "first": "Gareth",
-   "last": "Grant",
+   "first": "Zara",
+   "last": "Dempsey",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Kerrigan Foods. Been here 1 years.",
+   "bio": "Sales Manager at Kerrigan Foods. Been here 2 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "posts": []
   },
   {
    "id": 6126,
-   "first": "Amira",
-   "last": "Lynch",
+   "first": "Chloe",
+   "last": "Callaghan",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Kerrigan Foods. Been here 2 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "QA Technician at Kerrigan Foods. Been here 4 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 6127,
-   "first": "Ben",
-   "last": "Tierney",
+   "first": "Priya",
+   "last": "Egan",
    "title": "Key Account Executive",
    "seniority": "mid",
-   "bio": "Key Account Executive at Kerrigan Foods. Been here 1 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Key Account Executive at Kerrigan Foods. Joined 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 6128,
-   "first": "Samuel",
-   "last": "Regan",
+   "first": "Nathan",
+   "last": "Brennan",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Kerrigan Foods. Joined 4 years.",
+   "bio": "Business Analyst at Kerrigan Foods. Joined 3 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "posts": []
   },
   {
    "id": 6129,
-   "first": "Hugo",
-   "last": "Maguire",
+   "first": "Vanessa",
+   "last": "Callaghan",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Kerrigan Foods. Joined 7 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Financial Analyst at Kerrigan Foods. Been here 4 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 6130,
-   "first": "Tom",
-   "last": "Byrne",
+   "first": "Ravi",
+   "last": "Sweeney",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Kerrigan Foods. Joined 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Recruiter at Kerrigan Foods. Been here 5 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 6131,
-   "first": "Priya",
-   "last": "Thompson",
+   "first": "Elena",
+   "last": "Shaw",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Kerrigan Foods. Joined 3 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Customer Service Coordinator at Kerrigan Foods. Joined 1 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 6132,
    "first": "Rebecca",
-   "last": "Reid",
+   "last": "Jones",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Kerrigan Foods. Joined 4 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Executive Assistant to the CEO at Kerrigan Foods. Been here 6 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 6133,
-   "first": "Ines",
-   "last": "Regan",
+   "first": "Hugo",
+   "last": "Thompson",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Kerrigan Foods. Been here 4 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Graduate Analyst at Kerrigan Foods. Been here 3 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "62": [
   {
    "id": 6201,
-   "first": "Ciara",
-   "last": "Adeyemi",
+   "first": "Vanessa",
+   "last": "Hughes",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Northgate Brewing Co. 12 years in food & beverage.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "CEO at Northgate Brewing Co. 15 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6202,
-   "first": "Shane",
-   "last": "Egan",
+   "first": "Amira",
+   "last": "Shaw",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Northgate Brewing Co. 12 years in food & beverage.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "CFO at Northgate Brewing Co. 18 years in food & beverage.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6203,
    "first": "Sinead",
-   "last": "Chen",
+   "last": "Doherty",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Northgate Brewing Co. 5 years in food & beverage.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "COO at Northgate Brewing Co. 15 years in food & beverage.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6204,
-   "first": "Zara",
-   "last": "Shaw",
+   "first": "Adaeze",
+   "last": "Ryan",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Northgate Brewing Co. 8 years in food & beverage.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "Chief People Officer at Northgate Brewing Co. 14 years in food & beverage.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6205,
-   "first": "Aoife",
-   "last": "Kavanagh",
+   "first": "Uma",
+   "last": "Young",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Northgate Brewing Co. 5 years in food & beverage.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "Chief Revenue Officer at Northgate Brewing Co. 12 years in food & beverage.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6206,
-   "first": "Wendy",
-   "last": "Gallagher",
+   "first": "Quinn",
+   "last": "Lewis",
    "title": "VP Sales & Retail",
    "seniority": "vp",
-   "bio": "VP Sales & Retail at Northgate Brewing Co. 10 years in food & beverage.",
+   "bio": "VP Sales & Retail at Northgate Brewing Co. 15 years in food & beverage.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "posts": []
   },
   {
    "id": 6207,
-   "first": "Victor",
-   "last": "Carroll",
+   "first": "Zara",
+   "last": "Egan",
    "title": "VP Operations",
    "seniority": "vp",
-   "bio": "VP Operations at Northgate Brewing Co. 21 years in food & beverage.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "VP Operations at Northgate Brewing Co. 15 years in food & beverage.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6208,
-   "first": "Marcus",
-   "last": "Dempsey",
+   "first": "Wendy",
+   "last": "McCarthy",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Northgate Brewing Co. 3 years in food & beverage.",
+   "bio": "VP Finance at Northgate Brewing Co. 17 years in food & beverage.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "posts": []
   },
   {
    "id": 6209,
-   "first": "Ines",
-   "last": "Callaghan",
+   "first": "Freya",
+   "last": "Carroll",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Northgate Brewing Co. 21 years in food & beverage.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "VP Marketing at Northgate Brewing Co. 15 years in food & beverage.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6210,
-   "first": "Tom",
-   "last": "Vaughan",
+   "first": "Leah",
+   "last": "O'Neill",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Northgate Brewing Co. 8 years in food & beverage.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "VP Information Technology at Northgate Brewing Co. 10 years in food & beverage.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6211,
-   "first": "Diego",
-   "last": "Thompson",
+   "first": "Ravi",
+   "last": "Keane",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Northgate Brewing Co. 5 years in food & beverage.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "VP Procurement at Northgate Brewing Co. 14 years in food & beverage.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6212,
-   "first": "Orla",
-   "last": "O'Neill",
+   "first": "Isaac",
+   "last": "McCarthy",
    "title": "Head of Food Safety",
    "seniority": "director",
    "bio": "Head of Food Safety at Northgate Brewing Co. Joined 3 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6213,
-   "first": "Daniel",
-   "last": "Kowalski",
+   "first": "Callum",
+   "last": "Ryan",
    "title": "Supply Chain Director",
    "seniority": "director",
-   "bio": "Supply Chain Director at Northgate Brewing Co. Been here 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Supply Chain Director at Northgate Brewing Co. Joined 6 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6214,
-   "first": "Oliver",
-   "last": "Doherty",
+   "first": "Gemma",
+   "last": "Davies",
    "title": "Director of IT",
    "seniority": "director",
    "bio": "Director of IT at Northgate Brewing Co. Been here 6 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6215,
-   "first": "Fatima",
-   "last": "Jones",
+   "first": "Harry",
+   "last": "Ryan",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Northgate Brewing Co. Joined 1 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Head of Procurement at Northgate Brewing Co. Been here 5 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6216,
-   "first": "Ben",
-   "last": "Ryan",
+   "first": "Rebecca",
+   "last": "Ward",
    "title": "Head of Legal",
    "seniority": "director",
    "bio": "Head of Legal at Northgate Brewing Co. Joined 2 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 6217,
-   "first": "Katie",
-   "last": "Okafor",
+   "first": "Gareth",
+   "last": "Ahmed",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Northgate Brewing Co. Been here 5 years.",
+   "bio": "Head of Talent Acquisition at Northgate Brewing Co. Been here 7 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 6218,
-   "first": "Deirdre",
-   "last": "Fitzgerald",
+   "first": "Catriona",
+   "last": "Regan",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Northgate Brewing Co. Joined 2 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Director of Marketing at Northgate Brewing Co. Joined 1 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 6219,
-   "first": "Maeve",
-   "last": "Nolan",
+   "first": "Luke",
+   "last": "Bennett",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Northgate Brewing Co. Joined 2 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Production Manager at Northgate Brewing Co. Joined 4 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 6220,
-   "first": "Grainne",
-   "last": "Kowalski",
+   "first": "Orla",
+   "last": "Iqbal",
    "title": "Category Manager",
    "seniority": "manager",
-   "bio": "Category Manager at Northgate Brewing Co. Joined 1 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Category Manager at Northgate Brewing Co. Joined 8 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 6221,
-   "first": "Rebecca",
-   "last": "Foster",
+   "first": "Declan",
+   "last": "Kowalski",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Northgate Brewing Co. Joined 3 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "IT Service Manager at Northgate Brewing Co. Been here 1 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 6222,
-   "first": "Imogen",
-   "last": "Fitzgerald",
+   "first": "Joel",
+   "last": "Evans",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Northgate Brewing Co. Been here 7 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Procurement Manager at Northgate Brewing Co. Been here 8 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 6223,
-   "first": "Rosa",
-   "last": "Sweeney",
+   "first": "Fatima",
+   "last": "Byrne",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Northgate Brewing Co. Been here 3 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "HR Business Partner at Northgate Brewing Co. Joined 6 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 6224,
-   "first": "Patrick",
-   "last": "Khan",
+   "first": "Chloe",
+   "last": "Young",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Northgate Brewing Co. Been here 6 years.",
+   "bio": "Marketing Manager at Northgate Brewing Co. Joined 5 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 6225,
-   "first": "Hugo",
-   "last": "Nolan",
+   "first": "Olivia",
+   "last": "Regan",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Northgate Brewing Co. Been here 2 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Sales Manager at Northgate Brewing Co. Joined 4 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 6226,
-   "first": "Femi",
-   "last": "Ward",
+   "first": "Nadia",
+   "last": "Dempsey",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Northgate Brewing Co. Been here 3 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "QA Technician at Northgate Brewing Co. Been here 6 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 6227,
-   "first": "Vanessa",
-   "last": "Doherty",
+   "first": "Rosa",
+   "last": "Healy",
    "title": "Key Account Executive",
    "seniority": "mid",
-   "bio": "Key Account Executive at Northgate Brewing Co. Been here 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Northgate Brewing Co today. Learned more than I expected."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Key Account Executive at Northgate Brewing Co. Joined 5 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 6228,
-   "first": "Jade",
-   "last": "Keane",
+   "first": "Will",
+   "last": "Carroll",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Northgate Brewing Co. Been here 1 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Northgate Brewing Co today. Learned more than I expected."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Business Analyst at Northgate Brewing Co. Joined 8 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 6229,
-   "first": "Olivia",
-   "last": "Gallagher",
+   "first": "Priya",
+   "last": "Iqbal",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Northgate Brewing Co. Joined 5 years.",
+   "bio": "Financial Analyst at Northgate Brewing Co. Been here 6 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "posts": []
   },
   {
    "id": 6230,
-   "first": "Tomasz",
-   "last": "Walsh",
+   "first": "Deirdre",
+   "last": "Nolan",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Northgate Brewing Co. Joined 3 years.",
+   "bio": "Recruiter at Northgate Brewing Co. Been here 5 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "posts": []
   },
   {
    "id": 6231,
-   "first": "Callum",
-   "last": "Turner",
+   "first": "Mei",
+   "last": "Patel",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Northgate Brewing Co. Joined 7 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Customer Service Coordinator at Northgate Brewing Co. Been here 6 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 6232,
-   "first": "Will",
-   "last": "Quinn",
+   "first": "Oliver",
+   "last": "Doherty",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Northgate Brewing Co. Joined 8 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Executive Assistant to the CEO at Northgate Brewing Co. Joined 6 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 6233,
-   "first": "Gemma",
-   "last": "Moreno",
+   "first": "Maeve",
+   "last": "Kowalski",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Northgate Brewing Co. Been here 2 years.",
+   "bio": "Graduate Analyst at Northgate Brewing Co. Joined 7 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Northgate Brewing Co today. Learned more than I expected."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "posts": []
   }
  ],
  "63": [
   {
    "id": 6301,
-   "first": "Bilal",
-   "last": "Moreno",
+   "first": "Quinn",
+   "last": "Davies",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Harvest Lane Bakery. 15 years in food & beverage.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already."
-   ],
-   "pains": [
-    "Supermarkets squeezing supplier margins"
-   ]
+   "bio": "CEO at Harvest Lane Bakery. 7 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6302,
-   "first": "Fionn",
-   "last": "Fitzgerald",
+   "first": "Tomasz",
+   "last": "Okafor",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Harvest Lane Bakery. 20 years in food & beverage.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Supermarkets squeezing supplier margins"
-   ]
+   "bio": "CFO at Harvest Lane Bakery. 17 years in food & beverage.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6303,
-   "first": "Sinead",
-   "last": "Moreno",
+   "first": "Vanessa",
+   "last": "Kowalski",
    "title": "VP Sales & Retail",
    "seniority": "vp",
-   "bio": "VP Sales & Retail at Harvest Lane Bakery. 17 years in food & beverage.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Supermarkets squeezing supplier margins"
-   ]
+   "bio": "VP Sales & Retail at Harvest Lane Bakery. 21 years in food & beverage.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6304,
-   "first": "Vanessa",
-   "last": "Ryan",
+   "first": "Callum",
+   "last": "Hughes",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Harvest Lane Bakery. Been here 4 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "We threw away 6% of production last month. That's money, and it's food. Has to change.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Head of Food Safety at Harvest Lane Bakery. Been here 2 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6305,
-   "first": "Piotr",
-   "last": "Evans",
+   "first": "Sinead",
+   "last": "Lewis",
    "title": "Supply Chain Director",
    "seniority": "director",
-   "bio": "Supply Chain Director at Harvest Lane Bakery. Been here 5 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Supply Chain Director at Harvest Lane Bakery. Joined 2 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6306,
-   "first": "Chloe",
-   "last": "Novak",
+   "first": "Isaac",
+   "last": "Healy",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Harvest Lane Bakery. Joined 8 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Production Manager at Harvest Lane Bakery. Joined 6 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 6307,
-   "first": "Wendy",
-   "last": "Quinn",
+   "first": "Hugo",
+   "last": "Power",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Harvest Lane Bakery. Been here 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "QA Technician at Harvest Lane Bakery. Joined 1 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 6308,
-   "first": "Ruth",
-   "last": "Usman",
+   "first": "Tara",
+   "last": "Lewis",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
    "bio": "Customer Service Coordinator at Harvest Lane Bakery. Joined 5 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "posts": []
   }
  ],
  "64": [
   {
    "id": 6401,
-   "first": "Oliver",
-   "last": "Turner",
+   "first": "Jack",
+   "last": "Lynch",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Wildcoast Seafood. 12 years in food & beverage.",
+   "bio": "CEO at Wildcoast Seafood. 20 years in food & beverage.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Supermarkets squeezing supplier margins"
-   ]
+   "posts": []
   },
   {
    "id": 6402,
-   "first": "Eimear",
+   "first": "Bilal",
    "last": "Sweeney",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Wildcoast Seafood. 9 years in food & beverage.",
+   "bio": "CFO at Wildcoast Seafood. 12 years in food & beverage.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Supermarkets squeezing supplier margins"
-   ]
+   "posts": []
   },
   {
    "id": 6403,
-   "first": "Hannah",
-   "last": "Hall",
+   "first": "Freya",
+   "last": "Walsh",
    "title": "VP Sales & Retail",
    "seniority": "vp",
-   "bio": "VP Sales & Retail at Wildcoast Seafood. 6 years in food & beverage.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Supermarkets squeezing supplier margins"
-   ]
+   "bio": "VP Sales & Retail at Wildcoast Seafood. 10 years in food & beverage.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6404,
-   "first": "Diego",
-   "last": "Byrne",
+   "first": "Nadia",
+   "last": "Khan",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Wildcoast Seafood. Been here 3 years.",
-   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Head of Food Safety at Wildcoast Seafood. Joined 5 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6405,
-   "first": "Tomasz",
-   "last": "Carroll",
+   "first": "Joel",
+   "last": "Dempsey",
    "title": "Supply Chain Director",
    "seniority": "director",
-   "bio": "Supply Chain Director at Wildcoast Seafood. Been here 7 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Supply Chain Director at Wildcoast Seafood. Been here 1 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6406,
-   "first": "Katie",
-   "last": "Ward",
+   "first": "Daniel",
+   "last": "Hall",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Wildcoast Seafood. Been here 5 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Production Manager at Wildcoast Seafood. Been here 4 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 6407,
-   "first": "Marcus",
-   "last": "Novak",
+   "first": "Fatima",
+   "last": "Young",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Wildcoast Seafood. Been here 5 years.",
+   "bio": "QA Technician at Wildcoast Seafood. Joined 1 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "Sold out of the new flavour in a week, sat on 3 months of the old one. Forecasting is hard.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Demand forecasting is guesswork"
-   ]
+   "posts": []
   },
   {
    "id": 6408,
-   "first": "Joel",
-   "last": "Wright",
+   "first": "Tara",
+   "last": "Iqbal",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Wildcoast Seafood. Joined 3 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Demand forecasting is guesswork"
-   ]
+   "bio": "Customer Service Coordinator at Wildcoast Seafood. Been here 6 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "65": [
   {
    "id": 6501,
-   "first": "Deirdre",
-   "last": "Lewis",
+   "first": "Diego",
+   "last": "Keane",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Bramble & Oak Drinks. 9 years in food & beverage.",
+   "bio": "CEO at Bramble & Oak Drinks. 7 years in food & beverage.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Launching in a new market next spring. New distributors, new labelling rules, new everything."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "posts": []
   },
   {
    "id": 6502,
-   "first": "Lorcan",
-   "last": "Lewis",
+   "first": "Shane",
+   "last": "Hall",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Bramble & Oak Drinks. 20 years in food & beverage.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "CFO at Bramble & Oak Drinks. 14 years in food & beverage.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6503,
-   "first": "Chloe",
-   "last": "Stewart",
+   "first": "Fatima",
+   "last": "Adeyemi",
    "title": "VP Sales & Retail",
    "seniority": "vp",
    "bio": "VP Sales & Retail at Bramble & Oak Drinks. 7 years in food & beverage.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "posts": []
   },
   {
    "id": 6504,
-   "first": "Wendy",
-   "last": "Mitchell",
+   "first": "Gemma",
+   "last": "Carroll",
    "title": "Head of Food Safety",
    "seniority": "director",
    "bio": "Head of Food Safety at Bramble & Oak Drinks. Been here 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "We threw away 6% of production last month. That's money, and it's food. Has to change.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6505,
-   "first": "Shane",
-   "last": "Brennan",
+   "first": "Joel",
+   "last": "Jones",
    "title": "Supply Chain Director",
    "seniority": "director",
-   "bio": "Supply Chain Director at Bramble & Oak Drinks. Been here 2 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "bio": "Supply Chain Director at Bramble & Oak Drinks. Been here 1 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6506,
-   "first": "Femi",
-   "last": "Shaw",
+   "first": "Rosa",
+   "last": "Hall",
    "title": "Production Manager",
    "seniority": "manager",
    "bio": "Production Manager at Bramble & Oak Drinks. Been here 1 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "posts": []
   },
   {
    "id": 6507,
-   "first": "Imogen",
-   "last": "Byrne",
+   "first": "Nadia",
+   "last": "Nolan",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Bramble & Oak Drinks. Joined 4 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place.",
-    "One year at Bramble & Oak Drinks today. Learned more than I expected."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "QA Technician at Bramble & Oak Drinks. Been here 7 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 6508,
-   "first": "Olivia",
-   "last": "O'Neill",
+   "first": "Kwame",
+   "last": "Callaghan",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Bramble & Oak Drinks. Been here 5 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Customer Service Coordinator at Bramble & Oak Drinks. Been here 4 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "66": [
   {
    "id": 6601,
-   "first": "Tomasz",
-   "last": "McCarthy",
+   "first": "Ines",
+   "last": "Vaughan",
    "title": "CEO",
    "seniority": "c-suite",
    "bio": "CEO at Greenfork Meal Co. 14 years in food & beverage.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Launching in a new market next spring. New distributors, new labelling rules, new everything."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "posts": []
   },
   {
    "id": 6602,
-   "first": "Patrick",
-   "last": "Walsh",
+   "first": "Gareth",
+   "last": "Tierney",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Greenfork Meal Co. 10 years in food & beverage.",
+   "bio": "CFO at Greenfork Meal Co. 13 years in food & beverage.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "posts": []
   },
   {
    "id": 6603,
-   "first": "Zara",
-   "last": "Gallagher",
+   "first": "Piotr",
+   "last": "Vaughan",
    "title": "VP Sales & Retail",
    "seniority": "vp",
-   "bio": "VP Sales & Retail at Greenfork Meal Co. 4 years in food & beverage.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "VP Sales & Retail at Greenfork Meal Co. 12 years in food & beverage.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6604,
-   "first": "Ben",
-   "last": "Dempsey",
+   "first": "Tom",
+   "last": "Bennett",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Greenfork Meal Co. Joined 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Head of Food Safety at Greenfork Meal Co. Joined 5 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6605,
-   "first": "Yusuf",
-   "last": "Khan",
+   "first": "Nadia",
+   "last": "Evans",
    "title": "Supply Chain Director",
    "seniority": "director",
-   "bio": "Supply Chain Director at Greenfork Meal Co. Joined 6 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Supply Chain Director at Greenfork Meal Co. Joined 7 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 6606,
-   "first": "Marcus",
-   "last": "Gallagher",
+   "first": "Aoife",
+   "last": "Shaw",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Greenfork Meal Co. Been here 8 years.",
+   "bio": "Production Manager at Greenfork Meal Co. Joined 8 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "posts": []
   },
   {
    "id": 6607,
-   "first": "Ruth",
-   "last": "Ryan",
+   "first": "Ewan",
+   "last": "Byrne",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Greenfork Meal Co. Been here 6 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "QA Technician at Greenfork Meal Co. Been here 4 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 6608,
-   "first": "Lorcan",
-   "last": "Keane",
+   "first": "Catriona",
+   "last": "Wright",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Greenfork Meal Co. Been here 6 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Customer Service Coordinator at Greenfork Meal Co. Been here 7 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "67": [
   {
    "id": 6701,
-   "first": "Will",
-   "last": "Power",
+   "first": "Jade",
+   "last": "Nolan",
    "title": "Founder & Managing Director",
    "seniority": "c-suite",
-   "bio": "Founder & Managing Director at Copper Kettle Roasters. 14 years in food & beverage.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Supermarket wants another 4% off for next year's listing. Margins in food are razor thin already.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Supermarkets squeezing supplier margins"
-   ]
+   "bio": "Founder & Managing Director at Copper Kettle Roasters. 9 years in food & beverage.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6702,
-   "first": "Victor",
-   "last": "Ahmed",
+   "first": "Keira",
+   "last": "Iqbal",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Copper Kettle Roasters. 13 years in food & beverage.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Supermarkets squeezing supplier margins"
-   ]
+   "bio": "COO at Copper Kettle Roasters. 18 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6703,
-   "first": "Ines",
-   "last": "Chen",
+   "first": "Aoife",
+   "last": "Regan",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Copper Kettle Roasters. Been here 2 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Head of Food Safety at Copper Kettle Roasters. Joined 3 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6704,
-   "first": "Maeve",
-   "last": "Chen",
+   "first": "Gemma",
+   "last": "Young",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Copper Kettle Roasters. Been here 2 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Production Manager at Copper Kettle Roasters. Been here 5 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 6705,
-   "first": "Tara",
+   "first": "Quinn",
    "last": "Flanagan",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Copper Kettle Roasters. Joined 4 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "QA Technician at Copper Kettle Roasters. Joined 1 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 6706,
-   "first": "Niall",
-   "last": "McCarthy",
+   "first": "Tara",
+   "last": "O'Neill",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Copper Kettle Roasters. Been here 6 years.",
+   "bio": "Customer Service Coordinator at Copper Kettle Roasters. Been here 2 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "posts": []
   }
  ],
  "68": [
   {
    "id": 6801,
-   "first": "Ben",
-   "last": "Flanagan",
+   "first": "Jack",
+   "last": "Keane",
    "title": "Founder & Managing Director",
    "seniority": "c-suite",
-   "bio": "Founder & Managing Director at Saltmarsh Distillery. 10 years in food & beverage.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Launching in a new market next spring. New distributors, new labelling rules, new everything."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "Founder & Managing Director at Saltmarsh Distillery. 3 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6802,
-   "first": "Elena",
-   "last": "Khan",
+   "first": "Ewan",
+   "last": "Ahmed",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Saltmarsh Distillery. 20 years in food & beverage.",
+   "bio": "COO at Saltmarsh Distillery. 17 years in food & beverage.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "posts": []
   },
   {
    "id": 6803,
-   "first": "Isaac",
-   "last": "Egan",
+   "first": "Patrick",
+   "last": "Davies",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Saltmarsh Distillery. Been here 1 years.",
+   "bio": "Head of Food Safety at Saltmarsh Distillery. Been here 5 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "We threw away 6% of production last month. That's money, and it's food. Has to change.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "posts": []
   },
   {
    "id": 6804,
-   "first": "Aoife",
-   "last": "Usman",
+   "first": "Will",
+   "last": "Egan",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Saltmarsh Distillery. Joined 1 years.",
+   "bio": "Production Manager at Saltmarsh Distillery. Been here 7 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Waste and spoilage eating profit"
-   ]
+   "posts": []
   },
   {
    "id": 6805,
-   "first": "Priya",
-   "last": "Davies",
+   "first": "Ben",
+   "last": "Healy",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Saltmarsh Distillery. Joined 4 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Sold out of the new flavour in a week, sat on 3 months of the old one. Forecasting is hard.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Demand forecasting is guesswork"
-   ]
+   "bio": "QA Technician at Saltmarsh Distillery. Been here 4 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 6806,
    "first": "Oliver",
-   "last": "Bennett",
+   "last": "Gallagher",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Saltmarsh Distillery. Been here 7 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Saltmarsh Distillery today. Learned more than I expected."
-   ],
-   "pains": [
-    "Demand forecasting is guesswork"
-   ]
+   "bio": "Customer Service Coordinator at Saltmarsh Distillery. Joined 2 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "69": [
   {
    "id": 6901,
    "first": "Ben",
-   "last": "Thompson",
+   "last": "Carroll",
    "title": "Founder & Managing Director",
    "seniority": "c-suite",
-   "bio": "Founder & Managing Director at Little Acre Dairy. 8 years in food & beverage.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Launching in a new market next spring. New distributors, new labelling rules, new everything."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "Founder & Managing Director at Little Acre Dairy. 12 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6902,
-   "first": "Katie",
-   "last": "Doherty",
+   "first": "Sinead",
+   "last": "Chen",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Little Acre Dairy. 12 years in food & beverage.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "COO at Little Acre Dairy. 4 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6903,
-   "first": "Rosa",
-   "last": "Mitchell",
+   "first": "Jack",
+   "last": "Young",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Little Acre Dairy. Joined 7 years.",
-   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Head of Food Safety at Little Acre Dairy. Been here 6 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 6904,
-   "first": "Deirdre",
-   "last": "Stewart",
+   "first": "Bilal",
+   "last": "Ryan",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Little Acre Dairy. Been here 4 years.",
+   "bio": "Production Manager at Little Acre Dairy. Been here 1 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "posts": []
   },
   {
    "id": 6905,
-   "first": "Diego",
-   "last": "Maguire",
+   "first": "Wendy",
+   "last": "Gallagher",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Little Acre Dairy. Been here 5 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Sold out of the new flavour in a week, sat on 3 months of the old one. Forecasting is hard."
-   ],
-   "pains": [
-    "Demand forecasting is guesswork"
-   ]
+   "bio": "QA Technician at Little Acre Dairy. Joined 4 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 6906,
-   "first": "Piotr",
-   "last": "Regan",
+   "first": "Victor",
+   "last": "Carroll",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Little Acre Dairy. Been here 4 years.",
+   "bio": "Customer Service Coordinator at Little Acre Dairy. Been here 6 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [
-    "One year at Little Acre Dairy today. Learned more than I expected."
-   ],
-   "pains": [
-    "Demand forecasting is guesswork"
-   ]
+   "posts": []
   }
  ],
  "70": [
   {
    "id": 7001,
-   "first": "Callum",
-   "last": "Lewis",
+   "first": "Jack",
+   "last": "McCarthy",
    "title": "Founder & Managing Director",
    "seniority": "c-suite",
-   "bio": "Founder & Managing Director at Spice Route Kitchen. 6 years in food & beverage.",
+   "bio": "Founder & Managing Director at Spice Route Kitchen. 16 years in food & beverage.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Launching in a new market next spring. New distributors, new labelling rules, new everything.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "posts": []
   },
   {
    "id": 7002,
    "first": "Owen",
-   "last": "Mitchell",
+   "last": "Walsh",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Spice Route Kitchen. 15 years in food & beverage.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Expanding into new markets and channels"
-   ]
+   "bio": "COO at Spice Route Kitchen. 17 years in food & beverage.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 7003,
-   "first": "Nadia",
-   "last": "Dempsey",
+   "first": "Ewan",
+   "last": "Usman",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Spice Route Kitchen. Joined 7 years.",
+   "bio": "Head of Food Safety at Spice Route Kitchen. Been here 2 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Christmas peak means 60 temporary staff to hire and train in 4 weeks. Every year it's a scramble."
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "posts": []
   },
   {
    "id": 7004,
-   "first": "Elena",
-   "last": "Brennan",
+   "first": "Nathan",
+   "last": "Vaughan",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Spice Route Kitchen. Been here 7 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Hiring seasonal staff for peak periods"
-   ]
+   "bio": "Production Manager at Spice Route Kitchen. Joined 6 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 7005,
-   "first": "Tara",
-   "last": "Thompson",
+   "first": "Femi",
+   "last": "Turner",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Spice Route Kitchen. Been here 6 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Sold out of the new flavour in a week, sat on 3 months of the old one. Forecasting is hard.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Demand forecasting is guesswork"
-   ]
+   "bio": "QA Technician at Spice Route Kitchen. Been here 5 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 7006,
-   "first": "Hannah",
-   "last": "Patel",
+   "first": "Oliver",
+   "last": "Doherty",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Spice Route Kitchen. Joined 8 years.",
+   "bio": "Customer Service Coordinator at Spice Route Kitchen. Joined 3 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Demand forecasting is guesswork"
-   ]
+   "posts": []
   }
  ],
  "71": [
   {
    "id": 7101,
-   "first": "Nathan",
-   "last": "Power",
+   "first": "Daniel",
+   "last": "Callaghan",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Hollis Grant LLP. 18 years in professional services.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Utilisation slipped to 68% this year. Every point is real money for a firm our size.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "Managing Partner at Hollis Grant LLP. 21 years in professional services.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7102,
-   "first": "Sinead",
-   "last": "Callaghan",
+   "first": "Ruth",
+   "last": "Sweeney",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Hollis Grant LLP. 8 years in professional services.",
+   "bio": "CFO at Hollis Grant LLP. 5 years in professional services.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "posts": []
   },
   {
    "id": 7103,
-   "first": "Hannah",
-   "last": "Regan",
+   "first": "Katie",
+   "last": "Okafor",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Hollis Grant LLP. 4 years in professional services.",
+   "bio": "COO at Hollis Grant LLP. 10 years in professional services.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "posts": []
   },
   {
    "id": 7104,
-   "first": "Aoife",
-   "last": "Reid",
+   "first": "Nathan",
+   "last": "Young",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Hollis Grant LLP. 12 years in professional services.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "Chief People Officer at Hollis Grant LLP. 13 years in professional services.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7105,
-   "first": "Owen",
-   "last": "Lewis",
+   "first": "Deirdre",
+   "last": "Fitzgerald",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Hollis Grant LLP. 12 years in professional services.",
+   "bio": "Chief Revenue Officer at Hollis Grant LLP. 18 years in professional services.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "posts": []
   },
   {
    "id": 7106,
    "first": "Shane",
-   "last": "Gallagher",
+   "last": "Maguire",
    "title": "Partner",
    "seniority": "vp",
-   "bio": "Partner at Hollis Grant LLP. 16 years in professional services.",
+   "bio": "Partner at Hollis Grant LLP. 7 years in professional services.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "posts": []
   },
   {
    "id": 7107,
-   "first": "Ciara",
-   "last": "Khan",
+   "first": "Nadia",
+   "last": "Usman",
    "title": "Head of Practice",
    "seniority": "vp",
-   "bio": "Head of Practice at Hollis Grant LLP. 12 years in professional services.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "Head of Practice at Hollis Grant LLP. 15 years in professional services.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7108,
-   "first": "Will",
-   "last": "Novak",
+   "first": "Niall",
+   "last": "Dempsey",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Hollis Grant LLP. 9 years in professional services.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "VP Finance at Hollis Grant LLP. 13 years in professional services.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7109,
-   "first": "Luke",
-   "last": "Kavanagh",
+   "first": "Femi",
+   "last": "Regan",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Hollis Grant LLP. 8 years in professional services.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "VP Marketing at Hollis Grant LLP. 11 years in professional services.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7110,
-   "first": "Tara",
-   "last": "Carroll",
+   "first": "Amira",
+   "last": "Egan",
    "title": "VP Information Technology",
    "seniority": "vp",
    "bio": "VP Information Technology at Hollis Grant LLP. 7 years in professional services.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7111,
-   "first": "Rosa",
-   "last": "Jones",
+   "first": "Hannah",
+   "last": "Healy",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Hollis Grant LLP. 12 years in professional services.",
+   "bio": "VP Procurement at Hollis Grant LLP. 22 years in professional services.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "posts": []
   },
   {
    "id": 7112,
-   "first": "Diego",
-   "last": "Callaghan",
+   "first": "Chloe",
+   "last": "Moreno",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Hollis Grant LLP. Joined 7 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Director of Operations at Hollis Grant LLP. Joined 2 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7113,
-   "first": "Declan",
-   "last": "Wright",
+   "first": "Rosa",
+   "last": "Sweeney",
    "title": "Head of Business Development",
    "seniority": "director",
-   "bio": "Head of Business Development at Hollis Grant LLP. Joined 2 years.",
+   "bio": "Head of Business Development at Hollis Grant LLP. Joined 8 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7114,
-   "first": "Hugo",
-   "last": "Patel",
+   "first": "Owen",
+   "last": "Gallagher",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Hollis Grant LLP. Been here 7 years.",
+   "bio": "Director of IT at Hollis Grant LLP. Joined 8 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7115,
-   "first": "Katie",
-   "last": "Regan",
+   "first": "Yusuf",
+   "last": "Usman",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Hollis Grant LLP. Joined 3 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Head of Procurement at Hollis Grant LLP. Been here 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7116,
-   "first": "Ben",
+   "first": "Maeve",
    "last": "Healy",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Hollis Grant LLP. Joined 8 years.",
+   "bio": "Head of Legal at Hollis Grant LLP. Been here 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7117,
-   "first": "Lorcan",
-   "last": "Kavanagh",
+   "first": "Ravi",
+   "last": "McCarthy",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Hollis Grant LLP. Been here 6 years.",
+   "bio": "Head of Talent Acquisition at Hollis Grant LLP. Been here 8 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7118,
-   "first": "Bilal",
-   "last": "McCarthy",
+   "first": "Tara",
+   "last": "Gallagher",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Hollis Grant LLP. Joined 6 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Director of Marketing at Hollis Grant LLP. Been here 7 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7119,
-   "first": "Oliver",
-   "last": "Lynch",
+   "first": "Jade",
+   "last": "Keane",
    "title": "Practice Manager",
    "seniority": "manager",
    "bio": "Practice Manager at Hollis Grant LLP. Joined 1 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7120,
-   "first": "Zara",
-   "last": "Shaw",
+   "first": "Ben",
+   "last": "Ahmed",
    "title": "Finance Manager",
    "seniority": "manager",
-   "bio": "Finance Manager at Hollis Grant LLP. Joined 1 years.",
+   "bio": "Finance Manager at Hollis Grant LLP. Joined 7 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7121,
-   "first": "Gareth",
-   "last": "Fitzgerald",
+   "first": "Ciara",
+   "last": "Hall",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Hollis Grant LLP. Joined 1 years.",
+   "bio": "IT Service Manager at Hollis Grant LLP. Joined 5 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7122,
-   "first": "Vanessa",
-   "last": "Iqbal",
+   "first": "Isaac",
+   "last": "Ryan",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Hollis Grant LLP. Been here 7 years.",
+   "bio": "Procurement Manager at Hollis Grant LLP. Been here 1 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7123,
-   "first": "Ines",
-   "last": "Adeyemi",
+   "first": "Mei",
+   "last": "Ahmed",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Hollis Grant LLP. Been here 6 years.",
+   "bio": "HR Business Partner at Hollis Grant LLP. Been here 8 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7124,
-   "first": "Tomasz",
-   "last": "Lynch",
+   "first": "Will",
+   "last": "Quinn",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Hollis Grant LLP. Been here 1 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Marketing Manager at Hollis Grant LLP. Joined 1 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 7125,
-   "first": "Niall",
-   "last": "Keane",
+   "first": "Gemma",
+   "last": "Kavanagh",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Hollis Grant LLP. Been here 4 years.",
+   "bio": "Sales Manager at Hollis Grant LLP. Been here 5 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7126,
-   "first": "Mei",
-   "last": "Lewis",
+   "first": "Zara",
+   "last": "Hughes",
    "title": "Senior Consultant",
    "seniority": "mid",
-   "bio": "Senior Consultant at Hollis Grant LLP. Been here 4 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Every proposal starts from a blank page. Three days per pitch. There has to be a better way."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Senior Consultant at Hollis Grant LLP. Been here 6 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 7127,
-   "first": "Orla",
-   "last": "Brennan",
+   "first": "Ewan",
+   "last": "Shaw",
    "title": "Associate",
    "seniority": "mid",
-   "bio": "Associate at Hollis Grant LLP. Been here 7 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Associate at Hollis Grant LLP. Joined 1 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 7128,
-   "first": "Fionn",
-   "last": "Hall",
+   "first": "Patrick",
+   "last": "Keane",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Hollis Grant LLP. Joined 6 years.",
+   "bio": "Business Analyst at Hollis Grant LLP. Been here 6 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "posts": []
   },
   {
    "id": 7129,
-   "first": "Isaac",
-   "last": "Doherty",
+   "first": "Ines",
+   "last": "Patel",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Hollis Grant LLP. Been here 2 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Hollis Grant LLP today. Learned more than I expected."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Financial Analyst at Hollis Grant LLP. Joined 8 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 7130,
    "first": "Adaeze",
-   "last": "O'Neill",
+   "last": "Vaughan",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Hollis Grant LLP. Joined 6 years.",
+   "bio": "Recruiter at Hollis Grant LLP. Been here 7 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "posts": []
   },
   {
    "id": 7131,
-   "first": "Daniel",
-   "last": "Shaw",
+   "first": "Elena",
+   "last": "Reid",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Hollis Grant LLP. Joined 8 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Analyst at Hollis Grant LLP. Joined 5 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 7132,
-   "first": "Priya",
-   "last": "Doherty",
+   "first": "Imogen",
+   "last": "Ward",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Hollis Grant LLP. Joined 8 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Executive Assistant to the CEO at Hollis Grant LLP. Been here 2 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 7133,
-   "first": "Keira",
-   "last": "Doherty",
+   "first": "Samuel",
+   "last": "Thompson",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Hollis Grant LLP. Joined 1 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Graduate Analyst at Hollis Grant LLP. Joined 3 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "72": [
   {
    "id": 7201,
-   "first": "Diego",
-   "last": "Walsh",
+   "first": "Tom",
+   "last": "Foster",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Calder Advisory. 8 years in professional services.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "90% of our new work comes from referrals. Great for quality, terrible for planning growth."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Managing Partner at Calder Advisory. 13 years in professional services.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7202,
    "first": "Aisling",
-   "last": "Turner",
+   "last": "Khan",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Calder Advisory. 16 years in professional services.",
+   "bio": "CFO at Calder Advisory. 15 years in professional services.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "posts": []
   },
   {
    "id": 7203,
-   "first": "Elena",
-   "last": "Lynch",
+   "first": "Adaeze",
+   "last": "Jones",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Calder Advisory. 18 years in professional services.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "COO at Calder Advisory. 6 years in professional services.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7204,
-   "first": "Gareth",
-   "last": "Byrne",
+   "first": "Shane",
+   "last": "O'Neill",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Calder Advisory. 15 years in professional services.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Chief People Officer at Calder Advisory. 9 years in professional services.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7205,
-   "first": "Nathan",
-   "last": "Foster",
+   "first": "Hannah",
+   "last": "Hall",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Calder Advisory. 16 years in professional services.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Chief Revenue Officer at Calder Advisory. 9 years in professional services.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7206,
-   "first": "Tara",
-   "last": "Novak",
+   "first": "Niall",
+   "last": "Walsh",
    "title": "Partner",
    "seniority": "vp",
-   "bio": "Partner at Calder Advisory. 4 years in professional services.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Partner at Calder Advisory. 12 years in professional services.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7207,
-   "first": "Amira",
-   "last": "Moreno",
+   "first": "Diego",
+   "last": "Byrne",
    "title": "Head of Practice",
    "seniority": "vp",
-   "bio": "Head of Practice at Calder Advisory. 8 years in professional services.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Head of Practice at Calder Advisory. 5 years in professional services.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7208,
-   "first": "Ruth",
-   "last": "Lynch",
+   "first": "Maeve",
+   "last": "Turner",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Calder Advisory. 5 years in professional services.",
+   "bio": "VP Finance at Calder Advisory. 8 years in professional services.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "posts": []
   },
   {
    "id": 7209,
-   "first": "Rebecca",
-   "last": "Byrne",
+   "first": "Tomasz",
+   "last": "Carroll",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Calder Advisory. 9 years in professional services.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "VP Marketing at Calder Advisory. 15 years in professional services.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7210,
-   "first": "Katie",
-   "last": "Moreno",
+   "first": "Vanessa",
+   "last": "Brennan",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Calder Advisory. 12 years in professional services.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "VP Information Technology at Calder Advisory. 22 years in professional services.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7211,
-   "first": "Kwame",
-   "last": "O'Neill",
+   "first": "Fatima",
+   "last": "Sweeney",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Calder Advisory. 6 years in professional services.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "VP Procurement at Calder Advisory. 10 years in professional services.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7212,
-   "first": "Jack",
-   "last": "Patel",
+   "first": "Katie",
+   "last": "Turner",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Calder Advisory. Been here 7 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Director of Operations at Calder Advisory. Joined 5 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7213,
    "first": "Gemma",
-   "last": "Okafor",
+   "last": "McCarthy",
    "title": "Head of Business Development",
    "seniority": "director",
-   "bio": "Head of Business Development at Calder Advisory. Been here 4 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Head of Business Development at Calder Advisory. Been here 7 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7214,
-   "first": "Harry",
-   "last": "Jones",
+   "first": "Ines",
+   "last": "Chen",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Calder Advisory. Been here 7 years.",
+   "bio": "Director of IT at Calder Advisory. Joined 8 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7215,
-   "first": "Mei",
-   "last": "Novak",
+   "first": "Jack",
+   "last": "Kowalski",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Calder Advisory. Been here 2 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Head of Procurement at Calder Advisory. Been here 4 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7216,
-   "first": "Lorcan",
-   "last": "Walsh",
+   "first": "Chloe",
+   "last": "Power",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Calder Advisory. Been here 4 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Head of Legal at Calder Advisory. Joined 8 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7217,
-   "first": "Callum",
-   "last": "Adeyemi",
+   "first": "Victor",
+   "last": "Bennett",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Calder Advisory. Joined 1 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Head of Talent Acquisition at Calder Advisory. Been here 2 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 7218,
-   "first": "Maeve",
-   "last": "Lynch",
+   "first": "Wendy",
+   "last": "Mitchell",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Calder Advisory. Been here 8 years.",
+   "bio": "Director of Marketing at Calder Advisory. Been here 5 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7219,
-   "first": "Hugo",
-   "last": "McCarthy",
+   "first": "Yusuf",
+   "last": "Fitzgerald",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Calder Advisory. Been here 6 years.",
+   "bio": "Practice Manager at Calder Advisory. Been here 8 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7220,
-   "first": "Niall",
-   "last": "McCarthy",
+   "first": "Will",
+   "last": "Lynch",
    "title": "Finance Manager",
    "seniority": "manager",
-   "bio": "Finance Manager at Calder Advisory. Joined 1 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Finance Manager at Calder Advisory. Been here 5 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 7221,
-   "first": "Owen",
-   "last": "Gallagher",
+   "first": "Harry",
+   "last": "Hughes",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Calder Advisory. Been here 3 years.",
+   "bio": "IT Service Manager at Calder Advisory. Joined 2 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7222,
    "first": "Nadia",
-   "last": "Maguire",
+   "last": "Fitzgerald",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Calder Advisory. Been here 7 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Procurement Manager at Calder Advisory. Joined 7 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 7223,
-   "first": "Will",
-   "last": "Walsh",
+   "first": "Catriona",
+   "last": "Kavanagh",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Calder Advisory. Been here 5 years.",
+   "bio": "HR Business Partner at Calder Advisory. Been here 7 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7224,
-   "first": "Victor",
-   "last": "Mitchell",
+   "first": "Femi",
+   "last": "Lynch",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Calder Advisory. Been here 7 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Marketing Manager at Calder Advisory. Been here 2 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 7225,
    "first": "Ewan",
-   "last": "Quinn",
+   "last": "Shaw",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Calder Advisory. Been here 3 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Sales Manager at Calder Advisory. Joined 3 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 7226,
-   "first": "Wendy",
-   "last": "Lewis",
+   "first": "Zara",
+   "last": "Gallagher",
    "title": "Senior Consultant",
    "seniority": "mid",
-   "bio": "Senior Consultant at Calder Advisory. Joined 7 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients.",
-    "One year at Calder Advisory today. Learned more than I expected."
-   ],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Senior Consultant at Calder Advisory. Been here 1 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 7227,
-   "first": "Fionn",
-   "last": "Keane",
+   "first": "Ben",
+   "last": "Dempsey",
    "title": "Associate",
    "seniority": "mid",
    "bio": "Associate at Calder Advisory. Joined 4 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 7228,
-   "first": "Orla",
-   "last": "Power",
+   "first": "Oliver",
+   "last": "Jones",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Calder Advisory. Joined 4 years.",
+   "bio": "Business Analyst at Calder Advisory. Joined 3 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "One year at Calder Advisory today. Learned more than I expected."
-   ],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "posts": []
   },
   {
    "id": 7229,
-   "first": "Grainne",
-   "last": "Walsh",
+   "first": "Fionn",
+   "last": "Carroll",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Calder Advisory. Joined 3 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Financial Analyst at Calder Advisory. Been here 4 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 7230,
-   "first": "Chloe",
-   "last": "McCarthy",
+   "first": "Aoife",
+   "last": "Moreno",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Calder Advisory. Joined 3 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Recruiter at Calder Advisory. Been here 6 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 7231,
-   "first": "Priya",
-   "last": "Davies",
+   "first": "Lorcan",
+   "last": "Keane",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Calder Advisory. Joined 7 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Analyst at Calder Advisory. Been here 4 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   },
   {
    "id": 7232,
-   "first": "Rosa",
-   "last": "Quinn",
+   "first": "Bilal",
+   "last": "Vaughan",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Calder Advisory. Been here 1 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Executive Assistant to the CEO at Calder Advisory. Been here 4 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 7233,
-   "first": "Fatima",
-   "last": "Fitzgerald",
+   "first": "Hugo",
+   "last": "Power",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Calder Advisory. Joined 8 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Graduate Analyst at Calder Advisory. Joined 6 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "73": [
   {
    "id": 7301,
-   "first": "Jade",
-   "last": "Ahmed",
+   "first": "Priya",
+   "last": "Khan",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Whitlock Engineering. 10 years in professional services.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Clients want fixed fees and more for less. The billable hour model is under real pressure."
-   ],
-   "pains": [
-    "Clients pushing back on fees"
-   ]
+   "bio": "Managing Partner at Whitlock Engineering. 16 years in professional services.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7302,
-   "first": "Yusuf",
-   "last": "Keane",
+   "first": "Niall",
+   "last": "Nolan",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Whitlock Engineering. 6 years in professional services.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Clients pushing back on fees"
-   ]
+   "bio": "CFO at Whitlock Engineering. 9 years in professional services.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7303,
-   "first": "Isaac",
-   "last": "Power",
+   "first": "Sinead",
+   "last": "Hall",
    "title": "Partner",
    "seniority": "vp",
-   "bio": "Partner at Whitlock Engineering. 9 years in professional services.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Clients pushing back on fees"
-   ]
+   "bio": "Partner at Whitlock Engineering. 19 years in professional services.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7304,
-   "first": "Nadia",
-   "last": "Kowalski",
+   "first": "Elena",
+   "last": "Tierney",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Whitlock Engineering. Joined 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Lost three senior people to a competitor this year. Retention is our biggest strategic risk."
-   ],
-   "pains": [
-    "Losing good people to competitors"
-   ]
+   "bio": "Director of Operations at Whitlock Engineering. Been here 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7305,
-   "first": "Ruth",
-   "last": "Iqbal",
+   "first": "Jade",
+   "last": "Ward",
    "title": "Head of Business Development",
    "seniority": "director",
-   "bio": "Head of Business Development at Whitlock Engineering. Joined 5 years.",
-   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Losing good people to competitors"
-   ]
+   "bio": "Head of Business Development at Whitlock Engineering. Been here 8 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7306,
-   "first": "Amira",
+   "first": "Olivia",
    "last": "Silva",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Whitlock Engineering. Been here 2 years.",
+   "bio": "Practice Manager at Whitlock Engineering. Been here 5 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Losing good people to competitors"
-   ]
+   "posts": []
   },
   {
    "id": 7307,
-   "first": "Aoife",
-   "last": "Flanagan",
+   "first": "Wendy",
+   "last": "Patel",
    "title": "Senior Consultant",
    "seniority": "mid",
-   "bio": "Senior Consultant at Whitlock Engineering. Been here 3 years.",
+   "bio": "Senior Consultant at Whitlock Engineering. Joined 1 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "Every proposal starts from a blank page. Three days per pitch. There has to be a better way."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "posts": []
   },
   {
    "id": 7308,
-   "first": "Ben",
-   "last": "Wright",
+   "first": "Rosa",
+   "last": "Davies",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Whitlock Engineering. Joined 6 years.",
+   "bio": "Analyst at Whitlock Engineering. Been here 4 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Whitlock Engineering today. Learned more than I expected."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "posts": []
   }
  ],
  "74": [
   {
    "id": 7401,
-   "first": "Catriona",
-   "last": "Moreno",
+   "first": "Harry",
+   "last": "Carroll",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Bridgeview Recruitment. 13 years in professional services.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "Managing Partner at Bridgeview Recruitment. 21 years in professional services.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7402,
-   "first": "Victor",
-   "last": "Ryan",
+   "first": "Deirdre",
+   "last": "Vaughan",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Bridgeview Recruitment. 3 years in professional services.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "CFO at Bridgeview Recruitment. 6 years in professional services.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7403,
-   "first": "Imogen",
+   "first": "Freya",
    "last": "Foster",
    "title": "Partner",
    "seniority": "vp",
-   "bio": "Partner at Bridgeview Recruitment. 22 years in professional services.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "Partner at Bridgeview Recruitment. 17 years in professional services.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7404,
-   "first": "Joel",
-   "last": "Lewis",
+   "first": "Chloe",
+   "last": "Iqbal",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Bridgeview Recruitment. Been here 1 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Director of Operations at Bridgeview Recruitment. Joined 3 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7405,
-   "first": "Piotr",
-   "last": "Kowalski",
+   "first": "Tara",
+   "last": "Kavanagh",
    "title": "Head of Business Development",
    "seniority": "director",
-   "bio": "Head of Business Development at Bridgeview Recruitment. Joined 3 years.",
+   "bio": "Head of Business Development at Bridgeview Recruitment. Been here 2 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7406,
-   "first": "Bilal",
-   "last": "Ahmed",
+   "first": "Lorcan",
+   "last": "O'Neill",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Bridgeview Recruitment. Joined 1 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Practice Manager at Bridgeview Recruitment. Been here 4 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 7407,
-   "first": "Isaac",
-   "last": "Lewis",
+   "first": "Ben",
+   "last": "Thompson",
    "title": "Senior Consultant",
    "seniority": "mid",
-   "bio": "Senior Consultant at Bridgeview Recruitment. Joined 5 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
-   ],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Senior Consultant at Bridgeview Recruitment. Joined 8 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 7408,
-   "first": "Orla",
-   "last": "Ward",
+   "first": "Nathan",
+   "last": "Byrne",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Bridgeview Recruitment. Been here 6 years.",
+   "bio": "Analyst at Bridgeview Recruitment. Joined 1 years.",
    "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "posts": []
   }
  ],
  "75": [
   {
    "id": 7501,
-   "first": "Yusuf",
-   "last": "Kowalski",
+   "first": "Tom",
+   "last": "Healy",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Fernhill Architects. 7 years in professional services.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "Managing Partner at Fernhill Architects. 21 years in professional services.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7502,
-   "first": "Aisling",
-   "last": "Maguire",
+   "first": "Quinn",
+   "last": "Young",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Fernhill Architects. 5 years in professional services.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "CFO at Fernhill Architects. 6 years in professional services.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7503,
-   "first": "Patrick",
-   "last": "Quinn",
+   "first": "Victor",
+   "last": "Lynch",
    "title": "Partner",
    "seniority": "vp",
-   "bio": "Partner at Fernhill Architects. 8 years in professional services.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "Partner at Fernhill Architects. 19 years in professional services.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7504,
-   "first": "Owen",
-   "last": "Hughes",
+   "first": "Imogen",
+   "last": "Lynch",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Fernhill Architects. Joined 6 years.",
+   "bio": "Director of Operations at Fernhill Architects. Been here 4 years.",
    "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
-   "posts": [
-    "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7505,
-   "first": "Shane",
-   "last": "Davies",
+   "first": "Mei",
+   "last": "Flanagan",
    "title": "Head of Business Development",
    "seniority": "director",
-   "bio": "Head of Business Development at Fernhill Architects. Joined 7 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Head of Business Development at Fernhill Architects. Been here 3 years.",
+   "personality": "Protective of team time. Prefers email to calls. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7506,
-   "first": "Rebecca",
-   "last": "Okafor",
+   "first": "Jade",
+   "last": "Stewart",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Fernhill Architects. Joined 3 years.",
+   "bio": "Practice Manager at Fernhill Architects. Joined 7 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7507,
    "first": "Declan",
-   "last": "Fitzgerald",
+   "last": "Walsh",
    "title": "Senior Consultant",
    "seniority": "mid",
    "bio": "Senior Consultant at Fernhill Architects. Joined 4 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
-   ],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 7508,
-   "first": "Mei",
-   "last": "Wright",
+   "first": "Keira",
+   "last": "Jones",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Fernhill Architects. Joined 2 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Analyst at Fernhill Architects. Been here 1 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "76": [
   {
    "id": 7601,
-   "first": "Samuel",
-   "last": "Lynch",
+   "first": "Ewan",
+   "last": "Walsh",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Marlow & Reid. 7 years in professional services.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Budget exists but is fought over every quarter.",
-   "posts": [
-    "90% of our new work comes from referrals. Great for quality, terrible for planning growth.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Managing Partner at Marlow & Reid. 22 years in professional services.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7602,
-   "first": "Rebecca",
-   "last": "Iqbal",
+   "first": "Quinn",
+   "last": "Wright",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Marlow & Reid. 20 years in professional services.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "CFO at Marlow & Reid. 19 years in professional services.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7603,
-   "first": "Vanessa",
-   "last": "Keane",
+   "first": "Rebecca",
+   "last": "Foster",
    "title": "Partner",
    "seniority": "vp",
-   "bio": "Partner at Marlow & Reid. 22 years in professional services.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Partner at Marlow & Reid. 14 years in professional services.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7604,
-   "first": "Bilal",
-   "last": "Doherty",
+   "first": "Tara",
+   "last": "Lynch",
    "title": "Director of Operations",
    "seniority": "director",
    "bio": "Director of Operations at Marlow & Reid. Been here 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [
-    "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Unbilled time leaking out of the business"
-   ]
+   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7605,
-   "first": "Piotr",
-   "last": "Byrne",
+   "first": "Uma",
+   "last": "Stewart",
    "title": "Head of Business Development",
    "seniority": "director",
-   "bio": "Head of Business Development at Marlow & Reid. Been here 8 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Budget exists but is fought over every quarter.",
-   "posts": [],
-   "pains": [
-    "Unbilled time leaking out of the business"
-   ]
+   "bio": "Head of Business Development at Marlow & Reid. Joined 5 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Budget exists but is fought over every quarter.",
+   "posts": []
   },
   {
    "id": 7606,
-   "first": "Gareth",
-   "last": "Flanagan",
+   "first": "Will",
+   "last": "Tierney",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Marlow & Reid. Joined 2 years.",
+   "bio": "Practice Manager at Marlow & Reid. Been here 2 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Unbilled time leaking out of the business"
-   ]
+   "posts": []
   },
   {
    "id": 7607,
-   "first": "Uma",
-   "last": "Young",
+   "first": "Ciara",
+   "last": "Byrne",
    "title": "Senior Consultant",
    "seniority": "mid",
-   "bio": "Senior Consultant at Marlow & Reid. Joined 4 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
-   ],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Senior Consultant at Marlow & Reid. Joined 7 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 7608,
-   "first": "Aisling",
-   "last": "Evans",
+   "first": "Patrick",
+   "last": "Flanagan",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Marlow & Reid. Joined 6 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Analyst at Marlow & Reid. Joined 8 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "77": [
   {
    "id": 7701,
-   "first": "Harry",
-   "last": "Power",
+   "first": "Shane",
+   "last": "Gallagher",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Quayside Legal. 3 years in professional services.",
+   "bio": "Managing Partner at Quayside Legal. 20 years in professional services.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Clients want fixed fees and more for less. The billable hour model is under real pressure.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Clients pushing back on fees"
-   ]
+   "posts": []
   },
   {
    "id": 7702,
-   "first": "Piotr",
-   "last": "Khan",
+   "first": "Marcus",
+   "last": "Callaghan",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Quayside Legal. 16 years in professional services.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Clients pushing back on fees"
-   ]
+   "bio": "COO at Quayside Legal. 12 years in professional services.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 7703,
-   "first": "Quinn",
-   "last": "Walsh",
+   "first": "Oliver",
+   "last": "Carroll",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Quayside Legal. Joined 2 years.",
+   "bio": "Director of Operations at Quayside Legal. Been here 2 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 7704,
-   "first": "Joel",
-   "last": "Vaughan",
+   "first": "Chloe",
+   "last": "Gallagher",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Quayside Legal. Joined 5 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Practice Manager at Quayside Legal. Joined 8 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 7705,
-   "first": "Owen",
-   "last": "Wright",
+   "first": "Will",
+   "last": "McCarthy",
    "title": "Senior Consultant",
    "seniority": "mid",
    "bio": "Senior Consultant at Quayside Legal. Joined 7 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Every proposal starts from a blank page. Three days per pitch. There has to be a better way.",
-    "One year at Quayside Legal today. Learned more than I expected."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 7706,
-   "first": "Bilal",
-   "last": "Okafor",
+   "first": "Fionn",
+   "last": "Sweeney",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Quayside Legal. Joined 8 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Analyst at Quayside Legal. Been here 4 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "78": [
   {
    "id": 7801,
-   "first": "Fionn",
-   "last": "Callaghan",
+   "first": "Hannah",
+   "last": "Dempsey",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Northstar HR. 14 years in professional services.",
+   "bio": "Managing Partner at Northstar HR. 16 years in professional services.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Utilisation slipped to 68% this year. Every point is real money for a firm our size."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "posts": []
   },
   {
    "id": 7802,
-   "first": "Ines",
-   "last": "Ward",
+   "first": "Femi",
+   "last": "Jones",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Northstar HR. 17 years in professional services.",
+   "bio": "COO at Northstar HR. 7 years in professional services.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "posts": []
   },
   {
    "id": 7803,
-   "first": "Aisling",
-   "last": "Ryan",
+   "first": "Katie",
+   "last": "Silva",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Northstar HR. Been here 6 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Director of Operations at Northstar HR. Joined 4 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 7804,
-   "first": "Isaac",
-   "last": "Power",
+   "first": "Zara",
+   "last": "Adeyemi",
    "title": "Practice Manager",
    "seniority": "manager",
    "bio": "Practice Manager at Northstar HR. Been here 2 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 7805,
-   "first": "Katie",
-   "last": "Silva",
+   "first": "Luke",
+   "last": "Reid",
    "title": "Senior Consultant",
    "seniority": "mid",
    "bio": "Senior Consultant at Northstar HR. Joined 7 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
-   ],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 7806,
-   "first": "Uma",
-   "last": "Ward",
+   "first": "Piotr",
+   "last": "Callaghan",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Northstar HR. Joined 5 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Analyst at Northstar HR. Joined 1 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "79": [
   {
    "id": 7901,
-   "first": "Callum",
-   "last": "Usman",
+   "first": "Tom",
+   "last": "Shaw",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Kite Marketing Studio. 20 years in professional services.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Clients want fixed fees and more for less. The billable hour model is under real pressure."
-   ],
-   "pains": [
-    "Clients pushing back on fees"
-   ]
+   "bio": "Managing Partner at Kite Marketing Studio. 16 years in professional services.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 7902,
-   "first": "Freya",
-   "last": "Hall",
+   "first": "Bilal",
+   "last": "Silva",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Kite Marketing Studio. 6 years in professional services.",
+   "bio": "COO at Kite Marketing Studio. 12 years in professional services.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Clients pushing back on fees"
-   ]
+   "posts": []
   },
   {
    "id": 7903,
-   "first": "Fatima",
-   "last": "Keane",
+   "first": "Luke",
+   "last": "Fitzgerald",
    "title": "Director of Operations",
    "seniority": "director",
    "bio": "Director of Operations at Kite Marketing Studio. Been here 5 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Lost three senior people to a competitor this year. Retention is our biggest strategic risk."
-   ],
-   "pains": [
-    "Losing good people to competitors"
-   ]
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 7904,
-   "first": "Hugo",
-   "last": "Bennett",
+   "first": "Olivia",
+   "last": "Turner",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Kite Marketing Studio. Been here 5 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Losing good people to competitors"
-   ]
+   "bio": "Practice Manager at Kite Marketing Studio. Joined 1 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 7905,
-   "first": "Tara",
-   "last": "Nolan",
+   "first": "Fionn",
+   "last": "Byrne",
    "title": "Senior Consultant",
    "seniority": "mid",
-   "bio": "Senior Consultant at Kite Marketing Studio. Been here 8 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Spent 11 hours this week on admin and reporting. That's 11 hours not helping clients."
-   ],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Senior Consultant at Kite Marketing Studio. Joined 3 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 7906,
-   "first": "Orla",
-   "last": "Khan",
+   "first": "Declan",
+   "last": "O'Neill",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Kite Marketing Studio. Joined 2 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Too much admin, not enough client work"
-   ]
+   "bio": "Analyst at Kite Marketing Studio. Joined 5 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "80": [
   {
    "id": 8001,
-   "first": "Nadia",
-   "last": "Flanagan",
+   "first": "Maeve",
+   "last": "Okafor",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Pennant IT Services. 15 years in professional services.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Utilisation slipped to 68% this year. Every point is real money for a firm our size.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "Managing Partner at Pennant IT Services. 5 years in professional services.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 8002,
-   "first": "Ewan",
-   "last": "Hughes",
+   "first": "Imogen",
+   "last": "Ward",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Pennant IT Services. 6 years in professional services.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [],
-   "pains": [
-    "Billable utilisation dropping"
-   ]
+   "bio": "COO at Pennant IT Services. 20 years in professional services.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 8003,
-   "first": "Owen",
-   "last": "Dempsey",
+   "first": "Daniel",
+   "last": "Nolan",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Pennant IT Services. Been here 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Small team, so they wear many hats and decide fast, but every euro counts.",
-   "posts": [
-    "Found €40k of unbilled time in one quarter. People forget to log hours. Billing leakage is real."
-   ],
-   "pains": [
-    "Unbilled time leaking out of the business"
-   ]
+   "bio": "Director of Operations at Pennant IT Services. Joined 1 years.",
+   "personality": "Protective of team time. Prefers email to calls. Small team, so they wear many hats and decide fast, but every euro counts.",
+   "posts": []
   },
   {
    "id": 8004,
-   "first": "Maeve",
-   "last": "Novak",
+   "first": "Joel",
+   "last": "Foster",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Pennant IT Services. Joined 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Unbilled time leaking out of the business"
-   ]
+   "bio": "Practice Manager at Pennant IT Services. Been here 4 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8005,
-   "first": "Gareth",
-   "last": "Iqbal",
+   "first": "Uma",
+   "last": "Ryan",
    "title": "Senior Consultant",
    "seniority": "mid",
-   "bio": "Senior Consultant at Pennant IT Services. Joined 7 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Every proposal starts from a blank page. Three days per pitch. There has to be a better way."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Senior Consultant at Pennant IT Services. Joined 2 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 8006,
-   "first": "Luke",
-   "last": "Okafor",
+   "first": "Eimear",
+   "last": "Silva",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Pennant IT Services. Joined 8 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Analyst at Pennant IT Services. Been here 7 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "81": [
   {
    "id": 8101,
-   "first": "Deirdre",
-   "last": "Dempsey",
+   "first": "Mei",
+   "last": "Fitzgerald",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Arclight Software. 17 years in saas.",
+   "bio": "CEO at Arclight Software. 12 years in saas.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Three new AI-native competitors in our space this year, all cheaper. Our answer can't just be 'we're more mature'.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "posts": []
   },
   {
    "id": 8102,
-   "first": "Fatima",
-   "last": "Fitzgerald",
+   "first": "Rosa",
+   "last": "Sweeney",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Arclight Software. 3 years in saas.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "bio": "CFO at Arclight Software. 9 years in saas.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8103,
-   "first": "Elena",
-   "last": "Novak",
+   "first": "Vanessa",
+   "last": "Vaughan",
    "title": "CTO",
    "seniority": "c-suite",
-   "bio": "CTO at Arclight Software. 15 years in saas.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "bio": "CTO at Arclight Software. 16 years in saas.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8104,
-   "first": "Femi",
-   "last": "Silva",
+   "first": "Elena",
+   "last": "Shaw",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Arclight Software. 7 years in saas.",
+   "bio": "Chief People Officer at Arclight Software. 9 years in saas.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "posts": []
   },
   {
    "id": 8105,
-   "first": "Owen",
-   "last": "Foster",
+   "first": "Aoife",
+   "last": "Doherty",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Arclight Software. 19 years in saas.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "bio": "Chief Revenue Officer at Arclight Software. 6 years in saas.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8106,
-   "first": "Aisling",
-   "last": "Khan",
+   "first": "Tom",
+   "last": "Nolan",
    "title": "VP Sales",
    "seniority": "vp",
-   "bio": "VP Sales at Arclight Software. 11 years in saas.",
+   "bio": "VP Sales at Arclight Software. 14 years in saas.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "posts": []
   },
   {
    "id": 8107,
-   "first": "Luke",
-   "last": "Hughes",
+   "first": "Nathan",
+   "last": "Khan",
    "title": "VP Engineering",
    "seniority": "vp",
    "bio": "VP Engineering at Arclight Software. 13 years in saas.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8108,
-   "first": "Imogen",
-   "last": "Thompson",
+   "first": "Priya",
+   "last": "Ward",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Arclight Software. 3 years in saas.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "bio": "VP Finance at Arclight Software. 4 years in saas.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8109,
-   "first": "Aoife",
-   "last": "Turner",
+   "first": "Hannah",
+   "last": "Quinn",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Arclight Software. 8 years in saas.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "bio": "VP Marketing at Arclight Software. 4 years in saas.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8110,
-   "first": "Catriona",
-   "last": "Davies",
+   "first": "Freya",
+   "last": "Young",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Arclight Software. 13 years in saas.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "bio": "VP Information Technology at Arclight Software. 17 years in saas.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8111,
-   "first": "Ruth",
+   "first": "Kwame",
    "last": "Wright",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Arclight Software. 13 years in saas.",
+   "bio": "VP Procurement at Arclight Software. 8 years in saas.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "AI-native competitors undercutting on price"
-   ]
+   "posts": []
   },
   {
    "id": 8112,
-   "first": "Maeve",
-   "last": "McCarthy",
+   "first": "Tara",
+   "last": "Turner",
    "title": "Head of Customer Success",
    "seniority": "director",
-   "bio": "Head of Customer Success at Arclight Software. Joined 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "New AEs take 6 months to ramp. That's half a year of salary before a single deal. Has to come down.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "bio": "Head of Customer Success at Arclight Software. Been here 6 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8113,
-   "first": "Oliver",
-   "last": "Walsh",
+   "first": "Declan",
+   "last": "Young",
    "title": "Director of Product",
    "seniority": "director",
-   "bio": "Director of Product at Arclight Software. Joined 7 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "bio": "Director of Product at Arclight Software. Joined 5 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8114,
-   "first": "Quinn",
-   "last": "Bennett",
+   "first": "Gareth",
+   "last": "Evans",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Arclight Software. Joined 8 years.",
+   "bio": "Director of IT at Arclight Software. Joined 1 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "posts": []
   },
   {
    "id": 8115,
-   "first": "Jade",
-   "last": "Lewis",
+   "first": "Joel",
+   "last": "Flanagan",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Arclight Software. Been here 6 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "bio": "Head of Procurement at Arclight Software. Joined 4 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8116,
-   "first": "Tara",
-   "last": "McCarthy",
+   "first": "Owen",
+   "last": "Tierney",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Arclight Software. Joined 5 years.",
+   "bio": "Head of Legal at Arclight Software. Been here 1 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "posts": []
   },
   {
    "id": 8117,
-   "first": "Fionn",
-   "last": "Dempsey",
+   "first": "Amira",
+   "last": "Moreno",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Arclight Software. Been here 5 years.",
+   "bio": "Head of Talent Acquisition at Arclight Software. Joined 2 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "posts": []
   },
   {
    "id": 8118,
-   "first": "Shane",
-   "last": "Hughes",
+   "first": "Keira",
+   "last": "Kowalski",
    "title": "Director of Marketing",
    "seniority": "director",
    "bio": "Director of Marketing at Arclight Software. Joined 5 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "posts": []
   },
   {
    "id": 8119,
-   "first": "Rebecca",
-   "last": "Usman",
+   "first": "Nadia",
+   "last": "Hall",
    "title": "RevOps Manager",
    "seniority": "manager",
-   "bio": "RevOps Manager at Arclight Software. Joined 2 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "bio": "RevOps Manager at Arclight Software. Been here 7 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8120,
-   "first": "Ines",
-   "last": "Fitzgerald",
+   "first": "Quinn",
+   "last": "Jones",
    "title": "Support Manager",
    "seniority": "manager",
-   "bio": "Support Manager at Arclight Software. Joined 1 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "bio": "Support Manager at Arclight Software. Been here 5 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8121,
-   "first": "Will",
-   "last": "Brennan",
+   "first": "Deirdre",
+   "last": "Lynch",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Arclight Software. Joined 2 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "bio": "IT Service Manager at Arclight Software. Been here 2 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8122,
-   "first": "Hannah",
-   "last": "Ryan",
+   "first": "Uma",
+   "last": "Thompson",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Arclight Software. Been here 1 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "bio": "Procurement Manager at Arclight Software. Been here 7 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8123,
-   "first": "Vanessa",
-   "last": "Shaw",
+   "first": "Ruth",
+   "last": "Young",
    "title": "HR Business Partner",
    "seniority": "manager",
    "bio": "HR Business Partner at Arclight Software. Been here 8 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "posts": []
   },
   {
    "id": 8124,
-   "first": "Ewan",
-   "last": "Ryan",
+   "first": "Olivia",
+   "last": "Lewis",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Arclight Software. Been here 2 years.",
+   "bio": "Marketing Manager at Arclight Software. Joined 4 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "posts": []
   },
   {
    "id": 8125,
-   "first": "Kwame",
-   "last": "Turner",
+   "first": "Catriona",
+   "last": "Gallagher",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Arclight Software. Joined 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "New sales reps take 6+ months to ramp"
-   ]
+   "bio": "Sales Manager at Arclight Software. Been here 5 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8126,
-   "first": "Lorcan",
-   "last": "Evans",
+   "first": "Rebecca",
+   "last": "Healy",
    "title": "Account Executive",
    "seniority": "mid",
-   "bio": "Account Executive at Arclight Software. Been here 8 years.",
+   "bio": "Account Executive at Arclight Software. Been here 2 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Every release means 300 new tickets. Love our customers, but my queue is a monster this week.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "posts": []
   },
   {
    "id": 8127,
-   "first": "Orla",
-   "last": "Hall",
+   "first": "Lorcan",
+   "last": "Walsh",
    "title": "Customer Success Manager",
    "seniority": "mid",
-   "bio": "Customer Success Manager at Arclight Software. Joined 1 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "bio": "Customer Success Manager at Arclight Software. Been here 2 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 8128,
    "first": "Leah",
-   "last": "Flanagan",
+   "last": "Bennett",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Arclight Software. Been here 5 years.",
+   "bio": "Business Analyst at Arclight Software. Been here 8 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Arclight Software today. Learned more than I expected."
-   ],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "posts": []
   },
   {
    "id": 8129,
-   "first": "Nadia",
-   "last": "Moreno",
+   "first": "Aisling",
+   "last": "Callaghan",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Arclight Software. Joined 7 years.",
+   "bio": "Financial Analyst at Arclight Software. Joined 2 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Arclight Software today. Learned more than I expected."
-   ],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "posts": []
   },
   {
    "id": 8130,
-   "first": "Joel",
-   "last": "Iqbal",
+   "first": "Ben",
+   "last": "Flanagan",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Arclight Software. Been here 3 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "One year at Arclight Software today. Learned more than I expected."
-   ],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "bio": "Recruiter at Arclight Software. Joined 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8131,
-   "first": "Marcus",
-   "last": "O'Neill",
+   "first": "Niall",
+   "last": "McCarthy",
    "title": "SDR",
    "seniority": "junior",
-   "bio": "SDR at Arclight Software. Joined 3 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "bio": "SDR at Arclight Software. Been here 2 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 8132,
-   "first": "Patrick",
-   "last": "McCarthy",
+   "first": "Harry",
+   "last": "Kavanagh",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Arclight Software. Joined 5 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "bio": "Executive Assistant to the CEO at Arclight Software. Joined 3 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 8133,
-   "first": "Grainne",
-   "last": "McCarthy",
+   "first": "Piotr",
+   "last": "Walsh",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Arclight Software. Been here 8 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Support tickets pile up after every release"
-   ]
+   "bio": "Graduate Analyst at Arclight Software. Been here 3 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "82": [
   {
    "id": 8201,
-   "first": "Aoife",
-   "last": "Usman",
+   "first": "Owen",
+   "last": "Keane",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Cobalt Intelligence. 6 years in AI and software.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Six enterprise pilots, zero production rollouts. Everyone loves the demo. Nobody signs.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "CEO at Cobalt Intelligence. 21 years in AI and software.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8202,
-   "first": "Zara",
-   "last": "Lynch",
+   "first": "Victor",
+   "last": "Keane",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Cobalt Intelligence. 6 years in AI and software.",
+   "bio": "CFO at Cobalt Intelligence. 14 years in AI and software.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 8203,
-   "first": "Ewan",
-   "last": "Davies",
+   "first": "Oliver",
+   "last": "Dempsey",
    "title": "Chief Scientist",
    "seniority": "c-suite",
-   "bio": "Chief Scientist at Cobalt Intelligence. 17 years in AI and software.",
+   "bio": "Chief Scientist at Cobalt Intelligence. 10 years in AI and software.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 8204,
-   "first": "Tom",
-   "last": "Iqbal",
+   "first": "Rosa",
+   "last": "Thompson",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Cobalt Intelligence. 13 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief People Officer at Cobalt Intelligence. 22 years in AI and software.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8205,
-   "first": "Vanessa",
-   "last": "Tierney",
+   "first": "Gareth",
+   "last": "McCarthy",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Cobalt Intelligence. 12 years in AI and software.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "Chief Revenue Officer at Cobalt Intelligence. 17 years in AI and software.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8206,
-   "first": "Hugo",
-   "last": "Grant",
+   "first": "Amira",
+   "last": "Hughes",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at Cobalt Intelligence. 22 years in AI and software.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "VP Engineering at Cobalt Intelligence. 16 years in AI and software.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8207,
-   "first": "Olivia",
-   "last": "Egan",
+   "first": "Wendy",
+   "last": "Lewis",
    "title": "VP Customer Success",
    "seniority": "vp",
-   "bio": "VP Customer Success at Cobalt Intelligence. 18 years in AI and software.",
+   "bio": "VP Customer Success at Cobalt Intelligence. 9 years in AI and software.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 8208,
-   "first": "Wendy",
-   "last": "Hall",
+   "first": "Jade",
+   "last": "Callaghan",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Cobalt Intelligence. 11 years in AI and software.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "VP Finance at Cobalt Intelligence. 18 years in AI and software.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8209,
-   "first": "Rosa",
-   "last": "Quinn",
+   "first": "Fionn",
+   "last": "Keane",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Cobalt Intelligence. 15 years in AI and software.",
+   "bio": "VP Marketing at Cobalt Intelligence. 6 years in AI and software.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 8210,
-   "first": "Quinn",
-   "last": "Silva",
+   "first": "Elena",
+   "last": "Callaghan",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Cobalt Intelligence. 18 years in AI and software.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "bio": "VP Information Technology at Cobalt Intelligence. 10 years in AI and software.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8211,
-   "first": "Victor",
-   "last": "Mitchell",
+   "first": "Orla",
+   "last": "Power",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Cobalt Intelligence. 19 years in AI and software.",
+   "bio": "VP Procurement at Cobalt Intelligence. 3 years in AI and software.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Enterprise customers stuck in pilots that never go live"
-   ]
+   "posts": []
   },
   {
    "id": 8212,
-   "first": "Keira",
-   "last": "Okafor",
+   "first": "Yusuf",
+   "last": "Chen",
    "title": "Head of Machine Learning",
    "seniority": "director",
-   "bio": "Head of Machine Learning at Cobalt Intelligence. Joined 7 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "New customers need a lot of hand-holding to get value from AI. Our CS team can't keep up.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Head of Machine Learning at Cobalt Intelligence. Been here 1 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8213,
-   "first": "Jade",
-   "last": "Chen",
+   "first": "Gemma",
+   "last": "Egan",
    "title": "Director of Partnerships",
    "seniority": "director",
-   "bio": "Director of Partnerships at Cobalt Intelligence. Been here 6 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Director of Partnerships at Cobalt Intelligence. Joined 2 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8214,
-   "first": "Samuel",
-   "last": "Flanagan",
+   "first": "Fatima",
+   "last": "Chen",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Cobalt Intelligence. Joined 1 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Director of IT at Cobalt Intelligence. Been here 1 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8215,
-   "first": "Harry",
-   "last": "Maguire",
+   "first": "Priya",
+   "last": "Davies",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Cobalt Intelligence. Been here 8 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Head of Procurement at Cobalt Intelligence. Been here 1 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8216,
-   "first": "Ines",
-   "last": "Young",
+   "first": "Nadia",
+   "last": "Keane",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Cobalt Intelligence. Been here 4 years.",
+   "bio": "Head of Legal at Cobalt Intelligence. Been here 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 8217,
-   "first": "Elena",
-   "last": "Callaghan",
+   "first": "Ben",
+   "last": "Thompson",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Cobalt Intelligence. Been here 1 years.",
+   "bio": "Head of Talent Acquisition at Cobalt Intelligence. Joined 5 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 8218,
-   "first": "Gemma",
-   "last": "Carroll",
+   "first": "Quinn",
+   "last": "Fitzgerald",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Cobalt Intelligence. Joined 2 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Director of Marketing at Cobalt Intelligence. Been here 1 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8219,
-   "first": "Declan",
-   "last": "Brennan",
+   "first": "Kwame",
+   "last": "Turner",
    "title": "ML Platform Manager",
    "seniority": "manager",
-   "bio": "ML Platform Manager at Cobalt Intelligence. Joined 2 years.",
+   "bio": "ML Platform Manager at Cobalt Intelligence. Been here 5 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 8220,
-   "first": "Maeve",
-   "last": "Gallagher",
+   "first": "Olivia",
+   "last": "Evans",
    "title": "Solutions Engineering Manager",
    "seniority": "manager",
-   "bio": "Solutions Engineering Manager at Cobalt Intelligence. Been here 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Solutions Engineering Manager at Cobalt Intelligence. Been here 7 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8221,
-   "first": "Diego",
-   "last": "Callaghan",
+   "first": "Niall",
+   "last": "Sweeney",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Cobalt Intelligence. Joined 6 years.",
+   "bio": "IT Service Manager at Cobalt Intelligence. Been here 6 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 8222,
-   "first": "Yusuf",
-   "last": "Callaghan",
+   "first": "Tomasz",
+   "last": "Jones",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Cobalt Intelligence. Been here 6 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Procurement Manager at Cobalt Intelligence. Been here 7 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8223,
-   "first": "Nadia",
-   "last": "McCarthy",
+   "first": "Uma",
+   "last": "Ahmed",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Cobalt Intelligence. Joined 4 years.",
+   "bio": "HR Business Partner at Cobalt Intelligence. Joined 8 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 8224,
-   "first": "Uma",
-   "last": "Silva",
+   "first": "Bilal",
+   "last": "Ahmed",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Cobalt Intelligence. Been here 8 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "bio": "Marketing Manager at Cobalt Intelligence. Been here 3 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8225,
-   "first": "Fatima",
-   "last": "Regan",
+   "first": "Aoife",
+   "last": "Flanagan",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Cobalt Intelligence. Joined 3 years.",
+   "bio": "Sales Manager at Cobalt Intelligence. Joined 8 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Customer success overwhelmed by onboarding"
-   ]
+   "posts": []
   },
   {
    "id": 8226,
-   "first": "Sinead",
-   "last": "Sweeney",
+   "first": "Piotr",
+   "last": "Callaghan",
    "title": "Machine Learning Engineer",
    "seniority": "mid",
-   "bio": "Machine Learning Engineer at Cobalt Intelligence. Joined 5 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Spent the whole sprint cleaning customer data instead of improving the model. 80% of AI work is plumbing."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Machine Learning Engineer at Cobalt Intelligence. Joined 4 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8227,
-   "first": "Isaac",
-   "last": "Flanagan",
+   "first": "Shane",
+   "last": "Young",
    "title": "Solutions Engineer",
    "seniority": "mid",
-   "bio": "Solutions Engineer at Cobalt Intelligence. Joined 5 years.",
-   "personality": "Busy but approachable.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Solutions Engineer at Cobalt Intelligence. Joined 7 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8228,
-   "first": "Ruth",
+   "first": "Catriona",
    "last": "Moreno",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Cobalt Intelligence. Been here 2 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Business Analyst at Cobalt Intelligence. Been here 8 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 8229,
-   "first": "Priya",
-   "last": "Flanagan",
+   "first": "Aisling",
+   "last": "Lewis",
    "title": "Financial Analyst",
    "seniority": "mid",
    "bio": "Financial Analyst at Cobalt Intelligence. Joined 8 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "posts": []
   },
   {
    "id": 8230,
-   "first": "Hannah",
-   "last": "Adeyemi",
+   "first": "Ines",
+   "last": "Kavanagh",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Cobalt Intelligence. Been here 4 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Recruiter at Cobalt Intelligence. Joined 8 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 8231,
-   "first": "Kwame",
-   "last": "Jones",
+   "first": "Jack",
+   "last": "Walsh",
    "title": "Junior Data Scientist",
    "seniority": "junior",
-   "bio": "Junior Data Scientist at Cobalt Intelligence. Been here 2 years.",
+   "bio": "Junior Data Scientist at Cobalt Intelligence. Been here 3 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "posts": []
   },
   {
    "id": 8232,
-   "first": "Ciara",
-   "last": "Ryan",
+   "first": "Rebecca",
+   "last": "Ward",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Cobalt Intelligence. Been here 7 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Executive Assistant to the CEO at Cobalt Intelligence. Joined 8 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 8233,
-   "first": "Catriona",
-   "last": "Gallagher",
+   "first": "Samuel",
+   "last": "Evans",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Cobalt Intelligence. Joined 6 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "One year at Cobalt Intelligence today. Learned more than I expected."
-   ],
-   "pains": [
-    "Poor customer data quality breaks models"
-   ]
+   "bio": "Graduate Analyst at Cobalt Intelligence. Been here 8 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "83": [
   {
    "id": 8301,
-   "first": "Joel",
-   "last": "Sweeney",
+   "first": "Imogen",
+   "last": "Turner",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Ironveil Security. 9 years in cyber security.",
+   "bio": "CEO at Ironveil Security. 16 years in cyber security.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "We pay for 31 security tools. I'd bet a third overlap. Consolidation is top of my list for next year.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "posts": []
   },
   {
    "id": 8302,
-   "first": "Wendy",
-   "last": "Usman",
+   "first": "Ruth",
+   "last": "Moreno",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Ironveil Security. 4 years in cyber security.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "CFO at Ironveil Security. 3 years in cyber security.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8303,
-   "first": "Zara",
-   "last": "Sweeney",
+   "first": "Grainne",
+   "last": "Mitchell",
    "title": "CISO",
    "seniority": "c-suite",
-   "bio": "CISO at Ironveil Security. 22 years in cyber security.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "CISO at Ironveil Security. 5 years in cyber security.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8304,
-   "first": "Amira",
-   "last": "Egan",
+   "first": "Patrick",
+   "last": "Quinn",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Ironveil Security. 18 years in cyber security.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "Chief People Officer at Ironveil Security. 5 years in cyber security.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8305,
-   "first": "Elena",
-   "last": "Usman",
+   "first": "Amira",
+   "last": "Shaw",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Ironveil Security. 7 years in cyber security.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "Chief Revenue Officer at Ironveil Security. 8 years in cyber security.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8306,
-   "first": "Gareth",
-   "last": "Sweeney",
+   "first": "Sinead",
+   "last": "Usman",
    "title": "VP Security Operations",
    "seniority": "vp",
-   "bio": "VP Security Operations at Ironveil Security. 13 years in cyber security.",
+   "bio": "VP Security Operations at Ironveil Security. 8 years in cyber security.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "posts": []
   },
   {
    "id": 8307,
-   "first": "Catriona",
-   "last": "Walsh",
+   "first": "Zara",
+   "last": "Byrne",
    "title": "VP Sales",
    "seniority": "vp",
-   "bio": "VP Sales at Ironveil Security. 15 years in cyber security.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "VP Sales at Ironveil Security. 5 years in cyber security.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8308,
-   "first": "Leah",
-   "last": "Shaw",
+   "first": "Freya",
+   "last": "Flanagan",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Ironveil Security. 12 years in cyber security.",
+   "bio": "VP Finance at Ironveil Security. 5 years in cyber security.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "posts": []
   },
   {
    "id": 8309,
-   "first": "Tara",
-   "last": "Khan",
+   "first": "Lorcan",
+   "last": "Brennan",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Ironveil Security. 11 years in cyber security.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "VP Marketing at Ironveil Security. 13 years in cyber security.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8310,
-   "first": "Jade",
-   "last": "Walsh",
+   "first": "Luke",
+   "last": "Shaw",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Ironveil Security. 10 years in cyber security.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "VP Information Technology at Ironveil Security. 3 years in cyber security.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8311,
-   "first": "Lorcan",
-   "last": "Usman",
+   "first": "Chloe",
+   "last": "Lynch",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Ironveil Security. 8 years in cyber security.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Too many overlapping security tools and licences"
-   ]
+   "bio": "VP Procurement at Ironveil Security. 7 years in cyber security.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8312,
-   "first": "Ruth",
-   "last": "Ward",
+   "first": "Declan",
+   "last": "Fitzgerald",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at Ironveil Security. Been here 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Ran a tabletop exercise. Half our runbooks referenced systems we retired last year. Humbling.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "bio": "Director of Threat Intelligence at Ironveil Security. Joined 1 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8313,
-   "first": "Olivia",
-   "last": "McCarthy",
+   "first": "Callum",
+   "last": "Doherty",
    "title": "Head of Compliance",
    "seniority": "director",
-   "bio": "Head of Compliance at Ironveil Security. Joined 3 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "bio": "Head of Compliance at Ironveil Security. Been here 6 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8314,
-   "first": "Grainne",
-   "last": "Grant",
+   "first": "Elena",
+   "last": "Tierney",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Ironveil Security. Joined 5 years.",
+   "bio": "Director of IT at Ironveil Security. Been here 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "posts": []
   },
   {
    "id": 8315,
-   "first": "Jack",
-   "last": "Walsh",
+   "first": "Keira",
+   "last": "Quinn",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Ironveil Security. Been here 1 years.",
+   "bio": "Head of Procurement at Ironveil Security. Joined 6 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "posts": []
   },
   {
    "id": 8316,
-   "first": "Kwame",
-   "last": "Regan",
+   "first": "Leah",
+   "last": "Thompson",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Ironveil Security. Been here 2 years.",
+   "bio": "Head of Legal at Ironveil Security. Joined 8 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "posts": []
   },
   {
    "id": 8317,
-   "first": "Ben",
-   "last": "Patel",
+   "first": "Rosa",
+   "last": "Ward",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Ironveil Security. Been here 3 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "bio": "Head of Talent Acquisition at Ironveil Security. Been here 7 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8318,
-   "first": "Priya",
-   "last": "Healy",
+   "first": "Nathan",
+   "last": "Tierney",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Ironveil Security. Been here 5 years.",
+   "bio": "Director of Marketing at Ironveil Security. Been here 1 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "posts": []
   },
   {
    "id": 8319,
-   "first": "Piotr",
-   "last": "Doherty",
+   "first": "Ewan",
+   "last": "Ahmed",
    "title": "SOC Manager",
    "seniority": "manager",
-   "bio": "SOC Manager at Ironveil Security. Joined 8 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "bio": "SOC Manager at Ironveil Security. Been here 6 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8320,
-   "first": "Gemma",
-   "last": "Carroll",
+   "first": "Mei",
+   "last": "Chen",
    "title": "GRC Manager",
    "seniority": "manager",
-   "bio": "GRC Manager at Ironveil Security. Been here 7 years.",
+   "bio": "GRC Manager at Ironveil Security. Joined 1 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "posts": []
   },
   {
    "id": 8321,
-   "first": "Harry",
-   "last": "Thompson",
+   "first": "Diego",
+   "last": "Stewart",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Ironveil Security. Been here 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "bio": "IT Service Manager at Ironveil Security. Been here 7 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8322,
-   "first": "Victor",
-   "last": "Keane",
+   "first": "Vanessa",
+   "last": "Vaughan",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Ironveil Security. Been here 2 years.",
+   "bio": "Procurement Manager at Ironveil Security. Joined 1 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "posts": []
   },
   {
    "id": 8323,
-   "first": "Samuel",
-   "last": "Vaughan",
+   "first": "Harry",
+   "last": "Power",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Ironveil Security. Joined 8 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "bio": "HR Business Partner at Ironveil Security. Joined 1 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8324,
-   "first": "Bilal",
-   "last": "Patel",
+   "first": "Piotr",
+   "last": "Khan",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Ironveil Security. Been here 2 years.",
+   "bio": "Marketing Manager at Ironveil Security. Joined 6 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "posts": []
   },
   {
    "id": 8325,
-   "first": "Deirdre",
-   "last": "Gallagher",
+   "first": "Quinn",
+   "last": "Walsh",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Ironveil Security. Joined 2 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Incident response plans are out of date"
-   ]
+   "bio": "Sales Manager at Ironveil Security. Been here 2 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8326,
-   "first": "Femi",
-   "last": "Novak",
+   "first": "Joel",
+   "last": "Vaughan",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at Ironveil Security. Been here 7 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "SOC 2 audit prep season. Three weeks of screenshots and spreadsheets. There must be a better way."
-   ],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "bio": "Security Engineer at Ironveil Security. Been here 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8327,
-   "first": "Tomasz",
-   "last": "Ward",
+   "first": "Rebecca",
+   "last": "Kowalski",
    "title": "Security Analyst",
    "seniority": "mid",
-   "bio": "Security Analyst at Ironveil Security. Been here 2 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "bio": "Security Analyst at Ironveil Security. Been here 4 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8328,
-   "first": "Yusuf",
-   "last": "Maguire",
+   "first": "Uma",
+   "last": "Khan",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Ironveil Security. Been here 2 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "bio": "Business Analyst at Ironveil Security. Been here 6 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 8329,
-   "first": "Imogen",
-   "last": "McCarthy",
+   "first": "Olivia",
+   "last": "O'Neill",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Ironveil Security. Joined 5 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "One year at Ironveil Security today. Learned more than I expected."
-   ],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "bio": "Financial Analyst at Ironveil Security. Been here 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8330,
-   "first": "Ines",
+   "first": "Wendy",
    "last": "Walsh",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Ironveil Security. Joined 3 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "bio": "Recruiter at Ironveil Security. Joined 1 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8331,
-   "first": "Fionn",
-   "last": "Thompson",
+   "first": "Ravi",
+   "last": "Adeyemi",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at Ironveil Security. Been here 3 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "bio": "Junior SOC Analyst at Ironveil Security. Been here 6 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 8332,
-   "first": "Ewan",
-   "last": "Usman",
+   "first": "Aisling",
+   "last": "Ryan",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Ironveil Security. Been here 7 years.",
+   "bio": "Executive Assistant to the CEO at Ironveil Security. Been here 6 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "posts": []
   },
   {
    "id": 8333,
-   "first": "Orla",
-   "last": "Silva",
+   "first": "Deirdre",
+   "last": "Maguire",
    "title": "Graduate Analyst",
    "seniority": "junior",
    "bio": "Graduate Analyst at Ironveil Security. Been here 6 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "One year at Ironveil Security today. Learned more than I expected."
-   ],
-   "pains": [
-    "Compliance evidence gathering eats weeks every audit"
-   ]
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "84": [
   {
    "id": 8401,
-   "first": "Hannah",
-   "last": "Shaw",
+   "first": "Rebecca",
+   "last": "Ahmed",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Harbourpoint Bank. 22 years in fintech.",
+   "bio": "CEO at Harbourpoint Bank. 10 years in fintech.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Took 9 months to go live with our last banking partner. Partnerships shouldn't take that long."
-   ],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "posts": []
   },
   {
    "id": 8402,
-   "first": "Olivia",
-   "last": "Keane",
+   "first": "Grainne",
+   "last": "Chen",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Harbourpoint Bank. 4 years in fintech.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "CFO at Harbourpoint Bank. 14 years in fintech.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8403,
-   "first": "Wendy",
-   "last": "Okafor",
+   "first": "Keira",
+   "last": "Ryan",
    "title": "Chief Risk Officer",
    "seniority": "c-suite",
-   "bio": "Chief Risk Officer at Harbourpoint Bank. 16 years in fintech.",
+   "bio": "Chief Risk Officer at Harbourpoint Bank. 15 years in fintech.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "posts": []
   },
   {
    "id": 8404,
-   "first": "Harry",
-   "last": "Sweeney",
+   "first": "Piotr",
+   "last": "Turner",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Harbourpoint Bank. 8 years in fintech.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "Chief People Officer at Harbourpoint Bank. 10 years in fintech.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8405,
-   "first": "Gareth",
-   "last": "Power",
+   "first": "Zara",
+   "last": "Maguire",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Harbourpoint Bank. 3 years in fintech.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "Chief Revenue Officer at Harbourpoint Bank. 8 years in fintech.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8406,
-   "first": "Isaac",
-   "last": "Silva",
+   "first": "Rosa",
+   "last": "Shaw",
    "title": "VP Product",
    "seniority": "vp",
-   "bio": "VP Product at Harbourpoint Bank. 20 years in fintech.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "VP Product at Harbourpoint Bank. 12 years in fintech.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8407,
-   "first": "Declan",
-   "last": "Usman",
+   "first": "Hugo",
+   "last": "Bennett",
    "title": "VP Compliance",
    "seniority": "vp",
-   "bio": "VP Compliance at Harbourpoint Bank. 20 years in fintech.",
+   "bio": "VP Compliance at Harbourpoint Bank. 16 years in fintech.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "posts": []
   },
   {
    "id": 8408,
-   "first": "Quinn",
-   "last": "Gallagher",
+   "first": "Callum",
+   "last": "Turner",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Harbourpoint Bank. 22 years in fintech.",
+   "bio": "VP Finance at Harbourpoint Bank. 5 years in fintech.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "posts": []
   },
   {
    "id": 8409,
-   "first": "Vanessa",
-   "last": "Jones",
+   "first": "Maeve",
+   "last": "Ryan",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Harbourpoint Bank. 18 years in fintech.",
+   "bio": "VP Marketing at Harbourpoint Bank. 8 years in fintech.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "posts": []
   },
   {
    "id": 8410,
-   "first": "Sinead",
-   "last": "Hall",
+   "first": "Ewan",
+   "last": "Ward",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Harbourpoint Bank. 19 years in fintech.",
+   "bio": "VP Information Technology at Harbourpoint Bank. 7 years in fintech.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "posts": []
   },
   {
    "id": 8411,
-   "first": "Gemma",
-   "last": "Quinn",
+   "first": "Diego",
+   "last": "Maguire",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Harbourpoint Bank. 20 years in fintech.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Partner bank integrations take too long"
-   ]
+   "bio": "VP Procurement at Harbourpoint Bank. 3 years in fintech.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8412,
-   "first": "Orla",
-   "last": "Evans",
+   "first": "Catriona",
+   "last": "Nolan",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at Harbourpoint Bank. Been here 6 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Fraud attempts up 3x since we launched instant payments. The fraudsters are fast learners."
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "bio": "Head of Fraud at Harbourpoint Bank. Been here 8 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8413,
-   "first": "Piotr",
-   "last": "Turner",
+   "first": "Jade",
+   "last": "Ward",
    "title": "Director of Payments Operations",
    "seniority": "director",
-   "bio": "Director of Payments Operations at Harbourpoint Bank. Joined 2 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "bio": "Director of Payments Operations at Harbourpoint Bank. Been here 1 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8414,
-   "first": "Victor",
-   "last": "Doherty",
+   "first": "Adaeze",
+   "last": "Chen",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Harbourpoint Bank. Been here 5 years.",
+   "bio": "Director of IT at Harbourpoint Bank. Joined 6 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "posts": []
   },
   {
    "id": 8415,
-   "first": "Marcus",
-   "last": "Power",
+   "first": "Leah",
+   "last": "Walsh",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Harbourpoint Bank. Joined 7 years.",
+   "bio": "Head of Procurement at Harbourpoint Bank. Been here 1 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "posts": []
   },
   {
    "id": 8416,
-   "first": "Jade",
-   "last": "Fitzgerald",
+   "first": "Chloe",
+   "last": "Chen",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Harbourpoint Bank. Joined 5 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "bio": "Head of Legal at Harbourpoint Bank. Been here 6 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8417,
    "first": "Tara",
-   "last": "Stewart",
+   "last": "Vaughan",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Harbourpoint Bank. Joined 5 years.",
+   "bio": "Head of Talent Acquisition at Harbourpoint Bank. Been here 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "posts": []
   },
   {
    "id": 8418,
-   "first": "Eimear",
-   "last": "Regan",
+   "first": "Aisling",
+   "last": "Callaghan",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Harbourpoint Bank. Joined 7 years.",
+   "bio": "Director of Marketing at Harbourpoint Bank. Joined 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "posts": []
   },
   {
    "id": 8419,
-   "first": "Callum",
+   "first": "Ravi",
    "last": "Usman",
    "title": "Compliance Manager",
    "seniority": "manager",
    "bio": "Compliance Manager at Harbourpoint Bank. Joined 8 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8420,
-   "first": "Diego",
-   "last": "Ryan",
+   "first": "Bilal",
+   "last": "Thompson",
    "title": "Customer Operations Manager",
    "seniority": "manager",
-   "bio": "Customer Operations Manager at Harbourpoint Bank. Been here 1 years.",
+   "bio": "Customer Operations Manager at Harbourpoint Bank. Joined 4 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "posts": []
   },
   {
    "id": 8421,
-   "first": "Rosa",
-   "last": "Carroll",
+   "first": "Elena",
+   "last": "Ward",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Harbourpoint Bank. Joined 4 years.",
+   "bio": "IT Service Manager at Harbourpoint Bank. Been here 1 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "posts": []
   },
   {
    "id": 8422,
-   "first": "Daniel",
-   "last": "Novak",
+   "first": "Imogen",
+   "last": "Ward",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Harbourpoint Bank. Joined 7 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "bio": "Procurement Manager at Harbourpoint Bank. Joined 6 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8423,
-   "first": "Ben",
-   "last": "Gallagher",
+   "first": "Freya",
+   "last": "Walsh",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Harbourpoint Bank. Joined 2 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "bio": "HR Business Partner at Harbourpoint Bank. Joined 4 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8424,
-   "first": "Amira",
-   "last": "Flanagan",
+   "first": "Kwame",
+   "last": "Byrne",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Harbourpoint Bank. Joined 2 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "bio": "Marketing Manager at Harbourpoint Bank. Been here 4 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8425,
-   "first": "Elena",
-   "last": "Carroll",
+   "first": "Luke",
+   "last": "Hughes",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Harbourpoint Bank. Joined 4 years.",
+   "bio": "Sales Manager at Harbourpoint Bank. Been here 7 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Fraud losses rising"
-   ]
+   "posts": []
   },
   {
    "id": 8426,
-   "first": "Yusuf",
-   "last": "Lewis",
+   "first": "Deirdre",
+   "last": "Lynch",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at Harbourpoint Bank. Been here 4 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Reconciled 4,000 transactions by hand this month-end. Please tell me others still do this too.",
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Payments Analyst at Harbourpoint Bank. Joined 8 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 8427,
-   "first": "Ravi",
-   "last": "Dempsey",
+   "first": "Wendy",
+   "last": "Wright",
    "title": "KYC Analyst",
    "seniority": "mid",
-   "bio": "KYC Analyst at Harbourpoint Bank. Joined 3 years.",
+   "bio": "KYC Analyst at Harbourpoint Bank. Joined 1 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "posts": []
   },
   {
    "id": 8428,
-   "first": "Jack",
-   "last": "Stewart",
+   "first": "Will",
+   "last": "Regan",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Harbourpoint Bank. Been here 1 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Business Analyst at Harbourpoint Bank. Joined 2 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 8429,
-   "first": "Zara",
-   "last": "Turner",
+   "first": "Tom",
+   "last": "Foster",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Harbourpoint Bank. Joined 5 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "One year at Harbourpoint Bank today. Learned more than I expected."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Financial Analyst at Harbourpoint Bank. Been here 1 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 8430,
-   "first": "Patrick",
-   "last": "Flanagan",
+   "first": "Owen",
+   "last": "Bennett",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Harbourpoint Bank. Joined 2 years.",
+   "bio": "Recruiter at Harbourpoint Bank. Been here 4 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "One year at Harbourpoint Bank today. Learned more than I expected."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "posts": []
   },
   {
    "id": 8431,
-   "first": "Will",
-   "last": "Ward",
+   "first": "Isaac",
+   "last": "Kavanagh",
    "title": "Customer Support Associate",
    "seniority": "junior",
-   "bio": "Customer Support Associate at Harbourpoint Bank. Joined 2 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "One year at Harbourpoint Bank today. Learned more than I expected."
-   ],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Customer Support Associate at Harbourpoint Bank. Been here 4 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 8432,
-   "first": "Bilal",
-   "last": "Walsh",
+   "first": "Uma",
+   "last": "Doherty",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
    "bio": "Executive Assistant to the CEO at Harbourpoint Bank. Been here 5 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "posts": []
   },
   {
    "id": 8433,
-   "first": "Nathan",
-   "last": "Callaghan",
+   "first": "Patrick",
+   "last": "McCarthy",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Harbourpoint Bank. Joined 6 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Reconciliation still done by hand"
-   ]
+   "bio": "Graduate Analyst at Harbourpoint Bank. Been here 1 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "85": [
   {
    "id": 8501,
-   "first": "Quinn",
-   "last": "Byrne",
+   "first": "Shane",
+   "last": "Hughes",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Kestrel Automotive. 17 years in manufacturing.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Energy is now our second-biggest cost after people. Every efficiency project is back on the table.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "CEO at Kestrel Automotive. 7 years in manufacturing.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8502,
-   "first": "Amira",
-   "last": "Young",
+   "first": "Owen",
+   "last": "Ahmed",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Kestrel Automotive. 5 years in manufacturing.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "CFO at Kestrel Automotive. 14 years in manufacturing.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8503,
-   "first": "Tom",
-   "last": "Gallagher",
+   "first": "Rebecca",
+   "last": "Usman",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Kestrel Automotive. 8 years in manufacturing.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "COO at Kestrel Automotive. 16 years in manufacturing.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8504,
-   "first": "Harry",
-   "last": "Davies",
+   "first": "Declan",
+   "last": "Sweeney",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Kestrel Automotive. 20 years in manufacturing.",
+   "bio": "Chief People Officer at Kestrel Automotive. 13 years in manufacturing.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "posts": []
   },
   {
    "id": 8505,
-   "first": "Priya",
-   "last": "Wright",
+   "first": "Fionn",
+   "last": "Ahmed",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
    "bio": "Chief Revenue Officer at Kestrel Automotive. 16 years in manufacturing.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "posts": []
   },
   {
    "id": 8506,
-   "first": "Joel",
-   "last": "Flanagan",
+   "first": "Maeve",
+   "last": "Callaghan",
    "title": "VP Operations",
    "seniority": "vp",
-   "bio": "VP Operations at Kestrel Automotive. 6 years in manufacturing.",
+   "bio": "VP Operations at Kestrel Automotive. 7 years in manufacturing.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "posts": []
   },
   {
    "id": 8507,
-   "first": "Ruth",
-   "last": "Chen",
+   "first": "Katie",
+   "last": "Healy",
    "title": "VP Supply Chain",
    "seniority": "vp",
-   "bio": "VP Supply Chain at Kestrel Automotive. 5 years in manufacturing.",
+   "bio": "VP Supply Chain at Kestrel Automotive. 9 years in manufacturing.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "posts": []
   },
   {
    "id": 8508,
-   "first": "Yusuf",
-   "last": "Hall",
+   "first": "Ruth",
+   "last": "Jones",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Kestrel Automotive. 17 years in manufacturing.",
+   "bio": "VP Finance at Kestrel Automotive. 10 years in manufacturing.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "posts": []
   },
   {
    "id": 8509,
-   "first": "Victor",
-   "last": "Jones",
+   "first": "Harry",
+   "last": "Khan",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Kestrel Automotive. 9 years in manufacturing.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "VP Marketing at Kestrel Automotive. 6 years in manufacturing.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8510,
-   "first": "Callum",
-   "last": "Young",
+   "first": "Ciara",
+   "last": "Hall",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Kestrel Automotive. 5 years in manufacturing.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "bio": "VP Information Technology at Kestrel Automotive. 21 years in manufacturing.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8511,
-   "first": "Jack",
-   "last": "Doherty",
+   "first": "Adaeze",
+   "last": "McCarthy",
    "title": "VP Procurement",
    "seniority": "vp",
    "bio": "VP Procurement at Kestrel Automotive. 13 years in manufacturing.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Energy costs squeezing margins"
-   ]
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8512,
-   "first": "Nadia",
-   "last": "Power",
+   "first": "Sinead",
+   "last": "Thompson",
    "title": "Plant Director",
    "seniority": "director",
-   "bio": "Plant Director at Kestrel Automotive. Joined 6 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Three technician roles open since spring. The skills gap on the factory floor is real.",
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "Plant Director at Kestrel Automotive. Joined 2 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8513,
-   "first": "Rebecca",
-   "last": "Kavanagh",
+   "first": "Quinn",
+   "last": "Regan",
    "title": "Head of Quality",
    "seniority": "director",
-   "bio": "Head of Quality at Kestrel Automotive. Been here 8 years.",
+   "bio": "Head of Quality at Kestrel Automotive. Been here 3 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 8514,
-   "first": "Rosa",
-   "last": "Novak",
+   "first": "Tara",
+   "last": "Kowalski",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Kestrel Automotive. Joined 4 years.",
+   "bio": "Director of IT at Kestrel Automotive. Joined 5 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 8515,
-   "first": "Zara",
-   "last": "Mitchell",
+   "first": "Ines",
+   "last": "Evans",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Kestrel Automotive. Joined 5 years.",
+   "bio": "Head of Procurement at Kestrel Automotive. Been here 3 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 8516,
-   "first": "Orla",
-   "last": "Kowalski",
+   "first": "Fatima",
+   "last": "Mitchell",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Kestrel Automotive. Joined 8 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "Head of Legal at Kestrel Automotive. Been here 3 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8517,
-   "first": "Ciara",
-   "last": "Silva",
+   "first": "Hannah",
+   "last": "Khan",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Kestrel Automotive. Been here 2 years.",
+   "bio": "Head of Talent Acquisition at Kestrel Automotive. Been here 8 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 8518,
-   "first": "Sinead",
-   "last": "Iqbal",
+   "first": "Oliver",
+   "last": "Foster",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Kestrel Automotive. Been here 1 years.",
+   "bio": "Director of Marketing at Kestrel Automotive. Joined 4 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 8519,
-   "first": "Gareth",
-   "last": "Bennett",
+   "first": "Grainne",
+   "last": "Novak",
    "title": "Maintenance Manager",
    "seniority": "manager",
-   "bio": "Maintenance Manager at Kestrel Automotive. Joined 6 years.",
+   "bio": "Maintenance Manager at Kestrel Automotive. Joined 4 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 8520,
-   "first": "Niall",
-   "last": "Reid",
+   "first": "Ravi",
+   "last": "Maguire",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Kestrel Automotive. Been here 8 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "Production Manager at Kestrel Automotive. Been here 5 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8521,
-   "first": "Kwame",
-   "last": "Stewart",
+   "first": "Leah",
+   "last": "Ward",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Kestrel Automotive. Been here 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "IT Service Manager at Kestrel Automotive. Been here 3 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8522,
-   "first": "Grainne",
-   "last": "Hall",
+   "first": "Rosa",
+   "last": "Ahmed",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Kestrel Automotive. Been here 7 years.",
+   "bio": "Procurement Manager at Kestrel Automotive. Joined 3 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 8523,
-   "first": "Eimear",
-   "last": "Moreno",
+   "first": "Daniel",
+   "last": "Mitchell",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Kestrel Automotive. Been here 5 years.",
+   "bio": "HR Business Partner at Kestrel Automotive. Been here 7 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "posts": []
   },
   {
    "id": 8524,
-   "first": "Lorcan",
-   "last": "Young",
+   "first": "Niall",
+   "last": "Evans",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Kestrel Automotive. Been here 3 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "Marketing Manager at Kestrel Automotive. Joined 8 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8525,
-   "first": "Catriona",
-   "last": "Reid",
+   "first": "Keira",
+   "last": "Egan",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Kestrel Automotive. Been here 7 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Can't hire skilled operators and technicians"
-   ]
+   "bio": "Sales Manager at Kestrel Automotive. Been here 1 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8526,
-   "first": "Adaeze",
-   "last": "Patel",
+   "first": "Nathan",
+   "last": "Hall",
    "title": "Quality Engineer",
    "seniority": "mid",
-   "bio": "Quality Engineer at Kestrel Automotive. Been here 6 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Our quality report is 12 spreadsheets stitched together every Friday. Half my day, every week."
-   ],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "bio": "Quality Engineer at Kestrel Automotive. Been here 4 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 8527,
-   "first": "Piotr",
-   "last": "Young",
+   "first": "Hugo",
+   "last": "Quinn",
    "title": "Production Planner",
    "seniority": "mid",
-   "bio": "Production Planner at Kestrel Automotive. Joined 5 years.",
+   "bio": "Production Planner at Kestrel Automotive. Joined 1 years.",
    "personality": "Busy but approachable.",
-   "posts": [],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "posts": []
   },
   {
    "id": 8528,
-   "first": "Chloe",
-   "last": "Carroll",
+   "first": "Aoife",
+   "last": "Usman",
    "title": "Business Analyst",
    "seniority": "mid",
    "bio": "Business Analyst at Kestrel Automotive. Joined 2 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "posts": []
   },
   {
    "id": 8529,
-   "first": "Gemma",
-   "last": "Carroll",
+   "first": "Zara",
+   "last": "Lynch",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Kestrel Automotive. Joined 8 years.",
+   "bio": "Financial Analyst at Kestrel Automotive. Joined 4 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "One year at Kestrel Automotive today. Learned more than I expected."
-   ],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "posts": []
   },
   {
    "id": 8530,
-   "first": "Ravi",
-   "last": "Power",
+   "first": "Freya",
+   "last": "Okafor",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Kestrel Automotive. Been here 6 years.",
+   "bio": "Recruiter at Kestrel Automotive. Been here 8 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "One year at Kestrel Automotive today. Learned more than I expected."
-   ],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "posts": []
   },
   {
    "id": 8531,
-   "first": "Fionn",
-   "last": "Okafor",
+   "first": "Vanessa",
+   "last": "Tierney",
    "title": "Process Technician",
    "seniority": "junior",
-   "bio": "Process Technician at Kestrel Automotive. Joined 7 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Kestrel Automotive today. Learned more than I expected."
-   ],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "bio": "Process Technician at Kestrel Automotive. Joined 6 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   },
   {
    "id": 8532,
    "first": "Jade",
-   "last": "Keane",
+   "last": "Callaghan",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Kestrel Automotive. Been here 8 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "One year at Kestrel Automotive today. Learned more than I expected."
-   ],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "bio": "Executive Assistant to the CEO at Kestrel Automotive. Been here 7 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   },
   {
    "id": 8533,
-   "first": "Femi",
-   "last": "Quinn",
+   "first": "Tom",
+   "last": "Flanagan",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Kestrel Automotive. Been here 6 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Quality data stuck in spreadsheets"
-   ]
+   "bio": "Graduate Analyst at Kestrel Automotive. Been here 7 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "86": [
   {
    "id": 8601,
-   "first": "Elena",
-   "last": "Patel",
+   "first": "Bilal",
+   "last": "Iqbal",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Glenmore Foods Group. 3 years in food & beverage.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Cocoa up again. Packaging up again. Pricing conversations with buyers are getting harder every month.",
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "CEO at Glenmore Foods Group. 13 years in food & beverage.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8602,
-   "first": "Freya",
-   "last": "Evans",
+   "first": "Yusuf",
+   "last": "Adeyemi",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Glenmore Foods Group. 16 years in food & beverage.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "CFO at Glenmore Foods Group. 8 years in food & beverage.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8603,
-   "first": "Owen",
-   "last": "Healy",
+   "first": "Quinn",
+   "last": "Sweeney",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Glenmore Foods Group. 19 years in food & beverage.",
+   "bio": "COO at Glenmore Foods Group. 15 years in food & beverage.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "posts": []
   },
   {
    "id": 8604,
-   "first": "Sinead",
-   "last": "Usman",
+   "first": "Fionn",
+   "last": "Lynch",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Glenmore Foods Group. 9 years in food & beverage.",
+   "bio": "Chief People Officer at Glenmore Foods Group. 13 years in food & beverage.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "posts": []
   },
   {
    "id": 8605,
-   "first": "Tom",
-   "last": "Gallagher",
+   "first": "Isaac",
+   "last": "Power",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Glenmore Foods Group. 18 years in food & beverage.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "Chief Revenue Officer at Glenmore Foods Group. 8 years in food & beverage.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8606,
-   "first": "Hugo",
-   "last": "Iqbal",
+   "first": "Gareth",
+   "last": "Mitchell",
    "title": "VP Sales & Retail",
    "seniority": "vp",
-   "bio": "VP Sales & Retail at Glenmore Foods Group. 4 years in food & beverage.",
+   "bio": "VP Sales & Retail at Glenmore Foods Group. 18 years in food & beverage.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "posts": []
   },
   {
    "id": 8607,
-   "first": "Adaeze",
-   "last": "Egan",
+   "first": "Daniel",
+   "last": "Reid",
    "title": "VP Operations",
    "seniority": "vp",
-   "bio": "VP Operations at Glenmore Foods Group. 6 years in food & beverage.",
+   "bio": "VP Operations at Glenmore Foods Group. 13 years in food & beverage.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "posts": []
   },
   {
    "id": 8608,
-   "first": "Isaac",
-   "last": "Flanagan",
+   "first": "Adaeze",
+   "last": "Reid",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Glenmore Foods Group. 11 years in food & beverage.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "VP Finance at Glenmore Foods Group. 13 years in food & beverage.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8609,
-   "first": "Kwame",
-   "last": "Kavanagh",
+   "first": "Priya",
+   "last": "Byrne",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Glenmore Foods Group. 6 years in food & beverage.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "VP Marketing at Glenmore Foods Group. 20 years in food & beverage.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8610,
-   "first": "Aoife",
-   "last": "Lewis",
+   "first": "Luke",
+   "last": "Walsh",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Glenmore Foods Group. 20 years in food & beverage.",
+   "bio": "VP Information Technology at Glenmore Foods Group. 21 years in food & beverage.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "posts": []
   },
   {
    "id": 8611,
-   "first": "Joel",
-   "last": "Regan",
+   "first": "Uma",
+   "last": "Stewart",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Glenmore Foods Group. 16 years in food & beverage.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Ingredient and packaging costs rising"
-   ]
+   "bio": "VP Procurement at Glenmore Foods Group. 8 years in food & beverage.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8612,
-   "first": "Wendy",
-   "last": "Ryan",
+   "first": "Elena",
+   "last": "Novak",
    "title": "Head of Food Safety",
    "seniority": "director",
-   "bio": "Head of Food Safety at Glenmore Foods Group. Joined 4 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "BRC audit in three weeks. Traceability is still half paper. Long nights ahead for the QA team."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Head of Food Safety at Glenmore Foods Group. Been here 4 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8613,
-   "first": "Callum",
-   "last": "Hughes",
+   "first": "Jade",
+   "last": "Fitzgerald",
    "title": "Supply Chain Director",
    "seniority": "director",
-   "bio": "Supply Chain Director at Glenmore Foods Group. Been here 1 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Supply Chain Director at Glenmore Foods Group. Joined 6 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8614,
-   "first": "Aisling",
-   "last": "Evans",
+   "first": "Katie",
+   "last": "Callaghan",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Glenmore Foods Group. Joined 5 years.",
+   "bio": "Director of IT at Glenmore Foods Group. Been here 7 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 8615,
-   "first": "Tara",
-   "last": "Maguire",
+   "first": "Ines",
+   "last": "Khan",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Glenmore Foods Group. Been here 7 years.",
+   "bio": "Head of Procurement at Glenmore Foods Group. Been here 5 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 8616,
-   "first": "Nathan",
-   "last": "Ryan",
+   "first": "Declan",
+   "last": "Brennan",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Glenmore Foods Group. Been here 7 years.",
+   "bio": "Head of Legal at Glenmore Foods Group. Joined 5 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 8617,
-   "first": "Leah",
-   "last": "Doherty",
+   "first": "Niall",
+   "last": "Egan",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Glenmore Foods Group. Joined 7 years.",
+   "bio": "Head of Talent Acquisition at Glenmore Foods Group. Joined 6 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 8618,
-   "first": "Jack",
-   "last": "Egan",
+   "first": "Aoife",
+   "last": "Grant",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Glenmore Foods Group. Joined 4 years.",
+   "bio": "Director of Marketing at Glenmore Foods Group. Been here 6 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 8619,
-   "first": "Jade",
-   "last": "Chen",
+   "first": "Ben",
+   "last": "Foster",
    "title": "Production Manager",
    "seniority": "manager",
-   "bio": "Production Manager at Glenmore Foods Group. Been here 8 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Production Manager at Glenmore Foods Group. Been here 4 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8620,
-   "first": "Shane",
-   "last": "Chen",
+   "first": "Imogen",
+   "last": "Okafor",
    "title": "Category Manager",
    "seniority": "manager",
-   "bio": "Category Manager at Glenmore Foods Group. Joined 3 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Category Manager at Glenmore Foods Group. Been here 4 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8621,
-   "first": "Bilal",
-   "last": "Lewis",
+   "first": "Aisling",
+   "last": "Chen",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Glenmore Foods Group. Joined 3 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "IT Service Manager at Glenmore Foods Group. Joined 5 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8622,
-   "first": "Will",
-   "last": "Moreno",
+   "first": "Nathan",
+   "last": "Wright",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Glenmore Foods Group. Been here 7 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Procurement Manager at Glenmore Foods Group. Joined 1 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8623,
-   "first": "Olivia",
-   "last": "Okafor",
+   "first": "Fatima",
+   "last": "Regan",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Glenmore Foods Group. Been here 7 years.",
+   "bio": "HR Business Partner at Glenmore Foods Group. Joined 2 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "posts": []
   },
   {
    "id": 8624,
-   "first": "Mei",
-   "last": "Ryan",
+   "first": "Grainne",
+   "last": "McCarthy",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Glenmore Foods Group. Joined 1 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Marketing Manager at Glenmore Foods Group. Been here 6 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8625,
-   "first": "Yusuf",
-   "last": "Nolan",
+   "first": "Victor",
+   "last": "Evans",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Glenmore Foods Group. Joined 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Food safety audits and traceability still half on paper"
-   ]
+   "bio": "Sales Manager at Glenmore Foods Group. Been here 6 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8626,
-   "first": "Eimear",
-   "last": "Bennett",
+   "first": "Gemma",
+   "last": "Carroll",
    "title": "QA Technician",
    "seniority": "mid",
-   "bio": "QA Technician at Glenmore Foods Group. Been here 6 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Typed in 140 distributor orders from email today. One typo and a pallet goes to the wrong place."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "QA Technician at Glenmore Foods Group. Been here 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8627,
-   "first": "Imogen",
-   "last": "Kavanagh",
+   "first": "Eimear",
+   "last": "Chen",
    "title": "Key Account Executive",
    "seniority": "mid",
-   "bio": "Key Account Executive at Glenmore Foods Group. Been here 8 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Key Account Executive at Glenmore Foods Group. Been here 5 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 8628,
-   "first": "Uma",
-   "last": "Kavanagh",
+   "first": "Hannah",
+   "last": "Adeyemi",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Glenmore Foods Group. Joined 8 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Glenmore Foods Group today. Learned more than I expected."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Business Analyst at Glenmore Foods Group. Been here 7 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 8629,
-   "first": "Chloe",
-   "last": "Vaughan",
+   "first": "Marcus",
+   "last": "Moreno",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Glenmore Foods Group. Been here 8 years.",
+   "bio": "Financial Analyst at Glenmore Foods Group. Been here 2 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "posts": []
   },
   {
    "id": 8630,
-   "first": "Priya",
-   "last": "Bennett",
+   "first": "Ciara",
+   "last": "Ryan",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Glenmore Foods Group. Joined 6 years.",
+   "bio": "Recruiter at Glenmore Foods Group. Been here 8 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "posts": []
   },
   {
    "id": 8631,
-   "first": "Rebecca",
-   "last": "Jones",
+   "first": "Patrick",
+   "last": "O'Neill",
    "title": "Customer Service Coordinator",
    "seniority": "junior",
-   "bio": "Customer Service Coordinator at Glenmore Foods Group. Been here 2 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Customer Service Coordinator at Glenmore Foods Group. Been here 8 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 8632,
-   "first": "Declan",
-   "last": "Usman",
+   "first": "Piotr",
+   "last": "Wright",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Glenmore Foods Group. Joined 5 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Executive Assistant to the CEO at Glenmore Foods Group. Joined 3 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 8633,
-   "first": "Orla",
-   "last": "Stewart",
+   "first": "Lorcan",
+   "last": "Sweeney",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Glenmore Foods Group. Joined 4 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Typing distributor orders in by hand"
-   ]
+   "bio": "Graduate Analyst at Glenmore Foods Group. Joined 2 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   }
  ],
  "87": [
   {
    "id": 8701,
-   "first": "Quinn",
-   "last": "Thompson",
+   "first": "Grainne",
+   "last": "Hall",
    "title": "Managing Partner",
    "seniority": "c-suite",
-   "bio": "Managing Partner at Ashby Lane Consulting. 16 years in professional services.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "90% of our new work comes from referrals. Great for quality, terrible for planning growth.",
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Managing Partner at Ashby Lane Consulting. 15 years in professional services.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8702,
-   "first": "Declan",
-   "last": "O'Neill",
+   "first": "Katie",
+   "last": "Stewart",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Ashby Lane Consulting. 14 years in professional services.",
+   "bio": "CFO at Ashby Lane Consulting. 19 years in professional services.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "posts": []
   },
   {
    "id": 8703,
-   "first": "Patrick",
-   "last": "Bennett",
+   "first": "Declan",
+   "last": "Young",
    "title": "COO",
    "seniority": "c-suite",
-   "bio": "COO at Ashby Lane Consulting. 21 years in professional services.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "COO at Ashby Lane Consulting. 18 years in professional services.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8704,
-   "first": "Sinead",
-   "last": "Maguire",
+   "first": "Elena",
+   "last": "Usman",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Ashby Lane Consulting. 16 years in professional services.",
+   "bio": "Chief People Officer at Ashby Lane Consulting. 22 years in professional services.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "posts": []
   },
   {
    "id": 8705,
-   "first": "Victor",
-   "last": "Kowalski",
+   "first": "Nathan",
+   "last": "Evans",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Ashby Lane Consulting. 5 years in professional services.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Chief Revenue Officer at Ashby Lane Consulting. 7 years in professional services.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8706,
-   "first": "Fatima",
-   "last": "Keane",
+   "first": "Mei",
+   "last": "Mitchell",
    "title": "Partner",
    "seniority": "vp",
-   "bio": "Partner at Ashby Lane Consulting. 10 years in professional services.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "Partner at Ashby Lane Consulting. 21 years in professional services.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8707,
-   "first": "Catriona",
-   "last": "Foster",
+   "first": "Owen",
+   "last": "Okafor",
    "title": "Head of Practice",
    "seniority": "vp",
-   "bio": "Head of Practice at Ashby Lane Consulting. 14 years in professional services.",
+   "bio": "Head of Practice at Ashby Lane Consulting. 15 years in professional services.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "posts": []
   },
   {
    "id": 8708,
-   "first": "Hugo",
-   "last": "Evans",
+   "first": "Leah",
+   "last": "Shaw",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Ashby Lane Consulting. 5 years in professional services.",
+   "bio": "VP Finance at Ashby Lane Consulting. 8 years in professional services.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "posts": []
   },
   {
    "id": 8709,
-   "first": "Zara",
-   "last": "Grant",
+   "first": "Oliver",
+   "last": "Turner",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Ashby Lane Consulting. 11 years in professional services.",
+   "bio": "VP Marketing at Ashby Lane Consulting. 8 years in professional services.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "posts": []
   },
   {
    "id": 8710,
-   "first": "Rosa",
-   "last": "Nolan",
+   "first": "Jade",
+   "last": "Walsh",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Ashby Lane Consulting. 12 years in professional services.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "VP Information Technology at Ashby Lane Consulting. 6 years in professional services.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8711,
-   "first": "Fionn",
-   "last": "Maguire",
+   "first": "Freya",
+   "last": "Stewart",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Ashby Lane Consulting. 17 years in professional services.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Growth relies almost entirely on referrals"
-   ]
+   "bio": "VP Procurement at Ashby Lane Consulting. 18 years in professional services.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8712,
-   "first": "Nadia",
-   "last": "Callaghan",
+   "first": "Kwame",
+   "last": "Grant",
    "title": "Director of Operations",
    "seniority": "director",
-   "bio": "Director of Operations at Ashby Lane Consulting. Been here 7 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "When a partner leaves, half our know-how leaves with them. We need a proper knowledge base."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Director of Operations at Ashby Lane Consulting. Been here 2 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8713,
-   "first": "Ruth",
-   "last": "Power",
+   "first": "Niall",
+   "last": "Davies",
    "title": "Head of Business Development",
    "seniority": "director",
-   "bio": "Head of Business Development at Ashby Lane Consulting. Been here 4 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Head of Business Development at Ashby Lane Consulting. Been here 3 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8714,
-   "first": "Rebecca",
-   "last": "Walsh",
+   "first": "Olivia",
+   "last": "McCarthy",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Ashby Lane Consulting. Been here 7 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Director of IT at Ashby Lane Consulting. Been here 2 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8715,
-   "first": "Imogen",
-   "last": "Mitchell",
+   "first": "Sinead",
+   "last": "Gallagher",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Ashby Lane Consulting. Joined 6 years.",
+   "bio": "Head of Procurement at Ashby Lane Consulting. Been here 1 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 8716,
-   "first": "Samuel",
-   "last": "Stewart",
+   "first": "Victor",
+   "last": "Turner",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Ashby Lane Consulting. Been here 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Head of Legal at Ashby Lane Consulting. Joined 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8717,
-   "first": "Maeve",
-   "last": "Mitchell",
+   "first": "Gemma",
+   "last": "Byrne",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
    "bio": "Head of Talent Acquisition at Ashby Lane Consulting. Joined 2 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8718,
-   "first": "Joel",
-   "last": "Foster",
+   "first": "Ben",
+   "last": "Ward",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Ashby Lane Consulting. Been here 1 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Director of Marketing at Ashby Lane Consulting. Joined 6 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8719,
-   "first": "Jack",
-   "last": "Dempsey",
+   "first": "Tomasz",
+   "last": "Ryan",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Ashby Lane Consulting. Joined 2 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Practice Manager at Ashby Lane Consulting. Been here 3 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8720,
-   "first": "Harry",
-   "last": "Grant",
+   "first": "Lorcan",
+   "last": "Iqbal",
    "title": "Finance Manager",
    "seniority": "manager",
-   "bio": "Finance Manager at Ashby Lane Consulting. Joined 4 years.",
+   "bio": "Finance Manager at Ashby Lane Consulting. Been here 2 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 8721,
-   "first": "Olivia",
-   "last": "Hall",
+   "first": "Yusuf",
+   "last": "Silva",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Ashby Lane Consulting. Joined 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "IT Service Manager at Ashby Lane Consulting. Been here 7 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8722,
-   "first": "Lorcan",
-   "last": "Sweeney",
+   "first": "Ewan",
+   "last": "Lewis",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Ashby Lane Consulting. Been here 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Procurement Manager at Ashby Lane Consulting. Joined 7 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8723,
-   "first": "Callum",
-   "last": "Hall",
+   "first": "Harry",
+   "last": "Reid",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Ashby Lane Consulting. Been here 4 years.",
+   "bio": "HR Business Partner at Ashby Lane Consulting. Joined 4 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "posts": []
   },
   {
    "id": 8724,
-   "first": "Jade",
-   "last": "Walsh",
+   "first": "Quinn",
+   "last": "Sweeney",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Ashby Lane Consulting. Joined 2 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Marketing Manager at Ashby Lane Consulting. Been here 6 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8725,
-   "first": "Aoife",
-   "last": "Kavanagh",
+   "first": "Marcus",
+   "last": "Ward",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Ashby Lane Consulting. Been here 1 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Know-how stuck in people's heads"
-   ]
+   "bio": "Sales Manager at Ashby Lane Consulting. Been here 5 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8726,
-   "first": "Daniel",
-   "last": "Young",
+   "first": "Fionn",
+   "last": "Lewis",
    "title": "Senior Consultant",
    "seniority": "mid",
-   "bio": "Senior Consultant at Ashby Lane Consulting. Been here 6 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Every proposal starts from a blank page. Three days per pitch. There has to be a better way.",
-    "One year at Ashby Lane Consulting today. Learned more than I expected."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Senior Consultant at Ashby Lane Consulting. Joined 2 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 8727,
-   "first": "Tomasz",
-   "last": "Turner",
+   "first": "Ciara",
+   "last": "Maguire",
    "title": "Associate",
    "seniority": "mid",
-   "bio": "Associate at Ashby Lane Consulting. Been here 7 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Associate at Ashby Lane Consulting. Joined 1 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 8728,
-   "first": "Isaac",
-   "last": "Carroll",
+   "first": "Femi",
+   "last": "Novak",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Ashby Lane Consulting. Joined 7 years.",
+   "bio": "Business Analyst at Ashby Lane Consulting. Been here 8 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "One year at Ashby Lane Consulting today. Learned more than I expected."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "posts": []
   },
   {
    "id": 8729,
-   "first": "Orla",
-   "last": "Brennan",
+   "first": "Fatima",
+   "last": "Novak",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Ashby Lane Consulting. Joined 1 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Financial Analyst at Ashby Lane Consulting. Been here 2 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 8730,
-   "first": "Elena",
-   "last": "Reid",
+   "first": "Gareth",
+   "last": "Brennan",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Ashby Lane Consulting. Been here 1 years.",
-   "personality": "Busy but approachable.",
-   "posts": [],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Recruiter at Ashby Lane Consulting. Been here 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 8731,
-   "first": "Ines",
-   "last": "Doherty",
+   "first": "Imogen",
+   "last": "McCarthy",
    "title": "Analyst",
    "seniority": "junior",
-   "bio": "Analyst at Ashby Lane Consulting. Joined 7 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Analyst at Ashby Lane Consulting. Joined 1 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 8732,
-   "first": "Ewan",
-   "last": "Grant",
+   "first": "Ines",
+   "last": "Walsh",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Ashby Lane Consulting. Been here 2 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Executive Assistant to the CEO at Ashby Lane Consulting. Joined 1 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
+   "posts": []
   },
   {
    "id": 8733,
-   "first": "Leah",
-   "last": "Novak",
+   "first": "Joel",
+   "last": "Vaughan",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Ashby Lane Consulting. Been here 8 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Proposals take days to write"
-   ]
+   "bio": "Graduate Analyst at Ashby Lane Consulting. Joined 8 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   }
  ],
  "88": [
   {
    "id": 8801,
-   "first": "Elena",
-   "last": "Tierney",
+   "first": "Orla",
+   "last": "Silva",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Riverside Health Partners. 10 years in healthcare.",
+   "bio": "CEO at Riverside Health Partners. 9 years in healthcare.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Budgets are flat and demand is up 15%. Every purchase needs a business case now."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 8802,
-   "first": "Ines",
-   "last": "Turner",
+   "first": "Yusuf",
+   "last": "Healy",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Riverside Health Partners. 4 years in healthcare.",
+   "bio": "CFO at Riverside Health Partners. 16 years in healthcare.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 8803,
-   "first": "Aoife",
-   "last": "Bennett",
+   "first": "Gemma",
+   "last": "Byrne",
    "title": "Chief Medical Officer",
    "seniority": "c-suite",
-   "bio": "Chief Medical Officer at Riverside Health Partners. 5 years in healthcare.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "Chief Medical Officer at Riverside Health Partners. 11 years in healthcare.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8804,
-   "first": "Keira",
-   "last": "Silva",
+   "first": "Harry",
+   "last": "Healy",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Riverside Health Partners. 15 years in healthcare.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "Chief People Officer at Riverside Health Partners. 21 years in healthcare.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8805,
-   "first": "Ciara",
-   "last": "Evans",
+   "first": "Callum",
+   "last": "Turner",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Riverside Health Partners. 8 years in healthcare.",
+   "bio": "Chief Revenue Officer at Riverside Health Partners. 19 years in healthcare.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 8806,
-   "first": "Katie",
-   "last": "Nolan",
+   "first": "Joel",
+   "last": "Egan",
    "title": "VP Clinical Operations",
    "seniority": "vp",
-   "bio": "VP Clinical Operations at Riverside Health Partners. 4 years in healthcare.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "VP Clinical Operations at Riverside Health Partners. 12 years in healthcare.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8807,
-   "first": "Daniel",
-   "last": "Tierney",
+   "first": "Samuel",
+   "last": "Patel",
    "title": "Director of Nursing",
    "seniority": "vp",
-   "bio": "Director of Nursing at Riverside Health Partners. 9 years in healthcare.",
+   "bio": "Director of Nursing at Riverside Health Partners. 16 years in healthcare.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 8808,
-   "first": "Oliver",
-   "last": "Brennan",
+   "first": "Wendy",
+   "last": "Tierney",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Riverside Health Partners. 5 years in healthcare.",
+   "bio": "VP Finance at Riverside Health Partners. 19 years in healthcare.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 8809,
-   "first": "Kwame",
-   "last": "Regan",
+   "first": "Will",
+   "last": "Keane",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Riverside Health Partners. 15 years in healthcare.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "VP Marketing at Riverside Health Partners. 3 years in healthcare.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8810,
-   "first": "Priya",
-   "last": "Okafor",
+   "first": "Isaac",
+   "last": "Silva",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Riverside Health Partners. 10 years in healthcare.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "bio": "VP Information Technology at Riverside Health Partners. 6 years in healthcare.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8811,
-   "first": "Jack",
-   "last": "Carroll",
+   "first": "Piotr",
+   "last": "O'Neill",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Riverside Health Partners. 16 years in healthcare.",
+   "bio": "VP Procurement at Riverside Health Partners. 10 years in healthcare.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ],
-   "pains": [
-    "Flat budgets against rising demand"
-   ]
+   "posts": []
   },
   {
    "id": 8812,
-   "first": "Mei",
-   "last": "Flanagan",
+   "first": "Declan",
+   "last": "Usman",
    "title": "Head of Patient Services",
    "seniority": "director",
-   "bio": "Head of Patient Services at Riverside Health Partners. Been here 2 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Our clinicians spend 2 hours a day on paperwork. That's 2 hours not with patients.",
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "Head of Patient Services at Riverside Health Partners. Been here 7 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8813,
-   "first": "Ewan",
-   "last": "Khan",
+   "first": "Deirdre",
+   "last": "Lynch",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Riverside Health Partners. Joined 1 years.",
+   "bio": "Director of IT at Riverside Health Partners. Joined 4 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "posts": []
   },
   {
    "id": 8814,
-   "first": "Chloe",
-   "last": "Walsh",
+   "first": "Ines",
+   "last": "Carroll",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Riverside Health Partners. Joined 2 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "Head of Procurement at Riverside Health Partners. Been here 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8815,
-   "first": "Tara",
-   "last": "Mitchell",
+   "first": "Ravi",
+   "last": "Hall",
    "title": "Head of Legal",
    "seniority": "director",
    "bio": "Head of Legal at Riverside Health Partners. Been here 6 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8816,
-   "first": "Luke",
-   "last": "Moreno",
+   "first": "Catriona",
+   "last": "Mitchell",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Riverside Health Partners. Been here 1 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "Head of Talent Acquisition at Riverside Health Partners. Joined 3 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 8817,
-   "first": "Maeve",
-   "last": "Shaw",
+   "first": "Adaeze",
+   "last": "Turner",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Riverside Health Partners. Been here 1 years.",
+   "bio": "Director of Marketing at Riverside Health Partners. Been here 5 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "posts": []
   },
   {
    "id": 8818,
-   "first": "Ravi",
-   "last": "Tierney",
+   "first": "Maeve",
+   "last": "Lynch",
    "title": "Practice Manager",
    "seniority": "manager",
-   "bio": "Practice Manager at Riverside Health Partners. Joined 4 years.",
+   "bio": "Practice Manager at Riverside Health Partners. Been here 7 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "posts": []
   },
   {
    "id": 8819,
-   "first": "Quinn",
-   "last": "Power",
+   "first": "Ewan",
+   "last": "Okafor",
    "title": "Operations Manager",
    "seniority": "manager",
-   "bio": "Operations Manager at Riverside Health Partners. Joined 4 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "Operations Manager at Riverside Health Partners. Joined 8 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8820,
-   "first": "Shane",
-   "last": "Dempsey",
+   "first": "Lorcan",
+   "last": "Brennan",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Riverside Health Partners. Been here 7 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "IT Service Manager at Riverside Health Partners. Joined 3 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8821,
-   "first": "Uma",
-   "last": "Fitzgerald",
+   "first": "Rebecca",
+   "last": "Iqbal",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Riverside Health Partners. Been here 1 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "Procurement Manager at Riverside Health Partners. Been here 3 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8822,
-   "first": "Patrick",
-   "last": "Healy",
+   "first": "Oliver",
+   "last": "Regan",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Riverside Health Partners. Joined 3 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "HR Business Partner at Riverside Health Partners. Joined 5 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 8823,
-   "first": "Hannah",
-   "last": "Thompson",
+   "first": "Tara",
+   "last": "Walsh",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Riverside Health Partners. Been here 7 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "Marketing Manager at Riverside Health Partners. Joined 6 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 8824,
-   "first": "Joel",
-   "last": "Mitchell",
+   "first": "Aisling",
+   "last": "Brennan",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Riverside Health Partners. Joined 1 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [],
-   "pains": [
-    "Clinicians buried in admin"
-   ]
+   "bio": "Sales Manager at Riverside Health Partners. Joined 7 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 8825,
-   "first": "Wendy",
-   "last": "Stewart",
+   "first": "Ruth",
+   "last": "McCarthy",
    "title": "Senior Nurse",
    "seniority": "mid",
-   "bio": "Senior Nurse at Riverside Health Partners. Been here 6 years.",
+   "bio": "Senior Nurse at Riverside Health Partners. Joined 2 years.",
    "personality": "Busy but approachable.",
-   "posts": [
-    "Our phones open at 8am and the lines are full by 8:01. Patients deserve better."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "posts": []
   },
   {
    "id": 8826,
-   "first": "Victor",
-   "last": "Turner",
+   "first": "Tom",
+   "last": "Davies",
    "title": "Patient Coordinator",
    "seniority": "mid",
-   "bio": "Patient Coordinator at Riverside Health Partners. Been here 5 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "bio": "Patient Coordinator at Riverside Health Partners. Joined 2 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 8827,
-   "first": "Rosa",
-   "last": "Fitzgerald",
+   "first": "Shane",
+   "last": "Jones",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Riverside Health Partners. Been here 1 years.",
+   "bio": "Business Analyst at Riverside Health Partners. Joined 5 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "posts": []
   },
   {
    "id": 8828,
-   "first": "Jade",
-   "last": "Walsh",
+   "first": "Freya",
+   "last": "Power",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Riverside Health Partners. Joined 6 years.",
+   "bio": "Financial Analyst at Riverside Health Partners. Been here 3 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "posts": []
   },
   {
    "id": 8829,
-   "first": "Tomasz",
-   "last": "Walsh",
+   "first": "Nadia",
+   "last": "Callaghan",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Riverside Health Partners. Joined 3 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at Riverside Health Partners today. Learned more than I expected."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "bio": "Recruiter at Riverside Health Partners. Joined 7 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
   },
   {
    "id": 8830,
-   "first": "Declan",
-   "last": "Evans",
+   "first": "Imogen",
+   "last": "Kavanagh",
    "title": "Receptionist",
    "seniority": "junior",
-   "bio": "Receptionist at Riverside Health Partners. Been here 7 years.",
+   "bio": "Receptionist at Riverside Health Partners. Joined 7 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "posts": []
   },
   {
    "id": 8831,
-   "first": "Harry",
-   "last": "Davies",
+   "first": "Owen",
+   "last": "Regan",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Riverside Health Partners. Been here 6 years.",
-   "personality": "Happy to chat and knows who does what.",
-   "posts": [
-    "One year at Riverside Health Partners today. Learned more than I expected."
-   ],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "bio": "Executive Assistant to the CEO at Riverside Health Partners. Been here 7 years.",
+   "personality": "Friendly but has no buying power.",
+   "posts": []
   },
   {
    "id": 8832,
-   "first": "Niall",
-   "last": "Lynch",
+   "first": "Ciara",
+   "last": "Iqbal",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Riverside Health Partners. Been here 5 years.",
+   "bio": "Graduate Analyst at Riverside Health Partners. Joined 6 years.",
    "personality": "Friendly but has no buying power.",
-   "posts": [],
-   "pains": [
-    "Phone lines jammed with booking calls"
-   ]
+   "posts": []
   }
  ]
 };
@@ -15875,182 +12909,168 @@ export const LEGACY_EXTRA_EMPLOYEES = {
  "1": [
   {
    "id": 111,
-   "first": "Tomasz",
-   "last": "Moreno",
+   "first": "Priya",
+   "last": "Tierney",
    "title": "CEO",
    "seniority": "c-suite",
-   "bio": "CEO at Nexaflow. Joined 5 years.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "bio": "CEO at Nexaflow. Been here 1 years.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 112,
-   "first": "Ciara",
-   "last": "Foster",
+   "first": "Kwame",
+   "last": "Lynch",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Nexaflow. Joined 4 years.",
+   "bio": "CFO at Nexaflow. Joined 1 years.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ]
+   "posts": []
   },
   {
    "id": 113,
-   "first": "Declan",
-   "last": "Usman",
+   "first": "Hannah",
+   "last": "Tierney",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Nexaflow. Joined 1 years.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "bio": "Chief People Officer at Nexaflow. Joined 6 years.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 114,
-   "first": "Nadia",
-   "last": "Keane",
+   "first": "Callum",
+   "last": "Tierney",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Nexaflow. Joined 5 years.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "bio": "Chief Revenue Officer at Nexaflow. Been here 9 years.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 115,
    "first": "Aisling",
-   "last": "Shaw",
+   "last": "Regan",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at Nexaflow. Joined 4 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Engineering at Nexaflow. Been here 6 years.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 116,
-   "first": "Grainne",
-   "last": "Chen",
+   "first": "Ruth",
+   "last": "Ahmed",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Nexaflow. Joined 4 years.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Finance at Nexaflow. Joined 5 years.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 117,
-   "first": "Ruth",
-   "last": "Hall",
+   "first": "Patrick",
+   "last": "Flanagan",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at Nexaflow. Been here 7 years.",
+   "bio": "VP Information Technology at Nexaflow. Joined 3 years.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 118,
-   "first": "Tom",
-   "last": "Kavanagh",
+   "first": "Marcus",
+   "last": "Maguire",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at Nexaflow. Joined 6 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Procurement at Nexaflow. Been here 7 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 119,
-   "first": "Bilal",
-   "last": "Reid",
+   "first": "Daniel",
+   "last": "Chen",
    "title": "Head of Customer Success",
    "seniority": "director",
-   "bio": "Head of Customer Success at Nexaflow. Joined 1 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
-  },
-  {
-   "id": 120,
-   "first": "Eimear",
-   "last": "Quinn",
-   "title": "Director of Product",
-   "seniority": "director",
-   "bio": "Director of Product at Nexaflow. Joined 4 years.",
+   "bio": "Head of Customer Success at Nexaflow. Been here 9 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
-   "id": 121,
-   "first": "Marcus",
-   "last": "Flanagan",
-   "title": "Director of IT",
+   "id": 120,
+   "first": "Declan",
+   "last": "Hall",
+   "title": "Director of Product",
    "seniority": "director",
-   "bio": "Director of IT at Nexaflow. Joined 4 years.",
+   "bio": "Director of Product at Nexaflow. Joined 2 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
-   "id": 122,
-   "first": "Joel",
-   "last": "Egan",
-   "title": "Head of Procurement",
+   "id": 121,
+   "first": "Bilal",
+   "last": "Walsh",
+   "title": "Director of IT",
    "seniority": "director",
-   "bio": "Head of Procurement at Nexaflow. Been here 1 years.",
+   "bio": "Director of IT at Nexaflow. Been here 8 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 122,
+   "first": "Wendy",
+   "last": "Egan",
+   "title": "Head of Procurement",
+   "seniority": "director",
+   "bio": "Head of Procurement at Nexaflow. Been here 1 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 123,
-   "first": "Daniel",
-   "last": "Ahmed",
+   "first": "Leah",
+   "last": "Egan",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Nexaflow. Been here 6 years.",
+   "bio": "Head of Legal at Nexaflow. Been here 4 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 124,
-   "first": "Freya",
-   "last": "Silva",
+   "first": "Piotr",
+   "last": "Carroll",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Nexaflow. Joined 6 years.",
+   "bio": "Head of Talent Acquisition at Nexaflow. Been here 4 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "posts": []
   },
   {
    "id": 125,
-   "first": "Jack",
-   "last": "Patel",
+   "first": "Shane",
+   "last": "Ahmed",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Nexaflow. Been here 5 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Director of Marketing at Nexaflow. Been here 9 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 126,
-   "first": "Shane",
-   "last": "Foster",
+   "first": "Katie",
+   "last": "Ahmed",
    "title": "RevOps Manager",
    "seniority": "manager",
-   "bio": "RevOps Manager at Nexaflow. Been here 9 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "bio": "RevOps Manager at Nexaflow. Joined 9 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
    "posts": []
   },
   {
    "id": 127,
-   "first": "Hannah",
-   "last": "Walsh",
+   "first": "Joel",
+   "last": "Tierney",
    "title": "Support Manager",
    "seniority": "manager",
    "bio": "Support Manager at Nexaflow. Joined 3 years.",
@@ -16059,105 +13079,101 @@ export const LEGACY_EXTRA_EMPLOYEES = {
   },
   {
    "id": 128,
-   "first": "Catriona",
-   "last": "Stewart",
+   "first": "Harry",
+   "last": "Davies",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Nexaflow. Been here 5 years.",
+   "bio": "IT Service Manager at Nexaflow. Joined 9 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 129,
-   "first": "Gareth",
-   "last": "Stewart",
+   "first": "Gemma",
+   "last": "Lewis",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Nexaflow. Joined 3 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Procurement Manager at Nexaflow. Been here 4 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 130,
-   "first": "Fatima",
-   "last": "Reid",
+   "first": "Catriona",
+   "last": "Keane",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Nexaflow. Been here 2 years.",
+   "bio": "HR Business Partner at Nexaflow. Been here 8 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
    "posts": []
   },
   {
    "id": 131,
-   "first": "Tara",
-   "last": "Nolan",
+   "first": "Luke",
+   "last": "McCarthy",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Nexaflow. Been here 5 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
+   "bio": "Marketing Manager at Nexaflow. Joined 4 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 132,
-   "first": "Jade",
-   "last": "Khan",
+   "first": "Jack",
+   "last": "Lewis",
    "title": "Account Executive",
    "seniority": "mid",
-   "bio": "Account Executive at Nexaflow. Been here 6 years.",
+   "bio": "Account Executive at Nexaflow. Been here 4 years.",
    "personality": "Busy but approachable.",
    "posts": []
   },
   {
    "id": 133,
-   "first": "Quinn",
-   "last": "Lewis",
+   "first": "Femi",
+   "last": "Silva",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Nexaflow. Joined 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ]
+   "bio": "Business Analyst at Nexaflow. Been here 1 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 134,
-   "first": "Ines",
-   "last": "Ward",
+   "first": "Freya",
+   "last": "Bennett",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at Nexaflow. Joined 5 years.",
+   "bio": "Financial Analyst at Nexaflow. Joined 9 years.",
    "personality": "Busy but approachable.",
    "posts": []
   },
   {
    "id": 135,
-   "first": "Piotr",
-   "last": "Iqbal",
+   "first": "Oliver",
+   "last": "Ryan",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Nexaflow. Been here 2 years.",
-   "personality": "Busy but approachable.",
+   "bio": "Recruiter at Nexaflow. Joined 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
    "posts": []
   },
   {
    "id": 136,
-   "first": "Hugo",
-   "last": "Stewart",
+   "first": "Mei",
+   "last": "Callaghan",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Nexaflow. Joined 2 years.",
-   "personality": "Happy to chat and knows who does what.",
+   "bio": "Executive Assistant to the CEO at Nexaflow. Been here 5 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
    "posts": []
   },
   {
    "id": 137,
-   "first": "Luke",
-   "last": "Wright",
+   "first": "Nadia",
+   "last": "Power",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Nexaflow. Joined 6 years.",
+   "bio": "Graduate Analyst at Nexaflow. Joined 9 years.",
    "personality": "Happy to chat and knows who does what.",
    "posts": []
   }
@@ -16165,992 +13181,924 @@ export const LEGACY_EXTRA_EMPLOYEES = {
  "5": [
   {
    "id": 511,
-   "first": "Uma",
-   "last": "Kavanagh",
+   "first": "Grainne",
+   "last": "Novak",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at ShieldOps. Been here 2 years.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "bio": "CFO at ShieldOps. Joined 2 years.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 512,
-   "first": "Luke",
-   "last": "Khan",
+   "first": "Nathan",
+   "last": "Kowalski",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at ShieldOps. Joined 6 years.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "bio": "Chief People Officer at ShieldOps. Been here 7 years.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 513,
-   "first": "Oliver",
-   "last": "Ward",
+   "first": "Tom",
+   "last": "Brennan",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at ShieldOps. Joined 5 years.",
+   "bio": "Chief Revenue Officer at ShieldOps. Joined 8 years.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 514,
-   "first": "Ben",
-   "last": "Dempsey",
+   "first": "Ines",
+   "last": "Sweeney",
    "title": "VP Security Operations",
    "seniority": "vp",
-   "bio": "VP Security Operations at ShieldOps. Been here 5 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": []
-  },
-  {
-   "id": 515,
-   "first": "Vanessa",
-   "last": "Mitchell",
-   "title": "VP Finance",
-   "seniority": "vp",
-   "bio": "VP Finance at ShieldOps. Been here 5 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
-  },
-  {
-   "id": 516,
-   "first": "Grainne",
-   "last": "Ryan",
-   "title": "VP Marketing",
-   "seniority": "vp",
-   "bio": "VP Marketing at ShieldOps. Been here 2 years.",
+   "bio": "VP Security Operations at ShieldOps. Joined 4 years.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
-   "id": 517,
-   "first": "Callum",
-   "last": "Reid",
-   "title": "VP Information Technology",
+   "id": 515,
+   "first": "Zara",
+   "last": "Mitchell",
+   "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Information Technology at ShieldOps. Been here 7 years.",
+   "bio": "VP Finance at ShieldOps. Joined 2 years.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
+   "id": 516,
+   "first": "Daniel",
+   "last": "Okafor",
+   "title": "VP Marketing",
+   "seniority": "vp",
+   "bio": "VP Marketing at ShieldOps. Been here 2 years.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 517,
+   "first": "Lorcan",
+   "last": "Okafor",
+   "title": "VP Information Technology",
+   "seniority": "vp",
+   "bio": "VP Information Technology at ShieldOps. Joined 9 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 518,
-   "first": "Rosa",
-   "last": "Callaghan",
+   "first": "Kwame",
+   "last": "Dempsey",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at ShieldOps. Joined 4 years.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "bio": "VP Procurement at ShieldOps. Joined 7 years.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 519,
-   "first": "Jade",
-   "last": "Kavanagh",
+   "first": "Ewan",
+   "last": "Quinn",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at ShieldOps. Been here 5 years.",
+   "bio": "Director of Threat Intelligence at ShieldOps. Joined 8 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "posts": []
   },
   {
    "id": 520,
-   "first": "Deirdre",
-   "last": "Quinn",
+   "first": "Fionn",
+   "last": "Iqbal",
    "title": "Head of Compliance",
    "seniority": "director",
-   "bio": "Head of Compliance at ShieldOps. Joined 3 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
-  },
-  {
-   "id": 521,
-   "first": "Femi",
-   "last": "Wright",
-   "title": "Director of IT",
-   "seniority": "director",
-   "bio": "Director of IT at ShieldOps. Joined 9 years.",
+   "bio": "Head of Compliance at ShieldOps. Joined 7 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 521,
+   "first": "Piotr",
+   "last": "Evans",
+   "title": "Director of IT",
+   "seniority": "director",
+   "bio": "Director of IT at ShieldOps. Joined 3 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 522,
-   "first": "Wendy",
-   "last": "Usman",
+   "first": "Harry",
+   "last": "Callaghan",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at ShieldOps. Joined 1 years.",
+   "bio": "Head of Procurement at ShieldOps. Been here 9 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 523,
-   "first": "Maeve",
-   "last": "Reid",
+   "first": "Wendy",
+   "last": "Shaw",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at ShieldOps. Been here 5 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "bio": "Head of Legal at ShieldOps. Joined 9 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 524,
-   "first": "Elena",
-   "last": "Fitzgerald",
+   "first": "Yusuf",
+   "last": "Lewis",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at ShieldOps. Been here 5 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "bio": "Head of Talent Acquisition at ShieldOps. Been here 4 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 525,
-   "first": "Joel",
-   "last": "Young",
+   "first": "Aoife",
+   "last": "Ryan",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at ShieldOps. Joined 2 years.",
+   "bio": "Director of Marketing at ShieldOps. Been here 4 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "posts": []
   },
   {
    "id": 526,
-   "first": "Hannah",
-   "last": "Lewis",
+   "first": "Isaac",
+   "last": "Keane",
    "title": "GRC Manager",
    "seniority": "manager",
-   "bio": "GRC Manager at ShieldOps. Joined 3 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "bio": "GRC Manager at ShieldOps. Been here 2 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
    "posts": []
   },
   {
    "id": 527,
-   "first": "Tara",
-   "last": "Walsh",
+   "first": "Ben",
+   "last": "O'Neill",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at ShieldOps. Joined 3 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "IT Service Manager at ShieldOps. Been here 3 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 528,
-   "first": "Bilal",
+   "first": "Diego",
    "last": "Sweeney",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at ShieldOps. Joined 9 years.",
+   "bio": "Procurement Manager at ShieldOps. Been here 8 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 529,
-   "first": "Fatima",
-   "last": "Fitzgerald",
+   "first": "Owen",
+   "last": "Jones",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at ShieldOps. Joined 8 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "bio": "HR Business Partner at ShieldOps. Been here 6 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
   },
   {
    "id": 530,
-   "first": "Ruth",
-   "last": "Ryan",
+   "first": "Rebecca",
+   "last": "Wright",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at ShieldOps. Been here 2 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "bio": "Marketing Manager at ShieldOps. Been here 6 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
    "posts": []
   },
   {
    "id": 531,
-   "first": "Adaeze",
-   "last": "Iqbal",
+   "first": "Uma",
+   "last": "Novak",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at ShieldOps. Been here 2 years.",
+   "bio": "Sales Manager at ShieldOps. Been here 9 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "posts": []
   },
   {
    "id": 532,
-   "first": "Chloe",
-   "last": "Reid",
+   "first": "Maeve",
+   "last": "Byrne",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at ShieldOps. Been here 4 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
+   "bio": "Security Engineer at ShieldOps. Been here 7 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
    "posts": []
   },
   {
    "id": 533,
-   "first": "Mei",
-   "last": "Lynch",
+   "first": "Rosa",
+   "last": "Ward",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at ShieldOps. Been here 7 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ]
+   "bio": "Business Analyst at ShieldOps. Joined 2 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 534,
-   "first": "Lorcan",
-   "last": "Stewart",
+   "first": "Gemma",
+   "last": "Carroll",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at ShieldOps. Joined 5 years.",
+   "bio": "Financial Analyst at ShieldOps. Joined 4 years.",
    "personality": "Busy but approachable.",
    "posts": []
   },
   {
    "id": 535,
-   "first": "Imogen",
-   "last": "Lynch",
+   "first": "Leah",
+   "last": "Bennett",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at ShieldOps. Joined 5 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
+   "bio": "Recruiter at ShieldOps. Been here 4 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
    "posts": []
   },
   {
    "id": 536,
-   "first": "Kwame",
-   "last": "Doherty",
+   "first": "Imogen",
+   "last": "Novak",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at ShieldOps. Been here 2 years.",
-   "personality": "Happy to chat and knows who does what.",
+   "bio": "Junior SOC Analyst at ShieldOps. Been here 5 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
    "posts": []
   },
   {
    "id": 537,
-   "first": "Nadia",
+   "first": "Declan",
    "last": "Fitzgerald",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at ShieldOps. Been here 5 years.",
-   "personality": "Happy to chat and knows who does what.",
+   "bio": "Executive Assistant to the CEO at ShieldOps. Been here 2 years.",
+   "personality": "Eager and responsive. Will pass you up the chain.",
    "posts": []
   },
   {
    "id": 538,
-   "first": "Olivia",
-   "last": "Usman",
+   "first": "Bilal",
+   "last": "Quinn",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at ShieldOps. Been here 9 years.",
-   "personality": "Happy to chat and knows who does what.",
+   "bio": "Graduate Analyst at ShieldOps. Been here 3 years.",
+   "personality": "Friendly but has no buying power.",
    "posts": []
   }
  ],
  "8": [
   {
    "id": 808,
-   "first": "Eimear",
-   "last": "Young",
+   "first": "Rosa",
+   "last": "Fitzgerald",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at Fortivex. Joined 2 years.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "bio": "CFO at Fortivex. Joined 5 years.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 809,
-   "first": "Oliver",
-   "last": "Davies",
+   "first": "Fatima",
+   "last": "Maguire",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at Fortivex. Joined 1 years.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "bio": "Chief People Officer at Fortivex. Been here 2 years.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 810,
-   "first": "Victor",
-   "last": "Chen",
+   "first": "Adaeze",
+   "last": "Kowalski",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at Fortivex. Joined 5 years.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "bio": "Chief Revenue Officer at Fortivex. Joined 6 years.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 811,
-   "first": "Nadia",
-   "last": "Evans",
+   "first": "Wendy",
+   "last": "Wright",
    "title": "VP Security Operations",
    "seniority": "vp",
    "bio": "VP Security Operations at Fortivex. Joined 2 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 812,
-   "first": "Patrick",
-   "last": "Lynch",
+   "first": "Piotr",
+   "last": "Walsh",
    "title": "VP Sales",
    "seniority": "vp",
-   "bio": "VP Sales at Fortivex. Been here 5 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Sales at Fortivex. Joined 7 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 813,
-   "first": "Declan",
-   "last": "Egan",
+   "first": "Marcus",
+   "last": "Lewis",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at Fortivex. Been here 6 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Finance at Fortivex. Joined 4 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 814,
-   "first": "Owen",
-   "last": "Shaw",
+   "first": "Gareth",
+   "last": "Reid",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at Fortivex. Joined 7 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
-  },
-  {
-   "id": 815,
-   "first": "Vanessa",
-   "last": "Usman",
-   "title": "VP Information Technology",
-   "seniority": "vp",
-   "bio": "VP Information Technology at Fortivex. Joined 6 years.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
-  },
-  {
-   "id": 816,
-   "first": "Rosa",
-   "last": "Quinn",
-   "title": "VP Procurement",
-   "seniority": "vp",
-   "bio": "VP Procurement at Fortivex. Been here 6 years.",
+   "bio": "VP Marketing at Fortivex. Been here 7 years.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 815,
+   "first": "Nathan",
+   "last": "Keane",
+   "title": "VP Information Technology",
+   "seniority": "vp",
+   "bio": "VP Information Technology at Fortivex. Joined 6 years.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
+   "id": 816,
+   "first": "Chloe",
+   "last": "Hughes",
+   "title": "VP Procurement",
+   "seniority": "vp",
+   "bio": "VP Procurement at Fortivex. Been here 1 years.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 817,
-   "first": "Priya",
-   "last": "Moreno",
+   "first": "Ines",
+   "last": "Egan",
    "title": "Director of Threat Intelligence",
    "seniority": "director",
-   "bio": "Director of Threat Intelligence at Fortivex. Joined 6 years.",
+   "bio": "Director of Threat Intelligence at Fortivex. Been here 4 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 818,
-   "first": "Chloe",
-   "last": "Okafor",
+   "first": "Ravi",
+   "last": "Brennan",
    "title": "Head of Compliance",
    "seniority": "director",
-   "bio": "Head of Compliance at Fortivex. Been here 2 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Head of Compliance at Fortivex. Joined 5 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 819,
-   "first": "Gemma",
-   "last": "O'Neill",
+   "first": "Eimear",
+   "last": "Foster",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at Fortivex. Joined 2 years.",
+   "bio": "Director of IT at Fortivex. Been here 7 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 820,
-   "first": "Niall",
-   "last": "Evans",
+   "first": "Quinn",
+   "last": "Hall",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at Fortivex. Joined 9 years.",
+   "bio": "Head of Procurement at Fortivex. Joined 5 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "posts": []
   },
   {
    "id": 821,
-   "first": "Piotr",
-   "last": "Usman",
+   "first": "Niall",
+   "last": "Wright",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at Fortivex. Joined 4 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "bio": "Head of Legal at Fortivex. Been here 5 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 822,
-   "first": "Yusuf",
-   "last": "Moreno",
+   "first": "Joel",
+   "last": "Regan",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at Fortivex. Been here 4 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "bio": "Head of Talent Acquisition at Fortivex. Been here 7 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 823,
-   "first": "Ines",
-   "last": "Doherty",
+   "first": "Aoife",
+   "last": "Ryan",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at Fortivex. Been here 5 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Director of Marketing at Fortivex. Joined 4 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 824,
-   "first": "Isaac",
-   "last": "Foster",
+   "first": "Callum",
+   "last": "Hughes",
    "title": "SOC Manager",
    "seniority": "manager",
-   "bio": "SOC Manager at Fortivex. Joined 7 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "bio": "SOC Manager at Fortivex. Been here 1 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 825,
-   "first": "Sinead",
-   "last": "Tierney",
+   "first": "Declan",
+   "last": "Dempsey",
    "title": "GRC Manager",
    "seniority": "manager",
-   "bio": "GRC Manager at Fortivex. Been here 9 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "bio": "GRC Manager at Fortivex. Joined 4 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
    "posts": []
   },
   {
    "id": 826,
-   "first": "Femi",
-   "last": "Evans",
+   "first": "Freya",
+   "last": "Reid",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at Fortivex. Joined 2 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "bio": "IT Service Manager at Fortivex. Been here 3 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 827,
-   "first": "Tom",
-   "last": "Foster",
+   "first": "Samuel",
+   "last": "Mitchell",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at Fortivex. Been here 7 years.",
+   "bio": "Procurement Manager at Fortivex. Been here 6 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 828,
-   "first": "Katie",
-   "last": "Kavanagh",
+   "first": "Aisling",
+   "last": "Ward",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at Fortivex. Joined 3 years.",
+   "bio": "HR Business Partner at Fortivex. Been here 7 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
    "posts": []
   },
   {
    "id": 829,
-   "first": "Amira",
-   "last": "Bennett",
+   "first": "Leah",
+   "last": "Doherty",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at Fortivex. Joined 3 years.",
+   "bio": "Marketing Manager at Fortivex. Been here 8 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "posts": []
   },
   {
    "id": 830,
-   "first": "Tara",
-   "last": "Carroll",
+   "first": "Jack",
+   "last": "Egan",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at Fortivex. Been here 2 years.",
+   "bio": "Sales Manager at Fortivex. Been here 5 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "posts": []
   },
   {
    "id": 831,
-   "first": "Lorcan",
-   "last": "Okafor",
+   "first": "Nadia",
+   "last": "Hughes",
    "title": "Security Engineer",
    "seniority": "mid",
-   "bio": "Security Engineer at Fortivex. Joined 5 years.",
+   "bio": "Security Engineer at Fortivex. Joined 3 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
    "posts": []
   },
   {
    "id": 832,
-   "first": "Mei",
-   "last": "Walsh",
+   "first": "Vanessa",
+   "last": "Ryan",
    "title": "Security Analyst",
    "seniority": "mid",
-   "bio": "Security Analyst at Fortivex. Been here 7 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "One year at Fortivex today. Learned more than I expected."
-   ]
+   "bio": "Security Analyst at Fortivex. Joined 3 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 833,
-   "first": "Leah",
-   "last": "Flanagan",
+   "first": "Deirdre",
+   "last": "Kavanagh",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at Fortivex. Joined 1 years.",
+   "bio": "Business Analyst at Fortivex. Joined 4 years.",
    "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "One year at Fortivex today. Learned more than I expected."
-   ]
+   "posts": []
   },
   {
    "id": 834,
-   "first": "Wendy",
-   "last": "Usman",
+   "first": "Bilal",
+   "last": "Lewis",
    "title": "Financial Analyst",
    "seniority": "mid",
    "bio": "Financial Analyst at Fortivex. Been here 6 years.",
-   "personality": "Busy but approachable.",
+   "personality": "Friendly and candid about day-to-day problems.",
    "posts": []
   },
   {
    "id": 835,
-   "first": "Jack",
-   "last": "Carroll",
+   "first": "Amira",
+   "last": "Grant",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at Fortivex. Been here 5 years.",
-   "personality": "Busy but approachable.",
+   "bio": "Recruiter at Fortivex. Been here 7 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
    "posts": []
   },
   {
    "id": 836,
-   "first": "Quinn",
-   "last": "Healy",
+   "first": "Owen",
+   "last": "Silva",
    "title": "Junior SOC Analyst",
    "seniority": "junior",
-   "bio": "Junior SOC Analyst at Fortivex. Been here 2 years.",
+   "bio": "Junior SOC Analyst at Fortivex. Been here 8 years.",
    "personality": "Friendly but has no buying power.",
    "posts": []
   },
   {
    "id": 837,
-   "first": "Will",
-   "last": "Young",
+   "first": "Olivia",
+   "last": "Okafor",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at Fortivex. Been here 6 years.",
+   "bio": "Executive Assistant to the CEO at Fortivex. Joined 1 years.",
    "personality": "Friendly but has no buying power.",
    "posts": []
   },
   {
    "id": 838,
-   "first": "Uma",
-   "last": "Patel",
+   "first": "Sinead",
+   "last": "Carroll",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at Fortivex. Joined 4 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "One year at Fortivex today. Learned more than I expected."
-   ]
+   "bio": "Graduate Analyst at Fortivex. Joined 8 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "9": [
   {
    "id": 911,
-   "first": "Callum",
-   "last": "Brennan",
+   "first": "Harry",
+   "last": "Walsh",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at IronCore Systems. Joined 1 years.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
+   "bio": "CFO at IronCore Systems. Been here 5 years.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 912,
-   "first": "Wendy",
-   "last": "Wright",
+   "first": "Callum",
+   "last": "Shaw",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at IronCore Systems. Been here 8 years.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": []
-  },
-  {
-   "id": 913,
-   "first": "Chloe",
-   "last": "Ahmed",
-   "title": "Chief Revenue Officer",
-   "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at IronCore Systems. Joined 2 years.",
+   "bio": "Chief People Officer at IronCore Systems. Joined 3 years.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 913,
+   "first": "Marcus",
+   "last": "Ahmed",
+   "title": "Chief Revenue Officer",
+   "seniority": "c-suite",
+   "bio": "Chief Revenue Officer at IronCore Systems. Been here 3 years.",
+   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 914,
-   "first": "Priya",
-   "last": "Power",
+   "first": "Ravi",
+   "last": "Patel",
    "title": "VP Supply Chain",
    "seniority": "vp",
-   "bio": "VP Supply Chain at IronCore Systems. Joined 2 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "bio": "VP Supply Chain at IronCore Systems. Been here 8 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 915,
-   "first": "Deirdre",
-   "last": "Khan",
+   "first": "Gareth",
+   "last": "Kowalski",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at IronCore Systems. Been here 8 years.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
-  },
-  {
-   "id": 916,
-   "first": "Quinn",
-   "last": "Keane",
-   "title": "VP Marketing",
-   "seniority": "vp",
-   "bio": "VP Marketing at IronCore Systems. Been here 7 years.",
+   "bio": "VP Finance at IronCore Systems. Been here 4 years.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 916,
+   "first": "Imogen",
+   "last": "Kavanagh",
+   "title": "VP Marketing",
+   "seniority": "vp",
+   "bio": "VP Marketing at IronCore Systems. Been here 7 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 917,
-   "first": "Ines",
-   "last": "Turner",
+   "first": "Tom",
+   "last": "Gallagher",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at IronCore Systems. Joined 4 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Information Technology at IronCore Systems. Been here 2 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 918,
-   "first": "Rebecca",
-   "last": "Foster",
+   "first": "Luke",
+   "last": "Sweeney",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at IronCore Systems. Been here 5 years.",
+   "bio": "VP Procurement at IronCore Systems. Joined 9 years.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 919,
-   "first": "Ben",
-   "last": "Egan",
+   "first": "Chloe",
+   "last": "Vaughan",
    "title": "Plant Director",
    "seniority": "director",
-   "bio": "Plant Director at IronCore Systems. Been here 2 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "bio": "Plant Director at IronCore Systems. Been here 3 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 920,
-   "first": "Tara",
-   "last": "Khan",
+   "first": "Sinead",
+   "last": "Tierney",
    "title": "Head of Quality",
    "seniority": "director",
-   "bio": "Head of Quality at IronCore Systems. Been here 9 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "bio": "Head of Quality at IronCore Systems. Joined 4 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 921,
-   "first": "Vanessa",
-   "last": "Iqbal",
+   "first": "Femi",
+   "last": "Walsh",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at IronCore Systems. Been here 9 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Director of IT at IronCore Systems. Joined 5 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 922,
-   "first": "Uma",
-   "last": "Davies",
+   "first": "Oliver",
+   "last": "Patel",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at IronCore Systems. Been here 5 years.",
+   "bio": "Head of Procurement at IronCore Systems. Joined 2 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 923,
-   "first": "Owen",
-   "last": "Regan",
+   "first": "Fatima",
+   "last": "Novak",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at IronCore Systems. Been here 9 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Head of Legal at IronCore Systems. Joined 7 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 924,
-   "first": "Grainne",
-   "last": "Bennett",
+   "first": "Tomasz",
+   "last": "Kavanagh",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at IronCore Systems. Joined 9 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "bio": "Head of Talent Acquisition at IronCore Systems. Joined 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 925,
-   "first": "Patrick",
-   "last": "Shaw",
+   "first": "Hugo",
+   "last": "Usman",
    "title": "Director of Marketing",
    "seniority": "director",
-   "bio": "Director of Marketing at IronCore Systems. Been here 7 years.",
+   "bio": "Director of Marketing at IronCore Systems. Joined 6 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
-  },
-  {
-   "id": 926,
-   "first": "Declan",
-   "last": "Keane",
-   "title": "Maintenance Manager",
-   "seniority": "manager",
-   "bio": "Maintenance Manager at IronCore Systems. Joined 4 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
-   "id": 927,
-   "first": "Leah",
-   "last": "Callaghan",
-   "title": "Production Manager",
+   "id": 926,
+   "first": "Shane",
+   "last": "Kavanagh",
+   "title": "Maintenance Manager",
    "seniority": "manager",
-   "bio": "Production Manager at IronCore Systems. Been here 4 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
-  },
-  {
-   "id": 928,
-   "first": "Lorcan",
-   "last": "Foster",
-   "title": "IT Service Manager",
-   "seniority": "manager",
-   "bio": "IT Service Manager at IronCore Systems. Joined 8 years.",
+   "bio": "Maintenance Manager at IronCore Systems. Been here 7 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
    "posts": []
   },
   {
+   "id": 927,
+   "first": "Maeve",
+   "last": "Sweeney",
+   "title": "Production Manager",
+   "seniority": "manager",
+   "bio": "Production Manager at IronCore Systems. Joined 5 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
+  },
+  {
+   "id": 928,
+   "first": "Piotr",
+   "last": "Okafor",
+   "title": "IT Service Manager",
+   "seniority": "manager",
+   "bio": "IT Service Manager at IronCore Systems. Joined 4 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
+  },
+  {
    "id": 929,
-   "first": "Fionn",
-   "last": "Hughes",
+   "first": "Ewan",
+   "last": "Sweeney",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at IronCore Systems. Joined 1 years.",
+   "bio": "Procurement Manager at IronCore Systems. Been here 7 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 930,
-   "first": "Amira",
-   "last": "McCarthy",
+   "first": "Declan",
+   "last": "O'Neill",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at IronCore Systems. Been here 9 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "HR Business Partner at IronCore Systems. Joined 1 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
+   "posts": []
   },
   {
    "id": 931,
-   "first": "Shane",
-   "last": "Thompson",
+   "first": "Keira",
+   "last": "Regan",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at IronCore Systems. Been here 8 years.",
+   "bio": "Marketing Manager at IronCore Systems. Joined 6 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 932,
-   "first": "Mei",
-   "last": "Byrne",
+   "first": "Samuel",
+   "last": "McCarthy",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at IronCore Systems. Joined 7 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "bio": "Sales Manager at IronCore Systems. Joined 5 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 933,
-   "first": "Fatima",
-   "last": "Kowalski",
+   "first": "Isaac",
+   "last": "Ward",
    "title": "Quality Engineer",
    "seniority": "mid",
-   "bio": "Quality Engineer at IronCore Systems. Been here 7 years.",
+   "bio": "Quality Engineer at IronCore Systems. Been here 5 years.",
    "personality": "Friendly and candid about day-to-day problems.",
    "posts": []
   },
   {
    "id": 934,
-   "first": "Sinead",
-   "last": "Callaghan",
+   "first": "Catriona",
+   "last": "Foster",
    "title": "Production Planner",
    "seniority": "mid",
-   "bio": "Production Planner at IronCore Systems. Been here 8 years.",
+   "bio": "Production Planner at IronCore Systems. Been here 6 years.",
    "personality": "Busy but approachable.",
    "posts": []
   },
   {
    "id": 935,
-   "first": "Luke",
-   "last": "Kavanagh",
+   "first": "Deirdre",
+   "last": "Turner",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at IronCore Systems. Been here 2 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "bio": "Business Analyst at IronCore Systems. Joined 4 years.",
+   "personality": "Busy but approachable.",
    "posts": []
   },
   {
    "id": 936,
-   "first": "Piotr",
-   "last": "Mitchell",
+   "first": "Leah",
+   "last": "Okafor",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at IronCore Systems. Been here 1 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "One year at IronCore Systems today. Learned more than I expected."
-   ]
-  },
-  {
-   "id": 937,
-   "first": "Harry",
-   "last": "Mitchell",
-   "title": "Recruiter",
-   "seniority": "mid",
-   "bio": "Recruiter at IronCore Systems. Been here 8 years.",
+   "bio": "Financial Analyst at IronCore Systems. Been here 2 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
    "posts": []
   },
   {
+   "id": 937,
+   "first": "Daniel",
+   "last": "Fitzgerald",
+   "title": "Recruiter",
+   "seniority": "mid",
+   "bio": "Recruiter at IronCore Systems. Joined 6 years.",
+   "personality": "Busy but approachable.",
+   "posts": []
+  },
+  {
    "id": 938,
-   "first": "Katie",
-   "last": "Grant",
+   "first": "Ciara",
+   "last": "Power",
    "title": "Process Technician",
    "seniority": "junior",
-   "bio": "Process Technician at IronCore Systems. Been here 7 years.",
-   "personality": "Friendly but has no buying power.",
+   "bio": "Process Technician at IronCore Systems. Joined 7 years.",
+   "personality": "Happy to chat and knows who does what.",
    "posts": []
   },
   {
    "id": 939,
-   "first": "Ravi",
-   "last": "Fitzgerald",
+   "first": "Orla",
+   "last": "Sweeney",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at IronCore Systems. Been here 6 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
+   "bio": "Executive Assistant to the CEO at IronCore Systems. Been here 2 years.",
+   "personality": "Friendly but has no buying power.",
    "posts": []
   },
   {
    "id": 940,
-   "first": "Isaac",
-   "last": "Healy",
+   "first": "Nadia",
+   "last": "Thompson",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at IronCore Systems. Been here 8 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ]
+   "bio": "Graduate Analyst at IronCore Systems. Been here 3 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ],
  "13": [
   {
    "id": 1311,
-   "first": "Daniel",
-   "last": "Keane",
+   "first": "Piotr",
+   "last": "Mitchell",
    "title": "Chief Risk Officer",
    "seniority": "c-suite",
-   "bio": "Chief Risk Officer at CapitalBridge. Joined 3 years.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ]
-  },
-  {
-   "id": 1312,
-   "first": "Wendy",
-   "last": "Dempsey",
-   "title": "Chief People Officer",
-   "seniority": "c-suite",
-   "bio": "Chief People Officer at CapitalBridge. Been here 4 years.",
+   "bio": "Chief Risk Officer at CapitalBridge. Been here 2 years.",
    "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 1312,
+   "first": "Quinn",
+   "last": "Usman",
+   "title": "Chief People Officer",
+   "seniority": "c-suite",
+   "bio": "Chief People Officer at CapitalBridge. Joined 2 years.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 1313,
-   "first": "Luke",
-   "last": "Walsh",
+   "first": "Maeve",
+   "last": "Novak",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
    "bio": "Chief Revenue Officer at CapitalBridge. Been here 8 years.",
@@ -17159,8 +14107,8 @@ export const LEGACY_EXTRA_EMPLOYEES = {
   },
   {
    "id": 1314,
-   "first": "Nadia",
-   "last": "Fitzgerald",
+   "first": "Gemma",
+   "last": "Okafor",
    "title": "VP Product",
    "seniority": "vp",
    "bio": "VP Product at CapitalBridge. Joined 5 years.",
@@ -17169,598 +14117,560 @@ export const LEGACY_EXTRA_EMPLOYEES = {
   },
   {
    "id": 1315,
-   "first": "Ines",
-   "last": "Tierney",
+   "first": "Fionn",
+   "last": "Chen",
    "title": "VP Compliance",
    "seniority": "vp",
-   "bio": "VP Compliance at CapitalBridge. Joined 6 years.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "bio": "VP Compliance at CapitalBridge. Joined 5 years.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1316,
-   "first": "Leah",
-   "last": "Turner",
+   "first": "Samuel",
+   "last": "Khan",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at CapitalBridge. Been here 6 years.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Finance at CapitalBridge. Joined 9 years.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1317,
-   "first": "Will",
-   "last": "Dempsey",
+   "first": "Isaac",
+   "last": "Tierney",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at CapitalBridge. Joined 2 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ]
+   "bio": "VP Marketing at CapitalBridge. Been here 6 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1318,
-   "first": "Yusuf",
-   "last": "Kavanagh",
+   "first": "Grainne",
+   "last": "Flanagan",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at CapitalBridge. Been here 4 years.",
+   "bio": "VP Information Technology at CapitalBridge. Joined 5 years.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1319,
-   "first": "Maeve",
-   "last": "Reid",
+   "first": "Declan",
+   "last": "Tierney",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at CapitalBridge. Joined 4 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Procurement at CapitalBridge. Been here 6 years.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1320,
-   "first": "Owen",
-   "last": "Hall",
+   "first": "Keira",
+   "last": "Stewart",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at CapitalBridge. Joined 4 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
-  },
-  {
-   "id": 1321,
-   "first": "Rosa",
-   "last": "Ahmed",
-   "title": "Director of Payments Operations",
-   "seniority": "director",
-   "bio": "Director of Payments Operations at CapitalBridge. Joined 1 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "bio": "Head of Fraud at CapitalBridge. Been here 4 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
-   "id": 1322,
-   "first": "Tom",
-   "last": "Mitchell",
-   "title": "Director of IT",
+   "id": 1321,
+   "first": "Ruth",
+   "last": "Gallagher",
+   "title": "Director of Payments Operations",
    "seniority": "director",
-   "bio": "Director of IT at CapitalBridge. Joined 1 years.",
+   "bio": "Director of Payments Operations at CapitalBridge. Joined 8 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 1322,
+   "first": "Patrick",
+   "last": "Khan",
+   "title": "Director of IT",
+   "seniority": "director",
+   "bio": "Director of IT at CapitalBridge. Joined 8 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 1323,
-   "first": "Ewan",
-   "last": "Ryan",
+   "first": "Oliver",
+   "last": "Sweeney",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at CapitalBridge. Been here 4 years.",
+   "bio": "Head of Procurement at CapitalBridge. Been here 1 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1324,
-   "first": "Lorcan",
-   "last": "Moreno",
+   "first": "Uma",
+   "last": "Maguire",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at CapitalBridge. Joined 2 years.",
+   "bio": "Head of Legal at CapitalBridge. Joined 8 years.",
    "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "posts": []
   },
   {
    "id": 1325,
-   "first": "Aisling",
-   "last": "Lynch",
+   "first": "Priya",
+   "last": "Turner",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at CapitalBridge. Joined 5 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
-  },
-  {
-   "id": 1326,
-   "first": "Sinead",
-   "last": "Reid",
-   "title": "Director of Marketing",
-   "seniority": "director",
-   "bio": "Director of Marketing at CapitalBridge. Joined 5 years.",
+   "bio": "Head of Talent Acquisition at CapitalBridge. Been here 7 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 1326,
+   "first": "Harry",
+   "last": "Novak",
+   "title": "Director of Marketing",
+   "seniority": "director",
+   "bio": "Director of Marketing at CapitalBridge. Been here 3 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 1327,
-   "first": "Hugo",
-   "last": "Davies",
+   "first": "Callum",
+   "last": "Hall",
    "title": "Compliance Manager",
    "seniority": "manager",
-   "bio": "Compliance Manager at CapitalBridge. Joined 1 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
+   "bio": "Compliance Manager at CapitalBridge. Joined 8 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
    "posts": []
   },
   {
    "id": 1328,
-   "first": "Oliver",
-   "last": "Bennett",
+   "first": "Will",
+   "last": "Iqbal",
    "title": "Customer Operations Manager",
    "seniority": "manager",
-   "bio": "Customer Operations Manager at CapitalBridge. Joined 3 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Customer Operations Manager at CapitalBridge. Been here 4 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 1329,
-   "first": "Elena",
-   "last": "Ward",
+   "first": "Tom",
+   "last": "Turner",
    "title": "IT Service Manager",
    "seniority": "manager",
    "bio": "IT Service Manager at CapitalBridge. Joined 2 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "personality": "Practical and busy. Responds to concrete examples.",
    "posts": []
   },
   {
    "id": 1330,
-   "first": "Olivia",
-   "last": "Fitzgerald",
+   "first": "Hugo",
+   "last": "Byrne",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at CapitalBridge. Been here 7 years.",
-   "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Procurement Manager at CapitalBridge. Been here 2 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 1331,
-   "first": "Grainne",
-   "last": "Patel",
+   "first": "Owen",
+   "last": "McCarthy",
    "title": "HR Business Partner",
    "seniority": "manager",
-   "bio": "HR Business Partner at CapitalBridge. Joined 3 years.",
+   "bio": "HR Business Partner at CapitalBridge. Been here 1 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "posts": []
   },
   {
    "id": 1332,
-   "first": "Catriona",
-   "last": "Vaughan",
+   "first": "Daniel",
+   "last": "Young",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at CapitalBridge. Joined 5 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "bio": "Marketing Manager at CapitalBridge. Joined 1 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
    "posts": []
   },
   {
    "id": 1333,
-   "first": "Kwame",
-   "last": "Foster",
+   "first": "Bilal",
+   "last": "Wright",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at CapitalBridge. Been here 6 years.",
-   "personality": "Busy but approachable.",
+   "bio": "Payments Analyst at CapitalBridge. Joined 5 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
    "posts": []
   },
   {
    "id": 1334,
-   "first": "Bilal",
-   "last": "Callaghan",
+   "first": "Elena",
+   "last": "Flanagan",
    "title": "KYC Analyst",
    "seniority": "mid",
-   "bio": "KYC Analyst at CapitalBridge. Joined 3 years.",
-   "personality": "Busy but approachable.",
+   "bio": "KYC Analyst at CapitalBridge. Been here 8 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
    "posts": []
   },
   {
    "id": 1335,
-   "first": "Tara",
-   "last": "Grant",
+   "first": "Victor",
+   "last": "Patel",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at CapitalBridge. Joined 1 years.",
-   "personality": "Busy but approachable.",
+   "bio": "Business Analyst at CapitalBridge. Joined 8 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
    "posts": []
   },
   {
    "id": 1336,
-   "first": "Ruth",
-   "last": "Davies",
+   "first": "Orla",
+   "last": "Bennett",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at CapitalBridge. Joined 4 years.",
+   "bio": "Recruiter at CapitalBridge. Joined 7 years.",
    "personality": "Busy but approachable.",
    "posts": []
   },
   {
    "id": 1337,
-   "first": "Niall",
-   "last": "Ward",
+   "first": "Ines",
+   "last": "Tierney",
    "title": "Customer Support Associate",
    "seniority": "junior",
-   "bio": "Customer Support Associate at CapitalBridge. Been here 3 years.",
+   "bio": "Customer Support Associate at CapitalBridge. Joined 1 years.",
    "personality": "Eager and responsive. Will pass you up the chain.",
    "posts": []
   },
   {
    "id": 1338,
-   "first": "Diego",
-   "last": "Byrne",
+   "first": "Rosa",
+   "last": "Egan",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at CapitalBridge. Joined 8 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "One year at CapitalBridge today. Learned more than I expected."
-   ]
+   "bio": "Executive Assistant to the CEO at CapitalBridge. Been here 7 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   },
   {
    "id": 1339,
-   "first": "Fionn",
-   "last": "Kowalski",
+   "first": "Hannah",
+   "last": "O'Neill",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at CapitalBridge. Joined 1 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
+   "bio": "Graduate Analyst at CapitalBridge. Been here 2 years.",
+   "personality": "Happy to chat and knows who does what.",
    "posts": []
   }
  ],
  "16": [
   {
    "id": 1608,
-   "first": "Priya",
-   "last": "Moreno",
+   "first": "Aoife",
+   "last": "Ward",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at FinAxis Group. Joined 1 years.",
+   "bio": "CFO at FinAxis Group. Joined 3 years.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1609,
-   "first": "Amira",
-   "last": "Hall",
+   "first": "Lorcan",
+   "last": "Usman",
    "title": "Chief Risk Officer",
    "seniority": "c-suite",
-   "bio": "Chief Risk Officer at FinAxis Group. Been here 6 years.",
+   "bio": "Chief Risk Officer at FinAxis Group. Joined 4 years.",
    "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "posts": []
   },
   {
    "id": 1610,
-   "first": "Ben",
-   "last": "Maguire",
+   "first": "Sinead",
+   "last": "Iqbal",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at FinAxis Group. Been here 6 years.",
+   "bio": "Chief People Officer at FinAxis Group. Been here 3 years.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1611,
-   "first": "Tomasz",
-   "last": "Hall",
+   "first": "Marcus",
+   "last": "Moreno",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at FinAxis Group. Been here 3 years.",
+   "bio": "Chief Revenue Officer at FinAxis Group. Been here 9 years.",
    "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1612,
-   "first": "Diego",
-   "last": "Moreno",
+   "first": "Jack",
+   "last": "Stewart",
    "title": "VP Product",
    "seniority": "vp",
-   "bio": "VP Product at FinAxis Group. Joined 9 years.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Product at FinAxis Group. Been here 5 years.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1613,
-   "first": "Rosa",
-   "last": "Patel",
+   "first": "Femi",
+   "last": "Young",
    "title": "VP Compliance",
    "seniority": "vp",
-   "bio": "VP Compliance at FinAxis Group. Been here 5 years.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Spent the week with customers. Best use of a leader's time, every time."
-   ]
+   "bio": "VP Compliance at FinAxis Group. Joined 9 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1614,
-   "first": "Zara",
-   "last": "Tierney",
+   "first": "Luke",
+   "last": "Adeyemi",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at FinAxis Group. Joined 3 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Finance at FinAxis Group. Been here 8 years.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1615,
-   "first": "Olivia",
-   "last": "Maguire",
+   "first": "Uma",
+   "last": "Ryan",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at FinAxis Group. Joined 2 years.",
+   "bio": "VP Marketing at FinAxis Group. Joined 5 years.",
    "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1616,
-   "first": "Eimear",
-   "last": "Egan",
+   "first": "Keira",
+   "last": "Silva",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at FinAxis Group. Joined 8 years.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Information Technology at FinAxis Group. Been here 6 years.",
+   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1617,
-   "first": "Piotr",
-   "last": "Grant",
+   "first": "Ciara",
+   "last": "Evans",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at FinAxis Group. Been here 6 years.",
-   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Procurement at FinAxis Group. Joined 2 years.",
+   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1618,
-   "first": "Ruth",
-   "last": "Kavanagh",
+   "first": "Maeve",
+   "last": "Fitzgerald",
    "title": "Head of Fraud",
    "seniority": "director",
-   "bio": "Head of Fraud at FinAxis Group. Been here 2 years.",
-   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "bio": "Head of Fraud at FinAxis Group. Been here 1 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1619,
-   "first": "Lorcan",
-   "last": "Wright",
+   "first": "Daniel",
+   "last": "Tierney",
    "title": "Director of Payments Operations",
    "seniority": "director",
-   "bio": "Director of Payments Operations at FinAxis Group. Joined 1 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "bio": "Director of Payments Operations at FinAxis Group. Been here 3 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1620,
-   "first": "Leah",
+   "first": "Oliver",
    "last": "Brennan",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at FinAxis Group. Joined 9 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "bio": "Director of IT at FinAxis Group. Been here 2 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1621,
-   "first": "Orla",
-   "last": "Ahmed",
+   "first": "Kwame",
+   "last": "Regan",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at FinAxis Group. Joined 1 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
-  },
-  {
-   "id": 1622,
-   "first": "Vanessa",
-   "last": "Healy",
-   "title": "Head of Legal",
-   "seniority": "director",
-   "bio": "Head of Legal at FinAxis Group. Joined 2 years.",
+   "bio": "Head of Procurement at FinAxis Group. Been here 6 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
+   "id": 1622,
+   "first": "Priya",
+   "last": "Okafor",
+   "title": "Head of Legal",
+   "seniority": "director",
+   "bio": "Head of Legal at FinAxis Group. Joined 7 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
+   "posts": []
+  },
+  {
    "id": 1623,
-   "first": "Callum",
-   "last": "Davies",
+   "first": "Katie",
+   "last": "Kavanagh",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at FinAxis Group. Joined 8 years.",
+   "bio": "Head of Talent Acquisition at FinAxis Group. Been here 2 years.",
    "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1624,
-   "first": "Femi",
-   "last": "Flanagan",
+   "first": "Elena",
+   "last": "Ahmed",
    "title": "Director of Marketing",
    "seniority": "director",
    "bio": "Director of Marketing at FinAxis Group. Been here 8 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1625,
-   "first": "Hannah",
-   "last": "Foster",
+   "first": "Shane",
+   "last": "McCarthy",
    "title": "Compliance Manager",
    "seniority": "manager",
-   "bio": "Compliance Manager at FinAxis Group. Joined 1 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "bio": "Compliance Manager at FinAxis Group. Been here 2 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
    "posts": []
   },
   {
    "id": 1626,
-   "first": "Jack",
-   "last": "Iqbal",
+   "first": "Ewan",
+   "last": "Khan",
    "title": "Customer Operations Manager",
    "seniority": "manager",
-   "bio": "Customer Operations Manager at FinAxis Group. Joined 6 years.",
+   "bio": "Customer Operations Manager at FinAxis Group. Been here 2 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
    "posts": []
   },
   {
    "id": 1627,
-   "first": "Adaeze",
-   "last": "Shaw",
+   "first": "Chloe",
+   "last": "Walsh",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at FinAxis Group. Joined 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
-  },
-  {
-   "id": 1628,
-   "first": "Elena",
-   "last": "Grant",
-   "title": "Procurement Manager",
-   "seniority": "manager",
-   "bio": "Procurement Manager at FinAxis Group. Joined 2 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
-  },
-  {
-   "id": 1629,
-   "first": "Wendy",
-   "last": "Kowalski",
-   "title": "HR Business Partner",
-   "seniority": "manager",
-   "bio": "HR Business Partner at FinAxis Group. Joined 9 years.",
+   "bio": "IT Service Manager at FinAxis Group. Been here 3 years.",
    "personality": "Practical and busy. Responds to concrete examples.",
    "posts": []
   },
   {
-   "id": 1630,
-   "first": "Fionn",
-   "last": "Patel",
-   "title": "Marketing Manager",
+   "id": 1628,
+   "first": "Ruth",
+   "last": "Doherty",
+   "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at FinAxis Group. Been here 8 years.",
+   "bio": "Procurement Manager at FinAxis Group. Joined 5 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
+  },
+  {
+   "id": 1629,
+   "first": "Mei",
+   "last": "Turner",
+   "title": "HR Business Partner",
+   "seniority": "manager",
+   "bio": "HR Business Partner at FinAxis Group. Been here 8 years.",
    "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
    "posts": []
   },
   {
+   "id": 1630,
+   "first": "Gemma",
+   "last": "Lynch",
+   "title": "Marketing Manager",
+   "seniority": "manager",
+   "bio": "Marketing Manager at FinAxis Group. Been here 5 years.",
+   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "posts": []
+  },
+  {
    "id": 1631,
-   "first": "Declan",
-   "last": "Dempsey",
+   "first": "Aisling",
+   "last": "Walsh",
    "title": "Payments Analyst",
    "seniority": "mid",
-   "bio": "Payments Analyst at FinAxis Group. Been here 8 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ]
+   "bio": "Payments Analyst at FinAxis Group. Joined 6 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 1632,
-   "first": "Freya",
-   "last": "Bennett",
+   "first": "Nadia",
+   "last": "Khan",
    "title": "KYC Analyst",
    "seniority": "mid",
-   "bio": "KYC Analyst at FinAxis Group. Been here 4 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
+   "bio": "KYC Analyst at FinAxis Group. Been here 1 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
    "posts": []
   },
   {
    "id": 1633,
-   "first": "Nathan",
-   "last": "Quinn",
+   "first": "Ravi",
+   "last": "Tierney",
    "title": "Business Analyst",
    "seniority": "mid",
    "bio": "Business Analyst at FinAxis Group. Joined 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "personality": "Friendly and candid about day-to-day problems.",
    "posts": []
   },
   {
    "id": 1634,
-   "first": "Chloe",
-   "last": "Healy",
+   "first": "Declan",
+   "last": "Iqbal",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at FinAxis Group. Joined 7 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ]
-  },
-  {
-   "id": 1635,
-   "first": "Ines",
-   "last": "Gallagher",
-   "title": "Recruiter",
-   "seniority": "mid",
-   "bio": "Recruiter at FinAxis Group. Been here 8 years.",
+   "bio": "Financial Analyst at FinAxis Group. Joined 5 years.",
    "personality": "Busy but approachable.",
    "posts": []
   },
   {
+   "id": 1635,
+   "first": "Joel",
+   "last": "Egan",
+   "title": "Recruiter",
+   "seniority": "mid",
+   "bio": "Recruiter at FinAxis Group. Joined 4 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
+  },
+  {
    "id": 1636,
-   "first": "Ciara",
-   "last": "Byrne",
+   "first": "Fionn",
+   "last": "Gallagher",
    "title": "Customer Support Associate",
    "seniority": "junior",
-   "bio": "Customer Support Associate at FinAxis Group. Joined 2 years.",
-   "personality": "Friendly but has no buying power.",
-   "posts": [
-    "One year at FinAxis Group today. Learned more than I expected."
-   ]
+   "bio": "Customer Support Associate at FinAxis Group. Been here 7 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   },
   {
    "id": 1637,
-   "first": "Will",
-   "last": "Egan",
+   "first": "Harry",
+   "last": "Tierney",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at FinAxis Group. Joined 1 years.",
-   "personality": "Happy to chat and knows who does what.",
+   "bio": "Executive Assistant to the CEO at FinAxis Group. Joined 4 years.",
+   "personality": "Friendly but has no buying power.",
    "posts": []
   },
   {
    "id": 1638,
    "first": "Gareth",
-   "last": "Flanagan",
+   "last": "Quinn",
    "title": "Graduate Analyst",
    "seniority": "junior",
    "bio": "Graduate Analyst at FinAxis Group. Joined 8 years.",
@@ -17771,222 +14681,208 @@ export const LEGACY_EXTRA_EMPLOYEES = {
  "19": [
   {
    "id": 1908,
-   "first": "Ciara",
-   "last": "Bennett",
+   "first": "Adaeze",
+   "last": "Regan",
    "title": "CFO",
    "seniority": "c-suite",
-   "bio": "CFO at RetailEdge. Joined 5 years.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "bio": "CFO at RetailEdge. Been here 2 years.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1909,
-   "first": "Rosa",
-   "last": "Nolan",
+   "first": "Ciara",
+   "last": "Sweeney",
    "title": "CTO",
    "seniority": "c-suite",
-   "bio": "CTO at RetailEdge. Joined 2 years.",
-   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "bio": "CTO at RetailEdge. Joined 3 years.",
+   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1910,
-   "first": "Samuel",
-   "last": "Usman",
+   "first": "Deirdre",
+   "last": "Egan",
    "title": "Chief People Officer",
    "seniority": "c-suite",
-   "bio": "Chief People Officer at RetailEdge. Been here 4 years.",
-   "personality": "Dismissive of generic pitches. Only engages when you clearly understand their business. Big company: any purchase involves several people and a formal process.",
+   "bio": "Chief People Officer at RetailEdge. Joined 2 years.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1911,
-   "first": "Jack",
-   "last": "McCarthy",
+   "first": "Joel",
+   "last": "Doherty",
    "title": "Chief Revenue Officer",
    "seniority": "c-suite",
-   "bio": "Chief Revenue Officer at RetailEdge. Joined 5 years.",
-   "personality": "Time-poor and blunt. Gives you 30 seconds to be relevant. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ]
+   "bio": "Chief Revenue Officer at RetailEdge. Joined 8 years.",
+   "personality": "Thoughtful but sceptical. Wants evidence and peer references. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1912,
-   "first": "Mei",
-   "last": "Carroll",
+   "first": "Orla",
+   "last": "Tierney",
    "title": "VP Engineering",
    "seniority": "vp",
-   "bio": "VP Engineering at RetailEdge. Been here 1 years.",
+   "bio": "VP Engineering at RetailEdge. Joined 7 years.",
    "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1913,
-   "first": "Deirdre",
-   "last": "Ryan",
+   "first": "Lorcan",
+   "last": "Power",
    "title": "VP Finance",
    "seniority": "vp",
-   "bio": "VP Finance at RetailEdge. Joined 2 years.",
+   "bio": "VP Finance at RetailEdge. Joined 1 years.",
    "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1914,
-   "first": "Isaac",
-   "last": "Quinn",
+   "first": "Wendy",
+   "last": "Stewart",
    "title": "VP Marketing",
    "seniority": "vp",
-   "bio": "VP Marketing at RetailEdge. Joined 9 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Hiring across the team this year. If you know great people, send them my way."
-   ]
+   "bio": "VP Marketing at RetailEdge. Been here 6 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1915,
-   "first": "Zara",
-   "last": "Sweeney",
+   "first": "Diego",
+   "last": "Kowalski",
    "title": "VP Information Technology",
    "seniority": "vp",
-   "bio": "VP Information Technology at RetailEdge. Joined 5 years.",
-   "personality": "Open to new ideas if they solve this quarter's problem. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Information Technology at RetailEdge. Been here 6 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1916,
-   "first": "Fionn",
-   "last": "Maguire",
+   "first": "Catriona",
+   "last": "Lynch",
    "title": "VP Procurement",
    "seniority": "vp",
-   "bio": "VP Procurement at RetailEdge. Joined 5 years.",
-   "personality": "Seen every sales tactic. Needs 3-4 touches before engaging. Big company: any purchase involves several people and a formal process.",
+   "bio": "VP Procurement at RetailEdge. Joined 6 years.",
+   "personality": "Numbers-driven. Responds to clear ROI tied to their targets. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1917,
-   "first": "Quinn",
-   "last": "Novak",
+   "first": "Rosa",
+   "last": "Fitzgerald",
    "title": "Head of Customer Success",
    "seniority": "director",
-   "bio": "Head of Customer Success at RetailEdge. Joined 7 years.",
+   "bio": "Head of Customer Success at RetailEdge. Been here 6 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "posts": []
   },
   {
    "id": 1918,
-   "first": "Freya",
-   "last": "Hall",
+   "first": "Ben",
+   "last": "Regan",
    "title": "Director of Product",
    "seniority": "director",
-   "bio": "Director of Product at RetailEdge. Been here 6 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "bio": "Director of Product at RetailEdge. Been here 8 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1919,
-   "first": "Amira",
+   "first": "Patrick",
    "last": "Grant",
    "title": "Director of IT",
    "seniority": "director",
-   "bio": "Director of IT at RetailEdge. Been here 7 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "bio": "Director of IT at RetailEdge. Joined 8 years.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1920,
-   "first": "Owen",
-   "last": "Stewart",
+   "first": "Oliver",
+   "last": "Kowalski",
    "title": "Head of Procurement",
    "seniority": "director",
-   "bio": "Head of Procurement at RetailEdge. Been here 4 years.",
+   "bio": "Head of Procurement at RetailEdge. Joined 9 years.",
    "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "posts": []
   },
   {
    "id": 1921,
-   "first": "Shane",
-   "last": "Vaughan",
+   "first": "Tomasz",
+   "last": "Walsh",
    "title": "Head of Legal",
    "seniority": "director",
-   "bio": "Head of Legal at RetailEdge. Been here 3 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Head of Legal at RetailEdge. Joined 3 years.",
+   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "posts": []
   },
   {
    "id": 1922,
-   "first": "Gemma",
-   "last": "Walsh",
+   "first": "Shane",
+   "last": "Chen",
    "title": "Head of Talent Acquisition",
    "seniority": "director",
-   "bio": "Head of Talent Acquisition at RetailEdge. Been here 6 years.",
-   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
+   "bio": "Head of Talent Acquisition at RetailEdge. Joined 1 years.",
+   "personality": "Protective of team time. Prefers email to calls. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1923,
-   "first": "Catriona",
-   "last": "McCarthy",
+   "first": "Quinn",
+   "last": "Shaw",
    "title": "Director of Marketing",
    "seniority": "director",
    "bio": "Director of Marketing at RetailEdge. Been here 8 years.",
-   "personality": "Curious and analytical. Asks a lot of questions. Big company: any purchase involves several people and a formal process.",
+   "personality": "Pragmatic. Will engage if you speak to their specific challenge. Big company: any purchase involves several people and a formal process.",
    "posts": []
   },
   {
    "id": 1924,
-   "first": "Vanessa",
-   "last": "Lewis",
+   "first": "Harry",
+   "last": "Davies",
    "title": "RevOps Manager",
    "seniority": "manager",
-   "bio": "RevOps Manager at RetailEdge. Joined 6 years.",
-   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "bio": "RevOps Manager at RetailEdge. Joined 5 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
    "posts": []
   },
   {
    "id": 1925,
-   "first": "Ruth",
-   "last": "Turner",
+   "first": "Rebecca",
+   "last": "Vaughan",
    "title": "Support Manager",
    "seniority": "manager",
-   "bio": "Support Manager at RetailEdge. Been here 2 years.",
+   "bio": "Support Manager at RetailEdge. Been here 5 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 1926,
-   "first": "Ewan",
-   "last": "Grant",
+   "first": "Niall",
+   "last": "Lynch",
    "title": "IT Service Manager",
    "seniority": "manager",
-   "bio": "IT Service Manager at RetailEdge. Joined 7 years.",
+   "bio": "IT Service Manager at RetailEdge. Been here 1 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
    "posts": []
   },
   {
    "id": 1927,
-   "first": "Wendy",
-   "last": "Evans",
+   "first": "Maeve",
+   "last": "Power",
    "title": "Procurement Manager",
    "seniority": "manager",
-   "bio": "Procurement Manager at RetailEdge. Joined 4 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
+   "bio": "Procurement Manager at RetailEdge. Joined 5 years.",
+   "personality": "Practical and busy. Responds to concrete examples.",
    "posts": []
   },
   {
    "id": 1928,
-   "first": "Oliver",
-   "last": "Sweeney",
+   "first": "Amira",
+   "last": "Grant",
    "title": "HR Business Partner",
    "seniority": "manager",
    "bio": "HR Business Partner at RetailEdge. Been here 1 years.",
@@ -17995,105 +14891,93 @@ export const LEGACY_EXTRA_EMPLOYEES = {
   },
   {
    "id": 1929,
-   "first": "Victor",
-   "last": "Brennan",
+   "first": "Gareth",
+   "last": "Turner",
    "title": "Marketing Manager",
    "seniority": "manager",
-   "bio": "Marketing Manager at RetailEdge. Been here 5 years.",
+   "bio": "Marketing Manager at RetailEdge. Joined 1 years.",
    "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Looking for recommendations: how do you run a good weekly team meeting?"
-   ]
+   "posts": []
   },
   {
    "id": 1930,
-   "first": "Aoife",
-   "last": "O'Neill",
+   "first": "Nadia",
+   "last": "Keane",
    "title": "Sales Manager",
    "seniority": "manager",
-   "bio": "Sales Manager at RetailEdge. Been here 5 years.",
-   "personality": "Influential with their boss. Will champion something that makes the team's life easier.",
-   "posts": [
-    "Proud of the team this month. Hard quarter, great attitude."
-   ]
+   "bio": "Sales Manager at RetailEdge. Joined 6 years.",
+   "personality": "Keen to fix team problems quickly. Usually picks up after 1-2 calls.",
+   "posts": []
   },
   {
    "id": 1931,
-   "first": "Tom",
-   "last": "Maguire",
+   "first": "Aisling",
+   "last": "Shaw",
    "title": "Account Executive",
    "seniority": "mid",
-   "bio": "Account Executive at RetailEdge. Been here 9 years.",
+   "bio": "Account Executive at RetailEdge. Been here 5 years.",
    "personality": "Friendly and candid about day-to-day problems.",
    "posts": []
   },
   {
    "id": 1932,
-   "first": "Piotr",
-   "last": "Vaughan",
+   "first": "Mei",
+   "last": "Gallagher",
    "title": "Customer Success Manager",
    "seniority": "mid",
-   "bio": "Customer Success Manager at RetailEdge. Joined 8 years.",
-   "personality": "Busy but approachable.",
-   "posts": [
-    "One year at RetailEdge today. Learned more than I expected."
-   ]
+   "bio": "Customer Success Manager at RetailEdge. Joined 7 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
+   "posts": []
   },
   {
    "id": 1933,
-   "first": "Ravi",
-   "last": "Silva",
+   "first": "Daniel",
+   "last": "Iqbal",
    "title": "Business Analyst",
    "seniority": "mid",
-   "bio": "Business Analyst at RetailEdge. Joined 5 years.",
-   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "bio": "Business Analyst at RetailEdge. Joined 4 years.",
+   "personality": "Friendly and candid about day-to-day problems.",
    "posts": []
   },
   {
    "id": 1934,
-   "first": "Fatima",
-   "last": "Kavanagh",
+   "first": "Will",
+   "last": "Adeyemi",
    "title": "Financial Analyst",
    "seniority": "mid",
-   "bio": "Financial Analyst at RetailEdge. Been here 1 years.",
+   "bio": "Financial Analyst at RetailEdge. Been here 9 years.",
    "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
-   "posts": [
-    "One year at RetailEdge today. Learned more than I expected."
-   ]
+   "posts": []
   },
   {
    "id": 1935,
-   "first": "Chloe",
-   "last": "Moreno",
+   "first": "Bilal",
+   "last": "Reid",
    "title": "Recruiter",
    "seniority": "mid",
-   "bio": "Recruiter at RetailEdge. Joined 4 years.",
-   "personality": "Friendly and candid about day-to-day problems.",
-   "posts": [
-    "One year at RetailEdge today. Learned more than I expected."
-   ]
+   "bio": "Recruiter at RetailEdge. Joined 1 years.",
+   "personality": "Not a decision maker but helpful. Will point you to the right person if your pitch is relevant.",
+   "posts": []
   },
   {
    "id": 1936,
-   "first": "Uma",
-   "last": "Young",
+   "first": "Eimear",
+   "last": "Quinn",
    "title": "Executive Assistant to the CEO",
    "seniority": "junior",
-   "bio": "Executive Assistant to the CEO at RetailEdge. Joined 7 years.",
+   "bio": "Executive Assistant to the CEO at RetailEdge. Been here 1 years.",
    "personality": "Friendly but has no buying power.",
    "posts": []
   },
   {
    "id": 1937,
-   "first": "Yusuf",
-   "last": "Iqbal",
+   "first": "Hannah",
+   "last": "Okafor",
    "title": "Graduate Analyst",
    "seniority": "junior",
-   "bio": "Graduate Analyst at RetailEdge. Been here 7 years.",
-   "personality": "Eager and responsive. Will pass you up the chain.",
-   "posts": [
-    "Great team day out on Friday. Back to it now."
-   ]
+   "bio": "Graduate Analyst at RetailEdge. Joined 4 years.",
+   "personality": "Happy to chat and knows who does what.",
+   "posts": []
   }
  ]
 };
