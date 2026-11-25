@@ -11,6 +11,8 @@ import CallOverlay from './call/CallOverlay';
 import { getLegalStakeholder, getProcurementStakeholder } from './stakeholders';
 // Accounts and people live in src/world (88 accounts across 8 industries).
 import { companies, allEmployees, INDUSTRY_NAMES, SEGMENTS } from './world/companies';
+import { personProfile, personPosts } from './world/content';
+import CompanySite from './world/CompanySite';
 
 function uuid(){if(typeof crypto!=='undefined'&&crypto.randomUUID)return crypto.randomUUID();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16);});}
 
@@ -335,6 +337,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const [plView, setPlView] = useState("feed");
   const [plSearch, setPlSearch] = useState("");
   const [plProfile, setPlProfile] = useState(null);
+  const [siteCo, setSiteCo] = useState(null); // company whose website is open
   const [plMsgEmp, setPlMsgEmp] = useState(null);
   const [plMsgDraft, setPlMsgDraft] = useState("");
   const [plConnectMsg, setPlConnectMsg] = useState(null);
@@ -360,7 +363,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
   const [salesConvs, setSalesConvs] = React.useState({});
   const [closeLoading, setCloseLoading] = React.useState(false);
   const industries = ["All", ...INDUSTRY_NAMES];
-  const allEmps = Object.entries(allEmployees).flatMap(([cId,emps])=>emps.map(e=>({...e,cId:parseInt(cId),cName:(companies.find(c=>c.id===parseInt(cId))||{name:''}).name})));
+  const allEmps = React.useMemo(()=>Object.entries(allEmployees).flatMap(([cId,emps])=>emps.map(e=>({...e,cId:parseInt(cId),cName:(companies.find(c=>c.id===parseInt(cId))||{name:''}).name}))),[]);
 
   const { activeCallId, callStatus, isSpeaking: isPersonaSpeaking, startCall: startVoiceCall, endCall: endVoiceCall } = useVoiceCall({
     agentId: 'agent_9601kw8ekb86ex0abgh5vr8kh4xe',
@@ -750,23 +753,23 @@ function sendEmail(emp, company, subject, body) {
     { empId:601, type:'signal', text:"Starting to think seriously about intelligent ops tooling for manufacturing. A category that barely existed 2 years ago. Anyone deep in this space? Would love to connect.", time:'2d', likes:18, comments:6 },
   ];
 
-  const feedPosts = [
+  // Feed: everyone's dated posts (company news, hiring, pains, events), newest
+  // first, plus the hand-written buying signals.
+  const feedPosts = React.useMemo(() => [
     ...allEmps.flatMap(emp => {
       const company = getCompanyForEmp(emp.id);
-      return emp.posts.map((post, i) => {
-        const lc = post.toLowerCase();
-        const type = ['evaluat','looking for','struggling','challenge','recommend','need a','replac','vendor','consider','explore','switch','outgrow','manual','bottleneck','budget'].some(k=>lc.includes(k)) ? 'signal'
-          : ['proud','excited','thrilled','announce','crossed','achieved','launched','celebrated','milestone'].some(k=>lc.includes(k)) ? 'milestone'
-          : 'insight';
-        return { emp, company, post: { text: post, type, time: `${(emp.id*3+i*7)%47+1}h`, likes: (emp.id*7+i*11)%87+3, comments: (emp.id+i*5)%18+1 }, id: emp.id * 100 + i };
-      });
+      return personPosts(emp, company, allEmployees[emp.cId] || []).map((p, i) => ({
+        emp, company, days: p.days,
+        post: { text: p.text, type: p.type === 'hiring' ? 'insight' : p.type, time: p.timeAgo, likes: p.likes, comments: p.comments },
+        id: emp.id * 100 + i,
+      }));
     }),
     ...EXTRA_FEED_POSTS.map((ep,i) => {
       const emp = allEmps.find(e => e.id === ep.empId);
       const company = emp ? getCompanyForEmp(ep.empId) : null;
-      return emp ? { emp, company, post: { text: ep.text, type: ep.type, time: ep.time, likes: ep.likes, comments: ep.comments }, id: ep.empId * 100 + 90 + i } : null;
+      return emp ? { emp, company, days: i, post: { text: ep.text, type: ep.type, time: ep.time, likes: ep.likes, comments: ep.comments }, id: ep.empId * 100 + 90 + i } : null;
     }).filter(Boolean)
-  ].sort((a,b) => (b.emp.id % 7) - (a.emp.id % 7));
+  ].sort((a,b) => a.days - b.days).slice(0, 150), [allEmps]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const navBtn = (id, label, icon, badge) => (
     <button key={id} onClick={() => setTab(id)}
@@ -926,7 +929,6 @@ React.useEffect(()=>{
 
 //  ProLink enrichment helpers 
 function getPersonaPhoto(id){return 'https://i.pravatar.cc/150?u=rpf'+id;}
-function getPersonaConnections(id){const b=[412,867,1203,543,2100,789,1567,334,901,1456];return b[id%b.length]+(id*7)%200;}
 function getPersonaPainPoints(emp,company){
   const byRole={
     'c-suite':['Scaling '+company.name+' profitably while protecting culture','Board pressure on ARR growth without over-hiring','Competitive differentiation in a saturated '+company.industry+' market','Finding the right enterprise GTM motion'],
@@ -948,33 +950,6 @@ function getPersonaGoals(emp,company){
     :s==='vp'
     ?['Hit '+( emp.title.includes('Sales')?'revenue':'delivery')+' targets for the fiscal year','Build a repeatable, scalable team process','Reduce dependency on manual tooling by Q3']
     :['Ship key deliverables on time with quality','Improve cross-team communication','Grow into a senior '+emp.title.replace('Junior ','').replace('Associate ','')];
-}
-function getPersonaPosts(emp,company){
-  const sen=emp.seniority,ind=company.industry,cn=company.name,title=emp.title,id=emp.id;
-  const rng=(n)=>((id*7+n*13)%100)/100;
-  const likeBase=sen==='c-suite'?350:sen==='vp'?160:sen==='manager'?70:35;
-  const comBase=sen==='c-suite'?32:sen==='vp'?16:sen==='manager'?8:4;
-  const tags={'SaaS':['#SaaS','#B2BSales','#ProductLed','#GrowthHacking'],'Cyber Security':['#CyberSecurity','#ZeroTrust','#InfoSec','#ThreatIntel'],'Manufacturing':['#Industry40','#SmartFactory','#IoT','#Automation'],'FinTech':['#FinTech','#OpenBanking','#RegTech','#Payments'],'CleanTech':['#CleanTech','#Sustainability','#NetZero','#GreenEnergy'],'HealthTech':['#HealthTech','#DigitalHealth','#PatientFirst','#MedTech'],'RetailTech':['#RetailTech','#Omnichannel','#CommerceAI','#CX'],'PropTech':['#PropTech','#ConTech','#SmartBuilding','#Construction']};
-  const t=tags[ind]||['#Tech','#Innovation','#Leadership'];
-  const timings=['1d','2d','3d','5d','1w','2w'];
-  return [
-    {text:sen==='c-suite'?'Three years ago '+cn+' had 12 customers. Today we serve over '+(Math.floor(rng(1)*400)+100)+' enterprise teams across Europe.\n\nThe thing nobody tells you about scaling a '+ind+' company: the hardest part isn\'t product. It\'s people and process. Every time.\n\nWe\'re hiring senior ICs. DM me if you know someone.':sen==='vp'?'Spent Q2 rebuilding how our team approaches '+(title.includes('Sales')?'pipeline management and forecasting':'cross-functional delivery and prioritisation')+'..\nBiggest lesson: slow down to speed up. Teams that skip alignment always pay for it in rework and morale.\n'+cn+' is in a really strong position heading into H2.':'Just wrapped a very productive sprint at '+cn+'.\nThe team is shipping faster than ever  and the quality bar keeps rising. Proud to be part of this one.',
-
-
-
-
-
-
-     likes:Math.floor(likeBase*(0.8+rng(2)*0.5)),comments:Math.floor(comBase*(0.8+rng(3)*0.5)),timeAgo:timings[id%3],tags:[t[0],t[1]],hasImage:false},
-    {text:sen==='c-suite'?'Hot take: most '+ind+' companies are solving the wrong problem.\n\nEveryone is chasing feature parity. The winners are obsessing over workflow and time-to-value.\n\nWe saw this pattern two years ago at '+cn+' and made a hard pivot. Best decision we ever made.\n\nWhat\'s your take?':sen==='vp'?'Controversial opinion: the biggest bottleneck in most '+ind+' orgs isn\'t headcount.\n\nIt\'s tooling debt.\n\nWe spent 6 months at '+cn+' ripping out systems that were slowing us down. The ROI showed up in 90 days flat.':'If you\'re in '+ind+' and not paying attention to how AI is changing '+(title.includes('Sales')||title.includes('Marketing')?'go-to-market':'operations')+', you\'re already behind.\n\nSome notes from a workshop I attended this week  thread below.',
-     likes:Math.floor(likeBase*(0.6+rng(4)*0.8)),comments:Math.floor(comBase*(0.6+rng(5)*0.7)),timeAgo:timings[(id+1)%4+1],tags:[t[2]],hasImage:id%5===0},
-    {text:sen==='c-suite'||sen==='vp'?'We just made a call that made us uncomfortable.\n\nWe said no to a '+(Math.floor(rng(6)*400)+150)+'k deal because the customer wasn\'t the right fit for where '+cn+' is going.\n\nEarly stage you take every deal. Later stage you realise bad-fit customers cost more than they\'re worth. Churn, support load, culture damage.\n\nBuilding for the long game.':'Looking for recommendations  what tools is your team using for '+(title.includes('Eng')||title.includes('CTO')?'CI/CD and code quality monitoring':title.includes('Sales')?'sales engagement and pipeline visibility':'project management and async communication')+' in 2025?\n\nWe\'re evaluating options at '+cn+' right now. Drop a comment ',
-     likes:Math.floor(likeBase*(0.9+rng(7)*0.4)),comments:Math.floor(comBase*(1.2+rng(8)*0.8)),timeAgo:timings[(id+2)%5],tags:[t[id%t.length]],hasImage:false},
-    {text:'Reflecting on what\'s actually hard about working in '+ind+' right now:\n\n1. '+(sen==='c-suite'?'Finding people who think commercially AND technically':'Getting visibility into what leadership actually cares about')+'\n2. '+(title.includes('Sales')?'Keeping pipeline quality high under quota pressure':'Shipping fast without accumulating tech/process debt')+'\n3. '+(company.employees>30?'Maintaining culture as the team grows':'Doing more with less')+'\n\nNone of this is new. All of it is harder in '+new Date().getFullYear()+'.',
-     likes:Math.floor(likeBase*(1.0+rng(9)*0.4)),comments:Math.floor(comBase*(0.9+rng(10)*0.5)),timeAgo:timings[(id+3)%timings.length],tags:[t[0],t[t.length-1]],hasImage:false},
-    {text:sen==='c-suite'?'I still interview every senior hire personally.\n\nNot to check qualifications  the team handles that.\n\nI\'m looking for one thing: do they make the people around them better?\n\nThe best people I\'ve ever worked with always do. The ones who didn\'t make the team stronger didn\'t last.\n\n#Leadership':'End of quarter reflection at '+cn+':\n\nWins: '+(title.includes('Sales')?'pipeline coverage strong, team at 94% of target':'shipped 3 major features, zero Sev-1s in production')+'\nNeeds work: documentation, async comms, onboarding speed\n\nEvery quarter we get a bit better. That\'s the job.',
-     likes:Math.floor(likeBase*(1.1+rng(11)*0.3)),comments:Math.floor(comBase*(0.8+rng(12)*0.4)),timeAgo:timings[(id+4)%timings.length],tags:[],hasImage:id%7===0},
-  ];
 }
 
   if (!user) {
@@ -1009,6 +984,7 @@ function getPersonaPosts(emp,company){
 
   return (
     <div className="min-h-screen bg-[#070C18]">
+      {siteCo && <CompanySite company={siteCo} people={allEmployees[siteCo.id]||[]} onClose={()=>setSiteCo(null)} onOpenPerson={(pid)=>{const emp=allEmps.find(e=>e.id===pid);if(emp){setPlProfile(emp);setTab("prolink");setPlView("profile");}setSiteCo(null);}}/>}
       {surveyOpen&&(()=>{
         const total=PRODUCT_FIELDS.length;
         const f=surveyIdx<total?PRODUCT_FIELDS[surveyIdx]:null;
@@ -1464,6 +1440,7 @@ function getPersonaPosts(emp,company){
                       <span className="text-[#4A6B8A] text-xs"> {selCompany.location}</span>
                     </div>
                   </div>
+                  <button onClick={() => setSiteCo(selCompany)} className="ml-auto bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-sm font-semibold px-4 py-2 rounded-lg">Visit website ↗</button>
                 </div>
               </div>
               <div className="bg-[#0D1525] rounded-xl border border-[#1B3154] overflow-hidden">
@@ -2024,9 +2001,10 @@ function getPersonaPosts(emp,company){
                       </div>
                       <h2 className="text-lg font-bold text-[#F8FAFC] leading-tight mb-0.5">{plProfile.first} {plProfile.last}</h2>
                       <p className="text-sm text-[#7A9CC4] hover:text-[#38BDF8] leading-snug mb-1">{plProfile.title}</p>
-                      <p className="text-sm text-[#D4E5FF] font-medium mb-2">{company?company.name:''}{company&&<span className="text-[#4A6B8A] font-normal">  {company.industry}</span>}</p>
+                      <p className="text-sm text-[#D4E5FF] font-medium mb-1">{company?<button onClick={()=>setSiteCo(company)} className="hover:underline" title="Visit company website">{company.name}</button>:''}{company&&<span className="text-[#4A6B8A] font-normal">  {company.industry}</span>}</p>
+                      <p className="text-xs text-[#A8BFDB] mb-2">{personProfile(plProfile,company,allEmployees[company?.id]||[]).headline}</p>
                       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#7A9CC4] mb-3">
-                        <span className="font-semibold" style={{color:'#0A66C2'}}>{getPersonaConnections(plProfile.id).toLocaleString()} connections</span>
+                        <span className="font-semibold" style={{color:'#0A66C2'}}>{personProfile(plProfile,company,allEmployees[company?.id]||[]).connections.toLocaleString()} connections</span>
                         <span></span>
                         <span> {(companies.find(c=>c.id===getCompanyForEmp(plProfile.id))||{location:'Dublin'}).location}</span>
                         {company&&<><span></span><span>{company.size}</span></>}
@@ -2038,7 +2016,14 @@ function getPersonaPosts(emp,company){
                   {(()=>{const _pp=getPersonaPainPoints(plProfile,company);const _goals=getPersonaGoals(plProfile,company);return(
                   <div className="bg-[#0D1525] rounded-2xl p-4 mb-3" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08),0 2px 8px rgba(0,0,0,0.06)'}}>
                     <h3 className="text-sm font-bold text-[#F8FAFC] mb-2">About</h3>
-                    <p className="text-xs text-[#7A9CC4] leading-relaxed mb-4">{plProfile.first} is a {plProfile.title} at {company?company.name:'this company'}, focused on driving measurable {company?company.industry:'tech'} outcomes through cross-functional leadership and execution.</p>
+                    {(()=>{const pf=personProfile(plProfile,company,allEmployees[company?.id]||[]);return(<>
+                    <p className="text-xs text-[#7A9CC4] leading-relaxed mb-4">{pf.about}</p>
+                    <p className="text-xs font-bold text-[#7A9CC4] uppercase tracking-wider mb-2">Experience</p>
+                    <div className="flex flex-col gap-2 mb-4">{pf.experience.map((x,xi)=>(<div key={xi} className="text-xs"><div className="font-semibold text-[#D4E5FF]">{x.title}</div><div className="text-[#7A9CC4]">{x.current&&company?<button onClick={()=>setSiteCo(company)} className="hover:underline">{x.company}</button>:x.company} · {x.current?(x.years===0?'Less than a year':x.years+' yr'+(x.years>1?'s':''))+' · Present':x.years+' yr'+(x.years>1?'s':'')}</div></div>))}</div>
+                    <p className="text-xs font-bold text-[#7A9CC4] uppercase tracking-wider mb-2">Skills</p>
+                    <div className="flex flex-wrap gap-1.5 mb-4">{pf.skills.map(sk=><span key={sk} className="text-xs px-2 py-0.5 rounded-full border border-[#1B3154] text-[#A8BFDB]">{sk}</span>)}</div>
+                    <p className="text-xs text-[#7A9CC4] mb-4">Education: {pf.education}</p>
+                    </>);})()}
                     <div className="h-px bg-gray-100 mb-3"></div>
                     <p className="text-xs font-bold text-[#7A9CC4] uppercase tracking-wider mb-2">Goals</p>
                     <div className="flex flex-col gap-2 mb-4">
@@ -2066,7 +2051,7 @@ function getPersonaPosts(emp,company){
                   </div>
                   );})()}
 
-                  {(()=>{const _posts=getPersonaPosts(plProfile,company);return(
+                  {(()=>{const _posts=personPosts(plProfile,company,allEmployees[company?.id]||[]).slice().map(p=>({...p,hasImage:false}));return(
                   <div>
                     <p className="text-sm font-bold text-[#F8FAFC] mb-3">Activity</p>
                     {_posts.length===0&&<div className="bg-[#0D1525] rounded-2xl p-8 text-center text-[#4A6B8A] text-sm" style={{boxShadow:'0 0 0 1px rgba(0,0,0,0.08)'}}>No recent activity yet.</div>}
