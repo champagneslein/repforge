@@ -1,8 +1,8 @@
 name: Build & Deploy
 
+# Legacy Azure deploy. Automatic deploys on push are switched off: RepForge
+# now deploys to Vercel. Can still be run by hand if Azure access returns.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 env:

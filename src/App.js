@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useMsal } from '@azure/msal-react';
-import { API_SCOPES } from './authConfig';
+import { useAuth, signIn, signUp, signOut, authConfigured } from './auth';
 import { apiGet, apiPost, apiPut, loadProgress, saveProgress, loadGoldStandard, saveGoldStandard, gptJson, llmJson, llmText, getLlmConfig, LLM_PROVIDERS } from './api';
 import { buildTraineeDossier, runCoachReview } from './coach';
 import { PRODUCT_FIELDS, formToProduct, productToForm, productContext } from './product';
@@ -164,7 +163,12 @@ export default function App() {
   const [selCompany, setSelCompany] = useState(null);
   const [intelData, setIntelData] = React.useState({});
   const [expandedIntel, setExpandedIntel] = React.useState(null);
-  const { instance: msal, accounts: msalAccounts, inProgress: msalInProgress } = useMsal();
+  const authUser = useAuth();
+  const [authMode,setAuthMode]=React.useState('signin');
+  const [authEmail,setAuthEmail]=React.useState('');
+  const [authPass,setAuthPass]=React.useState('');
+  const [authBusy,setAuthBusy]=React.useState(false);
+  const [authMsg,setAuthMsg]=React.useState(null);
   const [user,setUser]=React.useState(null);
   const [authTok,setAuthTok]=React.useState(null);
   const saveDebounceRef=useRef(null);
@@ -208,15 +212,14 @@ export default function App() {
 const [demoObjections,setDemoObjections]=React.useState([]);
 const [handledObjections,setHandledObjections]=React.useState(new Set());
 
-  // Sync user state with the MSAL account and restore progress after sign-in
+  // Sync user state with the Supabase session and restore progress after sign-in
   React.useEffect(()=>{
-    const acct=msalAccounts[0];
+    const acct=authUser;
     if(!acct){setUser(null);setAuthTok(null);return;}
-    msal.setActiveAccount(acct);
-    setUser({id:acct.localAccountId,email:acct.username});
-    setAuthTok('entra');
+    setUser({id:acct.id,email:acct.email});
+    setAuthTok('supabase');
     ensureMicPermission(); // ask once at login so calls start without a popup
-    try{const cached=JSON.parse(localStorage.getItem('rp_coach_'+acct.localAccountId)||'null');if(cached)setCoachReport(cached);}catch(e){}
+    try{const cached=JSON.parse(localStorage.getItem('rp_coach_'+acct.id)||'null');if(cached)setCoachReport(cached);}catch(e){}
     loadGoldStandard().then(gs=>setGoldStandard(gs)).catch(()=>{});
     loadProgress().then(data=>{
       if(data){
@@ -229,7 +232,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
         if(data.state){const merged={...initState(),...data.state};setState(merged);}
       }
     }).catch(()=>{});
-  },[msalAccounts.length]);
+  },[authUser?.id]);
 
   // Debounced progress save. simStart rides along via a ref so the calendar
   // anchor persists without changing this function's positional signature.
@@ -243,7 +246,7 @@ const [handledObjections,setHandledObjections]=React.useState(new Set());
     },2000);
   },[]);
 
-  const handleLogout=async()=>{setUser(null);setAuthTok(null);setProduct(null);try{await msal.logoutRedirect();}catch(e){}};
+  const handleLogout=async()=>{setUser(null);setAuthTok(null);setProduct(null);try{await signOut();}catch(e){}};
   const openProdSetup=(mode)=>{
     if(!goldStandard)loadGoldStandard().then(gs=>{if(gs)setGoldStandard(gs);}).catch(()=>{});
     setProdSetupMode(mode);
@@ -975,17 +978,31 @@ function getPersonaPosts(emp,company){
 }
 
   if (!user) {
-    const authBusy = msalInProgress !== 'none';
+    const submitAuth=async(e)=>{
+      e.preventDefault();setAuthBusy(true);setAuthMsg(null);
+      try{
+        if(authMode==='signup'){const r=await signUp(authEmail.trim(),authPass);if(r==='confirm_email')setAuthMsg({ok:true,text:'Check your email for a confirmation link, then sign in.'});}
+        else await signIn(authEmail.trim(),authPass);
+      }catch(err){setAuthMsg({ok:false,text:err.message});}
+      setAuthBusy(false);
+    };
+    const inp={width:'100%',boxSizing:'border-box',padding:'11px 12px',marginBottom:12,borderRadius:8,border:'1px solid #1B3154',background:'#070C18',color:'#F8FAFC',fontSize:15,outline:'none'};
     return (
       <div style={{minHeight:'100vh',background:'#070C18',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'system-ui'}}>
-        <div style={{background:'#0D1525',borderRadius:14,padding:'36px 40px',width:400,maxWidth:'92vw',boxShadow:'0 24px 60px rgba(0,0,0,0.4)',border:'1px solid #1B3154'}}>
-          <div style={{textAlign:'center',marginBottom:28}}>
+        <form onSubmit={submitAuth} style={{background:'#0D1525',borderRadius:14,padding:'36px 40px',width:400,maxWidth:'92vw',boxShadow:'0 24px 60px rgba(0,0,0,0.4)',border:'1px solid #1B3154'}}>
+          <div style={{textAlign:'center',marginBottom:24}}>
             <div style={{fontSize:22,fontWeight:800,color:'#0EA5E9',letterSpacing:'-0.02em'}}>RepForge</div>
             <div style={{fontSize:13,color:'#4A6B8A',marginTop:4}}>AI Sales Training Platform</div>
           </div>
-          <button onClick={()=>msal.loginRedirect({scopes:API_SCOPES})} disabled={authBusy} style={{width:'100%',padding:'12px 0',borderRadius:8,border:'none',background:authBusy?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:authBusy?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:authBusy?'wait':'pointer',transition:'all 0.15s'}}>{authBusy?'Signing in…':'Sign In / Create Account'}</button>
-          <div style={{textAlign:'center',marginTop:14,fontSize:12,color:'#4A6B8A'}}>Secured by Microsoft Entra</div>
-        </div>
+          {!authConfigured&&<div style={{fontSize:13,color:'#F97316',marginBottom:12}}>Sign-in isn't configured yet: set REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY.</div>}
+          <label style={{display:'block',fontSize:12,color:'#7A9CC4',marginBottom:4}} htmlFor="auth-email">Email</label>
+          <input id="auth-email" type="email" autoComplete="email" required value={authEmail} onChange={e=>setAuthEmail(e.target.value)} style={inp}/>
+          <label style={{display:'block',fontSize:12,color:'#7A9CC4',marginBottom:4}} htmlFor="auth-pass">Password</label>
+          <input id="auth-pass" type="password" autoComplete={authMode==='signup'?'new-password':'current-password'} required minLength={6} value={authPass} onChange={e=>setAuthPass(e.target.value)} style={inp}/>
+          {authMsg&&<div style={{fontSize:13,color:authMsg.ok?'#10B981':'#F87171',marginBottom:12}}>{authMsg.text}</div>}
+          <button type="submit" disabled={authBusy} style={{width:'100%',padding:'12px 0',borderRadius:8,border:'none',background:authBusy?'#1B3154':'linear-gradient(135deg,#0EA5E9,#7C3AED)',color:authBusy?'#4A6B8A':'#fff',fontWeight:700,fontSize:14,cursor:authBusy?'wait':'pointer'}}>{authBusy?'Please wait…':authMode==='signup'?'Create account':'Sign in'}</button>
+          <button type="button" onClick={()=>{setAuthMode(authMode==='signup'?'signin':'signup');setAuthMsg(null);}} style={{width:'100%',marginTop:12,background:'none',border:'none',color:'#38BDF8',fontSize:13,cursor:'pointer'}}>{authMode==='signup'?'Already have an account? Sign in':'New here? Create an account'}</button>
+        </form>
       </div>
     );
   }
