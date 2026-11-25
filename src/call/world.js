@@ -1,3 +1,5 @@
+import { personaBriefing } from '../world/persona';
+import { companySite } from '../world/content';
 // Builds the persona's understanding of their own world: the company they
 // work at, the pressures it faces, what their specific job is accountable
 // for, what they can personally authorize, and how much of the org chart
@@ -21,9 +23,6 @@ const INDUSTRY_PRESSURES = {
   'Food & Beverage': ['retailers squeeze supplier margins every year', 'ingredient and packaging costs keep rising', 'food safety audits and traceability demand constant work', 'waste and short shelf life eat profit'],
   'Professional Services': ['billable utilisation is under pressure', 'clients push for fixed fees and more value', 'senior people are hard to hire and keep', 'new business depends too much on referrals'],
 };
-
-// Lower-case only the first letter so acronyms (AI, ML, KYC) survive.
-const lc = s => s.charAt(0).toLowerCase() + s.slice(1);
 
 const SIZE_LABEL = { 'Enterprise': 'An enterprise', 'Mid-Market': 'A mid-market', 'SMB': 'A small' };
 
@@ -68,14 +67,6 @@ const ROLE_SCOPE = {
   },
 };
 
-const ROLE_PAINS = {
-  'c-suite': ['board pressure to show growth without proportional headcount', 'too little reliable visibility into what is actually happening below the exec layer', 'competing priorities across functions with finite budget'],
-  'vp': ['hitting targets with a team that is already stretched', 'justifying new spend against a tightening budget', 'tools that do not integrate with what your team already uses'],
-  'director': ['translating leadership asks into plans your team can actually execute', 'reporting overhead that eats into delivery time', 'getting cross-functional dependencies to move on your timeline'],
-  'manager': ['manual reporting and admin eating your week', 'limited visibility into how your team is really performing', 'getting leadership to fund fixes for problems only you can see'],
-  'mid': ['too much time on admin instead of the actual work', 'tools that do not talk to each other', 'unclear priorities coming down from above'],
-  'junior': ['ramping up while delivering', 'not always knowing who to ask', 'repetitive manual work that feels like it should be automated'],
-};
 
 function orgView(emp, colleagues, companyName) {
   const others = (colleagues || []).filter(c => c.id !== emp.id);
@@ -102,9 +93,9 @@ function orgView(emp, colleagues, companyName) {
 
 export function buildWorldContext(emp, company, colleagues) {
   if (!company) return '';
+  const people = colleagues || [];
   const scope = ROLE_SCOPE[emp.seniority] || ROLE_SCOPE.manager;
   const pressures = INDUSTRY_PRESSURES[company.industry] || [];
-  const rolePains = ROLE_PAINS[emp.seniority] || ROLE_PAINS.manager;
   const sizeNote = SIZE_PRESSURES[company.size] || '';
 
   const lines = [
@@ -115,17 +106,16 @@ export function buildWorldContext(emp, company, colleagues) {
   ];
   if (sizeNote) lines.push('How decisions work here: ' + sizeNote);
   if (pressures.length) lines.push('Pressures on the business right now: ' + pressures.join('; ') + '.');
-  if (company.pains && company.pains.length) lines.push('Specific problems at ' + company.name + ' right now: ' + company.pains.map(p => lc(p.pain)).join('; ') + '. These are real but you do not volunteer them to a stranger; a caller who asks good questions earns them.');
-  if (emp.pains && emp.pains.length) lines.push('The problem you personally feel most: ' + emp.pains.map(lc).join('; ') + '.');
-  if (company.goals && company.goals.length && (emp.seniority === 'c-suite' || emp.seniority === 'vp')) lines.push('Company goals this year: ' + company.goals.map(lc).join('; ') + '.');
   lines.push('Your job: as ' + emp.title + ' you are accountable for ' + scope.accountable + '.');
-  lines.push('What frustrates you in your role: ' + rolePains.join('; ') + '.');
   lines.push('What you can actually authorise: ' + scope.authority);
   lines.push('What you know about the company: ' + scope.knows + '.');
 
   const org = orgView(emp, colleagues, company.name);
   if (org) lines.push(org);
 
+  // Personality, own challenges (with detail), goals, reporting line, company
+  // history and how decisions get made: see src/world/persona.js.
+  lines.push(personaBriefing(emp, company, people, companySite(company, people)));
   lines.push('Draw on all of this naturally when it is relevant. Do not recite it. If the caller asks about your business, your team, your priorities, or who makes decisions, answer from this as if it is simply your job. If the caller guesses wrong about your company or your role, correct them the way a real person would.');
   return lines.join('\n');
 }

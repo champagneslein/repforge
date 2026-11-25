@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).end();
 
-  const { emp, company, emailSubject, emailBody, emailThread } = req.body;
+  const { emp, company, emailSubject, emailBody, emailThread, briefing } = req.body;
 
   const seniority = emp?.seniority || 'manager';
   const seniorityGuide = {
@@ -25,6 +25,7 @@ export default async function handler(req, res) {
 
   const systemPrompt = `You are ${emp?.first} ${emp?.last}, ${emp?.title} at ${companyName}.
 ${emp?.bio ? 'Background: ' + emp.bio : ''}
+${typeof briefing === 'string' ? briefing.slice(0, 6000) : ''}
 
 ${guide}
 

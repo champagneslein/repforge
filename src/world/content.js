@@ -16,6 +16,8 @@ function rng(seed) {
 const pick = (r, a) => a[Math.floor(r() * a.length)];
 const between = (r, lo, hi) => lo + Math.floor(r() * (hi - lo + 1));
 const sample = (r, a, n) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b.slice(0, n); };
+import { companyBrain, personNeeds } from './persona';
+
 const lc = s => s.charAt(0).toLowerCase() + s.slice(1);
 const an = s => (/^[AEIOU]|^(ML|SOC|HR|IT|SDR)\b/.test(s) ? 'an ' : 'a ') + s;
 
@@ -98,6 +100,9 @@ export function companySite(company, people = []) {
   if (cache.has(key)) return cache.get(key);
   const r = rng(key), I = ind(company), size = company.size, tech = TECH.includes(company.industry);
   const pains = company.pains || [], goals = company.goals || [];
+  const brain = companyBrain(company, people.length ? people : []);
+  const byId = new Map(people.map(p => [p.id, p]));
+  const ownerOf = pn => byId.get(brain.owners.get(pn.pain));
   const byLevel = s => people.filter(p => p.seniority === s);
   const ceo = people.find(p => /CEO|Managing Partner|Managing Director|Founder/.test(p.title)) || people[0];
   const founded = 2026 - (size === 'SMB' ? between(r, 2, 8) : size === 'Mid-Market' ? between(r, 7, 20) : between(r, 18, 60));
@@ -119,17 +124,23 @@ export function companySite(company, people = []) {
   const titlePool = sample(r, [...new Set(people.filter(p => ['manager', 'mid', 'junior'].includes(p.seniority)).map(p => p.title))], 20);
   const usedTitles = new Set();
   const careers = Array.from({ length: n }, (_, i) => {
-    const pain = pains[i % Math.max(pains.length, 1)];
-    let title = (i < 2 && pain) ? hireFor(pain, company, r) : (titlePool.find(x => !usedTitles.has(x)) || 'Operations Associate');
+    const painJobs = Math.min(pains.length, size === 'SMB' ? 1 : size === 'Mid-Market' ? 2 : 4);
+    const pain = i < painJobs ? pains[i] : null;
+    let title = pain ? hireFor(pain, company, r) : (titlePool.find(x => !usedTitles.has(x)) || 'Operations Associate');
     if (usedTitles.has(title)) title = 'Senior ' + title;
     usedTitles.add(title);
     const days = between(r, 2, 45);
+    // Pain roles report to whoever owns the pain; backfills to the boss of the
+    // person in that job today.
+    const incumbent = people.find(q => q.title === title.replace(/^Senior /, ''));
+    const hm = pain ? ownerOf(pain) : incumbent ? byId.get(brain.managerOf.get(incumbent.id)) : null;
     return {
+      hiringManager: hm ? { id: hm.id, name: hm.first + ' ' + hm.last, title: hm.title } : null,
       id: company.id + '-job-' + i, title, location: pick(r, [company.location, company.location + ' (hybrid)', 'Remote (UK & Ireland)']),
       type: pick(r, ['Full-time', 'Full-time', 'Full-time', 'Contract']), postedDays: days, posted: timeAgo(days),
       summary: `We're looking for ${an(title)} to join ${company.name} as we ${goals[i % Math.max(goals.length, 1)] ? lc(goals[i % goals.length]) : 'grow'}.`,
       bullets: [
-        pain && i < 2 ? `Own our work on a real challenge: ${lc(pain.pain)}` : `Work across teams to improve how we operate`,
+        pain ? `Own our work on a real challenge: ${lc(pain.pain)}` : `Work across teams to improve how we operate`,
         pick(r, ['Report to our leadership team and help shape the roadmap', 'Build processes that scale as we grow', 'Partner closely with customers and colleagues']),
         pick(r, ['Use data to make better decisions', 'Bring fresh ideas and challenge how things are done', 'Help us replace manual work with better tools']),
       ],
@@ -147,7 +158,8 @@ export function companySite(company, people = []) {
   } else {
     add(between(r, 60, 300), `${company.name} reports ${between(r, 6, 24)}% revenue growth`, `${company.name} grew revenue by double digits over the last financial year, driven by new customers and ${pick(r, ['investment in capacity', 'a strong order book', 'expansion into new markets'])}. The business expects to ${goals[0] ? lc(goals[0]) : 'keep growing'} over the coming year.`, 'results');
   }
-  if (pains[0]) add(between(r, 10, 90), `${company.name} ${pick(r, ['launches improvement programme', 'announces operational investment', 'sets out plan for the year ahead'])}`, `Leadership at ${company.name} says the focus is a challenge the business can no longer ignore: ${lc(pains[0].pain).replace(/\.$/, '')}. "${pick(r, ['It is the number one thing our customers and our people raise with us.', 'We know we need to do better here, and we are putting real resources behind it.', 'This is holding us back, and fixing it is a priority for the whole leadership team.'])}"`, 'priority');
+  const po = pains[0] && ownerOf(pains[0]);
+  if (pains[0]) add(between(r, 10, 90), `${company.name} ${pick(r, ['launches improvement programme', 'announces operational investment', 'sets out plan for the year ahead'])}`, `Leadership at ${company.name} says the focus is a challenge the business can no longer ignore: ${lc(pains[0].pain).replace(/\.$/, '')}.${po ? ' ' + po.first + ' ' + po.last + ', ' + po.title + ', is leading the work.' : ''} "${pick(r, ['It is the number one thing our customers and our people raise with us.', 'We know we need to do better here, and we are putting real resources behind it.', 'This is holding us back, and fixing it is a priority for the whole leadership team.'])}"`, 'priority');
   const hire = byLevel('vp')[0] || byLevel('director')[0];
   if (hire) add(between(r, 20, 160), `${company.name} appoints ${hire.first} ${hire.last} as ${hire.title}`, `${hire.first} joins from ${pick(r, PRIOR_EMPLOYERS)} and will lead the team as ${company.name} looks to ${goals[1] ? lc(goals[1]) : 'scale'}.`, 'hire');
   add(between(r, 5, 120), pick(r, [`${company.name} partners with ${pick(r, CUSTOMERS)}`, `${company.name} opens new office in ${pick(r, ['London', 'Manchester', 'Dublin', 'Amsterdam', 'Berlin', 'Boston'].filter(x => x !== company.location))}`, `${company.name} launches ${offerings[0].name}`]), `The move is part of ${company.name}'s plan to ${goals[0] ? lc(goals[0]) : 'grow'}.`, 'growth');
@@ -155,16 +167,15 @@ export function companySite(company, people = []) {
   news.sort((a, b) => a.days - b.days);
 
   // Blog: articles by the company's own people, several hinting at the pains.
-  const authors = people.filter(p => ['c-suite', 'vp', 'director', 'manager'].includes(p.seniority));
+  // General articles come from leadership, marketing or operations.
+  const authors = people.filter(p => ['c-suite', 'vp', 'director'].includes(p.seniority) && ['exec', 'marketing', 'ops', 'eng', 'cs', 'clinical', 'delivery'].includes(brain.fnOf.get(p.id)));
   const topics = [
-    ...pains.slice(0, 2).map(p => ({ title: p.pain.replace(/\.$/, '') + ': ' + pick(r, ["how we're tackling it", 'our honest take', "what we're doing about it"]), pain: p })),
+    ...pains.slice(0, size === 'SMB' ? 2 : 3).map(p => ({ title: p.pain.replace(/\.$/, '') + ': ' + pick(r, ["how we're tackling it", 'our honest take', "what we're doing about it"]), pain: p })),
     ...sample(r, I.blogTopics, size === 'SMB' ? 2 : 3).map(t => ({ title: t.replace('{n}', between(r, 12, 60)) })),
   ];
   const blog = topics.map((t, i) => {
     // Pain articles are written by whoever owns that pain; others by any leader.
-    const owners = t.pain ? people.filter(p => (p.pains || []).includes(t.pain.pain)) : [];
-    const execs = people.filter(p => p.seniority === 'c-suite' && !/People|Revenue/.test(p.title));
-    const a = owners[0] || (t.pain && execs[0]) || (authors.length ? authors[(i * 3 + between(r, 0, 5)) % authors.length] : null);
+    const a = (t.pain && ownerOf(t.pain)) || (authors.length ? authors[(i * 3 + between(r, 0, 5)) % authors.length] : null);
     const days = between(r, 7 + i * 20, 30 + i * 40);
     const body = t.pain ? [
       `Like a lot of ${company.industry === 'AI' ? 'AI' : company.industry.toLowerCase()} businesses, we have run into a problem we can no longer ignore: ${lc(t.pain.pain).replace(/\.$/, '')}.`,
@@ -221,11 +232,13 @@ export function personProfile(emp, company, colleagues = []) {
   const isNewHire = company && colleagues.length > 0 && companySite(company, colleagues).news.some(n => n.kind === 'hire' && n.title.includes(emp.first + ' ' + emp.last));
   const years = emp.seniority === 'c-suite' ? between(r, 15, 28) : emp.seniority === 'vp' ? between(r, 12, 22) : emp.seniority === 'director' ? between(r, 9, 18) : emp.seniority === 'manager' ? between(r, 5, 12) : emp.seniority === 'mid' ? between(r, 2, 7) : between(r, 0, 2);
   const tenure = isNewHire ? 0 : Math.max(1, Math.min(years, between(r, 1, 7)));
-  const pain = (emp.pains && emp.pains[0]) || ((company && company.pains) || []).find(p => p.owner === LEVEL[emp.seniority])?.pain;
+  const needs = personNeeds(emp, company, colleagues);
+  const pain = needs.top && needs.top.text;
+  const goal = needs.goals[0];
   const headline = `${emp.title} at ${co}` + (pick(r, [true, false]) ? ' | ' + pick(r, I.skills) : '');
   const about = [
     `${emp.title} at ${co}, ${tenure === 0 ? 'joined recently' : tenure === 1 ? 'since last year' : 'for ' + tenure + ' years'}. ${years > 3 ? years + ' years in ' + (company ? company.industry === 'AI' ? 'AI and software' : company.industry.toLowerCase() : 'the industry') + '.' : 'Early in my career and learning fast.'}`,
-    pain ? `${pick(r, ['The challenge on my desk right now', 'What I am working on this year', 'Current focus'])}: ${lc(pain).replace(/\.$/, '')}.` : pick(r, ['I care about building great teams and doing good work.', 'Always happy to connect with people in the industry.', 'Interested in how other teams solve the same problems we do.']),
+    pain ? `${pick(r, ['The challenge on my desk right now', 'What I am working on this year', 'Current focus'])}: ${lc(pain).replace(/\.$/, '')}.${goal ? ' Goal for the year: ' + lc(goal) + '.' : ''}` : pick(r, ['I care about building great teams and doing good work.', 'Always happy to connect with people in the industry.', 'Interested in how other teams solve the same problems we do.']),
   ].join(' ');
   const experience = [{ title: emp.title, company: co, years: tenure, current: true }];
   if (years - tenure > 1 || isNewHire) { const prev = pick(r, PRIOR_EMPLOYERS); experience.push({ title: priorTitle(emp), company: prev.charAt(0).toUpperCase() + prev.slice(1), years: Math.max(1, years - tenure), current: false }); }
@@ -251,8 +264,20 @@ export function personPosts(emp, company, colleagues = []) {
     const base = emp.seniority === 'c-suite' ? 260 : emp.seniority === 'vp' ? 130 : emp.seniority === 'director' ? 80 : emp.seniority === 'manager' ? 45 : 20;
     out.push({ days, timeAgo: timeAgo(days), date: formatDate(daysAgoDate(days)), text, type, likes: Math.floor(base * (0.5 + r())), comments: Math.floor(base / 12 * (0.4 + r())), tags: sample(r, I.tags, 2) });
   };
-  // Their own posts from the world data (buying signals about the company's pains).
-  (emp.posts || []).forEach((t, i) => add(between(r, 2 + i * 10, 25 + i * 20), t, /\b(we need|looking|evaluat|has to|there has to be|there must be|has to change|fixing|plan)\b/i.test(t) || i === 0 && emp.pains ? 'signal' : 'insight'));
+  // Hand-written posts (the original accounts) stay as they are.
+  (emp.posts || []).forEach((t, i) => add(between(r, 2 + i * 10, 25 + i * 20), t, /\b(we need|looking|evaluat|has to|there has to be|there must be|has to change|fixing|plan)\b/i.test(t) ? 'signal' : 'insight'));
+  // Their own challenges and goals, in their own words. Owners of a company
+  // problem post about it; others post about the problem their job feels most.
+  const needs = personNeeds(emp, company, colleagues);
+  const brain = companyBrain(company, colleagues);
+  const owned = (company.pains || []).find(pn => brain.owners.get(pn.pain) === emp.id);
+  if (owned) add(between(r, 3, 40), owned.post, 'signal');
+  else if (needs.top && r() < ({ exec: 0.7, manager: 0.8, ic: 0.55 })[lvl]) add(between(r, 5, 60), pick(r, [
+    `Honest question for other ${emp.title.replace(/^(Senior|Junior) /, '')}s: how are you handling ${lc(needs.top.text).replace(/\.$/, '')}? Biggest thing on my plate at ${company.name} right now.`,
+    `Another week fighting ${lc(needs.top.text).replace(/\.$/, '')}. ${needs.top.detail.impact.charAt(0).toUpperCase() + needs.top.detail.impact.slice(1)}. There has to be a better way.`,
+    `We've tried ${needs.top.detail.tried.split(',')[0]}. Still dealing with ${lc(needs.top.text).replace(/\.$/, '')}. Would love to hear what's worked for others.`,
+  ]), 'signal');
+  if (needs.goals[0] && r() < (lvl === 'ic' ? 0.25 : 0.5)) add(between(r, 20, 110), `${pick(r, ['Focus for this year', 'Our big goal this year', 'What I am working towards'])}: ${lc(needs.goals[0])}. ${pick(r, ['Plenty to do.', 'Will share how it goes.', 'Ambitious, but doable.'])}`, 'insight');
   const news = site.news, jobs = site.careers, blog = site.blog;
   const funding = news.find(n => n.kind === 'funding' || n.kind === 'results');
   if (funding && (lvl === 'exec' || r() < 0.4)) add(funding.days + between(r, 0, 2), `${pick(r, ['Big news for', 'Proud moment for', 'Exciting day at'])} ${company.name}: ${lc(funding.title.replace(company.name + ' ', ''))}. ${pick(r, ['Huge thanks to the team.', 'This is just the start.', 'Now the real work begins.'])}${company.goals && company.goals[0] ? ' Next up: ' + lc(company.goals[0]) + '.' : ''}`, 'milestone');

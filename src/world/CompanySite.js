@@ -35,7 +35,7 @@ export default function CompanySite({ company, people, onClose, onOpenPerson }) 
       <div style={{ ...wrap, maxWidth: 720 }}>
         <button style={{ ...btn, color: c, marginBottom: 16 }} onClick={() => setJob(null)}>← All jobs</button>
         <h1 style={{ ...h2, fontSize: 34 }}>{job.title}</h1>
-        <p style={{ color: mute, margin: '0 0 24px' }}>{job.location} · {job.type} · Posted {job.posted} ago</p>
+        <p style={{ color: mute, margin: '0 0 24px' }}>{job.location} · {job.type} · Posted {job.posted} ago{job.hiringManager ? <> · Hiring manager: {person(job.hiringManager)}, {job.hiringManager.title}</> : null}</p>
         <p style={{ fontSize: 17, lineHeight: 1.7 }}>{job.summary}</p>
         <h3 style={{ margin: '24px 0 8px' }}>What you'll do</h3>
         <ul style={{ fontSize: 16, lineHeight: 1.8, paddingLeft: 20 }}>{job.bullets.map((b, i) => <li key={i}>{b}</li>)}</ul>
