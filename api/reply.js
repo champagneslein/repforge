@@ -1,11 +1,15 @@
-export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).end();
+import { guard, clip } from './_lib/guard';
 
-  const { emp, company, emailSubject, emailBody, emailThread } = req.body;
+// POST /api/reply: an AI prospect's reply to a trainee's email.
+export default async function handler(req, res) {
+  if (!(await guard(req, res, { bucket: 'ai' }))) return;
+  if (!process.env.ANTHROPIC_API_KEY) return res.status(200).json({ reply: null, error: 'Email replies not configured' });
+  const b = req.body || {};
+  const e0 = b.emp || {}, c0 = b.company || {};
+  const emp = { first: clip(e0.first, 60), last: clip(e0.last, 60), title: clip(e0.title, 100), seniority: clip(e0.seniority, 20), bio: clip(e0.bio, 500) };
+  const company = { name: clip(c0.name, 100), industry: clip(c0.industry, 60), size: clip(c0.size, 30) };
+  const emailSubject = clip(b.emailSubject, 300), emailBody = clip(b.emailBody, 4000), briefing = clip(b.briefing, 8000);
+  const emailThread = Array.isArray(b.emailThread) ? b.emailThread.slice(-10).map(e => ({ from: e && e.from, body: clip(e && e.body, 2000) })) : [];
 
   const seniority = emp?.seniority || 'manager';
   const seniorityGuide = {
@@ -25,6 +29,7 @@ export default async function handler(req, res) {
 
   const systemPrompt = `You are ${emp?.first} ${emp?.last}, ${emp?.title} at ${companyName}.
 ${emp?.bio ? 'Background: ' + emp.bio : ''}
+${briefing}
 
 ${guide}
 
@@ -61,7 +66,7 @@ CRITICAL RULES:
     const data = await response.json();
 
     if (!response.ok) {
-      return res.status(200).json({ reply: null, error: JSON.stringify(data) });
+      return res.status(200).json({ reply: null, error: 'AI provider error' });
     }
 
     const text = data?.content?.[0]?.text?.trim() || '';
@@ -72,6 +77,6 @@ CRITICAL RULES:
 
     return res.status(200).json({ reply: text });
   } catch (err) {
-    return res.status(200).json({ reply: null, error: err.message });
+    return res.status(200).json({ reply: null, error: 'Reply failed' });
   }
       }

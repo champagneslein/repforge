@@ -1,7 +1,14 @@
+import { guard, clip } from './_lib/guard';
+
+// POST /api/close-reply: the AI buyer in a late-stage deal conversation.
 export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end();
-  const { personaName, personaRole, companyName, companyDesc, industry, dealValue, stage, messages, openaiKey } = req.body;
-  const OPENAI_KEY = openaiKey || process.env.OPENAI_API_KEY;
+  if (!(await guard(req, res, { bucket: 'ai' }))) return;
+  const b = req.body || {};
+  const personaName = clip(b.personaName, 100), personaRole = clip(b.personaRole, 100), companyName = clip(b.companyName, 100), companyDesc = clip(b.companyDesc, 8000);
+  const dealValue = Number(b.dealValue) || 25000, stage = clip(b.stage, 30), messages = Array.isArray(b.messages) ? b.messages : [];
+  // A trainee's own key is used if they set one; otherwise the server's.
+  const OPENAI_KEY = clip(b.openaiKey, 200) || process.env.OPENAI_API_KEY;
+  if (!OPENAI_KEY) return res.status(200).json({ reply: 'Let me check with my team and come back to you on that.', newStage: stage || 'prospecting', closed: false, lost: false });
   const stageGuides = {
     prospecting: 'You just received a cold outreach. Be busy and skeptical but professional. Only agree to a meeting if their pitch is specific and relevant to a real pain you have. Do not agree easily.',
     discovery: 'You are on a discovery call. Share real challenges only if they ask good targeted questions. Push back on generic questions. Care about ROI, timeline, and whether this truly solves your problem.',
@@ -24,7 +31,7 @@ export default async function handler(req, res) {
   try {
     const msgs = [{ role: 'system', content: systemPrompt }];
     if (Array.isArray(messages)) {
-      messages.slice(-12).forEach(m => msgs.push({ role: m.from === 'rep' ? 'user' : 'assistant', content: m.text }));
+      messages.slice(-12).forEach(m => msgs.push({ role: m && m.from === 'rep' ? 'user' : 'assistant', content: clip(m && m.text) }));
     }
     const resp = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',

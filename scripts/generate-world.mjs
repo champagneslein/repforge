@@ -253,19 +253,17 @@ function enterpriseRoster(ind) {
   return out;
 }
 
-const LEVEL = { 'c-suite': 'exec', vp: 'exec', director: 'manager', manager: 'manager', mid: 'ic', junior: 'ic' };
-const GENERIC_POSTS = {
-  exec: ['Hiring across the team this year. If you know great people, send them my way.', 'Spent the week with customers. Best use of a leader\'s time, every time.'],
-  manager: ['Proud of the team this month. Hard quarter, great attitude.', 'Looking for recommendations: how do you run a good weekly team meeting?'],
-  ic: ['One year at {co} today. Learned more than I expected.', 'Great team day out on Friday. Back to it now.'],
-};
 const DEAL = { SMB: [12, 28], 'Mid-Market': [30, 65], Enterprise: [80, 160] };
 
 function companyPains(ind) {
   const pool = INDUSTRIES[ind].pains;
-  return ['exec', 'manager', 'ic'].map(lvl => { const [owner, pain, post] = pick(pool.filter(p => p[0] === lvl)); return { owner, pain, post }; });
+  // 5 problems per company: 2 felt by leadership, 2 by managers, 1 by the front line.
+  return ['exec', 'exec', 'manager', 'manager', 'ic'].reduce((acc, lvl) => {
+    const [owner, pain, post] = pick(pool.filter(p => p[0] === lvl && !acc.some(a => a.pain === p[1])));
+    return [...acc, { owner, pain, post }];
+  }, []);
 }
-function companyGoals(ind) { return shuffle(INDUSTRIES[ind].goals).slice(0, 2); }
+function companyGoals(ind) { return shuffle(INDUSTRIES[ind].goals).slice(0, 3); }
 
 const overrides = {};
 for (const [id, [industry, employees]] of Object.entries(LEGACY)) {
@@ -278,22 +276,19 @@ NEW_COMPANIES.forEach(([name, industry, size, domain, description, location, hea
   const pains = companyPains(industry), goals = companyGoals(industry);
   const [lo, hi] = DEAL[size];
   companies.push({ id, name, industry, size, employees: headcount, domain, description, location, dealValue: between(lo, hi) * 1000, pains, goals });
-  const used = new Set(), postedLvl = new Set();
+  const used = new Set();
   const roster = size === 'Enterprise' ? enterpriseRoster(industry)
     : LADDER[size].map(([s, key, idx]) => [s, key === 'founder' ? ind.titles.founder : ind.titles[key][idx]]);
   employees[id] = roster.map(([seniority, title], n) => {
     const { first, last } = uniqueName(used);
-    const lvl = LEVEL[seniority];
-    const mine = pains.find(p => p.owner === lvl);
-    const posts = [];
-    if (mine && !postedLvl.has(lvl)) { posts.push(mine.post); postedLvl.add(lvl); }
-    if (rnd() < 0.5) posts.push(pick(GENERIC_POSTS[lvl]).replace('{co}', name));
+    // Pains, goals, posts and personality are worked out at runtime from
+    // the person's job (src/world/persona.js, src/world/content.js).
     const years = between(3, 22);
     const bio = seniority === 'c-suite' || seniority === 'vp'
       ? `${title} at ${name}. ${years} years in ${industry === 'AI' ? 'AI and software' : industry.toLowerCase()}.`
       : `${title} at ${name}. ${pick(['Joined', 'Been here'])} ${between(1, 8)} years.`;
     const personality = pick(PERSONALITY[seniority]) + '.' + (['c-suite', 'vp', 'director'].includes(seniority) ? SEGMENT_NOTE[size] : '');
-    return { id: id * 100 + n + 1, first, last, title, seniority, bio, personality, posts, ...(mine ? { pains: [mine.pain] } : {}) };
+    return { id: id * 100 + n + 1, first, last, title, seniority, bio, personality, posts: [] };
   });
 });
 
@@ -317,7 +312,7 @@ for (const c of LEGACY_COMPANIES.filter(c => c.size === 'Enterprise')) {
   let next = Math.max(...existing.map(e => e.id)) + 1;
   legacyExtra[c.id] = enterpriseRoster(industry).filter(([, title]) => !have.has(title.toLowerCase())).map(([seniority, title]) => {
     const { first, last } = uniqueName(used);
-    const posts = rnd() < 0.4 ? [pick(GENERIC_POSTS[LEVEL[seniority]]).replace('{co}', c.name)] : [];
+    const posts = [];
     const bio = `${title} at ${c.name}. ${pick(['Joined', 'Been here'])} ${between(1, 9)} years.`;
     const personality = pick(PERSONALITY[seniority]) + '.' + (['c-suite', 'vp', 'director'].includes(seniority) ? SEGMENT_NOTE.Enterprise : '');
     return { id: next++, first, last, title, seniority, bio, personality, posts };

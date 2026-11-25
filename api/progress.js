@@ -1,10 +1,11 @@
 // GET/PUT /api/progress: the signed-in trainee's saved simulation state.
-import { configured, getUserId, selectOne, upsert, notConfigured } from './_lib/supabase';
+import { selectOne, upsert } from './_lib/supabase';
+import { guard } from './_lib/guard';
 
 export default async function handler(req, res) {
-  if (!configured()) return notConfigured(res);
-  const userId = await getUserId(req);
-  if (!userId) return res.status(401).json({ error: 'Not signed in' });
+  const user = await guard(req, res, { method: ['GET', 'PUT'] });
+  if (!user) return;
+  const userId = user.id;
   try {
     if (req.method === 'GET') {
       const row = await selectOne('progress', { user_id: userId });
@@ -18,6 +19,6 @@ export default async function handler(req, res) {
     }
     return res.status(405).end();
   } catch (e) {
-    return res.status(500).json({ error: e.message });
+    return res.status(500).json({ error: 'Could not load or save progress' });
   }
 }

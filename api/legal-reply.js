@@ -1,11 +1,14 @@
-const fetch = require('node-fetch');
+import { guard, clip } from './_lib/guard';
 
-module.exports = async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+// POST /api/legal-reply: the AI legal stakeholder replying to a trainee's email.
+export default async function handler(req, res) {
+  if (!(await guard(req, res, { bucket: 'ai' }))) return;
+  const b = req.body || {};
 
-  const { personaName, personaRole, companyName, dealStage, threadContext, userMessage, openaiKey } = req.body;
-  const key = openaiKey || process.env.OPENAI_API_KEY;
-  if (!key) return res.status(400).json({ error: 'No OpenAI key provided' });
+  const personaName = clip(b.personaName, 100), personaRole = clip(b.personaRole, 100), companyName = clip(b.companyName, 100), dealStage = clip(b.dealStage, 40), userMessage = clip(b.userMessage, 4000);
+  const threadContext = Array.isArray(b.threadContext) ? b.threadContext.slice(-10).map(t => ({ from: clip(t && t.from, 20), body: clip(t && t.body) })) : [];
+  const key = clip(b.openaiKey, 200) || process.env.OPENAI_API_KEY;
+  if (!key) return res.status(400).json({ error: 'AI replies not configured' });
 
   const systemPrompt = `You are ${personaName}, ${personaRole} at ${companyName}.
 You have been brought into this vendor evaluation at the ${dealStage} stage to conduct legal due diligence.
@@ -38,11 +41,11 @@ Sign off as ${personaName}, ${personaRole}.`;
     });
     if (!response.ok) {
       const err = await response.json();
-      return res.status(response.status).json({ error: err.error?.message || 'OpenAI error' });
+      return res.status(502).json({ error: 'AI provider error' });
     }
     const data = await response.json();
     res.json({ reply: data.choices[0].message.content });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: 'Reply failed' });
   }
-};
+}

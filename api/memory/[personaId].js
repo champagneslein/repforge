@@ -1,13 +1,14 @@
 // GET/POST /api/memory/:personaId: long-term memory for an AI persona, an
 // append-only event log per (trainee, persona) capped at the latest 100 events.
-import { configured, getUserId, selectOne, upsert, notConfigured } from '../_lib/supabase';
+import { selectOne, upsert } from '../_lib/supabase';
+import { guard, clip } from '../_lib/guard';
 
 const MAX_EVENTS = 100;
 
 export default async function handler(req, res) {
-  if (!configured()) return notConfigured(res);
-  const userId = await getUserId(req);
-  if (!userId) return res.status(401).json({ error: 'Not signed in' });
+  const user = await guard(req, res, { method: ['GET', 'POST'] });
+  if (!user) return;
+  const userId = user.id;
   const personaId = parseInt(req.query.personaId, 10);
   if (!Number.isInteger(personaId)) return res.status(400).json({ error: 'bad persona id' });
   try {
@@ -17,20 +18,20 @@ export default async function handler(req, res) {
     }
     if (req.method === 'POST') {
       const body = req.body || {};
-      const incoming = Array.isArray(body.events) ? body.events : [];
+      const incoming = Array.isArray(body.events) ? body.events.slice(0, 20) : [];
       if (!incoming.length && body.summary == null) return res.status(400).json({ error: 'nothing to append' });
       const now = new Date().toISOString();
-      const added = incoming.map(e => ({ type: e.type || 'note', day: Number(e.day) || 0, text: String(e.text || ''), at: now }));
+      const added = incoming.map(e => ({ type: e.type || 'note', day: Number(e.day) || 0, text: clip(e.text, 1000), at: now }));
       const events = [...(row ? row.events : []), ...added].slice(-MAX_EVENTS);
       await upsert('persona_memory', {
         user_id: userId, persona_id: personaId, events,
-        summary: body.summary != null ? body.summary : (row ? row.summary : null),
+        summary: body.summary != null ? clip(body.summary, 4000) : (row ? row.summary : null),
         updated_at: now,
       });
       return res.status(200).json({ ok: true });
     }
     return res.status(405).end();
   } catch (e) {
-    return res.status(500).json({ error: e.message });
+    return res.status(500).json({ error: 'Memory unavailable' });
   }
 }
