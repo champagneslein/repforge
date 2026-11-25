@@ -1,12 +1,10 @@
 // GET /api/calltoken: swaps the server-side ElevenLabs API key for a short-lived
 // conversation token, so the key never reaches the browser.
-import { configured, getUserId, notConfigured } from './_lib/supabase';
+import { guard } from './_lib/guard';
 
 export default async function handler(req, res) {
-  if (req.method !== 'GET') return res.status(405).end();
-  if (!configured()) return notConfigured(res);
-  const userId = await getUserId(req);
-  if (!userId) return res.status(401).json({ error: 'Not signed in' });
+  // Voice minutes cost money: signed-in users only, with daily limits.
+  if (!(await guard(req, res, { method: 'GET', bucket: 'voice' }))) return;
   const apiKey = process.env.ELEVENLABS_API_KEY;
   const agentId = process.env.ELEVENLABS_AGENT_ID;
   if (!apiKey || !agentId) return res.status(503).json({ error: 'Voice calls not configured: set ELEVENLABS_API_KEY and ELEVENLABS_AGENT_ID' });

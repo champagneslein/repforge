@@ -6,19 +6,19 @@ const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
 export function configured() { return Boolean(URL_ && SERVICE); }
 
-// Returns the signed-in user's id, or null if the token is missing or invalid.
-export async function getUserId(req) {
+// Returns the signed-in user ({ id, email }), or null if the token is missing or invalid.
+export async function getUser(req) {
   const h = req.headers.authorization || '';
   const token = h.startsWith('Bearer ') ? h.slice(7) : '';
   if (!token || !configured()) return null;
   const r = await fetch(URL_ + '/auth/v1/user', { headers: { apikey: SERVICE, Authorization: 'Bearer ' + token } });
   if (!r.ok) return null;
   const u = await r.json().catch(() => null);
-  return u && u.id ? u.id : null;
+  return u && u.id ? { id: u.id, email: (u.email || '').toLowerCase() } : null;
 }
 
-// New-style secret keys (sb_secret_...) go only in the apikey header; legacy
-// service_role JWTs also go in Authorization.
+export async function getUserId(req) { const u = await getUser(req); return u ? u.id : null; }
+
 const headers = (extra = {}) => ({
   apikey: SERVICE,
   ...(SERVICE.startsWith('sb_') ? {} : { Authorization: 'Bearer ' + SERVICE }),
@@ -47,4 +47,18 @@ export async function upsert(table, row) {
 
 export function notConfigured(res) {
   return res.status(503).json({ error: 'Server not configured: set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY' });
+}
+
+// Call a Postgres function exposed by Supabase (see supabase/schema.sql).
+export async function rpc(fn, args) {
+  const r = await fetch(`${URL_}/rest/v1/rpc/${fn}`, { method: 'POST', headers: headers(), body: JSON.stringify(args) });
+  if (!r.ok) throw new Error(`${fn} failed: ${r.status}`);
+  return r.json();
+}
+
+// Admins can change shared settings such as the gold standard. Set
+// ADMIN_EMAILS on Vercel (comma separated). If it is not set, nobody can.
+export function isAdmin(user) {
+  const list = (process.env.ADMIN_EMAILS || '').toLowerCase().split(',').map(s => s.trim()).filter(Boolean);
+  return Boolean(user && user.email && list.includes(user.email));
 }

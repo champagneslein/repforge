@@ -14,6 +14,14 @@ AI sales training platform: a React frontend with serverless API functions on Ve
 2. **Vercel:** import this GitHub repo as a new project and add the environment variables from `.env.example` (Supabase keys are under Project Settings > API in Supabase).
 3. **Voice calls:** in ElevenLabs, create a Conversational AI agent with "allow overrides" enabled for prompt, voice and first message, then set `ELEVENLABS_API_KEY` and `ELEVENLABS_AGENT_ID`.
 
+### Security and costs
+
+- Every `/api` function requires a signed-in user (`api/_lib/guard.js`); the app adds the session token to `/api` calls automatically (`installApiAuth` in `src/auth.js`).
+- AI replies and voice calls have daily limits per user and in total (Supabase `use_quota` function, see `supabase/schema.sql`). Tune them with the env vars in `.env.example`. If the limit check fails for any reason, the request is refused, never allowed.
+- Request sizes and prompt inputs are capped. Errors never echo provider responses.
+- Only emails listed in `ADMIN_EMAILS` can change the gold standard.
+- Dependency versions are pinned; security headers are set in `vercel.json`.
+
 ### Running locally
 
 ```bash

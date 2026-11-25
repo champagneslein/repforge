@@ -90,3 +90,21 @@ export function useAuth() {
   useEffect(() => { listeners.add(setS); return () => listeners.delete(setS); }, []);
   return s?.user ? s.user : null;
 }
+
+// Every call from the app to our own /api functions carries the signed-in
+// user's token, so the server can refuse anonymous callers. Installed once
+// at startup; calls to other sites are left untouched.
+export function installApiAuth() {
+  if (window.__rfApiAuth) return;
+  window.__rfApiAuth = true;
+  const orig = window.fetch.bind(window);
+  window.fetch = async (input, init = {}) => {
+    const url = typeof input === 'string' ? input : input && input.url;
+    const sameOrigin = url && (url.startsWith('/api/') || url.startsWith(window.location.origin + '/api/'));
+    if (!sameOrigin) return orig(input, init);
+    const token = await getApiToken();
+    const headers = new Headers(init.headers || (typeof input !== 'string' && input.headers) || {});
+    if (token && !headers.has('Authorization')) headers.set('Authorization', 'Bearer ' + token);
+    return orig(input, { ...init, headers });
+  };
+}

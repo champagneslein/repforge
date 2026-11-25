@@ -1,7 +1,13 @@
+import { guard, clip } from './_lib/guard';
+
+// POST /api/proposal-reply: the AI buyer responding to a proposal.
 export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end();
-  const { personaName, personaRole, companyName, dealValue, discount, threadContext, userMessage } = req.body;
+  if (!(await guard(req, res, { bucket: 'ai' }))) return;
+  const b = req.body || {};
+  const personaName = clip(b.personaName, 100), personaRole = clip(b.personaRole, 100), companyName = clip(b.companyName, 100), userMessage = clip(b.userMessage, 4000);
+  const dealValue = Number(b.dealValue) || 25000, discount = Math.min(Math.max(Number(b.discount) || 0, 0), 90);
   const OPENAI_KEY = process.env.OPENAI_API_KEY;
+  if (!OPENAI_KEY) return res.json({ reply: 'Thanks for the proposal. We will review and get back to you.' });
   const finalPrice = Math.round((dealValue||25000) * (1 - ((discount||0)/100)));
   const systemPrompt = [
     'You are ' + personaName + ', ' + personaRole + ' at ' + companyName + '.',
